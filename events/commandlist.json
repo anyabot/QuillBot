@@ -1,0 +1,3 @@
+const commandObject = {
+  "info": 1
+};
