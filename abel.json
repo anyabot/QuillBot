@@ -1,0 +1,33 @@
+{
+    "name": "Abel",
+	"gender": "Male",
+    "rarity": "Gold",
+    "class": "Dragon Rider",
+	"aff": {
+		"1st": "HP+324",
+    "2nd": "None",
+		"150": "Not implemented"
+		},
+	"skill": {
+		"normal": {
+      "stage1":{
+			  "name": "Heat Breath",
+			  "effect": "For 30 seconds, attack increases by 1.5x. Attacks become ranged (250) and ignore defense.",
+			  "resue": 60,
+			  "initial": 40
+        }
+			},
+		"awakened": {
+      "stage1": {
+			   "name": "Explode Breath",
+			  "effect": "Attack increases by 1.6x. Releases a defense-ignoring fireball with a massive AoE.",
+			  "resue": 40,
+			  "initial": 26.7
+        }
+			}
+		},
+	"ability": {
+		"pre-aw ability": "No Ability",
+		"aw ability": "Endurance Up : HP increases by 20%."
+		}
+ }  
