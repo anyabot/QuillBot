@@ -14,17 +14,16 @@ client.on('ready', () => {
 
 const prefix = "!";
 client.on("message", (message) => {
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
- if(command === 'ping') {
-  message.channel.send('Pong!');
-} else
-if (command === 'blah') {
-  message.channel.send('Meh.');
-}
-  }
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
+	if(command === 'ping') {
+		message.channel.send('Pong!');
+	} else
+	if (command === 'blah') {
+		message.channel.send('Meh.');
+	}
 });
 
  
