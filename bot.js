@@ -42,7 +42,7 @@ client.on("message", message => {
 		case "stat" :{
 			let name = args.join[0];
 			if (units[name]) {
-				let stats = units[name].stat 
+				stats = units[name].stat 
 				const embed = new Discord.RichEmbed()
 				.setTitle(units[name].name)
 				.setThumbnail(units[name].icon)
