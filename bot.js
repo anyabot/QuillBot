@@ -26,9 +26,9 @@ client.on("message", message => {
 		case "aff" :{
 			let name = args[0[;
 			if (units[name]) {
-				a1 = units[name].aff.11;
-				a2 = units[name].aff.12;
-				a3 = units[name].aff.15;
+				a1 = units[name].aff.a1;
+				a2 = units[name].aff.a2;
+				a3 = units[name].aff.a3;
 				mes = "1st stat: " + a1 + "\n2nd stat: " + a2 + "\n150 affection stat: " +a3;
 				message.channel.send(mes);
 				}
