@@ -48,7 +48,7 @@ client.on("message", message => {
 				.setTitle(units[name].name)
 				.setThumbnail(units[name].icon)
 				forEach(stats, function(item) {
-					.addField(item.name, "**HP: **" + item.hp + "\n**ATK: **"  + item.atk + "\n**DEF: **" + item.def + "\n**MR: **" + item.mr + "\n**Block: **" + item.block + "\n**Range: **" + item.range + "\n**Range (Skill): **" + item.rangeskill + "\n**Range (SAW): **" + item.rangesaw + "\n**Max Cost: **" + item.costmax + "\n**Min Cost: **"+ item.costmin)
+					embed.addField(item.name, "**HP: **" + item.hp + "\n**ATK: **"  + item.atk + "\n**DEF: **" + item.def + "\n**MR: **" + item.mr + "\n**Block: **" + item.block + "\n**Range: **" + item.range + "\n**Range (Skill): **" + item.rangeskill + "\n**Range (SAW): **" + item.rangesaw + "\n**Max Cost: **" + item.costmax + "\n**Min Cost: **"+ item.costmin)
 				});
 				message.channel.send({embed});
 			}
