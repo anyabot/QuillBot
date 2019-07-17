@@ -31,7 +31,7 @@ var units = {
 				"costmax": "32",
 				"costmin": "29"
 			},
-			"class1": {
+			"class3": {
 				"name": "Dragon Lord (Lv1 → Lv 80)",
 				"hp": "2523 → 3788",
 				"atk": "718 → 936",
@@ -43,7 +43,7 @@ var units = {
 				"rangesaw": "250",
 				"costmax": "37",
 				"costmin": "34"
-			},
+			}
 		}
 		"aff": {
 			"a1": "HP+324",
