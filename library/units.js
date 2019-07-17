@@ -35,5 +35,29 @@ var units = {
 			},
 		"icon": "https://vignette.wikia.nocookie.net/aigis/images/8/8c/Adelaide_Icon.png/revision/latest?cb=20190328062604"
 		},
+	"adele": {
+		"name": "Adele",
+		"gender": "Female",
+		"rarity": "Platinum",
+		"class": "Witch",
+		"aff": {
+			"a1": "HP+360",
+			"a2": "ATK+144",
+			"a3": "ATK+72"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/d/d7/Adele_Icon.png/revision/latest?cb=20180522205418"
+		}, 
+	"agnes": {
+		"name": "Agnes",
+		"gender": "Female",
+		"rarity": "Platinum",
+		"class": "Necromancer",
+		"aff": {
+			"a1": "ATK+172",
+			"a2": "DEF+72",
+			"a3": "Skill Duration+20%"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/d/d7/Adele_Icon.png/revision/latest?cb=20180522205418"
+		}, 
  }  
- exports.units = units
+ exports.units = units  
