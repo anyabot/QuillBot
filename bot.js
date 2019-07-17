@@ -40,7 +40,7 @@ client.on("message", message => {
 			else message.channel.send("No Data");
 		};
 		case "stat" :{
-			let name = args.join("");
+			let name = args.join[0];
 			if (units[name]) {
 				let stats = units[name].stat 
 				const embed = new Discord.RichEmbed()
