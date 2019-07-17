@@ -44,9 +44,9 @@ client.on("message", message => {
 			let name = args[0];
 			if (stat[name]) {
 				const embed = new Discord.RichEmbed()
-				.setTitle(aff[name].name)
-				.setThumbnail(aff[name].icon)
-				.addField(stat[name].stat.class1.name, "**HP: **" + stat[name].stat.class1.hp + "\n**ATK: **"  + stat[name].stat.class1.atk + "\n**DEF: **" + stat[name].stat.class1.def + "\n**MR: **" + stat[name].stat.class1.mr + "\n**Block: **" + stat[name].stat.class1.block + "\n**Range: **" + stat[name].stat.class1.range + "\n**Range (Skill): **" + stat[name].stat.class1.rangeskill + "\n**Range (SAW): **" + stat[name].stat.class1.rangesaw + "\n**Max Cost: **" + stat[name].stat.class1.costmax + "\n**Min Cost: **"+ stat[name].stat.class1.costmin)
+				.setTitle(stat[name].name)
+				.setThumbnail(stat[name].icon)
+				.addField(stat[name].stat.class1.name, "**HP: **")
 				message.channel.send({embed});
 			}
 			else message.channel.send("No Data");
