@@ -3,7 +3,8 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-const aff = require("./library/aff.js").aff
+var aff = require("./library/aff.js").aff;
+var stat = require("./library/stat.js").stat;
 
 
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
