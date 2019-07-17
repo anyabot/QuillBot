@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-var forEach = require('async-foreach').forEach;
 
 const client = new Discord.Client();
 const config = require("./config.json");
@@ -47,9 +46,7 @@ client.on("message", message => {
 				const embed = new Discord.RichEmbed()
 				.setTitle(units[name].name)
 				.setThumbnail(units[name].icon)
-				forEach(stats, function(item) {
-					embed.addField(item.name, "**HP: **" + item.hp + "\n**ATK: **"  + item.atk + "\n**DEF: **" + item.def + "\n**MR: **" + item.mr + "\n**Block: **" + item.block + "\n**Range: **" + item.range + "\n**Range (Skill): **" + item.rangeskill + "\n**Range (SAW): **" + item.rangesaw + "\n**Max Cost: **" + item.costmax + "\n**Min Cost: **"+ item.costmin)
-				});
+				if (stats["class1"]) .addField(stats["class1"].name, "**HP: **" + stats["class1"].hp + "\n**ATK: **"  + stats["class1"].atk + "\n**DEF: **" + stats["class1"].def + "\n**MR: **" + stats["class1"].mr + "\n**Block: **" + stats["class1"].block + "\n**Range: **" + stats["class1"].range + "\n**Range (Skill): **" + stats["class1"].rangeskill + "\n**Range (SAW): **" + stats["class1"].rangesaw + "\n**Max Cost: **" + stats["class1"].costmax + "\n**Min Cost: **"+ stats["class1"].costmin)
 				message.channel.send({embed});
 			}
 			else message.channel.send("No Data");
