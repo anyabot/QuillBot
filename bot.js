@@ -31,19 +31,8 @@ client.on("message", message => {
 			.addField("150 Affection Stat", a3, true)
 			message.channel.send({embed});
 		}
-		else {message.channel.send("No Data")};
-	} else
-	if (command === "stat") {
-		let name = args[0];
-		if (stat[name]) {
-			const embed = new Discord.RichEmbed()
-			.setTitle(stat[name].name)
-			.setThumbnail(stat[name].icon)
-			.addField(stat[name].stat.class1.name, "**HP: **")
-			message.channel.send({embed});
-		}
-		else {message.channel.send("No Data")};
-	};
+		else {message.channel.send("No Data")}
+	} 
 });
  
 
