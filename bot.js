@@ -37,6 +37,7 @@ client.on("message", message => {
 				.addField("150 Affection Stat", a3, true)
 				message.channel.send({embed});
 			}
+			else message.channel.send("No Data");
 		};	
 	}
 });
