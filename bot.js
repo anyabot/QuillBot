@@ -3,8 +3,7 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-var unitstat = require("./library/unitstat.js").unitstat;
-
+const aff = require("./library/aff.js").aff
 
 
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
@@ -18,18 +17,22 @@ client.on("message", message => {
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 	
-
-	if (command === "stat") {
+	if (command === "aff"){
 		let name = args[0];
-		if (unitstat[name]) {
+		if (aff[name]) {
+			a1 = aff[name].aff.a1;
+			a2 = aff[name].aff.a2;
+			a3 = aff[name].aff.a3;
 			const embed = new Discord.RichEmbed()
-			.setTitle(unitstat[name].name)
-			.setThumbnail(unitstat[name].icon)
-			.addField(unitstat[name].stat.class1.name, "**HP: **")
+			.setTitle(aff[name].name)
+			.setThumbnail(aff[name].icon)
+			.addField("1st Affection Stat", a1, true)
+			.addField("2nd Affection Stat", a2, true)
+			.addField("150 Affection Stat", a3, true)
 			message.channel.send({embed});
 		}
-		else {message.channel.send("No Data")};
-	};
+		else {message.channel.send("No Data")}
+	} 
 });
  
 
