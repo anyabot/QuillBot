@@ -50,6 +50,7 @@ client.on("message", message => {
 				message.channel.send({embed});
 			}
 			else message.channel.send("No Data");
+		;}
 	}
 });
  
