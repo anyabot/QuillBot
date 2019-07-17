@@ -17,14 +17,8 @@ client.on("message", message => {
 	const command = args.shift().toLowerCase();
 	
 	switch (command) {
-		case "ping" :
-			message.channel.send('Pong!');
-			break;
-		case "blah" :
-			message.channel.send('Meh.');
-			break;
 		case "aff" :{
-			let name = args[0];
+			let name = args.join("");
 			if (units[name]) {
 				a1 = units[name].aff.a1;
 				a2 = units[name].aff.a2;
@@ -39,6 +33,20 @@ client.on("message", message => {
 			}
 			else message.channel.send("No Data");
 		};	
+		case "stat" :{
+			let name = args.join("");
+			if (units[name]) {
+				let stats = units[name].stat 
+				const embed = new Discord.RichEmbed()
+				.setTitle(units[name].name)
+				.setThumbnail(units[name].icon)
+				stats.forEach(class =>{
+					.addField(stat.name, "**HP: **" + stat.hp + "\n**ATK: **"  + stat.atk + "\n**DEF: **" + stat.def + "\n**MR: **" + stat.mr + "\n**Block: **" + stat.block + "\n**Range: **" + stat.range + "\n**Range (Skill): **" + stat.rangeskill + "\n**Range (SAW): **" + stat.rangesaw + "\n**Max Cost: **" + stat.costmax + "\n**Min Cost: **"+ stat.costmin)
+				});
+				message.channel.send({embed});
+			}
+			else message.channel.send("No Data");
+		};
 	}
 });
  
