@@ -17,8 +17,14 @@ client.on("message", message => {
 	const command = args.shift().toLowerCase();
 	
 	switch (command) {
+		case "ping" :
+			message.channel.send('Pong!');
+			break;
+		case "blah" :
+			message.channel.send('Meh.');
+			break;
 		case "aff" :{
-			let name = args.[0];
+			let name = args[0];
 			if (units[name]) {
 				a1 = units[name].aff.a1;
 				a2 = units[name].aff.a2;
@@ -33,7 +39,6 @@ client.on("message", message => {
 			}
 			else message.channel.send("No Data");
 		};	
-		
 	}
 });
  
