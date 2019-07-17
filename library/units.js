@@ -57,7 +57,19 @@ var units = {
 			"a2": "DEF+72",
 			"a3": "Skill Duration+20%"
 			},
-		"icon": "https://vignette.wikia.nocookie.net/aigis/images/c/cb/Agnes_Icon.png/revision/latest?cb=20180522205427"
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/d/d7/Adele_Icon.png/revision/latest?cb=20180522205418"
+		}, 
+	"aida": {
+		"name": "Aida",
+		"gender": "Female",
+		"rarity": "Platinum",
+		"class": "Ranger",
+		"aff": {
+			"a1": "ATK+108",
+			"a2": "DEF+108",
+			"a3": "ATK+72"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/f/fa/Aida_Icon.png/revision/latest?cb=20180522205433"
 		}, 
  }  
  exports.units = units  
