@@ -33,6 +33,7 @@ client.on("message", message => {
 				message.channel.send(mes);
 				const embed = new Discord.RichEmbed()
 				.setTitle(units[name].name)
+				.setThumbnail(units[name].icon)
 				.addField("1st Affection Stat", a1, true)
 				.addField("2nd Affection Stat", a2, true)
 				.addField("150 Affection Stat", a3, true)
