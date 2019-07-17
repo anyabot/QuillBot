@@ -29,8 +29,6 @@ client.on("message", message => {
 				a1 = units[name].aff.a1;
 				a2 = units[name].aff.a2;
 				a3 = units[name].aff.a3;
-				mes = "1st stat: " + a1 + "\n2nd stat: " + a2 + "\n150 affection stat: " +a3;
-				message.channel.send(mes);
 				const embed = new Discord.RichEmbed()
 				.setTitle(units[name].name)
 				.setThumbnail(units[name].icon)
