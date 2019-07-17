@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
+var forEach = require('async-foreach').forEach;
 
 const client = new Discord.Client();
 const config = require("./config.json");
@@ -40,17 +41,18 @@ client.on("message", message => {
 			else message.channel.send("No Data");
 		};
 		case "stat" :{
-			let name = args[0];
+			let name = args.join("");
 			if (units[name]) {
 				let stats = units[name].stat 
-				
-				stats.forEach(class =>{
-					message.channel.send('Pong!');
+				const embed = new Discord.RichEmbed()
+				.setTitle(units[name].name)
+				.setThumbnail(units[name].icon)
+				forEach(stats, function(item) {
+					.addField(item.name, "**HP: **" + item.hp + "\n**ATK: **"  + item.atk + "\n**DEF: **" + item.def + "\n**MR: **" + item.mr + "\n**Block: **" + item.block + "\n**Range: **" + item.range + "\n**Range (Skill): **" + item.rangeskill + "\n**Range (SAW): **" + item.rangesaw + "\n**Max Cost: **" + item.costmax + "\n**Min Cost: **"+ item.costmin)
 				});
-				
+				message.channel.send({embed});
 			}
 			else message.channel.send("No Data");
-		};
 	}
 });
  
