@@ -5,9 +5,9 @@ var units = {
 		"rarity": "Gold",
 		"class": "Dragon Rider",
 		"aff": {
-			"11": "HP+324",
-			"12": "None",
-			"15": "Not implemented"
+			"a1": "HP+324",
+			"a2": "None",
+			"a3": "Not implemented"
 			},
 		"skill": {
 			"normal": {
@@ -36,9 +36,9 @@ var units = {
 		"rarity": "Platinum",
 		"class": "Rouge",
 		"aff": {
-			"11": "HP+432",
-			"12": "ATK+144",
-			"15": "PEV+24%"
+			"a1": "HP+432",
+			"a2": "ATK+144",
+			"a3": "PEV+24%"
 			},
 		"skill": {
 			"normal": {
@@ -67,9 +67,9 @@ var units = {
 		"rarity": "Black",
 		"class": "Grand Knight",
 		"aff": {
-			"11": "HP+900",
-			"12": "ATK+90",
-			"15": "DEF+90"
+			"a1": "HP+900",
+			"a2": "ATK+90",
+			"a3": "DEF+90"
 			},
 		"skill": {
 			"normal": {
