@@ -3,8 +3,7 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-var aff = require("./library/aff.js").aff;
-var stat = require("./library/stat.js").stat;
+
 
 
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
@@ -19,6 +18,7 @@ client.on("message", message => {
 	const command = args.shift().toLowerCase();
 	
 	if (command === "aff"){
+		var aff = require("./library/aff.js").aff;
 		let name = args[0];
 		if (aff[name]) {
 			a1 = aff[name].aff.a1;
@@ -34,6 +34,19 @@ client.on("message", message => {
 		}
 		else {message.channel.send("No Data")}
 	} 
+	if (command === "stat") {
+		var stat = require("./library/stat.js").stat;
+		let name = args[0];
+		if (stat[name]) {
+			const embed = new Discord.RichEmbed()
+			.setTitle(stat[name].name)
+			.setThumbnail(stat[name].icon)
+			.addField(stat[name].stat.class1.name, "**HP: **")
+			message.channel.send({embed});
+		}
+		else {message.channel.send("No Data")};
+	};
+});
 });
  
 
