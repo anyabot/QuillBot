@@ -17,42 +17,33 @@ client.on("message", message => {
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 	
-	switch (command) {
-		case "ping" :
-			message.channel.send('Pong!');
-			break;
-		case "blah" :
-			message.channel.send('Meh.');
-			break;
-		case "aff" :{
-			let name = args[0];
-			if (aff[name]) {
-				a1 = aff[name].aff.a1;
-				a2 = aff[name].aff.a2;
-				a3 = aff[name].aff.a3;
-				const embed = new Discord.RichEmbed()
-				.setTitle(aff[name].name)
-				.setThumbnail(aff[name].icon)
-				.addField("1st Affection Stat", a1, true)
-				.addField("2nd Affection Stat", a2, true)
-				.addField("150 Affection Stat", a3, true)
-				message.channel.send({embed});
-			}
-			else message.channel.send("No Data");
-			break;
-		};
-		case "stat" :{
-			let name = args[0];
-			if (stat[name]) {
-				const embed = new Discord.RichEmbed()
-				.setTitle(stat[name].name)
-				.setThumbnail(stat[name].icon)
-				.addField(stat[name].stat.class1.name, "**HP: **")
-				message.channel.send({embed});
-			}
-			else message.channel.send("No Data");
-		};
-	}
+	if (command === "aff"){
+		let name = args[0];
+		if (aff[name]) {
+			a1 = aff[name].aff.a1;
+			a2 = aff[name].aff.a2;
+			a3 = aff[name].aff.a3;
+			const embed = new Discord.RichEmbed()
+			.setTitle(aff[name].name)
+			.setThumbnail(aff[name].icon)
+			.addField("1st Affection Stat", a1, true)
+			.addField("2nd Affection Stat", a2, true)
+			.addField("150 Affection Stat", a3, true)
+			message.channel.send({embed});
+		}
+		else {message.channel.send("No Data")};
+	} else
+	if (command === "stat") {
+		let name = args[0];
+		if (stat[name]) {
+			const embed = new Discord.RichEmbed()
+			.setTitle(stat[name].name)
+			.setThumbnail(stat[name].icon)
+			.addField(stat[name].stat.class1.name, "**HP: **")
+			message.channel.send({embed});
+		}
+		else {message.channel.send("No Data")};
+	};
 });
  
 
