@@ -43,13 +43,11 @@ client.on("message", message => {
 			let name = args[0];
 			if (units[name]) {
 				let stats = units[name].stat 
-				const embed = new Discord.RichEmbed()
-				.setTitle(units[name].name)
-				.setThumbnail(units[name].icon)
+				
 				stats.forEach(class =>{
-					.addField(stat.name, "**HP: **" + class.hp + "\n**ATK: **"  + class.atk + "\n**DEF: **" + class.def + "\n**MR: **" + class.mr + "\n**Block: **" + class.block + "\n**Range: **" + class.range + "\n**Range (Skill): **" + class.rangeskill + "\n**Range (SAW): **" + class.rangesaw + "\n**Max Cost: **" + class.costmax + "\n**Min Cost: **"+ class.costmin)
+					message.channel.send('Pong!');
 				});
-				message.channel.send({embed});
+				
 			}
 			else message.channel.send("No Data");
 		};
