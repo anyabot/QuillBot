@@ -1,4 +1,4 @@
-var stat = {	
+var unitstat = {	
 	"abel": {
 		"name": "Abel",
 		"gender": "Male",
@@ -96,4 +96,4 @@ var stat = {
 		"icon": "https://vignette.wikia.nocookie.net/aigis/images/e/e9/Abel_Icon.png/revision/latest?cb=20180522205355"
 	},
  }  
- exports.stat = stat  
+ exports.unitstat = unitstat  
