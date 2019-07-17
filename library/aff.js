@@ -1,9 +1,6 @@
-var units = {	
+var aff = {	
 	"abel": {
 		"name": "Abel",
-		"gender": "Male",
-		"rarity": "Gold",
-		"class": "Dragon Rider",
 		"aff": {
 			"a1": "HP+324",
 			"a2": "None",
@@ -13,9 +10,6 @@ var units = {
 		},
 	"ada": {
 		"name": "Ada",
-		"gender": "Female",
-		"rarity": "Platinum",
-		"class": "Rouge",
 		"aff": {
 			"a1": "HP+432",
 			"a2": "ATK+144",
@@ -25,9 +19,6 @@ var units = {
 		},
 	"adelaide": {
 		"name": "Adelaide",
-		"gender": "Female",
-		"rarity": "Black",
-		"class": "Grand Knight",
 		"aff": {
 			"a1": "HP+900",
 			"a2": "ATK+90",
@@ -37,9 +28,6 @@ var units = {
 		},
 	"adele": {
 		"name": "Adele",
-		"gender": "Female",
-		"rarity": "Platinum",
-		"class": "Witch",
 		"aff": {
 			"a1": "HP+360",
 			"a2": "ATK+144",
@@ -49,9 +37,6 @@ var units = {
 		}, 
 	"agnes": {
 		"name": "Agnes",
-		"gender": "Female",
-		"rarity": "Platinum",
-		"class": "Necromancer",
 		"aff": {
 			"a1": "ATK+172",
 			"a2": "DEF+72",
@@ -61,9 +46,6 @@ var units = {
 		}, 
 	"aida": {
 		"name": "Aida",
-		"gender": "Female",
-		"rarity": "Platinum",
-		"class": "Ranger",
 		"aff": {
 			"a1": "ATK+108",
 			"a2": "DEF+108",
@@ -72,4 +54,4 @@ var units = {
 		"icon": "https://vignette.wikia.nocookie.net/aigis/images/f/fa/Aida_Icon.png/revision/latest?cb=20180522205433"
 		}, 
  }  
- exports.units = units  
+ exports.aff = aff  
