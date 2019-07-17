@@ -57,7 +57,7 @@ var units = {
 			"a2": "DEF+72",
 			"a3": "Skill Duration+20%"
 			},
-		"icon": "https://vignette.wikia.nocookie.net/aigis/images/d/d7/Adele_Icon.png/revision/latest?cb=20180522205418"
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/c/cb/Agnes_Icon.png/revision/latest?cb=20180522205427"
 		}, 
  }  
  exports.units = units  
