@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-var stat = require("./library/stat.js").stat;
+var unitstat = require("./library/unitstat.js").unitstat;
 
 
 
@@ -21,11 +21,11 @@ client.on("message", message => {
 
 	if (command === "stat") {
 		let name = args[0];
-		if (stat[name]) {
+		if (unitstat[name]) {
 			const embed = new Discord.RichEmbed()
-			.setTitle(stat[name].name)
-			.setThumbnail(stat[name].icon)
-			.addField(stat[name].stat.class1.name, "**HP: **")
+			.setTitle(unitstat[name].name)
+			.setThumbnail(unitstat[name].icon)
+			.addField(unitstat[name].stat.class1.name, "**HP: **")
 			message.channel.send({embed});
 		}
 		else {message.channel.send("No Data")};
