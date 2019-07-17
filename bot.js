@@ -40,14 +40,13 @@ client.on("message", message => {
 			}
 			else message.channel.send("No Data");
 		};
-			case "stat" :{
+		case "stat" :{
 			let name = args[0];
 			if (stat[name]) {
-				stats = stat[name].stat 
 				const embed = new Discord.RichEmbed()
-				.setTitle(stat[name].name)
-				.setThumbnail(stat[name].icon)
-				.addField(stats.class1.name, "**HP: **" + stats.class1.hp + "\n**ATK: **"  + stats.class1.atk + "\n**DEF: **" + stats.class1.def + "\n**MR: **" + stats.class1.mr + "\n**Block: **" + stats.class1.block + "\n**Range: **" + stats.class1.range + "\n**Range (Skill): **" + stats.class1.rangeskill + "\n**Range (SAW): **" + stats.class1.rangesaw + "\n**Max Cost: **" + stats.class1.costmax + "\n**Min Cost: **"+ stats.class1.costmin)
+				.setTitle(aff[name].name)
+				.setThumbnail(aff[name].icon)
+				.addField(stat[name].stat.class1.name, "**HP: **" + stat[name].stat.class1.hp + "\n**ATK: **"  + stat[name].stat.class1.atk + "\n**DEF: **" + stat[name].stat.class1.def + "\n**MR: **" + stat[name].stat.class1.mr + "\n**Block: **" + stat[name].stat.class1.block + "\n**Range: **" + stat[name].stat.class1.range + "\n**Range (Skill): **" + stat[name].stat.class1.rangeskill + "\n**Range (SAW): **" + stat[name].stat.class1.rangesaw + "\n**Max Cost: **" + stat[name].stat.class1.costmax + "\n**Min Cost: **"+ stat[name].stat.class1.costmin)
 				message.channel.send({embed});
 			}
 			else message.channel.send("No Data");
