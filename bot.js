@@ -38,19 +38,7 @@ client.on("message", message => {
 				message.channel.send({embed});
 			}
 			else message.channel.send("No Data");
-		};
-		case "stat" :{
-			let name = args[0];
-			if (units[name]) {
-				stats = units[name].stat 
-				const embed = new Discord.RichEmbed()
-				.setTitle(units[name].name)
-				.setThumbnail(units[name].icon)
-				.addField(stats.class1.name, "**HP: **" + stats.class1.hp + "\n**ATK: **"  + stats.class1.atk + "\n**DEF: **" + stats.class1.def + "\n**MR: **" + stats.class1.mr + "\n**Block: **" + stats.class1.block + "\n**Range: **" + stats.class1.range + "\n**Range (Skill): **" + stats.class1.rangeskill + "\n**Range (SAW): **" + stats.class1.rangesaw + "\n**Max Cost: **" + stats.class1.costmax + "\n**Min Cost: **"+ stats.class1.costmin)
-				message.channel.send({embed});
-			}
-			else message.channel.send("No Data");
-		;}
+		};	
 	}
 });
  
