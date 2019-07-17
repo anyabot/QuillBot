@@ -4,7 +4,7 @@ const fs = require("fs");
 const client = new Discord.Client();
 const config = require("./config.json");
 
-var units = require("./library/units.js").js
+var units = require("./library/units.js").units
 
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
