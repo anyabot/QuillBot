@@ -126,9 +126,8 @@ client.on("message", message => {
 				a3 = units[name].aff.a3;
 				mes = "1st stat: " + a1 + "\n2nd stat: " + a2 + "\n150 affection stat: " +a3;
 				message.channel.send(mes);
-				}
-			};	
-		}
+			}
+		};	
 	}
 });
  
