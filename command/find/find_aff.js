@@ -18,7 +18,7 @@ class FindAff extends commando.Command {
         });
     }
   
-	async run(message, unit) {
+	async run(message, { unit }) {
         var name = unit.toLowerCase();
 		if (aff[name]) {
 			a1 = aff[name].aff.a1;
