@@ -34,10 +34,12 @@ class FindAff extends commando.Command {
 		}
 		else {message.channel.send("No Data")};
     }
-    function toTitleCase(str) {
-    return str.replace(/\w+('s)?/g, function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
 }
+    function toTitleCase(str) {
+		return str.replace(/\w+('s)?/g, function (txt) {
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		});
+	}
+
 
 module.exports = FindAff;
