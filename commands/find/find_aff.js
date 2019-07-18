@@ -3,24 +3,17 @@ const RichEmbed = require('discord.js');
 var aff = require('../../library/aff.js').aff;
 
 class FindAff extends commando.Command {
-    constructor(client) {
-        super(client, {
-            name: 'aff',
-            group: 'find',
-            memberName: 'aff',
-            description: 'find aff stats of an unit'
-			args: [
-				{
-				key: 'unit',
-				prompt: 'Which unit do you want to check affection bonus',
-				type: 'string'
-				}
-			]
-        });
-    }
+    	constructor(client) {
+        	super(client, {
+            		name: 'aff',
+            		group: 'find',
+            		memberName: 'aff',
+            		description: 'find aff stats of an unit'
+        	});
+    	}
   
 	async run(message, { unit }) {
-        var name = unit.toLowerCase();
+        	var name = unit.toLowerCase();
 		if (aff[name]) {
 			a1 = aff[name].aff.a1;
 			a2 = aff[name].aff.a2;
@@ -34,7 +27,7 @@ class FindAff extends commando.Command {
 			message.channel.send({embed});
 		}
 		else {message.channel.send("No Data")};
-    }
+   	 }
 }
 
 module.exports = FindAff;
