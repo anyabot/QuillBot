@@ -22,15 +22,12 @@ class FindAff extends commando.Command {
 	async run(message, { unit }) {
         	var name = unit.toLowerCase();
 		if (aff[name]) {
-			a1 = aff[name].aff.a1;
-			a2 = aff[name].aff.a2;
-			a3 = aff[name].aff.a3;
 			const embed = new RichEmbed()
 			.setTitle(aff[name].name)
 			.setThumbnail(aff[name].icon)
-			.addField("1st Affection Stat", a1, true)
-			.addField("2nd Affection Stat", a2, true)
-			.addField("150 Affection Stat", a3, true)
+			.addField("1st Affection Stat", aff[name].aff.a1, true)
+			.addField("2nd Affection Stat", aff[name].aff.a2, true)
+			.addField("150 Affection Stat", aff[name].aff.a3, true)
 			message.channel.send({embed});
 		}
 		else {message.channel.send("No Data")};
