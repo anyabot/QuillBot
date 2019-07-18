@@ -8,7 +8,14 @@ class FindAff extends commando.Command {
             		name: 'aff',
             		group: 'find',
             		memberName: 'aff',
-            		description: 'find aff stats of an unit'
+            		description: 'find aff stats of an unit',
+			args: [
+				{
+				key: 'unit',
+				prompt: 'Which unit do you want to check affection bonus',
+				type: 'string'
+				}
+			]
         	});
     	}
   
