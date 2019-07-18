@@ -53,5 +53,59 @@ var aff = {
 			},
 		"icon": "https://vignette.wikia.nocookie.net/aigis/images/f/fa/Aida_Icon.png/revision/latest?cb=20180522205433"
 		}, 
+	"aisha": {
+		"name": "Aisha",
+		"aff": {
+			"a1": "HP+450",
+			"a2": "ATK+180",
+			"a3": "Skill Cooldown-25%"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/a/a4/Aisha_Icon.png/revision/latest?cb=20180522205440"
+		}, 
+	"aix": {
+		"name": "Aix",
+		"aff": {
+			"a1": "ATK+180",
+			"a2": "DEF+90",
+			"a3": "DEF+90"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/3/3a/Aix_Icon.png/revision/latest?cb=20180522205446"
+		}, 
+	"akane": {
+		"name": "Akane",
+		"aff": {
+			"a1": "ATK+144",
+			"a2": "DEF+72",
+			"a3": "HP+360"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/4/47/Akane_Icon.png/revision/latest?cb=20180522205452"
+		},
+	"aleese": {
+		"name": "Aleese",
+		"aff": {
+			"a1": "HP+540",
+			"a2": "ATK+108",
+			"a3": "MR+16"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/4/4f/Aleese_Icon.png/revision/latest?cb=20180522205459"
+		},		
+	"alice": {
+		"name": "Alice",
+		"aff": {
+			"a1": "ATK+180",
+			"a2": "DEF+90",
+			"a3": "Post-Attack Delay-18%"
+			},
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/7/7b/Alice_Icon.png/revision/latest?cb=20180522205526"
+		},	
+	"alice valentine": {
+		"name": "Alice (Valentine's)",
+		"aff": {
+			"a1": "ATK+134",
+			"a2": "DEF+134",
+			"a3": "Post-Attack Delay-18%"
+			},
+		"icon": https://vignette.wikia.nocookie.net/aigis/images/a/a6/Alice_%28Valentine%27s%29_Icon.png/revision/latest?cb=20180522205519"
+		},	
  }  
  exports.aff = aff  
