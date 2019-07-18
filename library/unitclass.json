@@ -1,4 +1,4 @@
-var unitclass = {	
+{	
 	"acolyte": {
 		"base": {
 			"name": "Acolyte",
@@ -39,4 +39,4 @@ var unitclass = {
 		}
 	}
  }  
- exports.unitclass = unitclass  
+ 
