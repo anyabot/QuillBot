@@ -26,9 +26,9 @@ class FindStat extends commando.Command {
 			embed.setTitle(unitstat[name].name)
 			embed.setThumbnail(unitstat[name].icon)
 			unitstat[name].stat.forEach( function(class) {
-			embed.addField(stat[name].stat.class.name, "**HP: **" + stat[name].stat.class.hp + "\n**ATK: **"  + stat[name].stat.class.atk + "\n**DEF: **" + stat[name].stat.class.def + "\n**MR: **" + stat[name].stat.class.mr + "\n**Block: **" + stat[name].stat.class.block + "\n**Range: **" + stat[name].stat.class.range + "\n**Range (Skill): **" + stat[name].stat.class.rangeskill + "\n**Range (SAW): **" + stat[name].stat.class.rangesaw + "\n**Max Cost: **" + stat[name].stat.class.costmax + "\n**Min Cost: **"+ stat[name].stat.class.costmin, true)
+			embed.addField(unitstat[name].stat.class.name, "**HP: **" + unitstat[name].stat.class.hp + "\n**ATK: **"  + unitstat[name].stat.class.atk + "\n**DEF: **" + unitstat[name].stat.class.def + "\n**MR: **" + unitstat[name].stat.class.mr + "\n**Block: **" + unitstat[name].stat.class.block + "\n**Range: **" + unitstat[name].stat.class.range + "\n**Range (Skill): **" + unitstat[name].stat.class.rangeskill + "\n**Range (SAW): **" + unitstat[name].stat.class.rangesaw + "\n**Max Cost: **" + unitstat[name].stat.class.costmax + "\n**Min Cost: **"+ unitstat[name].stat.class.costmin, true)
 		}
-			embed.addField("1st Affection Stat", aff[name].aff.a1, true)
+			embed.addField("1st Affection Stat", unitstat[name].name, true)
 			message.channel.send({embed});
 		}
 		else {message.channel.send("No Data")};
