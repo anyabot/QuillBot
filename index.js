@@ -1,11 +1,8 @@
-const { commando } = require('discord.js-commando');
-const client = new CommandoClient();
+const commando = require('discord.js-commando');
+const bot = new commando.Client();
 
-    client.registry.registerDefaultTypes()
-    client.registry.registerGroups('find', 'Find')
-    client.registry.registerDefaultGroups()
-    client.registry.registerDefaultCommands()
-    client.registry.registerCommandsIn(__dirname + "/commands");
+bot.registry.registerGroup('find', 'Find');
+bot.registry.registerDefaults();
+bot.registry.registerCommandsIn(__dirname + "/commands");
 
-
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
