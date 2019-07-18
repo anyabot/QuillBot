@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-const RichEmbed = require('discord.js');
+const Discord = require('discord.js');
 var aff = require('../../library/aff.js').aff;
 
 class FindAff extends commando.Command {
@@ -22,7 +22,7 @@ class FindAff extends commando.Command {
 	async run(message, { unit }) {
         	var name = unit.toLowerCase();
 		if (aff[name]) {
-			const embed = new RichEmbed()
+			const embed = new Discord.RichEmbed()
 			.setTitle(aff[name].name)
 			.setThumbnail(aff[name].icon)
 			.addField("1st Affection Stat", aff[name].aff.a1, true)
