@@ -1,6 +1,6 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
-var unitclass = require('../../library/unitclass.js').unitclass;
+var unitclass = require('../../library/unitclass.json');
 
 class FindClass extends commando.Command {
     	constructor(client) {
