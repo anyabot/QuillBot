@@ -105,7 +105,7 @@ var aff = {
 			"a2": "DEF+134",
 			"a3": "Post-Attack Delay-18%"
 			},
-		"icon": https://vignette.wikia.nocookie.net/aigis/images/a/a6/Alice_%28Valentine%27s%29_Icon.png/revision/latest?cb=20180522205519"
+		"icon": "https://vignette.wikia.nocookie.net/aigis/images/a/a6/Alice_%28Valentine%27s%29_Icon.png/revision/latest?cb=20180522205519"
 		},	
  }  
  exports.aff = aff  
