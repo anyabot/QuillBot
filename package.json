@@ -1,25 +1,17 @@
 {
-
-  "name": "Example",
-
-  "description": "Example",
-
-  "version": "0.0.0",
-
-  "main": "bot.js",
-
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-
-    "start": "node bot.js"
-
+    "start": "node index.js"
   },
-
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-
-    "discord.js": "11.1.0",
-
-    "request": "2.81.0"
-
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "^11.5.1",
+    "discord.js-commando": "^0.10.0",
+    "request": "^2.88.0"
   }
-
 }
