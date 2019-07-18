@@ -9,7 +9,7 @@ const client = new CommandoClient({
     client.registry.registerGroups('find', 'Find')
     client.registry.registerDefaultGroups()
     client.registry.registerDefaultCommands()
-    client.registry.registerCommandsIn(path.join(__dirname, 'commands'));
+    client.registry.registerCommandsIn(__dirname + "/commands");
 
 client.on('ready', () => {
     console.log('Logged in!');
