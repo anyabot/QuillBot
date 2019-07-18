@@ -1,7 +1,7 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const fs = require('fs')
-let unitclass = JSON.parse(fs.readFileSync('../../library/unitclass.json', 'utf-8'))
+// let unitclass = JSON.parse(fs.readFileSync('../../library/unitclass.json', 'utf-8'))
 
 class FindClass extends commando.Command {
     	constructor(client) {
