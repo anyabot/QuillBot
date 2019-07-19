@@ -26,7 +26,7 @@ class FindStat extends commando.Command {
                 var text;
 		var output;
                 var img;
-		output = $('.numbers').first().text();
+		output = $('.numbers ').first().text();
                 if(output) {
                 	let lv99v1 = lv99line(output);
                 	output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
