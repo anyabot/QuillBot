@@ -9,9 +9,9 @@ class FindStat extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'stat',
-            group: 'compare',
+            group: 'find',
             memberName: 'stat',
-            description: 'compare AW2ver1 and AW2ver2 of an unit(black)'
+            description: 'find stats of an unit'
         });
     }
 
