@@ -48,7 +48,7 @@ class FindStat extends commando.Command {
 			message.channel.send({embed});
 		}
 		output = $('.c2.numbers').first().text();
-		if(output) {
+		if(output && $('.c2 ').first().text()) {
                 	let lv99v1 = lv99line(output);
                 	output = $('.c2 ').first().text();
                 	let lv1v1 = lv1line(output);
