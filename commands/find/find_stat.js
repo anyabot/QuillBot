@@ -26,6 +26,23 @@ class FindStat extends commando.Command {
                 var text;
 		var output;
                 var img;
+		output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
+                if(output) {
+                	let lv99v1 = lv99line(output);
+                	output = $('.numbers ').first().text();
+                	let lv1v1 = lv1line(output);
+			let embed = new Discord.RichEmbed()
+			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
+			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
+			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
+			.addField("Range", lv99v1[4], true)
+			.addField("MR", lv1v1[5], true)
+			.addField("Block", lv1v1[6], true)
+			.addField("Max Cost", lv1v1[7], true)
+			.addField("Min Cost", lv1v1[8], true)
+			message.channel.send({embed});
+		}
 		output = $('.c3.numbers').first().text();
 		if(output) {
                 	let lv99v1 = lv99line(output);
