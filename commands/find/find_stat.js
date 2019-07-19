@@ -26,13 +26,12 @@ class FindStat extends commando.Command {
                 var text;
 		var output;
                         
-
-                output = $('.c4.numbers').first().text();
+		output = $('.c3.numbers').first().text();
 		if(output) {
                 	var lv99v1 = lv99line(output);
-                	output = $('.c4 ').first().text();
+                	output = $('.c3 ').first().text();
                 	var lv1v1 = lv1line(output);
-			var img = ($('.c4 td:first-child div a').attr('href'));
+			var img = ($('.c3 td:first-child div a').attr('href'));
 			const embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
@@ -46,7 +45,46 @@ class FindStat extends commando.Command {
 			.addField("Min Cost", lv1v1[8], true)
 			message.channel.send({embed});
 		}
-                
+                output = $('.c4.numbers').first().text();
+		if(output) {
+                	var lv99v1 = lv99line(output);
+                	output = $('.c4 ').first().text();
+                	var lv1v1 = lv1line(output);
+			var img2 = ($('.c4 td:first-child div a').attr('href'));
+			if (img2) {img = img2)
+			const embed = new Discord.RichEmbed()
+			.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setThumbnail(img)
+			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
+			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
+			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
+			.addField("Range", lv99v1[4], true)
+			.addField("MR", lv1v1[5], true)
+			.addField("Block", lv1v1[6], true)
+			.addField("Max Cost", lv1v1[7], true)
+			.addField("Min Cost", lv1v1[8], true)
+			message.channel.send({embed});
+		}
+                output = $('.c5.numbers').first().text();
+		if(output) {
+                	var lv99v1 = lv99line(output);
+                	output = $('.c5 ').first().text();
+                	var lv1v1 = lv1line(output);
+			var img2 = ($('.c5 td:first-child div a').attr('href'));
+			if (img2) {img = img2)
+			const embed = new Discord.RichEmbed()
+			.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setThumbnail(img)
+			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
+			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
+			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
+			.addField("Range", lv99v1[4], true)
+			.addField("MR", lv1v1[5], true)
+			.addField("Block", lv1v1[6], true)
+			.addField("Max Cost", lv1v1[7], true)
+			.addField("Min Cost", lv1v1[8], true)
+			message.channel.send({embed});
+		}
             }
         });
     }
