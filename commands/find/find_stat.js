@@ -28,9 +28,9 @@ class FindStat extends commando.Command {
                 var img;
 		output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
                 if(output) {
-                	let lv99v1 = lv99line(output);
+                	let lv99v1 = lv1line(output);
                 	output = $('.numbers ').first().text();
-                	let lv1v1 = lv1line(output);
+                	let lv1v1 = lv99line(output);
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
