@@ -51,7 +51,7 @@ class FindStat extends commando.Command {
                 	output = $('.c4 ').first().text();
                 	var lv1v1 = lv1line(output);
 			var img2 = ($('.c4 td:first-child div a').attr('href'));
-			if (img2) {img = img2)
+			if (img2) {img = img2}
 			const embed4 = new Discord.RichEmbed()
 			embed4.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			embed4.setThumbnail(img)
@@ -71,7 +71,7 @@ class FindStat extends commando.Command {
                 	output = $('.c5 ').first().text();
                 	var lv1v1 = lv1line(output);
 			var img2 = ($('.c5 td:first-child div a').attr('href'));
-			if (img2) {img = img2)
+			if (img2) {img = img2}
 			const embed5 = new Discord.RichEmbed()
 			embed5.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			embed5.setThumbnail(img)
@@ -83,7 +83,7 @@ class FindStat extends commando.Command {
 			embed5.addField("Block", lv1v1[6], true)
 			embed5.addField("Max Cost", lv1v1[7], true)
 			embed5.addField("Min Cost", lv1v1[8], true)
-			message.channel.send({embed});
+			message.channel.send({embed5});
 		}
             }
         });
