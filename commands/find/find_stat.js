@@ -26,8 +26,10 @@ class FindStat extends commando.Command {
                 var text;
 		var output;
                 var img;
+		var check = false;
 		output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
                 if(output) {
+			check = true;
                 	let lv1v1 = lv1line(output);
                 	output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
                 	let lv99v1 = lv99line(output);
@@ -122,7 +124,7 @@ class FindStat extends commando.Command {
 			.addField("Min Cost", lv1v1[8], true)
 			message.channel.send({embed});
 		}
-                
+                if (!check) {message.channel.send("No Data")};
             }
         });
     }
