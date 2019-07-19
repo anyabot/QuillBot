@@ -56,6 +56,7 @@ class FindStat extends commando.Command {
                 		let lv99v1 = lv99line(output);
                 		output = $('.c2 ').first().text();
                 		let lv1v1 = lv1line(output);
+				output = $('.c2 td:first-child').first().text();
 				let classname = getname(output);
 				let embed = new Discord.RichEmbed()
 				.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -77,6 +78,7 @@ class FindStat extends commando.Command {
                 	output = $('.c3 ').first().text();
                 	let lv1v1 = lv1line(output);
 			img = ($('.c3 td:first-child div a').attr('href'));
+			output = $('.c3 td:first-child').first().text();
 			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
 			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -98,6 +100,7 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			let img2 = ($('.c4 td:first-child div a').attr('href'));
 			if (img2) {img = img2}
+			output = $('.c4 td:first-child').first().text();
 			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
 			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -119,6 +122,7 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			let img2 = ($('.c5 td:first-child div a').attr('href'));
 			if (img2) {img = img2}
+			output = $('.c5 td:first-child').first().text();
 			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
 			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
