@@ -33,8 +33,7 @@ class FindStat extends commando.Command {
                 	var lv99v1 = lv99line(output);
                 	output = $('.c4 ').first().text();
                 	var lv1v1 = lv1line(output);
-			img2 = ($('.c4 td:first-child div a').attr('href'));
-			if (img2) {img = img2}
+			img = ($('.c4 td:first-child div a').attr('href'));
 			const embed4 = new Discord.RichEmbed()
 			embed4.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			embed4.setThumbnail(img)
