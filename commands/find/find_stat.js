@@ -31,11 +31,15 @@ class FindStat extends commando.Command {
                 output = $('.c4 ').first().text();
                 var lv1v1 = lv1line(output);
 				const embed = new Discord.RichEmbed()
-				.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0])
+				.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
 				.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
 				.addField("Range", lv99v1[4], true)
+				.addField("MR", lv1v1[5], true)
+				.addField("Block", lv1v1[6], true)
+				.addField("Max Cost", lv1v1[7], true)
+				.addField("Min Cost", lv1v1[8], true)
 				message.channel.send({embed});
 				
                 
