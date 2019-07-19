@@ -47,7 +47,6 @@ class FindStat extends commando.Command {
 function lv99line(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
-    output = output.replace(/Lv99/g, "");
     output = output.trim();
     var arr = output.split('\n');
 
@@ -63,7 +62,6 @@ function lv99line(output) {
 function lv1line(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
-    output = output.replace(/Lv1/g, "");
     output = output.trim();
     var arr = output.split('\n');
 
