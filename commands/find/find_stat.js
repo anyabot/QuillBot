@@ -27,7 +27,6 @@ class FindStat extends commando.Command {
 		var output;
                 var img;
 		var img2;
-		var output = $('.c3.numbers').first().text();
 		
                 output = $('.c4.numbers').first().text();
 		if(output) {
