@@ -47,7 +47,7 @@ class FindStat extends commando.Command {
 			.addField("Min Cost", lv1v1[11], true)
 			message.channel.send({embed});
 		}
-		output = $('.c2 ').first().text();
+		output = $('.c2').first().text();
 		if(output) {
                 	let lv1v1 = lv1line(output);
                 	output = $('.c2.numbers').first().text();
