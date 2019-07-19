@@ -35,7 +35,8 @@ class FindStat extends commando.Command {
                 	output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
                 	let lv99v1 = lv99line(output);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a').attr('href'));
-			var classname = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)').text().replace(/<[^>]*>/g, " ")
+			output = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)').text();
+			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
 			.setTitle(classname + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
@@ -156,5 +157,10 @@ function lv1line(output) {
     var arr = output.split('\n');
 
    return arr;
+}
+function getname(output) {
+	output = output.replace(/<[^>]*>/g, " ");
+    	output = output.replace(/\n+ /g, " ");
+	return output;
 }
 module.exports = FindStat;
