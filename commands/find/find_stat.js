@@ -31,11 +31,11 @@ class FindStat extends commando.Command {
                 output = $('.c4 ').first().text();
                 var lv1v1 = lv1line(output);
 				const embed = new Discord.RichEmbed()
-				.setTitle(lv1v1[0])
-				.addField("HP", lv1v1[2] + " → " + lv99v1[0], true)
-				.addField("ATK", lv1v1[3] + " → " + lv99v1[1], true)
-				.addField("DEF", lv1v1[4] + " → " + lv99v1[2], true)
-				.addField("Range", lv99v1[3], true)
+				.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0])
+				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
+				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
+				.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
+				.addField("Range", lv99v1[4], true)
 				message.channel.send({embed});
 				
                 
@@ -50,9 +50,9 @@ function lv99line(output) {
     output = output.trim();
     var arr = output.split('\n');
 
-    if (arr[3].length > 3) {
-        var range = arr[3].substring(0, 3) + "/" + arr[3].substring(3, 6) + "/" + arr[3].substring(6, 9);
-        arr[3] = range;
+    if (arr[4].length > 3) {
+        var range = arr[4].substring(0, 3) + "/" + arr[4].substring(3, 6) + "/" + arr[4].substring(6, 9);
+        arr[4] = range;
         return arr;
     }
     else
