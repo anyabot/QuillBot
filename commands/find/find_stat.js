@@ -38,7 +38,7 @@ class FindStat extends commando.Command {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').text();
 			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(classname + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
+			.setTitle(classname[0] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
@@ -56,8 +56,9 @@ class FindStat extends commando.Command {
                 		let lv99v1 = lv99line(output);
                 		output = $('.c2 ').first().text();
                 		let lv1v1 = lv1line(output);
+				let classname = getname(output);
 				let embed = new Discord.RichEmbed()
-				.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+				.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 				.setThumbnail(img)
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -76,8 +77,9 @@ class FindStat extends commando.Command {
                 	output = $('.c3 ').first().text();
                 	let lv1v1 = lv1line(output);
 			img = ($('.c3 td:first-child div a').attr('href'));
+			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -96,8 +98,9 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			let img2 = ($('.c4 td:first-child div a').attr('href'));
 			if (img2) {img = img2}
+			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -116,8 +119,9 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			let img2 = ($('.c5 td:first-child div a').attr('href'));
 			if (img2) {img = img2}
+			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -161,6 +165,8 @@ function lv1line(output) {
 function getname(output) {
 	output = output.replace(/<[^>]*>/g, " ");
     	output = output.replace(/\n+ /g, " ");
-	return output;
+	var arr = output.split('\n');
+
+   return arr;
 }
 module.exports = FindStat;
