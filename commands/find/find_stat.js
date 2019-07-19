@@ -29,7 +29,7 @@ class FindStat extends commando.Command {
 		var img2;
 		
                 output = $('.c4.numbers').first().text();
-		if(output) {
+		
                 	var lv99v1 = lv99line(output);
                 	output = $('.c4 ').first().text();
                 	var lv1v1 = lv1line(output);
@@ -47,7 +47,7 @@ class FindStat extends commando.Command {
 			embed4.addField("Max Cost", lv1v1[7], true)
 			embed4.addField("Min Cost", lv1v1[8], true)
 			message.channel.send({embed4});
-		}
+		
                 
             }
         });
