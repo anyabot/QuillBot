@@ -26,7 +26,7 @@ class FindStat extends commando.Command {
                 var text;
 		var output;
                         
-		output = $('.c3.numbers').first().text();
+		var output = $('.c3.numbers').first().text();
 		if(output) {
                 	var lv99v1 = lv99line(output);
                 	output = $('.c3 ').first().text();
@@ -50,8 +50,7 @@ class FindStat extends commando.Command {
                 	var lv99v1 = lv99line(output);
                 	output = $('.c4 ').first().text();
                 	var lv1v1 = lv1line(output);
-			var img2 = ($('.c4 td:first-child div a').attr('href'));
-			if (img2) {img = img2}
+			
 			const embed4 = new Discord.RichEmbed()
 			embed4.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			embed4.setThumbnail(img)
@@ -70,8 +69,7 @@ class FindStat extends commando.Command {
                 	var lv99v1 = lv99line(output);
                 	output = $('.c5 ').first().text();
                 	var lv1v1 = lv1line(output);
-			var img2 = ($('.c5 td:first-child div a').attr('href'));
-			if (img2) {img = img2}
+			
 			const embed5 = new Discord.RichEmbed()
 			embed5.setTitle(lv1v1[0] + "(" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			embed5.setThumbnail(img)
