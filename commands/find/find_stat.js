@@ -5,6 +5,7 @@ var cheerio = require('cheerio');
 var name = require('../../library/lib.js').name;
 var functions = require('../../functions.js');
 
+
 class FindStat extends commando.Command {
     constructor(client) {
         super(client, {
@@ -45,7 +46,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[9], true)
 			.addField("Max Cost", lv1v1[10], true)
 			.addField("Min Cost", lv1v1[11], true)
-			.attachFiles(["https://vignette.wikia.nocookie.net/aigis/images/6/6b/Gold_Armor_Icon.png/revision/latest?cb=20180522215923"])
+			.attachFiles(["../../image/Gold_Armor_Icon.png"])
 			message.channel.send({embed});
 		}
 		if ($('.listtable.bgwhite tr').length >= 5) {
