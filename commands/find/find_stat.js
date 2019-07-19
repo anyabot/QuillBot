@@ -47,11 +47,11 @@ class FindStat extends commando.Command {
 			.addField("Min Cost", lv1v1[11], true)
 			message.channel.send({embed});
 		}
-		output = $('.c2').first().text();
+		output = $('.c2.numbers').first().text();
 		if(output) {
-                	let lv1v1 = lv1line(output);
-                	output = $('.c2.numbers').first().text();
                 	let lv99v1 = lv99line(output);
+                	output = $('.c2 ').first().text();
+                	let lv1v1 = lv1line(output);
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
