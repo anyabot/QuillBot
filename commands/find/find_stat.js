@@ -46,7 +46,6 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[9], true)
 			.addField("Max Cost", lv1v1[10], true)
 			.addField("Min Cost", lv1v1[11], true)
-			.attachFile("../../image/Gold_Armor_Icon.png")
 			message.channel.send({embed});
 		}
 		if ($('.listtable.bgwhite tr').length >= 5) {
