@@ -35,10 +35,8 @@ class FindStat extends commando.Command {
                 	output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
                 	let lv99v1 = lv99line(output);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a').attr('href'));
-			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').text();
-			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(classname[0] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
+			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
@@ -56,10 +54,8 @@ class FindStat extends commando.Command {
                 		let lv99v1 = lv99line(output);
                 		output = $('.c2 ').first().text();
                 		let lv1v1 = lv1line(output);
-				output = $('.c2 td:nth-child(2)').first().text();
-				let classname = getname(output);
 				let embed = new Discord.RichEmbed()
-				.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+				.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 				.setThumbnail(img)
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -78,10 +74,8 @@ class FindStat extends commando.Command {
                 	output = $('.c3 ').first().text();
                 	let lv1v1 = lv1line(output);
 			img = ($('.c3 td:first-child div a').attr('href'));
-			output = $('.c3 td:nth-child(2)').first().text();
-			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -100,10 +94,8 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			let img2 = ($('.c4 td:first-child div a').attr('href'));
 			if (img2) {img = img2}
-			output = $('.c4 td:nth-child(2)').first().text();
-			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -122,10 +114,8 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			let img2 = ($('.c5 td:first-child div a').attr('href'));
 			if (img2) {img = img2}
-			output = $('.c5 td:nth-child(2)').first().text();
-			let classname = getname(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(classname[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -163,13 +153,6 @@ function lv1line(output) {
     output = output.replace(/\n+ /g, "\n");
     output = output.trim();
     var arr = output.split('\n');
-
-   return arr;
-}
-function getname(output) {
-	output = output.replace(/<[^>]*>/g, " ");
-    	output = output.replace(/\n+ /g, " ");
-	var arr = output.split('\n');
 
    return arr;
 }
