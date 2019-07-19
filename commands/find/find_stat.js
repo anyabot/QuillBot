@@ -31,7 +31,7 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
                 	output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
                 	let lv99v1 = lv99line(output);
-			img = ($('.listtable.bgwhite tr:nth-child(3)  div a').attr('href'));
+			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a').attr('href'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
