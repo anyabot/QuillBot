@@ -30,8 +30,8 @@ class FindSkill extends commando.Command {
 				var page = 1;
 				var output;
 				$('.wikitable').each(function(i, elem) {
-					output = $(elem).first().html();
-					output = range(output);
+					output = $(elem + 'tr:nth-child(1)').first().text();
+					output = te(output);
 					message.channel.send(output)
 				})
 		if (check) {
@@ -75,7 +75,7 @@ class FindSkill extends commando.Command {
     }
 }
 
-function lv1line(output) {
+function te(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
     output = output.trim();
