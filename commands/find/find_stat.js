@@ -80,7 +80,7 @@ class FindStat extends commando.Command {
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
-			.setColor('AQUA')
+			.setColor('BLUE')
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
 			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
