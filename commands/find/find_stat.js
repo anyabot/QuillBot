@@ -51,7 +51,7 @@ class FindStat extends commando.Command {
 			.addField("Max Cost", lv1v1[10], true)
 			.addField("Min Cost", lv1v1[11], true)
 			pages.push(embed);
-			message.channel.send(embed)
+			message.channel.send(lv1v1[3])
 		}
 		if ($('.listtable.bgwhite tr').length >= 5) {
 			output = $('.c2.numbers').first().text();
