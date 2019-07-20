@@ -42,7 +42,7 @@ class FindSkill extends commando.Command {
 						check = true;
 						let siz = $(elem).find('tr').length;
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
-						let out = $(elem).find('tr').eq(1).html();
+						let out = $(elem).find('tr').eq(1).text();
 						let aa = te(out);
 						if (aa.length > 6){
 							aa[2] = aa[2] + " " + aa[3]
@@ -54,7 +54,7 @@ class FindSkill extends commando.Command {
 						embed1.setThumbnail(img)
 						embed1.addField(aa[2], aa[3] + "\n**CD: **" +aa[4] + "\n**Initial: **" + aa[5]);
 						for (var i = 2; i < siz; i++){
-							output = $(elem).find('tr').eq(i).html();
+							output = $(elem).find('tr').eq(i).text();
 							let aa = te(output);
 							if (aa[0] === "Awakened") {
 								aw = true;
