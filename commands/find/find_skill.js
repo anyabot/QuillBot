@@ -95,7 +95,6 @@ class FindSkill extends commando.Command {
 				})
 		if (check) {
 		var embed = pages[0];
-		embed.setFooter('Page ' + page + ' of ' + pages.length);
 		message.channel.send(embed).then(msg => {
 
 		msg.react('🇳').then( r => {
