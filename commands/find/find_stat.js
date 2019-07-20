@@ -227,11 +227,7 @@ function getname(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
 	output = output.trim();
-	var arr = output.split('\n');
-	var filtered = arr.filter(function (el) {
-  	return el != null && el != '';
-	});
-	var range = filtered.join(' ');
-    return range;
+	
+    return output;
 }
 module.exports = FindStat;
