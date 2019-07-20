@@ -30,7 +30,7 @@ class FindSkill extends commando.Command {
 				var page = 1;
 				var output;
 				$('.wikitable').each(function(i, elem) {
-					output = elem.first().html();
+					output = $(elem).first().html();
 					output = range(output);
 					message.channel.send(output)
 				})
