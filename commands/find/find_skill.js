@@ -30,9 +30,9 @@ class FindSkill extends commando.Command {
 				var page = 1;
 				var output;
 				$('.wikitable').each(function(i, elem) {
-					output = $(elem + 'tr:nth-child(1)').first().text();
-					output = te(output);
-					message.channel.send(output[0])
+					output = $(elem).first().text();
+					let ar = te(output);
+					message.channel.send(ar[0])
 				})
 		if (check) {
 		var embed = pages[0];
