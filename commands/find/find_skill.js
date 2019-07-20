@@ -40,9 +40,7 @@ class FindSkill extends commando.Command {
 						let embed = new Discord.RichEmbed()
 						let embed2 = new Discord.RichEmbed()
 						embed.setTitle("Normal Skill")
-						embed.setThumbnail(img)
 						embed2.setTitle("Awakened Skill")
-						embed2.setThumbnail(img)
 						output = $(elem).find('tr').eq(1).html();
 						let aa = te(output);
 						embed.addField("Name", aa[2]);
