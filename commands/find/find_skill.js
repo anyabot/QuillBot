@@ -41,24 +41,48 @@ class FindSkill extends commando.Command {
 						let siz = $(elem).find('tr').length;
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
 						let out = $(elem).find('tr').eq(1).html();
-						let aa = te(out);
+						let aa = te2(out);
+						if (aa.length = 7){
+							aa[2] = aa[2] + aa[3]
+							aa[3] = aa[4]
+							aa[4] = aa[5]
+							aa[5] = aa[6]
+						}
 						embed1.setTitle("Normal Skill")
 						embed1.setThumbnail(img)
 						embed1.addField(aa[2], aa[3] + "\n**CD: **" +aa[4] + "\n**Initial: **" + aa[5]);
 						for (var i = 2; i < siz; i++){
 							output = $(elem).find('tr').eq(i).html();
-							let aa = te(output);
+							let aa = te2(output);
 							if (aa[0] === "Awakened") {
 								aw = true;
 								pages.push(embed1)
 								embed2.setTitle("Awakened Skill")
 								embed2.setThumbnail(img)
+								if (aa.length = 6){
+									aa[1] = aa[1] + aa[2]
+									aa[2] = aa[3]
+									aa[3] = aa[4]
+									aa[4] = aa[5]
+								}
 								embed2.addField(aa[1], aa[2] + "\n**CD: **" +aa[3] + "\n**Initial: **" + aa[4]);
 							}
 							else if (!aw) {
+								if (aa.length = 5){
+									aa[0] = aa[0] + aa[1]
+									aa[1] = aa[2]
+									aa[2] = aa[3]
+									aa[3] = aa[4]
+								}
 								embed1.addField(aa[0], aa[1] + "\n**CD: **" +aa[2] + "\n**Initial: **" + aa[3]);
 							}
 							else {
+								if (aa.length = 5){
+									aa[0] = aa[0] + aa[1]
+									aa[1] = aa[2]
+									aa[2] = aa[3]
+									aa[3] = aa[4]
+								}
 								embed2.addField(aa[0], aa[1] + "\n**CD: **" +aa[2] + "\n**Initial: **" + aa[3]);
 							}
 							
@@ -118,45 +142,15 @@ function te(output) {
 	});
    return filtered;
 }
-function range(output) {
+function te2(output) {
+	output = output.replace(/<br />/g, " ");
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
-	output = output.trim();
-	var arr = output.split('\n');
+    output = output.trim();
+    var arr = output.split('\n');
 	var filtered = arr.filter(function (el) {
   	return el != null && el != '';
 	});
-	var range = filtered[0];
-	if (filtered.length > 1) {range = range + "/" + filtered[1]}
-	if (filtered.length > 2) {range = range + "/" + filtered[2]}
-    return range;
-}
-function affe(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
-	output = output.trim();
-	var arr = output.split('\n');
-	var filtered = arr.filter(function (el) {
-  	return el != null && el != '';
-	});
-	var affe = filtered[0];
-	if (filtered.length > 1) {affe = affe + "\n" + filtered[1]}
-	if (filtered.length > 2) {affe = affe + "\n" + filtered[2]}
-    return affe;
-}
-function na(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
-	output = output.trim();
-	var arr = output.split('\n');
-	var filtered = arr.filter(function (el) {
-  	return el != null && el != '';
-	});
-	var na = filtered[0];
-	if (filtered.length > 1) {na = na + " " + filtered[1]}
-	if (filtered.length > 2) {na = na + " " + filtered[2]}
-	if (filtered.length > 3) {na = na + " " + filtered[3]}
-	if (filtered.length > 4) {na = na + " " + filtered[4]}
-    return na;
+   return filtered;
 }
 module.exports = FindSkill;
