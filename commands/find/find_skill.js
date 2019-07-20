@@ -28,11 +28,14 @@ class FindSkill extends commando.Command {
 				var check = false;
 				var pages = [];
 				var page = 1;
+		    		var img;
 				var output;
 				$('.wikitable').each(function(i, elem) {
 					output = $(elem).first().text();
 					let ar = te(output);
-					message.channel.send(ar[0])
+					if (ar[0] === 'Unit'){
+						message.channel.send($(elem).length);
+					}
 				})
 		if (check) {
 		var embed = pages[0];
