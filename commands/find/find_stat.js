@@ -39,8 +39,6 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
 			output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
 			let ran = range(output);
-			message.channel.send(ran);
-			message.channel.send(output);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
@@ -48,7 +46,7 @@ class FindStat extends commando.Command {
 			.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
 			.addField("DEF", lv1v1[7] + " → " + lv99v1[3], true)
-			.addField("Range", lv99v1[4], true)
+			.addField("Range", ran, true)
 			.addField("MR", lv1v1[8], true)
 			.addField("Block", lv1v1[9], true)
 			.addField("Max Cost", lv1v1[10], true)
@@ -61,6 +59,8 @@ class FindStat extends commando.Command {
                 		let lv99v1 = lv99line(output);
                 		output = $('.c2 ').first().text();
                 		let lv1v1 = lv1line(output);
+				output = $('.c2.numbers td:nth-child(5)').first().html();
+				let ran = range(output);
 				let embed = new Discord.RichEmbed()
 				.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 				.setThumbnail(img)
@@ -68,7 +68,7 @@ class FindStat extends commando.Command {
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
 				.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
-				.addField("Range", lv99v1[4], true)
+				.addField("Range", ran, true)
 				.addField("MR", lv1v1[5], true)
 				.addField("Block", lv1v1[6], true)
 				.addField("Max Cost", lv1v1[7], true)
@@ -81,6 +81,8 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
                 	output = $('.c3 ').first().text();
                 	let lv1v1 = lv1line(output);
+			output = $('.c3.numbers td:nth-child(5)').first().html();
+			let ran = range(output);
 			img = ($('.c3 td:first-child div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -89,7 +91,7 @@ class FindStat extends commando.Command {
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
 			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
-			.addField("Range", lv99v1[4], true)
+			.addField("Range", ran, true)
 			.addField("MR", lv1v1[5], true)
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
@@ -101,6 +103,8 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
                 	output = $('.c4 ').first().text();
                 	let lv1v1 = lv1line(output);
+			output = $('.c4.numbers td:nth-child(5)').first().html();
+			let ran = range(output);
 			let img2 = ($('.c4 td:first-child div a img').attr('data-src'));
 			if (img2) {img = img2}
 			let embed = new Discord.RichEmbed()
@@ -110,7 +114,7 @@ class FindStat extends commando.Command {
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
 			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
-			.addField("Range", lv99v1[4], true)
+			.addField("Range", ran, true)
 			.addField("MR", lv1v1[5], true)
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
@@ -122,6 +126,8 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
                 	output = $('.c5 ').first().text();
                 	let lv1v1 = lv1line(output);
+			output = $('.c5.numbers td:nth-child(5)').first().html();
+			let ran = range(output);
 			let img2 = ($('.c5 td:first-child div a img').attr('data-src'));
 			if (img2) {img = img2}
 			let embed = new Discord.RichEmbed()
@@ -131,7 +137,7 @@ class FindStat extends commando.Command {
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
 			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
-			.addField("Range", lv99v1[4], true)
+			.addField("Range", ran, true)
 			.addField("MR", lv1v1[5], true)
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
@@ -206,6 +212,6 @@ function range(output) {
     output = output.replace(/<[^>]*>/g, " ");
     output = output.replace(/\n+ /g, " ");
 	var arr = output.split(' ');
-    return arr[2] + "/" + arr[3] + "/" + arr[4];
+    return arr[2] + "/" + arr[4] + "/" + arr[6];
 }
 module.exports = FindStat;
