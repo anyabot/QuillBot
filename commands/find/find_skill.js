@@ -51,6 +51,8 @@ class FindSkill extends commando.Command {
 							if (aa[0] === "Awakened") {
 								aw = true;
 								pages.push(embed1)
+								embed2.setTitle("Awakened Skill")
+								embed2.setThumbnail(img)
 								embed2.addField(aa[1], aa[2] + "\n**CD: **" +aa[3] + "\n**Initial: **" + aa[4]);
 							}
 							else if (!aw) {
