@@ -41,7 +41,7 @@ class FindSkill extends commando.Command {
 						let siz = $(elem).find('tr').length;
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
 						let out = $(elem).find('tr').eq(1).html();
-						let aa = te2(out);
+						let aa = te(out);
 						if (aa.length = 7){
 							aa[2] = aa[2] + aa[3]
 							aa[3] = aa[4]
@@ -53,7 +53,7 @@ class FindSkill extends commando.Command {
 						embed1.addField(aa[2], aa[3] + "\n**CD: **" +aa[4] + "\n**Initial: **" + aa[5]);
 						for (var i = 2; i < siz; i++){
 							output = $(elem).find('tr').eq(i).html();
-							let aa = te2(output);
+							let aa = te(output);
 							if (aa[0] === "Awakened") {
 								aw = true;
 								pages.push(embed1)
@@ -133,17 +133,6 @@ class FindSkill extends commando.Command {
 }
 
 function te(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
-    output = output.trim();
-    var arr = output.split('\n');
-	var filtered = arr.filter(function (el) {
-  	return el != null && el != '';
-	});
-   return filtered;
-}
-function te2(output) {
-	output = output.replace(/<br />/g, " ");
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
     output = output.trim();
