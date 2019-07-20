@@ -36,7 +36,7 @@ class FindStat extends commando.Command {
 			check = true;
                 	let lv1v1 = lv1line(output);
                 	output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
-                	let lv99v1 = lv99line(output);
+                	let lv99v1 = lv1line(output);
 			output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
 			let ran = range(output);
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(12)').first().html();
@@ -59,7 +59,7 @@ class FindStat extends commando.Command {
 		if ($('.listtable.bgwhite tr').length >= 5) {
 			output = $('.c2.numbers').first().text();
 			if(output) {
-                		let lv99v1 = lv99line(output);
+                		let lv99v1 = lv1line(output);
                 		output = $('.c2 ').first().text();
                 		let lv1v1 = lv1line(output);
 				output = $('.c2.numbers td:nth-child(5)').first().html();
@@ -84,7 +84,7 @@ class FindStat extends commando.Command {
 		}
 		output = $('.c3.numbers').first().text();
 		if(output) {
-                	let lv99v1 = lv99line(output);
+                	let lv99v1 = lv1line(output);
                 	output = $('.c3 ').first().text();
                 	let lv1v1 = lv1line(output);
 			output = $('.c3.numbers td:nth-child(5)').first().html();
@@ -109,7 +109,7 @@ class FindStat extends commando.Command {
 		}
                 output = $('.c4.numbers').first().text();
 		if(output) {
-                	let lv99v1 = lv99line(output);
+                	let lv99v1 = lv1line(output);
                 	output = $('.c4 ').first().text();
                 	let lv1v1 = lv1line(output);
 			output = $('.c4.numbers td:nth-child(5)').first().html();
@@ -133,7 +133,7 @@ class FindStat extends commando.Command {
 		}
 		output = $('.c5.numbers').first().text();
 		if(output) {
-                	let lv99v1 = lv99line(output);
+                	let lv99v1 = lv1line(output);
                 	output = $('.c5 ').first().text();
                 	let lv1v1 = lv1line(output);
 			output = $('.c5.numbers td:nth-child(5)').first().html();
@@ -194,21 +194,6 @@ class FindStat extends commando.Command {
             }
         });
     }
-}
-
-function lv99line(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
-    output = output.trim();
-    var arr = output.split('\n');
-
-    if (arr[4].length > 3) {
-        var range = arr[4].substring(0, 3) + "/" + arr[4].substring(3, 6) + "/" + arr[4].substring(6, 9);
-        arr[4] = range;
-        return arr;
-    }
-    else
-        return arr;
 }
 
 function lv1line(output) {
