@@ -39,9 +39,11 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
 			output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
 			let ran = range(output);
+			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)').first().html();
+			let nam = getname(ouput);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
-			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
+			.setTitle(nam + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
@@ -219,6 +221,17 @@ function range(output) {
 	var range = filtered[0];
 	if (filtered.length > 1) {range = range + "/" + filtered[1]}
 	if (filtered.length > 2) {range = range + "/" + filtered[2]}
+    return range;
+}
+function getname(output) {
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
+	output = output.trim();
+	var arr = output.split('\n');
+	var filtered = arr.filter(function (el) {
+  	return el != null && el != '';
+	});
+	var range = filtered.join(' ');
     return range;
 }
 module.exports = FindStat;
