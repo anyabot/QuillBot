@@ -23,6 +23,7 @@ class FindStat extends commando.Command {
 
         request(link, function (err, resp, html) {
             if (!err) {
+		    message.channel.send(unit)
                 const $ = cheerio.load(html);
                 var text;
 		var output;
