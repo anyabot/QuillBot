@@ -148,21 +148,21 @@ class FindStat extends commando.Command {
         const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
         backwards.on('collect', r => {
-            if (page === 1) return;
-            page--;
-			r.remove(r.users.filter(u => u === message.author).first());
-            embed = pages[page-1];
-            embed.setFooter('Page ' + page + ' of ' + pages.length);
-            msg.edit(embed)
+		r.remove(r.users.filter(u => u === message.author).first());
+        	if (page === 1) return;
+         	page--;
+            	embed = pages[page-1];
+            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	msg.edit(embed)
         })
 
         forwards.on('collect', r => {
-            if (page === pages.length) return;
-            page++;
 		r.remove(r.users.filter(u => u === message.author).first());
-            embed = pages[page-1];
-            embed.setFooter('Page ' + page + ' of ' + pages.length);
-            msg.edit(embed)
+            	if (page === pages.length) return;
+            	page++;
+            	embed = pages[page-1];
+            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	msg.edit(embed)
         })
     })
 })
