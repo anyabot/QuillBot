@@ -209,10 +209,10 @@ function lv1line(output) {
    return arr;
 }
 function range(output) {
-    output = output.replace(/<[^>]*>/g, " ");
-    output = output.replace(/\n+ /g, " ");
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
 	output = output.trim();
-	var arr = output.split(' ');
+	var arr = output.split('\n');
 	var filtered = arr.filter(function (el) {
   	return el != null && el != '';
 	});
