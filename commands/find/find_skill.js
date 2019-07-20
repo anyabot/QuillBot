@@ -35,7 +35,6 @@ class FindSkill extends commando.Command {
 					let ar = te(output);
 					if (ar[0].trim() === 'Unit'){
 						message.channel.send(ar[0])
-						check = true;
 						let siz = $(elem).find('tr').length;
 						message.channel.send(siz)
 						message.channel.send(img)
