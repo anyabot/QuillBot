@@ -33,7 +33,6 @@ class FindSkill extends commando.Command {
 					output = this.first().first().text();
 					message.channel.send(output);
 				})
-			}
 		if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
