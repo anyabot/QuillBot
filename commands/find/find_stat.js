@@ -40,7 +40,7 @@ class FindStat extends commando.Command {
 			output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
 			let ran = range(output);
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(12)').first().html();
-			aff = range(output);
+			aff = affe(output);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
@@ -65,7 +65,7 @@ class FindStat extends commando.Command {
 				output = $('.c2.numbers td:nth-child(5)').first().html();
 				let ran = range(output);
 				output = $('.c2 td:nth-child(10)').first().html();
-				aff = range(output);
+				aff = affe(output);
 				let embed = new Discord.RichEmbed()
 				.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 				.setThumbnail(img)
@@ -90,7 +90,7 @@ class FindStat extends commando.Command {
 			output = $('.c3.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
 			output = $('.c3 td:nth-child(11)').first().html();
-			aff = range(output);
+			aff = affe(output);
 			img = ($('.c3 td:first-child div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -216,5 +216,18 @@ function range(output) {
 	if (filtered.length > 1) {range = range + "/" + filtered[1]}
 	if (filtered.length > 2) {range = range + "/" + filtered[2]}
     return range;
+}
+function affe(output) {
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
+	output = output.trim();
+	var arr = output.split('\n');
+	var filtered = arr.filter(function (el) {
+  	return el != null && el != '';
+	});
+	var affe = filtered[0];
+	if (filtered.length > 1) {affe = affe + "\n" + filtered[1]}
+	if (filtered.length > 2) {affe = affe + "\n" + filtered[2]}
+    return affe;
 }
 module.exports = FindStat;
