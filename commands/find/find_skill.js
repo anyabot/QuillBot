@@ -47,6 +47,7 @@ class FindSkill extends commando.Command {
 						embed.addField("Cooldown", aa[3]);
 						embed.addField("Initial", aa[4]);
 						pages.push(embed)
+						message.channel.send(aa[2]+aa[3]+aa[4])
 					}
 				})
 		if (check) {
