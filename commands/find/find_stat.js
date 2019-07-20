@@ -148,7 +148,7 @@ class FindStat extends commando.Command {
         const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
         backwards.on('collect', r => {
-		r.remove(r.users.filter(u => u === message.author).first());
+		r.remove(r.users.filter(u => !u.bot).first());
         	if (page === 1) return;
          	page--;
             	embed = pages[page-1];
@@ -157,7 +157,7 @@ class FindStat extends commando.Command {
         })
 
         forwards.on('collect', r => {
-		r.remove(r.users.filter(u => u === message.author).first());
+		r.remove(r.users.filter(u => !u.bot).first());
             	if (page === pages.length) return;
             	page++;
             	embed = pages[page-1];
