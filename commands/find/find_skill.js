@@ -30,6 +30,9 @@ class FindSkill extends commando.Command {
 				var page = 1;
 		    		var img;
 				var output;
+		    		var aw = false
+				var embed1 = new Discord.RichEmbed()
+				var embed2 = new Discord.RichEmbed()
 				$('.wikitable').each(function(i, elem) {
 					output = $(elem).first().text();
 					let ar = te(output);
@@ -39,11 +42,25 @@ class FindSkill extends commando.Command {
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
 						let out = $(elem).find('tr').eq(1).html();
 						let aa = te(out);
-						let embed = new Discord.RichEmbed()
-						embed.setTitle("Normal Skill")
-						embed.addField(aa[2], aa[3] + "\n**CD: **" +aa[4] + "\nInitial: **");
-						message.channel.send(embed)
-						pages.push(embed)
+						embed1.setTitle("Normal Skill")
+						embed1.setThumbnail(img)
+						embed1.addField(aa[2], aa[3] + "\n**CD: **" +aa[4] + "\n**Initial: **" + aa[5]);
+						for (var i = 2; i < siz; i++){
+							output = $(elem).find('tr').eq(i).html();
+							let aa = te(output);
+							if (aa[0] === "Awakened") {
+								aw = true;
+								pages.push(embed1)
+								embed2.addField(aa[1], aa[2] + "\n**CD: **" +aa[3] + "\n**Initial: **" + aa[4]);
+							}
+							else if (!aw) {
+								embed1.addField(aa[0], aa[1] + "\n**CD: **" +aa[2] + "\n**Initial: **" + aa[3]);
+							}
+							else {
+								embed2.addField(aa[0], aa[1] + "\n**CD: **" +aa[2] + "\n**Initial: **" + aa[3]);
+							}
+							
+						}
 						
 					}
 				})
