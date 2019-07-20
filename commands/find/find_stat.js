@@ -95,7 +95,7 @@ class FindStat extends commando.Command {
 			let ran = range(output);
 			output = $('.c3 td:nth-child(11)').first().html();
 			aff = affe(output);
-			img = ($('.c3 td:first-child div a img').attr('data-src'));
+			img = ($('.c3 td:first-child div a img').first().attr('data-src'));
 			output = $('.c3 td:nth-child(2)').first().html();
 			let nam = na(output);
 			let embed = new Discord.RichEmbed()
@@ -121,7 +121,7 @@ class FindStat extends commando.Command {
 			output = $('.c4.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
 			let nam;
-			let img2 = ($('.c4 td:first-child div a img').attr('data-src'));
+			let img2 = ($('.c4 td:first-child div a img').first().attr('data-src'));
 			if (img2) {
 				img = img2;
 				output = $('.c4 td:nth-child(2)').first().html();
@@ -154,7 +154,7 @@ class FindStat extends commando.Command {
 			output = $('.c5.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
 			let nam;
-			let img2 = ($('.c5 td:first-child div a img').attr('data-src'));
+			let img2 = ($('.c5 td:first-child div a img').first().attr('data-src'));
 			if (img2) {
 				img = img2;
 				output = $('.c5 td:nth-child(2)').first().html();
