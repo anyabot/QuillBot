@@ -42,7 +42,7 @@ class FindSkill extends commando.Command {
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
 						let out = $(elem).find('tr').eq(1).html();
 						let aa = te(out);
-						if (aa.length = 7){
+						if (aa.length > 6){
 							aa[2] = aa[2] + aa[3]
 							aa[3] = aa[4]
 							aa[4] = aa[5]
@@ -59,7 +59,7 @@ class FindSkill extends commando.Command {
 								pages.push(embed1)
 								embed2.setTitle("Awakened Skill")
 								embed2.setThumbnail(img)
-								if (aa.length = 6){
+								if (aa.length > 5){
 									aa[1] = aa[1] + aa[2]
 									aa[2] = aa[3]
 									aa[3] = aa[4]
@@ -68,7 +68,7 @@ class FindSkill extends commando.Command {
 								embed2.addField(aa[1], aa[2] + "\n**CD: **" +aa[3] + "\n**Initial: **" + aa[4]);
 							}
 							else if (!aw) {
-								if (aa.length = 5){
+								if (aa.length > 4){
 									aa[0] = aa[0] + aa[1]
 									aa[1] = aa[2]
 									aa[2] = aa[3]
