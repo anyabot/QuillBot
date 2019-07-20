@@ -37,7 +37,7 @@ class FindSkill extends commando.Command {
 						let siz = $(elem).find('tr').length;
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
 						let embed1 = new Discord.RichEmbed()
-						embed1.setTitle("Normal Skill"))
+						embed1.setTitle("Normal Skill")
 						let out = $(elem).find('tr').eq(1).html();
 						let aa = te(out);
 						embed1.addField("Name", aa[2]);
