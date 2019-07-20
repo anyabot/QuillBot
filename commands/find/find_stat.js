@@ -95,7 +95,7 @@ class FindStat extends commando.Command {
 			let ran = range(output);
 			output = $('.c3 td:nth-child(11)').first().html();
 			aff = affe(output);
-			img = ($('.c3 td:first-child div a img').first().attr('data-src'));
+			img = ($('.c3 td:first-child div a img').attr('data-src'));
 			output = $('.c3 td:nth-child(2)').first().html();
 			let nam = na(output);
 			let embed = new Discord.RichEmbed()
@@ -121,13 +121,13 @@ class FindStat extends commando.Command {
 			output = $('.c4.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
 			let nam;
-			let img2 = ($('.c4 td:first-child div a img').first().attr('data-src'));
-			if (img2) {
+			let img2 = ($('.c4 td:first-child div a img').attr('data-src'));
+			if ($('.c5').children().length > 9) {
 				img = img2;
 				output = $('.c4 td:nth-child(2)').first().html();
 				nam = na(output);
 			}
-			if (!img2) {
+			if (!($('.c4').children().length > 9)) {
 				output = $('.c4 td:nth-child(1)').first().html();
 				nam = na(output);
 			}
@@ -154,18 +154,18 @@ class FindStat extends commando.Command {
 			output = $('.c5.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
 			let nam;
-			let img2 = ($('.c5 td:first-child div a img').first().attr('data-src'));
-			if (img2) {
+			let img2 = ($('.c5 td:first-child div a img').attr('data-src'));
+			if ($('.c5').children().length > 9) {
 				img = img2;
 				output = $('.c5 td:nth-child(2)').first().html();
 				nam = na(output);
 			}
-			if (!img2) {
+			if (!($('.c5').children().length > 9)) {
 				output = $('.c5 td:nth-child(1)').first().html();
 				nam = na(output);
 			}
 			let embed = new Discord.RichEmbed()
-			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+			.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
 			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
