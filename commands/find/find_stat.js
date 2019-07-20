@@ -19,7 +19,7 @@ class FindStat extends commando.Command {
     async run(message, input) {
         var unit = functions.toTitleCase(input);
         if (name[unit]) unit = name[unit];
-        var link = "https://aigis.fandom.com/wiki/" + unit;
+        var link = "https://aigis.fandom.com/wiki/" + unit + "/stats";
 
         request(link, function (err, resp, html) {
             if (!err) {
