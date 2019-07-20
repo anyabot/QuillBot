@@ -133,6 +133,7 @@ class FindStat extends commando.Command {
 			.addField("Min Cost", lv1v1[8], true)
 			pages.push(embed)
 		}
+		if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
 		message.channel.send(embed).then(msg => {
@@ -166,6 +167,7 @@ class FindStat extends commando.Command {
         })
     })
 })
+	    }
                 if (!check) {message.channel.send("No Data")};
             }
         });
