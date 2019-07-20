@@ -61,6 +61,7 @@ class FindSkill extends commando.Command {
 							}
 							
 						}
+						pages.push(embed2);
 						
 					}
 				})
