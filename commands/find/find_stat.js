@@ -141,8 +141,8 @@ class FindStat extends commando.Command {
         msg.react('➡')
 
         // Filters
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
 
         const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
         const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
