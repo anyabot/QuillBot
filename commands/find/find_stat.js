@@ -45,7 +45,7 @@ class FindStat extends commando.Command {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			let nam = na(output);
 			let embed = new Discord.RichEmbed()
-			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
+			.setTitle(nam + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
 			.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
 			.addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
