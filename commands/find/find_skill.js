@@ -89,8 +89,10 @@ function te(output) {
     output = output.replace(/\n+ /g, "\n");
     output = output.trim();
     var arr = output.split('\n');
-
-   return arr;
+	var filtered = arr.filter(function (el) {
+  	return el != null && el != '';
+	});
+   return filtered;
 }
 function range(output) {
     output = output.replace(/<[^>]*>/g, "\n");
