@@ -214,8 +214,8 @@ function range(output) {
 	output = output.trim();
 	var arr = output.split(' ');
 	var range = arr[0];
-	if (arr.length > 3) {range = range + "/" + arr[2]}
-	if (arr.length > 6) {range = range + "/" + arr[5]}
+	if (arr.length > 2) {range = range + "/" + arr[2]}
+	if (arr.length > 5) {range = range + "/" + arr[5]}
     return range;
 }
 module.exports = FindStat;
