@@ -34,7 +34,7 @@ class FindSkill extends commando.Command {
 					output = $(elem).first().text();
 					let ar = te(output);
 					if (ar[0] === 'Unit'){
-						output = $(elem).last().html();
+						output = $(elem).last().text();
 						let a2 = na(output)
 						message.channel.send(a2);
 					}
