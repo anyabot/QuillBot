@@ -209,8 +209,8 @@ function lv1line(output) {
    return arr;
 }
 function range(output) {
-    output = output.replace(/<[^>]*>/g, "");
-    output = output.replace(/\n+ /g, "");
+    output = output.replace(/<[^>]*>/g, " ");
+    output = output.replace(/\n+ /g, " ");
 	output = output.trim();
 	var arr = output.split(' ');
     return arr[0] + "/" + arr[1] + "/" + arr[2] + "/" + arr[3] + "/" + arr[4] + "/" + arr[5]
