@@ -203,9 +203,9 @@ function lv1line(output) {
    return arr;
 }
 function range(output) {
-    output = output.replace(/<[^>]*>/g, " ");
-    output = output.replace(/\n+ /g, " ");
-	output = output.trim();
-    return output;
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
+	var arr = output.split('\n');
+    return arr[0] + "/" + arr[1] + "/" + arr[2];
 }
 module.exports = FindStat;
