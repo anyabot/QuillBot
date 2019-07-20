@@ -28,6 +28,8 @@ class FindStat extends commando.Command {
 		var output;
                 var img;
 		var check = false;
+		var pages = []
+		var page = 1;
 		output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
                 if(output) {
 			check = true;
@@ -46,28 +48,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[9], true)
 			.addField("Max Cost", lv1v1[10], true)
 			.addField("Min Cost", lv1v1[11], true)
-			message.channel.send({embed}).then(msg => {
-
-				msg.react('⬅').then( r => {
-        			msg.react('➡')
-				const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
-        			const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
-
-        			const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-        			const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
-
-        			backwards.on('collect', r => {
-				r.remove(r.users.filter(u => !u.bot).first());
-            			embed.setFooter('Page 1');
-            			msg.edit(embed)
-        			})
-				forwards.on('collect', r => {
-				r.remove(r.users.filter(u => !u.bot).first());
-            			embed.setFooter('Page 2');
-            			msg.edit(embed)
-        })
-    				})
-			});
+			pages.push(embed);
 		}
 		if ($('.listtable.bgwhite tr').length >= 5) {
 			output = $('.c2.numbers').first().text();
@@ -86,7 +67,7 @@ class FindStat extends commando.Command {
 				.addField("Block", lv1v1[6], true)
 				.addField("Max Cost", lv1v1[7], true)
 				.addField("Min Cost", lv1v1[8], true)
-				message.channel.send({embed});
+				pages.push(embed);
 			}
 		}
 		output = $('.c3.numbers').first().text();
@@ -106,7 +87,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
 			.addField("Min Cost", lv1v1[8], true)
-			message.channel.send({embed});
+			pages.push(embed)
 		}
                 output = $('.c4.numbers').first().text();
 		if(output) {
@@ -126,7 +107,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
 			.addField("Min Cost", lv1v1[8], true)
-			message.channel.send({embed});
+			pages.push(embed)
 		}
 		output = $('.c5.numbers').first().text();
 		if(output) {
@@ -146,8 +127,41 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
 			.addField("Min Cost", lv1v1[8], true)
-			message.channel.send({embed});
+			pages.push(embed)
 		}
+		var embed = pages[0];
+		embed.setFooter('Page ' + page + ' of ' + pages.length);
+		message.channel.send(embed).then(msg => {
+
+		msg.react('⬅').then( r => {
+        msg.react('➡')
+
+        // Filters
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
+
+        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+
+        backwards.on('collect', r => {
+            if (page === 1) return;
+            page--;
+			r.remove(r.users.filter(u => u === message.author).first());
+            embed = pages[page-1];
+            embed.setFooter('Page ' + page + ' of ' + pages.length);
+            msg.edit(embed)
+        })
+
+        forwards.on('collect', r => {
+            if (page === pages.length) return;
+            page++;
+		r.remove(r.users.filter(u => u === message.author).first());
+            embed = pages[page-1];
+            embed.setFooter('Page ' + page + ' of ' + pages.length);
+            msg.edit(embed)
+        })
+    })
+})
                 if (!check) {message.channel.send("No Data")};
             }
         });
