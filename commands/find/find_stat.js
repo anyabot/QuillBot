@@ -202,8 +202,8 @@ function lv1line(output) {
    return arr;
 }
 function range(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
+    output = output.replace(/<[^>]*>/g, "  ");
+    output = output.replace(/\n+ /g, " ");
     return output;
 }
 module.exports = FindStat;
