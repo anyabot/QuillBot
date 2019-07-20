@@ -209,7 +209,7 @@ function lv1line(output) {
    return arr;
 }
 function range(output) {
-    output = output.replace(/<[^>]*>/g, " ");
+    output = output.replace(/<[^>]*>/g, "/");
     output = output.replace(/\n+ /g, "/");
 	var arr = output.split(' ');
     return output
