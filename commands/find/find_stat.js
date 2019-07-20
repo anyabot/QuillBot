@@ -46,7 +46,12 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[9], true)
 			.addField("Max Cost", lv1v1[10], true)
 			.addField("Min Cost", lv1v1[11], true)
-			message.channel.send({embed});
+			message.channel.send({embed}).then(msg => {
+
+		msg.react('⬅').then( r => {
+        msg.react('➡')
+    })
+});
 		}
 		if ($('.listtable.bgwhite tr').length >= 5) {
 			output = $('.c2.numbers').first().text();
