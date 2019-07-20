@@ -34,8 +34,21 @@ class FindSkill extends commando.Command {
 					output = $(elem).first().text();
 					let ar = te(output);
 					if (ar[0] === 'Unit'){
-						
-						message.channel.send($(elem).html());
+						check = true;
+						let siz = $(elem).find('tr').length;
+						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
+						let embed = new Discord.RichEmbed()
+						let embed2 = new Discord.RichEmbed()
+						embed.setTitle("Normal Skill")
+						embed.setThumbnail(img)
+						embed2.setTitle("Awakened Skill")
+						embed2.setThumbnail(img)
+						output = $(elem).find('tr').eq(1).html();
+						let aa = te(output);
+						embed.addField("Name", aa[2]);
+						embed.addField("Cooldown", aa[3]);
+						embed.addField("Initial", aa[4]);
+						pages.push(embed)
 					}
 				})
 		if (check) {
