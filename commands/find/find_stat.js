@@ -133,42 +133,40 @@ class FindStat extends commando.Command {
 			.addField("Min Cost", lv1v1[8], true)
 			pages.push(embed)
 		}
-		if (!check) {message.channel.send("No Data")};
-		else {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
 		message.channel.send(embed).then(msg => {
 
-			msg.react('⬅').then( r => {
-				msg.react('➡')
+		msg.react('⬅').then( r => {
+        msg.react('➡')
 
-				const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-				const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+        // Filters
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
 
-				const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-				const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
-				backwards.on('collect', r => {
-					r.remove(r.users.filter(u => !u.bot).first());
-					if (page === 1) return;
-					page--;
-					embed = pages[page-1];
-					embed.setFooter('Page ' + page + ' of ' + pages.length);
-					msg.edit(embed)
-				})
+        backwards.on('collect', r => {
+		r.remove(r.users.filter(u => !u.bot).first());
+        	if (page === 1) return;
+         	page--;
+            	embed = pages[page-1];
+            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	msg.edit(embed)
+        })
 
-				forwards.on('collect', r => {
-				r.remove(r.users.filter(u => !u.bot).first());
-				if (page === pages.length) return;
+        forwards.on('collect', r => {
+		r.remove(r.users.filter(u => !u.bot).first());
+            	if (page === pages.length) return;
             	page++;
             	embed = pages[page-1];
             	embed.setFooter('Page ' + page + ' of ' + pages.length);
             	msg.edit(embed)
-				})
-			})
-		})
-		}
-                
+        })
+    })
+})
+                if (!check) {message.channel.send("No Data")};
             }
         });
     }
