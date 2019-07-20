@@ -39,7 +39,7 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
 			output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
 			let ran = range(output);
-			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)').first().html();
+			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			let nam = getname(ouput);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
