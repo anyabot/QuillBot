@@ -121,13 +121,12 @@ class FindStat extends commando.Command {
 			output = $('.c4.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
 			let nam;
-			let img2 = ($('.c4 td:first-child div a img').attr('data-src'));
-			if ($('.c5').children().length > 9) {
-				img = img2;
+			if ($('.c4 td:nth-child(3)').hasClass('leftal')) {
+				img = ($('.c4 td:first-child div a img').attr('data-src'));
 				output = $('.c4 td:nth-child(2)').first().html();
 				nam = na(output);
 			}
-			if (!($('.c4').children().length > 9)) {
+			if (!$('.c4 td:nth-child(3)').hasClass('leftal')) {
 				output = $('.c4 td:nth-child(1)').first().html();
 				nam = na(output);
 			}
@@ -154,13 +153,12 @@ class FindStat extends commando.Command {
 			output = $('.c5.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
 			let nam;
-			let img2 = ($('.c5 td:first-child div a img').attr('data-src'));
-			if ($('.c5').children().length > 9) {
-				img = img2;
+			if ($('.c5 td:nth-child(3)').hasClass('leftal')) {
+				img = ($('.c5 td:first-child div a img').attr('data-src'));
 				output = $('.c5 td:nth-child(2)').first().html();
 				nam = na(output);
 			}
-			if (!($('.c5').children().length > 9)) {
+			if (!$('.c5 td:nth-child(3)').hasClass('leftal')) {
 				output = $('.c5 td:nth-child(1)').first().html();
 				nam = na(output);
 			}
