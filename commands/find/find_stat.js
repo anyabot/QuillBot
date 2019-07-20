@@ -212,6 +212,6 @@ function range(output) {
     output = output.replace(/<[^>]*>/g, " ");
     output = output.replace(/\n+ /g, " ");
 	var arr = output.split(' ');
-    return arr[2] + "/" + arr[4] + "/" + arr[6];
+    return output
 }
 module.exports = FindStat;
