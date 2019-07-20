@@ -42,6 +42,8 @@ class FindStat extends commando.Command {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(12)').first().html();
 			aff = affe(output);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
+			let nam = na(output);
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
@@ -229,5 +231,20 @@ function affe(output) {
 	if (filtered.length > 1) {affe = affe + "\n" + filtered[1]}
 	if (filtered.length > 2) {affe = affe + "\n" + filtered[2]}
     return affe;
+}
+function na(output) {
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
+	output = output.trim();
+	var arr = output.split('\n');
+	var filtered = arr.filter(function (el) {
+  	return el != null && el != '';
+	});
+	var na = filtered[0];
+	if (filtered.length > 1) {na = na + " " + filtered[1]}
+	if (filtered.length > 2) {na = na + " " + filtered[2]}
+	if (filtered.length > 3) {na = na + " " + filtered[3]}
+	if (filtered.length > 4) {na = na + " " + filtered[4]}
+    return na;
 }
 module.exports = FindStat;
