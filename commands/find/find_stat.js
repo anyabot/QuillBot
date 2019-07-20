@@ -33,12 +33,11 @@ class FindStat extends commando.Command {
 		var page = 1;
 		output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
                 if(output) {
-			message.channel.send(unit)
 			check = true;
                 	let lv1v1 = lv1line(output);
                 	output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
                 	let lv99v1 = lv99line(output);
-			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a').attr('data-src'));
+			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
@@ -51,7 +50,6 @@ class FindStat extends commando.Command {
 			.addField("Max Cost", lv1v1[10], true)
 			.addField("Min Cost", lv1v1[11], true)
 			pages.push(embed);
-			message.channel.send(lv1v1[3])
 		}
 		if ($('.listtable.bgwhite tr').length >= 5) {
 			output = $('.c2.numbers').first().text();
@@ -79,7 +77,7 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
                 	output = $('.c3 ').first().text();
                 	let lv1v1 = lv1line(output);
-			img = ($('.c3 td:first-child div a').attr('data-src'));
+			img = ($('.c3 td:first-child div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 			.setThumbnail(img)
@@ -99,7 +97,7 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
                 	output = $('.c4 ').first().text();
                 	let lv1v1 = lv1line(output);
-			let img2 = ($('.c4 td:first-child div a').attr('data-src'));
+			let img2 = ($('.c4 td:first-child div a img').attr('data-src'));
 			if (img2) {img = img2}
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -120,7 +118,7 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
                 	output = $('.c5 ').first().text();
                 	let lv1v1 = lv1line(output);
-			let img2 = ($('.c5 td:first-child div a').attr('data-src'));
+			let img2 = ($('.c5 td:first-child div a img').attr('data-src'));
 			if (img2) {img = img2}
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
