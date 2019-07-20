@@ -64,6 +64,8 @@ class FindStat extends commando.Command {
                 		let lv1v1 = lv1line(output);
 				output = $('.c2.numbers td:nth-child(5)').first().html();
 				let ran = range(output);
+				output = $('.c2 td:nth-child(10)').first().html();
+				aff = range(output);
 				let embed = new Discord.RichEmbed()
 				.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 				.setThumbnail(img)
@@ -76,6 +78,7 @@ class FindStat extends commando.Command {
 				.addField("Block", lv1v1[6], true)
 				.addField("Max Cost", lv1v1[7], true)
 				.addField("Min Cost", lv1v1[8], true)
+				.addField("Affection Bonus", aff, true)
 				pages.push(embed);
 			}
 		}
@@ -86,6 +89,8 @@ class FindStat extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			output = $('.c3.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
+			output = $('.c3 td:nth-child(11)').first().html();
+			aff = range(output);
 			img = ($('.c3 td:first-child div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[0] + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -99,6 +104,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
 			.addField("Min Cost", lv1v1[8], true)
+			.addField("Affection Bonus", aff, true)
 			pages.push(embed)
 		}
                 output = $('.c4.numbers').first().text();
@@ -122,6 +128,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
 			.addField("Min Cost", lv1v1[8], true)
+			.addField("Affection Bonus", aff, true)
 			pages.push(embed)
 		}
 		output = $('.c5.numbers').first().text();
@@ -145,6 +152,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[6], true)
 			.addField("Max Cost", lv1v1[7], true)
 			.addField("Min Cost", lv1v1[8], true)
+			.addField("Affection Bonus", aff, true)
 			pages.push(embed)
 		}
 		if (check) {
