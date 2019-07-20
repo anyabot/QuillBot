@@ -44,12 +44,6 @@ class FindSkill extends commando.Command {
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
 						let out = $(elem).find('tr').eq(1).text();
 						let aa = te(out);
-						if (aa.length > 6){
-							aa[2] = aa[2] + " " + aa[3]
-							aa[3] = aa[4]
-							aa[4] = aa[5]
-							aa[5] = aa[6]
-						}
 						embed1.setTitle("Normal Skill")
 						embed1.setThumbnail(img)
 						embed1.addField(aa[2], aa[3] + "\n**CD: **" +aa[4] + "\n**Initial: **" + aa[5]);
@@ -61,30 +55,12 @@ class FindSkill extends commando.Command {
 								pages.push(embed1)
 								embed2.setTitle("Awakened Skill")
 								embed2.setThumbnail(img)
-								if (aa.length > 5){
-									aa[1] = aa[1] + " " + aa[2]
-									aa[2] = aa[3]
-									aa[3] = aa[4]
-									aa[4] = aa[5]
-								}
 								embed2.addField(aa[1], aa[2] + "\n**CD: **" +aa[3] + "\n**Initial: **" + aa[4]);
 							}
 							else if (!aw) {
-								if (aa.length > 4){
-									aa[0] = aa[0] + " " + aa[1]
-									aa[1] = aa[2]
-									aa[2] = aa[3]
-									aa[3] = aa[4]
-								}
 								embed1.addField(aa[0], aa[1] + "\n**CD: **" +aa[2] + "\n**Initial: **" + aa[3]);
 							}
 							else {
-								if (aa.length = 5){
-									aa[0] = aa[0] + " " + aa[1]
-									aa[1] = aa[2]
-									aa[2] = aa[3]
-									aa[3] = aa[4]
-								}
 								embed2.addField(aa[0], aa[1] + "\n**CD: **" +aa[2] + "\n**Initial: **" + aa[3]);
 							}
 							
