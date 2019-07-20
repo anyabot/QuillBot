@@ -33,6 +33,8 @@ class FindSkill extends commando.Command {
 		    		var aw = false
 				var embed1 = new Discord.RichEmbed()
 				var embed2 = new Discord.RichEmbed()
+				embed1.setFooter('React N for Normal Skill or A for Awakened Skill');
+		    		embed2.setFooter('React N for Normal Skill or A for Awakened Skill');
 				$('.wikitable').each(function(i, elem) {
 					output = $(elem).first().text();
 					let ar = te(output);
@@ -43,7 +45,7 @@ class FindSkill extends commando.Command {
 						let out = $(elem).find('tr').eq(1).html();
 						let aa = te(out);
 						if (aa.length > 6){
-							aa[2] = aa[2] + aa[3]
+							aa[2] = aa[2] + " " + aa[3]
 							aa[3] = aa[4]
 							aa[4] = aa[5]
 							aa[5] = aa[6]
@@ -60,7 +62,7 @@ class FindSkill extends commando.Command {
 								embed2.setTitle("Awakened Skill")
 								embed2.setThumbnail(img)
 								if (aa.length > 5){
-									aa[1] = aa[1] + aa[2]
+									aa[1] = aa[1] + " " + aa[2]
 									aa[2] = aa[3]
 									aa[3] = aa[4]
 									aa[4] = aa[5]
@@ -69,7 +71,7 @@ class FindSkill extends commando.Command {
 							}
 							else if (!aw) {
 								if (aa.length > 4){
-									aa[0] = aa[0] + aa[1]
+									aa[0] = aa[0] + " " + aa[1]
 									aa[1] = aa[2]
 									aa[2] = aa[3]
 									aa[3] = aa[4]
@@ -78,7 +80,7 @@ class FindSkill extends commando.Command {
 							}
 							else {
 								if (aa.length = 5){
-									aa[0] = aa[0] + aa[1]
+									aa[0] = aa[0] + " " + aa[1]
 									aa[1] = aa[2]
 									aa[2] = aa[3]
 									aa[3] = aa[4]
@@ -96,31 +98,25 @@ class FindSkill extends commando.Command {
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
 		message.channel.send(embed).then(msg => {
 
-		msg.react('⬅').then( r => {
-        msg.react('➡')
+		msg.react('🇳').then( r => {
+        msg.react('🇦')
 
         // Filters
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '🇳' && !user.bot;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '🇦' && !user.bot;
 
         const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
         const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
         backwards.on('collect', r => {
 		r.remove(r.users.filter(u => !u.bot).first());
-        	if (page === 1) return;
-         	page--;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	embed = pages[0];
             	msg.edit(embed)
         })
 
         forwards.on('collect', r => {
 		r.remove(r.users.filter(u => !u.bot).first());
-            	if (page === pages.length) return;
-            	page++;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	embed = pages[1];
             	msg.edit(embed)
         })
     })
