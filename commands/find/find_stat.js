@@ -213,6 +213,9 @@ function range(output) {
     output = output.replace(/\n+ /g, " ");
 	output = output.trim();
 	var arr = output.split(' ');
-    return arr[0] + "/" + arr[2] + "/" + arr[5] + arr[6] + "/" + arr[7] + "/" + arr[8] + "/"
+	var range = arr[0];
+	if (arr.length > 3) {range = range + "/" + arr[2]}
+	if (arr.length > 6) {range = range + "/" + arr[5]}
+    return range;
 }
 module.exports = FindStat;
