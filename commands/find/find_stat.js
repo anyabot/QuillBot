@@ -25,9 +25,9 @@ class FindStat extends commando.Command {
             if (!err) {
 		    
                 const $ = cheerio.load(html);
-                var text;
 		var output;
                 var img;
+		var aff;
 		var check = false;
 		var pages = []
 		var page = 1;
@@ -39,6 +39,8 @@ class FindStat extends commando.Command {
                 	let lv99v1 = lv99line(output);
 			output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
 			let ran = range(output);
+			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(12)').first().html();
+			aff = range(output);
 			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 			let embed = new Discord.RichEmbed()
 			.setTitle(lv1v1[3] + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
@@ -51,6 +53,7 @@ class FindStat extends commando.Command {
 			.addField("Block", lv1v1[9], true)
 			.addField("Max Cost", lv1v1[10], true)
 			.addField("Min Cost", lv1v1[11], true)
+			.addField("Affection Bonus", aff, true)
 			pages.push(embed);
 		}
 		if ($('.listtable.bgwhite tr').length >= 5) {
