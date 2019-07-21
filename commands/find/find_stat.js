@@ -6,6 +6,13 @@ var he = require('he');
 var name = require('../../library/lib.js').name;
 var functions = require('../../functions.js');
 
+var bonus = {
+	"PEV": "Physical Attack Evasion",
+	"PAD": "Post-Attack Deplay",
+	"SCD": "Skill Cooldown",
+	"SDI" :"Skill Duration"
+}
+
 
 class FindStat extends commando.Command {
     constructor(client) {
@@ -238,11 +245,15 @@ function range(output) {
   	return el != null && el != '';
 	});
 	var range = filtered[0];
-	if (filtered.length > 1) {range = range + "/" + filtered[1]}
-	if (filtered.length > 2) {range = range + "/" + filtered[2]}
+	let i = 1;
+	while (i < filtered.length) {
+		range = range + "/" + filtered[i];
+		i++;
+	}
     return range;
 }
 function affe(output) {
+	
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
 	output = he.decode(output);
@@ -252,8 +263,21 @@ function affe(output) {
   	return el != null && el != '';
 	});
 	var affe = filtered[0];
-	if (filtered.length > 1) {affe = affe + "\n" + filtered[1]}
-	if (filtered.length > 2) {affe = affe + "\n" + filtered[2]}
+  let i = 1;
+	while (i < filtered.length) {
+		if (bonus[filtered[i]]) {
+			affe = affe + "\n" + bonus[filtered[i]] + filtered[i+1];
+			i = i +2;
+		}
+		else if (!isNaN(filtered[i])) {
+			affe = affe + filtered[i]
+			i++;
+		}
+		else {
+			affe = affe + "\n" + filtered[i]
+			i++;
+		}
+	}
     return affe;
 }
 function na(output) {
@@ -266,10 +290,11 @@ function na(output) {
   	return el != null && el != '';
 	});
 	var na = filtered[0];
-	if (filtered.length > 1) {na = na + " " + filtered[1]}
-	if (filtered.length > 2) {na = na + " " + filtered[2]}
-	if (filtered.length > 3) {na = na + " " + filtered[3]}
-	if (filtered.length > 4) {na = na + " " + filtered[4]}
+	let i = 1;
+	while (i < filtered.length) {
+		na = na + " " + filtered[i];
+		i++;
+	}
     return na;
 }
 module.exports = FindStat;
