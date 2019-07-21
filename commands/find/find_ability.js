@@ -154,6 +154,7 @@ request(link, function(err, resp, html) {
           message.channel.send(embedaw)
         }
       }
+	if (!sil && !nor && !aw) {message.channel.send("No Data")}
     })
   }
 })
