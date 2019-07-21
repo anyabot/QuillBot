@@ -98,7 +98,7 @@ request(link, function(err, resp, html) {
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
           let embed = new Discord.RichEmbed()
           embed.setTitle(awna)
-          embed.setThumbnail(awimg))
+          embed.setThumbnail(awimg)
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
           request(link2, function(err, resp, html) {
             if (!err) {
