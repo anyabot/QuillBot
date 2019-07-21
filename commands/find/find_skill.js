@@ -2,6 +2,7 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
+var he = require('he');
 var name = require('../../library/lib.js').name;
 var functions = require('../../functions.js');
 
@@ -106,6 +107,7 @@ class FindSkill extends commando.Command {
 function te(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
     output = output.trim();
     var arr = output.split('\n');
 	var filtered = arr.filter(function (el) {
