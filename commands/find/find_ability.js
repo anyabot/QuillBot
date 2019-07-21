@@ -49,7 +49,8 @@ request(link, function(err, resp, html) {
           var silna = aff;
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           embedsil.setTitle(silna)
-					embedsil.setThumbnail(silimg)
+	embedsil.setThumbnail(silimg)
+		message.channel.send(silna)
         }
       }
 
@@ -65,6 +66,7 @@ request(link, function(err, resp, html) {
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           embednor.setTitle(norna)
 					embednor.setThumbnail(norimg)
+		message.channel.send(norna)
         }
       }
       output = $('.c3.numbers').first().text();
@@ -77,6 +79,7 @@ request(link, function(err, resp, html) {
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
           embedaw.setTitle(awna)
 					embedaw.setThumbnail(awimg)
+		message.channel.send(awna)
         }
       }
     }
