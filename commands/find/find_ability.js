@@ -22,92 +22,7 @@ class FindAbility extends commando.Command {
         var unit = functions.toTitleCase(input);
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + unit;
-	var pages = [];
-    	var page = 1;
-	var check = false;
-	thenrequest(link, pages, message, check).then(() => {
-	if (check) {
-		var embed = pages[0];
-		embed.setFooter('Page ' + page + ' of ' + pages.length);
-		message.channel.send(embed).then(msg => {
 
-		msg.react('⬅').then( r => {
-        msg.react('➡')
-
-        // Filters
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
-
-        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
-
-        backwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-        	if (page === 1) return;
-         	page--;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
-
-        forwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-            	if (page === pages.length) return;
-            	page++;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
-    })
-})
-	    }
-                if (!check) {message.channel.send("No Data")};
-	})
-  
-
-    }
-}
-
-function te(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
-	output = he.decode(output);
-    output = output.trim();
-    var arr = output.split('\n');
-	var filtered = arr.filter(function (el) {
-  	return el != null && el != '';
-	});
-   return filtered;
-}
-function te2(output) {
-  output = output.replace(/<[^>]*>/g, "\n");
-  output = output.replace(/\n+ /g, "\n");
-  output = he.decode(output);
-  output = output.trim();
-  var arr = output.split('\n');
-  var filtered = arr.filter(function(el) {
-    return el != null && el != '' && el.substring(0,12) != "This ability";
-  });
-  return filtered.join("\n");
-}
-function na(output) {
-  output = output.replace(/<[^>]*>/g, "\n");
-  output = output.replace(/\n+ /g, "\n");
-  output = he.decode(output);
-  output = output.trim();
-  var arr = output.split('\n');
-  var filtered = arr.filter(function(el) {
-    return el != null && el != '';
-  });
-  var na = filtered[0];
-  let i = 1;
-  while (i < filtered.length) {
-    na = na + " " + filtered[i];
-    i++;
-  }
-  return na;
-}
-function thenrequest(link, pages, message, check){
 request(link, function(err, resp, html) {
   if (!err) {
 
@@ -115,9 +30,10 @@ request(link, function(err, resp, html) {
     var output;
     var img;
     var aff;
-
+    var pages = [];
+    var page = 1;
     var silver = $('.categories').text().includes("Rarity:Silver");
-
+    var check = false;
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
       output = $('.c2.numbers').first().text();
@@ -197,8 +113,87 @@ request(link, function(err, resp, html) {
         }
       }
     }
-  }    
-})
 
+if (check) {
+		var embed = pages[0];
+		embed.setFooter('Page ' + page + ' of ' + pages.length);
+		message.channel.send(embed).then(msg => {
+
+		msg.react('⬅').then( r => {
+        msg.react('➡')
+
+        // Filters
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+
+        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+
+        backwards.on('collect', r => {
+		r.remove(r.users.filter(u => !u.bot).first());
+        	if (page === 1) return;
+         	page--;
+            	embed = pages[page-1];
+            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	msg.edit(embed)
+        })
+
+        forwards.on('collect', r => {
+		r.remove(r.users.filter(u => !u.bot).first());
+            	if (page === pages.length) return;
+            	page++;
+            	embed = pages[page-1];
+            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	msg.edit(embed)
+        })
+    })
+})
+	    }
+                if (!check) {message.channel.send("No Data")};
+    
+  }
+	    
+})
+    }
+}
+
+function te(output) {
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
+    output = output.trim();
+    var arr = output.split('\n');
+	var filtered = arr.filter(function (el) {
+  	return el != null && el != '';
+	});
+   return filtered;
+}
+function te2(output) {
+  output = output.replace(/<[^>]*>/g, "\n");
+  output = output.replace(/\n+ /g, "\n");
+  output = he.decode(output);
+  output = output.trim();
+  var arr = output.split('\n');
+  var filtered = arr.filter(function(el) {
+    return el != null && el != '' && el.substring(0,12) != "This ability";
+  });
+  return filtered.join("\n");
+}
+function na(output) {
+  output = output.replace(/<[^>]*>/g, "\n");
+  output = output.replace(/\n+ /g, "\n");
+  output = he.decode(output);
+  output = output.trim();
+  var arr = output.split('\n');
+  var filtered = arr.filter(function(el) {
+    return el != null && el != '';
+  });
+  var na = filtered[0];
+  let i = 1;
+  while (i < filtered.length) {
+    na = na + " " + filtered[i];
+    i++;
+  }
+  return na;
 }
 module.exports = FindAbility;
