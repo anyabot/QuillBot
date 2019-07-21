@@ -27,10 +27,7 @@ request(link, function(err, resp, html) {
 
     const $ = cheerio.load(html);
     var output;
-    var img;
     var aff;
-    var pages = []
-    var page = 1;
     var silver = $('.categories').text().includes("Rarity:Silver");
     var nor = false;
     var sil = false;
