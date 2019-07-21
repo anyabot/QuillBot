@@ -34,49 +34,15 @@ request(link, function(err, resp, html) {
     var aw = false;
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
-      output = $('.c2.numbers').first().text();
-      if (output) {
-        output = $('.c2.numbers td:nth-child(7)').first().html();
-        aff = na(output);
-        if (aff != "N/A") {
-          sil = true;
-          var silna = aff;
-          var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          message.channel.send(silna)
-          message.channel.send(silimg)
-        }
-      }
-
+    	message.channel.send("Silver")
     }
     if (!silver) {
-      output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
-      if (output) {
-        output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(14)').first().html();
-        aff = na(output);
-        if (aff != "N/A") {
-          nor = true
-          var norna = aff;
-          var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          message.channel.send(norna)
-          message.channel.send(norimg)
-        }
-      }
-      output = $('.c3.numbers').first().text();
-      if (output) {
-        output = $('.c3 td:nth-child(13)').first().html();
-        aff = na(output);
-        if (aff != "N/A") {
-          aw = true
-          var awna = aff;
-          var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
-          message.channel.send(awna)
-          message.channel.send(awimg)
-        }
+      message.channel.send(" NotSilver")
       }
     }
 
     
-  }
+  
 	message.channel.send("err")
 })
     }
