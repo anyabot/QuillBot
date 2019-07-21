@@ -86,6 +86,7 @@ request(link, function(err, resp, html) {
           embed3.setTitle(awna)
           embed3.setThumbnail(awimg)
           var link3 = "https://aigis.fandom.com/wiki/Ability/" + awna;
+		message.channel.send("a")
             
         }
       }
