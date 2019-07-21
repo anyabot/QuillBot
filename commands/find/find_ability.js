@@ -34,7 +34,7 @@ request(link, function(err, resp, html) {
     var silver = $('.categories').text().includes("Rarity:Silver");
     var check = false;
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
-    if (silver) {
+    (if (silver) {
       output = $('.c2.numbers').first().text();
       if (output) {
         output = $('.c2.numbers td:nth-child(8)').first().html();
@@ -47,7 +47,7 @@ request(link, function(err, resp, html) {
           embed.setTitle(silna)
           embed.setThumbnail(silimg)
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + silna;
-          async request(link2, function(err, resp, html) {
+           request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
               let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
@@ -74,7 +74,7 @@ request(link, function(err, resp, html) {
           embed.setTitle(norna)
           embed.setThumbnail(norimg)
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
-          async request(link2, function(err, resp, html) {
+           request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
@@ -98,7 +98,7 @@ request(link, function(err, resp, html) {
           embed.setTitle(awna)
           embed.setThumbnail(awimg)
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
-          async request(link2, function(err, resp, html) {
+            request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
@@ -111,7 +111,7 @@ request(link, function(err, resp, html) {
 		pages.push(embed);
         }
       }
-    }
+    }).theb(() => {
 if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
@@ -150,6 +150,7 @@ if (check) {
                 if (!check) {message.channel.send("No Data")};
     
   }
+	    }
 })
     }
 }
