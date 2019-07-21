@@ -32,9 +32,24 @@ request(link, function(err, resp, html) {
     var aff;
     var pages = [];
     var page = 1;
+	  var nor = false;
+	  var aw = false;
     var silver = $('.categories').text().includes("Rarity:Silver");
 	  var bronze = $('.categories').text().includes("Rarity:Bronze");
     var check = false;
+	output = $('.c3 td:nth-child(13)').first().html();
+        aff = na(output);
+        if (aff != "N/A") {
+		aw = true;
+	}
+	  output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
+      if (output) {
+        output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(14)').first().html();
+        aff = na(output);
+        if (aff != "N/A") {
+		nor = true;
+	}
+      }
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
       output = $('.c2.numbers').first().text();
@@ -90,7 +105,34 @@ if (bronze) {
         }
       }
     }
-    if (!silver) {
+	  if (aw && !nor) {
+      output = $('.c3.numbers').first().text();
+      if (output) {
+        output = $('.c3 td:nth-child(13)').first().html();
+        aff = na(output);
+        if (aff != "N/A") {
+	check = true;
+          var awna = aff;
+          var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
+          let embed = new Discord.RichEmbed()
+          embed.setTitle(awna)
+          embed.setThumbnail(awimg)
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
+            request(link2, function(err, resp, html) {
+            if (!err) {
+              let $2 = cheerio.load(html)
+              let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
+              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
+              embed.addField("Description", des);
+              if (note != '' && note != null) {embed.addField("Notes", note)};
+			message.channel.send(embed)
+            }
+          })
+
+        }
+      }
+        }
+    if (aw && nor) {
       output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
       if (output) {
         output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(14)').first().html();
@@ -172,33 +214,7 @@ if (bronze) {
             })
         }
       }
-		    else {
-      output = $('.c3.numbers').first().text();
-      if (output) {
-        output = $('.c3 td:nth-child(13)').first().html();
-        aff = na(output);
-        if (aff != "N/A") {
-	check = true;
-          var awna = aff;
-          var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
-          let embed = new Discord.RichEmbed()
-          embed.setTitle(awna)
-          embed.setThumbnail(awimg)
-          let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
-            request(link2, function(err, resp, html) {
-            if (!err) {
-              let $2 = cheerio.load(html)
-              let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
-              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", note)};
-			message.channel.send(embed)
-            }
-          })
-
-        }
-      }
-        }
+		    
     }
            
 
