@@ -55,9 +55,10 @@ request(link, function(err, resp, html) {
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
+		    message.channel.send(embed)
             }
           })
-		message.channel.send(embed)
+		
         }
       }
 
@@ -82,9 +83,10 @@ request(link, function(err, resp, html) {
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
+		    message.channel.send(embed)
             }
           })
-		message.channel.send(embed)
+
         }
       }
       output = $('.c3.numbers').first().text();
@@ -106,10 +108,10 @@ request(link, function(err, resp, html) {
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
-
+			message.channel.send(embed)
             }
           })
-		message.channel.send(embed)
+
         }
       }
     }
