@@ -50,6 +50,7 @@ request(link, function(err, resp, html) {
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           embedsil.setTitle(silna)
 	embedsil.setThumbnail(silimg)
+		message.channel.send(silna)
 		
         }
       }
