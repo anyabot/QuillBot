@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
+var sleep = require('sleep');
 var name = require('../../library/lib.js').name;
 var functions = require('../../functions.js');
 
@@ -112,6 +113,7 @@ request(link, function(err, resp, html) {
         }
       }
     }
+	  sleep.sleep(1);
 if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
