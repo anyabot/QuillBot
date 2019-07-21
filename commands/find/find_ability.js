@@ -113,7 +113,11 @@ request(link, function(err, resp, html) {
         }
       }
     }
-	  sleep.sleep(5);
+
+    
+  }
+	    
+}).then(() => {
 if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
@@ -150,10 +154,7 @@ if (check) {
 })
 	    }
                 if (!check) {message.channel.send("No Data")};
-    
-  }
-	    
-})
+}
     }
 }
 
