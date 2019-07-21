@@ -37,6 +37,7 @@ request(link, function(err, resp, html) {
     var silver = $('.categories').text().includes("Rarity:Silver");
 	  var bronze = $('.categories').text().includes("Rarity:Bronze");
     var check = false;
+	  if (!silver && !bronze){
 	output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
       if (output) {
 	output = $('.c3 td:nth-child(13)').first().html();
@@ -53,6 +54,7 @@ request(link, function(err, resp, html) {
 		nor = true;
 	}
       }
+	  }
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
       output = $('.c2.numbers').first().text();
