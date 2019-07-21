@@ -32,9 +32,7 @@ request(link, function(err, resp, html) {
     var pages = []
     var page = 1;
     var silver = $('.categories').text().includes("Rarity:Silver");
-    var nor = false;
-    var sil = false;
-    var aw = false;
+    var check = false;
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
       output = $('.c2.numbers').first().text();
@@ -42,7 +40,7 @@ request(link, function(err, resp, html) {
         output = $('.c2.numbers td:nth-child(8)').first().html();
         aff = na(output);
         if (aff != "N/A") {
-          sil = true;
+          check = true;
           var silna = aff;
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           let embed = new Discord.RichEmbed()
@@ -55,8 +53,8 @@ request(link, function(err, resp, html) {
               let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
-              if (note != '' && note != null) embed.addField("Description", note);
-		    message.channel.send(embed);
+              if (note != '' && note != null) embed.addField("Notes", note);
+		    pages.push(embed)
             }
           })
         }
@@ -69,7 +67,7 @@ request(link, function(err, resp, html) {
         output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(14)').first().html();
         aff = na(output);
         if (aff != "N/A") {
-          nor = true
+	check = true;
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 	let embed = new Discord.RichEmbed()
@@ -82,8 +80,8 @@ request(link, function(err, resp, html) {
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
-              if (note != '' && note != null) embed.addField("Description", note);
-		    message.channel.send(embed);
+              if (note != '' && note != null) embed.addField("Notes", note);
+		    pages.push(embed)
             }
           })
         }
@@ -93,7 +91,7 @@ request(link, function(err, resp, html) {
         output = $('.c3 td:nth-child(13)').first().html();
         aff = na(output);
         if (aff != "N/A") {
-          aw = true
+	check = true;
           var awna = aff;
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
           let embed = new Discord.RichEmbed()
@@ -106,14 +104,49 @@ request(link, function(err, resp, html) {
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
-              if (note != '' && note != null) embed.addField("Description", note);
-		    message.channel.send(embed);
+              if (note != '' && note != null) embed.addField("Notes", note);
+		    pages.push(embed)
             }
           })
         }
       }
     }
+if (check) {
+		var embed = pages[0];
+		embed.setFooter('Page ' + page + ' of ' + pages.length);
+		message.channel.send(embed).then(msg => {
 
+		msg.react('⬅').then( r => {
+        msg.react('➡')
+
+        // Filters
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+
+        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+
+        backwards.on('collect', r => {
+		r.remove(r.users.filter(u => !u.bot).first());
+        	if (page === 1) return;
+         	page--;
+            	embed = pages[page-1];
+            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	msg.edit(embed)
+        })
+
+        forwards.on('collect', r => {
+		r.remove(r.users.filter(u => !u.bot).first());
+            	if (page === pages.length) return;
+            	page++;
+            	embed = pages[page-1];
+            	embed.setFooter('Page ' + page + ' of ' + pages.length);
+            	msg.edit(embed)
+        })
+    })
+})
+	    }
+                if (!check) {message.channel.send("No Data")};
     
   }
 })
