@@ -128,8 +128,8 @@ if (bronze) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", note)};
+              embed2.addField("Description", des);
+              if (note != '' && note != null) {embed2.addField("Notes", note)};
 			        pages.push(embed2)
 		    embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
