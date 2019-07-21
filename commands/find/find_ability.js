@@ -37,13 +37,21 @@ request(link, function(err, resp, html) {
     	message.channel.send("Silver")
     }
     if (!silver) {
+	output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
+      if (output) {
+        output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(14)').first().html();
+        aff = na(output);
+        if (aff != "N/A") {
+          nor = true
+          var norna = aff;
+          var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+          message.channel.send(norna)
+          message.channel.send(norimg)
+        }
+      }
       message.channel.send(" NotSilver")
       }
     }
-
-    
-  
-	message.channel.send("err")
 })
     }
 }
