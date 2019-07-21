@@ -24,7 +24,7 @@ class FindAbility extends commando.Command {
 
 request(link, function(err, resp, html) {
   if (!err) {
-	message.channel.send("sil")
+
     const $ = cheerio.load(html);
     var output;
     var img;
@@ -35,9 +35,6 @@ request(link, function(err, resp, html) {
     var nor = false;
     var sil = false;
     var aw = false;
-    var embedsil = new Discord.RichEmbed()
-		var embednor = new Discord.RichEmbed()
-    var embedaw = new Discord.RichEmbed()
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
       output = $('.c2.numbers').first().text();
@@ -48,10 +45,8 @@ request(link, function(err, resp, html) {
           sil = true;
           var silna = aff;
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          embedsil.setTitle(silna)
-	embedsil.setThumbnail(silimg)
-		message.channel.send("sil")
-		
+          message.channel.send(silna)
+          message.channel.send(silimg)
         }
       }
 
@@ -65,8 +60,8 @@ request(link, function(err, resp, html) {
           nor = true
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          embednor.setTitle(norna)
-					embednor.setThumbnail(norimg)
+          message.channel.send(norna)
+          message.channel.send(norimg)
         }
       }
       output = $('.c3.numbers').first().text();
@@ -77,8 +72,8 @@ request(link, function(err, resp, html) {
           aw = true
           var awna = aff;
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
-          embedaw.setTitle(awna)
-					embedaw.setThumbnail(awimg)
+          message.channel.send(awna)
+          message.channel.send(awimg)
         }
       }
     }
@@ -103,9 +98,8 @@ request(link, function(err, resp, html) {
             nfil = nfil.slice(0, -1)
             fil[i] = nfil
           }
-          embedsil.addField("Description",fil[2])
-          if (fil[3] != null && fil[3] != '') {embedsil.addField("Notes",fil[3])}
-          message.channel.send(embedsil)
+          message.channel.send(fil[2])
+          message.channel.send(fil[3])
         }
       
         if (nor) {
@@ -124,13 +118,12 @@ request(link, function(err, resp, html) {
             nfil = nfil.slice(0, -1)
             fil[i] = nfil
           }
-          embednor.addField("Description",fil[2])
-          if (fil[3] != null && fil[3] != '') {embednor.addField("Notes",fil[3])}
-          message.channel.send(embednor)
+          message.channel.send(fil[2])
+          message.channel.send(fil[3])
           if (aw) {
-            embedaw.addField("Description",fil[6])
-            if (fil[7] != null && fil[7] != '') {embedaw.addField("Notes",fil[7])}
-            message.channel.send(embedaw)
+            message.channel.send("--------------")
+            message.channel.send(fil[6])
+            message.channel.send(fil[7])
           }
         }
         else if (aw) {
@@ -149,12 +142,10 @@ request(link, function(err, resp, html) {
             nfil = nfil.slice(0, -1)
             fil[i] = nfil
           }
-          embedaw.addField("Description",fil[2])
-          if (fil[3] != null && fil[3] != '') {embedaw.addField("Notes",fil[3])}
-          message.channel.send(embedaw)
+          message.channel.send(fil[2])
+          message.channel.send(fil[3])
         }
       }
-	if (!sil && !nor && !aw) {message.channel.send("No Data")}
     })
   }
 })
