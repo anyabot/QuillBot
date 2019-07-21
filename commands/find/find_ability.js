@@ -29,7 +29,7 @@ request(link, function(err, resp, html) {
     var output;
     var img;
     var aff;
-    var pages = []
+    var pages = [];
     var page = 1;
     var silver = $('.categories').text().includes("Rarity:Silver");
     var check = false;
@@ -53,7 +53,7 @@ request(link, function(err, resp, html) {
               let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
-              if (note != '' && note != null) embed.addField("Notes", note);
+              if (note != '' && note != null) {embed.addField("Notes", note)};
 		    pages.push(embed)
             }
           })
@@ -80,7 +80,7 @@ request(link, function(err, resp, html) {
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
-              if (note != '' && note != null) embed.addField("Notes", note);
+              if (note != '' && note != null) {embed.addField("Notes", note)};
 		    pages.push(embed)
             }
           })
@@ -104,7 +104,7 @@ request(link, function(err, resp, html) {
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
-              if (note != '' && note != null) embed.addField("Notes", note);
+              if (note != '' && note != null) {embed.addField("Notes", note)};
 		    pages.push(embed)
             }
           })
