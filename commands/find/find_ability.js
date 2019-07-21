@@ -154,7 +154,7 @@ if (check) {
 })
 	    }
                 if (!check) {message.channel.send("No Data")};
-}
+})
     }
 }
 
