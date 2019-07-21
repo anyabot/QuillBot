@@ -54,9 +54,9 @@ request(link, function(err, resp, html) {
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
-		    pages.push(embed)
             }
           })
+		pages.push(embed);
         }
       }
 
@@ -81,9 +81,9 @@ request(link, function(err, resp, html) {
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
-		    pages.push(embed)
             }
           })
+		pages.push(embed);
         }
       }
       output = $('.c3.numbers').first().text();
@@ -105,9 +105,10 @@ request(link, function(err, resp, html) {
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
               embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
-		    pages.push(embed)
+
             }
           })
+		pages.push(embed);
         }
       }
     }
