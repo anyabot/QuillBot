@@ -2,6 +2,7 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
+var he = request('he');
 var name = require('../../library/lib.js').name;
 var functions = require('../../functions.js');
 
@@ -221,6 +222,7 @@ class FindStat extends commando.Command {
 function lv1line(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
     output = output.trim();
     var arr = output.split('\n');
 
@@ -229,6 +231,7 @@ function lv1line(output) {
 function range(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
 	var filtered = arr.filter(function (el) {
@@ -242,6 +245,7 @@ function range(output) {
 function affe(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
 	var filtered = arr.filter(function (el) {
@@ -255,6 +259,7 @@ function affe(output) {
 function na(output) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
 	var filtered = arr.filter(function (el) {
