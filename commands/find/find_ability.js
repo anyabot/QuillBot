@@ -22,7 +22,9 @@ class FindAbility extends commando.Command {
         var unit = functions.toTitleCase(input);
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + unit;
-
+	var pages = [];
+    	var page = 1;
+	var check = false;
 request(link, function(err, resp, html) {
   if (!err) {
 
@@ -30,10 +32,9 @@ request(link, function(err, resp, html) {
     var output;
     var img;
     var aff;
-    var pages = [];
-    var page = 1;
+
     var silver = $('.categories').text().includes("Rarity:Silver");
-    var check = false;
+
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
       output = $('.c2.numbers').first().text();
@@ -114,6 +115,9 @@ request(link, function(err, resp, html) {
       }
     }
 
+	    
+})
+
 if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
@@ -152,8 +156,7 @@ if (check) {
                 if (!check) {message.channel.send("No Data")};
     
   }
-	    
-})
+
     }
 }
 
