@@ -34,7 +34,7 @@ request(link, function(err, resp, html) {
     var silver = $('.categories').text().includes("Rarity:Silver");
     var check = false;
     output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
-    (if (silver) {
+    if (silver) {
       output = $('.c2.numbers').first().text();
       if (output) {
         output = $('.c2.numbers td:nth-child(8)').first().html();
@@ -111,7 +111,7 @@ request(link, function(err, resp, html) {
 		pages.push(embed);
         }
       }
-    }).theb(() => {
+    }
 if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
@@ -150,7 +150,7 @@ if (check) {
                 if (!check) {message.channel.send("No Data")};
     
   }
-	    }
+	    
 })
     }
 }
