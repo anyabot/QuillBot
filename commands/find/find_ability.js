@@ -24,7 +24,7 @@ class FindAbility extends commando.Command {
 
 request(link, function(err, resp, html) {
   if (!err) {
-
+	message.channel.send("sil")
     const $ = cheerio.load(html);
     var output;
     var img;
@@ -50,7 +50,7 @@ request(link, function(err, resp, html) {
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           embedsil.setTitle(silna)
 	embedsil.setThumbnail(silimg)
-		message.channel.send(silna)
+		message.channel.send("sil")
 		
         }
       }
