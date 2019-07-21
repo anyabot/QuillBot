@@ -39,14 +39,26 @@ request(link, function(err, resp, html) {
     if (silver) {
       output = $('.c2.numbers').first().text();
       if (output) {
-        output = $('.c2.numbers td:nth-child(7)').first().html();
+        output = $('.c2.numbers td:nth-child(8)').first().html();
         aff = na(output);
         if (aff != "N/A") {
           sil = true;
           var silna = aff;
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          message.channel.send(silna)
-          message.channel.send(silimg)
+          let embed = new Discord.RichEmbed()
+          embed.setTitle(silna)
+          embed.setThumbnail(silimg)
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + silna;
+          request(link2, function(err, resp, html) {
+            if (!err) {
+              let $2 = cheerio.load(html)
+              let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
+              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
+              embed.addField("Description", des);
+              if (note != '' && note != null) embed.addField("Description", note);
+		    message.channel.send(embed);
+            }
+          })
         }
       }
 
@@ -60,8 +72,20 @@ request(link, function(err, resp, html) {
           nor = true
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          message.channel.send(norna)
-          message.channel.send(norimg)
+	let embed = new Discord.RichEmbed()
+          embed.setTitle(norna)
+          embed.setThumbnail(norimg)
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
+          request(link2, function(err, resp, html) {
+            if (!err) {
+              let $2 = cheerio.load(html)
+              let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
+              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
+              embed.addField("Description", des);
+              if (note != '' && note != null) embed.addField("Description", note);
+		    message.channel.send(embed);
+            }
+          })
         }
       }
       output = $('.c3.numbers').first().text();
@@ -72,81 +96,25 @@ request(link, function(err, resp, html) {
           aw = true
           var awna = aff;
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
-          message.channel.send(awna)
-          message.channel.send(awimg)
+          let embed = new Discord.RichEmbed()
+          embed.setTitle(awna)
+          embed.setThumbnail(awimg))
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
+          request(link2, function(err, resp, html) {
+            if (!err) {
+              let $2 = cheerio.load(html)
+              let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
+              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
+              embed.addField("Description", des);
+              if (note != '' && note != null) embed.addField("Description", note);
+		    message.channel.send(embed);
+            }
+          })
         }
       }
     }
 
-    $('.gcstyle tbody').each(function(i, elem) {
-      output = $(elem).first().text();
-      let ar = te(output);
-      if (ar[0] === 'Ability Name') {
-        if (sil) {
-          let $2 = cheerio.load(elem)
-          let siz = $2('tr').find('td').length
-          let aa = []
-          for (var i = 0; i < siz; i++) {
-            let cl = te2($2('tr').find('td').eq(i).text().trim() + "+").join("\n")
-            aa.push(cl)
-          }
-          let fil = aa.filter(function(el) {
-            return (el != null && el != '' && el.substring(0,1) != "*");
-          });
-          for (var i = 0; i < fil.length; i++) {
-            let nfil = fil[i];
-            nfil = nfil.slice(0, -1)
-            fil[i] = nfil
-          }
-          message.channel.send(fil[2])
-          message.channel.send(fil[3])
-        }
-      
-        if (nor) {
-          let $2 = cheerio.load(elem)
-          let siz = $2('tr').find('td').length
-          let aa = []
-          for (var i = 0; i < siz; i++) {
-            let cl = te2($2('tr').find('td').eq(i).text().trim() + "+").join("\n")
-            aa.push(cl)
-          }
-          let fil = aa.filter(function(el) {
-            return (el != null && el != '' && el.substring(0,1) != "*");
-          });
-          for (var i = 0; i < fil.length; i++) {
-            let nfil = fil[i];
-            nfil = nfil.slice(0, -1)
-            fil[i] = nfil
-          }
-          message.channel.send(fil[2])
-          message.channel.send(fil[3])
-          if (aw) {
-            message.channel.send("--------------")
-            message.channel.send(fil[6])
-            message.channel.send(fil[7])
-          }
-        }
-        else if (aw) {
-          let $2 = cheerio.load(elem)
-          let siz = $2('tr').find('td').length
-          let aa = []
-          for (var i = 0; i < siz; i++) {
-            let cl = te2($2('tr').find('td').eq(i).text().trim() + "+").join("\n")
-            aa.push(cl)
-          }
-          let fil = aa.filter(function(el) {
-            return (el != null && el != '' && el.substring(0,1) != "*");
-          });
-          for (var i = 0; i < fil.length; i++) {
-            let nfil = fil[i];
-            nfil = nfil.slice(0, -1)
-            fil[i] = nfil
-          }
-          message.channel.send(fil[2])
-          message.channel.send(fil[3])
-        }
-      }
-    })
+    
   }
 })
     }
@@ -164,15 +132,15 @@ function te(output) {
    return filtered;
 }
 function te2(output) {
-  output = output.replace(/<[^>]*>/g, "*");
+  output = output.replace(/<[^>]*>/g, "\n");
   output = output.replace(/\n+ /g, "\n");
   output = he.decode(output);
   output = output.trim();
   var arr = output.split('\n');
   var filtered = arr.filter(function(el) {
-    return el != null && el != '';
+    return el != null && el != '' && el.substring(0,12) != "This ability";
   });
-  return filtered;
+  return filtered.join("\n");
 }
 function na(output) {
   output = output.replace(/<[^>]*>/g, "\n");
