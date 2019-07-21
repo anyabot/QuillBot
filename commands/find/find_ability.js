@@ -113,7 +113,7 @@ request(link, function(err, resp, html) {
         }
       }
     }
-	  sleep.sleep(2);
+	  sleep.sleep(5);
 if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
