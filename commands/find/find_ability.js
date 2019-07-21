@@ -117,7 +117,7 @@ request(link, function(err, resp, html) {
 
 	    
 })
-
+}
 if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
@@ -155,7 +155,7 @@ if (check) {
 	    }
                 if (!check) {message.channel.send("No Data")};
     
-  }
+  
 
     }
 }
