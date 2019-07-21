@@ -47,7 +47,7 @@ request(link, function(err, resp, html) {
           embed.setTitle(silna)
           embed.setThumbnail(silimg)
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + silna;
-          request(link2, function(err, resp, html) {
+          async request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
               let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
@@ -74,7 +74,7 @@ request(link, function(err, resp, html) {
           embed.setTitle(norna)
           embed.setThumbnail(norimg)
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
-          request(link2, function(err, resp, html) {
+          async request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
@@ -98,7 +98,7 @@ request(link, function(err, resp, html) {
           embed.setTitle(awna)
           embed.setThumbnail(awimg)
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
-          request(link2, function(err, resp, html) {
+          async request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
