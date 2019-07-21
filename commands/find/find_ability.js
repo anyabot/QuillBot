@@ -22,24 +22,19 @@ class FindAbility extends commando.Command {
         var unit = functions.toTitleCase(input);
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + unit;
-	var aff;
-    var pages = [];
-    var page = 1;
-	        var check = false;
-	 var sil = false;
-	    var nor = false;
-	    var aw = false;
-	    var embed1 = new Discord.RichEmbed()
-	    var embed2 = new Discord.RichEmbed()
-	    var embed3 = new Discord.RichEmbed()
+
 request(link, function(err, resp, html) {
   if (!err) {
 
     const $ = cheerio.load(html);
     var output;
-
+    var img;
+    var aff;
+    var pages = [];
+    var page = 1;
     var silver = $('.categories').text().includes("Rarity:Silver");
-
+    var check = false;
+    output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
     if (silver) {
       output = $('.c2.numbers').first().text();
       if (output) {
@@ -47,13 +42,22 @@ request(link, function(err, resp, html) {
         aff = na(output);
         if (aff != "N/A") {
           check = true;
-		sil = true;
           var silna = aff;
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          embed1.setTitle(silna)
-          embed2.setThumbnail(silimg)
-          var link1 = "https://aigis.fandom.com/wiki/Ability/" + silna;
-           
+          let embed = new Discord.RichEmbed()
+          embed.setTitle(silna)
+          embed.setThumbnail(silimg)
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + silna;
+           request(link2, function(err, resp, html) {
+            if (!err) {
+              let $2 = cheerio.load(html)
+              let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
+              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
+              embed.addField("Description", des);
+              if (note != '' && note != null) {embed.addField("Notes", note)};
+            }
+          })
+		pages.push(embed);
         }
       }
 
@@ -65,13 +69,22 @@ request(link, function(err, resp, html) {
         aff = na(output);
         if (aff != "N/A") {
 	check = true;
-		nor = true;
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-          embed2.setTitle(norna)
-          embed2.setThumbnail(norimg)
-          var link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
-           
+	let embed = new Discord.RichEmbed()
+          embed.setTitle(norna)
+          embed.setThumbnail(norimg)
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
+           request(link2, function(err, resp, html) {
+            if (!err) {
+              let $2 = cheerio.load(html)
+              let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
+              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
+              embed.addField("Description", des);
+              if (note != '' && note != null) {embed.addField("Notes", note)};
+            }
+          })
+		pages.push(embed);
         }
       }
       output = $('.c3.numbers').first().text();
@@ -80,61 +93,28 @@ request(link, function(err, resp, html) {
         aff = na(output);
         if (aff != "N/A") {
 	check = true;
-		aw = true;
           var awna = aff;
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
-          embed3.setTitle(awna)
-          embed3.setThumbnail(awimg)
-          var link3 = "https://aigis.fandom.com/wiki/Ability/" + awna;
-		message.channel.send("a")
-            
-        }
-      }
-    }
-
-
-    
-  }
-	    
-})
-	    if (sil) {
-	    request(link1, function(err, resp, html) {
-            if (!err) {
-              let $2 = cheerio.load(html)
-              let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
-              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed1.addField("Description", des);
-              if (note != '' && note != null) {embed1.addField("Notes", note)};
-            }
-          })
-		pages.push(embed1);
-	    }
-	    if (nor) {
-	    request(link2, function(err, resp, html) {
+          let embed = new Discord.RichEmbed()
+          embed.setTitle(awna)
+          embed.setThumbnail(awimg)
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
+            request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed2.addField("Description", des);
-              if (note != '' && note != null) {embed2.addField("Notes", note)};
+              embed.addField("Description", des);
+              if (note != '' && note != null) {embed.addField("Notes", note)};
+
             }
           })
 		pages.push(embed);
-	    }
-	    if (aw) {
-	    request(link3, function(err, resp, html) {
-            if (!err) {
-              let $2 = cheerio.load(html)
-              let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
-              let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed3.addField("Description", des);
-              if (note != '' && note != null) {embed3.addField("Notes", note)};
-
-            }
-          })
-		pages.push(embed3);
-	    }
-	    if (check) {
+        }
+      }
+    }
+	  sleep.sleep(2);
+if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
 		message.channel.send(embed).then(msg => {
@@ -170,6 +150,10 @@ request(link, function(err, resp, html) {
 })
 	    }
                 if (!check) {message.channel.send("No Data")};
+    
+  }
+	    
+})
     }
 }
 
