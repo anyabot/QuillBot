@@ -170,4 +170,15 @@ function te(output) {
 	});
    return filtered;
 }
+function te2(output) {
+  output = output.replace(/<[^>]*>/g, "*");
+  output = output.replace(/\n+ /g, "\n");
+  output = he.decode(output);
+  output = output.trim();
+  var arr = output.split('\n');
+  var filtered = arr.filter(function(el) {
+    return el != null && el != '';
+  });
+  return filtered;
+}
 module.exports = FindAbility;
