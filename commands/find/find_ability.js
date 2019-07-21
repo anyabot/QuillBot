@@ -75,76 +75,9 @@ request(link, function(err, resp, html) {
       }
     }
 
-    $('.gcstyle tbody').each(function(i, elem) {
-      output = $(elem).first().text();
-      let ar = te(output);
-      if (ar[0] === 'Ability Name') {
-        if (sil) {
-          let $2 = cheerio.load(elem)
-          let siz = $2('tr').find('td').length
-          let aa = []
-          for (var i = 0; i < siz; i++) {
-            let cl = te2($2('tr').find('td').eq(i).text().trim() + "+").join("\n")
-            aa.push(cl)
-          }
-          let fil = aa.filter(function(el) {
-            return (el != null && el != '' && el.substring(0,1) != "*");
-          });
-          for (var i = 0; i < fil.length; i++) {
-            let nfil = fil[i];
-            nfil = nfil.slice(0, -1)
-            fil[i] = nfil
-          }
-          message.channel.send(fil[2])
-          message.channel.send(fil[3])
-        }
-      
-        if (nor) {
-          let $2 = cheerio.load(elem)
-          let siz = $2('tr').find('td').length
-          let aa = []
-          for (var i = 0; i < siz; i++) {
-            let cl = te2($2('tr').find('td').eq(i).text().trim() + "+").join("\n")
-            aa.push(cl)
-          }
-          let fil = aa.filter(function(el) {
-            return (el != null && el != '' && el.substring(0,1) != "*");
-          });
-          for (var i = 0; i < fil.length; i++) {
-            let nfil = fil[i];
-            nfil = nfil.slice(0, -1)
-            fil[i] = nfil
-          }
-          message.channel.send(fil[2])
-          message.channel.send(fil[3])
-          if (aw) {
-            message.channel.send("--------------")
-            message.channel.send(fil[6])
-            message.channel.send(fil[7])
-          }
-        }
-        else if (aw) {
-          let $2 = cheerio.load(elem)
-          let siz = $2('tr').find('td').length
-          let aa = []
-          for (var i = 0; i < siz; i++) {
-            let cl = te2($2('tr').find('td').eq(i).text().trim() + "+").join("\n")
-            aa.push(cl)
-          }
-          let fil = aa.filter(function(el) {
-            return (el != null && el != '' && el.substring(0,1) != "*");
-          });
-          for (var i = 0; i < fil.length; i++) {
-            let nfil = fil[i];
-            nfil = nfil.slice(0, -1)
-            fil[i] = nfil
-          }
-          message.channel.send(fil[2])
-          message.channel.send(fil[3])
-        }
-      }
-    })
+    
   }
+	message.channel.send("err")
 })
     }
 }
