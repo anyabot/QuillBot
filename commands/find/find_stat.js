@@ -2,7 +2,7 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
-var he = request('he');
+var he = require('he');
 var name = require('../../library/lib.js').name;
 var functions = require('../../functions.js');
 
