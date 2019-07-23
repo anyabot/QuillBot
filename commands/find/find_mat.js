@@ -49,7 +49,7 @@ request(link, function(err, resp, html) {
 		if(output) {aw =true}
 		var check = false;
 		var ccname;
-		var aw name;
+		var awname;
 		if (aw) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			awname = pluralize.plural(na(output));
