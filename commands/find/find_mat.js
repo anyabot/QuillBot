@@ -77,7 +77,7 @@ request(link, function(err, resp, html) {
 			awname = pluralize.plural(na(output));
 		}
 		message.channel.send(awname)
-                if (!check) {message.channel.send("No Data")};
+                if (!cc && !aw) {message.channel.send("No Data")};
     
 	}
 	    
