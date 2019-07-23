@@ -4,7 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
 var name = require('../../library/lib.js').name;
-var functions = require('../../functions.js');
+require('@gouch/to-title-case')
 
 var bonus = {
 	"PEV": "Physical Attack Evasion",
@@ -25,10 +25,10 @@ class FindStat extends commando.Command {
     }
 
     async run(message, input) {
-        var unit = functions.toTitleCase(input);
+        var unit = input.toLowerCase().toTitleCase();
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + unit;
-
+	message.channel.send(unit)
         request(link, function (err, resp, html) {
             if (!err) {
 		    
