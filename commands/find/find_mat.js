@@ -75,6 +75,14 @@ request(link, function(err, resp, html) {
 			
 			output = $('.c2 td:nth-child(1)').first().html();
 			awname = pluralize.plural(na(output));
+			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
+			request(link2, function(err, resp, html) {
+				if (!err) {
+					let $2 = cheerio.load(html)
+					let mat1 = $2('gcstyle.bgwhite tr:nth-child(3) th td:nth-child(2)').attr('data-src')
+					message.channel.send(mat1)
+				}	
+			})
 		}
 		message.channel.send(awname)
                 if (!cc && !aw) {message.channel.send("No Data")};
