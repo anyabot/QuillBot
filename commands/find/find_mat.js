@@ -79,7 +79,7 @@ request(link, function(err, resp, html) {
 			request(link2, function(err, resp, html) {
 				if (!err) {
 					let $2 = cheerio.load(html)
-					let mat1 = $2('gcstyle.bgwhite tr:nth-child(3) th td:nth-child(2)').attr('data-src')
+					let mat1 = $2('gcstyle.bgwhite tr:nth-child(3) th td:nth-child(2)').attr('href')
 					message.channel.send(mat1)
 				}	
 			})
