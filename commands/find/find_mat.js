@@ -58,7 +58,7 @@ request(link, function(err, resp, html) {
 		else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji" || na(output) == "Spirit of War") {
 			awname = na(output);
 		}
-		else if (na(output).slice(0, -1) = "】" || na(output).slice(0, -1) = ")") {
+		else if (na(output).slice(0, -1) = "】" || na(output).slice(0, -1) = "\)") {
 			let words = na(output).split(' ');
 			words[-2] = pluralize.plural(words[-2])
 			awname = words.join(" ")
