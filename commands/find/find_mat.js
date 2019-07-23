@@ -5,7 +5,7 @@ var cheerio = require('cheerio');
 var he = require('he');
 var pluralize = require('pluralize')
 var name = require('../../library/lib.js').name;
-var functions = require('../../functions.js');
+require('@gouch/to-title-case')
 
 
 class FindMat extends commando.Command {
@@ -19,7 +19,7 @@ class FindMat extends commando.Command {
     }
 
     async run(message, input) {
-        var unit = functions.toTitleCase(input);
+        var unit = input.toLowerCase().toTitleCase();
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + unit;
 
@@ -39,6 +39,7 @@ request(link, function(err, resp, html) {
 		var sap = $('.categories').text().includes("Rarity:Sapphire");
 		var gold = $('.categories').text().includes("Rarity:Gold");
 		var silver = $('.categories').text().includes("Rarity:Silver");
+		var youkai = $('.categories').text().includes("Youkai");
 		var cc = false;
 		if ($('.listtable.bgwhite tr').length >= 5) {
 			output = $('.c2.numbers').first().text();
@@ -50,13 +51,25 @@ request(link, function(err, resp, html) {
 		var check = false;
 		var ccname;
 		var awname;
-		if (aw) {
-			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
+		output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
+		if (youkai) {
+			awname = na(output);
+		}
+		else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji" || na(output) == "Spirit of War") {
+			awname = na(output);
+		}
+		else if (na(output).slice(0, -1) = "】" || na(output).slice(0, -1) = ")") {
+			let words = na(output).split(' ');
+			words[-2] = pluralize.plural(words[-2])
+			awname = words.join(" ")
+		}
+		else if (aw) {
 			awname = pluralize.plural(na(output));
 		}
 		if (cc) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
-			ccname = pluralize.plural(na(output));
+			if (na(output) == "Samurai") {ccname = na(output)}
+			else {ccname = pluralize.plural(na(output))}
 			message.channel.send(ccname)
 			
 			output = $('.c2 td:nth-child(1)').first().html();
