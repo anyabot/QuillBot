@@ -58,10 +58,10 @@ request(link, function(err, resp, html) {
 		else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji" || na(output) == "Spirit of War") {
 			awname = na(output);
 		}
-		else if (na(output).slice(-1) == "】" || na(output).slice(-1) == "\)") {
+		else if (na(output).slice(-1) == "\】" || na(output).slice(-1) == "\)") {
 			let words = na(output).split(' ');
-			message.channel.send(words)
-			words[-2] = pluralize.plural(words[-2])
+			let le = words.length;
+			words[le-2] = pluralize.plural(words[le-2])
 			awname = words.join(" ")
 		}
 		else if (aw) {
