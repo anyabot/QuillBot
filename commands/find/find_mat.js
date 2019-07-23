@@ -60,6 +60,7 @@ request(link, function(err, resp, html) {
 		}
 		else if (na(output).slice(0, -1) == "】" || na(output).slice(0, -1) == "\)") {
 			let words = na(output).split(' ');
+			message.channel.send(words)
 			words[-2] = pluralize.plural(words[-2])
 			awname = words.join(" ")
 		}
