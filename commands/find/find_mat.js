@@ -227,7 +227,6 @@ request(link, function(err, resp, html) {
 							embedaw.addField("Orbs", orb1 + " x 2", true)
 						}
 						else if (len == 2) {
-							message.channel.send(orb1 + " x 2 \n" + orb2 + " x 2")
 							embedaw.addField("Orbs", orb1 + " x 2 \n" + orb2 + " x 2", true)
 						}
 					}
