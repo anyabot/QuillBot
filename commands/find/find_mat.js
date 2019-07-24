@@ -184,6 +184,7 @@ request(link, function(err, resp, html) {
 			})
 		}
 		if (aw && !cc) {
+			message.channel.send(awname)
 			let link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
 			request(link2, function(err, resp, html) {
 				if (!err) {
@@ -214,7 +215,7 @@ request(link, function(err, resp, html) {
 							embedaw.addField("Orbs", orb1 + " x 1", true)
 						}
 						else if (len == 2) {
-							embedaw.addField("Orbs", orb1 + " x 1 & " + orb2 + " x 1", true)
+							embedaw.addField("Orbs", orb1 + " x 1 \n" + orb2 + " x 1", true)
 						}
 					}
 					if (plat || sap) {
@@ -223,7 +224,7 @@ request(link, function(err, resp, html) {
 							embedaw.addField("Orbs", orb1 + " x 2", true)
 						}
 						else if (len == 2) {
-							embedaw.addField("Orbs", orb1 + " x 2 & " + orb2 + " x 2", true)
+							embedaw.addField("Orbs", orb1 + " x 2 \n" + orb2 + " x 2", true)
 						}
 					}
 					if (black) {
@@ -232,7 +233,7 @@ request(link, function(err, resp, html) {
 							embedaw.addField("Orbs", orb1 + " x 3", true)
 						}
 						else if (len == 2) {
-							embedaw.addField("Orbs", orb1 + " x 3 & \n" + orb2 + " x 3", true)
+							embedaw.addField("Orbs", orb1 + " x 3 \n" + orb2 + " x 3", true)
 						}
 					}
 					message.channel.send(embedaw)
@@ -297,7 +298,7 @@ request(link, function(err, resp, html) {
 									embedaw.addField("Orbs", orb1 + " x 1", true)
 								}
 								else if (len == 2) {
-									embedaw.addField("Orbs", orb1 + " x 1 & " + orb2 + " x 1", true)
+									embedaw.addField("Orbs", orb1 + " x 1 \n" + orb2 + " x 1", true)
 								}
 							}
 							if (plat || sap) {
@@ -306,7 +307,7 @@ request(link, function(err, resp, html) {
 									embedaw.addField("Orbs", orb1 + " x 2", true)
 								}
 								else if (len == 2) {
-									embedaw.addField("Orbs", orb1 + " x 2 & " + orb2 + " x 2", true)
+									embedaw.addField("Orbs", orb1 + " x 2 \n" + orb2 + " x 2", true)
 								}
 							}
 							if (black) {
@@ -315,7 +316,7 @@ request(link, function(err, resp, html) {
 									embedaw.addField("Orbs", orb1 + " x 3", true)
 								}
 								else if (len == 2) {
-									embedaw.addField("Orbs", orb1 + " x 3 & \n" + orb2 + " x 3", true)
+									embedaw.addField("Orbs", orb1 + " x 3 \n" + orb2 + " x 3", true)
 								}
 							}
 							pages.push(embedaw)
