@@ -191,32 +191,59 @@ request(link, function(err, resp, html) {
 		if (aw) {
 			let link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
 			request(link2, function(err, resp, html) {
-			if (!err) {
-				let $2 = cheerio.load(html)
-				let mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
-				let mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
-				let mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
-				let embedaw = new Discord.RichEmbed();
-				let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
-				let parts = orbs.split('&')
-				let len = parts.length
-				parts[len-1] = parts[len-1].slice(0,-1)
-				for (var i = 0; i < len; i++) {
-					parts[i] = parts[i].slice(5).toTitleCase()
+				if (!err) {
+					let $2 = cheerio.load(html)
+					let mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
+					let mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
+					let mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
+					let embedaw = new Discord.RichEmbed();
+					let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
+					let parts = orbs.split('&')
+					let len = parts.length
+					parts[len-1] = parts[len-1].slice(0,-1)
+					for (var i = 0; i < len; i++) {
+						parts[i] = parts[i].slice(5).toTitleCase()
+						}
+					let orb1 = awo[parts[0]]
+					if (len == 2) {let orb2 = awo[parts[1]]}
+					message.channel.send(orb1)
+					embedaw.setTitle("AW/AW2/SAW Materials")
+					embedaw.setThumbnail(awimg)
+					embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
+					embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
+					embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
+					embedaw.addField("Fairy", "**AW:** \nSpirit of Awakening (Victoire)\n**AW2:** \nSpirit of Perpetual Darkness (Onyx)\n**SAW:** \nSpirit of Skill Awakening (Naiad)", true)
+					message.channel.send(embedaw)
+					if (gold) {
+						embedaw.addField("Money", "200,000G", true)
+						if (len == 1) {
+							embedaw.addField("Orbs", orb1 + " x 1", true)
+						}
+						else if (len == 2) {
+							embedaw.addField("Orbs", orb1 + " x 1 & " + orb2 + " x 1", true)
+						}
 					}
-				let orb1 = awo[parts[0]]
-				if (len == 2) {let orb2 = awo[parts[1]]}
-				message.channel.send(orb1)
-				embedaw.setTitle("AW/AW2/AW3 Materials")
-				embedaw.setThumbnail(awimg)
-				embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
-				embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
-				embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
-				embedaw.addField("Fairy", "**AW:** \nSpirit of Awakening (Victoire)\n**AW2:** \nSpirit of Perpetual Darkness (Onyx)\n**SAW:** \nSpirit of Skill Awakening (Naiad)", true)
-				message.channel.send(embedaw)
-							}
-						})
+					if (plat || sap) {
+						embedaw.addField("Money", "250,000G", true)
+						if (len == 1) {
+							embedaw.addField("Orbs", orb1 + " x 2", true)
+						}
+						else if (len == 2) {
+							embedaw.addField("Orbs", orb1 + " x 2 & " + orb2 + " x 2", true)
+						}
 					}
+					if (black) {
+						embedaw.addField("Money", "300,000G", true)
+						if (len == 1) {
+							embedaw.addField("Orbs", orb1 + " x 3", true)
+						}
+						else if (len == 2) {
+							embedaw.addField("Orbs", orb1 + " x 3 & " + orb2 + " x 3", true)
+						}
+					}
+				}
+			})
+		}
                 if (!cc && !aw) {message.channel.send("No Data")};
     
 	}
