@@ -159,8 +159,9 @@ request(link, function(err, resp, html) {
 								mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 								let embedaw = new Discord.RichEmbed();
 								let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
-								let parts = mat1.split('&')
+								let parts = orbs.split('&')
 								let len = parts.length
+								message.channel.send(parts[0])
 								parts[len-1] = parts[len-1].slice(0,-1)
 								for (var i = 0; i < len; i++) {
 									parts[i] = parts[i].slice(5)
