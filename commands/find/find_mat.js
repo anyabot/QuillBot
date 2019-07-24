@@ -185,116 +185,39 @@ request(link, function(err, resp, html) {
 					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum (Celia) \nOR \nSpirit Queen (Gladys)", true)}
 					if (black) {embedcc.addField("Fairy", "Spirit of Black (Florika) \nOR \nSpirit Queen (Gladys)", true)}
 					message.channel.send(embedcc)
-					if (aw) {
-						link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
-						request(link2, function(err, resp, html) {
-							if (!err) {
-								$2 = cheerio.load(html)
-								mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
-								mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
-								mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
-								let embedaw = new Discord.RichEmbed();
-								let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
-								let parts = orbs.split('&')
-								let len = parts.length
-								message.channel.send(parts[0])
-								parts[len-1] = parts[len-1].slice(0,-1)
-								for (var i = 0; i < len; i++) {
-									parts[i] = parts[i].slice(5).toTitleCase()
-								}
-								var orb1 = parts[0];
-								if (len == 2) {var orb2 = parts[1]}
-								let embedaw = new Discord.RichEmbed();
-								embedaw.setTitle("AW Materials")
-								embedaw.setThumbnail(awimg)
-								embedaw.addField("Material 1", aw1[mat1], true)
-								embedaw.addField("Material 2", aw1[mat2], true)
-								embedaw.addField("Material 3", aw1[mat3], true)
-								embedaw.addField("Fairy", "Spirit of Awakening (Victoire)", true)
-								let embedsaw = new Discord.RichEmbed();
-								embedsaw.setTitle("SAW Materials")
-								embedsaw.setThumbnail(awimg)
-								embedsaw.addField("Fairy", "Spirit of Skill Awakening (Naiad)", true)
-								if (gold) {
-									embedaw.addField("Money", "200,000G", true)
-									embedsaw.addField("Money", "200,000G", true)
-									if (len == 1) {
-										embedaw.addField("Orbs", orb1 + " x 1", true)
-										embedsaw.addField("Orbs", orb1 + " x 1", true)
-									}
-									else if (len == 2) {
-										embedaw.addField("Orbs", orb1 + " x 1 & " + orb2 + " x 1", true)
-										embedsaw.addField("Orbs", orb1 + " x 1 & " + orb2 + " x 1", true)
-									}
-								}
-								if (plat || sap) {
-									embedaw.addField("Money", "250,000G", true)
-									embedsaw.addField("Money", "250,000G", true)
-									if (len == 1) {
-										embedaw.addField("Orbs", orb1 + " x 2", true)
-										embedsaw.addField("Orbs", orb1 + " x 2", true)
-									}
-									else if (len == 2) {
-										embedaw.addField("Orbs", orb1 + " x 2 & " + orb2 + " x 2", true)
-										embedsaw.addField("Orbs", orb1 + " x 2 & " + orb2 + " x 2", true)
-									}
-								}
-								if (black) {
-									embedaw.addField("Money", "300,000G", true)
-									embedsaw.addField("Money", "300,000G", true)
-									if (len == 1) {
-										embedaw.addField("Orbs", orb1 + " x 3", true)
-										embedsaw.addField("Orbs", orb1 + " x 3", true)
-									}
-									else if (len == 2) {
-										embedaw.addField("Orbs", orb1 + " x 3 & " + orb2 + " x 3", true)
-										embedsaw.addField("Orbs", orb1 + " x 3 & " + orb2 + " x 3", true)
-									}
-								}
-								message.channel.send(embedaw)
-								message.channel.send(embedsaw)
-								if (aw2) {
-									let embedaw = new Discord.RichEmbed();
-									embedaw2.setTitle("AW Materials")
-									embedaw2.setThumbnail(awimg)
-									embedaw2.addField("Material 1", aw1[mat1], true)
-									embedaw2.addField("Material 2", aw1[mat2], true)
-									embedaw2.addField("Material 3", aw1[mat3], true)
-									embedaw2.addField("Fairy", "Spirit of Awakening (Victoire)", true)
-									if (gold) {
-										embedaw2.addField("Money", "200,000G", true)
-										if (len == 1) {
-											embedaw2.addField("Orbs", orb1 + " x 1", true)
-										}
-										else if (len == 2) {
-											embedaw2.addField("Orbs", orb1 + " x 1 & " + orb2 + " x 1", true)
-										}
-									}
-									if (plat || sap) {
-										embedaw2.addField("Money", "250,000G", true)
-										if (len == 1) {
-											embedaw2.addField("Orbs", orb1 + " x 2", true)
-										}
-										else if (len == 2) {
-											embedaw2.addField("Orbs", orb1 + " x 2 & " + orb2 + " x 2", true)
-										}
-									}
-									if (black) {
-										embedaw2.addField("Money", "300,000G", true)
-										if (len == 1) {
-											embedaw2.addField("Orbs", orb1 + " x 3", true)
-										}
-										else if (len == 2) {
-											embedaw2.addField("Orbs", orb1 + " x 3 & " + orb2 + " x 3", true)
-										}
-									}
-								}
-							}
-						})
-					}
 				}	
 			})
 		}
+		if (aw) {
+			link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
+			request(link2, function(err, resp, html) {
+			if (!err) {
+				let $2 = cheerio.load(html)
+				let mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
+				let mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
+				let mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
+				let embedaw = new Discord.RichEmbed();
+				let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
+				let parts = orbs.split('&')
+				let len = parts.length
+				message.channel.send(parts[0])
+				parts[len-1] = parts[len-1].slice(0,-1)
+				for (var i = 0; i < len; i++) {
+					parts[i] = parts[i].slice(5).toTitleCase()
+					}
+				message.channel.send(parts[0])
+				let orb1 = parts[0]
+				message.channel.send(awo[orb1])
+				embedaw.setTitle("AW/AW2/AW3 Materials")
+				embedaw.setThumbnail(awimg)
+				embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
+				embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
+				embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
+				embedaw.addField("Fairy", "AW: Spirit of Awakening (Victoire)\nAW2: Spirit of Perpetual Darkness (Onyx)\nSAW:AW: Spirit of Skill Awakening (Naiad)", true)
+				message.channel.send(embedaw)
+							}
+						})
+					}
 		message.channel.send(awname)
                 if (!cc && !aw) {message.channel.send("No Data")};
     
