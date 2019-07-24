@@ -115,6 +115,7 @@ request(link, function(err, resp, html) {
 					let mat3 = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(2) table tbody tr td div a').attr('href')
 					let embedcc = new Discord.RichEmbed();
 					embedcc.setTitle("CC Materials")
+					embedcc.setThumbnail(ccimg)
 					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
 					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
