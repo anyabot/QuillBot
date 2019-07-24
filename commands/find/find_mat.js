@@ -207,7 +207,7 @@ request(link, function(err, resp, html) {
 					embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
 					embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
 					embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
-					embedaw.addField("Fairy", "**AW:** \nSpirit of Awakening (Victoire)\n**AW2:** \nSpirit of Perpetual Darkness (Onyx)\n**SAW:** \nSpirit of Skill Awakening (Naiad)", true)
+					embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 
 					if (gold) {
 						embedaw.addField("Money", "200,000G", true)
