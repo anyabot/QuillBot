@@ -37,26 +37,26 @@ var cc2 = {
 	"/wiki/Ertel" :"Silver Priest Warrior"
 }
 var aw1 = {
-	"/wiki/Asar": "Gold Soldier \nOR \nCC Silver Soldier: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Soldiers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Leeanne": "Gold Heavy Armor \nOR \nCC Silver Heavy Armor: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Heavy Armors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Valerie": "Gold Mage \nOR \nCC Silver Mage: \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Mages \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Niel" :"Gold Angel \nOR \nCC Silver Angel: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Angels \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Daniela" :"Gold Archer \nOR \nCC Silver Bandit: \n2 x Iron Archers \n2 x Silver Archers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Eunice" :"Gold Bandit \nOR \nCC Silver Bandit: \n1 x Iron Soldier \n1 x Iron Bandit \n2 x Silver Bandits \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Elaine" :"Gold Valkyrie \nOR \nCC Silver Valkyrie: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Valkyries \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Alissa" :"Gold Healer \nOR \nCC Silver Healer: \n1 x Iron Archer \n1 x Iron Mage \n2 x Silver Healers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Saizou" :"Gold Ninja \nOR \nCC Silver Ninja: \n1 x Iron Soldier \n1 x Iron Bandit \n2 x Silver Ninjas \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Calliope" :"Gold Witch \nOR \nCC Silver Witch: \n1 x Iron Archer \n1 x Iron Mage, \n2 x Silver Witches \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Fudou" :"Gold Bishop \nOR \nCC Silver Bishop: \n2 x Iron Mages \n1 x Silver Healers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Bishop",
-	"/wiki/Cecily" :"Gold Rogue \nOR \nCC Silver Rouge: \n1 x Iron Soldier \n1 x Iron Archer \n2 x Silver Rouges \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Sanosuke" :"Gold Samurai \nOR \nCC Silver Samurai: \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Samurai \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Percis" :"Gold Gunner \nOR \nCC Silver Gunner: \n1 x Iron Soldier \n1 x Iron Archer, \n2 x Silver Gunners \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Ricardo" :"Gold Magic Fencer \nOR \nCC Silver Magic Fencer: \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Magic Fencers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Khuri" :"Gold Vampire Hunter \nOR \nCC Vampire Hunter: \n2 x Iron Archers \n2 x Silver Vampire Hunters \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Giovanni" :"Gold Pirate \nOR \nCC Silver Pirate: \n1 x Iron Archer \n1 x Iron Bandit \n2 x Silver Pirates \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Dan" :"Gold Monk \nOR \nCC Silver Monk: \n1 x Iron Soldier \n1 x Iron Archer \n2 x Silver Monks \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Ertel" :"Gold Priest Warrior \nOR \nCC Priest Warrior: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Priest Warriors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Gadoras" :"Gold Dragon Soldier \nOR CC Silver Dragon Soldier: \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Dragon Soldier"
+	"/wiki/Asar": "**Gold Soldie**r \nOR \n**CC Silver Soldier:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Soldiers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Leeanne": "**Gold Heavy Armor** \nOR \n**CC Silver Heavy Armor:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Heavy Armors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Valerie": "**Gold Mage** \nOR \n**CC Silver Mage:** \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Mages \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Niel" :"**Gold Angel** \nOR \n**CC Silver Angel:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Angels \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Daniela" :"**Gold Archer** \nOR \n**CC Silver Bandit:** \n2 x Iron Archers \n2 x Silver Archers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Eunice" :"**Gold Bandit** \nOR \n**CC Silver Bandit:** \n1 x Iron Soldier \n1 x Iron Bandit \n2 x Silver Bandits \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Elaine" :"**Gold Valkyrie** \nOR \n**CC Silver Valkyrie**: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Valkyries \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Alissa" :"**Gold Healer** \nOR \n**CC Silver Healer:** \n1 x Iron Archer \n1 x Iron Mage \n2 x Silver Healers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Saizou" :"**Gold Ninja** \nOR \n**CC Silver Ninja:** \n1 x Iron Soldier \n1 x Iron Bandit \n2 x Silver Ninjas \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Calliope" :"**Gold Witch** \nOR \n**CC Silver Witch:** \n1 x Iron Archer \n1 x Iron Mage, \n2 x Silver Witches \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Fudou" :"**Gold Bishop** \nOR \n**CC Silver Bishop:** \n2 x Iron Mages \n1 x Silver Healers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Bishop",
+	"/wiki/Cecily" :"**Gold Rogue** \nOR \n**CC Silver Rouge:** \n1 x Iron Soldier \n1 x Iron Archer \n2 x Silver Rouges \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Sanosuke" :"**Gold Samurai** \nOR \n**CC Silver Samurai:** \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Samurai \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Percis" :"**Gold Gunner** \nOR \n**CC Silver Gunner:** \n1 x Iron Soldier \n1 x Iron Archer, \n2 x Silver Gunners \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Ricardo" :"**Gold Magic Fencer** \nOR \n**CC Silver Magic Fencer:** \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Magic Fencers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Khuri" :"**Gold Vampire Hunter** \nOR \n**CC Silver Vampire Hunter:** \n2 x Iron Archers \n2 x Silver Vampire Hunters \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Giovanni" :"**Gold Pirate** \nOR \n**CC Silver Pirate:** \n1 x Iron Archer \n1 x Iron Bandit \n2 x Silver Pirates \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Dan" :"**Gold Monk** \nOR \n**CC Silver Monk:** \n1 x Iron Soldier \n1 x Iron Archer \n2 x Silver Monks \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Ertel" :"**Gold Priest Warrior** \nOR \n**CC Silver Priest Warrior:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Priest Warriors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Gadoras" :"**Gold Dragon Soldier** \nOR**CC Silver Dragon Soldier:** \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Dragon Soldier"
 }
 var awo = {
 	"Sniper Orb": "Sniper Orb (Monday)",
@@ -212,7 +212,7 @@ request(link, function(err, resp, html) {
 				embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
 				embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
 				embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
-				embedaw.addField("Fairy", "AW: Spirit of Awakening (Victoire)\nAW2: Spirit of Perpetual Darkness (Onyx)\nSAW: Spirit of Skill Awakening (Naiad)", true)
+				embedaw.addField("Fairy", "**AW:** \nSpirit of Awakening (Victoire)\n**AW2:** \nSpirit of Perpetual Darkness (Onyx)\n**SAW:** \nSpirit of Skill Awakening (Naiad)", true)
 				message.channel.send(embedaw)
 							}
 						})
