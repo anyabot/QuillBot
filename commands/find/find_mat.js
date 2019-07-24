@@ -271,6 +271,7 @@ request(link, function(err, resp, html) {
 					if (black) {embedcc.addField("Fairy", "Spirit of Black (Florika) \nOR \nSpirit Queen (Gladys)", true)}
 					pages.push(embedcc)
 					let link3 = "https://aigis.fandom.com/wiki/Awakening/" + awname
+					message.channel.send(awname)
 					request(link3, function(err, resp, html) {
 						if (!err) {
 							let $3 = cheerio.load(html)
