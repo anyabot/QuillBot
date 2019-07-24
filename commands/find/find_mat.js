@@ -76,7 +76,7 @@ var awo = {
 	"High Bishop Orb": "High Bishop Orb (Wednesday)",
 	"Battle Master Orb": "Battle Master Orb (Thursday)",
 	"Samurai Master Orb": "Samurai Master Orb (Thursday)",
-	"Rune Fence Orb": "Rune Fence Orb (Thursday)",
+	"Rune Fencer Orb": "Rune Fencer Orb (Thursday)",
 	"Vampire Killer Orb": "Vampire Killer Orb (Thursday)",
 	"Sailor Chief Orb": "Sailor Chief Orb (Thursday)",
 	"Lord Witch Orb": "Lord Witch Orb (Friday)",
