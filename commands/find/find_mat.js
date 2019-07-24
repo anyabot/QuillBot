@@ -7,6 +7,35 @@ var pluralize = require('pluralize')
 var name = require('../../library/lib.js').name;
 require('@gouch/to-title-case')
 
+var cc1 = {
+	"/wiki/Asar": "Soldier (Iron)",
+	"/wiki/Leeanne": "Heavy Armor (Iron)",
+	"/wiki/Valerie": "Mage (Iron)",
+	"/wiki/Soma" :"Archer (Iron)",
+	"/wiki/Mortimer" :"Bandit (Iron)",
+	"/wiki/Saizou" :"Ninja (Iron)"
+}
+var cc2 = {
+	"/wiki/Asar": "Soldier (Silver)",
+	"/wiki/Leeanne": "Heavy Armor (Silver)",
+	"/wiki/Valerie": "Mage (Silver)",
+	"/wiki/Niel" :"Angel (Silver)",
+	"/wiki/Soma" :"Archer (Silver)",
+	"/wiki/Mortimer" :"Bandit (Silver)",
+	"/wiki/Elaine" :"Valkyrie (Silver)",
+	"/wiki/Alissa" :"Healer (Silver)",
+	"/wiki/Saizou" :"Ninja (Silver)",
+	"/wiki/Calliope" :"Witch (Silver)",
+	"/wiki/Fudou" :"Bishop (Silver)",
+	"/wiki/Cecily" :"Rogue (Silver)",
+	"/wiki/Sanosuke" :"Samurai (Silver)",
+	"/wiki/Percis" :"Gunner (Silver)",
+	"/wiki/Ricardo" :"Magic Fencer (Silver)",
+	"/wiki/Khuri" :"Vampire Hunter (Silver)",
+	"/wiki/Giovanni" :"Pirate (Silver)",
+	"/wiki/Dan" :"Monk (Silver)",
+	"/wiki/Ertel" :"Priest Warrior (Silver)"
+}
 
 class FindMat extends commando.Command {
     constructor(client) {
@@ -79,8 +108,22 @@ request(link, function(err, resp, html) {
 			request(link2, function(err, resp, html) {
 				if (!err) {
 					let $2 = cheerio.load(html)
-					let mat1 = $2('gcstyle.bgwhite tr:nth-child(3) th td:nth-child(2)').attr('href')
-					message.channel.send(mat1)
+					let mat1 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3) table tbody tr td div a').attr('href')
+					let mat2 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(3) table tbody tr td div a').attr('href')
+					let mat3 = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(2) table tbody tr td div a').attr('href')
+					let embedcc = new Discord.RichEmbed();
+					embedcc.setTitle("CC Materials")
+					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1])}
+					else {embedcc.addField("Material 1", cc2[mat1])}
+					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2])}
+					else {embedcc.addField("Material 2", cc2[mat2])}
+					embedcc.addField("Material 3", mat3);
+					if (silver) {embedcc.addField("Fairy", "Spirit of Silver Cyrille OR Spirit Queen Gladys")}
+					if (gold) {embedcc.addField("Fairy", "Spirit of Gold Nina OR Spirit Queen Gladys")}
+					if (sap) {embedcc.addField("Fairy", "Spirit Queen Gladys")}
+					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum Celia OR Spirit Queen Gladys")}
+					if (black) {embedcc.addField("Fairy", "Spirit of Black Florika OR Spirit Queen Gladys")}
+					message.channel.send(embedcc)
 				}	
 			})
 		}
