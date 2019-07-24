@@ -184,16 +184,15 @@ request(link, function(err, resp, html) {
 			})
 		}
 		if (aw && !cc) {
-			let link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
-			request(link2, function(err, resp, html) {
+			let link3 = "https://aigis.fandom.com/wiki/Awakening/" + awname
+			request(link3, function(err, resp, html) {
 				if (!err) {
-					message.channel.send(awname)
-					let $2 = cheerio.load(html)
-					let mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
-					let mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
-					let mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
+					let $3 = cheerio.load(html)
+					mat1 = $3('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
+					mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
+					mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 					let embedaw = new Discord.RichEmbed();
-					let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
+					let orbs = $3('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
 					let parts = orbs.split('&')
 					let len = parts.length
 					parts[len-1] = parts[len-1].slice(0,-1)
@@ -207,7 +206,7 @@ request(link, function(err, resp, html) {
 					embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
 					embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
 					embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
-					embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
+					embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** \nSpirit of Perpetual \nDarkness (Onyx)\n**SAW:** \nSpirit of Skill \nAwakening (Naiad)", true)
 
 					if (gold) {
 						embedaw.addField("Money", "200,000G", true)
@@ -236,7 +235,6 @@ request(link, function(err, resp, html) {
 							embedaw.addField("Orbs", orb1 + " x 3 \n" + orb2 + " x 3", true)
 						}
 					}
-					message.channel.send(embedaw)
 				}
 			})
 		}
