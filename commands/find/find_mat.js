@@ -199,6 +199,7 @@ request(link, function(err, resp, html) {
 					for (var i = 0; i < len; i++) {
 						parts[i] = parts[i].slice(5).toTitleCase()
 						}
+					message.channel.send(parts[0])
 					let orb1 = awo[parts[0]]
 					message.channel.send(orb1)
 					let orb2
