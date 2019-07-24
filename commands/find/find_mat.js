@@ -188,9 +188,9 @@ request(link, function(err, resp, html) {
 			request(link3, function(err, resp, html) {
 				if (!err) {
 					let $3 = cheerio.load(html)
-					mat1 = $3('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
-					mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
-					mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
+					let mat1 = $3('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
+					let mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
+					let mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 					let embedaw = new Discord.RichEmbed();
 					let orbs = $3('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
 					let parts = orbs.split('&')
