@@ -80,6 +80,8 @@ request(link, function(err, resp, html) {
 		var check = false;
 		var ccname;
 		var awname;
+		var ccimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+		if (aw) {var awimg = ($('.c3 td:first-child div a img').attr('data-src'))}
 		output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 		if (youkai) {
 			awname = na(output);
@@ -113,16 +115,16 @@ request(link, function(err, resp, html) {
 					let mat3 = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(2) table tbody tr td div a').attr('href')
 					let embedcc = new Discord.RichEmbed();
 					embedcc.setTitle("CC Materials")
-					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1])}
-					else {embedcc.addField("Material 1", cc2[mat1])}
-					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2])}
-					else {embedcc.addField("Material 2", cc2[mat2])}
-					embedcc.addField("Material 3", mat3);
-					if (silver) {embedcc.addField("Fairy", "Spirit of Silver Cyrille OR Spirit Queen Gladys")}
-					if (gold) {embedcc.addField("Fairy", "Spirit of Gold Nina OR Spirit Queen Gladys")}
-					if (sap) {embedcc.addField("Fairy", "Spirit Queen Gladys")}
-					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum Celia OR Spirit Queen Gladys")}
-					if (black) {embedcc.addField("Fairy", "Spirit of Black Florika OR Spirit Queen Gladys")}
+					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
+					else {embedcc.addField("Material 1", cc2[mat1], true)}
+					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
+					else {embedcc.addField("Material 2", cc2[mat2], true)}
+					embedcc.addField("Material 3", cc2[mat3], true);
+					if (silver) {embedcc.addField("Fairy", "Spirit of Silver Cyrille \nOR \nSpirit Queen Gladys", true)}
+					if (gold) {embedcc.addField("Fairy", "Spirit of Gold Nina \nOR \nSpirit Queen Gladys", true)}
+					if (sap) {embedcc.addField("Fairy", "Spirit Queen Gladys", true)}
+					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum Celia \nOR \nSpirit Queen Gladys", true)}
+					if (black) {embedcc.addField("Fairy", "Spirit of Black Florika \nOR \nSpirit Queen Gladys", true)}
 					message.channel.send(embedcc)
 				}	
 			})
