@@ -201,7 +201,6 @@ request(link, function(err, resp, html) {
 						}
 					let orb1 = awo[parts[0]]
 					if (len == 2) {let orb2 = awo[parts[1]]}
-					message.channel.send(orb1)
 					embedaw.setTitle("AW/AW2/SAW Materials")
 					embedaw.setThumbnail(awimg)
 					embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
@@ -269,7 +268,6 @@ request(link, function(err, resp, html) {
 					if (black) {embedcc.addField("Fairy", "Spirit of Black (Florika) \nOR \nSpirit Queen (Gladys)", true)}
 					pages.push(embedcc)
 					let link3 = "https://aigis.fandom.com/wiki/Awakening/" + awname
-					message.channel.send(awname)
 					request(link3, function(err, resp, html) {
 						if (!err) {
 							let $3 = cheerio.load(html)
@@ -286,7 +284,6 @@ request(link, function(err, resp, html) {
 								}
 							let orb1 = awo[parts[0]]
 							if (len == 2) {let orb2 = awo[parts[1]]}
-							message.channel.send(orb1)
 							embedaw.setTitle("AW/AW2/SAW Materials")
 							embedaw.setThumbnail(awimg)
 							embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
