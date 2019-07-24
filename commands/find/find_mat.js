@@ -88,7 +88,7 @@ var awo = {
 	"High Ranger Orb": "High Ranger Orb (Saturday)",
 	"Top Dancer Orb": "Top Dancer Orb (Saturday)",
 	"Dragon Knight Orb": "Dragon Knight Orb (Saturday)",
-	"Priest Warrior Leade Orb": "Priest Warrior Leade Orb (Saturday)",
+	"Priest Warrior Leader Orb": "Priest Warrior Leader Orb (Saturday)",
 	"High Alchemist Orb": "High Alchemist Orb (Sunday)",
 	"Witch Doctor Orb": "Witch Doctor Orb (Sunday)",
 	"Machinist Orb": "Machinist Orb (Sunday)",
