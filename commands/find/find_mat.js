@@ -200,13 +200,8 @@ request(link, function(err, resp, html) {
 								mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 								mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 								let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
-								var parts = orbs.split('&')
-								var len = parts.length
-								parts[len-1] = parts[len-1].slice(0,-1)
-								for (var i = 0; i < len; i++) {
-									parts[i] = parts[i].slice(5).toLowerCase().toTitleCase()
-								}
-								message.channel.send(parts[0])
+								
+								message.channel.send(orbs)
 								let embedaw = new Discord.RichEmbed();
 								embedaw.setTitle("AW Materials")
 								embedaw.setThumbnail(awimg)
