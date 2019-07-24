@@ -68,6 +68,7 @@ request(link, function(err, resp, html) {
           let embed = new Discord.RichEmbed()
           embed.setTitle(silna)
           embed.setThumbnail(silimg)
+		embed.setColor('WHITE')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + silna;
            request(link2, function(err, resp, html) {
             if (!err) {
@@ -95,6 +96,7 @@ if (bronze) {
 	let embed = new Discord.RichEmbed()
           embed.setTitle(norna)
           embed.setThumbnail(norimg)
+		embed.setColor('DARK_ORANGE')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
            request(link2, function(err, resp, html) {
             if (!err) {
@@ -122,6 +124,7 @@ if (bronze) {
           let embed = new Discord.RichEmbed()
           embed.setTitle(awna)
           embed.setThumbnail(awimg)
+		embed.setColor('BLUE')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
             request(link2, function(err, resp, html) {
             if (!err) {
@@ -169,6 +172,7 @@ if (bronze) {
           let embed2 = new Discord.RichEmbed()
           embed2.setTitle(awna)
           embed2.setThumbnail(awimg)
+		embed2.setColor('BLUE')
           let link3 = "https://aigis.fandom.com/wiki/Ability/" + awna;
             request(link3, function(err, resp, html) {
             if (!err) {
