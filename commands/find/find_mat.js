@@ -58,7 +58,43 @@ var aw1 = {
 	"/wiki/Ertel" :"Gold Priest Warrior \nOR \nCC Priest Warrior: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Priest Warriors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Gadoras" :"Gold Dragon Soldier \nOR CC Silver Dragon Soldier: \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Dragon Soldier"
 }
-
+var awo = {
+	"Sniper Orb": "Sniper Orb (Monday)",
+	"Dark Knight Orb": "Dark Knight Orb (Monday)",
+	"Priest Orb": "Priest Orb (Monday)",
+	"Rearguard Strategist Orb": "Rearguard Strategist Orb (Monday)",
+	"Heavy Gunner Orb": "Heavy Gunner Orb (Monday)",
+	"Unicorn Knight Orb": "Unicorn Knight Orb (Tuesday)",
+	"Pegasus Knight Orb": "Pegasus Knight Orb (Tuesday)",
+	"Master Monk Orb": "Master Monk Orb (Tuesday)",
+	"Berserker Orb": "Berserker Orb (Tuesday)",
+	"Feng Shui Master Orb": "Feng Shui Master Orb (Tuesday)",
+	"Soldier Chief Orb": "Soldier Chief Orb (Wednesday)",
+	"Assassin Orb": "Assassin Orb (Wednesday)",
+	"Captain Orb": "Captain Orb (Wednesday)",
+	"High Shaman Orb": "High Shaman Orb (Wednesday)",
+	"High Bishop Orb": "High Bishop Orb (Wednesday)",
+	"Battle Master Orb": "Battle Master Orb (Thursday)",
+	"Samurai Master Orb": "Samurai Master Orb (Thursday)",
+	"Rune Fence Orb": "Rune Fence Orb (Thursday)",
+	"Vampire Killer Orb": "Vampire Killer Orb (Thursday)",
+	"Sailor Chief Orb": "Sailor Chief Orb (Thursday)",
+	"Lord Witch Orb": "Lord Witch Orb (Friday)",
+	"Warlock Orb": "Warlock Orb (Friday)",
+	"Vanguard Strategist Orb": "Vanguard Strategist Orb (Friday)",
+	"Ninja Master Orb": "Ninja Master Orb (Friday)",
+	"Arch Angel Orb": "Arch Angel Orb (Friday)",
+	"Battle Mage Orb": "Battle Mage Orb (Saturday)",
+	"High Ranger Orb": "High Ranger Orb (Saturday)",
+	"Top Dancer Orb": "Top Dancer Orb (Saturday)",
+	"Dragon Knight Orb": "Dragon Knight Orb (Saturday)",
+	"Priest Warrior Leade Orb": "Priest Warrior Leade Orb (Saturday)",
+	"High Alchemist Orb": "High Alchemist Orb (Sunday)",
+	"Witch Doctor Orb": "Witch Doctor Orb (Sunday)",
+	"Machinist Orb": "Machinist Orb (Sunday)",
+	"Master Thief Orb": "Master Thief Orb (Sunday)",
+	"Bowrider Chief Orb": "Bowrider Chief Orb (Sunday)"
+}
 class FindMat extends commando.Command {
     constructor(client) {
         super(client, {
