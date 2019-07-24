@@ -174,6 +174,7 @@ request(link, function(err, resp, html) {
 					let embedcc = new Discord.RichEmbed();
 					embedcc.setTitle("CC Materials")
 					embedcc.setThumbnail(ccimg)
+					embedcc.setColor('RED')
 					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
 					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
@@ -197,6 +198,7 @@ request(link, function(err, resp, html) {
 					let mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 					let mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 					let embedaw = new Discord.RichEmbed();
+					embedaw.setColor('BLUE')
 					let orbs = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3)').text()
 					let parts = orbs.split('&')
 					let len = parts.length
@@ -275,6 +277,7 @@ request(link, function(err, resp, html) {
 					let embedcc = new Discord.RichEmbed();
 					embedcc.setTitle("CC Materials")
 					embedcc.setThumbnail(ccimg)
+					embedcc.setColor('RED')
 					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
 					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
@@ -294,6 +297,7 @@ request(link, function(err, resp, html) {
 							mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 							mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 							let embedaw = new Discord.RichEmbed();
+							embedaw.setColor('BLUE')
 							let orbs = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3)').text()
 							let parts = orbs.split('&')
 							let len = parts.length
