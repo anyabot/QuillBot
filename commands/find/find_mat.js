@@ -200,20 +200,19 @@ request(link, function(err, resp, html) {
 				let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
 				let parts = orbs.split('&')
 				let len = parts.length
-				message.channel.send(parts[0])
 				parts[len-1] = parts[len-1].slice(0,-1)
 				for (var i = 0; i < len; i++) {
 					parts[i] = parts[i].slice(5).toTitleCase()
 					}
-				message.channel.send(parts[0])
-				let orb1 = parts[0]
-				message.channel.send(awo[orb1])
+				let orb1 = awo[parts[0]]
+				if (len == 2) {let orb2 = awo[parts[1]]}
+				message.channel.send(orb1)
 				embedaw.setTitle("AW/AW2/AW3 Materials")
 				embedaw.setThumbnail(awimg)
 				embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
 				embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
 				embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
-				embedaw.addField("Fairy", "AW: Spirit of Awakening (Victoire)\nAW2: Spirit of Perpetual Darkness (Onyx)\nSAW:AW: Spirit of Skill Awakening (Naiad)", true)
+				embedaw.addField("Fairy", "AW: Spirit of Awakening (Victoire)\nAW2: Spirit of Perpetual Darkness (Onyx)\nSAW: Spirit of Skill Awakening (Naiad)", true)
 				message.channel.send(embedaw)
 							}
 						})
