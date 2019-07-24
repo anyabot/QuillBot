@@ -58,43 +58,6 @@ var aw1 = {
 	"/wiki/Ertel" :"Gold Priest Warrior \nOR \nCC Priest Warrior: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Priest Warriors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Gadoras" :"Gold Dragon Soldier \nOR CC Silver Dragon Soldier: \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Dragon Soldier"
 }
-var awo = {
-	"Sniper Orb": "Sniper Orb (Monday)",
-	"Dark Knight Orb": "Dark Knight Orb (Monday)",
-	"Priest Orb": "Priest Orb (Monday)",
-	"Rearguard Strategist Orb": "Rearguard Strategist Orb (Monday)",
-	"Heavy Gunner Orb": "Heavy Gunner Orb (Monday)",
-	"Unicorn Knight Orb": "Unicorn Knight Orb (Tuesday)",
-	"Pegasus Knight Orb": "Pegasus Knight Orb (Tuesday)",
-	"Master Monk Orb": "Master Monk Orb (Tuesday)",
-	"Berserker Orb": "Berserker Orb (Tuesday)",
-	"Feng Shui Master Orb": "Feng Shui Master Orb (Tuesday)",
-	"Soldier Chief Orb": "Soldier Chief Orb (Wednesday)",
-	"Assassin Orb": "Assassin Orb (Wednesday)",
-	"Captain Orb": "Captain Orb (Wednesday)",
-	"High Shaman Orb": "High Shaman Orb (Wednesday)",
-	"High Bishop Orb": "High Bishop Orb (Wednesday)",
-	"Battle Master Orb": "Battle Master Orb (Thursday)",
-	"Samurai Master Orb": "Samurai Master Orb (Thursday)",
-	"Rune Fence Orb": "Rune Fence Orb (Thursday)",
-	"Vampire Killer Orb": "Vampire Killer Orb (Thursday)",
-	"Sailor Chief Orb": "Sailor Chief Orb (Thursday)",
-	"Lord Witch Orb": "Lord Witch Orb (Friday)",
-	"Warlock Orb": "Warlock Orb (Friday)",
-	"Vanguard Strategist Orb": "Vanguard Strategist Orb (Friday)",
-	"Ninja Master Orb": "Ninja Master Orb (Friday)",
-	"Arch Angel Orb": "Arch Angel Orb (Friday)",
-	"Battle Mage Orb": "Battle Mage Orb (Saturday)",
-	"High Ranger Orb": "High Ranger Orb (Saturday)",
-	"Top Dancer Orb": "Top Dancer Orb (Saturday)",
-	"Dragon Knight Orb": "Dragon Knight Orb (Saturday)",
-	"Priest Warrior Leade Orb": "Priest Warrior Leade Orb (Saturday)",
-	"High Alchemist Orb": "High Alchemist Orb (Sunday)",
-	"Witch Doctor Orb": "Witch Doctor Orb (Sunday)",
-	"Machinist Orb": "Machinist Orb (Sunday)",
-	"Master Thief Orb": "Master Thief Orb (Sunday)",
-	"Bowrider Chief Orb": "Bowrider Chief Orb (Sunday)"
-}
 
 class FindMat extends commando.Command {
     constructor(client) {
@@ -136,11 +99,6 @@ request(link, function(err, resp, html) {
 		var aw = false;
 		output = $('.c3.numbers').first().text();
 		if(output) {aw =true}
-		var aw2 = false;
-		output = $('.c4.numbers').first().text();
-		if(output) {aw2 =true}
-		output = $('.c5.numbers').first().text();
-		if(output) {aw2 =true}
 		var check = false;
 		var ccname;
 		var awname;
@@ -190,8 +148,8 @@ request(link, function(err, resp, html) {
 					if (sap) {embedcc.addField("Fairy", "Spirit Queen (Gladys)", true)}
 					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum (Celia) \nOR \nSpirit Queen (Gladys)", true)}
 					if (black) {embedcc.addField("Fairy", "Spirit of Black (Florika) \nOR \nSpirit Queen (Gladys)", true)}
+					message.channel.send(embedcc)
 					if (aw) {
-						pages.push(embedcc)
 						link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
 						request(link2, function(err, resp, html) {
 							if (!err) {
@@ -199,38 +157,24 @@ request(link, function(err, resp, html) {
 								mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
 								mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 								mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
-								let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
-								
-								message.channel.send(orbs)
 								let embedaw = new Discord.RichEmbed();
+								let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
+								let parts = mat1.split('&')
+								let len = parts.length
+								parts[len-1] = parts[len-1].slice(0,-1)
+								for (var i = 0; i < len; i++) {
+									parts[i] = parts[i].slice(5)
+								}
 								embedaw.setTitle("AW Materials")
 								embedaw.setThumbnail(awimg)
 								embedaw.addField("Material 1", aw1[mat1], true)
 								embedaw.addField("Material 2", aw1[mat2], true)
 								embedaw.addField("Material 3", aw1[mat3], true)
 								embedaw.addField("Fairy", "Spirit of Awakening (Victoire)", true)
-								let embedsaw = new Discord.RichEmbed();
-								embedsaw.setTitle("SAW Materials")
-								embedsaw.setThumbnail(awimg)
-								embedsaw.addField("Fairy", "Spirit of Skill Awakening (Naiad)", true)
-								
 								message.channel.send(embedaw)
-								message.channel.send(embedsaw)
-								if (aw2) {
-									let embedaw = new Discord.RichEmbed();
-									embedaw2.setTitle("AW Materials")
-									embedaw2.setThumbnail(awimg)
-									embedaw2.addField("Material 1", aw1[mat1], true)
-									embedaw2.addField("Material 2", aw1[mat2], true)
-									embedaw2.addField("Material 3", aw1[mat3], true)
-									embedaw2.addField("Fairy", "Spirit of Awakening (Victoire)", true)
-									
-								}
-								
 							}
 						})
 					}
-					else {message.channel.send(embedcc)}
 				}	
 			})
 		}
