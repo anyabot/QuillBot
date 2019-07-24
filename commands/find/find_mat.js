@@ -119,8 +119,6 @@ request(link, function(err, resp, html) {
 		var aff;
 		var pages = [];
 		var page = 1;
-		var nor = false;
-		var aw = false;
 		var black = $('.categories').text().includes("Rarity:Black");
 		var plat = $('.categories').text().includes("Rarity:Platinum");
 		var sap = $('.categories').text().includes("Rarity:Sapphire");
@@ -160,7 +158,6 @@ request(link, function(err, resp, html) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			if (na(output) == "Samurai") {ccname = na(output)}
 			else {ccname = pluralize.plural(na(output))}
-			message.channel.send(ccname)
 			
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
 			request(link2, function(err, resp, html) {
@@ -247,7 +244,6 @@ request(link, function(err, resp, html) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			if (na(output) == "Samurai") {ccname = na(output)}
 			else {ccname = pluralize.plural(na(output))}
-			message.channel.send(ccname)
 			output = $('.c2 td:nth-child(1)').first().html();
 			awname = pluralize.plural(na(output));
 			
