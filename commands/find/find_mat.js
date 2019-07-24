@@ -156,14 +156,12 @@ request(link, function(err, resp, html) {
 		else if (aw) {
 			awname = pluralize.plural(na(output));
 		}
-		if (cc) {
+		if (cc && !aw) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			if (na(output) == "Samurai") {ccname = na(output)}
 			else {ccname = pluralize.plural(na(output))}
 			message.channel.send(ccname)
 			
-			output = $('.c2 td:nth-child(1)').first().html();
-			awname = pluralize.plural(na(output));
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
 			request(link2, function(err, resp, html) {
 				if (!err) {
@@ -188,7 +186,7 @@ request(link, function(err, resp, html) {
 				}	
 			})
 		}
-		if (aw) {
+		if (aw && !cc) {
 			let link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
 			request(link2, function(err, resp, html) {
 				if (!err) {
@@ -238,11 +236,130 @@ request(link, function(err, resp, html) {
 							embedaw.addField("Orbs", orb1 + " x 3", true)
 						}
 						else if (len == 2) {
-							embedaw.addField("Orbs", orb1 + " x 3 & " + orb2 + " x 3", true)
+							embedaw.addField("Orbs", orb1 + " x 3 & \n" + orb2 + " x 3", true)
 						}
 					}
 					message.channel.send(embedaw)
 				}
+			})
+		}
+		if (aw && cc) {
+			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
+			if (na(output) == "Samurai") {ccname = na(output)}
+			else {ccname = pluralize.plural(na(output))}
+			message.channel.send(ccname)
+			
+			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
+			request(link2, function(err, resp, html) {
+				if (!err) {
+					let $2 = cheerio.load(html)
+					let mat1 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3) table tbody tr td div a').attr('href')
+					let mat2 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(3) table tbody tr td div a').attr('href')
+					let mat3 = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(2) table tbody tr td div a').attr('href')
+					let embedcc = new Discord.RichEmbed();
+					embedcc.setTitle("CC Materials")
+					embedcc.setThumbnail(ccimg)
+					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
+					else {embedcc.addField("Material 1", cc2[mat1], true)}
+					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
+					else {embedcc.addField("Material 2", cc2[mat2], true)}
+					embedcc.addField("Material 3", cc2[mat3], true);
+					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
+					if (gold) {embedcc.addField("Fairy", "Spirit of Gold (Nina) \nOR \nSpirit Queen (Gladys)", true)}
+					if (sap) {embedcc.addField("Fairy", "Spirit Queen (Gladys)", true)}
+					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum (Celia) \nOR \nSpirit Queen (Gladys)", true)}
+					if (black) {embedcc.addField("Fairy", "Spirit of Black (Florika) \nOR \nSpirit Queen (Gladys)", true)}
+					pages.push(embedcc)
+					link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
+					request(link2, function(err, resp, html) {
+						if (!err) {
+							$2 = cheerio.load(html)
+							mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
+							mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
+							mat3 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
+							let embedaw = new Discord.RichEmbed();
+							let orbs = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
+							let parts = orbs.split('&')
+							let len = parts.length
+							parts[len-1] = parts[len-1].slice(0,-1)
+							for (var i = 0; i < len; i++) {
+								parts[i] = parts[i].slice(5).toTitleCase()
+								}
+							let orb1 = awo[parts[0]]
+							if (len == 2) {let orb2 = awo[parts[1]]}
+							message.channel.send(orb1)
+							embedaw.setTitle("AW/AW2/SAW Materials")
+							embedaw.setThumbnail(awimg)
+							embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
+							embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
+							embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
+							embedaw.addField("Fairy", "**AW:** \nSpirit of Awakening (Victoire)\n**AW2:** \nSpirit of Perpetual Darkness (Onyx)\n**SAW:** \nSpirit of Skill Awakening (Naiad)", true)
+
+							if (gold) {
+								embedaw.addField("Money", "200,000G", true)
+								if (len == 1) {
+									embedaw.addField("Orbs", orb1 + " x 1", true)
+								}
+								else if (len == 2) {
+									embedaw.addField("Orbs", orb1 + " x 1 & " + orb2 + " x 1", true)
+								}
+							}
+							if (plat || sap) {
+								embedaw.addField("Money", "250,000G", true)
+								if (len == 1) {
+									embedaw.addField("Orbs", orb1 + " x 2", true)
+								}
+								else if (len == 2) {
+									embedaw.addField("Orbs", orb1 + " x 2 & " + orb2 + " x 2", true)
+								}
+							}
+							if (black) {
+								embedaw.addField("Money", "300,000G", true)
+								if (len == 1) {
+									embedaw.addField("Orbs", orb1 + " x 3", true)
+								}
+								else if (len == 2) {
+									embedaw.addField("Orbs", orb1 + " x 3 & \n" + orb2 + " x 3", true)
+								}
+							}
+							pages.push(embedaw)
+							let embed = new Discord.RichEmbed();
+							embed = pages[0]
+							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							message.channel.send(embed).then(msg => {
+
+								msg.react('⬅').then( r => {
+									msg.react('➡')
+
+									// Filters
+									const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+									const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+
+									const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+									const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+
+									backwards.on('collect', r => {
+										r.remove(r.users.filter(u => !u.bot).first());
+										if (page === 1) return;
+										page--;
+										embed = pages[page-1];
+										embed.setFooter('Page ' + page + ' of ' + pages.length);
+										msg.edit(embed)
+									})
+
+									forwards.on('collect', r => {
+										r.remove(r.users.filter(u => !u.bot).first());
+										if (page === pages.length) return;
+										page++;
+										embed = pages[page-1];
+										embed.setFooter('Page ' + page + ' of ' + pages.length);
+										msg.edit(embed)
+									})
+								})
+							})
+						}
+					})
+				}	
 			})
 		}
                 if (!cc && !aw) {message.channel.send("No Data")};
