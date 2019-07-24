@@ -189,7 +189,7 @@ request(link, function(err, resp, html) {
 			})
 		}
 		if (aw) {
-			link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
+			let link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
 			request(link2, function(err, resp, html) {
 			if (!err) {
 				let $2 = cheerio.load(html)
@@ -218,7 +218,6 @@ request(link, function(err, resp, html) {
 							}
 						})
 					}
-		message.channel.send(awname)
                 if (!cc && !aw) {message.channel.send("No Data")};
     
 	}
