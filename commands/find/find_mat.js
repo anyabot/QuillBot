@@ -200,7 +200,7 @@ request(link, function(err, resp, html) {
 						parts[i] = parts[i].slice(5).toTitleCase()
 						}
 					let orb1 = awo[parts[0]]
-					if (len == 2) {let orb2 = awo[parts[1]]}
+					if (len == 2) {var orb2 = awo[parts[1]]}
 					embedaw.setTitle("AW/AW2/SAW Materials")
 					embedaw.setThumbnail(awimg)
 					embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
@@ -282,7 +282,7 @@ request(link, function(err, resp, html) {
 								parts[i] = parts[i].slice(5).toTitleCase()
 								}
 							let orb1 = awo[parts[0]]
-							if (len == 2) {let orb2 = awo[parts[1]]}
+							if (len == 2) {var orb2 = awo[parts[1]]}
 							embedaw.setTitle("AW/AW2/SAW Materials")
 							embedaw.setThumbnail(awimg)
 							embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
