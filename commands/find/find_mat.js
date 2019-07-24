@@ -93,7 +93,7 @@ var awo = {
 	"Witch Doctor Orb": "Witch Doctor Orb (Sunday)",
 	"Machinist Orb": "Machinist Orb (Sunday)",
 	"Master Thief Orb": "Master Thief Orb (Sunday)",
-	"Bowrider Chief Orb": "Bowrider Chief Orb (Sunday)",
+	"Bowrider Chief Orb": "Bowrider Chief Orb (Sunday)"
 }
 
 class FindMat extends commando.Command {
