@@ -164,8 +164,9 @@ request(link, function(err, resp, html) {
 								message.channel.send(parts[0])
 								parts[len-1] = parts[len-1].slice(0,-1)
 								for (var i = 0; i < len; i++) {
-									parts[i] = parts[i].slice(5)
+									parts[i] = parts[i].slice(5).toTitleCase()
 								}
+								message.channel.send(parts[0])
 								embedaw.setTitle("AW Materials")
 								embedaw.setThumbnail(awimg)
 								embedaw.addField("Material 1", aw1[mat1], true)
