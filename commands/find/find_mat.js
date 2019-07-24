@@ -133,6 +133,11 @@ request(link, function(err, resp, html) {
 		var aw = false;
 		output = $('.c3.numbers').first().text();
 		if(output) {aw =true}
+		var aw2 = false;
+		output = $('.c4.numbers').first().text();
+		if(output) {aw2 =true}
+		output = $('.c5.numbers').first().text();
+		if(output) {aw2 =true}
 		var check = false;
 		var ccname;
 		var awname;
@@ -205,13 +210,22 @@ request(link, function(err, resp, html) {
 					if (len == 2) {
 						orb2 = awo[parts[1]]
 					}
-					embedaw.setTitle("AW/AW2/SAW Materials")
-					embedaw.setThumbnail(awimg)
-					embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
-					embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
-					embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
-					embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** \nSpirit of Perpetual \nDarkness (Onyx)\n**SAW:** \nSpirit of Skill \nAwakening (Naiad)", true)
-
+					if (aw2) {
+						embedaw.setTitle("AW/AW2/SAW Materials")
+						embedaw.setThumbnail(awimg)
+						embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
+						embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
+						embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
+						embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** \nSpirit of Perpetual \nDarkness (Onyx)\n**SAW:** \nSpirit of Skill \nAwakening (Naiad)", true)
+					}
+					else {
+						embedaw.setTitle("AW/SAW Materials")
+						embedaw.setThumbnail(awimg)
+						embedaw.addField("Material 1 (For AW)", aw1[mat1], true)
+						embedaw.addField("Material 2 (For AW)", aw1[mat2], true)
+						embedaw.addField("Material 3 (For AW)", aw1[mat3], true)
+						embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**SAW:** \nSpirit of Skill \nAwakening (Naiad)", true)
+					}
 					if (gold) {
 						embedaw.addField("Money", "200,000G", true)
 						if (len == 1) {
@@ -292,13 +306,22 @@ request(link, function(err, resp, html) {
 							if (len == 2) {
 								orb2 = awo[parts[1]]
 							}
-							embedaw.setTitle("AW/AW2/SAW Materials")
-							embedaw.setThumbnail(awimg)
-							embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
-							embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
-							embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
-							embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** \nSpirit of Perpetual \nDarkness (Onyx)\n**SAW:** \nSpirit of Skill \nAwakening (Naiad)", true)
-
+							if (aw2) {
+								embedaw.setTitle("AW/AW2/SAW Materials")
+								embedaw.setThumbnail(awimg)
+								embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
+								embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
+								embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
+								embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** \nSpirit of Perpetual \nDarkness (Onyx)\n**SAW:** \nSpirit of Skill \nAwakening (Naiad)", true)
+							}
+							else {
+								embedaw.setTitle("AW/SAW Materials")
+								embedaw.setThumbnail(awimg)
+								embedaw.addField("Material 1 (For AW)", aw1[mat1], true)
+								embedaw.addField("Material 2 (For AW)", aw1[mat2], true)
+								embedaw.addField("Material 3 (For AW)", aw1[mat3], true)
+								embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**SAW:** \nSpirit of Skill \nAwakening (Naiad)", true)
+							}
 							if (gold) {
 								embedaw.addField("Money", "200,000G", true)
 								if (len == 1) {
