@@ -167,7 +167,8 @@ request(link, function(err, resp, html) {
 									parts[i] = parts[i].slice(5).toTitleCase()
 								}
 								message.channel.send(parts[0])
-								message.channel.send(awo[parts[0]])
+								let orb1 = parts[0]
+								message.channel.send(awo[orb1])
 								embedaw.setTitle("AW Materials")
 								embedaw.setThumbnail(awimg)
 								embedaw.addField("Material 1", aw1[mat1], true)
