@@ -192,12 +192,13 @@ request(link, function(err, resp, html) {
 					let mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 					let mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 					let embedaw = new Discord.RichEmbed();
-					let orbs = na($3('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text())
+					let orbs = $3('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(3)').text()
 					let parts = orbs.split('&')
 					let len = parts.length
 					parts[len-1] = parts[len-1].slice(0,-1)
 					for (var i = 0; i < len; i++) {
 						parts[i] = parts[i].slice(5).toTitleCase()
+						parts[i] = na(parts[i])
 						}
 					message.channel.send(parts[0])
 					let orb1 = awo[parts[0]]
