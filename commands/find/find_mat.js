@@ -184,10 +184,10 @@ request(link, function(err, resp, html) {
 			})
 		}
 		if (aw && !cc) {
-			message.channel.send(awname)
 			let link2 = "https://aigis.fandom.com/wiki/Awakening/" + awname
 			request(link2, function(err, resp, html) {
 				if (!err) {
+					message.channel.send(awname)
 					let $2 = cheerio.load(html)
 					let mat1 = $2('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
 					let mat2 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
