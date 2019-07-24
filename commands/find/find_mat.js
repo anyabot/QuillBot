@@ -248,6 +248,8 @@ request(link, function(err, resp, html) {
 			if (na(output) == "Samurai") {ccname = na(output)}
 			else {ccname = pluralize.plural(na(output))}
 			message.channel.send(ccname)
+			output = $('.c2 td:nth-child(1)').first().html();
+			awname = pluralize.plural(na(output));
 			
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
 			request(link2, function(err, resp, html) {
