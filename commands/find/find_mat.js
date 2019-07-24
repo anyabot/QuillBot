@@ -218,42 +218,7 @@ request(link, function(err, resp, html) {
 								embedsaw.setTitle("SAW Materials")
 								embedsaw.setThumbnail(awimg)
 								embedsaw.addField("Fairy", "Spirit of Skill Awakening (Naiad)", true)
-								if (gold) {
-									embedaw.addField("Money", "200,000G", true)
-									embedsaw.addField("Money", "200,000G", true)
-									if (len == 1) {
-										embedaw.addField("Orbs", awo[parts[0]] + " x 1", true)
-										embedsaw.addField("Orbs", awo[parts[0]] + " x 1", true)
-									}
-									else if (len == 2) {
-										embedaw.addField("Orbs", awo[parts[0]] + " x 1 & " + awo[parts[1]] + " x 1", true)
-										embedsaw.addField("Orbs", awo[parts[0]] + " x 1 & " + awo[parts[1]] + " x 1", true)
-									}
-								}
-								if (plat || sap) {
-									embedaw.addField("Money", "250,000G", true)
-									embedsaw.addField("Money", "250,000G", true)
-									if (len == 1) {
-										embedaw.addField("Orbs", awo[parts[0]] + " x 2", true)
-										embedsaw.addField("Orbs", awo[parts[0]] + " x 2", true)
-									}
-									else if (len == 2) {
-										embedaw.addField("Orbs", awo[parts[0]] + " x 2 & " + awo[parts[1]] + " x 2", true)
-										embedsaw.addField("Orbs", awo[parts[0]] + " x 2 & " + awo[parts[1]] + " x 2", true)
-									}
-								}
-								if (black) {
-									embedaw.addField("Money", "300,000G", true)
-									embedsaw.addField("Money", "300,000G", true)
-									if (len == 1) {
-										embedaw.addField("Orbs", awo[parts[0]] + " x 3", true)
-										embedsaw.addField("Orbs", awo[parts[0]] + " x 3", true)
-									}
-									else if (len == 2) {
-										embedaw.addField("Orbs", awo[parts[0]] + " x 3 & " + awo[parts[1]] + " x 3", true)
-										embedsaw.addField("Orbs", awo[parts[0]] + " x 3 & " + awo[parts[1]] + " x 3", true)
-									}
-								}
+								
 								message.channel.send(embedaw)
 								message.channel.send(embedsaw)
 								if (aw2) {
@@ -264,33 +229,7 @@ request(link, function(err, resp, html) {
 									embedaw2.addField("Material 2", aw1[mat2], true)
 									embedaw2.addField("Material 3", aw1[mat3], true)
 									embedaw2.addField("Fairy", "Spirit of Awakening (Victoire)", true)
-									if (gold) {
-										embedaw2.addField("Money", "200,000G", true)
-										if (len == 1) {
-											embedaw2.addField("Orbs", awo[parts[0]] + " x 1", true)
-										}
-										else if (len == 2) {
-											embedaw2.addField("Orbs", awo[parts[0]] + " x 1 & " + awo[parts[1]] + " x 1", true)
-										}
-									}
-									if (plat || sap) {
-										embedaw2.addField("Money", "250,000G", true)
-										if (len == 1) {
-											embedaw2.addField("Orbs", awo[parts[0]] + " x 2", true)
-										}
-										else if (len == 2) {
-											embedaw2.addField("Orbs", awo[parts[0]] + " x 2 & " + awo[parts[1]] + " x 2", true)
-										}
-									}
-									if (black) {
-										embedaw2.addField("Money", "300,000G", true)
-										if (len == 1) {
-											embedaw2.addField("Orbs", awo[parts[0]] + " x 3", true)
-										}
-										else if (len == 2) {
-											embedaw2.addField("Orbs", awo[parts[0]] + " x 3 & " + awo[parts[1]] + " x 3", true)
-										}
-									}
+									
 								}
 								
 							}
