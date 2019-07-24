@@ -48,13 +48,13 @@ var aw1 = {
 	"/wiki/Saizou" :"Gold Ninja \nOR \nCC Silver Ninja: \n1 x Iron Soldier \n1 x Iron Bandit \n2 x Silver Ninjas \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Calliope" :"Gold Witch \nOR \nCC Silver Witch: \n1 x Iron Archer \n1 x Iron Mage, \n2 x Silver Witches \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Fudou" :"Gold Bishop \nOR \nCC Silver Bishop: \n2 x Iron Mages \n1 x Silver Healers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Bishop",
-	"/wiki/Cecily" :"Gold Rogue \nOR \nCC Silver Rouge: \n1 x Iron Soldier \n1 x Iron Archer, \n2 x Silver Rouges \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Cecily" :"Gold Rogue \nOR \nCC Silver Rouge: \n1 x Iron Soldier \n1 x Iron Archer \n2 x Silver Rouges \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Sanosuke" :"Gold Samurai \nOR \nCC Silver Samurai: \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Samurai \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Percis" :"Gold Gunner \nOR \nCC Silver Gunner: \n1 x Iron Soldier \n1 x Iron Archer, \n2 x Silver Gunners \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Ricardo" :"Gold Magic Fencer \nOR \nCC Silver Magic Fencer: \n1 x Iron Soldier \n1 x Iron Mage \n2 x Silver Magic Fencers \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Khuri" :"Gold Vampire Hunter \nOR \nCC Vampire Hunter: \n2 x Iron Archers \n2 x Silver Vampire Hunters \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Giovanni" :"Gold Pirate \nOR \nCC Silver Pirate: \n1 x Iron Archer \n1 x Iron Bandit, \n2 x Silver Pirates \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Dan" :"Gold Monk \nOR \nCC Silver Monk: \n1 x Iron Soldier \n1 x Iron Archer, \n2 x Silver Monks \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Giovanni" :"Gold Pirate \nOR \nCC Silver Pirate: \n1 x Iron Archer \n1 x Iron Bandit \n2 x Silver Pirates \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
+	"/wiki/Dan" :"Gold Monk \nOR \nCC Silver Monk: \n1 x Iron Soldier \n1 x Iron Archer \n2 x Silver Monks \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Ertel" :"Gold Priest Warrior \nOR \nCC Priest Warrior: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Priest Warriors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Gadoras" :"Gold Dragon Soldier \nOR CC Silver Dragon Soldier: \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Dragon Soldier"
 }
@@ -167,6 +167,7 @@ request(link, function(err, resp, html) {
 									parts[i] = parts[i].slice(5).toTitleCase()
 								}
 								message.channel.send(parts[0])
+								message.channel.send(awo[parts[0]])
 								embedaw.setTitle("AW Materials")
 								embedaw.setThumbnail(awimg)
 								embedaw.addField("Material 1", aw1[mat1], true)
