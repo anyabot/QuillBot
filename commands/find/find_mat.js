@@ -56,7 +56,7 @@ var aw1 = {
 	"/wiki/Giovanni" :"**Gold Pirate** \nOR \n**CC Silver Pirate:** \n1 x Iron Archer \n1 x Iron Bandit \n2 x Silver Pirates \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Dan" :"**Gold Monk** \nOR \n**CC Silver Monk:** \n1 x Iron Soldier \n1 x Iron Archer \n2 x Silver Monks \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
 	"/wiki/Ertel" :"**Gold Priest Warrior** \nOR \n**CC Silver Priest Warrior:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n2 x Silver Priest Warriors \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)",
-	"/wiki/Gadoras" :"**Gold Dragon Soldier** \nOR**CC Silver Dragon Soldier:** \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Dragon Soldier"
+	"/wiki/Gadoras" :"**Gold Dragon Soldier** \nOR** \nCC Silver Dragon Soldier:** \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys) \n1 x Silver Dragon Soldier"
 }
 var awo = {
 	"Sniper Orb": "Sniper Orb (Monday)",
