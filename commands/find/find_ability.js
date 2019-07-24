@@ -152,6 +152,7 @@ if (bronze) {
 	let embed = new Discord.RichEmbed()
           embed.setTitle(norna)
           embed.setThumbnail(norimg)
+		embed.setColor('LIGHT_GREY')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
            request(link2, function(err, resp, html) {
             if (!err) {
