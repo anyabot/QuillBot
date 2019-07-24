@@ -255,6 +255,7 @@ request(link, function(err, resp, html) {
 								}
 								message.channel.send(embedaw)
 								message.channel.send(embedsaw)
+								message.channel.send(parts[0])
 								if (aw2) {
 									let embedaw = new Discord.RichEmbed();
 									embedaw2.setTitle("AW Materials")
