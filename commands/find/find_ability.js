@@ -11,10 +11,12 @@ require('@gouch/to-title-case')
 class FindAbility extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'ability',
-            group: 'find',
-            memberName: 'ability',
-            description: 'find abilities of an unit'
+            	name: 'ability',
+		aliases: ['a'],
+            	group: 'find',
+            	memberName: 'ability',
+            	description: 'find abilities of an unit',
+		examples: ['!ability quill'],
         });
     }
 
