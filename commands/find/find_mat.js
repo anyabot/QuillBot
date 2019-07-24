@@ -121,11 +121,11 @@ request(link, function(err, resp, html) {
 					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
 					else {embedcc.addField("Material 2", cc2[mat2], true)}
 					embedcc.addField("Material 3", cc2[mat3], true);
-					if (silver) {embedcc.addField("Fairy", "Spirit of Silver Cyrille \nOR \nSpirit Queen Gladys", true)}
-					if (gold) {embedcc.addField("Fairy", "Spirit of Gold Nina \nOR \nSpirit Queen Gladys", true)}
-					if (sap) {embedcc.addField("Fairy", "Spirit Queen Gladys", true)}
-					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum Celia \nOR \nSpirit Queen Gladys", true)}
-					if (black) {embedcc.addField("Fairy", "Spirit of Black Florika \nOR \nSpirit Queen Gladys", true)}
+					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
+					if (gold) {embedcc.addField("Fairy", "Spirit of Gold (Nina) \nOR \nSpirit Queen (Gladys)", true)}
+					if (sap) {embedcc.addField("Fairy", "Spirit Queen (Gladys)", true)}
+					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum (Celia) \nOR \nSpirit Queen (Gladys)", true)}
+					if (black) {embedcc.addField("Fairy", "Spirit of Black (Florika) \nOR \nSpirit Queen (Gladys)", true)}
 					message.channel.send(embedcc)
 				}	
 			})
