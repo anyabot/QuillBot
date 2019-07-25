@@ -18,8 +18,6 @@
     "pluralize": "^8.0.0",
     "@gouch/to-title-case": "^2.2.1",
     "moment": "^2.24.0",
-    "sleep": "^6.1.0",
-    "moment-timezone": "^0.5.26",
     "humanize-duration": "^3.20.0"
   }
 }
