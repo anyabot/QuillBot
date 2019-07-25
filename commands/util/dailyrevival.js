@@ -15,7 +15,7 @@ class UtilDaily extends commando.Command {
             group: 'util',
             memberName: 'dailyrevival',
             description: 'find daily revival maps to get silver units',
-		examples: ['~farm soldier'],
+		examples: ['~dailyrevival'],
         });
     }
 
@@ -141,6 +141,7 @@ request(link, function(err, resp, html) {
               }
               if (j%4 == 2 && j != 2) {
 						    pages.push(embed)
+		      message.channel.send(embed)
 						    embed = new Discord.RichEmbed()
 						    embed.setColor('RANDOM')
                 if (tname == uname) {
