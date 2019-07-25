@@ -44,9 +44,9 @@ request(link, function(err, resp, html) {
 						embed = new Discord.RichEmbed()
 						embed.setTitle("Daily Revival Maps to Farm " + cname)
 						embed.setColor('RANDOM')
-						embed.addField(j + "/ " + ename " (" + uname +")", "**Map:**" + cha + "/" + "\t **Silver Unit:**" + sname, true)
+						embed.addField(j + "/ " + ename + " (" + uname +")", "**Map:**" + cha + "/" + "\t **Silver Unit:**" + sname, true)
 					}
-					else {embed.addField(j + "/ " + ename " (" + uname +")", "**Map:**" + cha + "/" + "\t **Silver Unit:**" + sname, true)}
+					else {embed.addField(j + "/ " + ename + " (" + uname +")", "**Map:**" + cha + "/" + "\t **Silver Unit:**" + sname, true)}
 				}
 				message.channel.send(embed)
 			}
