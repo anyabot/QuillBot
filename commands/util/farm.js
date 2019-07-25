@@ -31,7 +31,6 @@ request(link, function(err, resp, html) {
 				let len = $(elem).find('tr').length
 				var embed = new Discord.RichEmbed()
 				embed.setColor('RANDOM')
-				embed.setTitle("Daily Revival Maps to Farm " + cname)
 				for (var j = 2; j < len; j++) {
 					
 					let uname = na($(elem).find('tr').eq(j).children().eq(0).find('a').attr('title'))
@@ -42,11 +41,10 @@ request(link, function(err, resp, html) {
 					if (j%12 == 1) {
 						message.channel.send(embed)
 						embed = new Discord.RichEmbed()
-						embed.setTitle("Daily Revival Maps to Farm " + cname)
 						embed.setColor('RANDOM')
-						embed.addField(j + "/ " + ename + " (" + uname +")", "**Map:**" + cha + "/" + "\t **Silver Unit:**" + sname, true)
+						embed.addField(j + "/ " + ename + " (" + uname +")", "**Map: **" + cha + "/" + sta + "\t **Silver Unit:**" + sname)
 					}
-					else {embed.addField(j + "/ " + ename + " (" + uname +")", "**Map:**" + cha + "/" + "\t **Silver Unit:**" + sname, true)}
+					else {embed.addField(j + "/ " + ename + " (" + uname +")", "**Map: **" + cha + "/" + sta "\t **Silver Unit:**" + sname)}
 				}
 				message.channel.send(embed)
 			}
