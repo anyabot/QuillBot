@@ -168,11 +168,11 @@ request(link, function(err, resp, html) {
 				      else {
                 if (tname == uname) {
                       let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
-                  embed.addField(2 + " (Today Revival)", line)
+                  embed.addField(ename + " (Today Revival)", line)
                 }
                 else {
 					let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
-                  embed.addField(ename2, line)
+                  embed.addField(ename, line)
 				}
                 if (uclass2) {
                   if (tname == na(uname2)) {
