@@ -176,13 +176,13 @@ request(link, function(err, resp, html) {
 					embedcc.setTitle("CC Materials")
 					embedcc.setThumbnail(ccimg)
 					embedcc.setColor('RED')
-					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 1", "Iron Soldier", true)}
+				if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 1", "Iron Soldier", true)}
 					else if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
-					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 2", "Iron Mage", true)
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 2", "Iron Mage", true)}
 					else if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
 					else {embedcc.addField("Material 2", cc2[mat2], true)}
-					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 3", "Silver Mage", true)
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 3", "Silver Mage", true)}
 					else {embedcc.addField("Material 3", cc2[mat3], true)}
 					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
 					if (gold) {embedcc.addField("Fairy", "Spirit of Gold (Nina) \nOR \nSpirit Queen (Gladys)", true)}
@@ -285,10 +285,10 @@ request(link, function(err, resp, html) {
 					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 1", "Iron Soldier", true)}
 					else if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
-					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 2", "Iron Mage", true)
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 2", "Iron Mage", true)}
 					else if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
 					else {embedcc.addField("Material 2", cc2[mat2], true)}
-					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 3", "Silver Mage", true)
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 3", "Silver Mage", true)}
 					else {embedcc.addField("Material 3", cc2[mat3], true)}
 					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
 					if (gold) {embedcc.addField("Fairy", "Spirit of Gold (Nina) \nOR \nSpirit Queen (Gladys)", true)}
