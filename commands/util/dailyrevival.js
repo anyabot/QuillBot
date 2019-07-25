@@ -140,7 +140,7 @@ request(link, function(err, resp, html) {
               }
               if (j%4 == 2 && j != 2) {
 						    pages.push(embed)
-						    var embed = "`"
+						    embed = "`"
                 if (tname == uname) {
 			let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
                   embed = embed + line
