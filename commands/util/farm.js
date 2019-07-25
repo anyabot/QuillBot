@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
+var printf = require('printf');
 require('@gouch/to-title-case')
 
 class UtilFarm extends commando.Command {
