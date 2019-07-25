@@ -119,8 +119,7 @@ request(link, function(err, resp, html) {
 			    let aaa = na($2(elem).find('tr').first().text())
           if (aaa == "Daily Revivals Rotation") {
             let len = $2(elem).find('tr').length
-            var embed = new Discord.RichEmbed()
-				    embed.setColor('RANDOM')
+            var embed = "`"
             for (var j = 2; j < len; j++) {
               let ename = na($2(elem).find('tr').eq(j).children().eq(1).text())
               let uname = na($2(elem).find('tr').eq(j).children().eq(3).text())
@@ -141,59 +140,55 @@ request(link, function(err, resp, html) {
               }
               if (j%4 == 2 && j != 2) {
 						    pages.push(embed)
-		      message.channel.send(embed)
-						    embed = new Discord.RichEmbed()
-						    embed.setColor('RANDOM')
+						    var embed = "`"
                 if (tname == uname) {
-			let line = printf("`**Event Unit:**%-20s**Class:**%s`", uname, uclass)
-			message.channel.send(line)
-                  embed.addField(ename + " (Today Revival)", line)
+			let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+                  embed = embed + line
                   page = Math.floor(j/4)
                 }
                 else {
-		let line = printf("`**Event Unit:**%-20s**Class:**%s`", uname, uclass)
-		message.channel.send(line)
-                  embed.addField(ename, line)
+		let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+                  embed = embed + line
 		}
               console.log('----------')
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                    let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
-                  embed.addField(ename2 + " (Today Revival)", line)
+                    let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
+                  embed = embed + line
                     page = Math.floor(j/4)
                   }
                   else {
-			  let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
+			  let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
 		  	embed.addField(ename2, line)
 		  }
                 }
               }
 				      else {
                 if (tname == uname) {
-                      let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
-                  embed.addField(ename + " (Today Revival)", line)
+                      let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+                  embed = embed + line
+				  page = Math.floor(j/4)
                 }
                 else {
-					let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
-                  embed.addField(ename, line)
+					let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+                  embed = embed + line
 				}
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                      let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
-					embed.addField(ename2 + " (Today Revival)", line)
-                      page = Math.floor(j/4)
+                      let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
+                      embed = embed + line
+					  page = Math.floor(j/4)
                   }
                   else {
-					let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
-					embed.addField(ename2, line)
+					let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
+					embed = embed + line
                   }
 			    }
               }
             }
             pages.push(embed)
-				embed = new Discord.RichEmbed();
-				embed = pages[0]
-				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				embed = pages[page-1]
+				embed = embed + 'Page ' + page + ' of ' + pages.length + '`';
 				message.channel.send(embed).then(msg => {
 
 					msg.react('⬅').then( r => {
@@ -211,7 +206,7 @@ request(link, function(err, resp, html) {
 							if (page === 1) return;
 							page--;
 							embed = pages[page-1];
-							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '`';
 							msg.edit(embed)
 						})
 
@@ -220,7 +215,7 @@ request(link, function(err, resp, html) {
 							if (page === pages.length) return;
 							page++;
 							embed = pages[page-1];
-							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '`';
 							msg.edit(embed)
 						})
 					})
