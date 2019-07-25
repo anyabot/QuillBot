@@ -38,15 +38,49 @@ request(link, function(err, resp, html) {
 					let cha = na($(elem).find('tr').eq(j).children().eq(3).text())
 					let sta = na($(elem).find('tr').eq(j).children().eq(4).text())
 					let sname = na($(elem).find('tr').eq(j).children().eq(5).find('a').attr('title'))
-					if (j%12 == 1) {
-						message.channel.send(embed)
+					if (j%8 == 1) {
+						pages.push(embed)
 						embed = new Discord.RichEmbed()
 						embed.setColor('RANDOM')
-						embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "\t **Map: **" + cha + "/" + sta + "\t **Silver Unit: **" + sname)
+						embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)
 					}
-					else {embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "\t **Map: **" + cha + "/" + sta + "\t **Silver Unit: **" + sname)}
+					else {embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
 				}
-				message.channel.send(embed)
+				pages.push(embed)
+				embed = new Discord.RichEmbed();
+				embed = pages[0]
+				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				message.channel.send(embed).then(msg => {
+
+					msg.react('⬅').then( r => {
+						msg.react('➡')
+
+						// Filters
+						const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+						const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+						const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+
+						backwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+							if (page === 1) return;
+							page--;
+							embed = pages[page-1];
+							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							msg.edit(embed)
+						})
+
+						forwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+							if (page === pages.length) return;
+							page++;
+							embed = pages[page-1];
+							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							msg.edit(embed)
+						})
+					})
+				})
 			}
 		})
 	}
