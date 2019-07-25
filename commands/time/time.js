@@ -100,10 +100,10 @@ class TTime extends commando.Command {
 		embed.addField("Tranding Post, Stamp Card Reset", diff4)
 		embed.addField("Fame Reset", diff5)
 		if (mai) {
-		  embed.addField('Time Until Maintenance End:', diff3)
+		  embed.addField('Time Until Maintenance End', diff3)
 		}
 		else {
-		  embed.addField('Time Until Maintenance Start:', diff3)
+		  embed.addField('Time Until Maintenance Start', diff3)
 		}
     message.channel.send(embed)
 	}
