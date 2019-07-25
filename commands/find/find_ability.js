@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
-var sleep = require('sleep');
 var name = require('../../library/lib.js').name;
 require('@gouch/to-title-case')
 
