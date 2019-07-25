@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
-var printf = require('printf');
 require('@gouch/to-title-case')
 
 class UtilFarm extends commando.Command {
@@ -34,7 +33,6 @@ request(link, function(err, resp, html) {
 				check = true;
 				console.log(aaa)
 				let len = $(elem).find('tr').length
-				pages.push(embed)
 				var embed = "```"
 				for (var j = 2; j < len; j++) {
 					
@@ -48,21 +46,21 @@ request(link, function(err, resp, html) {
 						pages.push(embed)
 						embed = "```"
 						if (sname2) {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10sSilver Unit 2: %-10s", uname, ename, cha, sta, sname, na(sname2))
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10sSilver Unit 2: %-10s\n", ename, uname, cha, sta, sname, na(sname2))
 							embed = embed + line + "----------\n"
 						}
 						else {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10s", uname, ename, cha, sta, sname)
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10s\n", ename, uname, cha, sta, sname)
 							embed = embed + line + "----------\n"
 						}
 					}
 					else {
 						if (sname2) {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10sSilver Unit 2: %-10s", uname, ename, cha, sta, sname, na(sname2))
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10sSilver Unit 2: %-10s\n", ename, uname, cha, sta, sname, na(sname2))
 							embed = embed + line + "----------\n"
 						}
 						else {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10s", uname, ename, cha, sta, sname)
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10s\n", ename, uname, cha, sta, sname)
 							embed = embed + line + "----------\n"
 						}
 					}
