@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
+var moment = require('moment');
 require('@gouch/to-title-case')
 
 class UtilDaily extends commando.Command {
