@@ -156,12 +156,13 @@ request(link, function(err, resp, html) {
 			words[le-2] = pluralize.plural(words[le-2])
 			awname = words.join(" ")
 		}
+		else if (na(output) =="Intermediate Dragon Soldier"){awname = "Dragon Soldiers"}
 		else if (aw) {
 			awname = pluralize.plural(na(output));
 		}
 		if (cc && !aw) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
-			if (na(output) == "Samurai") {ccname = na(output)}
+			if (na(output) == "Samurai" || na(output) == "Heavy Artillery") {ccname = na(output)}
 			else {ccname = pluralize.plural(na(output))}
 			
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
@@ -175,11 +176,14 @@ request(link, function(err, resp, html) {
 					embedcc.setTitle("CC Materials")
 					embedcc.setThumbnail(ccimg)
 					embedcc.setColor('RED')
-					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 1", "Iron Soldier", true)}
+					else if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
-					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 2", "Iron Mage", true)
+					else if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
 					else {embedcc.addField("Material 2", cc2[mat2], true)}
-					embedcc.addField("Material 3", cc2[mat3], true);
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 3", "Silver Mage", true)
+					else {embedcc.addField("Material 3", cc2[mat3], true)}
 					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
 					if (gold) {embedcc.addField("Fairy", "Spirit of Gold (Nina) \nOR \nSpirit Queen (Gladys)", true)}
 					if (sap) {embedcc.addField("Fairy", "Spirit Queen (Gladys)", true)}
@@ -262,7 +266,7 @@ request(link, function(err, resp, html) {
 		}
 		if (aw && cc) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
-			if (na(output) == "Samurai") {ccname = na(output)}
+			if (na(output) == "Samurai" || na(output) == "Heavy Artillery") {ccname = na(output)}
 			else {ccname = pluralize.plural(na(output))}
 			output = $('.c2 td:nth-child(1)').first().html();
 			awname = pluralize.plural(na(output));
@@ -278,11 +282,14 @@ request(link, function(err, resp, html) {
 					embedcc.setTitle("CC Materials")
 					embedcc.setThumbnail(ccimg)
 					embedcc.setColor('RED')
-					if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 1", "Iron Soldier", true)}
+					else if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
-					if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 2", "Iron Mage", true)
+					else if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
 					else {embedcc.addField("Material 2", cc2[mat2], true)}
-					embedcc.addField("Material 3", cc2[mat3], true);
+					if (ccname = "Dancers" && (silver || gold)) {embedcc.addField("Material 3", "Silver Mage", true)
+					else {embedcc.addField("Material 3", cc2[mat3], true)}
 					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
 					if (gold) {embedcc.addField("Fairy", "Spirit of Gold (Nina) \nOR \nSpirit Queen (Gladys)", true)}
 					if (sap) {embedcc.addField("Fairy", "Spirit Queen (Gladys)", true)}
