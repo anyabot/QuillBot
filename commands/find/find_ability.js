@@ -16,7 +16,7 @@ class FindAbility extends commando.Command {
             	group: 'find',
             	memberName: 'ability',
             	description: 'find abilities of an unit',
-		examples: ['!ability quill'],
+		examples: ['~ability quill'],
         });
     }
 
