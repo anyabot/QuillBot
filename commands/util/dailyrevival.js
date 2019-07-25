@@ -143,52 +143,52 @@ request(link, function(err, resp, html) {
 						    embed = "```"
                 if (tname == uname) {
 			let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
-                  embed = embed + line
+                  embed = embed + line + "----------\n" + line
                   page = Math.floor(j/4)
                 }
                 else {
 		let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
-                  embed = embed + line
+                  embed = embed + line + "----------\n" + line
 		}
               console.log('----------')
                 if (uclass2) {
                   if (tname == na(uname2)) {
                     let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
-                  embed = embed + line
+                  embed = embed + line + "----------\n" + line
                     page = Math.floor(j/4)
                   }
                   else {
 			  let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
-		  	embed = embed + line
+		  	embed = embed + line + "----------\n" + line
 		  }
                 }
               }
 				      else {
                 if (tname == uname) {
                       let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
-                  embed = embed + line
+                  embed = embed + line + "----------\n" + line
 				  page = Math.floor(j/4)
                 }
                 else {
 					let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
-                  embed = embed + line
+                  embed = embed + line + "----------\n" + line
 				}
                 if (uclass2) {
                   if (tname == na(uname2)) {
                       let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
-                      embed = embed + line
+                      embed = embed + line + "----------\n" + line
 					  page = Math.floor(j/4)
                   }
                   else {
 					let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
-					embed = embed + line
+					embed = embed + line + "----------\n" + line + "----------\n"
                   }
 			    }
               }
             }
             pages.push(embed)
 				embed = pages[page-1]
-				embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
+				embed = embed + line + "----------\n" + 'Page ' + page + ' of ' + pages.length + '```';
 				message.channel.send(embed).then(msg => {
 
 					msg.react('⬅').then( r => {
@@ -206,7 +206,7 @@ request(link, function(err, resp, html) {
 							if (page === 1) return;
 							page--;
 							embed = pages[page-1];
-							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
+							embed = embed + line + "----------\n" + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 
@@ -215,7 +215,7 @@ request(link, function(err, resp, html) {
 							if (page === pages.length) return;
 							page++;
 							embed = pages[page-1];
-							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
+							embed = embed + line + "----------\n" + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 					})
