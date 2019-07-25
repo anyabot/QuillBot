@@ -145,11 +145,13 @@ request(link, function(err, resp, html) {
 						    embed.setColor('RANDOM')
                 if (tname == uname) {
 			let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
+			message.channel.send(line)
                   embed.addField(ename + " (Today Revival)", line)
                   page = Math.floor(j/4)
                 }
                 else {
 		let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
+		message.channel.send(line)
                   embed.addField(ename, line)
 		}
               console.log('----------')
