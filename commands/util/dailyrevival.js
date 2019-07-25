@@ -188,7 +188,7 @@ request(link, function(err, resp, html) {
             }
             pages.push(embed)
 				embed = pages[page-1]
-				embed = embed + line + "----------\n" + 'Page ' + page + ' of ' + pages.length + '```';
+				embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 				message.channel.send(embed).then(msg => {
 
 					msg.react('⬅').then( r => {
@@ -206,7 +206,7 @@ request(link, function(err, resp, html) {
 							if (page === 1) return;
 							page--;
 							embed = pages[page-1];
-							embed = embed + line + "----------\n" + 'Page ' + page + ' of ' + pages.length + '```';
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 
@@ -215,7 +215,7 @@ request(link, function(err, resp, html) {
 							if (page === pages.length) return;
 							page++;
 							embed = pages[page-1];
-							embed = embed + line + "----------\n" + 'Page ' + page + ' of ' + pages.length + '```';
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 					})
