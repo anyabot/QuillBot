@@ -23,12 +23,14 @@ class UtilFarm extends commando.Command {
 
 request(link, function(err, resp, html) {
 	if (!err) {
+		var check = false;
 		var pages = [];
 		var page = 1;
 		const $ = cheerio.load(html);
 		$('.mw-collapsible.mw-collapsed.wikitable').each(function(i, elem) {
 			let aaa = na($(elem).find('tr').find('th').first().text())
 			if (aaa == cname) {
+				check = true;
 				console.log(aaa)
 				let len = $(elem).find('tr').length
 				var embed = new Discord.RichEmbed()
@@ -85,6 +87,7 @@ request(link, function(err, resp, html) {
 				})
 			}
 		})
+		if (!check) {message.channel.send("No Data")}
 	}
 })
 	}
