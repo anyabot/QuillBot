@@ -156,7 +156,7 @@ request(link, function(err, resp, html) {
 			words[le-2] = pluralize.plural(words[le-2])
 			awname = words.join(" ")
 		}
-		else if (na(output) =="Intermediate Dragon Soldier"){awname = "Dragon Soldiers"}
+		else if (na(output) == "Intermediate Dragon Soldier"){awname = "Dragon Soldiers"}
 		else if (aw) {
 			awname = pluralize.plural(na(output));
 		}
@@ -305,6 +305,7 @@ request(link, function(err, resp, html) {
 					if (ccname == "Dancers") {
 						if (silver || gold) {embedcc.addField("Material 3", "Silver Mage", true)}
 					}
+					else {embedcc.addField("Material 3", cc2[mat3], true)}
 					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
 					if (gold) {embedcc.addField("Fairy", "Spirit of Gold (Nina) \nOR \nSpirit Queen (Gladys)", true)}
 					if (sap) {embedcc.addField("Fairy", "Spirit Queen (Gladys)", true)}
