@@ -143,31 +143,31 @@ request(link, function(err, resp, html) {
 						    embed = new Discord.RichEmbed()
 						    embed.setColor('RANDOM')
                 if (tname == uname) {
-                  embed.addField(ename + " (Today Revival)", "**Event Unit:**" + uname + "\f**Class:**" + uclass)
+                  embed.addField(ename + " (Today Revival)", "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)
                   page = Math.floor(j/4)
                 }
-                else {embed.addField(ename, "**Event Unit:**" + uname + "\f**Class:**" + uclass)}
+                else {embed.addField(ename, "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)}
               console.log('----------')
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                    embed.addField(na(ename2) + " (Today Revival)", "**Event Unit:**" + na(uname2) + "\f**Class:**" + na(uclass2))
+                    embed.addField(na(ename2) + " (Today Revival)", "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))
                     page = Math.floor(j/4)
                   }
-                  else {embed.addField(na(ename2), "**Event Unit:**" + na(uname2) + "\f**Class:**" + na(uclass2))}
+                  else {embed.addField(na(ename2), "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))}
                 }
               }
 				      else {
                 if (tname == uname) {
-                      embed.addField(ename + " (Today Revival)", "**Event Unit:**" + uname + "\f**Class:**" + uclass)
+                      embed.addField(ename + " (Today Revival)", "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)
                       page = Math.floor(j/4)
                 }
-                else {embed.addField(ename, "**Event Unit:**" + uname + "\f**Class:**" + uclass)}
+                else {embed.addField(ename, "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)}
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                      embed.addField(na(ename2) + " (Today Revival)", "**Event Unit:**" + na(uname2) + "\f**Class:**" + na(uclass2))
+                      embed.addField(na(ename2) + " (Today Revival)", "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))
                       page = Math.floor(j/4)
                   }
-                  else {embed.addField(na(ename2), "**Event Unit:**" + na(uname2) + "\f**Class:**" + na(uclass2))
+                  else {embed.addField(na(ename2), "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))
                   }
 			          }
               }
