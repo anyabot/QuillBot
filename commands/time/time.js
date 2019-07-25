@@ -95,10 +95,10 @@ class TTime extends commando.Command {
 		}
 		var embed = new Discord.RichEmbed()
 		embed.setColor('RANDOM')
-		embed.addField("Day Change", "**Daily Missions, Daily Revivals Change**\n" + diff1)
-		embed.addField("Day Reset", "**Daily Fame Quest, Stamp Card Change**\n" + diff2)
-		embed.addField("Month Change", "**Tranding Post, Stamp Card Reset**\n" + diff4)
-		embed.addField("Month Reset", "**Fame Reset**\n" + diff5)
+		embed.addField("Daily Missions, Daily Revivals Change", diff1)
+		embed.addField("Daily Fame Quest, Stamp Card Change", diff2)
+		embed.addField("Tranding Post, Stamp Card Reset", diff4)
+		embed.addField("Fame Reset", diff5)
 		if (mai) {
 		  embed.addField('Time Until Maintenance End:', diff3)
 		}
