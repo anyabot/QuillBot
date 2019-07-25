@@ -119,7 +119,7 @@ request(link, function(err, resp, html) {
 			    let aaa = na($2(elem).find('tr').first().text())
           if (aaa == "Daily Revivals Rotation") {
             let len = $2(elem).find('tr').length
-            var embed = "`"
+            var embed = "```"
             for (var j = 2; j < len; j++) {
               let ename = na($2(elem).find('tr').eq(j).children().eq(1).text())
               let uname = na($2(elem).find('tr').eq(j).children().eq(3).text())
@@ -140,7 +140,7 @@ request(link, function(err, resp, html) {
               }
               if (j%4 == 2 && j != 2) {
 						    pages.push(embed)
-						    embed = "`"
+						    embed = "```"
                 if (tname == uname) {
 			let line = printf("Event Name:%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
                   embed = embed + line
@@ -188,7 +188,7 @@ request(link, function(err, resp, html) {
             }
             pages.push(embed)
 				embed = pages[page-1]
-				embed = embed + 'Page ' + page + ' of ' + pages.length + '`';
+				embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 				message.channel.send(embed).then(msg => {
 
 					msg.react('⬅').then( r => {
@@ -206,7 +206,7 @@ request(link, function(err, resp, html) {
 							if (page === 1) return;
 							page--;
 							embed = pages[page-1];
-							embed = embed + 'Page ' + page + ' of ' + pages.length + '`';
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 
@@ -215,7 +215,7 @@ request(link, function(err, resp, html) {
 							if (page === pages.length) return;
 							page++;
 							embed = pages[page-1];
-							embed = embed + 'Page ' + page + ' of ' + pages.length + '`';
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 					})
