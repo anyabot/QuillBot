@@ -176,19 +176,19 @@ request(link, function(err, resp, html) {
 					embedcc.setTitle("CC Materials")
 					embedcc.setThumbnail(ccimg)
 					embedcc.setColor('RED')
-					if (ccname = "Dancers") {
+					if (ccname == "Dancers") {
 						if (silver || gold) {embedcc.addField("Material 1", "Iron Soldier", true)}
 						else {embedcc.addField("Material 1", cc2[mat1], true)}
 					}
 					else if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
-					if (ccname = "Dancers") {
+					if (ccname == "Dancers") {
 						if (silver || gold) {embedcc.addField("Material 2", "Iron Mage", true)}
 						else {embedcc.addField("Material 1", cc2[mat1], true)}
 					}
 					else if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
 					else {embedcc.addField("Material 2", cc2[mat2], true)}
-					if (ccname = "Dancers") {
+					if (ccname == "Dancers") {
 						if (silver || gold) {embedcc.addField("Material 3", "Silver Mage", true)}
 					}
 					else {embedcc.addField("Material 3", cc2[mat3], true)}
@@ -290,19 +290,19 @@ request(link, function(err, resp, html) {
 					embedcc.setTitle("CC Materials")
 					embedcc.setThumbnail(ccimg)
 					embedcc.setColor('RED')
-					if (ccname = "Dancers") {
+					if (ccname == "Dancers") {
 						if (silver || gold) {embedcc.addField("Material 1", "Iron Soldier", true)}
 						else {embedcc.addField("Material 1", cc2[mat1], true)}
 					}
 					else if (silver || gold) {embedcc.addField("Material 1", cc1[mat1], true)}
 					else {embedcc.addField("Material 1", cc2[mat1], true)}
-					if (ccname = "Dancers") {
+					if (ccname == "Dancers") {
 						if (silver || gold) {embedcc.addField("Material 2", "Iron Mage", true)}
 						else {embedcc.addField("Material 1", cc2[mat1], true)}
 					}
 					else if (silver || gold) {embedcc.addField("Material 2", cc1[mat2], true)}
 					else {embedcc.addField("Material 2", cc2[mat2], true)}
-					if (ccname = "Dancers") {
+					if (ccname == "Dancers") {
 						if (silver || gold) {embedcc.addField("Material 3", "Silver Mage", true)}
 					}
 					if (silver) {embedcc.addField("Fairy", "Spirit of Silver (Cyrille) \nOR \nSpirit Queen (Gladys)", true)}
