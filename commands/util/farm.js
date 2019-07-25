@@ -42,9 +42,9 @@ request(link, function(err, resp, html) {
 						message.channel.send(embed)
 						embed = new Discord.RichEmbed()
 						embed.setColor('RANDOM')
-						embed.addField(j + "/ " + ename + " [" + uname +"]", "**Map: **" + cha + "/" + sta + "\t **Silver Unit: **" + sname)
+						embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "\t **Map: **" + cha + "/" + sta + "\t **Silver Unit: **" + sname)
 					}
-					else {embed.addField(j + "/ " + ename + " [" + uname +"]", "**Map: **" + cha + "/" + sta + "\t **Silver Unit: **" + sname)}
+					else {embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "\t **Map: **" + cha + "/" + sta + "\t **Silver Unit: **" + sname)}
 				}
 				message.channel.send(embed)
 			}
