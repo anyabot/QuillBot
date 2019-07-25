@@ -42,13 +42,18 @@ request(link, function(err, resp, html) {
 					let cha = na($(elem).find('tr').eq(j).children().eq(3).text())
 					let sta = na($(elem).find('tr').eq(j).children().eq(4).text())
 					let sname = na($(elem).find('tr').eq(j).children().eq(5).find('a').attr('title'))
+					let sname2 = na($(elem).find('tr').eq(j).children().eq(5).find('a').attr('title'))
 					if (j%8 == 2 && j != 2) {
 						pages.push(embed)
 						embed = new Discord.RichEmbed()
 						embed.setColor('RANDOM')
-						embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)
+						if (sname2) {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname + "     **Silver Unit 2: **" + sname2)}
+						else {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
 					}
-					else {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
+					else {
+						if (sname2) {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname + "     **Silver Unit 2: **" + sname2)}
+						else {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
+					}
 				}
 				pages.push(embed)
 				embed = new Discord.RichEmbed();
