@@ -18,9 +18,11 @@ class FindStat extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'stat',
+		aliases: ['stats'],
             group: 'find',
             memberName: 'stat',
-            description: 'find stats of an unit'
+            description: 'find stats of an unit',
+		examples: ['~stat quill'],
         });
     }
 
