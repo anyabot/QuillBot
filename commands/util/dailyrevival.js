@@ -172,6 +172,41 @@ request(link, function(err, resp, html) {
 			          }
               }
             }
+            pages.push(embed)
+				embed = new Discord.RichEmbed();
+				embed = pages[0]
+				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				message.channel.send(embed).then(msg => {
+
+					msg.react('⬅').then( r => {
+						msg.react('➡')
+
+						// Filters
+						const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+						const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+						const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+
+						backwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+							if (page === 1) return;
+							page--;
+							embed = pages[page-1];
+							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							msg.edit(embed)
+						})
+
+						forwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+							if (page === pages.length) return;
+							page++;
+							embed = pages[page-1];
+							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							msg.edit(embed)
+						})
+					})
+				})
           }
         })
       }
