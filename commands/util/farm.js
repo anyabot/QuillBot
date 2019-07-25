@@ -33,8 +33,8 @@ request(link, function(err, resp, html) {
 				check = true;
 				console.log(aaa)
 				let len = $(elem).find('tr').length
-				var embed = new Discord.RichEmbed()
-				embed.setColor('RANDOM')
+				pages.push(embed)
+				var embed = "```"
 				for (var j = 2; j < len; j++) {
 					
 					let uname = na($(elem).find('tr').eq(j).children().eq(0).find('a').attr('title'))
@@ -45,20 +45,30 @@ request(link, function(err, resp, html) {
 					let sname2 = $(elem).find('tr').eq(j).children().eq(6).find('a').attr('title')
 					if (j%8 == 2 && j != 2) {
 						pages.push(embed)
-						embed = new Discord.RichEmbed()
-						embed.setColor('RANDOM')
-						if (sname2) {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname + "     **Silver Unit 2: **" + na(sname2))}
-						else {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
+						embed = "```"
+						if (sname2) {
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10sSilver Unit 2: %-10s", uname, ename, cha, sta, sname, na(sname2))
+							embed = embed + line + "----------\n"
+						}
+						else {
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10s", uname, ename, cha, sta, sname)
+							embed = embed + line + "----------\n"
+						}
 					}
 					else {
-						if (sname2) {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname + "     **Silver Unit 2: **" + na(sname2))}
-						else {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "\n**Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
+						if (sname2) {
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10sSilver Unit 2: %-10s", uname, ename, cha, sta, sname, na(sname2))
+							embed = embed + line + "----------\n"
+						}
+						else {
+							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%2d   Silver Unit: %-10s", uname, ename, cha, sta, sname)
+							embed = embed + line + "----------\n"
+						}
 					}
 				}
 				pages.push(embed)
-				embed = new Discord.RichEmbed();
-				embed = pages[0]
-				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				embed = pages[page-1]
+				embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 				message.channel.send(embed).then(msg => {
 
 					msg.react('⬅').then( r => {
@@ -76,7 +86,7 @@ request(link, function(err, resp, html) {
 							if (page === 1) return;
 							page--;
 							embed = pages[page-1];
-							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 
@@ -85,7 +95,7 @@ request(link, function(err, resp, html) {
 							if (page === pages.length) return;
 							page++;
 							embed = pages[page-1];
-							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							embed = embed + 'Page ' + page + ' of ' + pages.length + '```';
 							msg.edit(embed)
 						})
 					})
