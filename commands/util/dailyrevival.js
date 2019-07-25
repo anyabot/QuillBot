@@ -159,7 +159,7 @@ request(link, function(err, resp, html) {
                   }
                   else {
 			  let line = printf("Event Name:%s\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
-		  	embed.addField(ename2, line)
+		  	embed = embed + line
 		  }
                 }
               }
