@@ -4,6 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
 var moment = require('moment');
+var printf = require('printf');
 require('@gouch/to-title-case')
 
 class UtilDaily extends commando.Command {
@@ -143,33 +144,47 @@ request(link, function(err, resp, html) {
 						    embed = new Discord.RichEmbed()
 						    embed.setColor('RANDOM')
                 if (tname == uname) {
-                  embed.addField(ename + " (Today Revival)", "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)
+			let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
+                  embed.addField(ename + " (Today Revival)", line)
                   page = Math.floor(j/4)
                 }
-                else {embed.addField(ename, "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)}
+                else {
+		let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
+                  embed.addField(ename, line)
+		}
               console.log('----------')
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                    embed.addField(na(ename2) + " (Today Revival)", "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))
+                    let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
+                  embed.addField(ename2 + " (Today Revival)", line)
                     page = Math.floor(j/4)
                   }
-                  else {embed.addField(na(ename2), "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))}
+                  else {
+			  let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
+		  	embed.addField(ename2, line)
+		  }
                 }
               }
 				      else {
                 if (tname == uname) {
-                      embed.addField(ename + " (Today Revival)", "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)
-                      page = Math.floor(j/4)
+                      let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
+                  embed.addField(2 + " (Today Revival)", line)
                 }
-                else {embed.addField(ename, "**Event Unit:**" + uname + "\t\t\t**Class:**" + uclass)}
+                else {
+					let line = printf("**Event Unit:**%-20s**Class:**%s", uname, uclass)
+                  embed.addField(ename2, line)
+				}
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                      embed.addField(na(ename2) + " (Today Revival)", "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))
+                      let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
+					embed.addField(ename2 + " (Today Revival)", line)
                       page = Math.floor(j/4)
                   }
-                  else {embed.addField(na(ename2), "**Event Unit:**" + na(uname2) + "\t\t\t**Class:**" + na(uclass2))
+                  else {
+					let line = printf("**Event Unit:**%-20s**Class:**%s", na(uname2), na(uclass2))
+					embed.addField(ename2, line)
                   }
-			          }
+			    }
               }
             }
             pages.push(embed)
