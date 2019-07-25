@@ -14,8 +14,8 @@ class UtilDaily extends commando.Command {
 		aliases: ['dr'],
             group: 'util',
             memberName: 'dailyrevival',
-            description: 'find daily revival maps to get silver units',
-		examples: ['~farm soldier'],
+            description: 'list of daily revival events',
+		examples: ['~dailyrevival'],
         });
     }
 
