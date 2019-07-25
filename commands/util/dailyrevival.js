@@ -5,13 +5,13 @@ var cheerio = require('cheerio');
 var he = require('he');
 require('@gouch/to-title-case')
 
-class UtilFarm extends commando.Command {
+class UtilDaily extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'farm',
-		aliases: ['f'],
+            name: 'dailyrevival',
+		aliases: ['dr'],
             group: 'util',
-            memberName: 'farm',
+            memberName: 'dailyrevival',
             description: 'find daily revival maps to get silver units',
 		examples: ['~farm soldier'],
         });
@@ -196,3 +196,4 @@ function na(output) {
   }
   return na;
 }
+module.exports = UtilDaily;
