@@ -38,13 +38,13 @@ request(link, function(err, resp, html) {
 					let cha = na($(elem).find('tr').eq(j).children().eq(3).text())
 					let sta = na($(elem).find('tr').eq(j).children().eq(4).text())
 					let sname = na($(elem).find('tr').eq(j).children().eq(5).find('a').attr('title'))
-					if (j%8 == 1) {
+					if (j%8 == 1 && j != 2) {
 						pages.push(embed)
 						embed = new Discord.RichEmbed()
 						embed.setColor('RANDOM')
-						embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)
+						embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)
 					}
-					else {embed.addField(j + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
+					else {embed.addField(j-1 + "/ " + ename,"**Event Unit: **" + uname + "     **Map: **" + cha + "/" + sta + "     **Silver Unit: **" + sname)}
 				}
 				pages.push(embed)
 				embed = new Discord.RichEmbed();
