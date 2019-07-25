@@ -142,45 +142,45 @@ request(link, function(err, resp, html) {
 						    pages.push(embed)
 						    embed = "```"
                 if (tname == uname) {
-			let line = printf("%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+			let line = printf("%s (Today Revival)\nEvent Unit:%-30sClass:%s\n",ename, uname, uclass)
                   embed = embed + line + "----------\n"
                   page = Math.floor(j/4)
                 }
                 else {
-		let line = printf("%s\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+		let line = printf("%s\nEvent Unit:%-30sClass:%s\n",ename, uname, uclass)
                   embed = embed + line + "----------\n"
 		}
               console.log('----------')
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                    let line = printf("%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
+                    let line = printf("%s (Today Revival)\nEvent Unit:%-30sClass:%s\n",na(ename2), na(uname2), na(uclass2))
                   embed = embed + line + "----------\n"
                     page = Math.floor(j/4)
                   }
                   else {
-			  let line = printf("%s\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
+			  let line = printf("%s\nEvent Unit:%-30sClass:%s\n",na(ename2), na(uname2), na(uclass2))
 		  	embed = embed + line + "----------\n"
 		  }
                 }
               }
 				      else {
                 if (tname == uname) {
-                      let line = printf("%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+                      let line = printf("%s (Today Revival)\nEvent Unit:%-30sClass:%s\n",ename, uname, uclass)
                   embed = embed + line + "----------\n"
 				  page = Math.floor(j/4)
                 }
                 else {
-					let line = printf("%s\nEvent Unit:%-20sClass:%s\n",ename, uname, uclass)
+					let line = printf("%s\nEvent Unit:%-30sClass:%s\n",ename, uname, uclass)
                   embed = embed + line + "----------\n"
 				}
                 if (uclass2) {
                   if (tname == na(uname2)) {
-                      let line = printf("%s (Today Revival)\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
+                      let line = printf("%s (Today Revival)\nEvent Unit:%-30sClass:%s\n",na(ename2), na(uname2), na(uclass2))
                       embed = embed + line + "----------\n"
 					  page = Math.floor(j/4)
                   }
                   else {
-					let line = printf("%s\nEvent Unit:%-20sClass:%s\n",na(ename2), na(uname2), na(uclass2))
+					let line = printf("%s\nEvent Unit:%-30sClass:%s\n",na(ename2), na(uname2), na(uclass2))
 					embed = embed + line + "----------\n"
                   }
 			    }
