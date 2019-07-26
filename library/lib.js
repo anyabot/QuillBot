@@ -1,6 +1,8 @@
 var name = {
     'Snekloli' : 'Orochihime',
     'Shampoo' : 'Jin-Guang Sheng-Pu',
+    'Shengpu' : 'Jin-Guang Sheng-Pu',
+    'Pu' : 'Jin-Guang Sheng-Pu',
     'Gelbro' : 'Gellius',
     'Shoka' : 'Shokatsuryou',
     'White Fluff' : 'Kyuubi',
@@ -26,7 +28,13 @@ var name = {
     'Mmm' : 'Quill',
     'Banana' : 'Nanaly',
     'fAa' : 'Faa',
-    'Elizabeth 【7sins】': 'Elizabeth 【7Sins】'
+    'Elizabeth 【7sins】': 'Elizabeth 【7Sins】',
+    'Corn': 'Cornelia',
+    '🍌': 'Nanaly',
+    '🌽': 'Cornelia',
+    '🥒': 'Kyuubi',
+    'Santalissa': 'Alissa (Christmas)',
+    '<:ate:405764433852497924>': 'Kibahime'
 }
 
 exports.name = name;
