@@ -7,7 +7,7 @@ var name = require('../../library/lib.js').name;
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
 
-class FindStat extends commando.Command {
+class FindPath extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'path',
