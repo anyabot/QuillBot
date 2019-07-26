@@ -57,7 +57,7 @@ class FindSkill extends commando.Command {
 					if (ar[0].trim() === 'Unit'){
 						check = true;
 						let siz = $(elem).find('tr').length;
-						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').attr('href');
+						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').find('img').attr('data-src');
 						let out = $(elem).find('tr').eq(1).text();
 						let aa = te(out);
 						embed1.setTitle("Normal Skill")
@@ -83,7 +83,6 @@ class FindSkill extends commando.Command {
 							}
 							
 						}
-						message.channel.send(embed2)
 						pages.push(embed2);
 						
 					}
