@@ -4,7 +4,9 @@ const bot = new commando.CommandoClient({
     owner: '371341098854907939',
     disableEveryone: true
 });
-
+bot.on('ready', () => {
+    bot.user.setActivity('Prefix: &');
+});
 bot.registry.registerGroup('find', 'Find');
 bot.registry.registerGroup('util2', 'Util')
 bot.registry.registerGroup('time', 'Time')
