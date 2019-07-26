@@ -69,7 +69,7 @@ class FindStat extends commando.Command {
 			.addField("Affection Bonus", aff, true)
 			pages.push(embed);
 		}
-		if ($('.listtable.bgwhite tr').length >= 5) {
+		if ($('.c2').find('td').length >= 6) {
 			output = $('.c2.numbers').first().text();
 			if(output) {
                 		let lv99v1 = lv1line(output);
