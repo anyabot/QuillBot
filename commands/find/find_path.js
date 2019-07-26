@@ -30,7 +30,7 @@ class FindPath extends commando.Command {
 		var output;
                 var img;
 		var aff;
-    var note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(3)').html());
+    var note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(3)').text();
     var des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').html());
 		var check = false;
 		var pages = []
