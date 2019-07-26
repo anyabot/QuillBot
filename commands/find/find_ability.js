@@ -5,7 +5,7 @@ var cheerio = require('cheerio');
 var he = require('he');
 var name = require('../../library/lib.js').name;
 require('@gouch/to-title-case')
-
+var urlencode = require('urlencode');
 
 class FindAbility extends commando.Command {
     constructor(client) {
@@ -70,7 +70,7 @@ request(link, function(err, resp, html) {
           embed.setTitle(silna)
           embed.setThumbnail(silimg)
 		embed.setColor('WHITE')
-          let link2 = "https://aigis.fandom.com/wiki/Ability/" + silna;
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(silna);
            request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
@@ -98,7 +98,7 @@ if (bronze) {
           embed.setTitle(norna)
           embed.setThumbnail(norimg)
 		embed.setColor('DARK_ORANGE')
-          let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(norna);
            request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
@@ -126,7 +126,7 @@ if (bronze) {
           embed.setTitle(awna)
           embed.setThumbnail(awimg)
 		embed.setColor('BLUE')
-          let link2 = "https://aigis.fandom.com/wiki/Ability/" + awna;
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(awna);
             request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
@@ -154,7 +154,7 @@ if (bronze) {
           embed.setTitle(norna)
           embed.setThumbnail(norimg)
 		embed.setColor('LIGHT_GREY')
-          let link2 = "https://aigis.fandom.com/wiki/Ability/" + norna;
+          let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(norna);
            request(link2, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
@@ -175,7 +175,7 @@ if (bronze) {
           embed2.setTitle(awna)
           embed2.setThumbnail(awimg)
 		embed2.setColor('BLUE')
-          let link3 = "https://aigis.fandom.com/wiki/Ability/" + awna;
+          let link3 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(awna);
             request(link3, function(err, resp, html) {
             if (!err) {
               let $2 = cheerio.load(html)
