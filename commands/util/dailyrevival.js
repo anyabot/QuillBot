@@ -12,7 +12,7 @@ class UtilDaily extends commando.Command {
         super(client, {
             name: 'dailyrevival',
 		aliases: ['dr'],
-            group: 'util',
+            group: 'util2',
             memberName: 'dailyrevival',
             description: 'find daily revival maps to get silver units',
 		examples: ['~dailyrevival'],
