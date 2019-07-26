@@ -24,7 +24,8 @@ var name = {
     'Electric' : 'Rion',
     'Mmm' : 'Quill',
     'Banana' : 'Nanaly',
-    'fAa' : 'Faa'
+    'fAa' : 'Faa',
+    'Elizabeth 【7sins】': 'Elizabeth 【7Sins】'
 }
 
 exports.name = name;
