@@ -6,7 +6,7 @@ const bot = new commando.CommandoClient({
 });
 
 bot.registry.registerGroup('find', 'Find');
-bot.registry.registerGroup('util', 'Utility')
+bot.registry.registerGroup('util', 'Util')
 bot.registry.registerGroup('time', 'Time')
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
