@@ -37,7 +37,6 @@ class FindSkill extends commando.Command {
 	    unit = np.join(' ')
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
-	message.channel.send(link)
         request(link, function (err, resp, html) {
             if (!err) {
 		    
@@ -90,6 +89,7 @@ class FindSkill extends commando.Command {
 				})
 		if (check) {
 		var embed = pages[0];
+				message.channel.send(link)
 		message.channel.send(embed).then(msg => {
 
 		msg.react('🇳').then( r => {
