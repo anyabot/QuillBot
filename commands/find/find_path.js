@@ -6,6 +6,7 @@ var he = require('he');
 var name = require('../../library/lib.js').name;
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
+var striptags = require('striptags');
 
 class FindPath extends commando.Command {
     constructor(client) {
@@ -61,8 +62,8 @@ class FindPath extends commando.Command {
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').text()
-        if (note2) {note = note2.trim()}
+        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
+        if (note2) {note = affe(note2)}
         else {
           des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
         }
@@ -96,8 +97,8 @@ class FindPath extends commando.Command {
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').text()
-        if (note2) {note = note2.trim()}
+        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
+        if (note2) {note = affe(note2)}
         else {
           des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
         }
@@ -133,8 +134,8 @@ class FindPath extends commando.Command {
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').text()
-        if (note2) {note = note2.trim()}
+        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
+        if (note2) {note = affe(note2)}
         else {
           des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
         }
@@ -173,8 +174,8 @@ class FindPath extends commando.Command {
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').text()
-        if (note2) {note = note2.trim()}
+        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
+        if (note2) {note = affe(note2)}
         else {
           des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
         }
@@ -213,8 +214,8 @@ class FindPath extends commando.Command {
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').text()
-        if (note2) {note = note2.trim()}
+        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
+        if (note2) {note = affe(note2)}
         else {
           des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
         }
@@ -291,6 +292,7 @@ function range(output) {
     return range;
 }
 function affe(output) {
+	output = striptags(output, '<br>')
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
 	output = he.decode(output);
