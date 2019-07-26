@@ -5,6 +5,7 @@ var cheerio = require('cheerio');
 var he = require('he');
 var name = require('../../library/lib.js').name;
 require('@gouch/to-title-case')
+var urlencode = require('urlencode');
 
 var bonus = {
 	"PEV": "Physical Attack Evasion",
@@ -29,7 +30,7 @@ class FindStat extends commando.Command {
     async run(message, input) {
         var unit = input.toLowerCase().toTitleCase();
         if (name[unit]) unit = name[unit];
-        var link = "https://aigis.fandom.com/wiki/" + unit;
+        var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
         request(link, function (err, resp, html) {
             if (!err) {
 		    
