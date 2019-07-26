@@ -291,7 +291,6 @@ function range(output) {
     return range;
 }
 function affe(output) {
-	
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
 	output = he.decode(output);
@@ -300,23 +299,13 @@ function affe(output) {
 	var filtered = arr.filter(function (el) {
   	return el != null && el != '';
 	});
-	var affe = filtered[0];
-  let i = 1;
+	var na = filtered[0];
+	let i = 1;
 	while (i < filtered.length) {
-		if (bonus[filtered[i]]) {
-			affe = affe + "\n" + bonus[filtered[i]] + filtered[i+1];
-			i = i +2;
-		}
-		else if (!isNaN(filtered[i])) {
-			affe = affe + filtered[i]
-			i++;
-		}
-		else {
-			affe = affe + "\n" + filtered[i]
-			i++;
-		}
+		na = na + "\n" + filtered[i];
+		i++;
 	}
-    return affe;
+    return na;
 }
 function na(output) {
     output = output.replace(/<[^>]*>/g, "\n");
