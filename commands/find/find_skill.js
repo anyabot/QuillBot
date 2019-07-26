@@ -83,13 +83,13 @@ class FindSkill extends commando.Command {
 							}
 							
 						}
+						message.channel.send(embed2)
 						pages.push(embed2);
 						
 					}
 				})
 		if (check) {
 		var embed = pages[0];
-				message.channel.send(link)
 		message.channel.send(embed).then(msg => {
 
 		msg.react('🇳').then( r => {
