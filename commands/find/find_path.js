@@ -71,7 +71,7 @@ class FindPath extends commando.Command {
               if (note != '' && note != null) {embed.addField("Notes", note)};
 			pages.push(embed);
 		}
-		if ($('.listtable.bgwhite tr').length >= 5) {
+		if ($('.c2').find('td').length >= 6) {
 			output = $('.c2.numbers').first().text();
 			if(output) {
                 		let lv99v1 = lv1line(output);
