@@ -52,7 +52,7 @@ class FindPath extends commando.Command {
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('LIGHT_GREY')
-      let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('+ nam + '):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+      let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').length
       let des2
       let note2
@@ -87,7 +87,7 @@ class FindPath extends commando.Command {
 				.setTitle(nam)
 				.setThumbnail(img)
 				.setColor('RED')
-				let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('+ nam + '):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').length
       let des2
       let note2
@@ -124,7 +124,7 @@ class FindPath extends commando.Command {
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('BLUE')
-			let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('+ nam + '):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').length
       let des2
       let note2
@@ -164,7 +164,7 @@ class FindPath extends commando.Command {
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
-			let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('+ nam + '):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').length
       let des2
       let note2
@@ -204,7 +204,7 @@ class FindPath extends commando.Command {
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
-			let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('+ nam + '):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').length
       let des2
       let note2
