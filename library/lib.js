@@ -43,7 +43,8 @@ var name = {
     '<:shu:508537411349774336>': 'Shu-Xian',
     '<:lapis:586229170854690829>': 'Lapis',
     '<:toto:379074268245393428>': 'Totono',
-    '<:belinda:540272828940025856>': 'Belinda'
+    '<:belinda:540272828940025856>': 'Belinda',
+    '<:conrad_close:509740993722056724>': 'Conrad'
 }
 
 exports.name = name;
