@@ -34,11 +34,11 @@ class FindStat extends commando.Command {
 	    var npl = np.length;
 	    if (npl >= 2) {
 	    	if (suffix[np[npl-1]]) {np[npl-1] = suffix[np[npl-1]]}
-	    	if (np[npl-1] == 'Year' && np[np-2] == 'New') {
+	    	if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
 			np[npl-1] = 'Year\'s)';
 			np[npl-2] = '(New';
 		}
-		    if (np[npl-1] == 'Year)' && np[np-2] == '(New') {
+		    if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
 			np[npl-1] = 'Year\'s)';
 			np[npl-2] = '(New';
 		}
