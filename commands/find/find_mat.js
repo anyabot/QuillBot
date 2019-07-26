@@ -6,6 +6,7 @@ var he = require('he');
 var pluralize = require('pluralize')
 var name = require('../../library/lib.js').name;
 require('@gouch/to-title-case')
+var urlencode = require('urlencode');
 
 var cc1 = {
 	"/wiki/Asar": "Iron Soldier",
@@ -110,7 +111,7 @@ class FindMat extends commando.Command {
     async run(message, input) {
         var unit = input.toLowerCase().toTitleCase();
         if (name[unit]) unit = name[unit];
-        var link = "https://aigis.fandom.com/wiki/" + unit;
+        var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
 
 request(link, function(err, resp, html) {
 	if (!err) {
@@ -167,7 +168,7 @@ request(link, function(err, resp, html) {
 			else if (na(output) == "Intermediate Dragon Soldier"){ccname = "Dragon Soldiers"}
 			else {ccname = pluralize.plural(na(output))}
 			
-			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
+			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + urlencode(ccname);
 			request(link2, function(err, resp, html) {
 				if (!err) {
 					let $2 = cheerio.load(html)
@@ -204,7 +205,7 @@ request(link, function(err, resp, html) {
 			})
 		}
 		if (aw && !cc) {
-			let link3 = "https://aigis.fandom.com/wiki/Awakening/" + awname
+			let link3 = "https://aigis.fandom.com/wiki/Awakening/" + urlencode(awname)
 			request(link3, function(err, resp, html) {
 				if (!err) {
 					let $3 = cheerio.load(html)
@@ -282,7 +283,7 @@ request(link, function(err, resp, html) {
 			output = $('.c2 td:nth-child(1)').first().html();
 			awname = pluralize.plural(na(output));
 			
-			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + ccname;
+			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + urlencode(ccname);
 			request(link2, function(err, resp, html) {
 				if (!err) {
 					let $2 = cheerio.load(html)
@@ -315,7 +316,7 @@ request(link, function(err, resp, html) {
 					if (plat) {embedcc.addField("Fairy", "Spirit of Platinum (Celia) \nOR \nSpirit Queen (Gladys)", true)}
 					if (black) {embedcc.addField("Fairy", "Spirit of Black (Florika) \nOR \nSpirit Queen (Gladys)", true)}
 					pages.push(embedcc)
-					let link3 = "https://aigis.fandom.com/wiki/Awakening/" + awname
+					let link3 = "https://aigis.fandom.com/wiki/Awakening/" + urlencode(awname)
 					request(link3, function(err, resp, html) {
 						if (!err) {
 							let $3 = cheerio.load(html)
