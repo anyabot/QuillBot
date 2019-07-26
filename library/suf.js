@@ -5,7 +5,7 @@ var suffix = {
     'Yukata' : '(Yukata)',
     'Swimsuit' : '(Swimsuit)',
     'Valentine\'s' : '(Valentine\'s)',
-    'Valentine' : '(Valentine's)',
+    'Valentine' : '(Valentine\'s)',
     'School' : '(School)',
     'Bride' : '(Bride)',
     'Halloween' : '(Halloween)',
