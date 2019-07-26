@@ -34,7 +34,16 @@ var name = {
     '🌽': 'Cornelia',
     '🥒': 'Kyuubi',
     'Santalissa': 'Alissa (Christmas)',
-    '<:ate:405764433852497924>': 'Kibahime'
+    '<:ate:405764433852497924>': 'Kibahime',
+    '<:rinne:379074211756507136>': 'Rinne',
+    'Shu': 'Shu-Xian',
+    '<:mikoto2:474643074384134145>': 'Mikoto',
+    '<:mikoto:348598334115545108>': 'Mikoto',
+    '<:smugclarice:512417330156929039>': 'Clarice',
+    '<:shu:508537411349774336>': 'Shu-Xian',
+    '<:lapis:586229170854690829>': 'Lapis',
+    '<:toto:379074268245393428>': 'Totono',
+    '<:belinda:540272828940025856>': 'Belinda'
 }
 
 exports.name = name;
