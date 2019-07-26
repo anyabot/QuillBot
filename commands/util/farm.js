@@ -11,7 +11,7 @@ class UtilFarm extends commando.Command {
         super(client, {
             name: 'farm',
 		aliases: ['f'],
-            group: 'util',
+            group: 'util2',
             memberName: 'farm',
             description: 'find daily revival maps to get silver units',
 		examples: ['~farm soldier'],
