@@ -14,6 +14,7 @@ var name = {
     'Catloli' : 'Minette',
     'Danchou' : 'Dark Knight',
     'Dark' : 'D\'Arc',
+    'D\'arc' : 'D\'Arc',
     'Cucumber' : 'Kyuubi',
     'Ate' : 'Kibahime',
     'Kure' : 'Kanon',
