@@ -5,6 +5,7 @@ var cheerio = require('cheerio');
 var he = require('he');
 var pluralize = require('pluralize')
 var name = require('../../library/lib.js').name;
+var suffix = require('../../library/suf.js').suffix;
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
 
@@ -110,6 +111,20 @@ class FindMat extends commando.Command {
 
     async run(message, input) {
         var unit = input.toLowerCase().toTitleCase();
+	    var np = unit.split(' ');
+	    var npl = np.length;
+	    if (npl >= 2) {
+	    	if (suffix[np[npl-1]]) {np[npl-1] = suffix[np[npl-1]]}
+	    	if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
+			np[npl-1] = 'Year\'s)';
+			np[npl-2] = '(New';
+		}
+		    if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
+			np[npl-1] = 'Year\'s)';
+			np[npl-2] = '(New';
+		}
+	    }
+	    unit = np.join(' ')
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
 
