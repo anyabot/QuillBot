@@ -5,7 +5,7 @@ const bot = new commando.CommandoClient({
     disableEveryone: true
 });
 bot.on('ready', () => {
-    bot.user.setActivity('Prefix: &');
+    bot.user.setActivity('Prefix:& | &help to view commands');
 });
 bot.registry.registerGroup('find', 'Find');
 bot.registry.registerGroup('util2', 'Util')
