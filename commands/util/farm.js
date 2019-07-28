@@ -14,7 +14,7 @@ class UtilFarm extends commando.Command {
             group: 'util2',
             memberName: 'farm',
             description: 'find daily revival maps to get silver units',
-		examples: ['~farm soldier'],
+		examples: ['&farm soldier'],
         });
     }
 
