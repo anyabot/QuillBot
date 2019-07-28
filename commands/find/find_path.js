@@ -17,7 +17,7 @@ class FindPath extends commando.Command {
             group: 'find',
             memberName: 'path',
             description: 'find all classes of an unit',
-		examples: ['~path quill'],
+		examples: ['&path quill'],
         });
     }
 
