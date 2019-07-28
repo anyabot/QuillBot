@@ -5,6 +5,7 @@ var cheerio = require('cheerio');
 var he = require('he');
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
+var striptags = require('striptags');
 
 class FindPrince extends commando.Command {
     constructor(client) {
@@ -25,6 +26,7 @@ class FindPrince extends commando.Command {
 				const $ = cheerio.load(html);
 				var output;
 				var img;
+				var des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').html());
 				var awlist = awl($('.unit-infobox.hidden').first().html())
 				var page = 1;
 				var pages = []
@@ -89,6 +91,24 @@ class FindPrince extends commando.Command {
 					else {
 						embed.addField("Ability: " + ana, ades)
 					}
+					let cna;
+					    if (ele == "Sacred Gear") {cna = "Prince (Sacred Equipment)"}
+					    else {cna = "Prince (" + ele + ")"}
+					    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+					    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
+					    let note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html()
+					    if (!des2) {
+						des2 = des
+					      }
+					    if (!note2) {
+					      embed.addField("Class Traits", affe(des2));
+					    }
+					    else {
+					      if (affe(note2) != undefined) {
+						embed.addField("Class Traits", affe(des2) + "\n**Notes:** \n" + affe(note2));
+					      }
+					      else {embed.addField("Class Traits", affe(des2));}
+					    }
 					pages.push(embed)
 				})
 				embed = pages[0];
@@ -174,7 +194,7 @@ function range(output) {
     return range;
 }
 function affe(output) {
-	
+	output = striptags(output, '<br>')
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
 	output = he.decode(output);
@@ -183,23 +203,13 @@ function affe(output) {
 	var filtered = arr.filter(function (el) {
   	return el != null && el != '';
 	});
-	var affe = filtered[0];
-  let i = 1;
+	var na = filtered[0];
+	let i = 1;
 	while (i < filtered.length) {
-		if (bonus[filtered[i]]) {
-			affe = affe + "\n" + bonus[filtered[i]] + filtered[i+1];
-			i = i +2;
-		}
-		else if (!isNaN(filtered[i])) {
-			affe = affe + filtered[i]
-			i++;
-		}
-		else {
-			affe = affe + "\n" + filtered[i]
-			i++;
-		}
+		na = na + "\n" + filtered[i];
+		i++;
 	}
-    return affe;
+    return na;
 }
 function na(output) {
     output = output.replace(/<[^>]*>/g, "\n");
