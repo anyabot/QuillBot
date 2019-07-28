@@ -44,7 +44,7 @@ request(link, function(err, resp, html) {
 
     const $ = cheerio.load(html);
     var output;
-    var img;
+    var img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));;
     var aff;
     var pages = [];
     var page = 1;
@@ -147,6 +147,12 @@ if (bronze || (!aw && nor)) {
 	check = true;
           var awna = aff;
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
+	if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
+			awimg = ($('.c3 td:first-child div a img').attr('data-src'));
+		}
+		if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
+			awimg = img
+		}
           let embed = new Discord.RichEmbed()
           embed.setTitle(awna)
           embed.setThumbnail(awimg)
@@ -201,6 +207,12 @@ if (bronze || (!aw && nor)) {
 	check = true;
           var awna = aff;
           var awimg = ($('.c3 td:first-child div a img').attr('data-src'));
+		if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
+			awimg = ($('.c3 td:first-child div a img').attr('data-src'));
+		}
+		if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
+			awimg = norimg
+		}
           let embed2 = new Discord.RichEmbed()
           embed2.setTitle(awna)
           embed2.setThumbnail(awimg)
