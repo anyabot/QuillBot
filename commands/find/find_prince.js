@@ -100,7 +100,7 @@ class FindPrince extends commando.Command {
 							embed.addField("Ability: " + ana, ades)
 						}
 						let cna;
-						    if (ele == "Sacred Gear") {cna = "Prince (Sacred Equipment)"}
+						    if (ele == "Sacred Gear") {cna = "Sacred"}
 						    else {cna = "Prince (" + ele + ")"}
 						    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
 						    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
@@ -216,7 +216,7 @@ class FindPrince extends commando.Command {
 							embed.addField("Ability: " + ana, ades)
 						}
 						let cna;
-						    if (ele == "Sacred Gear") {cna = "Prince (Sacred Equipment)"}
+						    if (ele == "Sacred Gear") {cna = "Sacred"}
 						    else {cna = "Prince (" + ele + ")"}
 						    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
 						    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
