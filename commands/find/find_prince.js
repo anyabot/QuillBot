@@ -19,7 +19,7 @@ class FindPrince extends commando.Command {
 		args: [
 			{
 		    key: 'input',
-				prompt: 'What AW Prince do you want to know about?'
+				prompt: 'What AW Prince do you want to know about?',
 		    type: 'string',
 		default: "all"
 		}]
