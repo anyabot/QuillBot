@@ -3,6 +3,8 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
+var he = require('he');
+var name = require('../../library/pri.js').name;
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
 var striptags = require('striptags');
@@ -30,6 +32,7 @@ class FindPrince extends commando.Command {
 		request(link, function (err, resp, html) {
 			if (!err) {
 				var unit = text.toLowerCase().toTitleCase();
+				if (name[unit]) unit = name[unit];
 				const $ = cheerio.load(html);
 				var output;
 				var img;
