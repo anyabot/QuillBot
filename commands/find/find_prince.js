@@ -16,6 +16,12 @@ class FindPrince extends commando.Command {
             	memberName: 'prince',
             	description: 'find data of AW prince',
 		examples: ['&prince'],
+		args: [
+			{
+		    key: 'input',
+		    type: 'string',
+		default: "all"
+		}]
         });
     }
 
@@ -23,126 +29,211 @@ class FindPrince extends commando.Command {
 		var link = "https://aigis.fandom.com/wiki/Prince";
 		request(link, function (err, resp, html) {
 			if (!err) {
+				var unit = input.toLowerCase().toTitleCase();
 				const $ = cheerio.load(html);
 				var output;
 				var img;
 				var des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').html());
-				var awlist = awl($('.unit-infobox.hidden').first().html())
-				var page = 1;
-				var pages = []
-				var embed
-				awlist.forEach(function(ele) {
-					console.log(ele)
-					let awna;
-					if (ele == "Sacred Gear") {awna = "SacredEquipment"}
-					else (awna = ele.split(' ').join(''))
-					let aw1 = awna + "MStatBox"
-					let hp;
-					let atk;
-					let def;
-					let ran
-					output = $('.' + aw1 + ' table tbody tr:nth-child(3)').first().text();
-					let lv1v1 = lv1line(output);
-					output = $('.' + aw1 + ' table tbody tr:nth-child(8)').first().text();
-					if (output) {
-						let lv99v1 = lv1line(output);
-						hp = lv99v1[1]
-						atk = lv99v1[2]
-						def = lv99v1[3]
-						output = $('.' + aw1 + ' table tbody tr:nth-child(6) td:nth-child(5)').first().html();
-						ran = range(output);
-					}
-					else {
-						hp = lv1v1[5]
-						atk = lv1v1[6]
-						def = lv1v1[7]
-						output = $('.' + aw1 + ' table tbody tr:nth-child(4)').first().html();
-						ran = range(output);
-					}
-					img = ($('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-					output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(3)').first().html();
-					let nam = na(output);
-					embed = new Discord.RichEmbed()
-					embed.setTitle(nam)
-					embed.setThumbnail(img)
-					embed.setColor('LIGHT_GREY')
-					embed.addField("HP", hp, true)
-					embed.addField("ATK", atk, true)
-					embed.addField("DEF", def, true)
-					embed.addField("Range", ran, true)
-					embed.addField("MR", lv1v1[8], true)
-					embed.addField("Block", lv1v1[9], true)
-					embed.addField("Cost", lv1v1[11], true)
-					let aw2 = awna + "Skill"
-					let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
-					let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
-					let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
-					embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
-					let aw3 = awna + "Ability"
-					output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
-					let ana = na(output);
-						let ades = te2($('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(2)').text())
-					let anote = $('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(4)').text().trim();
-					if (anote) {
-						embed.addField("Ability: " + ana, ades + "\n**Notes:** \n" + anote)
-					}
-					else {
-						embed.addField("Ability: " + ana, ades)
-					}
-					let cna;
-					    if (ele == "Sacred Gear") {cna = "Prince (Sacred Equipment)"}
-					    else {cna = "Prince (" + ele + ")"}
-					    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
-					    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
-					    let note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html()
-					    if (!des2) {
-						des2 = des
-					      }
-					else if (affe(note2) == undefined) {des2 = des}
-					    if (!note2) {
-					      embed.addField("Class Traits", affe(des2));
-					    }
-					    else {
-					      if (affe(note2) != undefined) {
-						embed.addField("Class Traits", affe(des2) + "\n**Notes:** \n" + affe(note2));
-					      }
-					      else {embed.addField("Class Traits", affe(des2));}
-					    }
-					pages.push(embed)
-				})
-				embed = pages[0];
-				embed.setFooter('Page ' + page + ' of ' + pages.length);
-				message.channel.send(embed).then(msg => {
+				if (unit == "All"){
+					var awlist = awl($('.unit-infobox.hidden').first().html())
+					var page = 1;
+					var pages = []
+					var embed
+					awlist.forEach(function(ele) {
+						let awna;
+						if (ele == "Sacred Gear") {awna = "SacredEquipment"}
+						else (awna = ele.split(' ').join(''))
+						let aw1 = awna + "MStatBox"
+						let hp;
+						let atk;
+						let def;
+						let ran
+						output = $('.' + aw1 + ' table tbody tr:nth-child(3)').first().text();
+						let lv1v1 = lv1line(output);
+						output = $('.' + aw1 + ' table tbody tr:nth-child(8)').first().text();
+						if (output) {
+							let lv99v1 = lv1line(output);
+							hp = lv99v1[1]
+							atk = lv99v1[2]
+							def = lv99v1[3]
+							output = $('.' + aw1 + ' table tbody tr:nth-child(6) td:nth-child(5)').first().html();
+							ran = range(output);
+						}
+						else {
+							hp = lv1v1[5]
+							atk = lv1v1[6]
+							def = lv1v1[7]
+							output = $('.' + aw1 + ' table tbody tr:nth-child(4)').first().html();
+							ran = range(output);
+						}
+						img = ($('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(3)').first().html();
+						let nam = na(output);
+						embed = new Discord.RichEmbed()
+						embed.setTitle(nam)
+						embed.setThumbnail(img)
+						embed.setColor('LIGHT_GREY')
+						embed.addField("HP", hp, true)
+						embed.addField("ATK", atk, true)
+						embed.addField("DEF", def, true)
+						embed.addField("Range", ran, true)
+						embed.addField("MR", lv1v1[8], true)
+						embed.addField("Block", lv1v1[9], true)
+						embed.addField("Cost", lv1v1[11], true)
+						let aw2 = awna + "Skill"
+						let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
+						let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
+						let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
+						embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
+						let aw3 = awna + "Ability"
+						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
+						let ana = na(output);
+							let ades = te2($('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(2)').text())
+						let anote = $('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(4)').text().trim();
+						if (anote) {
+							embed.addField("Ability: " + ana, ades + "\n**Notes:** \n" + anote)
+						}
+						else {
+							embed.addField("Ability: " + ana, ades)
+						}
+						let cna;
+						    if (ele == "Sacred Gear") {cna = "Prince (Sacred Equipment)"}
+						    else {cna = "Prince (" + ele + ")"}
+						    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+						    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
+						    let note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html()
+						    if (!des2) {
+							des2 = des
+						      }
+						else if (affe(note2) == undefined) {des2 = des}
+						    if (!note2) {
+						      embed.addField("Class Traits", affe(des2));
+						    }
+						    else {
+						      if (affe(note2) != undefined) {
+							embed.addField("Class Traits", affe(des2) + "\n**Notes:** \n" + affe(note2));
+						      }
+						      else {embed.addField("Class Traits", affe(des2));}
+						    }
+						pages.push(embed)
+					})
+					embed = pages[0];
+					embed.setFooter('Page ' + page + ' of ' + pages.length);
+					message.channel.send(embed).then(msg => {
 
-					msg.react('⬅').then( r => {
-						msg.react('➡')
+						msg.react('⬅').then( r => {
+							msg.react('➡')
 
-						// Filters
-						const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-						const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+							// Filters
+							const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+							const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
 
-						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-						const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+							const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+							const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
-						backwards.on('collect', r => {
-						r.remove(r.users.filter(u => !u.bot).first());
-							if (page === 1) return;
-							page--;
-								embed = pages[page-1];
-								embed.setFooter('Page ' + page + ' of ' + pages.length);
-								msg.edit(embed)
-						})
+							backwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+								if (page === 1) return;
+								page--;
+									embed = pages[page-1];
+									embed.setFooter('Page ' + page + ' of ' + pages.length);
+									msg.edit(embed)
+							})
 
-						forwards.on('collect', r => {
-						r.remove(r.users.filter(u => !u.bot).first());
-								if (page === pages.length) return;
-								page++;
-								embed = pages[page-1];
-								embed.setFooter('Page ' + page + ' of ' + pages.length);
-								msg.edit(embed)
+							forwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+									if (page === pages.length) return;
+									page++;
+									embed = pages[page-1];
+									embed.setFooter('Page ' + page + ' of ' + pages.length);
+									msg.edit(embed)
+							})
 						})
 					})
-				})
+				}
+				else {
+					ele = unit
+					var awlist = awl($('.unit-infobox.hidden').first().html())
+					var embed
+					if (awlist.includes(ele)) {
+						let awna;
+						if (ele == "Sacred Gear") {awna = "SacredEquipment"}
+						else (awna = ele.split(' ').join(''))
+						let aw1 = awna + "MStatBox"
+						let hp;
+						let atk;
+						let def;
+						let ran
+						output = $('.' + aw1 + ' table tbody tr:nth-child(3)').first().text();
+						let lv1v1 = lv1line(output);
+						output = $('.' + aw1 + ' table tbody tr:nth-child(8)').first().text();
+						if (output) {
+							let lv99v1 = lv1line(output);
+							hp = lv99v1[1]
+							atk = lv99v1[2]
+							def = lv99v1[3]
+							output = $('.' + aw1 + ' table tbody tr:nth-child(6) td:nth-child(5)').first().html();
+							ran = range(output);
+						}
+						else {
+							hp = lv1v1[5]
+							atk = lv1v1[6]
+							def = lv1v1[7]
+							output = $('.' + aw1 + ' table tbody tr:nth-child(4)').first().html();
+							ran = range(output);
+						}
+						img = ($('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(3)').first().html();
+						let nam = na(output);
+						embed = new Discord.RichEmbed()
+						embed.setTitle(nam)
+						embed.setThumbnail(img)
+						embed.setColor('LIGHT_GREY')
+						embed.addField("HP", hp, true)
+						embed.addField("ATK", atk, true)
+						embed.addField("DEF", def, true)
+						embed.addField("Range", ran, true)
+						embed.addField("MR", lv1v1[8], true)
+						embed.addField("Block", lv1v1[9], true)
+						embed.addField("Cost", lv1v1[11], true)
+						let aw2 = awna + "Skill"
+						let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
+						let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
+						let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
+						embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
+						let aw3 = awna + "Ability"
+						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
+						let ana = na(output);
+							let ades = te2($('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(2)').text())
+						let anote = $('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(4)').text().trim();
+						if (anote) {
+							embed.addField("Ability: " + ana, ades + "\n**Notes:** \n" + anote)
+						}
+						else {
+							embed.addField("Ability: " + ana, ades)
+						}
+						let cna;
+						    if (ele == "Sacred Gear") {cna = "Prince (Sacred Equipment)"}
+						    else {cna = "Prince (" + ele + ")"}
+						    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+						    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
+						    let note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html()
+						    if (!des2) {
+							des2 = des
+						      }
+						else if (affe(note2) == undefined) {des2 = des}
+						    if (!note2) {
+						      embed.addField("Class Traits", affe(des2));
+						    }
+						    else {
+						      if (affe(note2) != undefined) {
+							embed.addField("Class Traits", affe(des2) + "\n**Notes:** \n" + affe(note2));
+						      }
+						      else {embed.addField("Class Traits", affe(des2));}
+						    }
+						message.channel.send(embed)
+					}
+				}
 			}
 		})
     }
