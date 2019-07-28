@@ -100,7 +100,7 @@ request(link, function(err, resp, html) {
         }
       }
     }
-else if (!aw && nor) {
+if (bronze) {
       output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
       if (output) {
         output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(14)').first().html();
@@ -128,7 +128,7 @@ else if (!aw && nor) {
         }
       }
     }
-	  else if (aw && !nor) {
+	  if (aw && !nor) {
       output = $('.c3.numbers').first().text();
       if (output) {
         output = $('.c3 td:nth-child(13)').first().html();
