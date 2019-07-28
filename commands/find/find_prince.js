@@ -14,7 +14,7 @@ class FindPrince extends commando.Command {
             	group: 'find',
             	memberName: 'prince',
             	description: 'find data of AW prince',
-		examples: ['~prince'],
+		examples: ['&prince'],
         });
     }
 
