@@ -224,7 +224,7 @@ class FindPrince extends commando.Command {
 						    if (!des2) {
 							des2 = des
 						      }
-						else if (affe(note2) == undefined) {des2 = des}
+						else if (affe(des2) == undefined) {des2 = des}
 						    if (!note2) {
 						      embed.addField("Class Traits", affe(des2));
 						    }
