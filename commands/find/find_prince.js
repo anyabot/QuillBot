@@ -77,7 +77,7 @@ class FindPrince extends commando.Command {
 					let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
 					embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
 					let aw3 = awna + "Ability"
-					output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(3)').first().html();
+					output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
 					let ana = na(output);
 						let ades = te2($('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(2)').text())
 					let anote = $('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(4)').text().trim();
