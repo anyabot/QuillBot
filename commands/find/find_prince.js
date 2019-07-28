@@ -152,7 +152,7 @@ class FindPrince extends commando.Command {
 					})
 				}
 				else {
-					ele = unit
+					let ele = unit
 					var awlist = awl($('.unit-infobox.hidden').first().html())
 					var embed
 					if (awlist.includes(ele)) {
