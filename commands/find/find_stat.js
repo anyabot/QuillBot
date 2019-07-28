@@ -24,7 +24,7 @@ class FindStat extends commando.Command {
             group: 'find',
             memberName: 'stat',
             description: 'find stats of an unit',
-		examples: ['~stat quill'],
+		examples: ['&stat quill'],
         });
     }
 
