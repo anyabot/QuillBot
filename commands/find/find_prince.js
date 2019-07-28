@@ -18,15 +18,14 @@ class FindPrince extends commando.Command {
 		examples: ['&prince'],
 		args: [
 			{
-		    key: 'input',
-				prompt: 'What AW Prince do you want to know about?',
+		    key: 'text',
 		    type: 'string',
 		default: "all"
 		}]
         });
     }
 
-    async run(message, input) {
+    async run(message, { text }) {
 		var link = "https://aigis.fandom.com/wiki/Prince";
 		request(link, function (err, resp, html) {
 			if (!err) {
