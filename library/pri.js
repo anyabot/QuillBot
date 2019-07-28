@@ -3,12 +3,25 @@ var name = {
     'Tesla' : 'Keraunos',
     'Electromagnetic Gandhi': 'Keraunos',
     'Aw' : 'Sacred Gear',
+    'Aigis' : 'Sacred Gear',
+    'Armor' : 'Sacred Gear',
     'Sacred Equipment' : 'Sacred Gear',
     'Sacred' : 'Sacred Gear',
     'Child' : 'Childhood',
-    'Bird' : 'Sacred Gear',
+    'Shota': 'Childhood',
+    'Sphinx': 'Desert',
+    'Persia': 'Desert',
+    'Behemoth': 'Beast',
+    'Bludgeon': 'Beast',
+    'Hecaton': 'Giant',
+    'Hecatoncheir': 'Giant',
+    'Boulder': 'Giant',
+    'Rock': 'Giant',
+    'Handy': 'Giant',
+    'Bird' : 'Wind Guardian',
+    'Garuda' : 'Wind Guardian',
     'Wind' : 'Wind Guardian',
-    'Heroic' : 'Einherjar',
+    'Heroic' : 'Einherjar'
 }
 
 exports.name = name;
