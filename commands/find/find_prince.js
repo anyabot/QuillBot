@@ -19,6 +19,7 @@ class FindPrince extends commando.Command {
 		args: [
 			{
 		    key: 'input',
+				prompt: 'What AW Prince do you want to know about?'
 		    type: 'string',
 		default: "all"
 		}]
@@ -233,6 +234,7 @@ class FindPrince extends commando.Command {
 						    }
 						message.channel.send(embed)
 					}
+					else {message.channel.send("No Data")}
 				}
 			}
 		})
