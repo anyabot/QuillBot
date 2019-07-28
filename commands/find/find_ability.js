@@ -54,9 +54,14 @@ request(link, function(err, resp, html) {
 	  var bronze = $('.categories').text().includes("Rarity:Bronze");
     var check = false;
 	  if (!silver && !bronze){
-	output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
+	output = $('.c3.numbers').first().text();
       if (output) {
-	output = $('.c3 td:nth-child(13)').first().html();
+	if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
+				output = $('.c3 td:nth-child(13)').first().html();
+			}
+			if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
+				output = $('.c3 td:nth-child(12)').first().html();
+			}
         aff = na(output);
         if (aff != "N/A") {
 		aw = true;
@@ -100,7 +105,7 @@ request(link, function(err, resp, html) {
         }
       }
     }
-if (bronze) {
+if (bronze || (!aw && nor)) {
       output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
       if (output) {
         output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(14)').first().html();
@@ -180,7 +185,12 @@ if (bronze) {
 		    pages.push(embed)
 		    output = $('.c3.numbers').first().text();
       if (output) {
-        output = $('.c3 td:nth-child(13)').first().html();
+        if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
+				output = $('.c3 td:nth-child(13)').first().html();
+			}
+			if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
+				output = $('.c3 td:nth-child(12)').first().html();
+			}
         aff = na(output);
         if (aff != "N/A") {
 	check = true;
