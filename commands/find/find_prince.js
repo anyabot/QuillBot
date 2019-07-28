@@ -16,14 +16,20 @@ class FindPrince extends commando.Command {
             	memberName: 'prince',
             	description: 'find data of AW prince',
 		examples: ['&prince'],
+		args: [{
+		    key: 'text',
+			prompt: 'What AW Prince do you want to know about?',
+		    type: 'string',
+		default: "all"
+		}]
         });
     }
 
-    async run(message, input) {
+    async run(message, { text }) {
 		var link = "https://aigis.fandom.com/wiki/Prince";
 		request(link, function (err, resp, html) {
 			if (!err) {
-				var unit = input.toLowerCase().toTitleCase();
+				var unit = text.toLowerCase().toTitleCase();
 				const $ = cheerio.load(html);
 				var output;
 				var img;
