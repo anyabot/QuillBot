@@ -105,7 +105,7 @@ class FindMat extends commando.Command {
             	group: 'find',
             	memberName: 'mat',
             	description: 'find required materials to CC and AW an unit',
-		examples: ['~mat quill'],
+		examples: ['&mat quill'],
         });
     }
 
