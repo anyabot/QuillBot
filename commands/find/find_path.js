@@ -131,11 +131,17 @@ class FindPath extends commando.Command {
                 	let lv1v1 = lv1line(output);
 			output = $('.c3.numbers td:nth-child(5)').first().html();
 			let ran = range(output);
-			output = $('.c3 td:nth-child(11)').first().html();
-			aff = affe(output);
-			img = ($('.c3 td:first-child div a img').attr('data-src'));
-			output = $('.c3 td:nth-child(2)').first().html();
-			let nam = na(output);
+			let nam
+			if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
+				img = ($('.c3 td:first-child div a img').attr('data-src'));
+				output = $('.c3 td:nth-child(2)').first().html();
+				nam = na(output);
+			}
+			if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
+				output = $('.c3 td:nth-child(1)').first().html();
+				nam = na(output);
+
+			}
 			let embed = new Discord.RichEmbed()
 			.setTitle(nam)
 			.setThumbnail(img)
