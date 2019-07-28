@@ -83,8 +83,6 @@ class FindPrince extends commando.Command {
 					let ana = na(output);
 						let ades = te2($('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(2)').text())
 					let anote = $('.' + aw3 + ' table tbody tr:nth-child(3) td:nth-child(4)').text().trim();
-					console.log(ana)
-					console.log(ades)
 					if (anote) {
 						embed.addField("Ability: " + ana, ades + "\n**Notes:** \n" + anote)
 					}
@@ -100,6 +98,7 @@ class FindPrince extends commando.Command {
 					    if (!des2) {
 						des2 = des
 					      }
+					else if (affe(note2) == undefined) {des2 = des}
 					    if (!note2) {
 					      embed.addField("Class Traits", affe(des2));
 					    }
