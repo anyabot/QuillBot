@@ -105,6 +105,10 @@ class FindPrince extends commando.Command {
 						    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
 						    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
 						    let note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html()
+						    let ind2 = ind -1;
+							if ($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind2 + ') td:nth-child(3)').attr('rowspan') == 2) {
+							  note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind2 + ') td:nth-child(3)').html()
+							  }
 						    if (!des2) {
 							des2 = des
 						      }
@@ -221,6 +225,10 @@ class FindPrince extends commando.Command {
 						    let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ cna + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
 						    let des2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html()
 						    let note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html()
+						    let ind2 = ind -1;
+							if ($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind2 + ') td:nth-child(3)').attr('rowspan') == 2) {
+							  note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind2 + ') td:nth-child(3)').html()
+							  }
 						    if (!des2) {
 							des2 = des
 						      }
