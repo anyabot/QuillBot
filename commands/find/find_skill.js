@@ -15,7 +15,7 @@ class FindSkill extends commando.Command {
             group: 'find',
             memberName: 'skill',
             description: 'find skill and saw of an unit',
-		examples: ['~skill quill'],
+		examples: ['&skill quill'],
         });
     }
 
