@@ -16,9 +16,9 @@ class FindPrince extends commando.Command {
             	memberName: 'prince',
             	description: 'find data of AW prince',
 		examples: ['&prince'],
-		args: [
-			{
+		args: [{
 		    key: 'text',
+			prompt: 'What AW Prince do you want to know about?',
 		    type: 'string',
 		default: "all"
 		}]
