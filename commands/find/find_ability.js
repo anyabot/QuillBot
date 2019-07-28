@@ -136,7 +136,12 @@ if (bronze || (!aw && nor)) {
 	  if (aw && !nor) {
       output = $('.c3.numbers').first().text();
       if (output) {
-        output = $('.c3 td:nth-child(13)').first().html();
+        if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
+				output = $('.c3 td:nth-child(13)').first().html();
+			}
+			if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
+				output = $('.c3 td:nth-child(12)').first().html();
+			}
         aff = na(output);
         if (aff != "N/A") {
 	check = true;
