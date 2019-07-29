@@ -28,7 +28,7 @@ class FindOrb extends commando.Command {
 			var words = mm.split(' ')
 			var date = words[0]
 			var ms = "```|________________________________________________________________________________|\n"
-			let line = printf("|%_10s | %_20s | %_20s | %_20s |\n|           |______________________|______________________|______________________|\n|%_10s | %_20s | %_20s | %_20s |","Monday", "Sniper", "Dark Knight", "Priest", "(Today)", "Rearguard Strategist", "Heavy Gunner", " ")
+			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |______________________|______________________|______________________|\n|%-10s | %-20s | %-20s | %-20s |","Monday", "Sniper", "Dark Knight", "Priest", "(Today)", "Rearguard Strategist", "Heavy Gunner", " ")
 			ms = ms + line + "\n|________________________________________________________________________________|"
 			ms = ms + "```"
 			message.channel.send(ms)
