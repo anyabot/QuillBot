@@ -13,7 +13,7 @@ class UtilToday extends commando.Command {
             name: 'today',
             group: 'util2',
             memberName: 'today',
-            description: 'find today's daily missions and daily revival',
+            description: 'find today\'s daily missions and daily revival',
 		examples: ['&today'],
         });
     }
