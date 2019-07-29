@@ -28,34 +28,35 @@ class FindOrb extends commando.Command {
 			var words = mm.split(' ')
 			var date = words[0]
 			var tday;
+			let line;
+			var ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
 			if (date == "Mon") {tday = "(Today)"}
 			else {tday = " "}
-			var ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
-			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Monday", "Sniper", "Dark Knight", "Priest", tday, "Rearguard Strategist", "Heavy Gunner", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Monday", "Sniper", "Dark Knight", "Priest", tday, "Rearguard Strategist", "Heavy Gunner", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			if (date == "Tue") {tday = "(Today)"}
 			else {tday = " "}
-			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Tuesday", "Unicorn Knight", "Pegasus Knight", "Master Monk", tday, "Berserker", "Feng Shui Master", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Tuesday", "Unicorn Knight", "Pegasus Knight", "Master Monk", tday, "Berserker", "Feng Shui Master", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			if (date == "Wed") {tday = "(Today)"}
 			else {tday = " "}
-			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Wednesday", "Soldier Chief", "Assassin", "Captain", tday, "High Shaman", "High Bishop", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Wednesday", "Soldier Chief", "Assassin", "Captain", tday, "High Shaman", "High Bishop", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			if (date == "Thu") {tday = "(Today)"}
 			else {tday = " "}
-			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Thursday", "Battle Master", "Samurai Master", "Rune Fencer", tday, "Vampire Killer", "Sailor Chief", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Thursday", "Battle Master", "Samurai Master", "Rune Fencer", tday, "Vampire Killer", "Sailor Chief", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			if (date == "Fri") {tday = "(Today)"}
 			else {tday = " "}
-			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Friday", "Lord Witch", "Warlock", "Vanguard Strategist", tday, "Ninja Master", "Arch Angel", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Friday", "Lord Witch", "Warlock", "Vanguard Strategist", tday, "Ninja Master", "Arch Angel", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			if (date == "Sat") {tday = "(Today)"}
 			else {tday = " "}
-			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Saturday", "Battle Mage", "High Ranger", "Top Dancer", tday, "Dragon Knight", "Priest Warrior Leader", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Saturday", "Battle Mage", "High Ranger", "Top Dancer", tday, "Dragon Knight", "Priest Warrior Leader", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			if (date == "Sun") {tday = "(Today)"}
 			else {tday = " "}
-			let line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Sunday", "High Alchemist", "Witch Doctor", "Machinist", tday, "Master Thief", "Bowrider Chief", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Sunday", "High Alchemist", "Witch Doctor", "Machinist", tday, "Master Thief", "Bowrider Chief", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			ms = ms + "```"
 			message.channel.send(ms)
