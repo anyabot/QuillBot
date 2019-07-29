@@ -5,7 +5,7 @@ var name = {
     'thursday' : 'thu',
     'friday' : 'fri',
     'saturday' : 'sat',
-    'sunday' : 'sun',
+    'sunday' : 'sun'
 }
 
 exports.name = name;
