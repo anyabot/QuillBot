@@ -5,7 +5,8 @@ var cheerio = require('cheerio');
 var he = require('he');
 var moment = require('moment');
 var printf = require('printf');
-require('@gouch/to-title-case')
+require('@gouch/to-title-case');
+const humanizeDuration = require('humanize-duration')
 
 class UtilToday extends commando.Command {
     constructor(client) {
