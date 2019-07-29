@@ -53,6 +53,49 @@ class FindOrb extends commando.Command {
 			embed.addField("Sunday " + tday, "High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief")
 			message.channel.send(embed)
 		}
+		else if (orb == "mon") {
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
+			embed.addField("Monday ", "Sniper, Dark Knight, Priest, Rearguard Strategist, Heavy Gunner")	
+			message.channel.send(embed)
+		}
+		else if (orb == "tue") {
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
+			embed.addField("Tuesday ", "Unicorn Knight, Pegasus Knight, Master Monk, Berserker, Feng Shui Master")		
+			message.channel.send(embed)
+		}
+		else if (orb == "wed") {
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
+			embed.addField("Wednesday ", "Soldier Chief, Assassin, Captain, High Shaman, High Bishop")	
+			message.channel.send(embed)
+		}
+		else if (orb == "thu") {
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
+			embed.addField("Thursday", "Battle Master, Samurai Master, Rune Fencer, Vampire Killer, Sailor Chief")	
+			message.channel.send(embed)
+		}
+		else if (orb == "fri") {
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
+			embed.addField("Friday ", "Lord Witch, Warlock, Vanguard Strategist, Ninja Master, Arch Angel")	
+			message.channel.send(embed)
+		}
+		else if (orb == "sat") {
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
+			embed.addField("Saturday ", "Battle Mage, High Ranger, Top Dancer, Dragon Knight, Priest Warrior Leader")	
+			message.channel.send(embed)
+		}
+		else if (orb == "sun") {
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
+			embed.addField("Sunday ", "High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief")	
+			message.channel.send(embed)
+		}
+		else {message.channel.send("No Data")}
 	}
 }
 
