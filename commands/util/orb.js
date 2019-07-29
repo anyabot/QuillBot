@@ -67,7 +67,7 @@ class FindOrb extends commando.Command {
 			ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
 			if (date == "Sat") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Saturday", "Battle Mage", "High Ranger", "Top Dancer", tday, "Dragon Knight", "Priest Warrior Leader", " ")
+			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-21s| %-20s |"," Saturday", "Battle Mage", "High Ranger", "Top Dancer", tday, "Dragon Knight", "Priest Warrior Leader", " ")
 			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
 			ms = ms + "```"
 			message.channel.send(ms)
