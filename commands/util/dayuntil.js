@@ -17,7 +17,7 @@ class UtilDaily extends commando.Command {
             group: 'util2',
             memberName: 'dayuntil',
             description: 'find the number of days until the daily revival of a unit',
-		examples: ['~dayuntil lin'],
+		examples: ['&dayuntil lin'],
         });
     }
 
