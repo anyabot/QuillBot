@@ -80,9 +80,16 @@ request(link, function(err, resp, html) {
 		var mm = m.format('ddd MMM DD YYYY HH mm ss')
 		var words = mm.split(' ')
 		var date = words[0]
-		var check = false;
-		var pages = [];
-		var page = 1;
+		var month = words[1]
+		var day = words[2]
+		var year = words[3]
+		var hour = words[4]
+		var min = words[5]
+		var sec = words[6]
+		var m2 = moment(year + " " +  month + " " + day, 'YYYY MMM DD').add(1, 'days')
+		var mm2 = m2.toString()
+		var dif1 = m2.diff(m)
+		var diff1 = humanizeDuration(dif1, { round: true })
 		const $ = cheerio.load(html);
 		var output = na($('.style_table').html())
     var tname;
@@ -117,7 +124,7 @@ request(link, function(err, resp, html) {
 	  dm =  "- Daily Farm Map: Demon Crystal / SAW Spirit\n- Orbs: High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief\n- Daily Revival Unit: " 
     }
     tname = japname[tname];
-	dm = dm + tname;
+	dm = dm + tname + "\n- Day Change In: " + diff1;
 	message.channel.send(dm)
   }
 })
