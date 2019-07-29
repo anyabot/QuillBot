@@ -2,6 +2,7 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 var moment = require('moment');
 var printf = require('printf');
+var name = require('../../library/orb.js').name;
 
 class FindOrb extends commando.Command {
     constructor(client) {
@@ -21,6 +22,7 @@ class FindOrb extends commando.Command {
     }
 	async run(message, { text }) {
 		var orb = text.toLowerCase()
+		if (name[orb]) orb = name[orb];
 		if (orb == "all"){
 			var now = new Date()
 			var m = moment(now).add(9, 'hours')
