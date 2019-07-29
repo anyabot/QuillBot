@@ -28,56 +28,30 @@ class FindOrb extends commando.Command {
 			var words = mm.split(' ')
 			var date = words[0]
 			var tday;
-			let line;
-			var ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
+			var embed = new Discord.RichEmbed()
+			embed.setColor('RANDOM')
 			if (date == "Mon") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Monday", "Sniper", "Dark Knight", "Priest", tday, "Rearguard Strategist", "Heavy Gunner", " ")
-			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
-			ms = ms + "```"
-			message.channel.send(ms)
-			var ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
+			embed.addField("Monday " + tday, "Sniper, Dark Knight, Priest, Rearguard Strategist, Heavy Gunner")		
 			if (date == "Tue") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Tuesday", "Unicorn Knight", "Pegasus Knight", "Master Monk", tday, "Berserker", "Feng Shui Master", " ")
-			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
-			ms = ms + "```"
-			message.channel.send(ms)
-			ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
+			embed.addField("Tuesday " + tday, "Unicorn Knight, Pegasus Knight, Master Monk, Berserker, Feng Shui Master")		
 			if (date == "Wed") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Wednesday", "Soldier Chief", "Assassin", "Captain", tday, "High Shaman", "High Bishop", " ")
-			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
-			ms = ms + "```"
-			message.channel.send(ms)
-			ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
+			embed.addField("Wednesday " + tday, "Soldier Chief, Assassin, Captain, High Shaman, High Bishop")			
 			if (date == "Thu") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Thursday", "Battle Master", "Samurai Master", "Rune Fencer", tday, "Vampire Killer", "Sailor Chief", " ")
-			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
-			ms = ms + "```"
-			message.channel.send(ms)
-			ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
+			embed.addField("Thursday " + tday, "Battle Master, Samurai Master, Rune Fencer, Vampire Killer, Sailor Chief")		
 			if (date == "Fri") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Friday", "Lord Witch", "Warlock", "Vanguard Strategist", tday, "Ninja Master", "Arch Angel", " ")
-			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
-			ms = ms + "```"
-			message.channel.send(ms)
-			ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
+			embed.addField("Friday " + tday, "Lord Witch, Warlock, Vanguard Strategist, Ninja Master, Arch Angel")			
 			if (date == "Sat") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-21s| %-20s |"," Saturday", "Battle Mage", "High Ranger", "Top Dancer", tday, "Dragon Knight", "Priest Warrior Leader", " ")
-			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
-			ms = ms + "```"
-			message.channel.send(ms)
-			ms = "```|————————————————————————————————————————————————————————————————————————————————|\n"
+			embed.addField("Saturday " + tday, "Battle Mage, High Ranger, Top Dancer, Dragon Knight, Priest Warrior Leader")
 			if (date == "Sun") {tday = "(Today)"}
 			else {tday = " "}
-			line = printf("|%-10s | %-20s | %-20s | %-20s |\n|           |——————————————————————|——————————————————————|——————————————————————|\n|%-10s | %-20s | %-20s | %-20s |"," Sunday", "High Alchemist", "Witch Doctor", "Machinist", tday, "Master Thief", "Bowrider Chief", " ")
-			ms = ms + line + "\n|————————————————————————————————————————————————————————————————————————————————|"
-			ms = ms + "```"
-			message.channel.send(ms)
+			embed.addField("Sunday " + tday, "High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief")
+			message.channel.send(embed)
 		}
 	}
 }
