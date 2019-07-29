@@ -90,31 +90,31 @@ request(link, function(err, resp, html) {
     var names = output.split(' ')
     if (date == "Mon") {
       tname = names[1]
-	  dm = "-Daily Farm Map: Armor\n- Orbs: Sniper, Dark Knight, Priest, Rearguard Strategist, Heavy Gunner\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: " 
+	  dm = "- Daily Farm Map: Armor\n- Orbs: Sniper, Dark Knight, Priest, Rearguard Strategist, Heavy Gunner\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: " 
     }
     else if (date == "Tue") {
       tname = names[3]
-	  dm = "-Daily Farm Map: Spirit\n- Orbs: Unicorn Knight, Pegasus Knight, Master Monk, Berserker, Feng Shui Master\n- Daily Revival Unit: "
+	  dm = "- Daily Farm Map: Spirit\n- Orbs: Unicorn Knight, Pegasus Knight, Master Monk, Berserker, Feng Shui Master\n- Daily Revival Unit: "
     }
     else if (date == "Wed") {
       tname = names[5]
-	  dm =  "-Daily Farm Map: Demon Crystal\n- Orbs: Soldier Chief, Assassin, Captain, High Shaman, High Bishop\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: " 
+	  dm =  "- Daily Farm Map: Demon Crystal\n- Orbs: Soldier Chief, Assassin, Captain, High Shaman, High Bishop\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: " 
     }
     else if (date == "Thu") {
       tname = names[7]
-	  dm =  "-Daily Farm Map: Affection / Trust Item\n- Orbs: Battle Master, Samurai Master, Rune Fencer, Vampire Killer, Sailor Chief\n- Daily Revival Unit: " 
+	  dm =  "- Daily Farm Map: Affection / Trust Item\n- Orbs: Battle Master, Samurai Master, Rune Fencer, Vampire Killer, Sailor Chief\n- Daily Revival Unit: " 
     }
     else if (date == "Fri") {
       tname = names[9]
-	  dm =  "-Daily Farm Map: Armor\n- Orbs: Lord Witch, Warlock, Vanguard Strategist, Ninja Master, Arch Angel\n- Daily Revival Unit: " 
+	  dm =  "- Daily Farm Map: Armor\n- Orbs: Lord Witch, Warlock, Vanguard Strategist, Ninja Master, Arch Angel\n- Daily Revival Unit: " 
     }
     else if (date == "Sat") {
       tname = names[11]
-	  dm =  "-Daily Farm Map: Spirit / SAW Spirit\n- Orbs: Battle Mage, High Ranger, Top Dancer, Dragon Knight, Priest Warrior Leader\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: " 
+	  dm =  "- Daily Farm Map: Spirit / SAW Spirit\n- Orbs: Battle Mage, High Ranger, Top Dancer, Dragon Knight, Priest Warrior Leader\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: " 
     }
     else if (date == "Sun") {
       tname = names[13]
-	  dm =  "-Daily Farm Map: Demon Crystal / SAW Spirit\n- Orbs: High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief\n- Daily Revival Unit: " 
+	  dm =  "- Daily Farm Map: Demon Crystal / SAW Spirit\n- Orbs: High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief\n- Daily Revival Unit: " 
     }
     tname = japname[tname];
 	dm = dm + tname;
