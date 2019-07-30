@@ -50,7 +50,7 @@ class FindPath extends commando.Command {
     var des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').html());
 		    var ju = $(".gcstyle.bgwhite.hsbullet :contains('Junior')").text()
 		    var le = $(".gcstyle.bgwhite.hsbullet :contains('Lesser')").text()
-		    var span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(1) td:nth-child(2)').attr('rowspan');
+		    var span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').attr('rowspan');
 		    if (le) {span = span -1}
 		    if (ju) {span = span -1}
 		    message.channel.send(span)
