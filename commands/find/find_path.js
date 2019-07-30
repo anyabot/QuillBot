@@ -93,7 +93,7 @@ class FindPath extends commando.Command {
 	      }
       }
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", note)};
+              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 			pages.push(embed);
 		}
 		if ($('.c2').find('td').length >= 6) {
@@ -132,7 +132,7 @@ class FindPath extends commando.Command {
 	      }
       }
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", note)};
+              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 				pages.push(embed);
 			}
 		}
@@ -179,7 +179,7 @@ class FindPath extends commando.Command {
 	      }
       }
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", note)};
+              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 			pages.push(embed)
 		}
                 output = $('.c4.numbers').first().text();
@@ -223,7 +223,7 @@ class FindPath extends commando.Command {
 	      }
       }
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", note)};
+              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 			pages.push(embed)
 		}
 		output = $('.c5.numbers').first().text();
@@ -267,7 +267,7 @@ class FindPath extends commando.Command {
 	      }
       }
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", note)};
+              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 			pages.push(embed)
 		}
 		if (check) {
