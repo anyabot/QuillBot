@@ -93,8 +93,15 @@ class FindPath extends commando.Command {
 		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
 	      }
       }
+			if (len == 1) {
+		span = span - 1;
+	}
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
+              if (note != '' && note != null) {
+		      if (affe(note) != '' && affe(note) != null ) {
+		      	embed.addField("Notes", affe(note))
+		      }
+	      };
 			pages.push(embed);
 		}
 		if ($('.c2').find('td').length >= 6) {
@@ -136,7 +143,11 @@ class FindPath extends commando.Command {
 		span = span - 1;
 	}
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
+              if (note != '' && note != null) {
+		      if (affe(note) != '' && affe(note) != null ) {
+		      	embed.addField("Notes", affe(note))
+		      }
+	      };
 				pages.push(embed);
 			}
 		}
@@ -186,7 +197,11 @@ class FindPath extends commando.Command {
 		span = span - 1;
 	}
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
+              if (note != '' && note != null) {
+		      if (affe(note) != '' && affe(note) != null ) {
+		      	embed.addField("Notes", affe(note))
+		      }
+	      };
 			pages.push(embed)
 		}
                 output = $('.c4.numbers').first().text();
@@ -233,7 +248,11 @@ class FindPath extends commando.Command {
 		span = span - 1;
 	}
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
+              if (note != '' && note != null) {
+		      if (affe(note) != '' && affe(note) != null ) {
+		      	embed.addField("Notes", affe(note))
+		      }
+	      };
 			pages.push(embed)
 		}
 		output = $('.c5.numbers').first().text();
@@ -280,7 +299,11 @@ class FindPath extends commando.Command {
 		span = span - 1;
 	}
       embed.addField("Description", des);
-              if (note != '' && note != null) {embed.addField("Notes", affe(note))};
+              if (note != '' && note != null) {
+		      if (affe(note) != '' && affe(note) != null ) {
+		      	embed.addField("Notes", affe(note))
+		      }
+	      };
 			pages.push(embed)
 		}
 		if (check) {
