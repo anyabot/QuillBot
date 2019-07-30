@@ -12,7 +12,7 @@ class FindDrop extends commando.Command {
             	group: 'util2',
             	memberName: 'dropboost',
             	description: 'show units which drop boost ability',
-		examples: ['&prince'],
+		examples: ['&dropboost dc'],
 		args: [{
 		    key: 'text',
 			prompt: 'What AW Prince do you want to know about?',
