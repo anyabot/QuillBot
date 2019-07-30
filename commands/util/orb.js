@@ -14,7 +14,7 @@ class FindOrb extends commando.Command {
 		examples: ['&prince'],
 		args: [{
 		    key: 'text',
-			prompt: 'What AW Prince do you want to know about?',
+			prompt: 'What orb/day do you want to know about?',
 		    type: 'string',
 		default: "all"
 		}]
