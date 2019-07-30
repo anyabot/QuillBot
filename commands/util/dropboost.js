@@ -35,14 +35,14 @@ class FindDrop extends commando.Command {
 			robert.addField('Pre-AW Ability', 'While in your possession, the drop rate of Trust items increases by 6%.')
 			robert.addField('AW Ability', 'While in your possession, the drop rate of Trust items increases by 8%.')
 			pages.push(robert)
-			var cuterie = new Discord.RichEmbed(
+			var cuterie = new Discord.RichEmbed()
 			cuterie.setTitle('Cuterie')
 			cuterie.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/2/23/Cuterie_Icon.png/revision/latest?cb=20180522212200')
 			cuterie.setColor('GOLD')
 			cuterie.addField('Pre-AW Ability', 'While in your possession, the drop rate of Affection items increases by 6%.')
 			cuterie.addField('AW Ability', 'While in your possession, the drop rate of Affection items increases by 8%.')
 			pages.push(cuterie)
-			var ccuterie = new Discord.RichEmbed(
+			var ccuterie = new Discord.RichEmbed()
 			ccuterie.setTitle('Chibi Cuterie')
 			ccuterie.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/a/ad/Chibi_Cuterie_Icon.png/revision/latest?cb=20190502061222')
 			ccuterie.setColor('GOLD')
@@ -72,7 +72,7 @@ class FindDrop extends commando.Command {
 			var amanda = new Discord.RichEmbed()
 			amanda.setTitle('Amanda')
 			amanda.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/f/f9/Amanda_Icon.png/revision/latest?cb=20180522205700')
-			amanda.setColor('DARK_RED')
+			amanda.setColor([95, 64, 0])
 			amanda.addField('Pre-AW Ability', 'While in your possession, the drop rate of Gold Armors and Platinum Armors increases by 6%.')
 			amanda.addField('AW Ability', 'While in your possession, the drop rate of Gold Armors and Platinum Armors increases by 9%.')
 			pages.push(amanda)
@@ -109,14 +109,14 @@ class FindDrop extends commando.Command {
 		}
 		else if (drop == "aff" || drop == "affection" || drop == "affection item" || drop == "affection items") {
 			check = true;
-			var cuterie = new Discord.RichEmbed(
+			var cuterie = new Discord.RichEmbed()
 			cuterie.setTitle('Cuterie')
 			cuterie.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/2/23/Cuterie_Icon.png/revision/latest?cb=20180522212200')
 			cuterie.setColor('GOLD')
 			cuterie.addField('Pre-AW Ability', 'While in your possession, the drop rate of Affection items increases by 6%.')
 			cuterie.addField('AW Ability', 'While in your possession, the drop rate of Affection items increases by 8%.')
 			pages.push(cuterie)
-			var ccuterie = new Discord.RichEmbed(
+			var ccuterie = new Discord.RichEmbed()
 			ccuterie.setTitle('Chibi Cuterie')
 			ccuterie.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/a/ad/Chibi_Cuterie_Icon.png/revision/latest?cb=20190502061222')
 			ccuterie.setColor('GOLD')
@@ -162,7 +162,7 @@ class FindDrop extends commando.Command {
 			var amanda = new Discord.RichEmbed()
 			amanda.setTitle('Amanda')
 			amanda.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/f/f9/Amanda_Icon.png/revision/latest?cb=20180522205700')
-			amanda.setColor('DARK_RED')
+			amanda.setColor([95, 64, 0])
 			amanda.addField('Pre-AW Ability', 'While in your possession, the drop rate of Gold Armors and Platinum Armors increases by 6%.')
 			amanda.addField('AW Ability', 'While in your possession, the drop rate of Gold Armors and Platinum Armors increases by 9%.')
 			pages.push(amanda)
