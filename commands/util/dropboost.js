@@ -12,6 +12,7 @@ class FindDrop extends commando.Command {
 		examples: ['&dropboost dc'],
 		args: [{
 		    key: 'text',
+			prompt: 'What types of dropbooster do you want to know about?',
 		    type: 'string',
 		default: "all"
 		}]
