@@ -53,7 +53,6 @@ class FindPath extends commando.Command {
 		    var span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').attr('rowspan');
 		    if (le) {span = span -1}
 		    if (ju) {span = span -1}
-		    message.channel.send(span)
 		var check = false;
 		var pages = []
 		var page = 1;
@@ -78,17 +77,20 @@ class FindPath extends commando.Command {
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
       let des2
       let note2
-      span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan')
       if (len == 3) {
         des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html())
+	span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
-        if (note2) {note = affe(note2)}
-        else {
-          des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
-        }
+	      if (span > 0) {
+	      	note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html()
+		      span = span -1;
+	      }
+	      else {
+          	des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
+		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
+	      }
       }
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
@@ -116,14 +118,18 @@ class FindPath extends commando.Command {
       let note2
       if (len == 3) {
         des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html())
+	span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
-        if (note2) {note = affe(note2)}
-        else {
-          des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
-        }
+	      if (span > 0) {
+	      	note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html()
+		      span = span -1;
+	      }
+	      else {
+          	des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
+		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
+	      }
       }
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
@@ -157,16 +163,20 @@ class FindPath extends commando.Command {
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
       let des2
       let note2
-      if (len == 3) {
+     if (len == 3) {
         des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html())
+	span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-        note2 = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2) ul').html()
-        if (note2) {note = affe(note2)}
-        else {
-          des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
-        }
+	      if (span > 0) {
+	      	note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html()
+		      span = span -1;
+	      }
+	      else {
+          	des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
+		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
+	      }
       }
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
@@ -199,10 +209,18 @@ class FindPath extends commando.Command {
       let note2
       if (len == 3) {
         des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html())
+	span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-          des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
+	      if (span > 0) {
+	      	note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html()
+		      span = span -1;
+	      }
+	      else {
+          	des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
+		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
+	      }
       }
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
@@ -235,10 +253,18 @@ class FindPath extends commando.Command {
       let note2
       if (len == 3) {
         des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html())
+	span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
       }
       if (len == 2) {
-          des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
+	      if (span > 0) {
+	      	note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html()
+		      span = span -1;
+	      }
+	      else {
+          	des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').html())
+		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
+	      }
       }
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
