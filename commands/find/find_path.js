@@ -47,6 +47,7 @@ class FindPath extends commando.Command {
                 var img;
 		var aff;
     var note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(3)').text();
+		    console.log(note)
     var des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').html());
 		    var ju = $(".gcstyle.bgwhite.hsbullet :contains('Junior')").text()
 		    var le = $(".gcstyle.bgwhite.hsbullet :contains('Lesser')").text()
