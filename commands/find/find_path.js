@@ -48,6 +48,12 @@ class FindPath extends commando.Command {
 		var aff;
     var note = $('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(3)').text();
     var des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(2) td:nth-child(2)').html());
+		    var ju = $(".gcstyle.bgwhite.hsbullet :contains('Junior')").text()
+		    var le = $(".gcstyle.bgwhite.hsbullet :contains('Lesser')").text()
+		    var span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(1) td:nth-child(2)').attr('rowspan');
+		    if (le) {span = span -1}
+		    if (ju) {span = span -1}
+		    message.channel.send(span)
 		var check = false;
 		var pages = []
 		var page = 1;
@@ -72,6 +78,7 @@ class FindPath extends commando.Command {
       let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
       let des2
       let note2
+      span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan')
       if (len == 3) {
         des = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind +') td:nth-child(2)').html())
         note = affe($('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(3)').html())
