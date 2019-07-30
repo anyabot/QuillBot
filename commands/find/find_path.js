@@ -131,6 +131,9 @@ class FindPath extends commando.Command {
 		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
 	      }
       }
+	if (len == 1) {
+		span = span - 1;
+	}
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 				pages.push(embed);
@@ -178,6 +181,9 @@ class FindPath extends commando.Command {
 		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
 	      }
       }
+			if (len == 1) {
+		span = span - 1;
+	}
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 			pages.push(embed)
@@ -222,6 +228,9 @@ class FindPath extends commando.Command {
 		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
 	      }
       }
+			if (len == 1) {
+		span = span - 1;
+	}
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 			pages.push(embed)
@@ -266,6 +275,9 @@ class FindPath extends commando.Command {
 		span = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ') td:nth-child(2)').attr('rowspan') - 1
 	      }
       }
+			if (len == 1) {
+		span = span - 1;
+	}
       embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", affe(note))};
 			pages.push(embed)
