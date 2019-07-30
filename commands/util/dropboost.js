@@ -1,8 +1,5 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
-var moment = require('moment');
-var printf = require('printf');
-var name = require('../../library/orb.js').name;
 
 class FindDrop extends commando.Command {
     constructor(client) {
