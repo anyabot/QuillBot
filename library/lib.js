@@ -11,6 +11,13 @@ var name = {
     'Chocorino' : 'Rino (Valentine\'s)',
     'Chainloli' : 'Salus',
     'Hammerloli' : 'Teeny',
+    'Wh' : 'Wonder Heart',
+    'Misria' : 'Mithria',
+    'Longji' : 'Longji Gongzhu',
+    'Wangfei' : 'Wangfei Ren',
+    'Leimei' : 'Lei-Mei',
+    'Shuxian' : 'Shu-Xian',
+    'Lanfa' : 'Lan-Fa'
     'Swordloli' : 'Rischelte',
     'Waterloli' : 'Cenote',
     'Darkloli' : 'Clarice',
