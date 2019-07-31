@@ -8,6 +8,12 @@ var black = require('../../library/black.js').black;
 var plat = require('../../library/plat.js').plat;
 var gold = require('../../library/gold.js').gold;
 var sil = require('../../library/sil.js').sil;
+var iblack = require('../../library/iblack.js').iblack;
+var iplat = require('../../library/iplat.js').iplat;
+var igold = require('../../library/gold.js').igold;
+var isil = require('../../library/sil.js').isil;
+var pugblack = require('../../library/pugblack.js').pugblack;
+var pugplat = require('../../library/pugplat.js').pugplat;
 var urlencode = require('urlencode');
 
 class RanRoll extends commando.Command {
@@ -23,7 +29,7 @@ class RanRoll extends commando.Command {
 		    key: 'text',
 			prompt: 'What pool do you want to pull from?',
 		    type: 'string',
-		default: "normal"
+		default: "default"
 		}]
         });
     }
@@ -31,9 +37,8 @@ class RanRoll extends commando.Command {
     async run(message, { text }) {
 		var pool = text.toLowerCase();
 		var embed = new Discord.RichEmbed()
-		embed.setTitle("Gacha Roll Result")
-		embed.setColor('RANDOM')
-		if (pool == "normal") {
+		if (pool == "default") {
+			embed.setTitle("Gacha Roll Result")
 			var rar = random.int(1, 100)
 			if (rar < 4) {
 				var ind = random.int(1, size_dict(black))
@@ -44,6 +49,83 @@ class RanRoll extends commando.Command {
 			else if (rar < 14) {
 				var ind = random.int(1, size_dict(plat))
 				var unit = plat[ind]
+				embed.setDescription("You rolled " + unit + " (Platinum)")
+				embed.setColor('GREEN')
+			}
+			else if (rar < 64) {
+				var ind = random.int(1, size_dict(gold))
+				var unit = gold[ind]
+				embed.setDescription("You rolled " + unit + " (Gold)")
+				embed.setColor('GOLD')
+			}
+			else {
+				var ind = random.int(1, size_dict(sil))
+				var unit = sil[ind]
+				embed.setDescription("You rolled " + unit + " (Silver)")
+				embed.setColor('WHITE')
+			}
+			var img
+			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+			request(link, function(err, resp, html) {
+				if (!err) {
+					const $ = cheerio.load(html);
+					img = $('.fullImageLink a').attr('href')
+					embed.setImage(img)
+					message.channel.send(embed)
+				}
+			})
+		}
+	    else if (pool == "imperial" || "white empire") {
+			embed.setTitle("Imperial Gacha Roll Result")
+			var rar = random.int(1, 100)
+			if (rar < 4) {
+				var ind = random.int(1, size_dict(iblack))
+				var unit = iblack[ind]
+				embed.setDescription("You rolled " + unit + " (Black)")
+				embed.setColor([95, 64, 0])
+			}
+			else if (rar < 14) {
+				var ind = random.int(1, size_dict(iplat))
+				var unit = iplat[ind]
+				embed.setDescription("You rolled " + unit + " (Platinum)")
+				embed.setColor('GREEN')
+			}
+			else if (rar < 64) {
+				var ind = random.int(1, size_dict(igold))
+				var unit = igold[ind]
+				embed.setDescription("You rolled " + unit + " (Gold)")
+				embed.setColor('GOLD')
+			}
+			else {
+				var ind = random.int(1, size_dict(isil))
+				var unit = isil[ind]
+				embed.setDescription("You rolled " + unit + " (Silver)")
+				embed.setColor('WHITE')
+			}
+			var img
+			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+			request(link, function(err, resp, html) {
+				if (!err) {
+					const $ = cheerio.load(html);
+					img = $('.fullImageLink a').attr('href')
+					embed.setImage(img)
+					meesage.channel.send(message.author)
+					message.channel.send(embed)
+				}
+			})
+		}
+		else if (pool == "pug" || pool == "pick-up" || pool == "pickup") {
+			embed.setTitle("Pick-Up Gacha Roll Result")
+			var rar = random.int(1, 100)
+			if (rar < 4) {
+				var ind = random.int(1, size_dict(pugblack))
+				var unit = pugblack[ind]
+				embed.setDescription("You rolled " + unit + " (Black)")
+				embed.setColor([95, 64, 0])
+			}
+			else if (rar < 14) {
+				var ind = random.int(1, size_dict(pugplat))
+				var unit = pugplat[ind]
 				embed.setDescription("You rolled " + unit + " (Platinum)")
 				embed.setColor('GREEN')
 			}
