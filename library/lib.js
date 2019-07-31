@@ -1,10 +1,19 @@
 var name = {
     'Snekloli' : 'Orochihime',
+	'Snakeloli' : 'Orochihime',
     'Shampoo' : 'Jin-Guang Sheng-Pu',
     'Shengpu' : 'Jin-Guang Sheng-Pu',
     'Pu' : 'Jin-Guang Sheng-Pu',
     'Jgsp' : 'Jin-Guang Sheng-Pu',
     'Gelbro' : 'Gellius',
+    'Jebrome' : 'Jerome',
+    'Fred' : 'Frederica',
+    'Molt' : 'Moltena',
+    'Iceloli' : 'Yukihime',
+	'Fireloli' : 'Loretta',
+	'Adel' : 'Adelaide',
+	'Haku' : 'Hakunokami',
+	'Rezry' : 'Risley',
     'Shoka' : 'Shokatsuryou',
     'White Fluff' : 'Kyuubi',
     'Gold Fluff' : 'Kayou',
@@ -69,7 +78,12 @@ var name = {
     '<:chibikiba:589846219015192635>': 'Kibahime',
     '<:chibi_iris:230607661903773696>': 'Iris',
     '<:chibi_cam:230607655654260737>': 'Camilla',
-    '<:calliope:398400399050276875>': 'Calliope'
+    '<:calliope:398400399050276875>': 'Calliope',
+	'Zhuge Liang' : 'Shokatsuryou',
+	'Zhao Yun' : 'Chou\'un',
+	'Guan Yu' : 'Kan\'u',
+	'Sun Jian' : 'Sonken Bundai',
+	'Sun Quan' : 'Sonken Chuubo'
 }
 
 exports.name = name;
