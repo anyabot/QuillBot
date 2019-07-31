@@ -97,7 +97,7 @@ class TTime extends commando.Command {
 		embed.setColor('RANDOM')
 		embed.addField("Daily Missions, Daily Revivals Change", diff1)
 		embed.addField("Daily Fame Quest, Stamp Card Change", diff2)
-		embed.addField("Tranding Post, Stamp Card Reset", diff4)
+		embed.addField("Trading Post, Stamp Card Reset", diff4)
 		embed.addField("Fame Reset", diff5)
 		if (mai) {
 		  embed.addField('Maintenance End', diff3)
