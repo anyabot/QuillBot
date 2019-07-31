@@ -75,7 +75,7 @@ class RanRoll extends commando.Command {
 				}
 			})
 		}
-	    else if (pool == "imperial" || "white empire") {
+	    else if (pool == "imperial" || pool == "white empire") {
 			embed.setTitle("Imperial Gacha Roll Result")
 			var rar = random.int(1, 100)
 			if (rar < 4) {
