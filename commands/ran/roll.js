@@ -34,24 +34,24 @@ class RanRoll extends commando.Command {
 		embed.setTitle("Gacha Roll Result")
 		embed.setColor('WHITE')
 		if (pool == "normal") {
-			var rar = random.int(min = 1, max = 100)
+			var rar = random.int(1, 100)
 			if (rar < 4) {
-				var ind = random.int(min = 1, max = size_dict(black))
+				var ind = random.int(1, size_dict(black))
 				var unit = black[ind]
 			embed.setDescription("You rolled " + unit + " (Black)")
 			}
 			else if (rar < 14) {
-				var ind = random.int(min = 1, max = size_dict(plat))
+				var ind = random.int(1, size_dict(plat))
 				var unit = plat[ind]
 				embed.setDescription("You rolled " + unit + " (Platinum)")
 			}
 			else if (rar < 64) {
-				var ind = random.int(min = 1, max = size_dict(gold))
+				var ind = random.int(1, size_dict(gold))
 				var unit = gold[ind]
 				embed.setDescription("You rolled " + unit + " (Gold)")
 			}
 			else {
-				var ind = random.int(min = 1, max = size_dict(sil))
+				var ind = random.int(1, size_dict(sil))
 				var unit = sil[ind]
 				embed.setDescription("You rolled " + unit + " (Silver)")
 			}
