@@ -32,31 +32,35 @@ class RanRoll extends commando.Command {
 		var pool = text.toLowerCase();
 		var embed = new Discord.RichEmbed()
 		embed.setTitle("Gacha Roll Result")
-		embed.setColor('WHITE')
+		embed.setColor('RANDOM')
 		if (pool == "normal") {
 			var rar = random.int(1, 100)
 			if (rar < 4) {
 				var ind = random.int(1, size_dict(black))
 				var unit = black[ind]
-			embed.setDescription("You rolled " + unit + " (Black)")
+				embed.setDescription("You rolled " + unit + " (Black)")
+				embed.setColor([95, 64, 0])
 			}
 			else if (rar < 14) {
 				var ind = random.int(1, size_dict(plat))
 				var unit = plat[ind]
 				embed.setDescription("You rolled " + unit + " (Platinum)")
+				embed.setColor([229, 228, 226])
 			}
 			else if (rar < 64) {
 				var ind = random.int(1, size_dict(gold))
 				var unit = gold[ind]
 				embed.setDescription("You rolled " + unit + " (Gold)")
+				embed.setColor('GOLD')
 			}
 			else {
 				var ind = random.int(1, size_dict(sil))
 				var unit = sil[ind]
 				embed.setDescription("You rolled " + unit + " (Silver)")
+				embed.setColor('WHITE')
 			}
 			var img
-			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Sprite.gif";
+			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
 			request(link, function(err, resp, html) {
 				if (!err) {
 					const $ = cheerio.load(html);
