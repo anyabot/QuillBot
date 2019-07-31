@@ -109,7 +109,7 @@ class RanRoll extends commando.Command {
 					const $ = cheerio.load(html);
 					img = $('.fullImageLink a').attr('href')
 					embed.setImage(img)
-					message.channel.send(message.author.id)
+					message.channel.send("@" + message.author.tag)
 					message.channel.send(embed)
 				}
 			})
