@@ -56,7 +56,7 @@ class RanRoll extends commando.Command {
 				embed.setDescription("You rolled " + unit + " (Silver)")
 			}
 			var img
-			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Render.png";
+			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Sprite.gif";
 			request(link, function(err, resp, html) {
 				if (!err) {
 					const $ = cheerio.load(html);
