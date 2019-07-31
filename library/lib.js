@@ -17,7 +17,7 @@ var name = {
     'Wangfei' : 'Wangfei Ren',
     'Leimei' : 'Lei-Mei',
     'Shuxian' : 'Shu-Xian',
-    'Lanfa' : 'Lan-Fa'
+    'Lanfa' : 'Lan-Fa',
     'Swordloli' : 'Rischelte',
     'Waterloli' : 'Cenote',
     'Darkloli' : 'Clarice',
