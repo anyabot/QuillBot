@@ -45,7 +45,7 @@ class RanRoll extends commando.Command {
 				var ind = random.int(1, size_dict(plat))
 				var unit = plat[ind]
 				embed.setDescription("You rolled " + unit + " (Platinum)")
-				embed.setColor([229, 228, 226])
+				embed.setColor('GREEN')
 			}
 			else if (rar < 64) {
 				var ind = random.int(1, size_dict(gold))
