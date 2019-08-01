@@ -255,17 +255,17 @@ request(link, function(err, resp, html) {
 					if (aw2) {
 						embedaw.setTitle("AW/AW2/SAW Materials")
 						embedaw.setThumbnail(awimg)
-						embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
-						embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
-						embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
+						embedaw.addField("Material 1", aw1[mat1], true)
+						embedaw.addField("Material 2", aw1[mat2], true)
+						embedaw.addField("Material 3", aw1[mat3], true)
 						embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 					}
 					else {
 						embedaw.setTitle("AW/SAW Materials")
 						embedaw.setThumbnail(awimg)
-						embedaw.addField("Material 1 (For AW)", aw1[mat1], true)
-						embedaw.addField("Material 2 (For AW)", aw1[mat2], true)
-						embedaw.addField("Material 3 (For AW)", aw1[mat3], true)
+						embedaw.addField("Material 1", aw1[mat1], true)
+						embedaw.addField("Material 2", aw1[mat2], true)
+						embedaw.addField("Material 3", aw1[mat3], true)
 						embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 					}
 					if (gold) {
@@ -365,17 +365,17 @@ request(link, function(err, resp, html) {
 							if (aw2) {
 								embedaw.setTitle("AW/AW2/SAW Materials")
 								embedaw.setThumbnail(awimg)
-								embedaw.addField("Material 1 (For AW/AW2)", aw1[mat1], true)
-								embedaw.addField("Material 2 (For AW/AW2)", aw1[mat2], true)
-								embedaw.addField("Material 3 (For AW/AW2)", aw1[mat3], true)
+								embedaw.addField("Material 1", aw1[mat1], true)
+								embedaw.addField("Material 2", aw1[mat2], true)
+								embedaw.addField("Material 3", aw1[mat3], true)
 								embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 							}
 							else {
 								embedaw.setTitle("AW/SAW Materials")
 								embedaw.setThumbnail(awimg)
-								embedaw.addField("Material 1 (For AW)", aw1[mat1], true)
-								embedaw.addField("Material 2 (For AW)", aw1[mat2], true)
-								embedaw.addField("Material 3 (For AW)", aw1[mat3], true)
+								embedaw.addField("Material 1", aw1[mat1], true)
+								embedaw.addField("Material 2", aw1[mat2], true)
+								embedaw.addField("Material 3", aw1[mat3], true)
 								embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 							}
 							if (gold) {
