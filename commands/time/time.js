@@ -109,8 +109,8 @@ class TTime extends commando.Command {
 		}
 		var embed = new Discord.RichEmbed()
 		embed.setColor('RANDOM')
-		embed.addField("Daily Missions, Daily Revivals Change", diff1)
-		embed.addField("Daily Fame Quest, Stamp Card Change", diff2)
+		embed.addField("Daily Missions/Revivals", diff1)
+		embed.addField("Daily Fame/Stamp Card", diff2)
 		embed.addField("Trading Post, Stamp Card Reset", diff4)
 		embed.addField("Fame Reset", diff5)
 		if (mai) {
