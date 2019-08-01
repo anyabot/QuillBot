@@ -28,7 +28,7 @@ var sil = {
 	27 : 'Niel',
 	28 : 'Ertel',
 	29 : 'Nicholaus',
-	30 : 'Rute',
+	30 : 'Picky',
 	31 : 'Riele',
 	32 : 'Renarde',
 	33 : 'Miguel',
@@ -53,8 +53,7 @@ var sil = {
 	52 : 'Fei',
 	53 : 'Percis',
 	54 : 'Sharqi',
-	55 : 'Thelma',
-	56 : 'Picky'
+	55 : 'Thelma'
 }
 
 exports.sil = sil;
