@@ -96,6 +96,7 @@ class TTime extends commando.Command {
 		}
 		else {
 			m5 = m5.add(1, 'months')
+			mm5 = m5.format('ddd MMM DD YYYY HH mm ss')
 			words5 = mm5.split(' ')
 			date5 = words5[0]
 			if (date5 != "Thu") {
