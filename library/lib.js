@@ -83,7 +83,11 @@ var name = {
 	'Zhao Yun' : 'Chou\'un',
 	'Guan Yu' : 'Kan\'u',
 	'Sun Jian' : 'Sonken Bundai',
-	'Sun Quan' : 'Sonken Chuubo'
+	'Sun Quan' : 'Sonken Chuubo',
+	'Lu Bu' : 'Ryofu',
+	'Cao Cao' : 'Sousou',
+	'Liu Bei' : 'Ryuubi',
+	'Ma Chao' : 'Bachou'
 }
 
 exports.name = name;
