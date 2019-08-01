@@ -124,7 +124,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed.addField("Description", des);
+              if (des != '' && des != null) embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
 		    message.channel.send(embed)
             }
@@ -163,7 +163,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed.addField("Description", des);
+              if (des != '' && des != null) embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
 			message.channel.send(embed)
             }
@@ -191,7 +191,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed.addField("Description", des);
+              if (des != '' && des != null) embed.addField("Description", des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
 		    pages.push(embed)
 		    output = $('.c3.numbers').first().text();
@@ -223,7 +223,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed2.addField("Description", des);
+              if (des != '' && des != null) embed2.addField("Description", des);
               if (note != '' && note != null) {embed2.addField("Notes", note)};
 			        pages.push(embed2)
 		    embed = pages[0];
