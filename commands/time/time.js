@@ -95,16 +95,10 @@ class TTime extends commando.Command {
 			var diff5 = humanizeDuration(dif5, { units: ['d', 'h', 'm'] , round: true })
 		}
 		else {
-			m5 = m5.add(28, 'days')
-			if (m.isBefore(m5)) {
+			m5 = m5.add(1, 'months')
 				var dif5 = m5.diff(m)
 				var diff5 = humanizeDuration(dif5, { units: ['d', 'h', 'm'] , round: true })
-			}
-			else {
-				m5 = m5.add(7, 'days')
-				var dif5 = m5.diff(m)
-				var diff5 = humanizeDuration(dif5, { units: ['d', 'h', 'm'] , round: true })
-			}
+			
 		}
 		var embed = new Discord.RichEmbed()
 		embed.setColor('RANDOM')
