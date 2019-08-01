@@ -1,8 +1,8 @@
 var pugblack = {
-    1 : 'Sybilla',
-    2 : 'Ingrid',
-    3 : 'Tenma',
-    4 : 'Kuuko'
+    1 : 'Nanaly',
+    2 : 'Frederica',
+    3 : 'Aix',
+    4 : 'Emelda'
 }
 
 exports.pugblack = pugblack;
