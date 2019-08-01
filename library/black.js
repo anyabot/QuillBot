@@ -61,7 +61,7 @@ var black = {
 	60 : 'Miyabi',
 	61 : 'Melabyss',
 	62 : 'Towa',
-	63 : 'Fiora',
+	63 : 'Fiore',
 	64 : 'Machina',
 	65 : 'Rovinia',
 	66 : 'Orochihime',
