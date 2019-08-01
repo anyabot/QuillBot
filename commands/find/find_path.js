@@ -115,6 +115,7 @@ class FindPath extends commando.Command {
 				aff = affe(output);
 				output = $('.c2 td:nth-child(1)').first().html();
 				let nam = na(output);
+				if (nam == "Priestess Warrior Leader") {nam = "Priest Warrior Leader"}
 				let embed = new Discord.RichEmbed()
 				.setTitle(nam)
 				.setThumbnail(img)
