@@ -39,26 +39,48 @@ var cc2 = {
 	"/wiki/Ertel" :"Silver Priest Warrior"
 }
 var aw1 = {
-	"/wiki/Asar": "**Gold Soldie**r \nOR \n**CC Silver Soldier:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Soldier \n1 x Silver Spirit",
-	"/wiki/Leeanne": "**Gold Heavy Armor** \nOR \n**CC Silver Heavy Armor:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Heavy Armor \n1 x Silver Spirit",
-	"/wiki/Valerie": "**Gold Mage** \nOR \n**CC Silver Mage:** \n1 x Iron Soldier \n1 x Iron Mage \n1 x Silver Mage \n1 x Silver Spirit",
-	"/wiki/Niel" :"**Gold Angel** \nOR \n**CC Silver Angel:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Angel \n1 x Silver Spirit",
-	"/wiki/Daniela" :"**Gold Archer** \nOR \n**CC Silver Bandit:** \n2 x Iron Archers \n1 x Silver Archer \n1 x Silver Spirit",
-	"/wiki/Eunice" :"**Gold Bandit** \nOR \n**CC Silver Bandit:** \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Bandit \n1 x Silver Spirit",
-	"/wiki/Elaine" :"**Gold Valkyrie** \nOR \n**CC Silver Valkyrie**: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Valkyrie \n1 x Silver Spirit",
-	"/wiki/Alissa" :"**Gold Healer** \nOR \n**CC Silver Healer:** \n1 x Iron Archer \n1 x Iron Mage \n1 x Silver Healer \n1 x Silver Spirit",
-	"/wiki/Saizou" :"**Gold Ninja** \nOR \n**CC Silver Ninja:** \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Ninja \n1 x Silver Spirit",
-	"/wiki/Calliope" :"**Gold Witch** \nOR \n**CC Silver Witch:** \n1 x Iron Archer \n1 x Iron Mage \n1 x Silver Witch \n1 x Silver Spirit",
-	"/wiki/Fudou" :"**Gold Bishop** \nOR \n**CC Silver Bishop:** \n2 x Iron Mages \n1 x Silver Healer \n1 x Silver Spirit",
-	"/wiki/Cecily" :"**Gold Rogue** \nOR \n**CC Silver Rouge:** \n1 x Iron Soldier \n1 x Iron Archer \n1 x Silver Rouge \n1 x Silver Spirit",
-	"/wiki/Sanosuke" :"**Gold Samurai** \nOR \n**CC Silver Samurai:** \n1 x Iron Soldier \n1 x Iron Mage \n1 x Silver Samurai \n1 x Silver Spirit",
-	"/wiki/Percis" :"**Gold Gunner** \nOR \n**CC Silver Gunner:** \n1 x Iron Soldier \n1 x Iron Archer, \n1 x Silver Gunner \n1 x Silver Spirit",
-	"/wiki/Ricardo" :"**Gold Magic Fencer** \nOR \n**CC Silver Magic Fencer:** \n1 x Iron Soldier \n1 x Iron Mage \n1 x Silver Magic Fencer \n1 x Silver Spirit",
-	"/wiki/Khuri" :"**Gold Vampire Hunter** \nOR \n**CC Silver Vampire Hunter:** \n2 x Iron Archers \n1 x Silver Vampire Hunter \n1 x Silver Spirit",
-	"/wiki/Giovanni" :"**Gold Pirate** \nOR \n**CC Silver Pirate:** \n1 x Iron Archer \n1 x Iron Bandit \n1 x Silver Pirate \n1 x Silver Spirit",
-	"/wiki/Dan" :"**Gold Monk** \nOR \n**CC Silver Monk:** \n1 x Iron Soldier \n1 x Iron Archer \n1 x Silver Monk \n1 x Silver Spirit",
-	"/wiki/Ertel" :"**Gold Priest Warrior** \nOR \n**CC Silver Priest Warrior:** \n1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Priest Warrior \n1 x Silver Spirit",
-	"/wiki/Gadoras" :"**Gold Dragon Soldier** \nOR** \nCC Silver Dragon Soldier:** \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Silver Spirit"
+	"/wiki/Asar": "**Gold Soldie**r \nOR \n**CC Silver Soldier**",
+	"/wiki/Leeanne": "**Gold Heavy Armor** \nOR \n**CC Silver Heavy Armor**",
+	"/wiki/Valerie": "**Gold Mage** \nOR \n**CC Silver Mage**",
+	"/wiki/Niel" :"**Gold Angel** \nOR \n**CC Silver Angel**",
+	"/wiki/Daniela" :"**Gold Archer** \nOR \n**CC Silver Bandit**",
+	"/wiki/Eunice" :"**Gold Bandit** \nOR \n**CC Silver Bandit**",
+	"/wiki/Elaine" :"**Gold Valkyrie** \nOR \n**CC Silver Valkyrie**",
+	"/wiki/Alissa" :"**Gold Healer** \nOR \n**CC Silver Healer**",
+	"/wiki/Saizou" :"**Gold Ninja** \nOR \n**CC Silver Ninja**",
+	"/wiki/Calliope" :"**Gold Witch** \nOR \n**CC Silver Witch**",
+	"/wiki/Fudou" :"**Gold Bishop** \nOR \n**CC Silver Bishop**",
+	"/wiki/Cecily" :"**Gold Rogue** \nOR \n**CC Silver Rouge**",
+	"/wiki/Sanosuke" :"**Gold Samurai** \nOR \n**CC Silver Samurai**",
+	"/wiki/Percis" :"**Gold Gunner** \nOR \n**CC Silver Gunner**",
+	"/wiki/Ricardo" :"**Gold Magic Fencer** \nOR \n**CC Silver Magic Fencer**",
+	"/wiki/Khuri" :"**Gold Vampire Hunter** \nOR \n**CC Silver Vampire Hunter**",
+	"/wiki/Giovanni" :"**Gold Pirate** \nOR \n**CC Silver Pirate**",
+	"/wiki/Dan" :"**Gold Monk** \nOR \n**CC Silver Monk**",
+	"/wiki/Ertel" :"**Gold Priest Warrior** \nOR \n**CC Silver Priest Warrior**",
+	"/wiki/Gadoras" :"**Gold Dragon Soldier** \nOR** \nCC Silver Dragon Soldier**"
+}
+var aw1d = {
+	"/wiki/Asar": "1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Soldier \n1 x Silver Spirit",
+	"/wiki/Leeanne": "1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Heavy Armor \n1 x Silver Spirit",
+	"/wiki/Valerie": "1 x Iron Soldier \n1 x Iron Mage \n1 x Silver Mage \n1 x Silver Spirit",
+	"/wiki/Niel" :"1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Angel \n1 x Silver Spirit",
+	"/wiki/Daniela" :"2 x Iron Archers \n1 x Silver Archer \n1 x Silver Spirit",
+	"/wiki/Eunice" :"1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Bandit \n1 x Silver Spirit",
+	"/wiki/Elaine" :"1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Valkyrie \n1 x Silver Spirit",
+	"/wiki/Alissa" :"1 x Iron Archer \n1 x Iron Mage \n1 x Silver Healer \n1 x Silver Spirit",
+	"/wiki/Saizou" :"1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Ninja \n1 x Silver Spirit",
+	"/wiki/Calliope" :"1 x Iron Archer \n1 x Iron Mage \n1 x Silver Witch \n1 x Silver Spirit",
+	"/wiki/Fudou" :"2 x Iron Mages \n1 x Silver Healer \n1 x Silver Spirit",
+	"/wiki/Cecily" :"1 x Iron Soldier \n1 x Iron Archer \n1 x Silver Rouge \n1 x Silver Spirit",
+	"/wiki/Sanosuke" :"1 x Iron Soldier \n1 x Iron Mage \n1 x Silver Samurai \n1 x Silver Spirit",
+	"/wiki/Percis" :"1 x Iron Soldier \n1 x Iron Archer, \n1 x Silver Gunner \n1 x Silver Spirit",
+	"/wiki/Ricardo" :"1 x Iron Soldier \n1 x Iron Mage \n1 x Silver Magic Fencer \n1 x Silver Spirit",
+	"/wiki/Khuri" :"2 x Iron Archers \n1 x Silver Vampire Hunter \n1 x Silver Spirit",
+	"/wiki/Giovanni" :"1 x Iron Archer \n1 x Iron Bandit \n1 x Silver Pirate \n1 x Silver Spirit",
+	"/wiki/Dan" :"1 x Iron Soldier \n1 x Iron Archer \n1 x Silver Monk \n1 x Silver Spirit",
+	"/wiki/Ertel" :"1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Priest Warrior \n1 x Silver Spirit",
+	"/wiki/Gadoras" :"1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Heavy Armor \n1 x Silver Spirit"
 }
 var awo = {
 	"Sniper Orb": "Sniper (Mon)",
@@ -246,7 +268,6 @@ request(link, function(err, resp, html) {
 						parts[i] = parts[i].slice(5).toTitleCase()
 						parts[i] = na(parts[i])
 						}
-					message.channel.send()
 					let orb1 = awo[parts[0]]
 					let orb2
 					if (len == 2) {
@@ -295,7 +316,49 @@ request(link, function(err, resp, html) {
 							embedaw.addField("Orbs", orb1 + " x 3 \n" + orb2 + " x 3", true)
 						}
 					}
-					message.channel.send(embedaw)
+					pages.push(embedaw)
+					let embedawd = new Discord.RichEmbed();
+					embedawd.setColor('BLUE')
+					embedawd.setTitle("Detailed Materials for CC Silvers")
+					embedawd.setThumbnail(awimg)
+					embedawd.addField("Material 1", aw1d[mat1], true)
+					embedawd.addField("Material 2", aw1d[mat2], true)
+					embedawd.addField("Material 3", aw1d[mat3], true)		
+					pages.push(embedawd)
+					let embed = new Discord.RichEmbed();
+					embed = pages[0]
+					embed.setFooter('Page ' + page + ' of ' + pages.length);
+					message.channel.send(embed).then(msg => {
+
+						msg.react('⬅').then( r => {
+							msg.react('➡')
+
+							// Filters
+							const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+							const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+
+							const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+							const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+
+							backwards.on('collect', r => {
+								r.remove(r.users.filter(u => !u.bot).first());
+								if (page === 1) return;
+								page--;
+								embed = pages[page-1];
+								embed.setFooter('Page ' + page + ' of ' + pages.length);
+								msg.edit(embed)
+							})
+
+							forwards.on('collect', r => {
+								r.remove(r.users.filter(u => !u.bot).first());
+								if (page === pages.length) return;
+								page++;
+								embed = pages[page-1];
+								embed.setFooter('Page ' + page + ' of ' + pages.length);
+								msg.edit(embed)
+							})
+						})
+					})
 				}
 			})
 		}
@@ -406,6 +469,14 @@ request(link, function(err, resp, html) {
 								}
 							}
 							pages.push(embedaw)
+							let embedawd = new Discord.RichEmbed();
+							embedawd.setColor('BLUE')
+							embedawd.setTitle("Detailed Materials for CC Silvers")
+							embedawd.setThumbnail(awimg)
+							embedawd.addField("Material 1", aw1d[mat1], true)
+							embedawd.addField("Material 2", aw1d[mat2], true)
+							embedawd.addField("Material 3", aw1d[mat3], true)		
+							pages.push(embedawd)
 							let embed = new Discord.RichEmbed();
 							embed = pages[0]
 							embed.setFooter('Page ' + page + ' of ' + pages.length);
