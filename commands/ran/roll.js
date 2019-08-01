@@ -14,7 +14,19 @@ var igold = require('../../library/igold.js').igold;
 var isil = require('../../library/isil.js').isil;
 var pugblack = require('../../library/pugblack.js').pugblack;
 var pugplat = require('../../library/pugplat.js').pugplat;
+var bannerblack = require('../../library/bannerblack.js').bannerblack;
+var bannerplat = require('../../library/bannerplat.js').bannerplat;
+var bannergold = require('../../library/bannergold.js').bannergold;
+var bannersil = require('../../library/bannersil.js').bannersil;
 var urlencode = require('urlencode');
+
+var b1fb = ['Sousou' , 'Ryofu'];
+var b1fp = ['Bachou'];
+var b1fg = [];
+var b2fb = ['Dina' , 'Miyabi'];
+var b2fp = ['Shelt'];
+var b2fg = [];
+
 
 class RanRoll extends commando.Command {
     constructor(client) {
@@ -137,6 +149,124 @@ class RanRoll extends commando.Command {
 			else {
 				var ind = random.int(1, size_dict(sil))
 				var unit = sil[ind]
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+				embed.setColor('WHITE')
+			}
+			var img
+			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+			request(link, function(err, resp, html) {
+				if (!err) {
+					const $ = cheerio.load(html);
+					img = $('.fullImageLink a').attr('href')
+					embed.setImage(img)
+					message.channel.send(embed)
+				}
+			})
+		}
+	    	else if (pool == "banner 1" || pool == "b1" || pool == "banner1") {
+			embed.setTitle("Gacha Roll Result")
+			var rar = random.int(1, 100)
+			if (rar < 4) {
+				var fea = random.int(1, 10 + 7*b1fb.length)
+				if (fea < 11) {
+					var ind = random.int(1, size_dict(bannerblack))
+					var unit = bannerblack[ind]
+				}
+				else {
+					var ind = random.int(1, b1fb.length) - 1
+					var unit = b1fb[ind]
+				}
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+				embed.setColor([95, 64, 0])
+			}
+			else if (rar < 14) {
+				var fea = random.int(1, 10 + 7*b1fp.length)
+				if (fea < 11) {
+					var ind = random.int(1, size_dict(bannerplat))
+					var unit = bannerplat[ind]
+				}
+				else {
+					var ind = random.int(1, b1fp.length) - 1
+					var unit = b1fp[ind]
+				}
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+				embed.setColor('GREEN')
+			}
+			else if (rar < 64) {
+				var fea = random.int(1, 10 + 7*b1fg.length)
+				if (fea < 11) {
+					var ind = random.int(1, size_dict(bannergold))
+					var unit = bannergold[ind]
+				}
+				else {
+					var ind = random.int(1, b1fg.length) - 1
+					var unit = b1fg[ind]
+				}
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+				embed.setColor('GOLD')
+			}
+			else {
+				var ind = random.int(1, size_dict(bannersil))
+				var unit = bannersil[ind]
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+				embed.setColor('WHITE')
+			}
+			var img
+			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+			request(link, function(err, resp, html) {
+				if (!err) {
+					const $ = cheerio.load(html);
+					img = $('.fullImageLink a').attr('href')
+					embed.setImage(img)
+					message.channel.send(embed)
+				}
+			})
+		}
+	    	else if (pool == "banner 2" || pool == "b2" || pool == "banner2") {
+			embed.setTitle("Gacha Roll Result")
+			var rar = random.int(1, 100)
+			if (rar < 4) {
+				var fea = random.int(1, 10 + 7*b2fb.length)
+				if (fea < 11) {
+					var ind = random.int(1, size_dict(bannerblack))
+					var unit = bannerblack[ind]
+				}
+				else {
+					var ind = random.int(1, b2fb.length) - 1
+					var unit = b1fb[ind]
+				}
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+				embed.setColor([95, 64, 0])
+			}
+			else if (rar < 14) {
+				var fea = random.int(1, 10 + 7*b2fp.length)
+				if (fea < 11) {
+					var ind = random.int(1, size_dict(bannerplat))
+					var unit = bannerplat[ind]
+				}
+				else {
+					var ind = random.int(1, b2fp.length) - 1
+					var unit = b1fp[ind]
+				}
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+				embed.setColor('GREEN')
+			}
+			else if (rar < 64) {
+				var fea = random.int(1, 10 + 7*b2fg.length)
+				if (fea < 11) {
+					var ind = random.int(1, size_dict(bannergold))
+					var unit = bannergold[ind]
+				}
+				else {
+					var ind = random.int(1, b2fg.length) - 1
+					var unit = b1fg[ind]
+				}
+				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+				embed.setColor('GOLD')
+			}
+			else {
+				var ind = random.int(1, size_dict(bannersil))
+				var unit = bannersil[ind]
 				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
 				embed.setColor('WHITE')
 			}
