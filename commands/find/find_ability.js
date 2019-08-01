@@ -80,7 +80,7 @@ request(link, function(err, resp, html) {
     if (silver) {
       output = $('.c2.numbers').first().text();
       if (output) {
-        output = $('.c2.numbers td:nth-child(8)').first().html();
+        output = $('.c2.numbers td:last-child').first().html();
         aff = na(output);
         if (aff != "N/A") {
           check = true;
