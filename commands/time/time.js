@@ -96,8 +96,13 @@ class TTime extends commando.Command {
 		}
 		else {
 			m5 = m5.add(1, 'months')
-				var dif5 = m5.diff(m)
-				var diff5 = humanizeDuration(dif5, { units: ['d', 'h', 'm'] , round: true })
+			words5 = mm5.split(' ')
+			date5 = words5[0]
+			if (date5 != "Thu") {
+				m5 = m5.add(daynum[date5], 'days')
+			}
+			var dif5 = m5.diff(m)
+			var diff5 = humanizeDuration(dif5, { units: ['d', 'h', 'm'] , round: true })
 			
 		}
 		var embed = new Discord.RichEmbed()
