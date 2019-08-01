@@ -212,7 +212,7 @@ request(link, function(err, resp, html) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			if (na(output) == "Samurai" || na(output) == "Heavy Artillery") {ccname = na(output)}
 			else if (na(output) == "Intermediate Dragon Soldier"){ccname = "Dragon Soldiers"}
-			else if (na(output) == "Priestess Warriors"){ccname = "Priest Warriors"}
+			else if (na(output) == "Priestess Warrior"){ccname = "Priest Warriors"}
 			else {ccname = pluralize.plural(na(output))}
 			
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + urlencode(ccname);
@@ -367,7 +367,7 @@ request(link, function(err, resp, html) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			if (na(output) == "Samurai" || na(output) == "Heavy Artillery") {ccname = na(output)}
 			else if (na(output) == "Intermediate Dragon Soldier"){ccname = "Dragon Soldiers"}
-			else if (na(output) == "Priestess Warriors"){ccname = "Priest Warriors"}
+			else if (na(output) == "Priestess Warrior"){ccname = "Priest Warriors"}
 			else {ccname = pluralize.plural(na(output))}
 			output = $('.c2 td:nth-child(1)').first().html();
 			if (na(output) == "Priest") {
