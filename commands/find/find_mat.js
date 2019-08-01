@@ -205,12 +205,6 @@ request(link, function(err, resp, html) {
 			words[le-2] = pluralize.plural(words[le-2])
 			awname = words.join(" ")
 		}
-		else if (na(output) == "Priest") {
-			awname = "Priestesses";
-		}
-		else if (na(output) == "Priestess Warrior Leader") {
-			awname = "Priest Warrior Leaders";
-		}
 		else if (aw) {
 			awname = pluralize.plural(na(output));
 		}
@@ -376,7 +370,13 @@ request(link, function(err, resp, html) {
 			else if (na(output) == "Priestess Warriors"){ccname = "Priest Warriors"}
 			else {ccname = pluralize.plural(na(output))}
 			output = $('.c2 td:nth-child(1)').first().html();
-			awname = pluralize.plural(na(output));
+			if (na(output) == "Priest") {
+				awname = "Priestesses";
+			}
+			else if (na(output) == "Priestess Warrior Leader") {
+				awname = "Priest Warrior Leaders";
+			}
+			else awname = pluralize.plural(na(output));
 			
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + urlencode(ccname);
 			request(link2, function(err, resp, html) {
