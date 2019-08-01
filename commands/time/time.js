@@ -95,6 +95,7 @@ class TTime extends commando.Command {
 			var diff5 = humanizeDuration(dif5, { units: ['d', 'h', 'm'] , round: true })
 		}
 		else {
+			m5 = moment(year + " " +  month + " " + "01" +" 11:00:00", 'YYYY MMM DD HH:mm:ss')
 			m5 = m5.add(1, 'months')
 			mm5 = m5.format('ddd MMM DD YYYY HH mm ss')
 			words5 = mm5.split(' ')
