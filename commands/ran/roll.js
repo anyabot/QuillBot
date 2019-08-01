@@ -233,7 +233,7 @@ class RanRoll extends commando.Command {
 				}
 				else {
 					var ind = random.int(1, b2fb.length) - 1
-					var unit = b1fb[ind]
+					var unit = b2fb[ind]
 				}
 				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 				embed.setColor([95, 64, 0])
@@ -246,7 +246,7 @@ class RanRoll extends commando.Command {
 				}
 				else {
 					var ind = random.int(1, b2fp.length) - 1
-					var unit = b1fp[ind]
+					var unit = b2fp[ind]
 				}
 				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
 				embed.setColor('GREEN')
@@ -259,7 +259,7 @@ class RanRoll extends commando.Command {
 				}
 				else {
 					var ind = random.int(1, b2fg.length) - 1
-					var unit = b1fg[ind]
+					var unit = b2fg[ind]
 				}
 				embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 				embed.setColor('GOLD')
