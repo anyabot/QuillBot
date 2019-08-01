@@ -83,7 +83,13 @@ class TTime extends commando.Command {
 		var mm4 = m4.format('ddd MMM DD YYYY HH mm ss')
 		var words4 = mm4.split(' ')
 		var date4 = words4[0]
-		var m5 = m4.add(daynum[date4], 'days')
+		var m5 = moment(year + " " +  month + " " + "01" +" 11:00:00", 'YYYY MMM DD HH:mm:ss')
+		var mm5 = m5.format('ddd MMM DD YYYY HH mm ss')
+		var words5 = mm5.split(' ')
+		var date5 = words5[0]
+		if (date5 != "Thu") {
+			m5 = m5.add(daynum[date5], 'days')
+		}
 		if (m.isBefore(m5)) {
 			var dif5 = m5.diff(m)
 			var diff5 = humanizeDuration(dif5, { round: true })
