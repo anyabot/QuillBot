@@ -48,7 +48,7 @@ var aw1 = {
 	"/wiki/Elaine" :"**Gold Valkyrie** \nOR \n**CC Silver Valkyrie**: \n1 x Iron Soldier \n1 x Iron Heavy Armor \n1 x Silver Valkyrie \n1 x Silver Spirit",
 	"/wiki/Alissa" :"**Gold Healer** \nOR \n**CC Silver Healer:** \n1 x Iron Archer \n1 x Iron Mage \n1 x Silver Healer \n1 x Silver Spirit",
 	"/wiki/Saizou" :"**Gold Ninja** \nOR \n**CC Silver Ninja:** \n1 x Iron Soldier \n1 x Iron Bandit \n1 x Silver Ninja \n1 x Silver Spirit",
-	"/wiki/Calliope" :"**Gold Witch** \nOR \n**CC Silver Witch:** \n1 x Iron Archer \n1 x Iron Mage, \n1 x Silver Witch \n1 x Silver Spirit",
+	"/wiki/Calliope" :"**Gold Witch** \nOR \n**CC Silver Witch:** \n1 x Iron Archer \n1 x Iron Mage \n1 x Silver Witch \n1 x Silver Spirit",
 	"/wiki/Fudou" :"**Gold Bishop** \nOR \n**CC Silver Bishop:** \n2 x Iron Mages \n1 x Silver Healer \n1 x Silver Spirit",
 	"/wiki/Cecily" :"**Gold Rogue** \nOR \n**CC Silver Rouge:** \n1 x Iron Soldier \n1 x Iron Archer \n1 x Silver Rouge \n1 x Silver Spirit",
 	"/wiki/Sanosuke" :"**Gold Samurai** \nOR \n**CC Silver Samurai:** \n1 x Iron Soldier \n1 x Iron Mage \n1 x Silver Samurai \n1 x Silver Spirit",
