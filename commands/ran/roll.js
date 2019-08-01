@@ -20,7 +20,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'roll',
-		aliases: ['pull', 'gacha'],
+		aliases: ['pull', 'gacha', 'draw'],
             	group: 'ran',
             	memberName: 'roll',
             	description: 'gacha stimulator',
