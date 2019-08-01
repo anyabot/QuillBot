@@ -258,7 +258,7 @@ request(link, function(err, resp, html) {
 						embedaw.addField("Material 1", aw1[mat1], true)
 						embedaw.addField("Material 2", aw1[mat2], true)
 						embedaw.addField("Material 3", aw1[mat3], true)
-						embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
+						embedaw.addField("Fairy", "**AW:** Spirit of Awakening \n(Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 					}
 					else {
 						embedaw.setTitle("AW/SAW Materials")
@@ -266,7 +266,7 @@ request(link, function(err, resp, html) {
 						embedaw.addField("Material 1", aw1[mat1], true)
 						embedaw.addField("Material 2", aw1[mat2], true)
 						embedaw.addField("Material 3", aw1[mat3], true)
-						embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
+						embedaw.addField("Fairy", "**AW:** Spirit of Awakening \n(Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 					}
 					if (gold) {
 						embedaw.addField("Money", "200,000G", true)
@@ -368,7 +368,7 @@ request(link, function(err, resp, html) {
 								embedaw.addField("Material 1", aw1[mat1], true)
 								embedaw.addField("Material 2", aw1[mat2], true)
 								embedaw.addField("Material 3", aw1[mat3], true)
-								embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
+								embedaw.addField("Fairy", "**AW:** Spirit of Awakening \n(Victoire)\n**AW2:** Spirit of Perpetual \nDarkness (Onyx)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 							}
 							else {
 								embedaw.setTitle("AW/SAW Materials")
@@ -376,7 +376,7 @@ request(link, function(err, resp, html) {
 								embedaw.addField("Material 1", aw1[mat1], true)
 								embedaw.addField("Material 2", aw1[mat2], true)
 								embedaw.addField("Material 3", aw1[mat3], true)
-								embedaw.addField("Fairy", "**AW:** Spirit of \nAwakening (Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
+								embedaw.addField("Fairy", "**AW:** Spirit of Awakening \n(Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 							}
 							if (gold) {
 								embedaw.addField("Money", "200,000G", true)
