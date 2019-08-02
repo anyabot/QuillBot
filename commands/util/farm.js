@@ -50,21 +50,21 @@ request(link, function(err, resp, html) {
 						pages.push(embed)
 						embed = "```"
 						if (sname2) {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%-2d        Silver Unit: %-18sSilver Unit 2: %s\n", ename, uname, cha, sta, sname, na(sname2))
+							let line = printf("%s\nEvent Unit: %-20sMap:%3d/%-2d        Silver Unit: %-18sSilver Unit 2: %s\n", ename, uname, cha, sta, sname, na(sname2))
 							embed = embed + line + "----------\n"
 						}
 						else {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%-2d        Silver Unit: %-18s\n", ename, uname, cha, sta, sname)
+							let line = printf("%s\nEvent Unit: %-20sMap:%3d/%-2d        Silver Unit: %-18s\n", ename, uname, cha, sta, sname)
 							embed = embed + line + "----------\n"
 						}
 					}
 					else {
 						if (sname2) {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%-2d        Silver Unit: %-18sSilver Unit 2: %s\n", ename, uname, cha, sta, sname, na(sname2))
+							let line = printf("%s\nEvent Unit: %-20sMap:%3d/%-2d        Silver Unit: %-18sSilver Unit 2: %s\n", ename, uname, cha, sta, sname, na(sname2))
 							embed = embed + line + "----------\n"
 						}
 						else {
-							let line = printf("%s\nEvent Unit: %-20sMap: %3d/%-2d        Silver Unit: %-18s\n", ename, uname, cha, sta, sname)
+							let line = printf("%s\nEvent Unit: %-20sMap:%3d/%-2d        Silver Unit: %-18s\n", ename, uname, cha, sta, sname)
 							embed = embed + line + "----------\n"
 						}
 					}
