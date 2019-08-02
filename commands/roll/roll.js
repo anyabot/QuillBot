@@ -158,7 +158,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 						message.channel.send(embed)
 					}
 				})
@@ -225,7 +225,7 @@ class RanRoll extends commando.Command {
 						}
 					}
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
 			}
 		}
@@ -302,7 +302,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 						message.channel.send(embed)
 					}
 				})
@@ -368,7 +368,7 @@ class RanRoll extends commando.Command {
 						}
 					}
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
 			}
 		}
@@ -445,7 +445,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 						message.channel.send(embed)
 					}
 				})
@@ -511,7 +511,7 @@ class RanRoll extends commando.Command {
 						}
 					}
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
 			}
 		}
@@ -630,7 +630,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 						message.channel.send(embed)
 					}
 				})
@@ -738,7 +738,7 @@ class RanRoll extends commando.Command {
 						}
 					}
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
 			}
 		}
@@ -857,7 +857,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 						message.channel.send(embed)
 					}
 				})
@@ -965,7 +965,7 @@ class RanRoll extends commando.Command {
 						}
 					}
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
 			}
 		}
