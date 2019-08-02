@@ -2,8 +2,7 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const random = require('random')
 const Keyv = require('keyv');
-require('@keyv/mongo')
-var MONGODB_URI  = 'mongodb://heroku_z1nnxhdm:j6jsrki6cihje13qtli31qm4aj@ds359077.mlab.com:59077/heroku_z1nnxhdm'
+require('@keyv/mysql')
 
 
 
@@ -23,7 +22,7 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-		  const sc = new Keyv(MONGODB_URI, { namespace: 'sc' });
+		  const sc = new Keyv(DATAB, { namespace: 'sc' });
       var usc = await sc.get(message.author.id)
       if (usc == undefined) {usc = 0}
 	    var ge = random.int(5, 10)
