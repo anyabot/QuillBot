@@ -27,10 +27,9 @@ class RanRoll extends commando.Command {
       var usc = await sc.get(message.author.id)
       if (usc == undefined) {usc = 0}
 	    var ge = random.int(5, 10)
-	    message.channel.send("You got " + ge + " SC")
       usc = usc + ge;
 	sc.set(message.author.id, usc)
-      message.channel.send("You curently have " + usc + " SC")
+      message.reply("You got " + ge + " SC\nYou curently have " + usc + " SC")
 				
 	}
 }
