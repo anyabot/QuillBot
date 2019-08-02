@@ -57,26 +57,36 @@ class RanRoll extends commando.Command {
 	    	const pityblack = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'pityblack' });
 	    pityplat.on('error', err => console.error('Keyv connection error:', err));
 	    pityblack.on('error', err => console.error('Keyv connection error:', err));
-	    	var upp = await pityplat.get(message.author.id)
+	    const sc = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'sc' });
+	    sc.on('error', err => console.error('Keyv connection error:', err));
+      var usc = sc.get(message.author.id)
+      if (usc == undefined) {usc = 0}
+	    	var upp =  pityplat.get(message.author.id)
       		if (upp == undefined) {upp = 10}
-	    	var upb = await pityblack.get(message.author.id)
+	    	var upb =  pityblack.get(message.author.id)
       		if (upb == undefined) {upb = 33}
 		var pool = text.toLowerCase();
 		var r10 = false;
+	    var scu = 5;
 		if (pool == "10" || pool == "10x" || pool == "x10") {
 			r10 = true;
 			pool = "default"
+			scu = 50;
 		}
 		else if (pool.substr(pool.length - 2) == "10") {
 			r10 = true;
 			pool = pool.slice(0, -2).trim()
+			scu = 50;
 		}
 	    	else if (pool.substr(pool.length - 3) == "x10" || pool.substr(pool.length - 3) == "10x") {
 			r10 = true;
 			pool = pool.slice(0, -3).trim()
+			scu = 50
 		}
 		var embed = new Discord.RichEmbed()
-		if (pool == "default") {
+		if (usc < scu) {message.reply("You need " + scu + " SC.\nYou only have " + usc + " SC.")}
+		else if (pool == "default") {
+			usc = usc - scu;
 			embed.setTitle("Gacha Roll Result")
 			if (!r10) {
 				if (upb == 1) {
@@ -220,6 +230,7 @@ class RanRoll extends commando.Command {
 			}
 		}
 	    else if (pool == "imperial" || pool == "white empire") {
+		    usc = usc - scu;
 			embed.setTitle("Imperial Gacha Roll Result")
 			if (!r10) {
 				if (upb == 1) {
@@ -362,6 +373,7 @@ class RanRoll extends commando.Command {
 			}
 		}
 		else if (pool == "pug" || pool == "pick-up" || pool == "pickup") {
+			usc = usc - scu;
 			embed.setTitle("Pick-Up Gacha Roll Result")
 			if (!r10) {
 				if (upb == 1) {
@@ -504,6 +516,7 @@ class RanRoll extends commando.Command {
 			}
 		}
 		else if (pool == "banner 1" || pool == "b1" || pool == "banner1" || pool == "preminum 1") {
+			usc = usc - scu;
 			embed.setTitle("Banner 1 Gacha Roll Result")
 			if (!r10) {
 				if (upb == 1) {
@@ -730,6 +743,7 @@ class RanRoll extends commando.Command {
 			}
 		}
 	    else if (pool == "banner 2" || pool == "b2" || pool == "banner2" || pool == "preminum 2") {
+		    usc = usc - scu;
 			embed.setTitle("Banner 2 Gacha Roll Result")
 			if (!r10) {
 				if (upb == 1) {
@@ -958,6 +972,7 @@ class RanRoll extends commando.Command {
 		else (message.channel.send("Wrong Input"))
 		await pityplat.set(message.author.id, upp)
 		await pityblack.set(message.author.id, upb)
+	    await sc.set(message.author.id, usc)
 	}
 }
 function size_dict(d){
