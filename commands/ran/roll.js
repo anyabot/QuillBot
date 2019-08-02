@@ -19,6 +19,12 @@ var bannerplat = require('../../library/bannerplat.js').bannerplat;
 var bannergold = require('../../library/bannergold.js').bannergold;
 var bannersil = require('../../library/bannersil.js').bannersil;
 var urlencode = require('urlencode');
+const Keyv = require('keyv');
+require('@keyv/mysql')
+
+
+
+
 
 var b1fb = ['Sousou' , 'Ryofu'];
 var b1fp = ['Bachou'];
@@ -47,6 +53,12 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, { text }) {
+	    	const pityplat = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'pityplat' });
+	    	const pityblack = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'pityblack' });
+	    	var upp = await pityplat.get(message.author.id)
+      		if (upp == undefined) {upp = 10}
+	    	var upb = await pityblack.get(message.author.id)
+      		if (upb == undefined) {upb = 33}
 		var pool = text.toLowerCase();
 		var r10 = false;
 		if (pool == "10" || pool == "10x" || pool == "x10") {
@@ -71,24 +83,32 @@ class RanRoll extends commando.Command {
 					var unit = black[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 					embed.setColor([95, 64, 0])
+					if (upp > 1) { upp = upp -1}
+					upb = 33
 				}
 				else if (rar < 14) {
 					var ind = random.int(1, size_dict(plat))
 					var unit = plat[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
 					embed.setColor('GREEN')
+					upp = 10
+					upb = upb - 1;
 				}
 				else if (rar < 64) {
 					var ind = random.int(1, size_dict(gold))
 					var unit = gold[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 					embed.setColor('GOLD')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				else {
 					var ind = random.int(1, size_dict(sil))
 					var unit = sil[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
 					embed.setColor('WHITE')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
@@ -97,6 +117,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 						message.channel.send(embed)
 					}
 				})
@@ -111,23 +132,32 @@ class RanRoll extends commando.Command {
 						var ind = random.int(1, size_dict(black))
 						var unit = black[ind]
 						embed.addField("Roll " + i, unit + " (6*)", true)
+						if (upp > 1) { upp = upp -1}
+					upb = 33
 					}
 					else if (rar < 14) {
 						var ind = random.int(1, size_dict(plat))
 						var unit = plat[ind]
 						embed.addField("Roll " + i, unit + " (5*)", true)
+						upp = 10
+					upb = upb - 1;
 					}
 					else if (rar < 64) {
 						var ind = random.int(1, size_dict(gold))
 						var unit = gold[ind]
 						embed.addField("Roll " + i, unit + " (4*)", true)
+						upb = upb - 1;
+						upp = upp -1;
 					}
 					else {
 						var ind = random.int(1, size_dict(sil))
 						var unit = sil[ind]
 						embed.addField("Roll " + i, unit + " (3*)", true)
+						upb = upb - 1;
+						upp = upp -1;
 					}
 				}
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 				message.channel.send(embed)
 			}
 		}
@@ -140,24 +170,32 @@ class RanRoll extends commando.Command {
 					var unit = iblack[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 					embed.setColor([95, 64, 0])
+					if (upp > 1) { upp = upp -1}
+					upb = 33
 				}
 				else if (rar < 14) {
 					var ind = random.int(1, size_dict(iplat))
 					var unit = iplat[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
 					embed.setColor('GREEN')
+					upp = 10
+					upb = upb - 1;
 				}
 				else if (rar < 64) {
 					var ind = random.int(1, size_dict(igold))
 					var unit = igold[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 					embed.setColor('GOLD')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				else {
 					var ind = random.int(1, size_dict(isil))
 					var unit = isil[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
 					embed.setColor('WHITE')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
@@ -166,6 +204,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 						message.channel.send(embed)
 					}
 				})
@@ -180,23 +219,32 @@ class RanRoll extends commando.Command {
 						var ind = random.int(1, size_dict(iblack))
 						var unit = iblack[ind]
 						embed.addField("Roll " + i, unit + " (6*)", true)
+						if (upp > 1) { upp = upp -1}
+					upb = 33
 					}
 					else if (rar < 14) {
 						var ind = random.int(1, size_dict(iplat))
 						var unit = iplat[ind]
 						embed.addField("Roll " + i, unit + " (5*)", true)
+						upp = 10
+					upb = upb - 1;
 					}
 					else if (rar < 64) {
 						var ind = random.int(1, size_dict(igold))
 						var unit = igold[ind]
 						embed.addField("Roll " + i, unit + " (4*)", true)
+						upb = upb - 1;
+					upp = upp -1;
 					}
 					else {
 						var ind = random.int(1, size_dict(isil))
 						var unit = isil[ind]
 						embed.addField("Roll " + i, unit + " (3*)", true)
+						upb = upb - 1;
+					upp = upp -1;
 					}
 				}
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 				message.channel.send(embed)
 			}
 		}
@@ -209,24 +257,32 @@ class RanRoll extends commando.Command {
 					var unit = pugblack[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 					embed.setColor([95, 64, 0])
+					if (upp > 1) { upp = upp -1}
+					upb = 33
 				}
 				else if (rar < 14) {
 					var ind = random.int(1, size_dict(pugplat))
 					var unit = pugplat[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
 					embed.setColor('GREEN')
+					upp = 10
+					upb = upb - 1;
 				}
 				else if (rar < 64) {
 					var ind = random.int(1, size_dict(gold))
 					var unit = gold[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 					embed.setColor('GOLD')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				else {
 					var ind = random.int(1, size_dict(sil))
 					var unit = sil[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
 					embed.setColor('WHITE')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
@@ -235,6 +291,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 						message.channel.send(embed)
 					}
 				})
@@ -249,23 +306,32 @@ class RanRoll extends commando.Command {
 						var ind = random.int(1, size_dict(pugblack))
 						var unit = pugblack[ind]
 						embed.addField("Roll " + i, unit + " (6*)", true)
+						if (upp > 1) { upp = upp -1}
+					upb = 33
 					}
 					else if (rar < 14) {
 						var ind = random.int(1, size_dict(pugplat))
 						var unit = pugplat[ind]
 						embed.addField("Roll " + i, unit + " (5*)", true)
+						upp = 10
+					upb = upb - 1;
 					}
 					else if (rar < 64) {
 						var ind = random.int(1, size_dict(gold))
 						var unit = gold[ind]
 						embed.addField("Roll " + i, unit + " (4*)", true)
+						upb = upb - 1;
+					upp = upp -1;
 					}
 					else {
 						var ind = random.int(1, size_dict(sil))
 						var unit = sil[ind]
 						embed.addField("Roll " + i, unit + " (3*)", true)
+						upb = upb - 1;
+						upp = upp -1;
 					}
 				}
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 				message.channel.send(embed)
 			}
 		}
@@ -285,6 +351,8 @@ class RanRoll extends commando.Command {
 					}
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 					embed.setColor([95, 64, 0])
+					if (upp > 1) { upp = upp -1}
+					upb = 33
 				}
 				else if (rar < 14) {
 					var fea = random.int(1, 10 + 7*b1fp.length)
@@ -298,6 +366,8 @@ class RanRoll extends commando.Command {
 					}
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
 					embed.setColor('GREEN')
+					upp = 10
+					upb = upb - 1;
 				}
 				else if (rar < 64) {
 					var fea = random.int(1, 10 + 7*b1fg.length)
@@ -311,12 +381,16 @@ class RanRoll extends commando.Command {
 					}
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 					embed.setColor('GOLD')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				else {
 					var ind = random.int(1, size_dict(bannersil))
 					var unit = bannersil[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
 					embed.setColor('WHITE')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
@@ -325,6 +399,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 						message.channel.send(embed)
 					}
 				})
@@ -346,6 +421,8 @@ class RanRoll extends commando.Command {
 							var unit = b1fb[ind]
 						}
 						embed.addField("Roll " + i, unit + " (6*)", true)
+						if (upp > 1) { upp = upp -1}
+					upb = 33
 					}
 					else if (rar < 14) {
 						var fea = random.int(1, 10 + 7*b1fp.length)
@@ -358,6 +435,8 @@ class RanRoll extends commando.Command {
 							var unit = b1fp[ind]
 						}
 						embed.addField("Roll " + i, unit + " (5*)", true)
+						upp = 10
+					upb = upb - 1;
 					}
 					else if (rar < 64) {
 						var fea = random.int(1, 10 + 7*b1fg.length)
@@ -370,13 +449,18 @@ class RanRoll extends commando.Command {
 							var unit = b1fg[ind]
 						}
 						embed.addField("Roll " + i, unit + " (4*)", true)
+						upb = upb - 1;
+					upp = upp -1;
 					}
 					else {
 						var ind = random.int(1, size_dict(bannersil))
 						var unit = bannersil[ind]
 						embed.addField("Roll " + i, unit + " (3*)", true)
+						upb = upb - 1;
+					upp = upp -1;
 					}
 				}
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 				message.channel.send(embed)
 			}
 		}
@@ -396,6 +480,8 @@ class RanRoll extends commando.Command {
 					}
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 					embed.setColor([95, 64, 0])
+					if (upp > 1) { upp = upp -1}
+					upb = 33
 				}
 				else if (rar < 14) {
 					var fea = random.int(1, 10 + 7*b2fp.length)
@@ -409,6 +495,8 @@ class RanRoll extends commando.Command {
 					}
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
 					embed.setColor('GREEN')
+					upp = 10
+					upb = upb - 1;
 				}
 				else if (rar < 64) {
 					var fea = random.int(1, 10 + 7*b2fg.length)
@@ -422,12 +510,16 @@ class RanRoll extends commando.Command {
 					}
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 					embed.setColor('GOLD')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				else {
 					var ind = random.int(1, size_dict(bannersil))
 					var unit = bannersil[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
 					embed.setColor('WHITE')
+					upb = upb - 1;
+					upp = upp -1;
 				}
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
@@ -436,6 +528,7 @@ class RanRoll extends commando.Command {
 						const $ = cheerio.load(html);
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 						message.channel.send(embed)
 					}
 				})
@@ -457,6 +550,8 @@ class RanRoll extends commando.Command {
 							var unit = b2fb[ind]
 						}
 						embed.addField("Roll " + i, unit + " (6*)", true)
+						if (upp > 1) { upp = upp -1}
+					upb = 33
 					}
 					else if (rar < 14) {
 						var fea = random.int(1, 10 + 7*b2fp.length)
@@ -469,6 +564,8 @@ class RanRoll extends commando.Command {
 							var unit = b2fp[ind]
 						}
 						embed.addField("Roll " + i, unit + " (5*)", true)
+						upp = 10
+					upb = upb - 1;
 					}
 					else if (rar < 64) {
 						var fea = random.int(1, 10 + 7*b2fg.length)
@@ -481,17 +578,24 @@ class RanRoll extends commando.Command {
 							var unit = b2fg[ind]
 						}
 						embed.addField("Roll " + i, unit + " (4*)", true)
+						upb = upb - 1;
+					upp = upp -1;
 					}
 					else {
 						var ind = random.int(1, size_dict(bannersil))
 						var unit = bannersil[ind]
 						embed.addField("Roll " + i, unit + " (3*)", true)
+						upb = upb - 1;
+					upp = upp -1;
 					}
 				}
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb);
 				message.channel.send(embed)
 			}
 		}
 		else (message.channel.send("Wrong Input"))
+		pityplat.set(message.author.id, upp)
+		pityblack.set(message.author.id, upb)
 	}
 }
 function size_dict(d){
