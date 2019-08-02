@@ -23,7 +23,7 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-		  const sc = new Keyv(MONGODB_URI, { namespace: 'users' });
+		  const sc = new Keyv(MONGODB_URI, { namespace: 'sc' });
       var usc = await sc.get(message.author.id)
       if (usc == undefined) {usc = 0}
 	    var ge = random.int(5, 10)
