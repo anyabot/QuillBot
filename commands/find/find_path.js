@@ -18,11 +18,16 @@ class FindPath extends commando.Command {
             memberName: 'path',
             description: 'find all classes of an unit',
 		examples: ['&path quill'],
+        args: [{
+		    key: 'text',
+			prompt: 'What unit do you want to know about?',
+		    type: 'string'
+		}]
         });
     }
 
-    async run(message, input) {
-        var unit = input.toLowerCase().toTitleCase();
+    async run(message, { text }) {
+        var unit = text.toLowerCase().toTitleCase();
 	    var np = unit.split(' ');
 	    var npl = np.length;
 	    if (npl >= 2) {
