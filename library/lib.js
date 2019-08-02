@@ -45,6 +45,7 @@ var name = {
     'Mmm' : 'Quill',
     'Banjo Cat': 'Koharu',
     'Nezha': 'Nataku',
+	'Liese' : 'Lieselotte',
     'Banana' : 'Nanaly',
     'fAa' : 'Faa',
     'Elizabeth 【7sins】': 'Elizabeth 【7Sins】',
