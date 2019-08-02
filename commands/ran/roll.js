@@ -55,6 +55,8 @@ class RanRoll extends commando.Command {
     async run(message, { text }) {
 	    	const pityplat = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'pityplat' });
 	    	const pityblack = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'pityblack' });
+	    pityplat.on('error', err => console.error('Keyv connection error:', err));
+	    pityblack.on('error', err => console.error('Keyv connection error:', err));
 	    	var upp = await pityplat.get(message.author.id)
       		if (upp == undefined) {upp = 10}
 	    	var upb = await pityblack.get(message.author.id)
