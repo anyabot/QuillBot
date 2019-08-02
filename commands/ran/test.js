@@ -15,9 +15,9 @@ class RanRoll extends commando.Command {
             	memberName: 'credit',
             	description: 'get free sc for the gacha stimulator once every 30 mins',
 		throttling: {
-			usages: 1,
-			duration: 1800
-		    },
+		usages: 2,
+		duration: 1800,
+	},
 		examples: ['&credit']
         });
     }
