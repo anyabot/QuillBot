@@ -25,11 +25,16 @@ class FindStat extends commando.Command {
             memberName: 'stat',
             description: 'find stats of an unit',
 		examples: ['&stat quill'],
+        args: [{
+		    key: 'text',
+			prompt: 'What unit do you want to know about?',
+		    type: 'string'
+		}]
         });
     }
 
-    async run(message, input) {
-        var unit = input.toLowerCase().toTitleCase();
+    async run(message, { text }) {
+        var unit = text.toLowerCase().toTitleCase();
 	    var np = unit.split(' ');
 	    var npl = np.length;
 	    if (npl >= 2) {
