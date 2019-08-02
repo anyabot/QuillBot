@@ -33,6 +33,7 @@ class RanRoll extends commando.Command {
       var usc = await sc.get(message.author.id)
       if (usc == undefined) {usc = 0}
       usc = usc +3;
+	    sc.set(message.author.id, usc)
       message.channel.send(usc)
 				
 	}
