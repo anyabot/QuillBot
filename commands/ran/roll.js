@@ -49,11 +49,15 @@ class RanRoll extends commando.Command {
     async run(message, { text }) {
 		var pool = text.toLowerCase();
 		var r10 = false;
-		if (pool == "10") {
+		if (pool == "10" || pool == "10x" || pool == "x10") {
 			r10 = true;
 			pool = "default"
 		}
-		else if (pool.substr(pool.length - 3) == "10") {
+		else if (pool.substr(pool.length - 2) == "10") {
+			r10 = true;
+			pool = pool.slice(0, -2).trim()
+		}
+	    	else if (pool.substr(pool.length - 3) == "x10" || pool.substr(pool.length - 3) == "10x") {
 			r10 = true;
 			pool = pool.slice(0, -3).trim()
 		}
