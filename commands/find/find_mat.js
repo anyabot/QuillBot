@@ -163,11 +163,16 @@ class FindMat extends commando.Command {
             	memberName: 'mat',
             	description: 'find required materials to CC and AW an unit',
 		examples: ['&mat quill'],
+		args: [{
+		    key: 'text',
+			prompt: 'What unit do you want to know about?',
+		    type: 'string'
+		}]
         });
     }
 
-    async run(message, input) {
-        var unit = input.toLowerCase().toTitleCase();
+    async run(message, { text }) {
+        var unit = text.toLowerCase().toTitleCase();
 	    var np = unit.split(' ');
 	    var npl = np.length;
 	    if (npl >= 2) {
