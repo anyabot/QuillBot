@@ -21,8 +21,10 @@ class UtilFarm extends commando.Command {
 
     async run(message, input) {
         var cname = input.toLowerCase().toTitleCase();
+	    console.log(cname)
 	if (cname == "Dragon Soldier") {cname = "Intermediate Dragon Soldier"}
 	if (cname == "Priestess Warrior" || cname == "Priestess Warriors") {cname == "Priest Warrior"}
+	    console.log(cname)
         var link = "https://aigis.fandom.com/wiki/Daily_Revivals"
 
 request(link, function(err, resp, html) {
