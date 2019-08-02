@@ -84,7 +84,7 @@ class RanRoll extends commando.Command {
 			scu = 50
 		}
 		var embed = new Discord.RichEmbed()
-		if (usc < scu) {message.reply("You need " + scu + " SC.\nYou only have " + usc + " SC.")}
+		if (usc < scu) {message.reply("You need " + scu + " SC\nYou only have " + usc + " SC")}
 		else if (pool == "default") {
 			usc = usc - scu;
 			embed.setTitle("Gacha Roll Result")
