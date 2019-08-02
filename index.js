@@ -10,7 +10,7 @@ bot.on('ready', () => {
 bot.registry.registerGroup('find', 'Find');
 bot.registry.registerGroup('util2', 'Util')
 bot.registry.registerGroup('time', 'Time')
-bot.registry.registerGroup('ran', 'Random')
+bot.registry.registerGroup('roll', 'Roll')
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
 
