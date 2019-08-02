@@ -22,7 +22,7 @@ class UtilFarm extends commando.Command {
     async run(message, input) {
         var cname = input.toLowerCase().toTitleCase();
 	if (cname == "Dragon Soldier") {cname = "Intermediate Dragon Soldier"}
-	    else if (cname == "Priestess Warrior" || cname == "Priestess Warriors") {cname == "Priest Warrior"}
+	if (cname == "Priestess Warrior" || cname == "Priestess Warriors") {cname == "Priest Warrior"}
         var link = "https://aigis.fandom.com/wiki/Daily_Revivals"
 
 request(link, function(err, resp, html) {
@@ -34,6 +34,7 @@ request(link, function(err, resp, html) {
 		$('.mw-collapsible.mw-collapsed.wikitable').each(function(i, elem) {
 			let aaa = na($(elem).find('tr').find('th').first().text())
 			if (aaa == cname || aaa == pluralize.singular(cname)) {
+				console.log(aaa)
 				check = true;
 				let len = $(elem).find('tr').length
 				var embed = "```"
