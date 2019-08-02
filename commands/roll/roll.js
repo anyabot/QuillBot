@@ -59,11 +59,11 @@ class RanRoll extends commando.Command {
 	    pityblack.on('error', err => console.error('Keyv connection error:', err));
 	    const sc = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'sc' });
 	    sc.on('error', err => console.error('Keyv connection error:', err));
-      var usc = sc.get(message.author.id)
+      var usc = await sc.get(message.author.id)
       if (usc == undefined) {usc = 0}
-	    	var upp =  pityplat.get(message.author.id)
+	    	var upp =  await pityplat.get(message.author.id)
       		if (upp == undefined) {upp = 10}
-	    	var upb =  pityblack.get(message.author.id)
+	    	var upb =  await pityblack.get(message.author.id)
       		if (upb == undefined) {upb = 33}
 		var pool = text.toLowerCase();
 		var r10 = false;
