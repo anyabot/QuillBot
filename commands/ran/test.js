@@ -1,10 +1,6 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
-var request = require('request');
-var cheerio = require('cheerio');
-var he = require('he');
 const random = require('random')
-var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mongo')
 var MONGODB_URI  = 'mongodb://heroku_z1nnxhdm:j6jsrki6cihje13qtli31qm4aj@ds359077.mlab.com:59077/heroku_z1nnxhdm'
@@ -17,24 +13,24 @@ class RanRoll extends commando.Command {
             	name: 'credit',
             	group: 'ran',
             	memberName: 'credit',
-            	description: 'gacha stimulator',
-		examples: ['&roll'],
-		args: [{
-		    key: 'text',
-			prompt: 'What pool do you want to pull from?',
-		    type: 'string',
-		default: "default"
-		}]
+            	description: 'get free sc for the gacha stimulator once every 30 mins',
+		throttling: {
+			usages: 1,
+			duration: 1800
+		    },
+		examples: ['&credit']
         });
     }
 
-    async run(message, { text }) {
+    async run(message, input) {
 		  const sc = new Keyv(MONGODB_URI, { namespace: 'users' });
       var usc = await sc.get(message.author.id)
       if (usc == undefined) {usc = 0}
-      usc = usc +3;
-	    sc.set(message.author.id, usc)
-      message.channel.send(usc)
+	    var ge = random.int(5, 10)
+	    message.channel.send("You got " + ge + " SC")
+      usc = usc + ge;
+	sc.set(message.author.id, usc)
+      message.channel.send("You curently have " + usc + " SC")
 				
 	}
 }
