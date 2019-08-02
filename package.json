@@ -23,6 +23,7 @@
     "striptags": "^3.1.1",
     "random": "^2.1.1",
     "keyv" : "^3.1.0",
-    "@keyv/mongo" : "^1.1.0"
+    "@keyv/mongo" : "^1.1.0",
+    "@keyv/mysql" : "^1.1.4"
   }
 }
