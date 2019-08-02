@@ -22,7 +22,7 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-		  const sc = new Keyv(DATAB, { namespace: 'sc' });
+		  const sc = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'sc' });
       var usc = await sc.get(message.author.id)
       if (usc == undefined) {usc = 0}
 	    var ge = random.int(5, 10)
