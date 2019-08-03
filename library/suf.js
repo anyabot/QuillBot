@@ -10,7 +10,9 @@ var suffix = {
     'Bride' : '(Bride)',
     'Halloween' : '(Halloween)',
     'Ny' : '(New Year\'s)',
-    '(Ny)' : '(New Year\'s)'
+    '(Ny)' : '(New Year\'s)',
+    'Ss' : '(Swimsuit)',
+    '(Ss)' : '(Swimsuit)'
 }
 
 exports.suffix = suffix;
