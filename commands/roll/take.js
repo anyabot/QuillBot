@@ -41,12 +41,18 @@ class RanRoll extends commando.Command {
 			message.reply(mes)
 			collector.on('collect', msg => {
 				const ind = msg.content
-                	if (0 < ind && ind < (lastroll.length + 1) && !isNaN(ind)) {
-					ind = ind - 1;
-					ubarrack.push(ulastroll[ind])
-					message.reply("You took " + ulastroll[ind] + " to your barrack")
-					ulastroll = ulastroll.splice(ind)
-					collector.stop()
+                if (!isNaN(ind)) {
+					ind = parseInt(ind)
+					if (0 < ind && ind < (lastroll.length + 1)) {
+						ind = ind - 1;
+						ubarrack.push(ulastroll[ind])
+						message.reply("You took " + ulastroll[ind] + " to your barrack")
+						ulastroll = ulastroll.splice(ind)
+						collector.stop()
+					}
+					else {
+						message.reply("Wrong Input")
+					}
 				}
 				else if (ind.toLowerCase() == "stop") {
 					collector.stop()
