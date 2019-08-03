@@ -35,7 +35,7 @@ class RanRoll extends commando.Command {
 		else {
 		var unit = ubarrack[ind-1]
 			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
-			mes = "Do you want to remove " + unit + " from your barrack? (y/n)"
+			var mes = "Do you want to remove " + unit + " from your barrack? (y/n)"
 			message.reply(mes)
 			console.log(lastroll.length)
 			collector.on('collect', msg => {
