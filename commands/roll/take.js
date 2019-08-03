@@ -39,10 +39,10 @@ class RanRoll extends commando.Command {
 			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
 			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
 			message.reply(mes)
-			console.log(ulastroll.length)
 			collector.on('collect', msg => {
 				var ind = msg.content
                 if (!isNaN(ind)) {
+			console.log(ind)
 					ind = parseInt(ind)
 					if (0 < ind && ind < (ulastroll.length + 1)) {
 						ind = ind - 1;
