@@ -30,7 +30,7 @@ class RanRoll extends commando.Command {
 	    if (ulastroll == [] || ulastroll == null) {
 			message.reply("You have no unit to take")
 		} 
-		else if (ubarrack.length > 99) {message.reply("Your barrack is full")
+		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
 		else {
 			var mes = "Units from your last roll:"
 			for (var i = 0; i < ulastroll.length; i++) {
