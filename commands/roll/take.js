@@ -27,7 +27,7 @@ class RanRoll extends commando.Command {
 		if (ulastroll == undefined) {ulastroll = []}
 		var ubarrack = await barrack.get(message.author.id)
 		if (ubarrack == undefined) {ubarrack = []}
-	    if (ulastroll == [] || ulastroll == null || ulastroll.length == 0) {
+	    if (ulastroll == [] || ulastroll == null) {
 			message.reply("You have no unit to take")
 		} 
 		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
@@ -50,10 +50,10 @@ class RanRoll extends commando.Command {
 						ulastroll.splice(ind, 1)
 						lastroll.set(message.author.id, ulastroll)
 						barrack.set(message.author.id, ubarrack)
-						collector.stop()	
+						collector.stop()
 					}
 					else {
-						message.reply("Wrong Input")
+						message.reply("Wrong Inndex")
 					}
 				}
 				else if (ind.toLowerCase() == "stop") {
