@@ -21,6 +21,7 @@ var bannersil = require('../../library/bannersil.js').bannersil;
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
+require('@keyv/mongo')
 
 
 
@@ -53,18 +54,16 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, { text }) {
-	    	const pityplat = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'pityplat' });
-	    	const pityblack = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'pityblack' });
-	    pityplat.on('error', err => console.error('Keyv connection error:', err));
-	    pityblack.on('error', err => console.error('Keyv connection error:', err));
-	    const sc = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'sc' });
-	    sc.on('error', err => console.error('Keyv connection error:', err));
-      var usc = await sc.get(message.author.id)
-      if (usc == undefined) {usc = 0}
-	    	var upp =  await pityplat.get(message.author.id)
-      		if (upp == undefined) {upp = 10}
-	    	var upb =  await pityblack.get(message.author.id)
-      		if (upb == undefined) {upb = 33}
+	    	const user = new Keyv(process.env.MONGODB_URI, { namespace: 'user' });
+	    user.on('error', err => console.error('Keyv connection error:', err));
+	    const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
+	    lastroll.on('error', err => console.error('Keyv connection error:', err));
+      var uuser = await user.get(message.author.id)
+      var lr = []
+      if (uuser == undefined) {uuser = [0, 10, 33]}
+	    var usc = uuser[0]
+	    var upp = uuser[1]
+	    var upb = uuser[2]
 		var pool = text.toLowerCase();
 		var r10 = false;
 	    var scu = 5;
@@ -151,6 +150,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 					}
 				}
+				lr.push(unit)
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
 				request(link, function(err, resp, html) {
@@ -224,6 +224,7 @@ class RanRoll extends commando.Command {
 							upp = upp -1;
 						}
 					}
+					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
@@ -240,6 +241,7 @@ class RanRoll extends commando.Command {
 					embed.setColor([95, 64, 0])
 					if (upp > 1) { upp = upp -1}
 					upb = 33
+					lr.push(unit)
 				}
 				else if (upp == 1) {
 					var rar = random.int(1, 100)
@@ -295,6 +297,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 					}
 				}
+				lr.push(unit)
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
 				request(link, function(err, resp, html) {
@@ -367,6 +370,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 						}
 					}
+					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
@@ -438,6 +442,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 					}
 				}
+				lr.push(unit)
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
 				request(link, function(err, resp, html) {
@@ -510,6 +515,7 @@ class RanRoll extends commando.Command {
 							upp = upp -1;
 						}
 					}
+					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
@@ -623,6 +629,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 					}
 				}
+				lr.push(unit)
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
 				request(link, function(err, resp, html) {
@@ -737,6 +744,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 						}
 					}
+					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
@@ -850,6 +858,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 					}
 				}
+				lr.push(unit)
 				var img
 				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
 				request(link, function(err, resp, html) {
@@ -964,6 +973,7 @@ class RanRoll extends commando.Command {
 						upp = upp -1;
 						}
 					}
+					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 				message.channel.send(embed)
