@@ -44,7 +44,7 @@ class RanRoll extends commando.Command {
 				var ind = msg.content
                 if (!isNaN(ind)) {
 					ind = parseInt(ind)
-					if (0 < ind && ind < (lastroll.length + 1)) {
+					if (0 < ind && ind < (ulastroll.length + 1)) {
 						ind = ind - 1;
 						ubarrack.push(ulastroll[ind])
 						message.reply("You took " + ulastroll[ind] + " to your barrack")
