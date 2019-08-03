@@ -980,9 +980,9 @@ class RanRoll extends commando.Command {
 			}
 		}
 		else (message.channel.send("Wrong Input"))
-		await pityplat.set(message.author.id, upp)
-		await pityblack.set(message.author.id, upb)
-	    await sc.set(message.author.id, usc)
+	    uuser = [usc, upp, upb]
+		await user.set(message.author.id, uuser)
+		await lastroll.set(message.author.id, lr)
 	}
 }
 function size_dict(d){
