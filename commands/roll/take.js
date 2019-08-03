@@ -34,18 +34,21 @@ class RanRoll extends commando.Command {
 		else {
 			var mes = "Units from your last roll:"
 			for (var i = 0; i < ulastroll.length; i++) {
-				mes = mes + "\n" + i + ". " + ulastroll[i]
+				mes = mes + "\n" + (i + 1) + ". " + ulastroll[i]
 			}
 			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
-			mes = mes + "\nWhich unit do you want to take? (Input the index number)"
+			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
 			message.reply(mes)
 			collector.on('collect', msg => {
 				const ind = msg.content
-                if (0 < ind && ind < (lastroll.length + 1) && !isNaN(ind)) {
+                	if (0 < ind && ind < (lastroll.length + 1) && !isNaN(ind)) {
 					ind = ind - 1;
 					ubarrack.push(ulastroll[ind])
 					message.reply("You took " + ulastroll[ind] + " to your barrack")
 					ulastroll = ulastroll.splice(ind)
+					collector.stop()
+				}
+				else if (ind.toLowerCase() == "stop") {
 					collector.stop()
 				}
 				else {
