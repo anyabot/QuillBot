@@ -40,8 +40,6 @@ class RanRoll extends commando.Command {
 			collector.on('collect', msg => {
 				var re = msg.content.toLowerCase()
 				if (re == "y") {
-					ind = ind - 1;
-					ubarrack.push(ubarrack[ind])
 					message.reply("You removed " + ubarrack[ind - 1] + " from your barrack")
 					for (var i = ind - 1 ; i < ubarrack.length - 1; i++) {
 						ubarrack[i] = ubarrack[i+1]
