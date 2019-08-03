@@ -49,7 +49,9 @@ class RanRoll extends commando.Command {
 						ubarrack.push(ulastroll[ind])
 						message.reply("You took " + ulastroll[ind] + " to your barrack")
 						ulastroll = ulastroll.splice(ind)
-						collector.stop()
+						lastroll.set(message.author.id, ulastroll)
+						barrack.set(message.author.id, ubarrack)
+						collector.stop()	
 					}
 					else {
 						message.reply("Wrong Input")
@@ -63,8 +65,6 @@ class RanRoll extends commando.Command {
 				}
             })
 		}
-		await lastroll.set(message.author.id, ulastroll)
-		await barrack.set(message.author.id, ubarrack)
 	}
 }
 module.exports = RanRoll;
