@@ -48,7 +48,7 @@ class RanRoll extends commando.Command {
 						ind = ind - 1;
 						ubarrack.push(ulastroll[ind])
 						message.reply("You took " + ulastroll[ind] + " to your barrack")
-						ulastroll = ulastroll.splice(ind + 1)
+						ulastroll = ulastroll.splice(ind, 1)
 						lastroll.set(message.author.id, ulastroll)
 						barrack.set(message.author.id, ubarrack)
 						collector.stop()	
