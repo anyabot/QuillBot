@@ -23,7 +23,7 @@ class RanRoll extends commando.Command {
 		  const user = new Keyv(process.env.MONGODB_URI, { namespace: 'user' });
 	    user.on('error', err => console.error('Keyv connection error:', err));
       var uuser = await user.get(message.author.id)
-      if (uuser == undefined) {uuser = [0, 10, 33]}
+      if (uuser == undefined) {uuser = [150, 10, 33]}
 	    var usc = uuser[0]
       message.reply("You curently have " + usc + " SC")
 				
