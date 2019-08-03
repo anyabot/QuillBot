@@ -36,9 +36,10 @@ class RanRoll extends commando.Command {
 			for (var i = 0; i < ulastroll.length; i++) {
 				mes = mes + "\n" + (i + 1) + ". " + ulastroll[i]
 			}
-			const collector = message.channel.createMessageCollector( msg => msg.author.id == message.author.id, { time: 600 });
+			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
 			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
-			message.channel.send(mes)
+			message.reply(mes)
+			console.log(lastroll.length)
 			collector.on('collect', msg => {
 				var ind = msg.content
                 if (!isNaN(ind)) {
@@ -46,14 +47,14 @@ class RanRoll extends commando.Command {
 					if (0 < ind && ind < (ulastroll.length + 1)) {
 						ind = ind - 1;
 						ubarrack.push(ulastroll[ind])
-						message.channel.send("You took " + ulastroll[ind] + " to your barrack")
-						ulastroll.splice(ind, 1)
+						message.reply("You took " + ulastroll[ind] + " to your barrack")
+						ulastroll = ulastroll.splice(ind)
 						lastroll.set(message.author.id, ulastroll)
 						barrack.set(message.author.id, ubarrack)
 						collector.stop()
 					}
 					else {
-						message.reply("Wrong Inndex")
+						message.reply("Wrong Input")
 					}
 				}
 				else if (ind.toLowerCase() == "stop") {
