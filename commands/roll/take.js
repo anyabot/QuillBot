@@ -53,7 +53,6 @@ class RanRoll extends commando.Command {
 				}
 				else {
 					message.reply("Wrong Input")
-					collector.stop()
 				}
             })
 		}
