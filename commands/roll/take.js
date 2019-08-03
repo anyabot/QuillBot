@@ -14,11 +14,16 @@ class RanRoll extends commando.Command {
             	group: 'roll',
             	memberName: 'take',
             	description: 'take a unit from your previous roll to the barrack (max capacity 100 units)',
-		examples: ['&take']
+              args: [{
+		    key: 'ind',
+			prompt: 'Which unit do you want to take? (Input the index number from &lastroll)',
+		    type: 'integer'
+		}],
+		examples: ['&take 1']
         });
     }
 
-    async run(message, input) {
+    async run(message, { ind }) {
 		const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
 	    lastroll.on('error', err => console.error('Keyv connection error:', err));
 		const barrack = new Keyv(process.env.MONGODB_URI, { namespace: 'barrack' });
@@ -30,43 +35,34 @@ class RanRoll extends commando.Command {
 	    if (ulastroll == [] || ulastroll == null || ulastroll.length == 0) {
 			message.reply("You have no unit to take")
 		} 
+	    else if (ind < 1 || ind > ulastroll.length) {message.reply("Wrong Index")}
 		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
 		else {
-			var mes = "Units from your last roll:"
-			for (var i = 0; i < ulastroll.length; i++) {
-				mes = mes + "\n" + (i + 1) + ". " + ulastroll[i]
-			}
+			var unit = ulastroll[ind-1]
 			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
-			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
+			var mes = "Do you want to take " + unit + " to your barrack? (y/n)"
 			message.reply(mes)
-			console.log(lastroll.length)
 			collector.on('collect', msg => {
-				var ind = msg.content
-                if (!isNaN(ind)) {
-					ind = parseInt(ind)
-					if (0 < ind && ind < (ulastroll.length + 1)) {
-						ind = ind - 1;
-						ubarrack.push(ulastroll[ind])
-						message.reply("You took " + ulastroll[ind] + " to your barrack")
-						for (var i = ind; i < ulastroll.length - 1; i++) {
-							ulastroll[i] = ulastroll[i+1]
-						}
-						ulastroll.pop()
-						lastroll.set(message.author.id, ulastroll)
-						barrack.set(message.author.id, ubarrack)
-						collector.stop()
+				var re = msg.content.toLowerCase()
+				if (re == "y") {
+					ubarrack.push(unit)
+					message.reply("You took " + unit + " to your barrack")
+					for (var i = ind - 1; i < ulastroll.length - 1; i++) {
+						ulastroll[i] = ulastroll[i+1]
 					}
-					else {
-						message.reply("Wrong Input")
-					}
+					ulastroll.pop()
+					lastroll.set(message.author.id, ulastroll)
+					barrack.set(message.author.id, ubarrack)
+					collector.stop()
+						
 				}
-				else if (ind.toLowerCase() == "stop") {
+				else if (re == "n") {
 					collector.stop()
 				}
 				else {
 					message.reply("Wrong Input")
 				}
-            })
+			})
 		}
 	}
 }
