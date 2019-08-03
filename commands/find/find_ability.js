@@ -30,6 +30,7 @@ class FindAbility extends commando.Command {
 	    var np = unit.split(' ');
 	    var npl = np.length;
 	    if (npl >= 2) {
+		    if (name[np[0]]) {np[npl-1] = name[np[0]]}
 	    	if (suffix[np[npl-1]]) {np[npl-1] = suffix[np[npl-1]]}
 	    	if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
 			np[npl-1] = 'Year\'s)';
