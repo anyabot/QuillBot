@@ -23,7 +23,7 @@ class RanRoll extends commando.Command {
 	    barrack.on('error', err => console.error('Keyv connection error:', err));
 		var ubarrack = await barrack.get(message.author.id)
 		if (ubarrack == undefined) {ubarrack = []}
-	    if (ubarrack == [] || ubarrack == null) {
+	    if (ubarrack == [] || ubarrack == null || ubarrack.length == 0) {
 			message.reply("You have no unit in the barrack")
 		} 
 		else {
