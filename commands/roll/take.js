@@ -27,7 +27,7 @@ class RanRoll extends commando.Command {
 		if (ulastroll == undefined) {ulastroll = []}
 		var ubarrack = await barrack.get(message.author.id)
 		if (ubarrack == undefined) {ubarrack = []}
-	    if (ulastroll == [] || ulastroll == null) {
+	    if (ulastroll == [] || ulastroll == null || ulastroll.length == 0) {
 			message.reply("You have no unit to take")
 		} 
 		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
@@ -36,7 +36,7 @@ class RanRoll extends commando.Command {
 			for (var i = 0; i < ulastroll.length; i++) {
 				mes = mes + "\n" + (i + 1) + ". " + ulastroll[i]
 			}
-			const collector = new Discord.MessageCollector( msg => msg.author.id === message.author.id, { time: 6000 });
+			const collector = message.channel.MessageCollector( msg => msg.author.id == message.author.id, { time: 600 });
 			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
 			message.channel.send(mes)
 			collector.on('collect', msg => {
