@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const random = require('random')
 const Keyv = require('keyv');
 require('@keyv/mysql')
+require('@keyv/mongo')
 
 
 
@@ -19,9 +20,11 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-		  const sc = new Keyv(process.env.CLEARDB_DATABASE_URL, { namespace: 'sc' });
-      var usc = await sc.get(message.author.id)
-      if (usc == undefined) {usc = 0}
+		  const user = new Keyv(process.env.MONGODB_URI, { namespace: 'user' });
+	    user.on('error', err => console.error('Keyv connection error:', err));
+      var uuser = await user.get(message.author.id)
+      if (uuser == undefined) {uuser = [0, 10, 33]}
+	    var usc = uuser[0]
       message.reply("You curently have " + usc + " SC")
 				
 	}
