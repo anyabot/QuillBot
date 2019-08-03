@@ -31,7 +31,7 @@ class RanRoll extends commando.Command {
 			var page = 1;
 			var len = ubarrack.length
 			var embed = new Discord.RichEmbed()
-			embed.setTitle("<@" + message.author.id + ">'s Barrack")
+			embed.setTitle(message.author.tag + "'s Barrack")
 			for (var j = 0; j < len; j++) {
 				if (j%15 == 0 && j != 0) {
 					pages.push(embed)
