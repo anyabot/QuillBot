@@ -40,7 +40,7 @@ class RanRoll extends commando.Command {
 			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
 			message.reply(mes)
 			collector.on('collect', msg => {
-				const ind = msg.content
+				var ind = msg.content
                 if (!isNaN(ind)) {
 					ind = parseInt(ind)
 					if (0 < ind && ind < (lastroll.length + 1)) {
