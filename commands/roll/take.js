@@ -36,7 +36,7 @@ class RanRoll extends commando.Command {
 			for (var i = 0; i < ulastroll.length; i++) {
 				mes = mes + "\n" + (i + 1) + ". " + ulastroll[i]
 			}
-			const collector = message.channel.MessageCollector( msg => msg.author.id == message.author.id, { time: 600 });
+			const collector = message.channel.createMessageCollector( msg => msg.author.id == message.author.id, { time: 600 });
 			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
 			message.channel.send(mes)
 			collector.on('collect', msg => {
