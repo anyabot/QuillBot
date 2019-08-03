@@ -19,7 +19,7 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-		 const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
+		const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
 	    lastroll.on('error', err => console.error('Keyv connection error:', err));
 		const barrack = new Keyv(process.env.MONGODB_URI, { namespace: 'barrack' });
 	    barrack.on('error', err => console.error('Keyv connection error:', err));
@@ -30,7 +30,7 @@ class RanRoll extends commando.Command {
 	    if (ulastroll == [] || ulastroll == null) {
 			message.reply("You have no unit to take")
 		} 
-		else if (ubarrack.length > 99) {message.reply("Your barrack is full"}
+		else if (ubarrack.length > 99) {message.reply("Your barrack is full")
 		else {
 			var mes = "Units from your last roll:"
 			for (var i = 0; i < ulastroll.length; i++) {
@@ -44,6 +44,8 @@ class RanRoll extends commando.Command {
                 if (0 < ind && ind < (lastroll.length + 1) && !isNaN(ind)) {
 					ind = ind - 1;
 					ubarrack.push(ulastroll[ind])
+					message.reply("You took " + ulastroll[ind] + " to your barrack")
+					ulastroll = ulastroll.splice(ind)
 					collector.stop()
 				}
 				else {
@@ -51,7 +53,9 @@ class RanRoll extends commando.Command {
 					collector.stop()
 				}
             })
-		}		
+		}
+		lastroll.set(message.author.id, ulastroll)
+		barrack.set(message.author.id, ubarrack)
 	}
 }
 module.exports = RanRoll;
