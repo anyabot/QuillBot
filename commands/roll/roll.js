@@ -60,7 +60,7 @@ class RanRoll extends commando.Command {
 	    lastroll.on('error', err => console.error('Keyv connection error:', err));
       var uuser = await user.get(message.author.id)
       var lr = []
-      if (uuser == undefined) {uuser = [0, 10, 33]}
+      if (uuser == undefined) {uuser = [150, 10, 33]}
 	    var usc = uuser[0]
 	    var upp = uuser[1]
 	    var upb = uuser[2]
