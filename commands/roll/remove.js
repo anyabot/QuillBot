@@ -16,7 +16,7 @@ class RanRoll extends commando.Command {
             	description: 'remove a unit from the barrack',
               args: [{
 		    key: 'ind',
-			prompt: 'Which unit do you want to remove? (Input the index number from &barrack to remove)',
+			prompt: 'Which unit do you want to remove? (Input the index number from &barrack)',
 		    type: 'integer'
 		}],
 		examples: ['&remove']
