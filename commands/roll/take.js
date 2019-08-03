@@ -42,7 +42,6 @@ class RanRoll extends commando.Command {
 			collector.on('collect', msg => {
 				var ind = msg.content
                 if (!isNaN(ind)) {
-			console.log(ind)
 					ind = parseInt(ind)
 					if (0 < ind && ind < (ulastroll.length + 1)) {
 						ind = ind - 1;
