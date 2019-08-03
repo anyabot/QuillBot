@@ -36,9 +36,10 @@ class RanRoll extends commando.Command {
 			for (var i = 0; i < ulastroll.length; i++) {
 				mes = mes + "\n" + (i + 1) + ". " + ulastroll[i]
 			}
-			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
+			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 60 });
 			mes = mes + "\nWhich unit do you want to take? (Input the index number to take or stop to stop)"
 			message.reply(mes)
+			console.log(ubarrack)
 			collector.on('collect', msg => {
 				var ind = msg.content
                 if (!isNaN(ind)) {
@@ -57,6 +58,7 @@ class RanRoll extends commando.Command {
 					}
 					else {
 						message.reply("Wrong Input")
+						collector.stop()
 					}
 				}
 				else if (ind.toLowerCase() == "stop") {
@@ -64,6 +66,7 @@ class RanRoll extends commando.Command {
 				}
 				else {
 					message.reply("Wrong Input")
+					collector.stop()
 				}
             })
 		}
