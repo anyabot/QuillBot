@@ -34,27 +34,35 @@ class RanRoll extends commando.Command {
 		else if (ind < 1 || ind > ubarrack.length) {message.reply("Wrong Index")}
 		else {
 		var unit = ubarrack[ind-1]
-			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
 			var mes = "Do you want to remove " + unit + " from your barrack? (y/n)"
-			message.reply(mes)
-			collector.on('collect', msg => {
-				var re = msg.content.toLowerCase()
-				if (re == "y") {
-					message.reply("You removed " + ubarrack[ind - 1] + " from your barrack")
-					for (var i = ind - 1 ; i < ubarrack.length - 1; i++) {
+			message.channel.send(mes).then(msg => {
+
+				msg.react('🇾').then( r => {
+					msg.react('🇳')
+
+					// Filters
+					const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' || reaction.emoji.name === '🇳') && user.id === message.author.id;
+
+					const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+
+					backwards.on('collect', r => {
+						r.remove(r.users.filter(u => !u.bot).first());
+							if (r.emoji.name === "🇳") {
+							msg.edit("Cancelled")
+								backwards.stop()
+						}
+						else if (r.emoji.name === "🇾") {
+							ubarrack.push(unit)
+							msg.edit("You removed " + ubarrack[ind - 1] + " from your barrack")
+							for (var i = ind - 1 ; i < ubarrack.length - 1; i++) {
 						ubarrack[i] = ubarrack[i+1]
 					}
 					ubarrack.pop()
 					barrack.set(message.author.id, ubarrack)
-					collector.stop()
-						
-				}
-				else if (re == "n") {
-					collector.stop()
-				}
-				else {
-					message.reply("Wrong Input")
-				}
+							backwards.stop()
+						}
+					})
+				})
 			})
 		}
 	}
