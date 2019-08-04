@@ -48,7 +48,7 @@ class RanRoll extends commando.Command {
 					// Filters
 					const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' || reaction.emoji.name === '🇳') && user.id === message.author.id;
 
-					const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+					const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 
 					backwards.on('collect', r => {
 						r.remove(r.users.filter(u => !u.bot).first());
@@ -57,7 +57,7 @@ class RanRoll extends commando.Command {
 						}
 						else if (r.emoji.name === "🇾") {
 							ubarrack.push(unit)
-							message.reply("You took " + unit + " to your barrack")
+							msg.edit("You took " + unit + " to your barrack")
 							for (var i = ind - 1; i < ulastroll.length - 1; i++) {
 								ulastroll[i] = ulastroll[i+1]
 							}
