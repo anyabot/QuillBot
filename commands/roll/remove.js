@@ -43,13 +43,12 @@ class RanRoll extends commando.Command {
 					// Filters
 					const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' || reaction.emoji.name === '🇳') && user.id === message.author.id;
 
-					const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+					const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 
 					backwards.on('collect', r => {
 						r.remove(r.users.filter(u => !u.bot).first());
 							if (r.emoji.name === "🇳") {
 							msg.edit("Cancelled")
-								backwards.stop()
 						}
 						else if (r.emoji.name === "🇾") {
 							ubarrack.push(unit)
@@ -57,9 +56,8 @@ class RanRoll extends commando.Command {
 							for (var i = ind - 1 ; i < ubarrack.length - 1; i++) {
 						ubarrack[i] = ubarrack[i+1]
 					}
-					ubarrack.pop()
-					barrack.set(message.author.id, ubarrack)
-							backwards.stop()
+						ubarrack.pop()
+						barrack.set(message.author.id, ubarrack)
 						}
 					})
 				})
