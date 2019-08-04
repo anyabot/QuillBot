@@ -39,29 +39,34 @@ class RanRoll extends commando.Command {
 		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
 		else {
 			var unit = ulastroll[ind-1]
-			const collector = new Discord.MessageCollector(message.channel, msg => msg.author.id === message.author.id, { time: 6000 });
 			var mes = "Do you want to take " + unit + " to your barrack? (y/n)"
-			message.reply(mes)
-			collector.on('collect', msg => {
-				var re = msg.content.toLowerCase()
-				if (re == "y") {
-					ubarrack.push(unit)
-					message.reply("You took " + unit + " to your barrack")
-					for (var i = ind - 1; i < ulastroll.length - 1; i++) {
-						ulastroll[i] = ulastroll[i+1]
-					}
-					ulastroll.pop()
-					lastroll.set(message.author.id, ulastroll)
-					barrack.set(message.author.id, ubarrack)
-					collector.stop()
-						
-				}
-				else if (re == "n") {
-					collector.stop()
-				}
-				else {
-					message.reply("Wrong Input")
-				}
+			message.channel.send(mes).then(msg => {
+
+				msg.react('🇾').then( r => {
+					msg.react('🇳')
+
+					// Filters
+					const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' || reaction.emoji.name === '🇳') && user.id === message.author.id;
+
+					const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+
+					backwards.on('collect', r => {
+						r.remove(r.users.filter(u => !u.bot).first());
+							if (r.emoji.name === "🇳") {
+							msg.edit("Cancelled")
+						}
+						else if (r.emoji.name === "🇾") {
+							ubarrack.push(unit)
+							message.reply("You took " + unit + " to your barrack")
+							for (var i = ind - 1; i < ulastroll.length - 1; i++) {
+								ulastroll[i] = ulastroll[i+1]
+							}
+							ulastroll.pop()
+							lastroll.set(message.author.id, ulastroll)
+							barrack.set(message.author.id, ubarrack)
+						}
+					})
+				})
 			})
 		}
 	}
