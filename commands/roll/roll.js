@@ -30,8 +30,8 @@ require('@keyv/mongo')
 var b1fb = ['Sousou' , 'Ryofu'];
 var b1fp = ['Bachou'];
 var b1fg = [];
-var b2fb = ['Dina' , 'Miyabi'];
-var b2fp = ['Shelt'];
+var b2fb = ['Dorothea' , 'Olivier'];
+var b2fp = ['Supura'];
 var b2fg = [];
 
 
