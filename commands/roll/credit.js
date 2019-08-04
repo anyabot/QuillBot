@@ -16,7 +16,7 @@ class RanRoll extends commando.Command {
             	description: 'get free sc for the gacha stimulator once every 30 mins',
 		throttling: {
 		usages: 1,
-		duration: 1800
+		duration: 3600
 	},
 		examples: ['&credit']
         });
@@ -28,7 +28,7 @@ class RanRoll extends commando.Command {
       var uuser = await user.get(message.author.id)
       if (uuser == undefined) {uuser = [150, 10, 33]}
 	    var usc = uuser[0]
-	    var ge = random.int(5, 10)
+	    var ge = random.int(10, 20)
       usc = usc + ge;
 	    uuser[0] = usc
 	user.set(message.author.id, uuser)
