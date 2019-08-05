@@ -18,7 +18,7 @@ var bannerplat = {
 	17 : 'Prim',
 	18 : 'Siena',
 	19 : 'Belzetta',
-	20 : 'Rivuru',
+	20 : 'Livre',
 	21 : 'Vivian',
 	22 : 'Regina',
 	23 : 'Loretta',
