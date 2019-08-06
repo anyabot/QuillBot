@@ -462,7 +462,7 @@ class RanRoll extends commando.Command {
 				embed.setDescription("<@" + message.author.id + "> You rolled ")
 				for (var i = 1; i < 11; i++) {
 					if (upb == 1) {
-						var ind = random.int(1, size_dict(pugblack))
+						var ind = random.int(0, pugblack.length - 1)
 							var unit = pugblack[ind]
 						embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
 						if (upp > 1) { upp = upp -1}
@@ -471,14 +471,14 @@ class RanRoll extends commando.Command {
 					else if (upp == 1) {
 						var rar = random.int(1, 100)
 						if (rar < 4) {
-							var ind = random.int(1, size_dict(pugblack))
+							var ind = random.int(0, pugblack.length - 1)
 							var unit = pugblack[ind]
 							embed.addField("Roll " + i, unit + " (6*)", true)
 							if (upp > 1) { upp = upp -1}
 							upb = 33
 						}
 						else {
-							var ind = random.int(1, size_dict(pugplat))
+							var ind = random.int(0, pugplat.length - 1)
 							var unit = pugplat[ind]
 							embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
 							upp = 10
@@ -488,14 +488,14 @@ class RanRoll extends commando.Command {
 					else {
 						rar = random.int(1, 100)
 						if (rar < 4) {
-							var ind = random.int(1, size_dict(pugblack))
+							var ind = random.int(0, pugblack.length - 1)
 							var unit = pugblack[ind]
 							embed.addField("Roll " + i, unit + " (6*)", true)
 							if (upp > 1) { upp = upp -1}
 						upb = 33
 						}
 						else if (rar < 14) {
-							var ind = random.int(1, size_dict(pugplat))
+							var ind = random.int(0, pugplat.length - 1)
 							var unit = pugplat[ind]
 							embed.addField("Roll " + i, unit + " (5*)", true)
 							upp = 10
