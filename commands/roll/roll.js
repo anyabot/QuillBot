@@ -4,20 +4,26 @@ var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
 const random = require('random')
-var black = require('../../library/black.js').black;
-var plat = require('../../library/plat.js').plat;
-var gold = require('../../library/gold.js').gold;
-var sil = require('../../library/sil.js').sil;
-var iblack = require('../../library/iblack.js').iblack;
-var iplat = require('../../library/iplat.js').iplat;
-var igold = require('../../library/igold.js').igold;
-var isil = require('../../library/isil.js').isil;
-var pugblack = require('../../library/pugblack.js').pugblack;
-var pugplat = require('../../library/pugplat.js').pugplat;
-var bannerblack = require('../../library/bannerblack.js').bannerblack;
-var bannerplat = require('../../library/bannerplat.js').bannerplat;
-var bannergold = require('../../library/bannergold.js').bannergold;
-var bannersil = require('../../library/bannersil.js').bannersil;
+var black = require('../../roll/black.js').black;
+var plat = require('../../roll/plat.js').plat;
+var gold = require('../../roll/gold.js').gold;
+var sil = require('../../roll/sil.js').sil;
+var iblack = require('../../roll/iblack.js').iblack;
+var iplat = require('../../roll/iplat.js').iplat;
+var igold = require('../../roll/igold.js').igold;
+var isil = require('../../roll/isil.js').isil;
+var pugblack = require('../../roll/pugblack.js').pugblack;
+var pugplat = require('../../roll/pugplat.js').pugplat;
+var bannerblack = require('../../roll/bannerblack.js').bannerblack;
+var bannerplat = require('../../roll/bannerplat.js').bannerplat;
+var bannergold = require('../../roll/bannergold.js').bannergold;
+var bannersil = require('../../roll/bannersil.js').bannersil;
+var b1fb = require('../../roll/b1fb.js').b1fb;
+var b1fp = require('../../roll/b1fp.js').b1fp;
+var b1fg = require('../../roll/b1fg.js').b1fg;
+var b2fb = require('../../roll/b2fb.js').b2fb;
+var b2fp = require('../../roll/b2fp.js').b2fp;
+var b2fg = require('../../roll/b2fg.js').b2fg;
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
@@ -27,12 +33,7 @@ require('@keyv/mongo')
 
 
 
-var b1fb = ['Sousou' , 'Ryofu'];
-var b1fp = ['Bachou'];
-var b1fg = [];
-var b2fb = ['Dorothea' , 'Olivier'];
-var b2fp = ['Supura'];
-var b2fg = [];
+
 
 
 class RanRoll extends commando.Command {
