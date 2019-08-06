@@ -49,7 +49,7 @@ class RanRoll extends commando.Command {
 		    dsc.set(message.author.id, uday)
       		message.reply("You got " + ge + " SC\nYou curently have " + usc + " SC")
 	    }
-	    else if (ldsc[0] == uday[0] && ldsc[1] == uday[1] && ldsc[2] == uday[2]) {
+	    else if (ldsc[0] == uday[0] || ldsc[1] == uday[1] || ldsc[2] == uday[2]) {
 		console.log("case2")
 	    	uuser[0] = usc
 		user.set(message.author.id, uuser)
