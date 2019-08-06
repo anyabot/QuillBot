@@ -20,10 +20,10 @@ var bannergold = require('../../roll/bannergold.js').bannergold;
 var bannersil = require('../../roll/bannersil.js').bannersil;
 var b1fb = require('../../roll/b1fb.js').b1fb;
 var b1fp = require('../../roll/b1fp.js').b1fp;
-var b1fg = require('../../roll/b1fg.js').b1fg;
+var b1fg = []
 var b2fb = require('../../roll/b2fb.js').b2fb;
 var b2fp = require('../../roll/b2fp.js').b2fp;
-var b2fg = require('../../roll/b2fg.js').b2fg;
+var b2fg = []
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
