@@ -40,11 +40,11 @@ class RanRoll extends commando.Command {
       var b1 = "**Banner 1**"
       if (b1fb.length > 0) {b1 = b1 + "\nFeatured Black: " + b1fb.join(', ')}
       if (b1fp.length > 0) {b1 = b1 + "\nFeatured Plat: " + b1fp.join(', ')}
-      if (b1fg.length > 0) {b1 = b1 + "\nFeatured Gold: " + b1fg.join(', ')}
+      if (b1fg.length > 1) {b1 = b1 + "\nFeatured Gold: " + b1fg.join(', ').substring(2)}
     var b2 = "**Banner 2**"
       if (b2fb.length > 0) {b2 = b2 + "\nFeatured Black: " + b2fb.join(', ')}
       if (b2fp.length > 0) {b2 = b2 + "\nFeatured Plat: " + b2fp.join(', ')}
-      if (b2fg.length > 0) {b2 = b2 + "\nFeatured Gold: " + b2fg.join(', ')}
+      if (b2fg.length > 1) {b2 = b2 + "\nFeatured Gold: " + b2fg.join(', ').substring(2)}
     var pug = "**PUG**"
       if (pugblack.length > 0) {pug = pug + "\nFeatured Black: " + pugblack.join(', ')}
       if (pugplat.length > 0) {pug = pug + "\nFeatured Plat: " + pugplat.join(', ')}
