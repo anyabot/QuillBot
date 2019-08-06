@@ -43,14 +43,14 @@ class RanRoll extends commando.Command {
 	    var usc = uuser[0]
 	    var ge = random.int(40, 60)
 	    if (ldsc == undefined) {
-		console.log("case1")
+		usc = usc + ge
 	    	uuser[0] = usc
 		user.set(message.author.id, uuser)
 		    dsc.set(message.author.id, uday)
       		message.reply("You got " + ge + " SC\nYou curently have " + usc + " SC")
 	    }
 	    else if (ldsc[0] != uday[0] || ldsc[1] != uday[1] || ldsc[2] != uday[2]) {
-		console.log("case2")
+		usc = usc + ge
 	    	uuser[0] = usc
 		user.set(message.author.id, uuser)
 		    dsc.set(message.author.id, uday)
