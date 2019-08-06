@@ -607,15 +607,15 @@ class RanRoll extends commando.Command {
 						upb = upb - 1;
 					}
 					else if (rar < 64) {
-						var fea = random.int(1, 10 + 7* (b1fg.length - 1))
-							if (fea < 11) {
-								var ind = random.int(1, size_dict(bannergold))
-								var unit = bannergold[ind]
-							}
-							else {
-								var ind = random.int(1, b1fg.length) 
-								var unit = b1fg[ind]
-							}
+						var fea = random.int(1, 10 + 7*b1fg.length)
+						if (fea < 11) {
+							var ind = random.int(1, size_dict(bannergold))
+							var unit = bannergold[ind]
+						}
+						else {
+							var ind = random.int(1, b1fg.length) - 1
+							var unit = b1fg[ind]
+						}
 						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 						embed.setColor('GOLD')
 						upb = upb - 1;
@@ -724,13 +724,13 @@ class RanRoll extends commando.Command {
 						upb = upb - 1;
 						}
 						else if (rar < 64) {
-							var fea = random.int(1, 10 + 7* (b1fg.length - 1))
+							var fea = random.int(1, 10 + 7*b1fg.length)
 							if (fea < 11) {
 								var ind = random.int(1, size_dict(bannergold))
 								var unit = bannergold[ind]
 							}
 							else {
-								var ind = random.int(1, b1fg.length) 
+								var ind = random.int(1, b1fg.length) - 1
 								var unit = b1fg[ind]
 							}
 							embed.addField("Roll " + i, unit + " (4*)", true)
@@ -836,15 +836,15 @@ class RanRoll extends commando.Command {
 						upb = upb - 1;
 					}
 					else if (rar < 64) {
-						var fea = random.int(1, 10 + 7* (b2fg.length - 1))
-							if (fea < 11) {
-								var ind = random.int(1, size_dict(bannergold))
-								var unit = bannergold[ind]
-							}
-							else {
-								var ind = random.int(1, b2fg.length) 
-								var unit = b2fg[ind]
-							}
+						var fea = random.int(1, 10 + 7*b2fg.length)
+						if (fea < 11) {
+							var ind = random.int(1, size_dict(bannergold))
+							var unit = bannergold[ind]
+						}
+						else {
+							var ind = random.int(1, b2fg.length) - 1
+							var unit = b2fg[ind]
+						}
 						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
 						embed.setColor('GOLD')
 						upb = upb - 1;
@@ -953,13 +953,13 @@ class RanRoll extends commando.Command {
 						upb = upb - 1;
 						}
 						else if (rar < 64) {
-							var fea = random.int(1, 10 + 7* (b2fg.length - 1))
+							var fea = random.int(1, 10 + 7*b2fg.length)
 							if (fea < 11) {
 								var ind = random.int(1, size_dict(bannergold))
 								var unit = bannergold[ind]
 							}
 							else {
-								var ind = random.int(1, b2fg.length) 
+								var ind = random.int(1, b2fg.length) - 1
 								var unit = b2fg[ind]
 							}
 							embed.addField("Roll " + i, unit + " (4*)", true)
