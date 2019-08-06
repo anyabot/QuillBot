@@ -382,7 +382,7 @@ class RanRoll extends commando.Command {
 			embed.setTitle("Pick-Up Gacha Roll Result")
 			if (!r10) {
 				if (upb == 1) {
-					var ind = random.int(1, size_dict(pugblack))
+					var ind = random.int(0, pugblack.length - 1)
 						var unit = pugblack[ind]
 					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
 					embed.setColor([95, 64, 0])
@@ -392,7 +392,7 @@ class RanRoll extends commando.Command {
 				else if (upp == 1) {
 					var rar = random.int(1, 100)
 					if (rar < 4) {
-						var ind = random.int(1, size_dict(pugblack))
+						var ind = random.int(0, pugblack.length - 1)
 						var unit = pugblack[ind]
 						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 						embed.setColor([95, 64, 0])
@@ -400,7 +400,7 @@ class RanRoll extends commando.Command {
 						upb = 33
 					}
 					else {
-						var ind = random.int(1, size_dict(pugplat))
+						var ind = random.int(0, pugplat.length - 1)
 						var unit = pugplat[ind]
 						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
 						embed.setColor('GREEN')
@@ -411,7 +411,7 @@ class RanRoll extends commando.Command {
 				else {
 					var rar = random.int(1, 100)
 					if (rar < 4) {
-						var ind = random.int(1, size_dict(pugblack))
+						var ind = random.int(0, pugblack.length - 1)
 						var unit = pugblack[ind]
 						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
 						embed.setColor([95, 64, 0])
@@ -419,7 +419,7 @@ class RanRoll extends commando.Command {
 						upb = 33
 					}
 					else if (rar < 14) {
-						var ind = random.int(1, size_dict(pugplat))
+						var ind = random.int(0, pugplat.length - 1)
 						var unit = pugplat[ind]
 						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
 						embed.setColor('GREEN')
