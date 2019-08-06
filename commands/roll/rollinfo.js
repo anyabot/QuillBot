@@ -29,7 +29,7 @@ class RanRoll extends commando.Command {
         super(client, {
             	name: 'rollinfo',
 		aliases: ['pullinfo', 'gachainfo', 'drawinfo'],
-            	group: 'rollinfo',
+            	group: 'roll',
             	memberName: 'rollinfo',
             	description: 'info about banner 1/2 and pug of the gacha stimulator',
 		examples: ['&roll']
