@@ -1,2 +1,2 @@
-var b1fg = [""];
+var b1fg = [" "];
 exports.b1fg = b1fg;
