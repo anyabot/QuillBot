@@ -14,7 +14,7 @@ class RanRoll extends commando.Command {
             	group: 'roll',
               aliases: ['dailysc'],
             	memberName: 'dailycredit',
-            	description: 'get free 40 - 60 sc for the gacha stimulator once every 23 hours',
+            	description: 'get free 40 - 60 sc for the gacha stimulator once per day (reset at 0:00 GMT+9),
 		examples: ['&dailycredit']
         });
     }
