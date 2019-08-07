@@ -104,9 +104,9 @@ class RanRoll extends commando.Command {
 			})
 		}
 		else {
-			var fday = fame[0]
-			var fmonth = fame[1]
-			var fyear = fame[2]
+			var fday = ufame[0]
+			var fmonth = ufame[1]
+			var fyear = ufame[2]
 			var fm = moment(fyear + " " +  fmonth + " " + fday, 'YYYY MMM DD')
 			if (fm.isBefore(m)) {
 				var rar = random.int(1, 100)
