@@ -108,7 +108,7 @@ class RanRoll extends commando.Command {
 			var fmonth = fame[1]
 			var fyear = fame[2]
 			var fm = moment(fyear + " " +  fmonth + " " + fday, 'YYYY MMM DD')
-			if (m.isBefore(fm)) {
+			if (fm.isBefore(m)) {
 				var rar = random.int(1, 100)
 				var embed = new Discord.RichEmbed()
 				embed.setTitle("Fame Gacha Roll Result")
