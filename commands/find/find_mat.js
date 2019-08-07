@@ -234,20 +234,22 @@ request(link, function(err, resp, html) {
 			}
 		}
 		output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
-		if (youkai) {
-			awname = na(output);
-		}
-		else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji" || na(output) == "Spirit of War") {
-			awname = na(output);
-		}
-		else if (na(output).slice(-1) == "\】" || na(output).slice(-1) == "\)") {
-			let words = na(output).split(' ');
-			let le = words.length;
-			words[le-2] = pluralize.plural(words[le-2])
-			awname = words.join(" ")
-		}
-		else if (aw) {
-			awname = pluralize.plural(na(output));
+		if (output) {
+			if (youkai) {
+				awname = na(output);
+			}
+			else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji" || na(output) == "Spirit of War") {
+				awname = na(output);
+			}
+			else if (na(output).slice(-1) == "\?" || na(output).slice(-1) == "\)") {
+				let words = na(output).split(' ');
+				let le = words.length;
+				words[le-2] = pluralize.plural(words[le-2])
+				awname = words.join(" ")
+			}
+			else if (aw) {
+				awname = pluralize.plural(na(output));
+			}
 		}
 		if (cc && !aw) {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
@@ -372,12 +374,12 @@ request(link, function(err, resp, html) {
 					embed.setFooter('Page ' + page + ' of ' + pages.length);
 					message.channel.send(embed).then(msg => {
 
-						msg.react('⬅').then( r => {
-							msg.react('➡')
+						msg.react('?').then( r => {
+							msg.react('?')
 
 							// Filters
-							const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-							const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+							const backwardsFilter = (reaction, user) => reaction.emoji.name === '?' && !user.bot;
+							const forwardsFilter = (reaction, user) => reaction.emoji.name === '?' && !user.bot;
 
 							const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
 							const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
@@ -531,12 +533,12 @@ request(link, function(err, resp, html) {
 							embed.setFooter('Page ' + page + ' of ' + pages.length);
 							message.channel.send(embed).then(msg => {
 
-								msg.react('⬅').then( r => {
-									msg.react('➡')
+								msg.react('?').then( r => {
+									msg.react('?')
 
 									// Filters
-									const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-									const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+									const backwardsFilter = (reaction, user) => reaction.emoji.name === '?' && !user.bot;
+									const forwardsFilter = (reaction, user) => reaction.emoji.name === '?' && !user.bot;
 
 									const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
 									const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
