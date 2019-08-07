@@ -10,6 +10,8 @@ var gold = require('../../roll/gold.js').gold;
 var chibi = ['Chibi Charlotte' , 'Chibi Moltena'];
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
+var moment = require('moment')
+const humanizeDuration = require('humanize-duration')
 require('@keyv/mysql')
 require('@keyv/mongo')
 
