@@ -980,7 +980,10 @@ class RanRoll extends commando.Command {
 				message.channel.send(embed)
 			}
 		}
-		else (message.channel.send("Wrong Input"))
+		else {
+			lr = await lastroll.get(message.author.id)
+			message.channel.send("Wrong Input")
+		}
 	    uuser = [usc, upp, upb]
 		await user.set(message.author.id, uuser)
 		await lastroll.set(message.author.id, lr)
