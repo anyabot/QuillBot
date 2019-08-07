@@ -51,6 +51,13 @@ class RanRoll extends commando.Command {
 	    fame.on('error', err => console.error('Keyv connection error:', err));
 		var ufame = await fame.get(message.author.id)
 		var lr = []
+		var m2 = moment(year + " " +  month + " " + day, 'YYYY MMM DD').add(daynum[date], 'days')
+		var mm2 = m2.toString()
+		var nwords = mm2.split(' ')
+		var nmonth = nwords[1]
+		var nday = nwords[2]
+		var nyear = nwords[3]
+		var nfame = [nday, nmonth, nyear]
 		if (ufame == undefined) {
 			var rar = random.int(1, 100)
 			var embed = new Discord.RichEmbed()
@@ -93,15 +100,6 @@ class RanRoll extends commando.Command {
 					img = $('.fullImageLink a').attr('href')
 					embed.setImage(img)
 					message.channel.send(embed)
-					var m2 = moment(year + " " +  month + " " + day, 'YYYY MMM DD').add(daynum[date], 'days')
-					var mm2 = m2.toString()
-					var nwords = mm2.split(' ')
-					var nmonth = nwords[1]
-					var nday = nwords[2]
-					var nyear = nwords[3]
-					var nfame = [nday, nmonth, nyear]
-					await lastroll.set(message.author.id, lr)
-					await fame.set(message.author.id, nfame)
 				}
 			})
 		}
@@ -152,15 +150,6 @@ class RanRoll extends commando.Command {
 						img = $('.fullImageLink a').attr('href')
 						embed.setImage(img)
 						message.channel.send(embed)
-						var m2 = moment(year + " " +  month + " " + day, 'YYYY MMM DD').add(daynum[date], 'days')
-						var mm2 = m2.toString()
-						var nwords = mm2.split(' ')
-						var nmonth = nwords[1]
-						var nday = nwords[2]
-						var nyear = nwords[3]
-						var nfame = [nday, nmonth, nyear]
-						await lastroll.set(message.author.id, lr)
-						await fame.set(message.author.id, nfame)
 					}
 				})
 			}
@@ -172,6 +161,8 @@ class RanRoll extends commando.Command {
 				lr = await lastroll.get(message.author.id)
 			}
 		}
+	    	await lastroll.set(message.author.id, lr)
+		await fame.set(message.author.id, nfame)
 	}
 }
 function size_dict(d){
