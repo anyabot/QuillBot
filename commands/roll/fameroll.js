@@ -22,7 +22,7 @@ class RanRoll extends commando.Command {
 		aliases: ['famepull', 'famegacha', 'famedraw'],
             	group: 'roll',
             	memberName: 'fameroll',
-            	description: 'fame gacha stimulator(usable once per week)',
+            	description: 'fame gacha stimulator(usable once per week, reset Thursday each week)',
 		examples: ['&fameroll'],
         });
     }
@@ -155,13 +155,12 @@ class RanRoll extends commando.Command {
 			}
 			else {
 				var dif1 = fm.diff(m)
-				var diff1 = humanizeDuration(dif1, { units: ['d', 'h', 'm'] , round: true })
+				var diff1 = humanizeDuration(dif1, { units: ['d', 'h', 'm', 's'] , round: true })
 				message.channel.send("You have already used this week fame summon.\nTime until next fame summon: " + diff1)
 				var nfame = ufame
 				lr = await lastroll.get(message.author.id)
 			}
 		}
-	    console.log(nfame)
 	    	await lastroll.set(message.author.id, lr)
 		await fame.set(message.author.id, nfame)
 	}
