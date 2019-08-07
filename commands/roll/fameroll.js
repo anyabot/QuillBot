@@ -7,7 +7,7 @@ const random = require('random')
 var black = require('../../roll/black.js').black;
 var plat = require('../../roll/plat.js').plat;
 var gold = require('../../roll/gold.js').gold;
-var chibi = ['Chibi Charlotte' , 'Moltena'];
+var chibi = ['Chibi Charlotte' , 'Chibi Moltena'];
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
