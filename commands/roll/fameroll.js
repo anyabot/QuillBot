@@ -100,6 +100,8 @@ class RanRoll extends commando.Command {
 					var nday = nwords[2]
 					var nyear = nwords[3]
 					var nfame = [nday, nmonth, nyear]
+					await lastroll.set(message.author.id, lr)
+					await fame.set(message.author.id, nfame)
 				}
 			})
 		}
@@ -157,7 +159,8 @@ class RanRoll extends commando.Command {
 						var nday = nwords[2]
 						var nyear = nwords[3]
 						var nfame = [nday, nmonth, nyear]
-						
+						await lastroll.set(message.author.id, lr)
+						await fame.set(message.author.id, nfame)
 					}
 				})
 			}
@@ -169,9 +172,6 @@ class RanRoll extends commando.Command {
 				lr = await lastroll.get(message.author.id)
 			}
 		}
-	    console.log(nfame)
-	    await lastroll.set(message.author.id, lr)
-		await fame.set(message.author.id, nfame)
 	}
 }
 function size_dict(d){
