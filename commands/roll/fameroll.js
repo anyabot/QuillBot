@@ -165,6 +165,7 @@ class RanRoll extends commando.Command {
 				var dif1 = fm.diff(m)
 				var diff1 = humanizeDuration(dif1, { units: ['d', 'h', 'm'] , round: true })
 				message.channel.send("You have already used this week fame summon.\nTime until next fame summon: " + diff1)
+				var nfame = ufame
 			}
 		}
 	    await lastroll.set(message.author.id, lr)
