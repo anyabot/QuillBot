@@ -574,6 +574,7 @@ request(link, function(err, resp, html) {
 }
 
 function te(output) {
+	if (output == null) return
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
 	output = he.decode(output);
@@ -585,6 +586,7 @@ function te(output) {
    return filtered;
 }
 function te2(output) {
+	if (output == null) return
   output = output.replace(/<[^>]*>/g, "\n");
   output = output.replace(/\n+ /g, "\n");
   output = he.decode(output);
@@ -596,6 +598,7 @@ function te2(output) {
   return filtered.join("\n");
 }
 function na(output) {
+	if (output == null) return
   output = output.replace(/<[^>]*>/g, "\n");
   output = output.replace(/\n+ /g, "\n");
   output = he.decode(output);
