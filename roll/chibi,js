@@ -1,2 +1,3 @@
-var chibi = ['Chibi Charlotte' , 'Chibi Moltena'];
-exports.chibi = chibi;
+var b1fb = ['Chibi Charlotte' , 'Moltena'];
+
+exports.b1fb = b1fb;
