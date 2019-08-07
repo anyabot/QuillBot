@@ -98,8 +98,6 @@ class RanRoll extends commando.Command {
 					var nday = nwords[2]
 					var nyear = nwords[3]
 					var nfame = [nday, nmonth, nyear]
-					await lastroll.set(message.author.id, lr)
-					await fame.set(message.author.id, nfame)
 				}
 			})
 		}
@@ -157,8 +155,7 @@ class RanRoll extends commando.Command {
 						var nday = nwords[2]
 						var nyear = nwords[3]
 						var nfame = [nday, nmonth, nyear]
-						await lastroll.set(message.author.id, lr)
-						await fame.set(message.author.id, nfame)
+						
 					}
 				})
 			}
@@ -168,6 +165,8 @@ class RanRoll extends commando.Command {
 				message.channel.send("You have already used this week fame summon.\nTime until next fame summon: " + diff1)
 			}
 		}
+	    await lastroll.set(message.author.id, lr)
+		await fame.set(message.author.id, nfame)
 	}
 }
 function size_dict(d){
