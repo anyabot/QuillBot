@@ -161,6 +161,7 @@ class RanRoll extends commando.Command {
 				lr = await lastroll.get(message.author.id)
 			}
 		}
+	    console.log(nfame)
 	    	await lastroll.set(message.author.id, lr)
 		await fame.set(message.author.id, nfame)
 	}
