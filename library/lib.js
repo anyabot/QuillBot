@@ -51,6 +51,8 @@ var name = {
     'fAa' : 'Faa',
     'Elizabeth 【7sins】': 'Elizabeth 【7Sins】',
     'Corn': 'Cornelia',
+	'Lumi' : 'Sybilla',
+	'Luminon' : 'Sybilla',
     '🍌': 'Nanaly',
     '🌽': 'Cornelia',
     '🥒': 'Kyuubi',
