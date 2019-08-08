@@ -8,7 +8,7 @@ class FindDrop extends commando.Command {
               aliases: ['db', 'dropbooster'],
             	group: 'util2',
             	memberName: 'dropboost',
-            	description: 'show units which drop boost ability',
+            	description: 'show units with drop boost ability',
 		examples: ['&dropboost dc'],
 		args: [{
 		    key: 'text',
