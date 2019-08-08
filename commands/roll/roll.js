@@ -231,7 +231,7 @@ class RanRoll extends commando.Command {
 				message.channel.send(embed)
 			}
 		}
-	    else if (pool == "imperial" || pool == "white empire") {
+	    else if (pool == "imperial" || pool == "white empire" || pool == "we") {
 		    usc = usc - scu;
 			embed.setTitle("Imperial Gacha Roll Result")
 			if (!r10) {
