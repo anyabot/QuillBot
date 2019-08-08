@@ -8,7 +8,7 @@ class FindDrop extends commando.Command {
               aliases: ['gb', 'goldbooster'],
             	group: 'util2',
             	memberName: 'goldboost',
-            	description: 'show units which gold boost ability',
+            	description: 'show units with gold boost ability',
 		examples: ['&goldboost gold get'],
 		args: [{
 		    key: 'text',
