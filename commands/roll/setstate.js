@@ -44,9 +44,10 @@ class RanRoll extends commando.Command {
 					const $ = cheerio.load(html);
 					var img = $('.fullImageLink a').attr('href')
 					if (img) {
-						message.channel.send("Your waifu's image", {
-							files: [{ attachment: img.toString() }]
-						});
+						var embed = new Discord.RichEmbed()
+						embed.setTitle(unit)
+						embed.setImage(img)
+						message.channel.send(embed);
 						var uunit = [unit, state]
 						waifu.set(message.author.id, uunit)
 					}
