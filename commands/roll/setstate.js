@@ -42,7 +42,7 @@ class RanRoll extends commando.Command {
 				request(link, function(err, resp, html) {
 				if (!err) {
 					const $ = cheerio.load(html);
-					img = $('.fullImageLink a').attr('href')
+					var img = $('.fullImageLink a').attr('href')
 					if (img) {
 						message.channel.send("Your waifu's image", {
 							files: [{ attachment: img.toString() }]
