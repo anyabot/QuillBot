@@ -31,7 +31,7 @@ class RanRoll extends commando.Command {
 		}
 		else {
 			var name
-			var unit = waifu[0]
+			var unit = uwaifu[0]
 			if (state == "BASE") {
 				name = unit
 			}
