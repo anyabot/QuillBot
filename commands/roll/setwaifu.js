@@ -39,11 +39,12 @@ class RanRoll extends commando.Command {
 			var unit = ubarrack[ind-1]
 			var mes = "You set " + unit + " as your waifu."
 			message.channel.send(mes)
-			waifu.set(message.author.id, unit)
+			var uunit = [unit, "base"]
+			waifu.set(message.author.id, uunit)
 		}
 		else {
 			var unit = ubarrack[ind-1]
-			var mes = "You've already set " + uwaifu + " as your waifu.\nDo you want to change to " + unit + "? (y/n)"
+			var mes = "You've already set " + uwaifu[0] + " as your waifu.\nDo you want to change to " + unit + "? (y/n)"
 			message.channel.send(mes).then(msg => {
 
 				msg.react('🇾').then( r => {
@@ -61,7 +62,8 @@ class RanRoll extends commando.Command {
 						}
 						else if (r.emoji.name === "🇾") {
 							msg.edit("You set " + unit + " as your waifu.")
-							waifu.set(message.author.id, unit)
+							var uunit = [unit, "base"]
+							waifu.set(message.author.id, uunit)
 						}
 					})
 				})
