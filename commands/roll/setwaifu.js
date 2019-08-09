@@ -39,7 +39,7 @@ class RanRoll extends commando.Command {
 			var unit = ubarrack[ind-1]
 			var mes = "You set " + unit + " as your waifu."
 			message.channel.send(mes)
-			var uunit = [unit, "base"]
+			var uunit = [unit, "BASE"]
 			waifu.set(message.author.id, uunit)
 		}
 		else {
@@ -62,7 +62,7 @@ class RanRoll extends commando.Command {
 						}
 						else if (r.emoji.name === "🇾") {
 							msg.edit("You set " + unit + " as your waifu.")
-							var uunit = [unit, "base"]
+							var uunit = [unit, "BASE"]
 							waifu.set(message.author.id, uunit)
 						}
 					})
