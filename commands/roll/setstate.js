@@ -40,18 +40,19 @@ class RanRoll extends commando.Command {
 			}
 			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(name) + "_Render.png";
 				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						if (img) {
-							message.channel.send("Your waifu's image", {
-                                files: [{ attachment: img.toString() }]
-                            });
-							var uunit = [unit, state]
-							waifu.set(message.author.id, uunit)
-						}
+				if (!err) {
+					const $ = cheerio.load(html);
+					img = $('.fullImageLink a').attr('href')
+					if (img) {
+						message.channel.send("Your waifu's image", {
+							files: [{ attachment: img.toString() }]
+						});
+						var uunit = [unit, state]
+						waifu.set(message.author.id, uunit)
 					}
-				})
+					else {message.channel.send("Wrong state input")}
+				}
+			})
 		}
 	}
 }
