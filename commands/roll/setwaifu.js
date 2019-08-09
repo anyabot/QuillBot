@@ -60,12 +60,8 @@ class RanRoll extends commando.Command {
 							msg.edit("Cancelled")
 						}
 						else if (r.emoji.name === "🇾") {
-							msg.edit("You removed " + ubarrack[ind - 1] + " from your barrack")
-							for (var i = ind - 1 ; i < ubarrack.length - 1; i++) {
-						ubarrack[i] = ubarrack[i+1]
-						}
-						ubarrack.pop()
-						barrack.set(message.author.id, ubarrack)
+							msg.edit("You set " + unit + " as your waifu.")
+							waifu.set(message.author.id, unit)
 						}
 					})
 				})
