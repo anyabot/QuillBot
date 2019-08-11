@@ -1,2 +1,2 @@
-var b2fp = ['Supura'];
+var b2fp = ['Flamel'];
 exports.b2fp = b2fp ;
