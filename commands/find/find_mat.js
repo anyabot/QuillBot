@@ -43,7 +43,7 @@ var aw1 = {
 	"/wiki/Leeanne": "**Gold Heavy Armor** \nOR \n**CC Silver Heavy Armor**",
 	"/wiki/Valerie": "**Gold Mage** \nOR \n**CC Silver Mage**",
 	"/wiki/Niel" :"**Gold Angel** \nOR \n**CC Silver Angel**",
-	"/wiki/Daniela" :"**Gold Archer** \nOR \n**CC Silver Bandit**",
+	"/wiki/Daniela" :"**Gold Archer** \nOR \n**CC Silver Archer**",
 	"/wiki/Eunice" :"**Gold Bandit** \nOR \n**CC Silver Bandit**",
 	"/wiki/Elaine" :"**Gold Valkyrie** \nOR \n**CC Silver Valkyrie**",
 	"/wiki/Alissa" :"**Gold Healer** \nOR \n**CC Silver Healer**",
