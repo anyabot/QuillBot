@@ -22,6 +22,8 @@ class RanRoll extends commando.Command {
 
     async run(message, input) {
 		var state = input.toUpperCase()
+		if (state == "AW2V1") {state = "AW2v1"}
+	    	if (state == "AW2V2") {state = "AW2v2"}
 		const waifu = new Keyv(process.env.MONGODB_URI, { namespace: 'waifu' });
 	    waifu.on('error', err => console.error('Keyv connection error:', err));
 		var uwaifu = await waifu.get(message.author.id)
