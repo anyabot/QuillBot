@@ -1,0 +1,3 @@
+var list = ['Armor Maids (Maids)', 'Caravan Masters (Merchants)', 'Mystic Hermits (Hermits)', 'Sly and Cunning Genius 【Koihime】', 'Rosalie', 'Kagerou', 'Khuri', 'Thetis', 'Roana', 'Erenia', 'Mordiberte', 'Karin', 'Wendy', 'Kibahime', 'Racua', 'Ban', 'Holly', 'Zilva', 'Khuri (Swimsuit)', 'Farne (Bride)', 'Lateria', 'Sophie (Valentine\'s)', 'Lychnos', 'Miruno', 'Miruno (Swimsuit)', 'Jacqueline', 'Kuuko', 'Lilia', 'Rovinia', 'Shade'];
+
+exports.list = list;
