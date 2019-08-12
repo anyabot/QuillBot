@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs": "^0.0.1",
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
