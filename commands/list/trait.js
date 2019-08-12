@@ -19,10 +19,10 @@ class Trait extends commando.Command {
     }
 	async run(message, { text }) {
 		var tr = text.toLowerCase()
-		var path = '/../../trait/' + tr + '.js'
+		var path = '/../../trait/'
 		fs.stat(path, (err, stats) => {
-			if ( !stats.isFile(path) ) {
-				var list = require(path).list
+			if ( !stats.isFile(tr) ) {
+				var list = require(path + tr).list
 				message.channel.send(list.join("\n"))
 			}  
 			else {
