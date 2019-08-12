@@ -17,7 +17,9 @@ class Trait extends commando.Command {
     }
 	async run(message, { text }) {
 		var tr = text.toLowerCase()
+		message.channel.send(tr)
 		var path = '/../../trait/' + tr + '.js'
+		message.channel.send(path)
 		if (moduleIsAvailable(path)) {
 			var list = require(path).list
 			message.channel.send(list.join("\n"))
