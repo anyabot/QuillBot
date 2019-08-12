@@ -12,6 +12,7 @@ bot.registry.registerGroup('util2', 'Util')
 bot.registry.registerGroup('time', 'Time')
 bot.registry.registerGroup('roll', 'Roll')
 bot.registry.registerGroup('link', 'Link')
+bot.registry.registerGroup('list', 'List')
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
 
