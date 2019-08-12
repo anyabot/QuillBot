@@ -11,8 +11,7 @@ class Trait extends commando.Command {
 		args: [{
 		    key: 'text',
 			prompt: 'What trait do you want to know about?',
-		    type: 'string',
-		default: "all"
+		    type: 'string'
 		}]
         });
     }
