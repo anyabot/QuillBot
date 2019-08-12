@@ -1,5 +1,6 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
+var fs = require('fs');
 class Trait extends commando.Command {
     constructor(client) {
         super(client, {
