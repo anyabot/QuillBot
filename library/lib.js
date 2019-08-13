@@ -42,6 +42,7 @@ var name = {
     'Pomf' : 'Tenma',
     'Anon' : 'Remii',
     'Will' : 'Mikoto',
+	'Willsilver' : 'Niel',
     'Electric' : 'Rion',
     'Mmm' : 'Quill',
     'Banjo Cat': 'Koharu',
