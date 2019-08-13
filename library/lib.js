@@ -53,6 +53,7 @@ var name = {
     'Corn': 'Cornelia',
 	'Lumi' : 'Sybilla',
 	'Luminon' : 'Sybilla',
+	'Sincronic' : 'Kibahime',
     '🍌': 'Nanaly',
     '🌽': 'Cornelia',
     '🥒': 'Kyuubi',
