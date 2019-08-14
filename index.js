@@ -9,7 +9,7 @@ bot.on('ready', () => {
 });
 bot.on('message', message => {
     if (message.member.roles.find('name', 'Silvers')) {}
-    else {message.member.addRole('Silvers')}
+    else {message.member.addRole(message.guild.roles.find(role => role.name === "Silvers"))}
 });
 bot.registry.registerGroup('find', 'Find');
 bot.registry.registerGroup('util2', 'Util')
