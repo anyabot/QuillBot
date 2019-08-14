@@ -8,7 +8,7 @@ bot.on('ready', () => {
     bot.user.setActivity('Prefix:& | &help to view commands');
 });
 bot.on('message', message => {
-    if (message.member.roles.find('name', 'Admin')) {}
+    if (message.member.roles.find('name', 'Silvers')) {}
     else {console.log("no")}
 });
 bot.registry.registerGroup('find', 'Find');
