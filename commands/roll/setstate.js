@@ -24,6 +24,8 @@ class RanRoll extends commando.Command {
 		var state = input.toUpperCase()
 		if (state == "AW2V1") {state = "AW2v1"}
 	    	if (state == "AW2V2") {state = "AW2v2"}
+	    	if (state == "AA AW2V1") {state = "AA AW2v1"}
+	    	if (state == "AA AW2V2") {state = "AA AW2v2"}
 		const waifu = new Keyv(process.env.MONGODB_URI, { namespace: 'waifu' });
 	    waifu.on('error', err => console.error('Keyv connection error:', err));
 		var uwaifu = await waifu.get(message.author.id)
@@ -47,6 +49,7 @@ class RanRoll extends commando.Command {
 					var img = $('.fullImageLink a').attr('href')
 					if (img) {
 						var embed = new Discord.RichEmbed()
+						console.log(img)
 						embed.setTitle(unit)
 						embed.setImage(img)
 						message.channel.send(embed);
