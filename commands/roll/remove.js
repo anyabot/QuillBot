@@ -11,7 +11,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'remove',
-            	group: 'roll',
+            	group: 'roll3',
             	memberName: 'remove',
             	description: 'remove a unit from the barrack',
               args: [{
