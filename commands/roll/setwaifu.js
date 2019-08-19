@@ -11,7 +11,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'setwaifu',
-            	group: 'roll',
+            	group: 'roll4',
             	memberName: 'setwaifu',
             	description: 'set a character in the barrack as your waifu',
               args: [{
