@@ -11,7 +11,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'dailycredit',
-            	group: 'roll',
+            	group: 'roll2',
               aliases: ['dailysc'],
             	memberName: 'dailycredit',
             	description: 'get free 40 - 60 sc for the gacha stimulator once per day (reset at 0:00 GMT+9)',
