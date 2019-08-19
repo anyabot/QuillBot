@@ -11,8 +11,9 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'switch',
-            	group: 'roll',
+            	group: 'roll3',
             	memberName: 'switch',
+		aliases: ['swap'],
             	description: 'switch place of 2 units in the barrack',
               args: [{
 		    key: 'ind1',
