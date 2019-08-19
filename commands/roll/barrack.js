@@ -11,7 +11,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'barrack',
-            	group: 'roll',
+            	group: 'roll3',
             	memberName: 'barrack',
             	description: 'check your barrack',
 		examples: ['&barrack']
