@@ -59,6 +59,7 @@ var name = {
     '🍌': 'Nanaly',
     '🌽': 'Cornelia',
     '🥒': 'Kyuubi',
+	'🦋': 'Spiria',
     'Santalissa': 'Alissa (Christmas)',
     '<:ate:405764433852497924>': 'Kibahime',
     '<:rinne:379074211756507136>': 'Rinne',
