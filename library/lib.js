@@ -25,6 +25,7 @@ var name = {
     'Misria' : 'Mithria',
     'Longji' : 'Longji Gongzhu',
     'Wangfei' : 'Wangfei Ren',
+	'Taigong' : 'Taigong Wang',
     'Leimei' : 'Lei-Mei',
     'Shuxian' : 'Shu-Xian',
     'Lanfa' : 'Lan-Fa',
