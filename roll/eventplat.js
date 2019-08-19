@@ -1,4 +1,4 @@
-var plat = {
+var eventplat = {
     1 : 'Echidna',
     2 : 'Belinda',
     3 : 'Akane',
