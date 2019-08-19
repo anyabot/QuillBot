@@ -41,8 +41,8 @@ class RanRoll extends commando.Command {
 	    mes = mes + "\nBanner 1 (b1, banner1, preminum 1)"
 	    mes = mes + "\nBanner 2 (b2, banner2, preminum 2)"
 	    mes = mes + "\nPUG (pick-up, pickup)"
-	    mes = mes + "\nImperial(white empire, we)"
-	    mes = mes + "\nEvent(ev)"
+	    mes = mes + "\nImperial (white empire, we)"
+	    mes = mes + "\nEvent (ev)"
       var b1 = "**Banner 1**"
       if (b1fb.length > 0) {b1 = b1 + "\nFeatured Black: " + b1fb.join(', ')}
       if (b1fp.length > 0) {b1 = b1 + "\nFeatured Plat: " + b1fp.join(', ')}
