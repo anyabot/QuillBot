@@ -18,6 +18,9 @@ var bannerblack = require('../../roll/bannerblack.js').bannerblack;
 var bannerplat = require('../../roll/bannerplat.js').bannerplat;
 var bannergold = require('../../roll/bannergold.js').bannergold;
 var bannersil = require('../../roll/bannersil.js').bannersil;
+var eventblack = require('../../roll/eventblack.js').eventblack;
+var eventplat = require('../../roll/eventplat.js').eventplat;
+var eventgold = require('../../roll/eventgold.js').eventgold;
 var b1fb = require('../../roll/b1fb.js').b1fb;
 var b1fp = require('../../roll/b1fp.js').b1fp;
 var b1fg = []
@@ -213,6 +216,152 @@ class RanRoll extends commando.Command {
 						else if (rar < 64) {
 							var ind = random.int(1, size_dict(gold))
 							var unit = gold[ind]
+							embed.addField("Roll " + i, unit + " (4*)", true)
+							upb = upb - 1;
+							upp = upp -1;
+						}
+						else {
+							var ind = random.int(1, size_dict(sil))
+							var unit = sil[ind]
+							embed.addField("Roll " + i, unit + " (3*)", true)
+							upb = upb - 1;
+							upp = upp -1;
+						}
+					}
+					lr.push(unit)
+				}
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+				message.channel.send(embed)
+			}
+		}
+	    else if (pool == "event" || pool == "ev") {
+			usc = usc - scu;
+			embed.setTitle("Event Gacha Roll Result")
+			if (!r10) {
+				if (upb == 1) {
+					var ind = random.int(1, size_dict(eventblack))
+					var unit = eventblack[ind]
+					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
+					embed.setColor([95, 64, 0])
+					if (upp > 1) { upp = upp -1}
+					upb = 33
+				}
+				else if (upp == 1) {
+					var rar = random.int(1, 100)
+					if (rar < 4) {
+						var ind = random.int(1, size_dict(eventblack))
+						var unit = eventblack[ind]
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+						embed.setColor([95, 64, 0])
+						if (upp > 1) { upp = upp -1}
+						upb = 33
+					}
+					else {
+						var ind = random.int(1, size_dict(eventplat))
+						var unit = eventplat[ind]
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
+						embed.setColor('GREEN')
+						upp = 10
+						upb = upb - 1;
+					}
+				}
+				else {
+					var rar = random.int(1, 100)
+					if (rar < 4) {
+						var ind = random.int(1, size_dict(eventblack))
+						var unit = eventblack[ind]
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+						embed.setColor([95, 64, 0])
+						if (upp > 1) { upp = upp -1}
+						upb = 33
+					}
+					else if (rar < 14) {
+						var ind = random.int(1, size_dict(eventplat))
+						var unit = eventplat[ind]
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+						embed.setColor('GREEN')
+						upp = 10
+						upb = upb - 1;
+					}
+					else if (rar < 64) {
+						var ind = random.int(1, size_dict(eventgold))
+						var unit = eventgold[ind]
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+						embed.setColor('GOLD')
+						upb = upb - 1;
+						upp = upp -1;
+					}
+					else {
+						var ind = random.int(1, size_dict(sil))
+						var unit = sil[ind]
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+						embed.setColor('WHITE')
+						upb = upb - 1;
+						upp = upp -1;
+					}
+				}
+				lr.push(unit)
+				var img
+				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+				request(link, function(err, resp, html) {
+					if (!err) {
+						const $ = cheerio.load(html);
+						img = $('.fullImageLink a').attr('href')
+						embed.setImage(img)
+						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+						message.channel.send(embed)
+					}
+				})
+				
+			}
+			if (r10) {
+				embed.setColor([95, 64, 0])
+				var rar 
+				embed.setDescription("<@" + message.author.id + "> You rolled ")
+				for (var i = 1; i < 11; i++) {
+					if (upb == 1) {
+						var ind = random.int(1, size_dict(eventblack))
+						var unit = eventblack[ind]
+						embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+						if (upp > 1) { upp = upp -1}
+						upb = 33
+					}
+					else if (upp == 1) {
+						var rar = random.int(1, 100)
+						if (rar < 4) {
+							var ind = random.int(1, size_dict(eventblack))
+							var unit = eventblack[ind]
+							embed.addField("Roll " + i, unit + " (6*)", true)
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else {
+							var ind = random.int(1, size_dict(eventplat))
+							var unit = eventplat[ind]
+							embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+							upp = 10
+							upb = upb - 1;
+						}
+					}
+					else {
+						rar = random.int(1, 100)
+						if (rar < 4) {
+							var ind = random.int(1, size_dict(eventblack))
+							var unit = eventblack[ind]
+							embed.addField("Roll " + i, unit + " (6*)", true)
+							if (upp > 1) { upp = upp -1}
+						upb = 33
+						}
+						else if (rar < 14) {
+							var ind = random.int(1, size_dict(eventplat))
+							var unit = eventplat[ind]
+							embed.addField("Roll " + i, unit + " (5*)", true)
+							upp = 10
+						upb = upb - 1;
+						}
+						else if (rar < 64) {
+							var ind = random.int(1, size_dict(eventgold))
+							var unit = eventgold[ind]
 							embed.addField("Roll " + i, unit + " (4*)", true)
 							upb = upb - 1;
 							upp = upp -1;
