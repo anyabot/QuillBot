@@ -10,7 +10,7 @@ var urlencode = require('urlencode');
 
 var bonus = {
 	"PEV": "Physical Attack Evasion",
-	"PAD": "Post-Attack Deplay",
+	"PAD": "Post-Attack Delay",
 	"SCD": "Skill Cooldown",
 	"SDI" :"Skill Duration"
 }
