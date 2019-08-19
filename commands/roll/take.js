@@ -11,7 +11,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'take',
-            	group: 'roll',
+            	group: 'roll3',
             	memberName: 'take',
             	description: 'take a unit from your previous roll to the barrack (max capacity 100 units)',
               args: [{
