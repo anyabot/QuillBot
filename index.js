@@ -16,7 +16,10 @@ bot.on('message', message => {
 bot.registry.registerGroup('find', 'Find');
 bot.registry.registerGroup('util2', 'Util')
 bot.registry.registerGroup('time', 'Time')
-bot.registry.registerGroup('roll', 'Roll')
+bot.registry.registerGroup('roll', 'Mini Game: Rolling')
+bot.registry.registerGroup('roll2', 'Mini Game: SC')
+bot.registry.registerGroup('roll3', 'Mini Game: Barrack')
+bot.registry.registerGroup('roll4', 'Mini Game: Waifu')
 bot.registry.registerGroup('link', 'Link')
 bot.registry.registerGroup('list', 'List')
 bot.registry.registerDefaults();
