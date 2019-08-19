@@ -28,7 +28,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'rollinfo',
-		aliases: ['pullinfo', 'gachainfo', 'drawinfo'],
+		aliases: ['pullinfo', 'gachainfo', 'drawinfo', 'bannerinfo', 'banner'],
             	group: 'roll',
             	memberName: 'rollinfo',
             	description: 'info about banner 1/2 and pug of the gacha stimulator',
