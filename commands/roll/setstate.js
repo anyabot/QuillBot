@@ -13,7 +13,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'setstate',
-            	group: 'roll',
+            	group: 'roll4',
             	memberName: 'setstate',
             	description: 'set the state of your waifu (AA, AW)',
 		examples: ['&setstate base']
