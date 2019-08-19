@@ -37,6 +37,7 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
+	    var mes = "**Banner List:**\nDefault\nBanner 1 (b1, banner1, preminum 1)\nBanner 2 (b2, banner2, preminum 2)\nPUG (pick-up, pickup)\nImperial(white empire, we)\nEvent(ev)"
       var b1 = "**Banner 1**"
       if (b1fb.length > 0) {b1 = b1 + "\nFeatured Black: " + b1fb.join(', ')}
       if (b1fp.length > 0) {b1 = b1 + "\nFeatured Plat: " + b1fp.join(', ')}
@@ -48,7 +49,7 @@ class RanRoll extends commando.Command {
     var pug = "**PUG**"
       if (pugblack.length > 0) {pug = pug + "\nFeatured Black: " + pugblack.join(', ')}
       if (pugplat.length > 0) {pug = pug + "\nFeatured Plat: " + pugplat.join(', ')}
-    var mes = b1 + "\n" + b2 + "\n" + pug
+    mes = mes + b1 + "\n" + b2 + "\n" + pug
     message.channel.send(mes)
     }
 }
