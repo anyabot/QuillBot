@@ -1377,7 +1377,7 @@ class RanRoll extends commando.Command {
 			}
 			else {message.channel.send("Seasonal 1 is not available")}
 		}
-		else if (pool == "seasonal 2" && gachalist["s2open"] == true) {
+		else if (pool == "seasonal 2") {
 			if (gachalist["s2open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Seasonal 2 Gacha Roll Result")
