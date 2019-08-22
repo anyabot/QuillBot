@@ -11,6 +11,7 @@ class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
             	name: 'barrack',
+		aliases: ['barracks'],
             	group: 'roll3',
             	memberName: 'barrack',
             	description: 'check your barrack',
@@ -36,7 +37,7 @@ class RanRoll extends commando.Command {
 				if (j%15 == 0 && j != 0) {
 					pages.push(embed)
 					embed = new Discord.RichEmbed()
-					embed.setTitle("<@" + message.author.tag + ">'s Barrack")
+					embed.setTitle("" + message.author.tag + "'s Barrack")
 					embed.addField("Unit No." + (j + 1), ubarrack[j], true)
 				}
 				else {
