@@ -19,6 +19,7 @@ var name = {
     'White Fluff' : 'Kyuubi',
     'Gold Fluff' : 'Kayou',
     'Chocorino' : 'Rino (Valentine\'s)',
+	'Summerkoto' : 'Mikoto (Swimsuit)',
     'Chainloli' : 'Salus',
     'Hammerloli' : 'Teeny',
     'Wh' : 'Wonder Heart',
