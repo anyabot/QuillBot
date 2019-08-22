@@ -27,6 +27,13 @@ var b1fg = []
 var b2fb = require('../../roll/b2fb.js').b2fb;
 var b2fp = require('../../roll/b2fp.js').b2fp;
 var b2fg = []
+var s1fb = require('../../roll/s1fb.js').s1fb;
+var s1fp = require('../../roll/s1fp.js').s1fp;
+var s1fg = []
+var s2fb = require('../../roll/s2fb.js').s2fb;
+var s2fp = require('../../roll/s2fp.js').s2fp;
+var s2fg = []
+var gachalist = require('../../roll/gachalist.js').gachalist
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
@@ -527,93 +534,15 @@ class RanRoll extends commando.Command {
 			}
 		}
 		else if (pool == "pug" || pool == "pick-up" || pool == "pickup") {
-			usc = usc - scu;
-			embed.setTitle("Pick-Up Gacha Roll Result")
-			if (!r10) {
-				if (upb == 1) {
-					var ind = random.int(0, pugblack.length - 1)
-						var unit = pugblack[ind]
-					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
-					embed.setColor([95, 64, 0])
-					if (upp > 1) { upp = upp -1}
-					upb = 33
-				}
-				else if (upp == 1) {
-					var rar = random.int(1, 100)
-					if (rar < 4) {
-						var ind = random.int(0, pugblack.length - 1)
-						var unit = pugblack[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
-						embed.setColor([95, 64, 0])
-						if (upp > 1) { upp = upp -1}
-						upb = 33
-					}
-					else {
-						var ind = random.int(0, pugplat.length - 1)
-						var unit = pugplat[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
-						embed.setColor('GREEN')
-						upp = 10
-						upb = upb - 1;
-					}
-				}
-				else {
-					var rar = random.int(1, 100)
-					if (rar < 4) {
-						var ind = random.int(0, pugblack.length - 1)
-						var unit = pugblack[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
-						embed.setColor([95, 64, 0])
-						if (upp > 1) { upp = upp -1}
-						upb = 33
-					}
-					else if (rar < 14) {
-						var ind = random.int(0, pugplat.length - 1)
-						var unit = pugplat[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
-						embed.setColor('GREEN')
-						upp = 10
-						upb = upb - 1;
-					}
-					else if (rar < 64) {
-						var ind = random.int(1, size_dict(gold))
-						var unit = gold[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
-						embed.setColor('GOLD')
-						upb = upb - 1;
-						upp = upp -1;
-					}
-					else {
-						var ind = random.int(1, size_dict(sil))
-						var unit = sil[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
-						embed.setColor('WHITE')
-						upb = upb - 1;
-						upp = upp -1;
-					}
-				}
-				lr.push(unit)
-				var img
-				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-						message.channel.send(embed)
-					}
-				})
-			}
-			if (r10) {
-				embed.setColor([95, 64, 0])
-				var rar 
-				embed.setDescription("<@" + message.author.id + "> You rolled ")
-				for (var i = 1; i < 11; i++) {
+			if (gachalist["pugopen"] == true) {
+				usc = usc - scu;
+				embed.setTitle("Pick-Up Gacha Roll Result")
+				if (!r10) {
 					if (upb == 1) {
 						var ind = random.int(0, pugblack.length - 1)
 							var unit = pugblack[ind]
-						embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
+						embed.setColor([95, 64, 0])
 						if (upp > 1) { upp = upp -1}
 						upb = 33
 					}
@@ -622,181 +551,141 @@ class RanRoll extends commando.Command {
 						if (rar < 4) {
 							var ind = random.int(0, pugblack.length - 1)
 							var unit = pugblack[ind]
-							embed.addField("Roll " + i, unit + " (6*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
 							if (upp > 1) { upp = upp -1}
 							upb = 33
 						}
 						else {
 							var ind = random.int(0, pugplat.length - 1)
 							var unit = pugplat[ind]
-							embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
+							embed.setColor('GREEN')
 							upp = 10
 							upb = upb - 1;
 						}
 					}
 					else {
-						rar = random.int(1, 100)
+						var rar = random.int(1, 100)
 						if (rar < 4) {
 							var ind = random.int(0, pugblack.length - 1)
 							var unit = pugblack[ind]
-							embed.addField("Roll " + i, unit + " (6*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
 							if (upp > 1) { upp = upp -1}
-						upb = 33
+							upb = 33
 						}
 						else if (rar < 14) {
 							var ind = random.int(0, pugplat.length - 1)
 							var unit = pugplat[ind]
-							embed.addField("Roll " + i, unit + " (5*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+							embed.setColor('GREEN')
 							upp = 10
-						upb = upb - 1;
+							upb = upb - 1;
 						}
 						else if (rar < 64) {
 							var ind = random.int(1, size_dict(gold))
 							var unit = gold[ind]
-							embed.addField("Roll " + i, unit + " (4*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+							embed.setColor('GOLD')
 							upb = upb - 1;
-						upp = upp -1;
+							upp = upp -1;
 						}
 						else {
 							var ind = random.int(1, size_dict(sil))
 							var unit = sil[ind]
-							embed.addField("Roll " + i, unit + " (3*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+							embed.setColor('WHITE')
 							upb = upb - 1;
 							upp = upp -1;
 						}
 					}
 					lr.push(unit)
+					var img
+					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+					request(link, function(err, resp, html) {
+						if (!err) {
+							const $ = cheerio.load(html);
+							img = $('.fullImageLink a').attr('href')
+							embed.setImage(img)
+							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+							message.channel.send(embed)
+						}
+					})
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-				message.channel.send(embed)
+				if (r10) {
+					embed.setColor([95, 64, 0])
+					var rar 
+					embed.setDescription("<@" + message.author.id + "> You rolled ")
+					for (var i = 1; i < 11; i++) {
+						if (upb == 1) {
+							var ind = random.int(0, pugblack.length - 1)
+								var unit = pugblack[ind]
+							embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else if (upp == 1) {
+							var rar = random.int(1, 100)
+							if (rar < 4) {
+								var ind = random.int(0, pugblack.length - 1)
+								var unit = pugblack[ind]
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+								upb = 33
+							}
+							else {
+								var ind = random.int(0, pugplat.length - 1)
+								var unit = pugplat[ind]
+								embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+								upp = 10
+								upb = upb - 1;
+							}
+						}
+						else {
+							rar = random.int(1, 100)
+							if (rar < 4) {
+								var ind = random.int(0, pugblack.length - 1)
+								var unit = pugblack[ind]
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+							upb = 33
+							}
+							else if (rar < 14) {
+								var ind = random.int(0, pugplat.length - 1)
+								var unit = pugplat[ind]
+								embed.addField("Roll " + i, unit + " (5*)", true)
+								upp = 10
+							upb = upb - 1;
+							}
+							else if (rar < 64) {
+								var ind = random.int(1, size_dict(gold))
+								var unit = gold[ind]
+								embed.addField("Roll " + i, unit + " (4*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+							else {
+								var ind = random.int(1, size_dict(sil))
+								var unit = sil[ind]
+								embed.addField("Roll " + i, unit + " (3*)", true)
+								upb = upb - 1;
+								upp = upp -1;
+							}
+						}
+						lr.push(unit)
+					}
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+					message.channel.send(embed)
+				}
 			}
+			else {message.channel.send("PUG is not available")}
 		}
 		else if (pool == "banner 1" || pool == "b1" || pool == "banner1" || pool == "preminum 1") {
-			usc = usc - scu;
-			embed.setTitle("Banner 1 Gacha Roll Result")
-			if (!r10) {
-				if (upb == 1) {
-					var fea = random.int(1, 10 + 7*b1fb.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerblack))
-							var unit = bannerblack[ind]
-						}
-						else {
-							var ind = random.int(1, b1fb.length) - 1
-							var unit = b1fb[ind]
-						}
-					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
-					embed.setColor([95, 64, 0])
-					if (upp > 1) { upp = upp -1}
-					upb = 33
-				}
-				else if (upp == 1) {
-					var rar = random.int(1, 100)
-					if (rar < 4) {
-						var fea = random.int(1, 10 + 7*b1fb.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerblack))
-							var unit = bannerblack[ind]
-						}
-						else {
-							var ind = random.int(1, b1fb.length) - 1
-							var unit = b1fb[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
-						embed.setColor([95, 64, 0])
-						if (upp > 1) { upp = upp -1}
-						upb = 33
-					}
-					else {
-						var fea = random.int(1, 10 + 7*b1fp.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerplat))
-							var unit = bannerplat[ind]
-						}
-						else {
-							var ind = random.int(1, b1fp.length) - 1
-							var unit = b1fp[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
-						embed.setColor('GREEN')
-						upp = 10
-						upb = upb - 1;
-					}
-				}
-				else {
-					var rar = random.int(1, 100)
-					if (rar < 4) {
-						var fea = random.int(1, 10 + 7*b1fb.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerblack))
-							var unit = bannerblack[ind]
-						}
-						else {
-							var ind = random.int(1, b1fb.length) - 1
-							var unit = b1fb[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
-						embed.setColor([95, 64, 0])
-						if (upp > 1) { upp = upp -1}
-						upb = 33
-					}
-					else if (rar < 14) {
-						var fea = random.int(1, 10 + 7*b1fp.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerplat))
-							var unit = bannerplat[ind]
-						}
-						else {
-							var ind = random.int(1, b1fp.length) - 1
-							var unit = b1fp[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
-						embed.setColor('GREEN')
-						upp = 10
-						upb = upb - 1;
-					}
-					else if (rar < 64) {
-						var fea = random.int(1, 10 + 7*b1fg.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannergold))
-							var unit = bannergold[ind]
-						}
-						else {
-							var ind = random.int(1, b1fg.length) - 1
-							var unit = b1fg[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
-						embed.setColor('GOLD')
-						upb = upb - 1;
-						upp = upp -1;
-					}
-					else {
-						var ind = random.int(1, size_dict(bannersil))
-						var unit = bannersil[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
-						embed.setColor('WHITE')
-						upb = upb - 1;
-						upp = upp -1;
-					}
-				}
-				lr.push(unit)
-				var img
-				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-						message.channel.send(embed)
-					}
-				})
-			}
-			if (r10) {
-				embed.setColor([95, 64, 0])
-				var rar 
-				embed.setDescription("<@" + message.author.id + "> You rolled ")
-				for (var i = 1; i < 11; i++) {
+			if (gachalist["b1open"] == true) {
+				usc = usc - scu;
+				embed.setTitle("Banner 1 Gacha Roll Result")
+				if (!r10) {
 					if (upb == 1) {
 						var fea = random.int(1, 10 + 7*b1fb.length)
 							if (fea < 11) {
@@ -807,7 +696,8 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b1fb.length) - 1
 								var unit = b1fb[ind]
 							}
-						embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
+						embed.setColor([95, 64, 0])
 						if (upp > 1) { upp = upp -1}
 						upb = 33
 					}
@@ -823,7 +713,8 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b1fb.length) - 1
 								var unit = b1fb[ind]
 							}
-							embed.addField("Roll " + i, unit + " (6*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
 							if (upp > 1) { upp = upp -1}
 							upb = 33
 						}
@@ -837,13 +728,14 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b1fp.length) - 1
 								var unit = b1fp[ind]
 							}
-							embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
+							embed.setColor('GREEN')
 							upp = 10
 							upb = upb - 1;
 						}
 					}
 					else {
-						rar = random.int(1, 100)
+						var rar = random.int(1, 100)
 						if (rar < 4) {
 							var fea = random.int(1, 10 + 7*b1fb.length)
 							if (fea < 11) {
@@ -854,9 +746,10 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b1fb.length) - 1
 								var unit = b1fb[ind]
 							}
-							embed.addField("Roll " + i, unit + " (6*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
 							if (upp > 1) { upp = upp -1}
-						upb = 33
+							upb = 33
 						}
 						else if (rar < 14) {
 							var fea = random.int(1, 10 + 7*b1fp.length)
@@ -868,9 +761,10 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b1fp.length) - 1
 								var unit = b1fp[ind]
 							}
-							embed.addField("Roll " + i, unit + " (5*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+							embed.setColor('GREEN')
 							upp = 10
-						upb = upb - 1;
+							upb = upb - 1;
 						}
 						else if (rar < 64) {
 							var fea = random.int(1, 10 + 7*b1fg.length)
@@ -882,150 +776,148 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b1fg.length) - 1
 								var unit = b1fg[ind]
 							}
-							embed.addField("Roll " + i, unit + " (4*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+							embed.setColor('GOLD')
 							upb = upb - 1;
-						upp = upp -1;
+							upp = upp -1;
 						}
 						else {
 							var ind = random.int(1, size_dict(bannersil))
 							var unit = bannersil[ind]
-							embed.addField("Roll " + i, unit + " (3*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+							embed.setColor('WHITE')
 							upb = upb - 1;
-						upp = upp -1;
+							upp = upp -1;
 						}
 					}
 					lr.push(unit)
+					var img
+					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+					request(link, function(err, resp, html) {
+						if (!err) {
+							const $ = cheerio.load(html);
+							img = $('.fullImageLink a').attr('href')
+							embed.setImage(img)
+							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+							message.channel.send(embed)
+						}
+					})
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-				message.channel.send(embed)
+				if (r10) {
+					embed.setColor([95, 64, 0])
+					var rar 
+					embed.setDescription("<@" + message.author.id + "> You rolled ")
+					for (var i = 1; i < 11; i++) {
+						if (upb == 1) {
+							var fea = random.int(1, 10 + 7*b1fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, b1fb.length) - 1
+									var unit = b1fb[ind]
+								}
+							embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else if (upp == 1) {
+							var rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*b1fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, b1fb.length) - 1
+									var unit = b1fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+								upb = 33
+							}
+							else {
+								var fea = random.int(1, 10 + 7*b1fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, b1fp.length) - 1
+									var unit = b1fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+								upp = 10
+								upb = upb - 1;
+							}
+						}
+						else {
+							rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*b1fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, b1fb.length) - 1
+									var unit = b1fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+							upb = 33
+							}
+							else if (rar < 14) {
+								var fea = random.int(1, 10 + 7*b1fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, b1fp.length) - 1
+									var unit = b1fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*)", true)
+								upp = 10
+							upb = upb - 1;
+							}
+							else if (rar < 64) {
+								var fea = random.int(1, 10 + 7*b1fg.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannergold))
+									var unit = bannergold[ind]
+								}
+								else {
+									var ind = random.int(1, b1fg.length) - 1
+									var unit = b1fg[ind]
+								}
+								embed.addField("Roll " + i, unit + " (4*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+							else {
+								var ind = random.int(1, size_dict(bannersil))
+								var unit = bannersil[ind]
+								embed.addField("Roll " + i, unit + " (3*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+						}
+						lr.push(unit)
+					}
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+					message.channel.send(embed)
+				}
 			}
+			else {message.channel.send("Banner 1 is not available")}
 		}
 	    else if (pool == "banner 2" || pool == "b2" || pool == "banner2" || pool == "preminum 2") {
-		    usc = usc - scu;
-			embed.setTitle("Banner 2 Gacha Roll Result")
-			if (!r10) {
-				if (upb == 1) {
-					var fea = random.int(1, 10 + 7*b2fb.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerblack))
-							var unit = bannerblack[ind]
-						}
-						else {
-							var ind = random.int(1, b2fb.length) - 1
-							var unit = b2fb[ind]
-						}
-					embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
-					embed.setColor([95, 64, 0])
-					if (upp > 1) { upp = upp -1}
-					upb = 33
-				}
-				else if (upp == 1) {
-					var rar = random.int(1, 100)
-					if (rar < 4) {
-						var fea = random.int(1, 10 + 7*b2fb.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerblack))
-							var unit = bannerblack[ind]
-						}
-						else {
-							var ind = random.int(1, b2fb.length) - 1
-							var unit = b2fb[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
-						embed.setColor([95, 64, 0])
-						if (upp > 1) { upp = upp -1}
-						upb = 33
-					}
-					else {
-						var fea = random.int(1, 10 + 7*b2fp.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerplat))
-							var unit = bannerplat[ind]
-						}
-						else {
-							var ind = random.int(1, b2fp.length) - 1
-							var unit = b2fp[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
-						embed.setColor('GREEN')
-						upp = 10
-						upb = upb - 1;
-					}
-				}
-				else {
-					var rar = random.int(1, 100)
-					if (rar < 4) {
-						var fea = random.int(1, 10 + 7*b2fb.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerblack))
-							var unit = bannerblack[ind]
-						}
-						else {
-							var ind = random.int(1, b2fb.length) - 1
-							var unit = b2fb[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
-						embed.setColor([95, 64, 0])
-						if (upp > 1) { upp = upp -1}
-						upb = 33
-					}
-					else if (rar < 14) {
-						var fea = random.int(1, 10 + 7*b2fp.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannerplat))
-							var unit = bannerplat[ind]
-						}
-						else {
-							var ind = random.int(1, b2fp.length) - 1
-							var unit = b2fp[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
-						embed.setColor('GREEN')
-						upp = 10
-						upb = upb - 1;
-					}
-					else if (rar < 64) {
-						var fea = random.int(1, 10 + 7*b2fg.length)
-						if (fea < 11) {
-							var ind = random.int(1, size_dict(bannergold))
-							var unit = bannergold[ind]
-						}
-						else {
-							var ind = random.int(1, b2fg.length) - 1
-							var unit = b2fg[ind]
-						}
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
-						embed.setColor('GOLD')
-						upb = upb - 1;
-						upp = upp -1;
-					}
-					else {
-						var ind = random.int(1, size_dict(bannersil))
-						var unit = bannersil[ind]
-						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
-						embed.setColor('WHITE')
-						upb = upb - 1;
-						upp = upp -1;
-					}
-				}
-				lr.push(unit)
-				var img
-				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-						message.channel.send(embed)
-					}
-				})
-			}
-			if (r10) {
-				embed.setColor([95, 64, 0])
-				var rar 
-				embed.setDescription("<@" + message.author.id + "> You rolled ")
-				for (var i = 1; i < 11; i++) {
+			if (gachalist["b2open"] == true) {
+				usc = usc - scu;
+				embed.setTitle("Banner 2 Gacha Roll Result")
+				if (!r10) {
 					if (upb == 1) {
 						var fea = random.int(1, 10 + 7*b2fb.length)
 							if (fea < 11) {
@@ -1036,7 +928,8 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b2fb.length) - 1
 								var unit = b2fb[ind]
 							}
-						embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
+						embed.setColor([95, 64, 0])
 						if (upp > 1) { upp = upp -1}
 						upb = 33
 					}
@@ -1052,7 +945,8 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b2fb.length) - 1
 								var unit = b2fb[ind]
 							}
-							embed.addField("Roll " + i, unit + " (6*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
 							if (upp > 1) { upp = upp -1}
 							upb = 33
 						}
@@ -1066,13 +960,14 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b2fp.length) - 1
 								var unit = b2fp[ind]
 							}
-							embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
+							embed.setColor('GREEN')
 							upp = 10
 							upb = upb - 1;
 						}
 					}
 					else {
-						rar = random.int(1, 100)
+						var rar = random.int(1, 100)
 						if (rar < 4) {
 							var fea = random.int(1, 10 + 7*b2fb.length)
 							if (fea < 11) {
@@ -1083,9 +978,10 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b2fb.length) - 1
 								var unit = b2fb[ind]
 							}
-							embed.addField("Roll " + i, unit + " (6*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
 							if (upp > 1) { upp = upp -1}
-						upb = 33
+							upb = 33
 						}
 						else if (rar < 14) {
 							var fea = random.int(1, 10 + 7*b2fp.length)
@@ -1097,9 +993,10 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b2fp.length) - 1
 								var unit = b2fp[ind]
 							}
-							embed.addField("Roll " + i, unit + " (5*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+							embed.setColor('GREEN')
 							upp = 10
-						upb = upb - 1;
+							upb = upb - 1;
 						}
 						else if (rar < 64) {
 							var fea = random.int(1, 10 + 7*b2fg.length)
@@ -1111,23 +1008,606 @@ class RanRoll extends commando.Command {
 								var ind = random.int(1, b2fg.length) - 1
 								var unit = b2fg[ind]
 							}
-							embed.addField("Roll " + i, unit + " (4*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+							embed.setColor('GOLD')
 							upb = upb - 1;
-						upp = upp -1;
+							upp = upp -1;
 						}
 						else {
 							var ind = random.int(1, size_dict(bannersil))
 							var unit = bannersil[ind]
-							embed.addField("Roll " + i, unit + " (3*)", true)
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+							embed.setColor('WHITE')
 							upb = upb - 1;
-						upp = upp -1;
+							upp = upp -1;
 						}
 					}
 					lr.push(unit)
+					var img
+					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+					request(link, function(err, resp, html) {
+						if (!err) {
+							const $ = cheerio.load(html);
+							img = $('.fullImageLink a').attr('href')
+							embed.setImage(img)
+							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+							message.channel.send(embed)
+						}
+					})
 				}
-				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-				message.channel.send(embed)
+				if (r10) {
+					embed.setColor([95, 64, 0])
+					var rar 
+					embed.setDescription("<@" + message.author.id + "> You rolled ")
+					for (var i = 1; i < 11; i++) {
+						if (upb == 1) {
+							var fea = random.int(1, 10 + 7*b2fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, b2fb.length) - 1
+									var unit = b2fb[ind]
+								}
+							embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else if (upp == 1) {
+							var rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*b2fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, b2fb.length) - 1
+									var unit = b2fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+								upb = 33
+							}
+							else {
+								var fea = random.int(1, 10 + 7*b2fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, b2fp.length) - 1
+									var unit = b2fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+								upp = 10
+								upb = upb - 1;
+							}
+						}
+						else {
+							rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*b2fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, b2fb.length) - 1
+									var unit = b2fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+							upb = 33
+							}
+							else if (rar < 14) {
+								var fea = random.int(1, 10 + 7*b2fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, b2fp.length) - 1
+									var unit = b2fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*)", true)
+								upp = 10
+							upb = upb - 1;
+							}
+							else if (rar < 64) {
+								var fea = random.int(1, 10 + 7*b2fg.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannergold))
+									var unit = bannergold[ind]
+								}
+								else {
+									var ind = random.int(1, b2fg.length) - 1
+									var unit = b2fg[ind]
+								}
+								embed.addField("Roll " + i, unit + " (4*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+							else {
+								var ind = random.int(1, size_dict(bannersil))
+								var unit = bannersil[ind]
+								embed.addField("Roll " + i, unit + " (3*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+						}
+						lr.push(unit)
+					}
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+					message.channel.send(embed)
+				}
 			}
+			else {message.channel.send("Banner 2 is not available")}
+		}
+	    else if (pool == "seasonal 1") {
+			if (gachalist["s1open"] == true) {
+				usc = usc - scu;
+				embed.setTitle("Seasonal 1 Gacha Roll Result")
+				if (!r10) {
+					if (upb == 1) {
+						var fea = random.int(1, 10 + 7*s1fb.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerblack))
+								var unit = bannerblack[ind]
+							}
+							else {
+								var ind = random.int(1, s1fb.length) - 1
+								var unit = s1fb[ind]
+							}
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
+						embed.setColor([95, 64, 0])
+						if (upp > 1) { upp = upp -1}
+						upb = 33
+					}
+					else if (upp == 1) {
+						var rar = random.int(1, 100)
+						if (rar < 4) {
+							var fea = random.int(1, 10 + 7*s1fb.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerblack))
+								var unit = bannerblack[ind]
+							}
+							else {
+								var ind = random.int(1, s1fb.length) - 1
+								var unit = s1fb[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else {
+							var fea = random.int(1, 10 + 7*s1fp.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerplat))
+								var unit = bannerplat[ind]
+							}
+							else {
+								var ind = random.int(1, s1fp.length) - 1
+								var unit = s1fp[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
+							embed.setColor('GREEN')
+							upp = 10
+							upb = upb - 1;
+						}
+					}
+					else {
+						var rar = random.int(1, 100)
+						if (rar < 4) {
+							var fea = random.int(1, 10 + 7*s1fb.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerblack))
+								var unit = bannerblack[ind]
+							}
+							else {
+								var ind = random.int(1, s1fb.length) - 1
+								var unit = s1fb[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else if (rar < 14) {
+							var fea = random.int(1, 10 + 7*s1fp.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerplat))
+								var unit = bannerplat[ind]
+							}
+							else {
+								var ind = random.int(1, s1fp.length) - 1
+								var unit = s1fp[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+							embed.setColor('GREEN')
+							upp = 10
+							upb = upb - 1;
+						}
+						else if (rar < 64) {
+							var fea = random.int(1, 10 + 7*s1fg.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannergold))
+								var unit = bannergold[ind]
+							}
+							else {
+								var ind = random.int(1, s1fg.length) - 1
+								var unit = s1fg[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+							embed.setColor('GOLD')
+							upb = upb - 1;
+							upp = upp -1;
+						}
+						else {
+							var ind = random.int(1, size_dict(bannersil))
+							var unit = bannersil[ind]
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+							embed.setColor('WHITE')
+							upb = upb - 1;
+							upp = upp -1;
+						}
+					}
+					lr.push(unit)
+					var img
+					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+					request(link, function(err, resp, html) {
+						if (!err) {
+							const $ = cheerio.load(html);
+							img = $('.fullImageLink a').attr('href')
+							embed.setImage(img)
+							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+							message.channel.send(embed)
+						}
+					})
+				}
+				if (r10) {
+					embed.setColor([95, 64, 0])
+					var rar 
+					embed.setDescription("<@" + message.author.id + "> You rolled ")
+					for (var i = 1; i < 11; i++) {
+						if (upb == 1) {
+							var fea = random.int(1, 10 + 7*s1fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, s1fb.length) - 1
+									var unit = s1fb[ind]
+								}
+							embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else if (upp == 1) {
+							var rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*s1fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, s1fb.length) - 1
+									var unit = s1fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+								upb = 33
+							}
+							else {
+								var fea = random.int(1, 10 + 7*s1fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, s1fp.length) - 1
+									var unit = s1fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+								upp = 10
+								upb = upb - 1;
+							}
+						}
+						else {
+							rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*s1fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, s1fb.length) - 1
+									var unit = s1fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+							upb = 33
+							}
+							else if (rar < 14) {
+								var fea = random.int(1, 10 + 7*s1fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, s1fp.length) - 1
+									var unit = s1fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*)", true)
+								upp = 10
+							upb = upb - 1;
+							}
+							else if (rar < 64) {
+								var fea = random.int(1, 10 + 7*s1fg.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannergold))
+									var unit = bannergold[ind]
+								}
+								else {
+									var ind = random.int(1, s1fg.length) - 1
+									var unit = s1fg[ind]
+								}
+								embed.addField("Roll " + i, unit + " (4*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+							else {
+								var ind = random.int(1, size_dict(bannersil))
+								var unit = bannersil[ind]
+								embed.addField("Roll " + i, unit + " (3*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+						}
+						lr.push(unit)
+					}
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+					message.channel.send(embed)
+				}
+			}
+			else {message.channel.send("Seasonal 1 is not available")}
+		}
+		else if (pool == "seasonal 2" && gachalist["s2open"] == true) {
+			if (gachalist["s2open"] == true) {
+				usc = usc - scu;
+				embed.setTitle("Seasonal 2 Gacha Roll Result")
+				if (!r10) {
+					if (upb == 1) {
+						var fea = random.int(1, 10 + 7*s2fb.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerblack))
+								var unit = bannerblack[ind]
+							}
+							else {
+								var ind = random.int(1, s2fb.length) - 1
+								var unit = s2fb[ind]
+							}
+						embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*) (Pity Black)")
+						embed.setColor([95, 64, 0])
+						if (upp > 1) { upp = upp -1}
+						upb = 33
+					}
+					else if (upp == 1) {
+						var rar = random.int(1, 100)
+						if (rar < 4) {
+							var fea = random.int(1, 10 + 7*s2fb.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerblack))
+								var unit = bannerblack[ind]
+							}
+							else {
+								var ind = random.int(1, s2fb.length) - 1
+								var unit = s2fb[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else {
+							var fea = random.int(1, 10 + 7*s2fp.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerplat))
+								var unit = bannerplat[ind]
+							}
+							else {
+								var ind = random.int(1, s2fp.length) - 1
+								var unit = s2fp[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*) (Pity Plat)")
+							embed.setColor('GREEN')
+							upp = 10
+							upb = upb - 1;
+						}
+					}
+					else {
+						var rar = random.int(1, 100)
+						if (rar < 4) {
+							var fea = random.int(1, 10 + 7*s2fb.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerblack))
+								var unit = bannerblack[ind]
+							}
+							else {
+								var ind = random.int(1, s2fb.length) - 1
+								var unit = s2fb[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (6*)")
+							embed.setColor([95, 64, 0])
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else if (rar < 14) {
+							var fea = random.int(1, 10 + 7*s2fp.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannerplat))
+								var unit = bannerplat[ind]
+							}
+							else {
+								var ind = random.int(1, s2fp.length) - 1
+								var unit = s2fp[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (5*)")
+							embed.setColor('GREEN')
+							upp = 10
+							upb = upb - 1;
+						}
+						else if (rar < 64) {
+							var fea = random.int(1, 10 + 7*s2fg.length)
+							if (fea < 11) {
+								var ind = random.int(1, size_dict(bannergold))
+								var unit = bannergold[ind]
+							}
+							else {
+								var ind = random.int(1, s2fg.length) - 1
+								var unit = s2fg[ind]
+							}
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (4*)")
+							embed.setColor('GOLD')
+							upb = upb - 1;
+							upp = upp -1;
+						}
+						else {
+							var ind = random.int(1, size_dict(bannersil))
+							var unit = bannersil[ind]
+							embed.setDescription("<@" + message.author.id + "> You rolled " + unit + " (3*)")
+							embed.setColor('WHITE')
+							upb = upb - 1;
+							upp = upp -1;
+						}
+					}
+					lr.push(unit)
+					var img
+					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+					request(link, function(err, resp, html) {
+						if (!err) {
+							const $ = cheerio.load(html);
+							img = $('.fullImageLink a').attr('href')
+							embed.setImage(img)
+							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+							message.channel.send(embed)
+						}
+					})
+				}
+				if (r10) {
+					embed.setColor([95, 64, 0])
+					var rar 
+					embed.setDescription("<@" + message.author.id + "> You rolled ")
+					for (var i = 1; i < 11; i++) {
+						if (upb == 1) {
+							var fea = random.int(1, 10 + 7*s2fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, s2fb.length) - 1
+									var unit = s2fb[ind]
+								}
+							embed.addField("Roll " + i, unit + " (6*) (Pity)", true)
+							if (upp > 1) { upp = upp -1}
+							upb = 33
+						}
+						else if (upp == 1) {
+							var rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*s2fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, s2fb.length) - 1
+									var unit = s2fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+								upb = 33
+							}
+							else {
+								var fea = random.int(1, 10 + 7*s2fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, s2fp.length) - 1
+									var unit = s2fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*) (Pity)", true)
+								upp = 10
+								upb = upb - 1;
+							}
+						}
+						else {
+							rar = random.int(1, 100)
+							if (rar < 4) {
+								var fea = random.int(1, 10 + 7*s2fb.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerblack))
+									var unit = bannerblack[ind]
+								}
+								else {
+									var ind = random.int(1, s2fb.length) - 1
+									var unit = s2fb[ind]
+								}
+								embed.addField("Roll " + i, unit + " (6*)", true)
+								if (upp > 1) { upp = upp -1}
+							upb = 33
+							}
+							else if (rar < 14) {
+								var fea = random.int(1, 10 + 7*s2fp.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannerplat))
+									var unit = bannerplat[ind]
+								}
+								else {
+									var ind = random.int(1, s2fp.length) - 1
+									var unit = s2fp[ind]
+								}
+								embed.addField("Roll " + i, unit + " (5*)", true)
+								upp = 10
+							upb = upb - 1;
+							}
+							else if (rar < 64) {
+								var fea = random.int(1, 10 + 7*s2fg.length)
+								if (fea < 11) {
+									var ind = random.int(1, size_dict(bannergold))
+									var unit = bannergold[ind]
+								}
+								else {
+									var ind = random.int(1, s2fg.length) - 1
+									var unit = s2fg[ind]
+								}
+								embed.addField("Roll " + i, unit + " (4*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+							else {
+								var ind = random.int(1, size_dict(bannersil))
+								var unit = bannersil[ind]
+								embed.addField("Roll " + i, unit + " (3*)", true)
+								upb = upb - 1;
+							upp = upp -1;
+							}
+						}
+						lr.push(unit)
+					}
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
+					message.channel.send(embed)
+				}
+			}
+			else {message.channel.send("Seasonal 2 is not available")}
 		}
 		else {
 			lr = await lastroll.get(message.author.id)
