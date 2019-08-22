@@ -45,9 +45,11 @@ class RanRoll extends commando.Command {
 
     async run(message, input) {
 	    var mes = "**Banner List:**\nDefault"
-	    mes = mes + "\nBanner 1 (b1, banner1, preminum 1)"
-	    mes = mes + "\nBanner 2 (b2, banner2, preminum 2)"
-	    mes = mes + "\nPUG (pick-up, pickup)"
+	    if (gachalist["s1open"] == true) {mes = mes + "\nSeasonal 1 (s1, seasonal1)"}
+	    if (gachalist["s2open"] == true) {mes = mes + "\nSeasonal 2 (s2, seasonal2)"}
+	    if (gachalist["b1open"] == true) {mes = mes + "\nBanner 1 (b1, banner1, preminum 1)"}
+	    if (gachalist["b2open"] == true) {mes = mes + "\nBanner 2 (b2, banner2, preminum 2)"}
+	    if (gachalist["pugopen"] == true) {mes = mes + "\nPUG (pick-up, pickup)"}
 	    mes = mes + "\nImperial (white empire, we)"
 	    mes = mes + "\nEvent (ev)"
 	    
