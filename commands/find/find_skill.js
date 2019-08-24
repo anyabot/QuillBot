@@ -60,7 +60,9 @@ class FindSkill extends commando.Command {
 				$('.wikitable').each(function(i, elem) {
 					output = $(elem).first().text();
 					let ar = te(output);
-					if (ar[0].trim() === 'Unit'){
+					output = $(elem).find('tr').eq(1).text();
+					let aa = te(output);
+					if (ar[0].trim() === 'Unit' && aa[0] === "Normal"){
 						check = true;
 						let siz = $(elem).find('tr').length;
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').find('img').attr('data-src');
