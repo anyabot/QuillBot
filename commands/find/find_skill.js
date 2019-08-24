@@ -62,7 +62,7 @@ class FindSkill extends commando.Command {
 					let ar = te(output);
 					output = $(elem).find('tr').eq(1).text();
 					let aa = te(output);
-					if (ar[0].trim() === 'Unit' && aa[0] === "Normal"){
+					if (ar[0].trim() === 'Unit' && aa[1] === "Normal"){
 						check = true;
 						let siz = $(elem).find('tr').length;
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').find('img').attr('data-src');
