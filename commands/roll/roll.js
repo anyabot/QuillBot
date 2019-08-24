@@ -242,6 +242,7 @@ class RanRoll extends commando.Command {
 			}
 		}
 	    else if (pool == "event" || pool == "ev") {
+		    	scu = scu*3/5;
 			usc = usc - scu;
 			embed.setTitle("Event Gacha Roll Result")
 			if (!r10) {
