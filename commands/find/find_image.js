@@ -121,7 +121,7 @@ class FindImage extends commando.Command {
       }
     }
 		if (check) {
-		embed = pages[0];
+		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
 		message.channel.send(embed).then(msg => {
 
