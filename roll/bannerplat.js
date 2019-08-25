@@ -74,7 +74,9 @@ var bannerplat = {
 	73 : 'Alma',
 	74 : 'Yuffe',
 	75 : 'Orihime',
-	76 : 'Mithria'
+	76 : 'Mithria',
+	77 : 'Honey',
+	78 : 'Minette'
 }
 
 exports.bannerplat = bannerplat;
