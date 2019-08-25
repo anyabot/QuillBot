@@ -45,6 +45,7 @@ var name = {
     'Anon' : 'Remii',
     'Will' : 'Mikoto',
 	'Willsilver' : 'Niel',
+	'You' : 'Quill',
     'Electric' : 'Rion',
     'Mmm' : 'Quill',
     'Banjo Cat': 'Koharu',
