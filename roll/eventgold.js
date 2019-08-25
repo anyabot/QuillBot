@@ -2,7 +2,7 @@ var eventgold = {
     1 : 'Cloris',
     2 : 'Aria',
     3 : 'Noel',
-    4 : 'Chloe',
+    4 : 'Soma (New Year\'s)',
     5 : 'Marie',
 	6 : 'Xiao',
 	7 : 'Erun',
@@ -27,8 +27,7 @@ var eventgold = {
 	26 : 'Raichi',
 	27 : 'Giovanni (School)',
 	28 : 'Maurette',
-	29 : 'Ryuryu',
-	30 : 'Soma (New Year\'s)'
+	29 : 'Ryuryu'
 }
 
 exports.eventgold = eventgold;
