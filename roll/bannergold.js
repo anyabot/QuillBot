@@ -15,7 +15,8 @@ var bannergold = {
 	14 : 'Rino',
 	15 : 'Margaret',
 	16 : 'Matilda',
-	17 : 'Gordeaux'
+	17 : 'Gordeaux',
+	18 : 'Soleil'
 }
 
 exports.bannergold = bannergold;
