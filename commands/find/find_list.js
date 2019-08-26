@@ -64,7 +64,6 @@ request(link, function(err, resp, html) {
       embed.setImage(img)
       pages.push(embed)
     })
-  }
 		if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
