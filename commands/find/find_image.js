@@ -52,9 +52,9 @@ class FindImage extends commando.Command {
     var img;
     var pages = [];
     var page = 1;
-    img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));;
+    img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
-      let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));;
+      let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));
       nam = nam.split(" Render")[0]
       check = true
       let embed = new Discord.RichEmbed()
@@ -63,9 +63,9 @@ class FindImage extends commando.Command {
       embed.setImage(img)
       pages.push(embed)
     }
-    img = ($('.AWGallery div:nth-child(2) a img').attr('data-src'));;
+    img = ($('.AWGallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
-      let nam =($('.AWGallery div:nth-child(2) a img').attr('alt'));;
+      let nam =($('.AWGallery div:nth-child(2) a img').attr('alt'));
       nam = nam.split(" Render")[0]
       check = true
       let embed = new Discord.RichEmbed()
@@ -74,9 +74,9 @@ class FindImage extends commando.Command {
       embed.setImage(img)
       pages.push(embed)
     }
-    img = ($('.AW2Gallery div:nth-child(2) a img').attr('data-src'));;
+    img = ($('.AW2Gallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
-      let nam =($('.AW2Gallery div:nth-child(2) a img').attr('alt'));;
+      let nam =($('.AW2Gallery div:nth-child(2) a img').attr('alt'));
       nam = nam.split(" Render")[0]
       check = true
       let embed = new Discord.RichEmbed()
@@ -85,9 +85,9 @@ class FindImage extends commando.Command {
       embed.setImage(img)
       pages.push(embed)
     }
-    img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));;
+    img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
-      let nam =($('.AW2v1Gallery div:nth-child(2) a img').attr('alt'));;
+      let nam =($('.AW2v1Gallery div:nth-child(2) a img').attr('alt'));
       nam = nam.split(" Render")[0]
       check = true
       let embed = new Discord.RichEmbed()
@@ -96,9 +96,9 @@ class FindImage extends commando.Command {
       embed.setImage(img)
       pages.push(embed)
     }
-    img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));;
+    img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
-      let nam =($('.AW2v2Gallery div:nth-child(2) a img').attr('alt'));;
+      let nam =($('.AW2v2Gallery div:nth-child(2) a img').attr('alt'));
       nam = nam.split(" Render")[0]
       check = true
       let embed = new Discord.RichEmbed()
@@ -108,9 +108,9 @@ class FindImage extends commando.Command {
       pages.push(embed)
     }
     for (var i = 1; i < 5; i++) {
-      img = ($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('data-src'));;
+      img = ($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('data-src'));
       if (img) {
-        let nam =($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('alt'));;
+        let nam =($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('alt'));
         nam = nam.split(" Render")[0]
         check = true
         let embed = new Discord.RichEmbed()
