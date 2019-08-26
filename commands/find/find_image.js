@@ -59,7 +59,7 @@ class FindImage extends commando.Command {
       check = true
       let embed = new Discord.RichEmbed()
       img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(unit)
+      embed.setTitle(nam)
       embed.setImage(img)
       pages.push(embed)
     }
@@ -70,7 +70,7 @@ class FindImage extends commando.Command {
       check = true
       let embed = new Discord.RichEmbed()
       img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(unit + " AW")
+      embed.setTitle(nam)
       embed.setImage(img)
       pages.push(embed)
     }
@@ -81,7 +81,7 @@ class FindImage extends commando.Command {
       check = true
       let embed = new Discord.RichEmbed()
       img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(unit + " AW2")
+      embed.setTitle(nam)
       embed.setImage(img)
       pages.push(embed)
     }
@@ -92,7 +92,7 @@ class FindImage extends commando.Command {
       check = true
       let embed = new Discord.RichEmbed()
       img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(unit + " AW2v1")
+      embed.setTitle(nam)
       embed.setImage(img)
       pages.push(embed)
     }
@@ -103,7 +103,7 @@ class FindImage extends commando.Command {
       check = true
       let embed = new Discord.RichEmbed()
       img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(unit + " AW2v2")
+      embed.setTitle(nam)
       embed.setImage(img)
       pages.push(embed)
     }
