@@ -67,7 +67,7 @@ request(link, function(err, resp, html) {
     const $ = cheerio.load(html);
     $('.listtable.bgwhite tr td div a img').each(function(i, elem) {
       check = true
-      let img = $(elem).attr('data-src')
+      let img = $(elem).attr('src')
       let nam =$(elem).attr('alt');
 	    nam = he.decode(nam)
       nam = nam.split(" Icon")[0]
