@@ -27,6 +27,8 @@ class FindImage extends commando.Command {
 
     async run(message, { text }) {
         var cl = text.toLowerCase().toTitleCase();
+	    var words = cl.split(' ');
+	    var words.length;
 	    if (cl == "Intermediate Dragon Soldier" || cl == "Intermediate Dragon Soldiers") {cl = "Dragon Soldiers"}
 else if (cl == "Priestess Warrior" || cl == "Priestess Warriors") {cl = "Priest Warriors"}
 else if (cl == "We" || cl == "White Empire") {cl = "White Empire"}
@@ -38,15 +40,16 @@ else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji
 				cl = cl;
 			}
 			else if (cl.slice(-1) == "\】" || cl.slice(-1) == "\)") {
-				let words = cl.split(' ');
-				let le = words.length;
 				words[le-2] = pluralize.plural(words[le-2])
 				if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
 				cl = words.join(" ")
 			}
+	    else if (suffix[words[le-1]]) {
+	    	words[le-2] = pluralize.plural(words[le-2])
+				if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
+				cl = words.join(" ")
+	    }
 			else {
-				let words = cl.split(' ');
-				let le = words.length;
 				if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
 				cl = words.join(" ")
 				cl = pluralize.plural(cl);
