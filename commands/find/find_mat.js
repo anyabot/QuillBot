@@ -241,6 +241,7 @@ request(link, function(err, resp, html) {
 			else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji" || na(output) == "Spirit of War") {
 				awname = na(output);
 			}
+			else if (na(output) == "Spirit of War") {awname = "Spirits of War"}
 			else if (na(output).slice(-1) == "\】" || na(output).slice(-1) == "\)") {
 				let words = na(output).split(' ');
 				let le = words.length;
