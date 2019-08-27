@@ -28,7 +28,7 @@ class FindImage extends commando.Command {
     async run(message, { text }) {
         var cl = text.toLowerCase().toTitleCase();
 	    var words = cl.split(' ');
-	    var words.length;
+	    var le = words.length;
 	    if (cl == "Intermediate Dragon Soldier" || cl == "Intermediate Dragon Soldiers") {cl = "Dragon Soldiers"}
 else if (cl == "Priestess Warrior" || cl == "Priestess Warriors") {cl = "Priest Warriors"}
 else if (cl == "We" || cl == "White Empire") {cl = "White Empire"}
