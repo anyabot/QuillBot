@@ -38,7 +38,7 @@ else if (cl == "Hermits Races") {cl = "Hermits Race"}
 	    else if (cl == "Spirit of War") {cl = "Spirits of War"}
 	    else if (cl == "Sly And Cunning Genius 【Koihime】" || cl == "Sly And Cunning Genius Koihime" || cl == "Sly And Cunning Geniuses Koihime" || cl == "Sly and Cunning Genius 【Koihime】" || cl == "Sly and Cunning Genius Koihime" || cl == "Sly and Cunning Geniuses Koihime") {cl = "Sly and Cunning Geniuses 【Koihime】"}
 	    else if (cl == "June Bride" || cl == "Summer" || cl == "School" || cl == "Valentine's Day" || cl == "New Year's" || cl == "Christmas" || cl == "Halloween" || cl == "Chibi") {cl = cl + " Units"}
-else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji" || cl == "Spirit of War" || cl == "Youkai" || cl == "Youko" || cl == "Fuuhaku" || cl == "Raikou" || cl == "Nekomata" || cl == "Nurarihyon" || cl == "Oni" || cl == "Tengu" || cl == "Beastfolk" || cl == "None" || cl == "Undead" || cl == "Desert Country" || cl == "Samurai" || cl == "Heavy Artillery") {
+else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji" || cl == "Youkai" || cl == "Youko" || cl == "Fuuhaku" || cl == "Raikou" || cl == "Nekomata" || cl == "Nurarihyon" || cl == "Oni" || cl == "Tengu" || cl == "Beastfolk" || cl == "None" || cl == "Undead" || cl == "Desert Country" || cl == "Samurai" || cl == "Heavy Artillery") {
 				cl = cl;
 			}
 			else if (cl.slice(-1) == "\】" || cl.slice(-1) == "\)") {
