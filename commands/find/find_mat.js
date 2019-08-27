@@ -238,7 +238,7 @@ request(link, function(err, resp, html) {
 			if (youkai) {
 				awname = na(output);
 			}
-			else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji" || na(output) == "Spirit of War") {
+			else if (na(output) == "Majin" || na(output) == "Jiangshi" || na(output) == "Zhenren" || na(output) == "Onmyouji") {
 				awname = na(output);
 			}
 			else if (na(output) == "Spirit of War") {awname = "Spirits of War"}
