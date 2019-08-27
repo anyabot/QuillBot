@@ -94,7 +94,7 @@ class RanRoll extends commando.Command {
 			scu = 50
 		}
 		var embed = new Discord.RichEmbed()
-		if (pool == "event" || pool == "ev") { scu = scu * 4 / 5)
+		if (pool == "event" || pool == "ev") { scu = scu * 4 / 5}
 		if (usc < scu) {message.reply("You need " + scu + " SC\nYou only have " + usc + " SC")}
 		else if (pool == "default") {
 			usc = usc - scu;
