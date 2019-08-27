@@ -66,7 +66,7 @@ request(link, function(err, resp, html) {
       check = true
       let img = $(elem).attr('data-src')
       let nam =$(elem).attr('alt');
-	    nam = urlencode.decode(nam)
+	    nam = he.decode(nam)
       nam = nam.split(" Icon")[0]
       check = true
       let embed = new Discord.RichEmbed()
