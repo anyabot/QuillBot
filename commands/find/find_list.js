@@ -41,6 +41,7 @@ else if (cl == "Hermits Races") {cl = "Hermits Race"}
 else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji" || cl == "Youkai" || cl == "Youko" || cl == "Fuuhaku" || cl == "Raikou" || cl == "Nekomata" || cl == "Nurarihyon" || cl == "Oni" || cl == "Tengu" || cl == "Beastfolk" || cl == "None" || cl == "Undead" || cl == "Desert Country" || cl == "Samurai" || cl == "Heavy Artillery") {
 				cl = cl;
 			}
+	    else if (cl == "Elf" || cl == "Elves") {cl = "Elves:Stats"}
 			else if (cl.slice(-1) == "\】" || cl.slice(-1) == "\)") {
 				words[le-2] = pluralize.plural(words[le-2])
 				if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
