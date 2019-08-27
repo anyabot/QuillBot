@@ -1,5 +1,10 @@
 var suffix = {
     '7sins' : '【7Sins】',
+    '【7sins】' : '【7Sins】',
+    'Fuukan' : '【Fuukan】',
+    'Gbm' : '(GBM)',
+    '(Gbm)' : '(GBM)',
+    'Koihime' : '【Koihime】',
     'Christmas' : '(Christmas)',
     '🎅' : '(Christmas)',
     'Dress' : '(Dress)',
