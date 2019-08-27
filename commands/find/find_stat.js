@@ -56,56 +56,95 @@ class FindStat extends commando.Command {
             if (!err) {
 		    
                 const $ = cheerio.load(html);
-		var output;
-                var img;
-		var aff;
-		var check = false;
-		var pages = []
-		var page = 1;
-		output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
-                if(output) {
-			check = true;
-                	let lv1v1 = lv1line(output);
-                	output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
-                	let lv99v1 = lv1line(output);
-			output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
-			let ran = range(output);
-			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(12)').first().html();
-			aff = affe(output);
-			img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
-			let nam = na(output);
-			let embed = new Discord.RichEmbed()
-			.setTitle(nam + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
-			.setThumbnail(img)
-			.setColor('LIGHT_GREY')
-			.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
-			.addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
-			.addField("DEF", lv1v1[7] + " → " + lv99v1[3], true)
-			.addField("Range", ran, true)
-			.addField("MR", lv1v1[8], true)
-			.addField("Block", lv1v1[9], true)
-			.addField("Max Cost", lv1v1[10], true)
-			.addField("Min Cost", lv1v1[11], true)
-			.addField("Affection Bonus", aff, true)
-			pages.push(embed);
-		}
-		if ($('.c2').find('td').length >= 6) {
-			output = $('.c2.numbers').first().text();
+		    var pu = $('.categories').text().includes("Player Units");
+		    if (pu) {
+			var output;
+			var img;
+			var aff;
+			var check = false;
+			var pages = []
+			var page = 1;
+			output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
 			if(output) {
-                		let lv99v1 = lv1line(output);
-                		output = $('.c2 ').first().text();
-                		let lv1v1 = lv1line(output);
-				output = $('.c2.numbers td:nth-child(5)').first().html();
+				check = true;
+				let lv1v1 = lv1line(output);
+				output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
+				let lv99v1 = lv1line(output);
+				output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
 				let ran = range(output);
-				output = $('.c2 td:nth-child(10)').first().html();
+				output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(12)').first().html();
 				aff = affe(output);
-				output = $('.c2 td:nth-child(1)').first().html();
+				img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+				output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 				let nam = na(output);
+				let embed = new Discord.RichEmbed()
+				.setTitle(nam + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
+				.setThumbnail(img)
+				.setColor('LIGHT_GREY')
+				.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
+				.addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
+				.addField("DEF", lv1v1[7] + " → " + lv99v1[3], true)
+				.addField("Range", ran, true)
+				.addField("MR", lv1v1[8], true)
+				.addField("Block", lv1v1[9], true)
+				.addField("Max Cost", lv1v1[10], true)
+				.addField("Min Cost", lv1v1[11], true)
+				.addField("Affection Bonus", aff, true)
+				pages.push(embed);
+			}
+			if ($('.c2').find('td').length >= 6) {
+				output = $('.c2.numbers').first().text();
+				if(output) {
+					let lv99v1 = lv1line(output);
+					output = $('.c2 ').first().text();
+					let lv1v1 = lv1line(output);
+					output = $('.c2.numbers td:nth-child(5)').first().html();
+					let ran = range(output);
+					output = $('.c2 td:nth-child(10)').first().html();
+					aff = affe(output);
+					output = $('.c2 td:nth-child(1)').first().html();
+					let nam = na(output);
+					let embed = new Discord.RichEmbed()
+					.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+					.setThumbnail(img)
+					.setColor('RED')
+					.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
+					.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
+					.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
+					.addField("Range", ran, true)
+					.addField("MR", lv1v1[5], true)
+					.addField("Block", lv1v1[6], true)
+					.addField("Max Cost", lv1v1[7], true)
+					.addField("Min Cost", lv1v1[8], true)
+					.addField("Affection Bonus", aff, true)
+					pages.push(embed);
+				}
+			}
+			output = $('.c3.numbers').first().text();
+			if(output) {
+				let lv99v1 = lv1line(output);
+				output = $('.c3 ').first().text();
+				let lv1v1 = lv1line(output);
+				output = $('.c3.numbers td:nth-child(5)').first().html();
+				let ran = range(output);
+				let nam;
+				if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
+					img = ($('.c3 td:first-child div a img').attr('data-src'));
+					output = $('.c3 td:nth-child(2)').first().html();
+					nam = na(output);
+					output = $('.c3 td:nth-child(11)').first().html();
+					aff = affe(output);
+				}
+				if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
+					output = $('.c3 td:nth-child(1)').first().html();
+					nam = na(output);
+					output = $('.c3 td:nth-child(10)').first().html();
+					aff = affe(output);
+				}
 				let embed = new Discord.RichEmbed()
 				.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
 				.setThumbnail(img)
-				.setColor('RED')
+				.setColor('BLUE')
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
 				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
 				.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
@@ -115,145 +154,110 @@ class FindStat extends commando.Command {
 				.addField("Max Cost", lv1v1[7], true)
 				.addField("Min Cost", lv1v1[8], true)
 				.addField("Affection Bonus", aff, true)
-				pages.push(embed);
+				pages.push(embed)
 			}
-		}
-		output = $('.c3.numbers').first().text();
-		if(output) {
-                	let lv99v1 = lv1line(output);
-                	output = $('.c3 ').first().text();
-                	let lv1v1 = lv1line(output);
-			output = $('.c3.numbers td:nth-child(5)').first().html();
-			let ran = range(output);
-			let nam;
-			if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
-				img = ($('.c3 td:first-child div a img').attr('data-src'));
-				output = $('.c3 td:nth-child(2)').first().html();
-				nam = na(output);
-				output = $('.c3 td:nth-child(11)').first().html();
-				aff = affe(output);
+			output = $('.c4.numbers').first().text();
+			if(output) {
+				let lv99v1 = lv1line(output);
+				output = $('.c4 ').first().text();
+				let lv1v1 = lv1line(output);
+				output = $('.c4.numbers td:nth-child(5)').first().html();
+				let ran = range(output);
+				let nam;
+				if ($('.c4 td:nth-child(3)').hasClass('leftal')) {
+					img = ($('.c4 td:first-child div a img').attr('data-src'));
+					output = $('.c4 td:nth-child(2)').first().html();
+					nam = na(output);
+				}
+				if (!$('.c4 td:nth-child(3)').hasClass('leftal')) {
+					output = $('.c4 td:nth-child(1)').first().html();
+					nam = na(output);
+				}
+				let embed = new Discord.RichEmbed()
+				.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+				.setThumbnail(img)
+				.setColor('DARK_PURPLE')
+				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
+				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
+				.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
+				.addField("Range", ran, true)
+				.addField("MR", lv1v1[5], true)
+				.addField("Block", lv1v1[6], true)
+				.addField("Max Cost", lv1v1[7], true)
+				.addField("Min Cost", lv1v1[8], true)
+				.addField("Affection Bonus", aff, true)
+				pages.push(embed)
 			}
-			if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
-				output = $('.c3 td:nth-child(1)').first().html();
-				nam = na(output);
-				output = $('.c3 td:nth-child(10)').first().html();
-				aff = affe(output);
+			output = $('.c5.numbers').first().text();
+			if(output) {
+				let lv99v1 = lv1line(output);
+				output = $('.c5 ').first().text();
+				let lv1v1 = lv1line(output);
+				output = $('.c5.numbers td:nth-child(5)').first().html();
+				let ran = range(output);
+				let nam;
+				if ($('.c5 td:nth-child(3)').hasClass('leftal')) {
+					img = ($('.c5 td:first-child div a img').attr('data-src'));
+					output = $('.c5 td:nth-child(2)').first().html();
+					nam = na(output);
+				}
+				if (!$('.c5 td:nth-child(3)').hasClass('leftal')) {
+					output = $('.c5 td:nth-child(1)').first().html();
+					nam = na(output);
+				}
+				let embed = new Discord.RichEmbed()
+				.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+				.setThumbnail(img)
+				.setColor('DARK_PURPLE')
+				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
+				.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
+				.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
+				.addField("Range", ran, true)
+				.addField("MR", lv1v1[5], true)
+				.addField("Block", lv1v1[6], true)
+				.addField("Max Cost", lv1v1[7], true)
+				.addField("Min Cost", lv1v1[8], true)
+				.addField("Affection Bonus", aff, true)
+				pages.push(embed)
 			}
-			let embed = new Discord.RichEmbed()
-			.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
-			.setThumbnail(img)
-			.setColor('BLUE')
-			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
-			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
-			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
-			.addField("Range", ran, true)
-			.addField("MR", lv1v1[5], true)
-			.addField("Block", lv1v1[6], true)
-			.addField("Max Cost", lv1v1[7], true)
-			.addField("Min Cost", lv1v1[8], true)
-			.addField("Affection Bonus", aff, true)
-			pages.push(embed)
-		}
-                output = $('.c4.numbers').first().text();
-		if(output) {
-                	let lv99v1 = lv1line(output);
-                	output = $('.c4 ').first().text();
-                	let lv1v1 = lv1line(output);
-			output = $('.c4.numbers td:nth-child(5)').first().html();
-			let ran = range(output);
-			let nam;
-			if ($('.c4 td:nth-child(3)').hasClass('leftal')) {
-				img = ($('.c4 td:first-child div a img').attr('data-src'));
-				output = $('.c4 td:nth-child(2)').first().html();
-				nam = na(output);
-			}
-			if (!$('.c4 td:nth-child(3)').hasClass('leftal')) {
-				output = $('.c4 td:nth-child(1)').first().html();
-				nam = na(output);
-			}
-			let embed = new Discord.RichEmbed()
-			.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
-			.setThumbnail(img)
-			.setColor('DARK_PURPLE')
-			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
-			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
-			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
-			.addField("Range", ran, true)
-			.addField("MR", lv1v1[5], true)
-			.addField("Block", lv1v1[6], true)
-			.addField("Max Cost", lv1v1[7], true)
-			.addField("Min Cost", lv1v1[8], true)
-			.addField("Affection Bonus", aff, true)
-			pages.push(embed)
-		}
-		output = $('.c5.numbers').first().text();
-		if(output) {
-                	let lv99v1 = lv1line(output);
-                	output = $('.c5 ').first().text();
-                	let lv1v1 = lv1line(output);
-			output = $('.c5.numbers td:nth-child(5)').first().html();
-			let ran = range(output);
-			let nam;
-			if ($('.c5 td:nth-child(3)').hasClass('leftal')) {
-				img = ($('.c5 td:first-child div a img').attr('data-src'));
-				output = $('.c5 td:nth-child(2)').first().html();
-				nam = na(output);
-			}
-			if (!$('.c5 td:nth-child(3)').hasClass('leftal')) {
-				output = $('.c5 td:nth-child(1)').first().html();
-				nam = na(output);
-			}
-			let embed = new Discord.RichEmbed()
-			.setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
-			.setThumbnail(img)
-			.setColor('DARK_PURPLE')
-			.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
-			.addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
-			.addField("DEF", lv1v1[4] + " → " + lv99v1[3], true)
-			.addField("Range", ran, true)
-			.addField("MR", lv1v1[5], true)
-			.addField("Block", lv1v1[6], true)
-			.addField("Max Cost", lv1v1[7], true)
-			.addField("Min Cost", lv1v1[8], true)
-			.addField("Affection Bonus", aff, true)
-			pages.push(embed)
-		}
-		if (check) {
-		var embed = pages[0];
-		embed.setFooter('Page ' + page + ' of ' + pages.length);
-		message.channel.send(embed).then(msg => {
+			if (check) {
+			var embed = pages[0];
+			embed.setFooter('Page ' + page + ' of ' + pages.length);
+			message.channel.send(embed).then(msg => {
 
-		msg.react('⬅').then( r => {
-        msg.react('➡')
+			msg.react('⬅').then( r => {
+		msg.react('➡')
 
-        // Filters
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+		// Filters
+		const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+		const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
 
-        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+		const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+		const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
-        backwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-        	if (page === 1) return;
-         	page--;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
+		backwards.on('collect', r => {
+			r.remove(r.users.filter(u => !u.bot).first());
+			if (page === 1) return;
+			page--;
+			embed = pages[page-1];
+			embed.setFooter('Page ' + page + ' of ' + pages.length);
+			msg.edit(embed)
+		})
 
-        forwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-            	if (page === pages.length) return;
-            	page++;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
-    })
-})
-	    }
-                if (!check) {message.channel.send("No Data")};
+		forwards.on('collect', r => {
+			r.remove(r.users.filter(u => !u.bot).first());
+			if (page === pages.length) return;
+			page++;
+			embed = pages[page-1];
+			embed.setFooter('Page ' + page + ' of ' + pages.length);
+			msg.edit(embed)
+		})
+	    })
+	})
+		    }
+			if (!check) {message.channel.send("No Data")};
+		    }
+		    else {message.channel.send("No Data")}
             }
         });
     }
