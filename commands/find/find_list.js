@@ -41,13 +41,13 @@ else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji
 				let words = cl.split(' ');
 				let le = words.length;
 				words[le-2] = pluralize.plural(words[le-2])
-				if (suffix(words[le-1])) {words[le-1] = suffix(words[le-1])}
+				if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
 				cl = words.join(" ")
 			}
 			else {
 				let words = cl.split(' ');
 				let le = words.length;
-				if (suffix(words[le-1])) {words[le-1] = suffix(words[le-1])}
+				if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
 				cl = words.join(" ")
 				cl = pluralize.plural(cl);
 			}
