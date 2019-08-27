@@ -6,6 +6,7 @@ require('@gouch/to-title-case')
 var he = require('he');
 var urlencode = require('urlencode');
 var pluralize = require('pluralize')
+var suffix = require('../../library/suf.js').suffix;
 
 
 class FindImage extends commando.Command {
@@ -40,9 +41,14 @@ else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji
 				let words = cl.split(' ');
 				let le = words.length;
 				words[le-2] = pluralize.plural(words[le-2])
+				if (suffix(words[le-1])) {words[le-1] = suffix(words[le-1])}
 				cl = words.join(" ")
 			}
 			else {
+				let words = cl.split(' ');
+				let le = words.length;
+				if (suffix(words[le-1])) {words[le-1] = suffix(words[le-1])}
+				cl = words.join(" ")
 				cl = pluralize.plural(cl);
 			}
 var link = "https://aigis.fandom.com/wiki/Category%3A" + urlencode(cl)
@@ -57,6 +63,7 @@ request(link, function(err, resp, html) {
       check = true
       let img = $(elem).attr('data-src')
       let nam =$(elem).attr('alt');
+	    nam = urlencode.decode(nam)
       nam = nam.split(" Icon")[0]
       check = true
       let embed = new Discord.RichEmbed()
