@@ -29,18 +29,31 @@ class FindSkill extends commando.Command {
 	    var np = unit.split(' ');
 	    var npl = np.length;
 	    if (npl >= 2) {
-		    if (name[np[0]]) {np[0] = name[np[0]]}
-	    	if (suffix[np[npl-1]]) {np[npl-1] = suffix[np[npl-1]]}
+	    	if (suffix[np[npl-1]]) {
+			np[npl-1] = suffix[np[npl-1]]
+			let sur = np[npl-1]
+			np.pop()
+			let un = np.join(' ')
+			if (name[un]) {un = name[un]}
+			unit = un + ' ' + sur
+		}
 	    	if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
-			np[npl-1] = 'Year\'s)';
-			np[npl-2] = '(New';
+			let sur = '(New Year\'s)'
+			np.pop()
+			np.pop()
+			let un = np.join(' ')
+			if (name[un]) {un = name[un]}
+			unit = un + ' ' + sur
 		}
 		    if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
-			np[npl-1] = 'Year\'s)';
-			np[npl-2] = '(New';
+			let sur = '(New Year\'s)'
+			np.pop()
+			np.pop()
+			let un = np.join(' ')
+			if (name[un]) {un = name[un]}
+			unit = un + ' ' + sur
 		}
 	    }
-	    unit = np.join(' ')
         if (name[unit]) unit = name[unit];
         var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
         request(link, function (err, resp, html) {
