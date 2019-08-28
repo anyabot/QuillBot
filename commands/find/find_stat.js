@@ -44,7 +44,7 @@ class FindStat extends commando.Command {
 			np.pop()
 			let un = np.join(' ')
 			if (name[un]) {un = name[un]}
-			unit = unit + ' ' + sur
+			unit = un + ' ' + sur
 		}
 	    	if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
 			let sur = '(New Year\'s)'
@@ -52,7 +52,7 @@ class FindStat extends commando.Command {
 			np.pop()
 			let un = np.join(' ')
 			if (name[un]) {un = name[un]}
-			unit = unit + ' ' + sur
+			unit = un + ' ' + sur
 		}
 		    if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
 			let sur = '(New Year\'s)'
@@ -60,7 +60,7 @@ class FindStat extends commando.Command {
 			np.pop()
 			let un = np.join(' ')
 			if (name[un]) {un = name[un]}
-			unit = unit + ' ' + sur
+			unit = un + ' ' + sur
 		}
 	    }
         if (name[unit]) unit = name[unit];
