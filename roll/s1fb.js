@@ -1,3 +1,3 @@
-var s1fb = ['Char'];
+var s1fb = ['Teeny'];
 
 exports.s1fb = s1fb;
