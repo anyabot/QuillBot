@@ -73,7 +73,7 @@ var black = {
 	72 : 'Lapis',
 	73 : 'Koharu',
 	74 : 'Risley',
-	75 : 'Spiria'
+	75 : 'Spiria',
 	76 : 'Erlang Shen'
 }
 
