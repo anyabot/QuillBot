@@ -435,8 +435,6 @@ class FindStat extends commando.Command {
 	})
 		    }
 			if (!check) {message.channel.send("No Data")};
-		    }
-		    else {message.channel.send("No Data")}
             }
         });
     }
