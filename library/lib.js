@@ -6,6 +6,8 @@ var name = {
     'Shengpu' : 'Jin-Guang Sheng-Pu',
     'Pu' : 'Jin-Guang Sheng-Pu',
     'Jgsp' : 'Jin-Guang Sheng-Pu',
+	'Chinese Hermit Of Balance' : 'Jin-Guang Sheng-Pu',
+	'Chinese Hermit of Balance' : 'Jin-Guang Sheng-Pu',
     'Gelbro' : 'Gellius',
     'Jebrome' : 'Jerome',
     'Fred' : 'Frederica',
@@ -97,7 +99,10 @@ var name = {
 	'Lu Bu' : 'Ryofu',
 	'Cao Cao' : 'Sousou',
 	'Liu Bei' : 'Ryuubi',
-	'Ma Chao' : 'Bachou'
+	'Ma Chao' : 'Bachou',
+	'Erlang' : 'Erlang Shen',
+	'Qingyuan Miaodao Zhenjun' : 'Erlang Shen',
+	'Yang Jian' : 'Erlang Shen'
 }
 
 exports.name = name;
