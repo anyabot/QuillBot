@@ -92,17 +92,17 @@ class FindStat extends commando.Command {
           output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
           let nam = na(output);
           let embed = new Discord.RichEmbed()
-          .setTitle(nam + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
+          .setTitle(nam + " (" + lv1v1[3] + " → " + lv99v1[0] + ")")
           .setThumbnail(img)
           .setColor('LIGHT_GREY')
-          .addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
-          .addField("ATK", lv1v1[6] + " → " + lv99v1[2], true)
-          .addField("DEF", lv1v1[7] + " → " + lv99v1[3], true)
+          .addField("HP", lv1v1[4] + " → " + lv99v1[1], true)
+          .addField("ATK", lv1v1[5] + " → " + lv99v1[2], true)
+          .addField("DEF", lv1v1[6] + " → " + lv99v1[3], true)
           .addField("Range", ran, true)
-          .addField("MR", lv1v1[8], true)
-          .addField("Block", lv1v1[9], true)
-          .addField("Max Cost", lv1v1[10], true)
-          .addField("Min Cost", lv1v1[11], true)
+          .addField("MR", lv1v1[7], true)
+          .addField("Block", lv1v1[8], true)
+          .addField("Max Cost", lv1v1[9], true)
+          .addField("Min Cost", lv1v1[10], true)
           .addField("Affection Bonus", aff, true)
           pages.push(embed);
         }
