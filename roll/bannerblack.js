@@ -50,7 +50,8 @@ var bannerblack = {
 	49 : 'Spiria',
 	50 : 'Char',
 	51 : 'Adelaide',
-	52 : 'Umbre'
+	52 : 'Umbre', 
+	53 : 'Erlang Shen'
 }
 
 exports.bannerblack = bannerblack;
