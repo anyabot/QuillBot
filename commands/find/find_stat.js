@@ -312,8 +312,8 @@ class FindStat extends commando.Command {
             let ran = "N/A"
             if (output) {ran = range(output);}
             output = $('.c2 td:nth-child(1)').first().html();
-            if (na(output) != null) {nam = na(output)};
-		  else {sn = true}
+            if (na(output) != null) {nam = na(output)}
+		else {sn = true}
             let embed = new Discord.RichEmbed()
             .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
             .setThumbnail(img)
@@ -343,12 +343,12 @@ class FindStat extends commando.Command {
             img = ($('.c3 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c3 td:first-child div a img').attr('src'));}
             output = $('.c3 td:nth-child(1)').first().html();
-            if (na(output) != null) {nam = na(output)};
+            if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
           if (!$('.c3 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c3 td:nth-child(1)').first().html();
-            if (na(output) != null) {nam = na(output)};
+            if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
           let embed = new Discord.RichEmbed()
@@ -379,12 +379,12 @@ class FindStat extends commando.Command {
             img = ($('.c4 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c4 td:first-child div a img').attr('src'));}
             output = $('.c4 td:nth-child(1)').first().html();
-            if (na(output) != null) {nam = na(output)};
+            if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
           if (!$('.c4 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c4 td:nth-child(1)').first().html();
-            if (na(output) != null) {nam = na(output)};
+            if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
           let embed = new Discord.RichEmbed()
@@ -415,12 +415,12 @@ class FindStat extends commando.Command {
             img = ($('.c5 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c5 td:first-child div a img').attr('src'));}
             output = $('.c5 td:nth-child(1)').first().html();
-            if (na(output) != null) {nam = na(output)};
+            if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
           if (!$('.c5 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c5 td:nth-child(1)').first().html();
-            if (na(output) != null) {nam = na(output)};
+            if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
           let embed = new Discord.RichEmbed()
