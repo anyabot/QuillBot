@@ -26,6 +26,8 @@ var suffix = {
     '👻' : '(Halloween)',
     'Ny' : '(New Year\'s)',
     '(Ny)' : '(New Year\'s)'
+    'Clone' : '(Clone)',
+    'Fake' : '(Fake)'
 }
 
 exports.suffix = suffix;
