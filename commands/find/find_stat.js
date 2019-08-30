@@ -254,7 +254,7 @@ class FindStat extends commando.Command {
           img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(1)  div a img').attr('data-src'));
           if (!img) {img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(1)  div a img').attr('src'))}
           output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(1)').first().html();
-          let nam = na(output);
+          var nam = na(output);
           nam = nam.split(" ( edit stats )")[0]
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[2] + " → " + lv99v1[0] + ")")
@@ -284,7 +284,7 @@ class FindStat extends commando.Command {
           img = ($('.listtable.bgwhite tr:nth-child(4) td:nth-child(1)  div a img').attr('data-src'));
           if (!img) {img = ($('.listtable.bgwhite tr:nth-child(4) td:nth-child(1)  div a img').attr('src'))}
           output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(1)').first().html();
-          let nam = na(output);
+          var nam = na(output);
           nam = nam.split(" ( edit stats )")[0]
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[2] + " → " + lv99v1[0] + ")")
@@ -311,7 +311,7 @@ class FindStat extends commando.Command {
             let ran = "N/A"
             if (output) {ran = range(output);}
             output = $('.c2 td:nth-child(1)').first().html();
-            let nam = na(output);
+            if (na(output) != null) {nam = na(output)};
             let embed = new Discord.RichEmbed()
             .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
             .setThumbnail(img)
@@ -336,16 +336,15 @@ class FindStat extends commando.Command {
           output = $('.c3.numbers td:nth-child(5)').first().html();
           let ran = "N/A"
           if (output) {ran = range(output);}
-          let nam;
           if ($('.c3 td:nth-child(1)').hasClass('leftal')) {
             img = ($('.c3 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c3 td:first-child div a img').attr('src'));}
             output = $('.c3 td:nth-child(1)').first().html();
-            nam = na(output);
+            if (na(output) != null) {nam = na(output)};
           }
           if (!$('.c3 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c3 td:nth-child(1)').first().html();
-            nam = na(output);
+            if (na(output) != null) {nam = na(output)};
           }
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -370,16 +369,15 @@ class FindStat extends commando.Command {
           output = $('.c4.numbers td:nth-child(5)').first().html();
           let ran = "N/A"
           if (output) {ran = range(output);}
-          let nam;
           if ($('.c4 td:nth-child(1)').hasClass('leftal')) {
             img = ($('.c4 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c4 td:first-child div a img').attr('src'));}
             output = $('.c4 td:nth-child(1)').first().html();
-            nam = na(output);
+            if (na(output) != null) {nam = na(output)};
           }
           if (!$('.c4 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c4 td:nth-child(1)').first().html();
-            nam = na(output);
+            if (na(output) != null) {nam = na(output)};
           }
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -404,16 +402,15 @@ class FindStat extends commando.Command {
           output = $('.c5.numbers td:nth-child(5)').first().html();
           let ran = "N/A"
           if (output) {ran = range(output);}
-          let nam;
           if ($('.c5 td:nth-child(1)').hasClass('leftal')) {
             img = ($('.c5 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c5 td:first-child div a img').attr('src'));}
             output = $('.c5 td:nth-child(1)').first().html();
-            nam = na(output);
+            if (na(output) != null) {nam = na(output)};
           }
           if (!$('.c5 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c5 td:nth-child(1)').first().html();
-            nam = na(output);
+            if (na(output) != null) {nam = na(output)};
           }
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
