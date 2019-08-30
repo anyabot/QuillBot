@@ -25,7 +25,7 @@ var suffix = {
     'Halloween' : '(Halloween)',
     '👻' : '(Halloween)',
     'Ny' : '(New Year\'s)',
-    '(Ny)' : '(New Year\'s)'
+    '(Ny)' : '(New Year\'s)',
     'Clone' : '(Clone)',
     'Fake' : '(Fake)'
 }
