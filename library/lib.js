@@ -105,6 +105,19 @@ var name = {
 	'Yang Jian' : 'Erlang Shen',
 	'Mist (Clone)' : 'Mist Clone',
 	'Water (Clone)' : 'Water Clone'
+	'Dark Elemental' : 'Darkness Elemental',
+	'Toad' : 'Great Toad',
+	'Mimic' : 'Golden Mimic',
+	'Golem' : 'Guardian Golem',
+	'Hellbeast' : 'Hellbeast Orthros',
+	'Demon' : 'Imp',
+	'Archdemon' : 'Imp',
+	'Lady Demon' : 'Imp',
+	'Pumpkin King' : 'Jack O\' Lantern',
+	'Kyouka' : 'Kyouka Suigetsu',
+	'Skeleton' : 'Sword Skeleton',
+	'Tongtian' : 'Tongtian Jiaozhu (Fake)',
+	'Tongtian Jiaozhu' : 'Tongtian Jiaozhu (Fake)',
 }
 
 exports.name = name;
