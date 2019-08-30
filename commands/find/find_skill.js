@@ -161,22 +161,23 @@ class FindSkill extends commando.Command {
 						output = output.replace(/<b>Y<\/b>/g, xyz[2]);
 						output = output.replace(/<b>Z<\/b>/g, xyz[3]);
 						output = na(output)
-						embed1.setTitle("Skill")
-						embed1.setThumbnail(img)
-						if (!output2) {embed1.addField(nna, output + "\n**CD: **" + xyz[len-1])}
+						var embed3 = new Discord.RichEmbed()
+						embed3.setTitle("Skill")
+						embed3.setThumbnail(img)
+						if (!output2) {embed3.addField(nna, output + "\n**CD: **" + xyz[len-1])}
 						if (output2) {
 							output2 = output2.replace(/<b>X<\/b>/g, xyz[1]);
 							output2 = output2.replace(/<b>Y<\/b>/g, xyz[2]);
 							output2 = output2.replace(/<b>Z<\/b>/g, xyz[3]);
 							output2 = na(output2)
-							embed1.addField(nna, output + "\n" + output2 + "\n**CD: **" + xyz[len-1])
+							embed3.addField(nna, output + "\n" + output2 + "\n**CD: **" + xyz[len-1])
 						}
-						embed1.setColor('BLUE')
-						message.channel.send(embed1)
+						embed3.setColor('BLUE')
+						message.channel.send(embed3)
 					}
 				})
 			}
-			message.channel.send("No Data")
+			else {message.channel.send("No Data")}
 		} 
             }
         });
