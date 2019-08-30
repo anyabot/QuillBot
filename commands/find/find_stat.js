@@ -304,6 +304,7 @@ class FindStat extends commando.Command {
         if ($('.c2').find('td').length >= 6) {
           output = $('.c2.numbers').first().text();
           if(output) {
+		  let sn = false;
             let lv99v1 = lv1line(output);
             output = $('.c2 ').first().text();
             let lv1v1 = lv1line(output);
@@ -312,6 +313,7 @@ class FindStat extends commando.Command {
             if (output) {ran = range(output);}
             output = $('.c2 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)};
+		  else (sn = true)
             let embed = new Discord.RichEmbed()
             .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
             .setThumbnail(img)
@@ -325,11 +327,12 @@ class FindStat extends commando.Command {
             .addField("Block", lv1v1[6], true)
             .addField("Cost", lv1v1[8], true)
             pages.push(embed);
-            if (nam.split(" ( edit stats ").length > 1) {pages.pop()}
+            if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
           }
         }
         output = $('.c3.numbers').first().text();
         if(output) {
+		let sn = false;
           let lv99v1 = lv1line(output);
           output = $('.c3 ').first().text();
           let lv1v1 = lv1line(output);
@@ -341,10 +344,12 @@ class FindStat extends commando.Command {
             if (!img) {img = ($('.c3 td:first-child div a img').attr('src'));}
             output = $('.c3 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)};
+		  else (sn = true)
           }
           if (!$('.c3 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c3 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)};
+		  else (sn = true)
           }
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -359,10 +364,11 @@ class FindStat extends commando.Command {
           .addField("Block", lv1v1[6], true)
           .addField("Cost", lv1v1[8], true)
           pages.push(embed)
-          if (nam.split(" ( edit stats ").length > 1) {pages.pop()}
+          if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
         }
         output = $('.c4.numbers').first().text();
         if(output) {
+		let sn = false;
           let lv99v1 = lv1line(output);
           output = $('.c4 ').first().text();
           let lv1v1 = lv1line(output);
@@ -374,10 +380,12 @@ class FindStat extends commando.Command {
             if (!img) {img = ($('.c4 td:first-child div a img').attr('src'));}
             output = $('.c4 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)};
+		  else (sn = true)
           }
           if (!$('.c4 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c4 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)};
+		  else (sn = true)
           }
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -392,10 +400,11 @@ class FindStat extends commando.Command {
           .addField("Block", lv1v1[6], true)
           .addField("Cost", lv1v1[8], true)
           pages.push(embed)
-          if (nam.split(" ( edit stats ").length > 1) {pages.pop()}
+          if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
         }
         output = $('.c5.numbers').first().text();
         if(output) {
+		let sn = false;
           let lv99v1 = lv1line(output);
           output = $('.c5 ').first().text();
           let lv1v1 = lv1line(output);
@@ -407,10 +416,12 @@ class FindStat extends commando.Command {
             if (!img) {img = ($('.c5 td:first-child div a img').attr('src'));}
             output = $('.c5 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)};
+		  else (sn = true)
           }
           if (!$('.c5 td:nth-child(1)').hasClass('leftal')) {
             output = $('.c5 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)};
+		  else (sn = true)
           }
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -425,7 +436,7 @@ class FindStat extends commando.Command {
           .addField("Block", lv1v1[6], true)
           .addField("Cost", lv1v1[8], true)
           pages.push(embed)
-          if (nam.split(" ( edit stats ").length > 1) {pages.pop()}
+          if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
         }
       }
 			if (check) {
