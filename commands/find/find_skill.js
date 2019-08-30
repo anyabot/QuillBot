@@ -147,7 +147,7 @@ class FindSkill extends commando.Command {
 						check = true
 						const $2 = cheerio.load(html);
 						let output2 = $2('.gcstyle:first-child tr:nth-child(5)').not(function(i, el) {
-						  	return $(this).attr('class') != 'bgbeige';
+						  	return $(this).find('td').attr('class') != 'bgbeige';
 						}).html()
 						output = $2('.gcstyle:nth-child(2) tr:last-child').html()
 						output = na(output)
