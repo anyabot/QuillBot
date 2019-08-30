@@ -351,11 +351,11 @@ class FindStat extends commando.Command {
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
-		nam = nam.split(" ( edit stats )")[0]
+          if (sn == false) {
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
           .setThumbnail(img)
-          .setColor('BLUE')
+          .setColor('DARK_PURPLE')
           .addField("Parent", parent)
           .addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
           .addField("ATK", lv1v1[3] + " → " + lv99v1[2], true)
@@ -365,7 +365,26 @@ class FindStat extends commando.Command {
           .addField("Block", lv1v1[6], true)
           .addField("Cost", lv1v1[8], true)
           pages.push(embed)
-          if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
+		}
+		else {
+		let embed = new Discord.RichEmbed()
+          .setTitle(nam + " (" + lv1v1[0] + " → " + lv99v1[0] + ")")
+          .setThumbnail(img)
+          .setColor('DARK_PURPLE')
+          .addField("Parent", parent)
+          .addField("HP", lv1v1[1] + " → " + lv99v1[1], true)
+          .addField("ATK", lv1v1[2] + " → " + lv99v1[2], true)
+          .addField("DEF", lv1v1[3] + " → " + lv99v1[3], true)
+          .addField("Range", ran, true)
+          .addField("MR", lv1v1[4], true)
+          .addField("Block", lv1v1[5], true)
+          .addField("Cost", lv1v1[7], true)
+          pages.push(embed)
+		}
+          if (nam.split(" ( edit stats ").length > 1 && sn == false) {
+		  pages.pop()
+		  nam = nam.split(" ( edit stats )")[0]
+	  }
         }
         output = $('.c4.numbers').first().text();
         if(output) {
@@ -388,6 +407,8 @@ class FindStat extends commando.Command {
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
+		let embed
+		if (sn == false) {
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
           .setThumbnail(img)
@@ -401,6 +422,22 @@ class FindStat extends commando.Command {
           .addField("Block", lv1v1[6], true)
           .addField("Cost", lv1v1[8], true)
           pages.push(embed)
+		}
+		else {
+		let embed = new Discord.RichEmbed()
+          .setTitle(nam + " (" + lv1v1[0] + " → " + lv99v1[0] + ")")
+          .setThumbnail(img)
+          .setColor('DARK_PURPLE')
+          .addField("Parent", parent)
+          .addField("HP", lv1v1[1] + " → " + lv99v1[1], true)
+          .addField("ATK", lv1v1[2] + " → " + lv99v1[2], true)
+          .addField("DEF", lv1v1[3] + " → " + lv99v1[3], true)
+          .addField("Range", ran, true)
+          .addField("MR", lv1v1[4], true)
+          .addField("Block", lv1v1[5], true)
+          .addField("Cost", lv1v1[7], true)
+          pages.push(embed)
+		}
           if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
         }
         output = $('.c5.numbers').first().text();
@@ -424,6 +461,7 @@ class FindStat extends commando.Command {
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
+          if (sn == false) {
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
           .setThumbnail(img)
@@ -437,6 +475,22 @@ class FindStat extends commando.Command {
           .addField("Block", lv1v1[6], true)
           .addField("Cost", lv1v1[8], true)
           pages.push(embed)
+		}
+		else {
+		let embed = new Discord.RichEmbed()
+          .setTitle(nam + " (" + lv1v1[0] + " → " + lv99v1[0] + ")")
+          .setThumbnail(img)
+          .setColor('DARK_PURPLE')
+          .addField("Parent", parent)
+          .addField("HP", lv1v1[1] + " → " + lv99v1[1], true)
+          .addField("ATK", lv1v1[2] + " → " + lv99v1[2], true)
+          .addField("DEF", lv1v1[3] + " → " + lv99v1[3], true)
+          .addField("Range", ran, true)
+          .addField("MR", lv1v1[4], true)
+          .addField("Block", lv1v1[5], true)
+          .addField("Cost", lv1v1[7], true)
+          pages.push(embed)
+		}
           if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
         }
       }
