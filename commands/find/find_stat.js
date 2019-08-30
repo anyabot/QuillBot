@@ -495,7 +495,7 @@ function affe(output) {
     return affe;
 }
 function na(output) {
-	if (output != null) }
+	if (output != null) {
     		output = output.replace(/<[^>]*>/g, "\n");
     		output = output.replace(/\n+ /g, "\n");
 	}
