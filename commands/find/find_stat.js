@@ -351,6 +351,7 @@ class FindStat extends commando.Command {
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
+		nam = nam.split(" ( edit stats )")[0]
           let embed = new Discord.RichEmbed()
           .setTitle(nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
           .setThumbnail(img)
