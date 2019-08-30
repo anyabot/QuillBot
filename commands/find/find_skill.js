@@ -140,7 +140,7 @@ class FindSkill extends commando.Command {
 			if (output && output != "N/A") {
 				var nna = na(output);
 				img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-				link = "https://aigis.fandom.com/wiki/" + urlencode(nna);
+				link = "https://aigis.fandom.com/wiki/Skill/" + urlencode(nna);
 
 				request(link, function(err, resp, html) {
 					if (!err) {
@@ -168,7 +168,7 @@ class FindSkill extends commando.Command {
 							embed1.addField(nna, output + "\n" + output2 + "\n**CD: **" + xyz[len-1])
 						}
 						embed1.setColor('BLUE')
-						console.log(na(output))
+						message.channel.send(embed)
 					}
 				})
 			}
