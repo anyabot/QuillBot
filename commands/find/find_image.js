@@ -201,6 +201,22 @@ class FindImage extends commando.Command {
         pages.push(embed)
       }
     }
+	  if (pages.length == 0) {
+      ($('.image.lightbox')).each(function(i, elem) {
+        img = $(this).find('img').attr('data-src')
+        let nam = $(this).find('img').attr('alt')
+        let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+          pages.push(embed)
+        }
+      });
+    }
 		if (check) {
 		var embed = pages[0];
 		embed.setFooter('Page ' + page + ' of ' + pages.length);
