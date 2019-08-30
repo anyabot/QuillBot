@@ -104,7 +104,7 @@ var name = {
 	'Qingyuan Miaodao Zhenjun' : 'Erlang Shen',
 	'Yang Jian' : 'Erlang Shen',
 	'Mist (Clone)' : 'Mist Clone',
-	'Water (Clone)' : 'Water Clone'
+	'Water (Clone)' : 'Water Clone',
 	'Dark Elemental' : 'Darkness Elemental',
 	'Toad' : 'Great Toad',
 	'Mimic' : 'Golden Mimic',
