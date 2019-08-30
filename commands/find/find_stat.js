@@ -241,6 +241,7 @@ class FindStat extends commando.Command {
       else if (ut == "Icon") {
         output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
         if(output) {
+	if ($('.listtable.bgwhite tr:nth-child(3)').find('td').length >= 6) {
           check = true;
           var parent = na($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)').first().html())
           let lv1v1 = lv1line(output);
@@ -268,6 +269,36 @@ class FindStat extends commando.Command {
           .addField("Block", lv1v1[7], true)
           .addField("Cost", lv1v1[9], true)
           pages.push(embed);
+	}
+		else {
+		check = true;
+          var parent = na($('.listtable.bgwhite tr:nth-child(4) td:nth-child(2)').first().html())
+          let lv1v1 = lv1line(output);
+          output = $('.listtable.bgwhite tr:nth-child(5)').first().text();
+          let lv99v1 = lv1line(output);
+          output = $('.listtable.bgwhite tr:nth-child(5) td:nth-child(5)').first().html();
+          let ran = "N/A"
+          if (output) {ran = range(output);}
+
+          img = ($('.listtable.bgwhite tr:nth-child(4) td:nth-child(1)  div a img').attr('data-src'));
+          if (!img) {img = ($('.listtable.bgwhite tr:nth-child(4) td:nth-child(1)  div a img').attr('src'))}
+          output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(1)').first().html();
+          let nam = na(output);
+          nam = nam.split(" ( edit stats )")[0]
+          let embed = new Discord.RichEmbed()
+          .setTitle(nam + " (" + lv1v1[2] + " → " + lv99v1[0] + ")")
+          .setThumbnail(img)
+          .setColor('LIGHT_GREY')
+          .addField("Parent", parent)
+          .addField("HP", lv1v1[3] + " → " + lv99v1[1], true)
+          .addField("ATK", lv1v1[4] + " → " + lv99v1[2], true)
+          .addField("DEF", lv1v1[5] + " → " + lv99v1[3], true)
+          .addField("Range", ran, true)
+          .addField("MR", lv1v1[6], true)
+          .addField("Block", lv1v1[7], true)
+          .addField("Cost", lv1v1[9], true)
+          pages.push(embed);
+		}
         }
         if ($('.c2').find('td').length >= 6) {
           output = $('.c2.numbers').first().text();
