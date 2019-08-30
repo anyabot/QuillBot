@@ -58,7 +58,6 @@ class FindSkill extends commando.Command {
         var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
         request(link, function (err, resp, html) {
             if (!err) {
-		    
                 const $ = cheerio.load(html);
 				var check = false;
 				var pages = [];
@@ -136,6 +135,44 @@ class FindSkill extends commando.Command {
     })
 })
 	    }
+		if (!check) {
+			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(13)').first().html();
+			if (output && output != "N/A") {
+				var nna = na(output);
+				img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+				link = "https://aigis.fandom.com/wiki/" + urlencode(nna);
+
+				request(link, function(err, resp, html) {
+					if (!err) {
+						check = true
+						const $2 = cheerio.load(html);
+						let output2 = $2('.gcstyle:first-child tr:nth-child(5)').html()
+						output = $2('.gcstyle:nth-child(2) tr:last-child').html()
+						output = na(output)
+						var xyz = output.split(" ")
+						xyz = xyz.filter(function(el) {
+						  return el != null && el != '';
+						});
+						var len = xyz.length
+						output = $2('.gcstyle:first-child tr:nth-child(3)').html()
+						output = output.replace(/<b>X<\/b>/g, xyz[1]);
+						output = output.replace(/<b>Y<\/b>/g, xyz[2]);
+						output = output.replace(/<b>Z<\/b>/g, xyz[3]);
+						embed1.setTitle("Skill")
+						embed1.setThumbnail(img)
+						if (!output2) {embed1.addField(nna, output + "\n**CD: **" + xyz[len-1])}
+						if (output2) {
+							output2 = output2.replace(/<b>X<\/b>/g, xyz[1]);
+							output2 = output2.replace(/<b>Y<\/b>/g, xyz[2]);
+							output2 = output2.replace(/<b>Z<\/b>/g, xyz[3]);
+							embed1.addField(nna, output + "\n" + output2 + "\n**CD: **" + xyz[len-1])
+						}
+						embed1.setColor('BLUE')
+						console.log(na(output))
+					}
+				})
+			}
+		} 
                 if (!check) {message.channel.send("No Data")};
             }
         });
@@ -152,5 +189,22 @@ function te(output) {
   	return el != null && el != '';
 	});
    return filtered;
+}
+function na(output) {
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
+	output = output.trim();
+	var arr = output.split('\n');
+	var filtered = arr.filter(function (el) {
+  	return el != null && el != '';
+	});
+	var na = filtered[0];
+	let i = 1;
+	while (i < filtered.length) {
+		na = na + " " + filtered[i];
+		i++;
+	}
+    return na;
 }
 module.exports = FindSkill;
