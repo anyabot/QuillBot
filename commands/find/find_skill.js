@@ -146,18 +146,21 @@ class FindSkill extends commando.Command {
 					if (!err) {
 						check = true
 						const $2 = cheerio.load(html);
-						let output2 = $2('.gcstyle:first-child tr:nth-child(5)').html()
+						let output2 = $2('.gcstyle:first-child tr:nth-child(5)').not(function(i, el) {
+						  	return $(this).attr('class') != 'bgbeige';
+						}).html()
 						output = $2('.gcstyle:nth-child(2) tr:last-child').html()
 						output = na(output)
 						var xyz = output.split(" ")
 						xyz = xyz.filter(function(el) {
-						  return el != null && el != '';
+						  	return el != null && el != '';
 						});
 						var len = xyz.length
 						output = $2('.gcstyle:first-child tr:nth-child(3)').html()
 						output = output.replace(/<b>X<\/b>/g, xyz[1]);
 						output = output.replace(/<b>Y<\/b>/g, xyz[2]);
 						output = output.replace(/<b>Z<\/b>/g, xyz[3]);
+						output = na(output)
 						embed1.setTitle("Skill")
 						embed1.setThumbnail(img)
 						if (!output2) {embed1.addField(nna, output + "\n**CD: **" + xyz[len-1])}
@@ -165,15 +168,16 @@ class FindSkill extends commando.Command {
 							output2 = output2.replace(/<b>X<\/b>/g, xyz[1]);
 							output2 = output2.replace(/<b>Y<\/b>/g, xyz[2]);
 							output2 = output2.replace(/<b>Z<\/b>/g, xyz[3]);
+							output2 = na(output2)
 							embed1.addField(nna, output + "\n" + output2 + "\n**CD: **" + xyz[len-1])
 						}
 						embed1.setColor('BLUE')
-						message.channel.send(embed)
+						message.channel.send(embed1)
 					}
 				})
 			}
+			message.channel.send("No Data")
 		} 
-                if (!check) {message.channel.send("No Data")};
             }
         });
     }
