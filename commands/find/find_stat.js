@@ -441,8 +441,10 @@ class FindStat extends commando.Command {
 }
 
 function lv1line(output) {
+	if (output != null) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
     output = output.trim();
     var arr = output.split('\n');
@@ -450,8 +452,10 @@ function lv1line(output) {
    return arr;
 }
 function range(output) {
+	if (output != null) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
@@ -467,9 +471,10 @@ function range(output) {
     return range;
 }
 function affe(output) {
-	
+	if (output != null) {
     output = output.replace(/<[^>]*>/g, "\n");
     output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
