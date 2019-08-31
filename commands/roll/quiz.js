@@ -57,7 +57,7 @@ function sendembed($, message) {
 				.then(collected => {
 					message.channel.send(collected.first().author + ' got the correct answer!').then(msg => {
 						msg.react('🇾')
-						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾');
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
@@ -67,7 +67,7 @@ function sendembed($, message) {
 				.catch(collected => {
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit).then(msg => {
 						msg.react('🇾')
-						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾');
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
