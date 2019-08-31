@@ -79,7 +79,7 @@ request(link, function(err, resp, html) {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
-	    if (pages.length == 8) {
+	    if (pages.length == 10) {
 	    	parts.push(pages)
 		    pages = []
 		    pages.push(embed)
@@ -129,7 +129,7 @@ function sendembed(pg, message) {
 
 			forwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (pn[i] === pg.length) return;
+				if (pn === pg.length) return;
 				pn = pn + 1;
 				embed = pg[pn - 1];
 				embed.setFooter('Page ' + pn + ' of ' + pg.length);
