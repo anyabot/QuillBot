@@ -55,6 +55,7 @@ function sendembed($, message) {
 			message.channel.send(embed).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
+					collected.delete()
 					mes.delete()
 					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
