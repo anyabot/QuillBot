@@ -56,27 +56,25 @@ function sendembed($, message) {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
-					message.channel.send(collected.first().author + ' got the correct answer!')
-					message.channel.send('Try again?').then(msg => {
+					message.channel.send(collected.first().author + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
-							msg.clearReactions()
+							msg.delete()
 						})
 					})
 				})
 				.catch(collected => {
 					mes.delete()
-					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit)
-					message.channel.send('Try again?').then(msg => {
+					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit +'\nTry again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
-							msg.clearReactions()
+							msg.delete()
 						})
 					})
 				})
