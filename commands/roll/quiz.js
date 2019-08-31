@@ -55,7 +55,7 @@ function sendembed($, message) {
 			message.channel.send(embed).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
-					collected.delete()
+					collected.first().delete()
 					mes.delete()
 					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
@@ -65,9 +65,13 @@ function sendembed($, message) {
 							sendembed($, message) 
 							msg.delete()
 						})
+						backwards.on('end', r => {
+							msg.delete()
+						})
 					})
 				})
 				.catch(collected => {
+					collected.first().delete()
 					mes.delete()
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit +'\nTry again?').then(msg => {
 						msg.react('🇾')
@@ -75,6 +79,9 @@ function sendembed($, message) {
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
+							msg.delete()
+						})
+						backwards.on('end', r => {
 							msg.delete()
 						})
 					})
