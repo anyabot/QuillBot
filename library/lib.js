@@ -118,6 +118,18 @@ var name = {
 	'Skeleton' : 'Sword Skeleton',
 	'Tongtian' : 'Tongtian Jiaozhu (Fake)',
 	'Tongtian Jiaozhu' : 'Tongtian Jiaozhu (Fake)',
+	'Spirit of Iron' : 'Aina',
+	'Spirit of Bronze' : 'Sara',
+	'Spirit of Silver' : 'Cyrille',
+	'Spirit of Gold' : 'Nina',
+	'Spirit of Platinum' : 'Celia',
+	'Spirit of Platinum' : 'Celia',
+	'Spirit of Black' : 'Florika',
+	'Spirit Queen' : 'Gladys',
+	'Spirit of Rainbow' : 'Christia',
+	'Rainbow Spirit' : 'Christia',
+	'Rainbow Fairy' : 'Christia',
+	'Rf' : 'Christia'
 }
 
 exports.name = name;
