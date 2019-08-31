@@ -64,6 +64,7 @@ request(link, function(err, resp, html) {
     var check = false 
     var parts = []
     var pages = [];
+		var pn = []
     const $ = cheerio.load(html);
     $('.listtable.bgwhite tr td div a img').each(function(i, elem) {
       check = true
@@ -88,10 +89,11 @@ request(link, function(err, resp, html) {
 		if (check) {
 			parts.push(pages)
 			for (var i = 0; i < parts.length; i++) {
-				let page2 = 1
-				let pages2 = parts[i]
-				var embed = pages[0];
-				embed.setFooter('Page ' + page2 + ' of ' + pages2.length);
+				pn.push(1)
+			}
+			for (var i = 0; i < parts.length; i++) {
+				var embed = parts[i][0];
+				embed.setFooter('Page ' + pn[i] + ' of ' + parts[i].length);
 				message.channel.send(embed).then(msg => {
 
 				msg.react('⬅').then( r => {
@@ -106,19 +108,19 @@ request(link, function(err, resp, html) {
 
 			backwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (page2 === 1) return;
-				page2--;
-				embed = pages2[page2-1];
-				embed.setFooter('Page ' + page2 + ' of ' + pages2.length);
+				if (pn[i] === 1) return;
+				pn[i] = pn[i] - 1;
+				embed = parts[i][pn[i] - 1];
+				embed.setFooter('Page ' + pn[i] + ' of ' + parts[i].length);
 				msg.edit(embed)
 			})
 
 			forwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (page2 === pages2.length) return;
-				page2++;
-				embed = pages2[page2-1];
-				embed.setFooter('Page ' + page2 + ' of ' + pages2.length);
+				if (pn[i] === parts[i].length) return;
+				pn[i] = pn[i] + 1;
+				embed = parts[i][pn[i] - 1];
+				embed.setFooter('Page ' + pn[i] + ' of ' + parts[i].length);
 				msg.edit(embed)
 		})
 	    })
