@@ -37,6 +37,7 @@ class RanRoll extends commando.Command {
 		} 
 		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
 	    else if (isNaN(text)) {
+		    console.log("int")
 			var ind = parseInt(text)
 			if (ind < 1 || ind > ulastroll.length) {message.reply("Wrong Index")}
 			else {
