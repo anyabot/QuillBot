@@ -59,9 +59,12 @@ function sendembed($, message) {
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 600 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
+						})
+						backwards.on('end', r => {
+							msg.edit('Time out')
 						})
 					})
 				})
@@ -70,9 +73,12 @@ function sendembed($, message) {
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 600 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
+						})
+						backwards.on('end', r => {
+							msg.edit('Time out')
 						})
 					})
 				})
