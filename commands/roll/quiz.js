@@ -69,7 +69,7 @@ function sendembed($, message) {
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit)
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
-						const backwardsFilter = (reaction, user) => (reaction.emoji.name === && !user.bot);
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
