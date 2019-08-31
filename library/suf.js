@@ -27,7 +27,11 @@ var suffix = {
     'Ny' : '(New Year\'s)',
     '(Ny)' : '(New Year\'s)',
     'Clone' : '(Clone)',
-    'Fake' : '(Fake)'
+    'Fake' : '(Fake)',
+    'Idol' : '(Idol)',
+    'Uniform' : '(Uniform)',
+    'Waitress' : '(Waitress)',
+    'Bonded' : '(Bonded)'
 }
 
 exports.suffix = suffix;
