@@ -67,8 +67,8 @@ class RanRoll extends commando.Command {
 		}
 	    else {
 			var unit = functions.nameChange(text)
-			if (barrack.includes(unit)) {
-				var ind = barrack.indexOf(unit) + 1
+			if (ubarrack.includes(unit)) {
+				var ind = ubarrack.indexOf(unit) + 1
 				var mes = "Do you want to remove " + unit + " from your barrack? (y/n)"
 				message.channel.send(mes).then(msg => {
 
