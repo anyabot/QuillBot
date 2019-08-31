@@ -56,7 +56,7 @@ function sendembed($, message) {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
-					message.channel.send(collected.first().author + ' got the correct answer!\nTry again?').then(msg => {
+					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
