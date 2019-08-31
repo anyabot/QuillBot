@@ -100,6 +100,7 @@ request(link, function(err, resp, html) {
 
 				msg.react('⬅').then( r => {
 			msg.react('➡')
+					let pages2 = parts[i]
 
 			// Filters
 			const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
@@ -112,7 +113,7 @@ request(link, function(err, resp, html) {
 				r.remove(r.users.filter(u => !u.bot).first());
 				if (pn[i] === 1) return;
 				pn[i] = pn[i] - 1;
-				embed = parts[i][pn[i] - 1];
+				embed = pages2[pn[i] - 1];
 				embed.setFooter('Page ' + pn[i] + ' of ' + pm[i]);
 				msg.edit(embed)
 			})
@@ -121,7 +122,7 @@ request(link, function(err, resp, html) {
 				r.remove(r.users.filter(u => !u.bot).first());
 				if (pn[i] === pm[i]) return;
 				pn[i] = pn[i] + 1;
-				embed = parts[i][pn[i] - 1];
+				embed = pages2[pn[i] - 1];
 				embed.setFooter('Page ' + pn[i] + ' of ' + pm[i]);
 				msg.edit(embed)
 		})
