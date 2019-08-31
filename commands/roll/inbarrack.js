@@ -20,23 +20,19 @@ class RanRoll extends commando.Command {
 			prompt: 'Which unit do you want to check?',
 		    type: 'string'
 		}],
-		examples: ['&take 1']
+		examples: ['&inbarrack 1']
         });
     }
 
     async run(message, { text }) {
-		const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
-	    lastroll.on('error', err => console.error('Keyv connection error:', err));
 		const barrack = new Keyv(process.env.MONGODB_URI, { namespace: 'barrack' });
 	    barrack.on('error', err => console.error('Keyv connection error:', err));
-		var ulastroll = await lastroll.get(message.author.id)
-		if (ulastroll == undefined) {ulastroll = []}
 		var ubarrack = await barrack.get(message.author.id)
 		if (ubarrack == undefined) {ubarrack = []}
 		var unit = functions.nameChange(text)
 		var nu = 0;
 		for (var i = 0; i < ubarrack.length; i++) {
-			if (unit = ubarrack[i]) {nu++}
+			if (unit == ubarrack[i]) {nu++}
 		}
 		message.reply("You have " + nu + " " + unit + " in your barrack.")
 	}
