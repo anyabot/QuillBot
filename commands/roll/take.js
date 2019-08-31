@@ -16,7 +16,7 @@ class RanRoll extends commando.Command {
             	description: 'take a unit from your previous roll to the barrack (max capacity 100 units)',
               args: [{
 		    key: 'text',
-			prompt: 'Which unit do you want to take? (Input the index number from &lastroll)',
+			prompt: 'Which unit do you want to take? (Input name or the index number from &lastroll)',
 		    type: 'string'
 		}],
 		examples: ['&take 1']
