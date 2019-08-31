@@ -65,7 +65,7 @@ function sendembed($, message) {
 							sendembed($, message) 
 							msg.delete()
 						})
-						backwards.on('end', r => {
+						backwards.on('end', () => {
 							msg.delete()
 						})
 					})
@@ -80,7 +80,7 @@ function sendembed($, message) {
 							sendembed($, message) 
 							msg.delete()
 						})
-						backwards.on('end', r => {
+						backwards.on('end', () => {
 							msg.delete()
 						})
 					})
