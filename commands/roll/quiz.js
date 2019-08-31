@@ -61,11 +61,12 @@ function sendembed($, message) {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-						backwards.on('collect', r => {
+						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
+						.then(collected => {
 							sendembed($, message) 
 							msg.delete()
 						})
-						backwards.on('end', () => {
+						.catch(collected => {
 							msg.delete()
 						})
 					})
@@ -76,11 +77,12 @@ function sendembed($, message) {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-						backwards.on('collect', r => {
+						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
+						.then(collected => {
 							sendembed($, message) 
 							msg.delete()
 						})
-						backwards.on('end', () => {
+						.catch(collected => {
 							msg.delete()
 						})
 					})
