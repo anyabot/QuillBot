@@ -88,10 +88,10 @@ request(link, function(err, resp, html) {
 		if (check) {
 			parts.push(pages)
 			for (var i = 0; i < parts.length; i++) {
-				let page = 1
-				pages = parts[i]
+				let page2 = 1
+				let pages2 = parts[i]
 				var embed = pages[0];
-				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				embed.setFooter('Page ' + page2 + ' of ' + pages2.length);
 				message.channel.send(embed).then(msg => {
 
 				msg.react('⬅').then( r => {
@@ -106,19 +106,19 @@ request(link, function(err, resp, html) {
 
 			backwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (page === 1) return;
-				page--;
-				embed = pages[page-1];
-				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				if (page2 === 1) return;
+				page2--;
+				embed = pages2[page2-1];
+				embed.setFooter('Page ' + page2 + ' of ' + pages2.length);
 				msg.edit(embed)
 			})
 
 			forwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (page === pages.length) return;
-				page++;
-				embed = pages[page-1];
-				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				if (page2 === pages2.length) return;
+				page2++;
+				embed = pages2[page2-1];
+				embed.setFooter('Page ' + page2 + ' of ' + pages2.length);
 				msg.edit(embed)
 		})
 	    })
