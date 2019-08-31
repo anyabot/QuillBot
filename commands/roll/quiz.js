@@ -71,16 +71,16 @@ function sendembed($, message) {
 function repeat($, message) {
 	message.channel.send('Try again?').then(msg => {
 		msg.react('🇾')
-		var backwardsFilter = (reaction, user) => {return (reaction.emoji.name == '🇾' && !user.bot)};
-		msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
-		.then(() => {
-			console.log("repeat")
+		var backwardsFilter = (reaction, user) => (reaction.emoji.name == '🇾' && !user.bot);
+		const backwards = msg.createReactionCollector(backwardsFilter, {timer: 600 , max: 1})
+		backwards.on('collect', r => {
 			sendembed($, message)
-		})
-		.catch(() => {
-			msg.edit('Time out')
 			msg.clearReactions()
-		})
+        	})
+		backwards.on('end', r => {
+			msg.edit("Time out")
+			msg.clearReactions()
+        	})
 	})
 }
 module.exports = RanRoll;
