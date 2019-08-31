@@ -61,7 +61,10 @@ function sendembed($, message) {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
-						.then(() => sendembed($, message))
+						.then(() => {
+							console.log("repeat")
+							sendembed($, message)
+						})
 						.catch(() => {
 							msg.edit('Time out')
 							msg.clearReactions()
@@ -75,7 +78,10 @@ function sendembed($, message) {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
-						.then(() => sendembed($, message))
+						.then(() => {
+							console.log("repeat")
+							sendembed($, message)
+						})
 						.catch(() => {
 							msg.edit('Time out')
 							msg.clearReactions()
