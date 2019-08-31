@@ -106,6 +106,7 @@ class RanRoll extends commando.Command {
 					})
 				})
 			}
+			else {message.channel.send("Wrong Name")}
 		}
 	}
 }
