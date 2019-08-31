@@ -71,7 +71,6 @@ function sendembed($, message) {
 					})
 				})
 				.catch(collected => {
-					collected.first().delete()
 					mes.delete()
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit +'\nTry again?').then(msg => {
 						msg.react('🇾')
