@@ -52,9 +52,10 @@ function sendembed($, message) {
 			};
 			let embed = new Discord.RichEmbed()
 			embed.setImage(img)
-			message.channel.send(embed).then(() => {
+			message.channel.send(embed).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
+					mes.delete()
 					message.channel.send(collected.first().author + ' got the correct answer!')
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
@@ -62,10 +63,12 @@ function sendembed($, message) {
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
+							msg.clearReactions()
 						})
 					})
 				})
 				.catch(collected => {
+					mes.delete()
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit)
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
@@ -73,6 +76,7 @@ function sendembed($, message) {
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
 							sendembed($, message) 
+							msg.clearReactions()
 						})
 					})
 				})
