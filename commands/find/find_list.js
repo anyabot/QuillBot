@@ -65,6 +65,7 @@ request(link, function(err, resp, html) {
     var parts = []
     var pages = [];
 		var pn = []
+		var pm = []
     const $ = cheerio.load(html);
     $('.listtable.bgwhite tr td div a img').each(function(i, elem) {
       check = true
@@ -90,6 +91,7 @@ request(link, function(err, resp, html) {
 			parts.push(pages)
 			for (var i = 0; i < parts.length; i++) {
 				pn.push(1)
+				pm.push(parts[i].length)
 			}
 			for (var i = 0; i < parts.length; i++) {
 				var embed = parts[i][0];
@@ -111,16 +113,16 @@ request(link, function(err, resp, html) {
 				if (pn[i] === 1) return;
 				pn[i] = pn[i] - 1;
 				embed = parts[i][pn[i] - 1];
-				embed.setFooter('Page ' + pn[i] + ' of ' + parts[i].length);
+				embed.setFooter('Page ' + pn[i] + ' of ' + pm[i]);
 				msg.edit(embed)
 			})
 
 			forwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (pn[i] === parts[i].length) return;
+				if (pn[i] === pm[i]) return;
 				pn[i] = pn[i] + 1;
 				embed = parts[i][pn[i] - 1];
-				embed.setFooter('Page ' + pn[i] + ' of ' + parts[i].length);
+				embed.setFooter('Page ' + pn[i] + ' of ' + pm[i]);
 				msg.edit(embed)
 		})
 	    })
