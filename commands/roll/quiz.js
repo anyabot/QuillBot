@@ -53,13 +53,13 @@ function sendembed($, message) {
 			let embed = new Discord.RichEmbed()
 			embed.setImage(img)
 			message.channel.send(embed).then(() => {
-			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
+			message.channel.awaitMessages(filter, { maxMatches: 1, time: 12000, errors: ['time'] })
 				.then(collected => {
 					message.channel.send(collected.first().author + ' got the correct answer!')
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						msg.awaitReactions(backwardsFilter, { time: 1200, errors: ['time'] })
+						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
 						.then(collected => sendembed($, message))
 						.catch(collected => {
 							msg.edit('Time out')
@@ -72,7 +72,7 @@ function sendembed($, message) {
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						msg.awaitReactions(backwardsFilter, { time: 1200, errors: ['time'] })
+						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
 						.then(collected => sendembed($, message))
 						.catch(collected => {
 							msg.edit('Time out')
