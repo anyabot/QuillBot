@@ -55,10 +55,12 @@ function sendembed($, message) {
 			message.channel.send(embed).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 12000, errors: ['time'] })
 				.then(collected => {
+					mes.delete()
 					message.channel.send(collected.first().author + ' got the correct answer!')
 					repeat($, message)
 				})
 				.catch(collected => {
+					mes.delete()
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit)
 					repeat($, message)
 				})
@@ -69,7 +71,7 @@ function sendembed($, message) {
 function repeat($, message) {
 	message.channel.send('Try again?').then(msg => {
 		msg.react('🇾')
-		var backwardsFilter = (reaction, user) => (reaction.emoji.name == '🇾' && !user.bot);
+		var backwardsFilter = (reaction, user) => {return (reaction.emoji.name == '🇾' && !user.bot)};
 		msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
 		.then(() => {
 			console.log("repeat")
