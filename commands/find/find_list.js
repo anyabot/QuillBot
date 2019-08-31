@@ -62,8 +62,8 @@ var link = "https://aigis.fandom.com/wiki/Category%3A" + urlencode(cl)
 request(link, function(err, resp, html) {
 	if (!err) {
     var check = false 
+    var parts = []
     var pages = [];
-    var page = 1;
     const $ = cheerio.load(html);
     $('.listtable.bgwhite tr td div a img').each(function(i, elem) {
       check = true
@@ -77,42 +77,53 @@ request(link, function(err, resp, html) {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
-      pages.push(embed)
+	    if (pages.length == 8) {
+	    	parts.push(pages)
+		    pages = []
+		    pages.push(embed)
+	    }
+      else (pages.push(embed))
     })
+		
 		if (check) {
-		var embed = pages[0];
-		embed.setFooter('Page ' + page + ' of ' + pages.length);
-		message.channel.send(embed).then(msg => {
+			parts.push(pages)
+			for (var i = 0; i < parts.length; i++) {
+				let page = 1
+				pages = parts[i]
+				var embed = pages[0];
+				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				message.channel.send(embed).then(msg => {
 
-		msg.react('⬅').then( r => {
-        msg.react('➡')
+				msg.react('⬅').then( r => {
+			msg.react('➡')
 
-        // Filters
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+			// Filters
+			const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+			const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
 
-        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+			const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+			const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
 
-        backwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-        	if (page === 1) return;
-         	page--;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
+			backwards.on('collect', r => {
+				r.remove(r.users.filter(u => !u.bot).first());
+				if (page === 1) return;
+				page--;
+				embed = pages[page-1];
+				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				msg.edit(embed)
+			})
 
-        forwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-            	if (page === pages.length) return;
-            	page++;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
-    })
-})
+			forwards.on('collect', r => {
+				r.remove(r.users.filter(u => !u.bot).first());
+				if (page === pages.length) return;
+				page++;
+				embed = pages[page-1];
+				embed.setFooter('Page ' + page + ' of ' + pages.length);
+				msg.edit(embed)
+		})
+	    })
+	})
+			}
 	    }
                 if (!check) {message.channel.send("No Data")};
             }
