@@ -5,8 +5,7 @@ var cheerio = require('cheerio');
 var he = require('he');
 var moment = require('moment');
 var printf = require('printf');
-var name = require('../../library/lib.js').name;
-var suffix = require('../../library/suf.js').suffix;
+var functions = require('../../functions.js');
 require('@gouch/to-title-case')
 
 class UtilDaily extends commando.Command {
@@ -22,22 +21,7 @@ class UtilDaily extends commando.Command {
     }
 
     async run(message, input) {
-        var unit = input.toLowerCase().toTitleCase();
-          var np = unit.split(' ');
-          var npl = np.length;
-          if (npl >= 2) {
-            if (suffix[np[npl-1]]) {np[npl-1] = suffix[np[npl-1]]}
-            if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
-          np[npl-1] = 'Year\'s)';
-          np[npl-2] = '(New';
-        }
-            if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
-          np[npl-1] = 'Year\'s)';
-          np[npl-2] = '(New';
-        }
-          }
-          unit = np.join(' ')
-            if (name[unit]) unit = name[unit];
+        var unit = functions.nameChange(input)
         var link = "https://wikiwiki.jp/aigiszuki/"
         var link2 = "https://aigis.fandom.com/wiki/Daily_Revivals"
         var japname = {
