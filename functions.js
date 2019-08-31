@@ -1,5 +1,5 @@
-var name = require('/library/lib.js').name;
-var suffix = require('/library/suf.js').suffix;
+var name = require('__dirname/library/lib.js').name;
+var suffix = require('__dirname/library/suf.js').suffix;
 require('@gouch/to-title-case')
 
 exports.nameChange = function nameChange(text) {
