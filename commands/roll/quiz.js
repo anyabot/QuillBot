@@ -60,7 +60,7 @@ function sendembed($, message) {
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾');
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
-							sendembed($, message) {
+							sendembed($, message) 
 						})
 					})
 				})
@@ -70,7 +70,7 @@ function sendembed($, message) {
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾');
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						backwards.on('collect', r => {
-							sendembed($, message) {
+							sendembed($, message) 
 						})
 					})
 				})
