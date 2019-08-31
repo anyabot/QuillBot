@@ -52,35 +52,36 @@ function sendembed($, message) {
 			};
 			let embed = new Discord.RichEmbed()
 			embed.setImage(img)
-			message.channel.send(embed).then(mes => {
+			message.channel.send(embed).then(() => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 12000, errors: ['time'] })
 				.then(collected => {
-					mes.delete()
 					message.channel.send(collected.first().author + ' got the correct answer!')
-					repeat($, message)
+					message.channel.send('Try again?').then(msg => {
+						msg.react('🇾')
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
+						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
+						.then(collected => sendembed($, message))
+						.catch(collected => {
+							msg.edit('Time out')
+							msg.clearReactions()
+						})
+					})
 				})
 				.catch(collected => {
-					mes.delete()
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit)
-					repeat($, message)
+					message.channel.send('Try again?').then(msg => {
+						msg.react('🇾')
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
+						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
+						.then(collected => sendembed($, message))
+						.catch(collected => {
+							msg.edit('Time out')
+							msg.clearReactions()
+						})
+					})
 				})
 			});
 		}
-	})
-}
-function repeat($, message) {
-	message.channel.send('Try again?').then(msg => {
-		msg.react('🇾')
-		var backwardsFilter = (reaction, user) => (reaction.emoji.name == '🇾' && !user.bot);
-		const backwards = msg.createReactionCollector(backwardsFilter, {timer: 600 , max: 1})
-		backwards.on('collect', r => {
-			sendembed($, message)
-			msg.clearReactions()
-        	})
-		backwards.on('end', r => {
-			msg.edit("Time out")
-			msg.clearReactions()
-        	})
 	})
 }
 module.exports = RanRoll;
