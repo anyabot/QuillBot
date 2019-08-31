@@ -24,6 +24,9 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, { text }) {
+	    var parts = text.split("")
+	    if (parts[0] == "&take") {parts.shift()}
+	    var text2 = parts.join(" ")
 		const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
 	    lastroll.on('error', err => console.error('Keyv connection error:', err));
 		const barrack = new Keyv(process.env.MONGODB_URI, { namespace: 'barrack' });
@@ -36,8 +39,8 @@ class RanRoll extends commando.Command {
 			message.reply("You have no unit to take")
 		} 
 		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
-	    else if (!isNaN(text)) {
-			var ind = parseInt(text)
+	    else if (!isNaN(text2)) {
+			var ind = parseInt(text2)
 			if (ind < 1 || ind > ulastroll.length) {message.reply("Wrong Index")}
 			else {
 				var unit = ulastroll[ind-1]
@@ -73,7 +76,7 @@ class RanRoll extends commando.Command {
 			}
 		}
 		else {
-			var unit = functions.nameChange(text)
+			var unit = functions.nameChange(text2)
 			if (ulastroll.includes(unit)) {
 				var ind = ulastroll.indexOf(unit) + 1
 				var mes = "Do you want to take " + unit + " to your barrack? (y/n)"
