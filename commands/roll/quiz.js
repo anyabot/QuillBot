@@ -53,17 +53,15 @@ function sendembed($, message) {
 			let embed = new Discord.RichEmbed()
 			embed.setImage(img)
 			message.channel.send(embed).then(() => {
-			message.channel.awaitMessages(filter, { maxMatches: 1, time: 12000, errors: ['time'] })
+			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
 					message.channel.send(collected.first().author + ' got the correct answer!')
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
-						.then(collected => sendembed($, message))
-						.catch(collected => {
-							msg.edit('Time out')
-							msg.clearReactions()
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+						backwards.on('collect', r => {
+							sendembed($, message) 
 						})
 					})
 				})
@@ -71,12 +69,10 @@ function sendembed($, message) {
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit)
 					message.channel.send('Try again?').then(msg => {
 						msg.react('🇾')
-						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
-						.then(collected => sendembed($, message))
-						.catch(collected => {
-							msg.edit('Time out')
-							msg.clearReactions()
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === && !user.bot);
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+						backwards.on('collect', r => {
+							sendembed($, message) 
 						})
 					})
 				})
