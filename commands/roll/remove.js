@@ -24,6 +24,9 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, { text }) {
+	    var parts = text.split("")
+	    if (parts[0] == "&remove") {parts.shift()}
+	    var text2 = parts.join(" ")
 		const barrack = new Keyv(process.env.MONGODB_URI, { namespace: 'barrack' });
 	    barrack.on('error', err => console.error('Keyv connection error:', err));
 		var ubarrack = await barrack.get(message.author.id)
@@ -31,8 +34,8 @@ class RanRoll extends commando.Command {
 	    if (ubarrack == [] || ubarrack == null || ubarrack.length == 0) {
 			message.reply("You have no unit in the barrack")
 		} 
-		else if (!isNaN(text)) {
-			var ind = parseInt(text)
+		else if (!isNaN(text2)) {
+			var ind = parseInt(text2)
 			if (ind < 1 || ind > ubarrack.length) {message.reply("Wrong Index")}
 			else {
 			var unit = ubarrack[ind-1]
@@ -66,7 +69,7 @@ class RanRoll extends commando.Command {
 			}
 		}
 	    else {
-			var unit = functions.nameChange(text)
+			var unit = functions.nameChange(text2)
 			if (ubarrack.includes(unit)) {
 				var ind = ubarrack.indexOf(unit) + 1
 				var mes = "Do you want to remove " + unit + " from your barrack? (y/n)"
