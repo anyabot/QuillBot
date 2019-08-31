@@ -57,21 +57,21 @@ function sendembed($, message) {
 				.then(collected => {
 					mes.delete()
 					message.channel.send(collected.first().author + ' got the correct answer!')
-					repeat(message)
+					repeat($, message)
 				})
 				.catch(collected => {
 					mes.delete()
 					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit)
-					repeat(message)
+					repeat($, message)
 				})
 			});
 		}
 	})
 }
-function repeat(message) {
+function repeat($, message) {
 	message.channel.send('Try again?').then(msg => {
 		msg.react('🇾')
-		const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
+		var backwardsFilter = (reaction, user) => (reaction.emoji.name == '🇾' && !user.bot);
 		msg.awaitReactions(backwardsFilter, { time: 12000, errors: ['time'] })
 		.then(() => {
 			console.log("repeat")
