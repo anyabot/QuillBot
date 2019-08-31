@@ -21,7 +21,8 @@ class RanRoll extends commando.Command {
 		usages: 1,
 		duration: 60
 	},
-		examples: ['&quiz']
+		examples: ['&quiz'],
+		hidden: true
         });
     }
 
