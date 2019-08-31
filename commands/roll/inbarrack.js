@@ -38,7 +38,7 @@ class RanRoll extends commando.Command {
 		for (var i = 0; i < ubarrack.length; i++) {
 			if (unit = ubarrack[i]) {nu++}
 		}
-		message.reply("You have " + nu + " " + unit + " in your barrack".)
+		message.reply("You have " + nu + " " + unit + " in your barrack.")
 	}
 }
 module.exports = RanRoll;
