@@ -24,7 +24,7 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, { text }) {
-	    var parts = text.split("")
+	    var parts = text.split(" ")
 	    if (parts[0] == "&remove") {parts.shift()}
 	    var text2 = parts.join(" ")
 		const barrack = new Keyv(process.env.MONGODB_URI, { namespace: 'barrack' });
