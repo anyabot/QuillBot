@@ -53,7 +53,7 @@ function sendembed($, message) {
 			let embed = new Discord.RichEmbed()
 			embed.setImage(img)
 			message.channel.send(embed).then(() => {
-			message.channel.awaitMessages(filter, { maxMatches: 1, time: 60, errors: ['time'] })
+			message.channel.awaitMessages(filter, { maxMatches: 1, time: 1800, errors: ['time'] })
 				.then(collected => {
 					message.channel.send(collected.first().author + ' got the correct answer!');
 				})
