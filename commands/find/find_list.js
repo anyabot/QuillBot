@@ -94,13 +94,22 @@ request(link, function(err, resp, html) {
 				pm.push(parts[i].length)
 			}
 			for (var i = 0; i < parts.length; i++) {
-				var embed = parts[i][0];
-				embed.setFooter('Page ' + pn[i] + ' of ' + parts[i].length);
+				sendembed(parts[i], message)
+			}
+	    }
+                if (!check) {message.channel.send("No Data")};
+            }
+        });
+    }
+}
+function sendembed(pg, message) {
+	let embed = pg[0];
+	let pn = 1
+				embed.setFooter('Page ' + pn + ' of ' + pg.length);
 				message.channel.send(embed).then(msg => {
 
 				msg.react('⬅').then( r => {
 			msg.react('➡')
-					let pages2 = parts[i]
 
 			// Filters
 			const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
@@ -111,28 +120,22 @@ request(link, function(err, resp, html) {
 
 			backwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (pn[i] === 1) return;
-				pn[i] = pn[i] - 1;
-				embed = pages2[pn[i] - 1];
-				embed.setFooter('Page ' + pn[i] + ' of ' + pm[i]);
+				if (pn === 1) return;
+				pn = pn - 1;
+				embed = pg[pn - 1];
+				embed.setFooter('Page ' + pn + ' of ' + pg.length);
 				msg.edit(embed)
 			})
 
 			forwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
-				if (pn[i] === pm[i]) return;
-				pn[i] = pn[i] + 1;
-				embed = pages2[pn[i] - 1];
-				embed.setFooter('Page ' + pn[i] + ' of ' + pm[i]);
+				if (pn[i] === pg.length) return;
+				pn = pn + 1;
+				embed = pg[pn - 1];
+				embed.setFooter('Page ' + pn + ' of ' + pg.length);
 				msg.edit(embed)
 		})
 	    })
 	})
-			}
-	    }
-                if (!check) {message.channel.send("No Data")};
-            }
-        });
-    }
 }
 module.exports = FindImage;
