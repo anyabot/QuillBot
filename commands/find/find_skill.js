@@ -3,8 +3,7 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
-var name = require('../../library/lib.js').name;
-var suffix = require('../../library/suf.js').suffix;
+var functions = require('../../functions.js');
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
 
@@ -25,36 +24,7 @@ class FindSkill extends commando.Command {
     }
 
     async run(message, { text }) {
-        var unit = text.toLowerCase().toTitleCase();
-	    var np = unit.split(' ');
-	    var npl = np.length;
-	    if (npl >= 2) {
-	    	if (suffix[np[npl-1]]) {
-			np[npl-1] = suffix[np[npl-1]]
-			let sur = np[npl-1]
-			np.pop()
-			let un = np.join(' ')
-			if (name[un]) {un = name[un]}
-			unit = un + ' ' + sur
-		}
-	    	if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
-			let sur = '(New Year\'s)'
-			np.pop()
-			np.pop()
-			let un = np.join(' ')
-			if (name[un]) {un = name[un]}
-			unit = un + ' ' + sur
-		}
-		    if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
-			let sur = '(New Year\'s)'
-			np.pop()
-			np.pop()
-			let un = np.join(' ')
-			if (name[un]) {un = name[un]}
-			unit = un + ' ' + sur
-		}
-	    }
-        if (name[unit]) unit = name[unit];
+        var unit = functions.nameChange(text)
         var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
         request(link, function (err, resp, html) {
             if (!err) {
