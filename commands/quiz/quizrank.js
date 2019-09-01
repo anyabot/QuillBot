@@ -28,7 +28,7 @@ class RanRoll extends commando.Command {
       const client = new Discord.Client()
 		  if (!score[message.author.id]) {score[message.author.id] = 0}
       var items = Object.keys(score).map(function(key) {
-        return [key, dict[score]];
+        return [key, score[key]];
       });
       items.sort(function(first, second) {
         return second[1] - first[1];
