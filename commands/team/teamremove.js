@@ -18,7 +18,7 @@ class RanRoll extends commando.Command {
             	group: 'team',
             	memberName: 'teamremove',
             	description: 'remove an unit from your team',
-		examples: ['&teamremove'],
+		examples: ['&teamremove 1'],
 		hidden: true
         });
     }
