@@ -10,7 +10,7 @@ require('@keyv/mongo')
 const Canvas = require('canvas');
 var functions = require('../../functions.js');
 var fs = require('fs');
-
+const xy = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
 
 class RanRoll extends commando.Command {
     constructor(client) {
@@ -25,7 +25,6 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-	    const xy = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
 	    const team = new Keyv(process.env.MONGODB_URI, { namespace: 'team' });
 	          team.on('error', err => console.error('Keyv connection error:', err));
             var uteam = await team.get(message.author.id)
@@ -34,26 +33,29 @@ class RanRoll extends commando.Command {
 	    const ctx = canvas.getContext('2d');
       const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
 	    ctx.drawImage(background, 0, 0)
-	    var uimg = []
-	    for (var i = 0; i < uteam.length; i++) {
-	    	var options = {
-		    url: uteam[i],
-		    method: "get",
-		    encoding: null
-		  };
-		  request(options, function (error, response, body) {
-		    if (error) {
-		      console.error('error:', error);
-		    } 
-		    else {
-		    var img = new Canvas.Image();
-			img.src = body;
-		    ctx.drawImage(img, xy[i][0], xy[i][1])
-		    }
-		  })
-	    }
-      const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
+	    addimg(uteam, message, 0, canvas, ctx)
+	}
+}
+async function addimg(uteam, message, i, canvas, ctx) {
+	if (!(i < uteam.length)) {
+		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
 	}
+	var options = {
+	    url: uteam[i],
+	    method: "get",
+	    encoding: null
+	  };
+	  request(options, function (error, response, body) {
+	    if (error) {
+	      console.error('error:', error);
+	    } 
+	    else {
+	    var img = new Canvas.Image();
+		img.src = body;
+	    ctx.drawImage(img, xy[i][0], xy[i][1])
+		addimg(uteam, message, i + 1, canvas, ctx)
+	    }
+	  })
 }
 module.exports = RanRoll;
