@@ -46,9 +46,10 @@ class RanRoll extends commando.Command {
 		      console.error('error:', error);
 		    } 
 		    else {
-		    fs.writeFileSync(__dirname + '/test.jpg', body);
-		    let img = Canvas.loadImage(__dirname + '/test.jpg')
-		    ctx.drawImage(img, xy[i][0], xy[i][1])
+		    var img = new Image();
+			img.src = body;
+		    let limg = Canvas.loadImage(img)
+		    ctx.drawImage(limg, xy[i][0], xy[i][1])
 		    }
 		  })
 	    }
