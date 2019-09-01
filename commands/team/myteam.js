@@ -36,9 +36,21 @@ class RanRoll extends commando.Command {
 	    ctx.drawImage(background, 0, 0)
 	    var uimg = []
 	    for (var i = 0; i < uteam.length; i++) {
-	    	let img = Canvas.loadImage(uteam[i])
-		console.log(uteam[i])
-		ctx.drawImage(img, xy[i][0], xy[i][1])
+	    	var options = {
+		    url: uteam[i],
+		    method: "get",
+		    encoding: null
+		  };
+		  request(options, function (error, response, body) {
+		    if (error) {
+		      console.error('error:', error);
+		    } 
+		    else {
+		    fs.writeFileSync(__dirname + '/test.jpg', body);
+		    let img = Canvas.loadImage(__dirname + '/test.jpg')
+		    ctx.drawImage(img, xy[i][0], xy[i][1])
+		    }
+		  })
 	    }
       const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
