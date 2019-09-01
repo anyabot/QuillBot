@@ -9,11 +9,11 @@ require('@keyv/mongo')
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
-            	name: 'quizscore',
+            	name: 'quizrank',
             	group: 'quiz',
-            	memberName: 'quizscore',
+            	memberName: 'quizrank',
             	description: 'ranking of quiz mini game',
-		examples: ['&quizscore'],
+		examples: ['&quizrank'],
 		hidden: true
         });
     }
