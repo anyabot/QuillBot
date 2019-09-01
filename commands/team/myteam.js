@@ -51,14 +51,13 @@ async function addimg(uteam, message, i, canvas, ctx) {
 	  };
 	  request(options, function (error, response, body) {
 	    if (error) {
-	      console.error('error:', error);
 	    } 
 	    else {
 	    var img = new Canvas.Image();
 		img.src = body;
 		    var canvas2 = Canvas.createCanvas(img.width, img.height);
 		    var ctx2 = canvas2.getContext('2d');
-		    ctx.drawImage(img, 0, 0)
+		    ctx2.drawImage(img, 0, 0)
 		    ctx2.scale(-1, -1);
 	    ctx.drawImage(canvas2, xy[i][0], xy[i][1])
 		addimg(uteam, message, i + 1, canvas, ctx)
