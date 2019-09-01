@@ -33,6 +33,7 @@ class RanRoll extends commando.Command {
 			return second[1] - first[1];
 		});
 		var top = items.slice(0, 5)
+		console.log(top)
 		var mes = getrank(top, message, 0)
 		message.reply(mes)
 	}
