@@ -26,24 +26,24 @@ class RanRoll extends commando.Command {
     async run(message, input) {
 	    const team = new Keyv(process.env.MONGODB_URI, { namespace: 'team' });
 	    team.on('error', err => console.error('Keyv connection error:', err));
-      var uteam = await team.get(message.author.id)
-      if (uteam == undefined) {uteam = []}
-      if (uteam == [] || uteam == null || uteam.length == 0) {
+		var uteam = await team.get(message.author.id)
+		if (uteam == undefined) {uteam = []}
+		if (uteam == [] || uteam == null || uteam.length == 0) {
 			message.reply("You have no unit in the team")
 		} 
 		else if (!isNaN(input)) {
 			var ind = parseInt(input)
 			if (ind < 1 || ind > uteam.length) {message.reply("Wrong Index")}
 			else {
-              message.channel.send("Done")
-              for (var i = ind - 1 ; i < uteam.length - 1; i++) {
-							uteam[i] = uteam[i+1]
-							}
-							uteam.pop()
-							team.set(message.author.id, ubarrack)
-							}
-      }
+				message.channel.send("Done")
+				for (var i = ind - 1 ; i < uteam.length - 1; i++) {
+					uteam[i] = uteam[i+1]
+				}
+				uteam.pop()
+				team.set(message.author.id, ubarrack)
+			}
+		}
+		else {message.channel.send("Input must be a number")}
 	}
-  else {message.channel.send("Input must be a number")}
 }
 module.exports = RanRoll;
