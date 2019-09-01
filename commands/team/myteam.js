@@ -42,7 +42,7 @@ async function addimg(uteam, message, i, canvas, ctx) {
 	    message.channel.send(attachment);
 	}
 	var options = {
-	    url: uteam[i],
+	    uri: uteam[i],
 	    method: "get",
 	    encoding: null
 	  };
