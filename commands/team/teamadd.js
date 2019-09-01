@@ -61,7 +61,7 @@ class RanRoll extends commando.Command {
 					if (img) {
             if (uteam.length > 15) {message.channel.send("Full team")}
             else {
-              uteam.push([unit, state])
+              uteam.push(img)
               team.set(message.author.id, uteam)
               var embed = new Discord.RichEmbed()
               embed.setTitle(unit)
