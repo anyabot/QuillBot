@@ -37,21 +37,10 @@ class RanRoll extends commando.Command {
 		for (var i = 0; i < top.length; i ++) {
 			let user = message.client.users.get(top[i][0]);
 			let un = user.username
-			console.log(un)
 			let rank = i + 1
 			mes = mes + "\n" + rank + "/ " + un + " : " + top[i][1]
 		}
-	    	var urank = items.length
-	    	var uscore = score[message.author.id]
-	    	for (var i = items.length - 1; i >= 0; i --) {
-			if (items[i][0] == message.author.id) {
-				urank = i + 1
-			} 
-			else if (items[i][1] == uscore) {urank = i + 1}
-			else if (items[i][1] > uscore) {break}
-		}
-	    	mes = mes + "\nYour rank: " + urank
-		message.reply(mes)
+		message.channel.send(mes)
 	}
 }
 module.exports = RanRoll;
