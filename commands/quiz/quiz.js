@@ -9,6 +9,7 @@ require('@keyv/mysql')
 require('@keyv/mongo')
 const Canvas = require('canvas');
 var functions = require('../../functions.js');
+var fs = require('fs');
 
 
 class RanRoll extends commando.Command {
@@ -54,8 +55,20 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			request(img, function(err, response, buffer) {
-				message.channel.send(buffer).then(mes => {
+			var options = {
+			    url: img,
+			    method: "get",
+			    encoding: null
+			};
+			request(options, function (error, response, body) {
+
+			    if (error) {
+				console.error('error:', error);
+			    } else {
+				console.log('Response: StatusCode:', response && response.statusCode);
+				console.log('Response: Body: Length: %d. Is buffer: %s', body.length, (body instanceof Buffer));
+				fs.writeFileSync('test.jpg', body);
+				message.channel.send('test.jpg').then(mes => {
 				message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 					.then(collected => {
 						mes.delete()
@@ -91,6 +104,7 @@ function sendembed(units, message) {
 						})
 					})
 				});
+			    }
 			})
 		}
 	})
