@@ -41,7 +41,12 @@ async function addimg(uteam, message, i, canvas, ctx) {
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
 	}
-	  request(uteam[i], function (error, response, body) {
+	var options = {
+	    url: uteam[i],
+	    method: "get",
+	    encoding: null
+	  };
+	  request(options, function (error, response, body) {
 	    if (error) {
 	      console.error('error:', error);
 	    } 
