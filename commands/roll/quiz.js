@@ -59,21 +59,7 @@ function sendembed(units, message) {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
-					const quiz = new Keyv(process.env.MONGODB_URI, { namespace: 'quiz' });
-	    				quiz.on('error', err => console.error('Keyv connection error:', err));
-					var uquiz = quiz.get(collected.first().author.id)
-					if (uquiz == undefined) {uquiz = []}
-					console.log(uquiz)
-					if (!uquiz.includes(unit)) {
-						var score = quiz.get("score")
-						if (score == undefined) {score = {}}
-						if (!score[collected.first().author.id]) {score[collected.first().author.id] = 0}
-						score[collected.first().author.id] = score[collected.first().author.id] + 1
-						uquiz.push(unit)
-						quiz.set(collected.first().author.id, uquiz)
-						quiz.set("score", score)
-					}
-					
+					checkquiz(collected.first(), unit)
 					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
@@ -107,5 +93,21 @@ function sendembed(units, message) {
 			});
 		}
 	})
+}
+async function checkquiz(ms, unit) {
+	const quiz = new Keyv(process.env.MONGODB_URI, { namespace: 'quiz' });
+	quiz.on('error', err => console.error('Keyv connection error:', err));
+	var uquiz = await quiz.get(ms.author.id)
+	if (uquiz == undefined) {uquiz = []}
+	console.log(uquiz)
+	if (!uquiz.includes(unit)) {
+		var score = await quiz.get("score")
+		if (score == undefined) {score = {}}
+		if (!score[ms.author.id]) {score[ms.author.id] = 0}
+		score[ms.author.id] = score[ms.author.id] + 1
+		uquiz.push(unit)
+		quiz.set(ms.author.id, uquiz)
+		quiz.set("score", score)
+	}
 }
 module.exports = RanRoll;
