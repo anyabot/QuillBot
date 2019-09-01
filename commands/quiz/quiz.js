@@ -69,7 +69,7 @@ function sendembed(units, message) {
 				console.log('Response: Body: Length: %d. Is buffer: %s', body.length, (body instanceof Buffer));
 				fs.writeFileSync('test.jpg', body);
 				var attachment = new Discord.Attachment('test.jpg', 'image.png');
-				message.channel.send('test.jpg').then(mes => {
+				message.channel.send(attachment).then(mes => {
 				message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 					.then(collected => {
 						mes.delete()
