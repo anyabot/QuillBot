@@ -54,8 +54,7 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			const canvas = await Canvas.loadImage(img);
-			const attachment = new Discord.Attachment(canvas.toBuffer(), 'image.png');
+			var attachment = load(img)
 			message.channel.send(attachment).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
@@ -109,5 +108,10 @@ async function checkquiz(ms, unit) {
 		quiz.set(ms.author.id, uquiz)
 		quiz.set("score", score)
 	}
+}
+async function load(img) {
+	const canvas = await Canvas.loadImage(img);
+	const attachment = new Discord.Attachment(canvas.toBuffer(), 'image.png');
+	return attachment
 }
 module.exports = RanRoll;
