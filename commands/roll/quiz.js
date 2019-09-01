@@ -32,15 +32,18 @@ class RanRoll extends commando.Command {
 		request(link, function(err, resp, html) {
 			if (!err) {
 				const $ = cheerio.load(html);
-				sendembed($, message)
+        			var units = []
+				$('.image.image-thumbnail.link-internal').each(function(i, elem) {
+          				units.push($(this).attr('title'))
+        			});
+				sendembed(units, message)
 			}
 		})
 	}
 }
-function sendembed($, message) {
-	var len = $('.image.image-thumbnail.link-internal').length
+function sendembed(units, message) {
 	var ind = random.int(1, len)
-	var unit = $('.image.image-thumbnail.link-internal').eq(ind).attr('title')
+	var unit = units[i-1]
 	var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Render.png";
 	request(link2, function(err, resp, html) {
 		if (!err) {
@@ -55,15 +58,16 @@ function sendembed($, message) {
 			message.channel.send(embed).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
-					collected.first().delete()
 					mes.delete()
+					const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
+	    				lastroll.on('error', err => console.error('Keyv connection error:', err));
 					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
 						.then(collected => {
-							sendembed($, message) 
+							sendembed(units, message) 
 							msg.delete()
 						})
 						.catch(collected => {
@@ -79,7 +83,7 @@ function sendembed($, message) {
 						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
 						.then(collected => {
-							sendembed($, message) 
+							sendembed(units, message) 
 							msg.delete()
 						})
 						.catch(collected => {
