@@ -40,15 +40,9 @@ class RanRoll extends commando.Command {
 function getrank(top, message, i) {
 	if (i = top.length) {return ""}
 	else {
-		message.client.fetchUser(top[i][0])
-		.then((User) => {
-		    var un = User.username
-			return (i+1) + ".: " + un + "(" + top[i][0] + ")\n" + getrank(top, message, i + 1)
-		})
-		.catch((err) => {
-		  	console.error(err)
-			return ""
-		})
+		var user = message.client.fetchUser(top[i][0])
+		var un = user.username
+		return (i+1) + ".: " + un + "(" + top[i][0] + ")\n" + getrank(top, message, i + 1)
 	}
 }
 module.exports = RanRoll;
