@@ -10,7 +10,7 @@ require('@keyv/mongo')
 const Canvas = require('canvas');
 var functions = require('../../functions.js');
 var fs = require('fs');
-const xy = [[20, 20], [132, 20], [244, 20], [356, 20], [468, 20], [20, 132], [132, 132], [244, 132], [356, 132], [468, 132], [20, 244], [132, 244], [244, 244], [356, 244], [468, 244]]
+const xy = [[-468, -304], [-356, -304], [-244, -304], [-132, -304], [-20, -304], [-468, -192], [-356, -192], [-244, -192], [-132, -192], [-20, -192], [-468, -80], [-356, -80], [-244, -80], [-132, -80], [-20, -80]]
 
 class RanRoll extends commando.Command {
     constructor(client) {
@@ -33,6 +33,7 @@ class RanRoll extends commando.Command {
 	    const ctx = canvas.getContext('2d');
       const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
 	    ctx.drawImage(background, 0, 0)
+	    ctx.translate(583, 426);
 	    addimg(uteam, message, 0, canvas, ctx)
 	}
 }
