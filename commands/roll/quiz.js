@@ -61,19 +61,18 @@ function sendembed(units, message) {
 					mes.delete()
 					const quiz = new Keyv(process.env.MONGODB_URI, { namespace: 'quiz' });
 	    				quiz.on('error', err => console.error('Keyv connection error:', err));
-					async () => {
-						var uquiz = await quiz.get(collected.first().author.id)
-						if (uquiz == undefined) {uquiz = []}
-						console.log(uquiz)
-						if (!uquiz.includes(unit)) {
-							var score = await quiz.get("score")
-							if (score == undefined) {score = {}}
-							if (!score[collected.first().author.id]) {score[collected.first().author.id] = 0}
-							score[collected.first().author.id] = score[collected.first().author.id] + 1
-							uquiz.push(unit)
-							quiz.set(collected.first().author.id, uquiz)
-							quiz.set("score", score)
-						}
+					var uquiz = quiz.get(collected.first().author.id)
+					if (uquiz == undefined) {uquiz = []}
+					console.log(uquiz)
+					if (!uquiz.includes(unit)) {
+						var score = quiz.get("score")
+						if (score == undefined) {score = {}}
+						if (!score[collected.first().author.id]) {score[collected.first().author.id] = 0}
+						score[collected.first().author.id] = score[collected.first().author.id] + 1
+						uquiz.push(unit)
+						quiz.set(collected.first().author.id, uquiz)
+						quiz.set("score", score)
+					}
 					
 					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
@@ -88,7 +87,6 @@ function sendembed(units, message) {
 							msg.delete()
 						})
 					})
-					}
 				})
 				.catch(collected => {
 					mes.delete()
