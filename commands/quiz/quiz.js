@@ -112,7 +112,7 @@ async function checkquiz(ms, unit) {
 }
 async function load(img) {
 	const canvas = await Canvas.loadImage(img);
-	const attachment = new Discord.Attachment(canvas.toBuffer(), 'image.png');
+	const attachment = new Discord.Attachment(canvas, 'image.png');
 	return attachment
 }
 module.exports = RanRoll;
