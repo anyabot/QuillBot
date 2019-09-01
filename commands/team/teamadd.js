@@ -63,10 +63,7 @@ class RanRoll extends commando.Command {
             else {
               uteam.push(img)
               team.set(message.author.id, uteam)
-              var embed = new Discord.RichEmbed()
-              embed.setTitle(unit)
-              embed.setImage(img)
-              message.channel.send(embed);
+              message.channel.send("You added " + unit + " " + state + " to your team");
             }
 					}
           else (message.channel.send("Wrong Input"))
