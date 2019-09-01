@@ -110,7 +110,4 @@ async function checkquiz(ms, unit) {
 		quiz.set("score", score)
 	}
 }
-async function load(img) {
-	});
-}
 module.exports = RanRoll;
