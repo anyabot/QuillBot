@@ -55,7 +55,7 @@ function sendembed(units, message) {
 			};
 			message.channel.send({
                                 files: [{ attachment: img.toString() }]
-                            })then(mes => {
+                            }).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
