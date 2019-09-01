@@ -54,7 +54,7 @@ function sendembed(units, message) {
 				return unit == nam
 			};
 			message.channel.send({
-                                files: [{ attachment: img.toString() }]
+                                file: img
                             }).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
