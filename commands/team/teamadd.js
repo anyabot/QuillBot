@@ -24,6 +24,10 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
+	    const team = new Keyv(process.env.MONGODB_URI, { namespace: 'team' });
+	          team.on('error', err => console.error('Keyv connection error:', err));
+            var uteam = await team.get(message.author.id)
+            if (uteam == undefined) {uteam = []}
     var parts = input.toLowerCase().split(" ")
     var last = parts.pop()
     var state = "base"
@@ -55,10 +59,6 @@ class RanRoll extends commando.Command {
 					const $ = cheerio.load(html);
 					var img = $('.fullImageLink a').attr('href')
 					if (img) {
-            const team = new Keyv(process.env.MONGODB_URI, { namespace: 'team' });
-	          team.on('error', err => console.error('Keyv connection error:', err));
-            var uteam = await team.get(message.author.id)
-            if (uteam == undefined) {uteam = []}
             if (uteam.length > 15) {message.channel.send("Full team")}
             else {
               uteam.push([unit, state])
