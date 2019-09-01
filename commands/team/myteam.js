@@ -10,8 +10,7 @@ require('@keyv/mongo')
 const Canvas = require('canvas');
 var functions = require('../../functions.js');
 var fs = require('fs');
-const xy = [[20, 80], [132, 80], [244, 80], [356, 80], [468, 80], [20, 192], [132, 192], [244, 192], [356, 192], [468, 192], [20, 304], [132, 304], [244, 304], [356, 304], [468, 304]]
-
+const xy = [ [ 468, 304 ], [ 356, 304 ], [ 244, 304 ], [ 132, 304 ], [ 20, 304 ], [ 468, 192 ], [ 356, 192 ], [ 244, 192 ], [ 132, 192 ], [ 20, 192 ], [ 468, 80 ], [ 356, 80 ], [ 244, 80 ], [ 132, 80 ], [ 20, 80 ] ]
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
