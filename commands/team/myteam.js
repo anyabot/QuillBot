@@ -26,7 +26,7 @@ class RanRoll extends commando.Command {
     async run(message, input) {
 	    const canvas = Canvas.createCanvas(583, 426);
 	    const ctx = canvas.getContext('2d');
-      const background = await Canvas.loadImage(__dirname + '../../image/unknown.png');
+      const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
       ctx.drawImage(background, 0, 0)
       const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
