@@ -48,8 +48,7 @@ class RanRoll extends commando.Command {
 		    else {
 		    var img = new Canvas.Image();
 			img.src = body;
-		    let limg = Canvas.loadImage(img)
-		    ctx.drawImage(limg, xy[i][0], xy[i][1])
+		    ctx.drawImage(img, xy[i][0], xy[i][1])
 		    }
 		  })
 	    }
