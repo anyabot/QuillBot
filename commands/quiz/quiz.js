@@ -54,43 +54,44 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			var attachment = load(img)
-			message.channel.send(attachment).then(mes => {
-			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
-				.then(collected => {
-					mes.delete()
-					checkquiz(collected.first(), unit)
-					message.channel.send(collected.first().author.username + ' got the correct answer!\nCorrect answer: ' + unit + '\nTry again?').then(msg => {
-						msg.react('🇾')
-						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
-						.then(collected => {
-							sendembed(units, message) 
-							msg.delete()
-						})
-						.catch(collected => {
-							msg.delete()
-						})
-					})
-				})
-				.catch(collected => {
-					mes.delete()
-					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit +'\nTry again?').then(msg => {
-						msg.react('🇾')
-						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
-						.then(collected => {
-							sendembed(units, message) 
-							msg.delete()
-						})
-						.catch(collected => {
-							msg.delete()
+			load(img).then(attachment =>
+				message.channel.send(attachment).then(mes => {
+				message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+					.then(collected => {
+						mes.delete()
+						checkquiz(collected.first(), unit)
+						message.channel.send(collected.first().author.username + ' got the correct answer!\nCorrect answer: ' + unit + '\nTry again?').then(msg => {
+							msg.react('🇾')
+							const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
+							const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+							msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
+							.then(collected => {
+								sendembed(units, message) 
+								msg.delete()
+							})
+							.catch(collected => {
+								msg.delete()
+							})
 						})
 					})
-				})
-			});
+					.catch(collected => {
+						mes.delete()
+						message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit +'\nTry again?').then(msg => {
+							msg.react('🇾')
+							const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
+							const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+							msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
+							.then(collected => {
+								sendembed(units, message) 
+								msg.delete()
+							})
+							.catch(collected => {
+								msg.delete()
+							})
+						})
+					})
+				});
+			}
 		}
 	})
 }
