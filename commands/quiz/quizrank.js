@@ -34,7 +34,7 @@ class RanRoll extends commando.Command {
         return second[1] - first[1];
       });
       var top = items.slice(0, 5)
-      mes = ""
+      var mes = ""
       for (var i = 0; i < top.length; i++) {
         user = client.fetchUser(id)
         .then((User) => {
