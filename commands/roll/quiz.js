@@ -41,7 +41,7 @@ class RanRoll extends commando.Command {
 		})
 	}
 }
-async function sendembed(units, message) {
+function sendembed(units, message) {
 	var ind = random.int(1, units.length)
 	var unit = units[ind-1]
 	var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Render.png";
@@ -56,7 +56,7 @@ async function sendembed(units, message) {
 			let embed = new Discord.RichEmbed()
 			embed.setImage(img)
 			message.channel.send(embed).then(mes => {
-			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
+			async message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
 					const quiz = new Keyv(process.env.MONGODB_URI, { namespace: 'quiz' });
