@@ -14,15 +14,11 @@ var fs = require('fs');
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
-            	name: 'quiz',
-            	group: 'quiz',
-            	memberName: 'quiz',
-            	description: 'just quiz',
-		throttling: {
-		usages: 1,
-		duration: 60
-	},
-		examples: ['&quiz'],
+            	name: 'myteam',
+            	group: 'team',
+            	memberName: 'myteam',
+            	description: 'your team',
+		examples: ['&myteam'],
 		hidden: true
         });
     }
