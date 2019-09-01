@@ -38,12 +38,11 @@ class RanRoll extends commando.Command {
         message.client.fetchUser(top[i][0])
         .then((User) => {
             var un = User.username
-	    console.log(un)
+		mes = mes + "\n" + (i+1) + ".: " + un
         })
         .catch((err) => {
           console.error(err)
         })
-        mes = mes + "\n" + (i+1) + ".: " + un
       }
       message.reply(mes)
 	}
