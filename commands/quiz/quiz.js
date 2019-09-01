@@ -54,7 +54,6 @@ function sendembed(units, message) {
 				return unit == nam
 			};
 			var attachment = new Discord.MessageAttachment(img);
-			attachment.setName("Quiz") 
 		message.channel.send(attachment).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
