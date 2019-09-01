@@ -65,8 +65,6 @@ function sendembed(units, message) {
 			    if (error) {
 				console.error('error:', error);
 			    } else {
-				console.log('Response: StatusCode:', response && response.statusCode);
-				console.log('Response: Body: Length: %d. Is buffer: %s', body.length, (body instanceof Buffer));
 				fs.writeFileSync('test.jpg', body);
 				var attachment = new Discord.Attachment('test.jpg', 'image.png');
 				message.channel.send(attachment).then(mes => {
