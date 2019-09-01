@@ -23,28 +23,32 @@ class RanRoll extends commando.Command {
 	    quiz.on('error', err => console.error('Keyv connection error:', err));
 	    var uquiz = await quiz.get(message.author.id)
 	    if (uquiz == undefined) {uquiz = []}
-		  var score = await quiz.get("score")
-		  if (score == undefined) {score = {}}
-		  if (!score[message.author.id]) {score[message.author.id] = 0}
-      var items = Object.keys(score).map(function(key) {
-        return [key, score[key]];
-      });
-      items.sort(function(first, second) {
-        return second[1] - first[1];
-      });
-      var top = items.slice(0, 5)
-      var mes = ""
-      for (var i = 0; i < top.length; i++) {
-        message.client.fetchUser(top[i][0])
-        .then((User) => {
-            var un = User.username
-		mes = mes + "\n" + (i+1) + ".: " + un
-        })
-        .catch((err) => {
-          console.error(err)
-        })
-      }
-      message.reply(mes)
+			var score = await quiz.get("score")
+			if (score == undefined) {score = {}}
+			if (!score[message.author.id]) {score[message.author.id] = 0}
+		var items = Object.keys(score).map(function(key) {
+			return [key, score[key]];
+		});
+		items.sort(function(first, second) {
+			return second[1] - first[1];
+		});
+		var top = items.slice(0, 5)
+		var mes = getrank(top, message, i)
+		message.reply(mes)
+	}
+}
+function getrank(top, message, i) {
+	if (i = top.length) {return ""}
+	else {
+		message.client.fetchUser(top[i][0])
+		.then((User) => {
+		    var un = User.username
+			mes = (i+1) + ".: " + un + "(" + top[i][0] + ")\n" + getrank(top, message, i + 1)
+		})
+		.catch((err) => {
+		  	console.error(err)
+			return ""
+		})
 	}
 }
 module.exports = RanRoll;
