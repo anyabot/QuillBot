@@ -36,7 +36,7 @@ class RanRoll extends commando.Command {
       var top = items.slice(0, 5)
       var mes = ""
       for (var i = 0; i < top.length; i++) {
-        user = client.fetchUser(id)
+        user = client.fetchUser(top[i][1])
         .then((User) => {
             var un = User.username
         })
