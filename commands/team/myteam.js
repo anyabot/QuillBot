@@ -37,6 +37,7 @@ class RanRoll extends commando.Command {
 	    var uimg = []
 	    for (var i = 0; i < uteam.length; i++) {
 	    	let img = Canvas.loadImage(uteam[i])
+		console.log(uteam[i])
 		ctx.drawImage(img, xy[i][0], xy[i][1])
 	    }
       const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
