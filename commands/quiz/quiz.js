@@ -54,8 +54,8 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			load(img).then(attachment => {
-				message.channel.send(attachment).then(mes => {
+			request(img, function(err, response, buffer) {
+				message.channel.send(buffer).then(mes => {
 				message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 					.then(collected => {
 						mes.delete()
@@ -111,8 +111,6 @@ async function checkquiz(ms, unit) {
 	}
 }
 async function load(img) {
-	request(img, function(err, response, buffer) {
-		return buffer
 	});
 }
 module.exports = RanRoll;
