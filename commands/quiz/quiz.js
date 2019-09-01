@@ -7,6 +7,7 @@ var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
 require('@keyv/mongo')
+const Canvas = require('canvas');
 var functions = require('../../functions.js');
 
 
@@ -53,9 +54,9 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			message.channel.send("Quiz", {
-                                file: img
-                            }).then(mes => {
+			const canvas = await Canvas.loadImage(img);
+			const attachment = new Discord.Attachment(canvas.toBuffer(), 'image.png');
+			message.channel.send(attachment).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
