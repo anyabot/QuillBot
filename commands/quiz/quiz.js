@@ -53,7 +53,7 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			const attachment = new Discord.MessageAttachment(img);
+			const attachment = new Discord.MessageAttachment({url: img, proxyURL: "https://aigis.fandom.com/wiki/Aigis_Wiki"});
 		message.channel.send(attachment).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
@@ -98,7 +98,6 @@ async function checkquiz(ms, unit) {
 	quiz.on('error', err => console.error('Keyv connection error:', err));
 	var uquiz = await quiz.get(ms.author.id)
 	if (uquiz == undefined) {uquiz = []}
-	console.log(uquiz)
 	if (!uquiz.includes(unit)) {
 		var score = await quiz.get("score")
 		if (score == undefined) {score = {}}
