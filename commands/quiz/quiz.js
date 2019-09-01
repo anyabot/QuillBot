@@ -53,7 +53,7 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			const attachment = new Discord.MessageAttachment({url: img, proxyURL: "https://aigis.fandom.com/wiki/Aigis_Wiki"});
+			const attachment = new Discord.MessageAttachment(img, "quiz");
 		message.channel.send(attachment).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
