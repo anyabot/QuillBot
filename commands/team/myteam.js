@@ -57,6 +57,7 @@ async function addimg(uteam, message, i, canvas, ctx) {
 		img.src = body;
 		    var canvas2 = Canvas.createCanvas(img.width, img.height);
 		    var ctx2 = canvas2.getContext('2d');
+		    ctx2.translate(img.width, img.height);
 		    ctx2.scale(-1, -1);
 		    ctx2.drawImage(img, 0, 0)
 	    ctx.drawImage(canvas2, xy[i][0], xy[i][1])
