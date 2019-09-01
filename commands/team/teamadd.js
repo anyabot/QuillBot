@@ -59,7 +59,7 @@ class RanRoll extends commando.Command {
 					const $ = cheerio.load(html);
 					var img = $('.fullImageLink a').attr('href')
 					if (img) {
-            if (uteam.length > 15) {message.channel.send("Full team")}
+            if (uteam.length > 14) {message.channel.send("Full team")}
             else {
               uteam.push(img)
               team.set(message.author.id, uteam)
