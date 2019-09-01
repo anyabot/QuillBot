@@ -10,7 +10,7 @@ require('@keyv/mongo')
 const Canvas = require('canvas');
 var functions = require('../../functions.js');
 var fs = require('fs');
-const xy = [[-468, -304], [-356, -304], [-244, -304], [-132, -304], [-20, -304], [-468, -192], [-356, -192], [-244, -192], [-132, -192], [-20, -192], [-468, -80], [-356, -80], [-244, -80], [-132, -80], [-20, -80]]
+const xy = [[20, 80], [132, 80], [244, 80], [356, 80], [468, 80], [20, 192], [132, 192], [244, 192], [356, 192], [468, 192], [20, 304], [132, 304], [244, 304], [356, 304], [468, 304]]
 
 class RanRoll extends commando.Command {
     constructor(client) {
@@ -34,11 +34,13 @@ class RanRoll extends commando.Command {
       const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
 	    ctx.drawImage(background, 0, 0)
 	    ctx.translate(583, 426);
+	    ctx.scale(-1, -1);
 	    addimg(uteam, message, 0, canvas, ctx)
 	}
 }
 async function addimg(uteam, message, i, canvas, ctx) {
 	if (!(i < uteam.length)) {
+		ctx.scale(-1, -1);
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
 	}
