@@ -53,9 +53,8 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			let embed = new Discord.RichEmbed()
-			embed.setImage(img)
-			message.channel.send(embed).then(mes => {
+			const attachment = new Discord.MessageAttachment(img);
+		message.channel.send(attachment).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
