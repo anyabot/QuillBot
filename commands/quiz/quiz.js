@@ -91,7 +91,7 @@ function sendembed(units, message) {
 						})
 					})
 				});
-			}
+			})
 		}
 	})
 }
