@@ -41,7 +41,7 @@ class RanRoll extends commando.Command {
 		})
 	}
 }
-function sendembed(units, message) {
+async function sendembed(units, message) {
 	var ind = random.int(1, units.length)
 	var unit = units[ind-1]
 	var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Render.png";
