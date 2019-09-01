@@ -43,7 +43,7 @@ function getrank(top, message, i) {
 		message.client.fetchUser(top[i][0])
 		.then((User) => {
 		    var un = User.username
-			mes = (i+1) + ".: " + un + "(" + top[i][0] + ")\n" + getrank(top, message, i + 1)
+			return (i+1) + ".: " + un + "(" + top[i][0] + ")\n" + getrank(top, message, i + 1)
 		})
 		.catch((err) => {
 		  	console.error(err)
