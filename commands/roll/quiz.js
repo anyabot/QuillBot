@@ -64,6 +64,7 @@ function sendembed(units, message) {
 					async () => {
 						var uquiz = await quiz.get(collected.first().author.id)
 						if (uquiz == undefined) {uquiz = []}
+						console.log(uquiz)
 						if (!uquiz.includes(unit)) {
 							var score = await quiz.get("score")
 							if (score == undefined) {score = {}}
@@ -73,7 +74,7 @@ function sendembed(units, message) {
 							quiz.set(collected.first().author.id, uquiz)
 							quiz.set("score", score)
 						}
-					}
+					
 					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
@@ -87,6 +88,7 @@ function sendembed(units, message) {
 							msg.delete()
 						})
 					})
+					}
 				})
 				.catch(collected => {
 					mes.delete()
