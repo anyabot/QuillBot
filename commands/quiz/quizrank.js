@@ -25,7 +25,6 @@ class RanRoll extends commando.Command {
 	    if (uquiz == undefined) {uquiz = []}
 		  var score = await quiz.get("score")
 		  if (score == undefined) {score = {}}
-      const client = new Discord.Client()
 		  if (!score[message.author.id]) {score[message.author.id] = 0}
       var items = Object.keys(score).map(function(key) {
         return [key, score[key]];
@@ -36,7 +35,7 @@ class RanRoll extends commando.Command {
       var top = items.slice(0, 5)
       var mes = ""
       for (var i = 0; i < top.length; i++) {
-        client.fetchUser(top[i][1])
+        Client#fetchUser(top[i][1])
         .then((User) => {
             var un = User.username
 	    console.log(un)
