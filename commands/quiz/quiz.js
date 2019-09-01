@@ -53,7 +53,7 @@ function sendembed(units, message) {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
 			};
-			message.channel.send({
+			message.channel.send("Quiz", {
                                 file: img
                             }).then(mes => {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
