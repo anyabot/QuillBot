@@ -40,7 +40,7 @@ class RanRoll extends commando.Command {
 					uteam[i] = uteam[i+1]
 				}
 				uteam.pop()
-				team.set(message.author.id, ubarrack)
+				team.set(message.author.id, uteam)
 			}
 		}
 		else {message.channel.send("Input must be a number")}
