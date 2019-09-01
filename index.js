@@ -20,6 +20,7 @@ bot.registry.registerGroup('roll', 'Mini Game: Rolling')
 bot.registry.registerGroup('roll2', 'Mini Game: SC')
 bot.registry.registerGroup('roll3', 'Mini Game: Barrack')
 bot.registry.registerGroup('roll4', 'Mini Game: Waifu')
+bot.registry.registerGroup('quiz', 'Mini Game: Quiz')
 bot.registry.registerGroup('link', 'Link')
 bot.registry.registerGroup('list', 'List')
 bot.registry.registerDefaults();
