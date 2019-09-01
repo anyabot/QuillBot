@@ -59,8 +59,19 @@ function sendembed(units, message) {
 			message.channel.awaitMessages(filter, { maxMatches: 1, time: 18000, errors: ['time'] })
 				.then(collected => {
 					mes.delete()
-					const lastroll = new Keyv(process.env.MONGODB_URI, { namespace: 'lastroll' });
-	    				lastroll.on('error', err => console.error('Keyv connection error:', err));
+					const quiz = new Keyv(process.env.MONGODB_URI, { namespace: 'quiz' });
+	    				quiz.on('error', err => console.error('Keyv connection error:', err));
+					var uquiz = await quiz.get(collected.first().author.id)
+					if (uquiz == undefined) {uquiz = []}
+					if (!uquiz.includes(unit)) {
+						var score = await quiz.get("score")
+						if (score == undefined) {score = {}}
+						if (!score[collected.first().author.id]) {score[collected.first().author.id] = 0}
+						score[collected.first().author.id] = score[collected.first().author.id] + 1
+						uquiz.push(unit)
+						quiz.set(collected.first().author.id, uquiz)
+						quiz.set("score", score)
+					}
 					message.channel.send(collected.first().author.username + ' got the correct answer!\nTry again?').then(msg => {
 						msg.react('🇾')
 						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
