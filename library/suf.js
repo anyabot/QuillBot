@@ -31,7 +31,10 @@ var suffix = {
     'Idol' : '(Idol)',
     'Uniform' : '(Uniform)',
     'Waitress' : '(Waitress)',
-    'Bonded' : '(Bonded)'
+    'Bonded' : '(Bonded)',
+    'Plat' : '(Platinum)',
+    'Platinum' : '(Platinum)',
+    'Black' : '(Black)'
 }
 
 exports.suffix = suffix;
