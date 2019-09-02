@@ -13,6 +13,7 @@ var fs = require('fs');
 
 const xy = [ [ 464, 306 ], [ 352, 306 ], [ 240, 306 ], [ 128, 306 ], [ 16, 306 ], [ 464, 192 ], [ 352, 192 ], [ 240, 192 ], [ 128, 192 ], [ 16, 192 ], [ 464, 78 ], [ 352, 78 ], [ 240, 78 ], [ 128, 78 ], [ 16, 78 ] ]
 const xy2 = [ [ 91, 93 ], [ 203, 93 ], [ 315, 93 ], [ 427, 93 ], [ 539, 93 ], [ 91, 205 ], [ 203, 205 ], [ 315, 205 ], [ 427, 205 ], [ 539, 205 ], [ 91, 317 ], [ 203, 317 ], [ 315, 317 ], [ 427, 317 ], [ 539, 317 ] ]
+const xy3 = [ [ 96, 83 ], [ 208, 83 ], [ 320, 83 ], [ 432, 83 ], [ 544, 83 ], [ 96, 195 ], [ 208, 195 ], [ 320, 195 ], [ 432, 195 ], [ 544, 195 ], [ 96, 307 ], [ 208, 307 ], [ 320, 307 ], [ 432, 307 ], [ 544, 307 ] ]
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
@@ -54,20 +55,21 @@ class RanRoll extends commando.Command {
 			const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
 			const awicon = await Canvas.loadImage(__dirname + '/../../image/AW_Icon.png');
 			const aw2icon = await Canvas.loadImage(__dirname + '/../../image/AW2_Icon.png');
+			const sawicon = await Canvas.loadImage(__dirname + '/../../image/SAW_Icon.png');
 			ctx.drawImage(background, 0, 0)
 			ctx.translate(583, 426);
 			ctx.scale(-1, -1);
-			addimg(uteam[teamname], message, 0, canvas, ctx, awicon, aw2icon)
+			addimg(uteam[teamname], message, 0, canvas, ctx, awicon, aw2icon, sawicon)
 		}
 		else {message.channel.send("You have no team with that name")}
 	}
 }
 
-async function addimg(uteam, message, i, canvas, ctx, awicon, aw2icon) {
+async function addimg(uteam, message, i, canvas, ctx, awicon, aw2icon, sawicon) {
 	if (!(i < uteam["link"].length)) {
 		ctx.translate(583, 426);
 		ctx.scale(-1, -1);
-		addicon(uteam, message, 0, canvas, ctx, awicon, aw2icon)
+		addicon(uteam, message, 0, canvas, ctx, awicon, aw2icon, sawicon)
 	}
 	else {
 		var options = {
@@ -87,27 +89,37 @@ async function addimg(uteam, message, i, canvas, ctx, awicon, aw2icon) {
 			ctx2.scale(-1, -1);
 			ctx2.drawImage(img, 0, 0)
 			ctx.drawImage(canvas2, xy[i][0], xy[i][1])
-			addimg(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
+			addimg(uteam, message, i + 1, canvas, ctx, awicon, aw2icon, sawicon)
 			}
 		})
 	}
 }
-async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon) {
+async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon, sawicon) {
 	if (!(i < uteam["link"].length)) {
-		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
-	    message.channel.send(attachment);
+		addsaw(uteam, message, 0, canvas, ctx, awicon, aw2icon, sawicon)
 	}
 	else {
 		let state = uteam["state"][i]
 		if (state == "AW") {
 			ctx.drawImage(awicon, xy2[i][0], xy2[i][1])
-			addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
 		}
 		else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
 			ctx.drawImage(aw2icon, xy2[i][0], xy2[i][1])
-			addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
 		}
-		else {addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)}
+		addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon, sawicon)
+	}
+}
+async function addsaw(uteam, message, i, canvas, ctx, awicon, aw2icon, sawicon) {
+	if (!(i < uteam["link"].length)) {
+		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
+	    message.channel.send(attachment);
+	}
+	else {
+		let saw = uteam["saw"][i]
+		if (saw) {
+			ctx.drawImage(sawicon, xy3[i][0], xy3[i][1])
+		}
+		addsaw(uteam, message, i + 1, canvas, ctx, awicon, aw2icon, sawicon)
 	}
 }
 module.exports = RanRoll;
