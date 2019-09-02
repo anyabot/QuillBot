@@ -10,6 +10,7 @@ require('@keyv/mongo')
 const Canvas = require('canvas');
 var functions = require('../../functions.js');
 var fs = require('fs');
+
 const xy = [ [ 466, 306 ], [ 354, 306 ], [ 242, 306 ], [ 130, 306 ], [ 18, 306 ], [ 466, 192 ], [ 354, 192 ], [ 242, 192 ], [ 130, 192 ], [ 18, 192 ], [ 466, 78 ], [ 354, 78 ], [ 242, 78 ], [ 130, 78 ], [ 18, 78 ] ]
 const xy2 = [ [ 108, 108 ], [ 220, 108 ], [ 332, 108 ], [ 444, 108 ], [ 556, 108 ], [ 108, 220 ], [ 220, 220 ], [ 332, 220 ], [ 444, 220 ], [ 556, 220 ], [ 108, 332 ], [ 220, 332 ], [ 332, 332 ], [ 444, 332 ], [ 556, 332 ] ]
 class RanRoll extends commando.Command {
@@ -51,6 +52,8 @@ class RanRoll extends commando.Command {
 			const canvas = Canvas.createCanvas(583, 426);
 			const ctx = canvas.getContext('2d');
 			const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
+			const awicon = await Canvas.loadImage(__dirname + '/../../image/AW_Icon.png');
+			const aw2icon = await Canvas.loadImage(__dirname + '/../../image/AW_Icon.png');
 			ctx.drawImage(background, 0, 0)
 			ctx.translate(583, 426);
 			ctx.scale(-1, -1);
@@ -95,14 +98,12 @@ async function addicon(uteam, message, i, canvas, ctx) {
 	    message.channel.send(attachment);
 	}
 	else {
-		var state = uteam["state"][i]
+		let state = uteam["state"][i]
 		if (state == "AW") {
-			var icon = await Canvas.loadImage(__dirname + '/../../image/AW_Icon.png');
-			ctx.drawImage(icon, xy2[i][0], xy2[i][1])
+			ctx.drawImage(awicon, xy2[i][0], xy2[i][1])
 		}
 		else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
-			var icon = await Canvas.loadImage(__dirname + '/../../image/AW2_Icon.png');
-			ctx.drawImage(icon, xy2[i][0], xy2[i][1])
+			ctx.drawImage(aw2icon, xy2[i][0], xy2[i][1])
 		}
 		addicon(uteam, message, i + 1, canvas, ctx)
 	}
