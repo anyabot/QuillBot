@@ -2,6 +2,8 @@ var name = {
     'Snekloli' : 'Orochihime',
 	'Sieg' : 'Sieglinde',
 	'Snakeloli' : 'Orochihime',
+	'Makina' : 'Machina',
+	'Diene' : 'Dine',
     'Shampoo' : 'Jin-Guang Sheng-Pu',
     'Shengpu' : 'Jin-Guang Sheng-Pu',
     'Pu' : 'Jin-Guang Sheng-Pu',
