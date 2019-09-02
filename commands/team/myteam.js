@@ -24,7 +24,7 @@ class RanRoll extends commando.Command {
 				key: 'text',
 				prompt: 'Which team do you want to see?',
 				type: 'string',
-				default: "default"
+				default: "main"
 			}]
         });
     }
