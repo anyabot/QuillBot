@@ -10,6 +10,7 @@ require('@keyv/mongo')
 const Canvas = require('canvas');
 var functions = require('../../functions.js');
 var fs = require('fs');
+var limited = ['Erlang Shen', 'Holly', 'Karma (Black)', 'Koharu', 'Sayo', 'Shinato', 'White Emperor']
 
 class RanRoll extends commando.Command {
     constructor(client) {
@@ -64,47 +65,50 @@ class RanRoll extends commando.Command {
 				}
 				var text = parts.join(" ")
 				var unit = functions.nameChange(text)
-				if (state == "base") {
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png" 
-				}
+				if (limited.includes(unit) && mteam["link"].includes(unit)) {message,channel.send("You can only have one " + unit + " per team")}
 				else {
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_" + urlencode(state) + "_Icon.png" 
-				}
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						var img = $('.fullImageLink a').attr('href')
-						if (img) {
-							mteam["link"].push(img)
-							mteam["name"].push(unit)
-							mteam["state"].push(state)
-							mteam["saw"].push(saw)
-							uteam[mainteam] = mteam
-							team.set(message.author.id, uteam)
-							message.channel.send("You added " + unit + " " + state + " to your main team");
-						}
-						else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
-							var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_" + urlencode(state) + "_Icon.png"
-							request(link2, function(err2, resp2, html2) {
-								if (!err2) {
-									const $2 = cheerio.load(html2);
-									var img2 = $('.fullImageLink a').attr('href')
-									if (img2) {
-										mteam["link"].push(img2)
-										mteam["name"].push(unit)
-										mteam["state"].push(state)
-										mteam["saw"].push(saw)
-										uteam[mainteam] = mteam
-										team.set(message.author.id, uteam)
-										message.channel.send("You added " + unit + " " + state + " to your main team");
-									}
-									else {message.channel.send("Wrong Input")}
-								}
-							})
-						}
-						else {message.channel.send("Wrong Input")}
+					if (state == "base") {
+						var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png" 
 					}
-				})
+					else {
+						var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_" + urlencode(state) + "_Icon.png" 
+					}
+					request(link, function(err, resp, html) {
+						if (!err) {
+							const $ = cheerio.load(html);
+							var img = $('.fullImageLink a').attr('href')
+							if (img) {
+								mteam["link"].push(img)
+								mteam["name"].push(unit)
+								mteam["state"].push(state)
+								mteam["saw"].push(saw)
+								uteam[mainteam] = mteam
+								team.set(message.author.id, uteam)
+								message.channel.send("You added " + unit + " " + state + " to your main team");
+							}
+							else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
+								var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_" + urlencode(state) + "_Icon.png"
+								request(link2, function(err2, resp2, html2) {
+									if (!err2) {
+										const $2 = cheerio.load(html2);
+										var img2 = $('.fullImageLink a').attr('href')
+										if (img2) {
+											mteam["link"].push(img2)
+											mteam["name"].push(unit)
+											mteam["state"].push(state)
+											mteam["saw"].push(saw)
+											uteam[mainteam] = mteam
+											team.set(message.author.id, uteam)
+											message.channel.send("You added " + unit + " " + state + " to your main team");
+										}
+										else {message.channel.send("Wrong Input")}
+									}
+								})
+							}
+							else {message.channel.send("Wrong Input")}
+						}
+					})
+				}
 			}
 		}
 	}
