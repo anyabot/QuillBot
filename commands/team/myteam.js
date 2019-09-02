@@ -93,7 +93,7 @@ async function addimg(uteam, message, i, canvas, ctx, awicon, aw2icon) {
 	}
 }
 async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon) {
-	if (!(i < ["link"].length)) {
+	if (!(i < uteam.["link"].length)) {
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
 	}
@@ -102,12 +102,10 @@ async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon) {
 		if (state == "AW") {
 			ctx.drawImage(awicon, xy2[i][0], xy2[i][1])
 			addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
-			console.log("AW")
 		}
 		else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
 			ctx.drawImage(aw2icon, xy2[i][0], xy2[i][1])
 			addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
-			console.log("AW2")
 		}
 		else {addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)}
 	}
