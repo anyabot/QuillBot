@@ -57,17 +57,17 @@ class RanRoll extends commando.Command {
 			ctx.drawImage(background, 0, 0)
 			ctx.translate(583, 426);
 			ctx.scale(-1, -1);
-			addimg(uteam[teamname], message, 0, canvas, ctx)
+			addimg(uteam[teamname], message, 0, canvas, ctx, awicon, aw2icon)
 		}
 		else {message.channel.send("You have no team with that name")}
 	}
 }
 
-async function addimg(uteam, message, i, canvas, ctx) {
+async function addimg(uteam, message, i, canvas, ctx, awicon, aw2icon) {
 	if (!(i < uteam["link"].length)) {
 		ctx.translate(583, 426);
 		ctx.scale(-1, -1);
-		addicon(uteam, message, 0, canvas, ctx)
+		addicon(uteam, message, 0, canvas, ctx, awicon, aw2icon)
 	}
 	else {
 		var options = {
@@ -87,12 +87,12 @@ async function addimg(uteam, message, i, canvas, ctx) {
 			ctx2.scale(-1, -1);
 			ctx2.drawImage(img, 0, 0)
 			ctx.drawImage(canvas2, xy[i][0], xy[i][1])
-			addimg(uteam, message, i + 1, canvas, ctx)
+			addimg(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
 			}
 		})
 	}
 }
-async function addicon(uteam, message, i, canvas, ctx) {
+async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon) {
 	if (!(i < ["link"].length)) {
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
@@ -105,7 +105,7 @@ async function addicon(uteam, message, i, canvas, ctx) {
 		else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
 			ctx.drawImage(aw2icon, xy2[i][0], xy2[i][1])
 		}
-		addicon(uteam, message, i + 1, canvas, ctx)
+		addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
 	}
 }
 module.exports = RanRoll;
