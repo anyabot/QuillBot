@@ -28,17 +28,24 @@ class RanRoll extends commando.Command {
         });
     }
 
-    async run(message, input) {
+    async run(message, {text}) {
 	    const teamlist = new Keyv(process.env.MONGODB_URI, { namespace: 'teamlist' });
 	          teamlist.on('error', err => console.error('Keyv connection error:', err));
             var uteamlist = await teamlist.get(message.author.id)
             if (uteamlist == undefined) {uteamlist = []}
-    let teamname = input.toLowerCase()
-    if (teamname == "main") {message.channel.send("You can't set team name to `main`")}
+	    const team = new Keyv(process.env.MONGODB_URI, { namespace: 'team' });
+	          team.on('error', err => console.error('Keyv connection error:', err));
+            var uteam = await team.get(message.author.id)
+            if (uteam == undefined) {uteam = {}}
+    let teamname = text.toLowerCase()
+    if (uteamlist.length > 9) {"You already have 10 teams"}
+    else if (teamname == "main") {message.channel.send("You can't set team name to `main`")}
     else if (uteamlist.includes(teamname)) {message.channel.send("You already have a team with that name"}
     else {
       uteamlist.push(teamname)
+	uteam[teamname]	= {"link" : [], "name" : [], state : [], saw : []}			    
       teamlist.set(message.author.id, uteamlist)
+	team.set(message.author.id, uteam)
     }
 	}
 }
