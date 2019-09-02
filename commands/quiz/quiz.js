@@ -29,18 +29,21 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-	    var link = "https://aigis.fandom.com/wiki/User_blog:Altter/Testing"
+	    if (message.channel.id != "618064541896671244") {message.channel.send("In quiz channel only")}
+	    else {
+		    var link = "https://aigis.fandom.com/wiki/User_blog:Altter/Testing"
 
-		request(link, function(err, resp, html) {
-			if (!err) {
-				const $ = cheerio.load(html);
-        			var units = []
-				$('.image.image-thumbnail.link-internal').each(function(i, elem) {
-          				units.push($(this).attr('title'))
-        			});
-				sendembed(units, message)
-			}
-		})
+			request(link, function(err, resp, html) {
+				if (!err) {
+					const $ = cheerio.load(html);
+					var units = []
+					$('.image.image-thumbnail.link-internal').each(function(i, elem) {
+						units.push($(this).attr('title'))
+					});
+					sendembed(units, message)
+				}
+			})
+	    }
 	}
 }
 function sendembed(units, message) {
