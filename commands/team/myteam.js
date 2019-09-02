@@ -63,6 +63,7 @@ class RanRoll extends commando.Command {
 async function addimg(uteam, message, i, canvas, ctx) {
 	if (!(i < uteam["link"].length)) {
 		ctx.scale(-1, -1);
+		ctx.translate(583, 426);
 		addicon(uteam, message, 0, canvas, ctx)
 	}
 	else {
@@ -90,7 +91,6 @@ async function addimg(uteam, message, i, canvas, ctx) {
 }
 async function addicon(uteam, message, i, canvas, ctx) {
 	if (!(i < ["link"].length)) {
-		ctx.scale(-1, -1);
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
 	}
