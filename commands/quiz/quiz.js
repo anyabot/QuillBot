@@ -71,8 +71,11 @@ function sendembed(units, message) {
 				console.error('error:', error);
 			    } else {
 				fs.writeFileSync('test.jpg', body);
-				var attachment = new Discord.Attachment('test.jpg', 'image.png');
-				message.channel.send(attachment).then(mes => {
+				var attachment = new Discord.Attachment('test.jpg', 'image.jpg');
+				    const exampleEmbed = new Discord.RichEmbed()
+				.attachFile(attachment)
+				.setImage('attachment://image.jpg');
+				message.channel.send(exampleEmbed).then(mes => {
 				message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
 					.then(collected => {
 						mes.delete()
