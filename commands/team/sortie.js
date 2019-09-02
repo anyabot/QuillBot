@@ -40,6 +40,7 @@ class RanRoll extends commando.Command {
 				var parts = input.toLowerCase().split(" ")
 				var last = parts.pop()
 				var saw = false
+				var aw = false
 				if (last == "saw") {
 					saw = true
 				}
@@ -50,15 +51,19 @@ class RanRoll extends commando.Command {
 				var state = "base"
 				if (last == "aw") {
 					state = "AW"
+					aw = true
 				} 
 				else if (last == "aw2") {
 					state = "AW2"
+					aw = true
 				}
 				else if (last == "aw2v1" || last == "v1") {
 					state = "AW2v1"
+					aw = true
 				}
 				else if (last == "aw2v2" || last == "v2") {
 					state = "AW2v2"
+					aw = true
 				}
 				else {
 					parts.push(last)
@@ -66,6 +71,7 @@ class RanRoll extends commando.Command {
 				var text = parts.join(" ")
 				var unit = functions.nameChange(text)
 				if (limited.includes(unit) && mteam["name"].includes(unit)) {message.channel.send("You can only have one " + unit + " per team")}
+				else if (saw == true && aw == false) {message.channel.send("Only Awakened units can have SAW")}
 				else {
 					if (state == "base") {
 						var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png" 
