@@ -53,7 +53,7 @@ class RanRoll extends commando.Command {
 			const ctx = canvas.getContext('2d');
 			const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
 			const awicon = await Canvas.loadImage(__dirname + '/../../image/AW_Icon.png');
-			const aw2icon = await Canvas.loadImage(__dirname + '/../../image/AW_Icon.png');
+			const aw2icon = await Canvas.loadImage(__dirname + '/../../image/AW2_Icon.png');
 			ctx.drawImage(background, 0, 0)
 			ctx.translate(583, 426);
 			ctx.scale(-1, -1);
@@ -101,11 +101,13 @@ async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon) {
 		let state = uteam["state"][i]
 		if (state == "AW") {
 			ctx.drawImage(awicon, xy2[i][0], xy2[i][1])
+			addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
 		}
 		else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
 			ctx.drawImage(aw2icon, xy2[i][0], xy2[i][1])
+			addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
 		}
-		addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)
+		else {addicon(uteam, message, i + 1, canvas, ctx, awicon, aw2icon)}
 	}
 }
 module.exports = RanRoll;
