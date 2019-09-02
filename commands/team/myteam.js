@@ -12,7 +12,7 @@ var functions = require('../../functions.js');
 var fs = require('fs');
 
 const xy = [ [ 466, 306 ], [ 354, 306 ], [ 242, 306 ], [ 130, 306 ], [ 18, 306 ], [ 466, 192 ], [ 354, 192 ], [ 242, 192 ], [ 130, 192 ], [ 18, 192 ], [ 466, 78 ], [ 354, 78 ], [ 242, 78 ], [ 130, 78 ], [ 18, 78 ] ]
-const xy2 = [ [ 108, 108 ], [ 220, 108 ], [ 332, 108 ], [ 444, 108 ], [ 556, 108 ], [ 108, 220 ], [ 220, 220 ], [ 332, 220 ], [ 444, 220 ], [ 556, 220 ], [ 108, 332 ], [ 220, 332 ], [ 332, 332 ], [ 444, 332 ], [ 556, 332 ] ]
+const xy2 = [ [ 98, 98 ], [ 210, 98 ], [ 322, 98 ], [ 434, 98 ], [ 546, 98 ], [ 98, 210 ], [ 210, 210 ], [ 322, 210 ], [ 434, 210 ], [ 546, 210 ], [ 98, 322 ], [ 210, 322 ], [ 322, 322 ], [ 434, 322 ], [ 546, 322 ] ]
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
@@ -93,7 +93,7 @@ async function addimg(uteam, message, i, canvas, ctx, awicon, aw2icon) {
 	}
 }
 async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon) {
-	if (!(i < uteam.["link"].length)) {
+	if (!(i < uteam["link"].length)) {
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 	    message.channel.send(attachment);
 	}
