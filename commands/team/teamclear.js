@@ -29,7 +29,7 @@ class RanRoll extends commando.Command {
         });
     }
 
-    async run(message, input) {
+    async run(message, {text}) {
 	    const teamlist = new Keyv(process.env.MONGODB_URI, { namespace: 'teamlist' });
 		teamlist.on('error', err => console.error('Keyv connection error:', err));
 		var uteamlist = await teamlist.get(message.author.id)
