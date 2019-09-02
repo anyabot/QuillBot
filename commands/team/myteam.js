@@ -14,27 +14,48 @@ const xy = [ [ 466, 306 ], [ 354, 306 ], [ 242, 306 ], [ 130, 306 ], [ 18, 306 ]
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
-            	name: 'myteam',
-            	group: 'team',
-            	memberName: 'myteam',
-            	description: 'your team',
-		examples: ['&myteam'],
-		hidden: true
+			name: 'myteam',
+			group: 'team',
+			memberName: 'myteam',
+			description: 'your team',
+			examples: ['&myteam main'],
+			hidden: true,
+			args: [{
+				key: 'text',
+				prompt: 'Which team do you want to see?',
+				type: 'string',
+				default: "default"
+			}]
         });
     }
 
-    async run(message, input) {
+    async run(message, {text}) {
+		const teamlist = new Keyv(process.env.MONGODB_URI, { namespace: 'teamlist' });
+		teamlist.on('error', err => console.error('Keyv connection error:', err));
+		var uteamlist = await teamlist.get(message.author.id)
+		if (uteamlist == undefined) {uteamlist = []}
 	    const team = new Keyv(process.env.MONGODB_URI, { namespace: 'team' });
-	          team.on('error', err => console.error('Keyv connection error:', err));
-            var uteam = await team.get(message.author.id)
-            if (uteam == undefined) {uteam = []}
-	    const canvas = Canvas.createCanvas(583, 426);
-	    const ctx = canvas.getContext('2d');
-      const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
-	    ctx.drawImage(background, 0, 0)
-	    ctx.translate(583, 426);
-	    ctx.scale(-1, -1);
-	    addimg(uteam, message, 0, canvas, ctx)
+		team.on('error', err => console.error('Keyv connection error:', err));
+		var uteam = await team.get(message.author.id)
+		if (uteam == undefined) {uteam = {}}
+		var teamname = text.toLowerCase()
+		if (teamname == "main") {
+			const mainteam = new Keyv(process.env.MONGODB_URI, { namespace: 'mainteam' });
+			mainteam.on('error', err => console.error('Keyv connection error:', err));
+			var umainteam = await mainteam.get(message.author.id)
+			teamname = umainteam
+		}
+		if (teamname == undefined) {message.channel.send("You haven't set your main team")}
+		else if (uteamlist.includes(teamname)) {
+			const canvas = Canvas.createCanvas(583, 426);
+			const ctx = canvas.getContext('2d');
+			const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
+			ctx.drawImage(background, 0, 0)
+			ctx.translate(583, 426);
+			ctx.scale(-1, -1);
+			addimg(uteam[teamname]["link"], message, 0, canvas, ctx)
+		}
+		else {message.channel.send("You have no team with that name")}
 	}
 }
 async function addimg(uteam, message, i, canvas, ctx) {
