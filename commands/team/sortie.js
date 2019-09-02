@@ -65,7 +65,7 @@ class RanRoll extends commando.Command {
 				}
 				var text = parts.join(" ")
 				var unit = functions.nameChange(text)
-				if (limited.includes(unit) && mteam["name"].includes(unit)) {message,channel.send("You can only have one " + unit + " per team")}
+				if (limited.includes(unit) && mteam["name"].includes(unit)) {message.channel.send("You can only have one " + unit + " per team")}
 				else {
 					if (state == "base") {
 						var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png" 
