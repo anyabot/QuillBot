@@ -7,6 +7,12 @@ exports.nameChange = function nameChange(text) {
 	    var np = unit.split(' ');
 	    var npl = np.length;
 	    if (npl > = 2) {
+		    if (np[0] == "Chibi") {
+		    		np = np.slice(1, npl)
+				let un = np.join(' ')
+				if (name[un]) {un = name[un]}
+				unit = "Chibi " + un
+		    }
 	    	if (suffix[np[npl-1]]) {
 				np[npl-1] = suffix[np[npl-1]]
 				let sur = np[npl-1]
