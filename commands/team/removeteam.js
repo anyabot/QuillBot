@@ -14,15 +14,15 @@ var fs = require('fs');
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
-            	name: 'mainteam',
+            	name: 'removeteam',
             	group: 'team',
-            	memberName: 'mainteam',
-            	description: 'set your main team',
-		examples: ['&mainteam teamname'],
+            	memberName: 'removeteam',
+            	description: 'remove one of your teams',
+		examples: ['&removeteam teamname'],
 		hidden: true,
     args: [{
 		    key: 'text',
-			prompt: 'Which team do you want to set as your mainteam?',
+			prompt: 'Which team do you want to remove?',
 		    type: 'string'
 		}]
         });
