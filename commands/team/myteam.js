@@ -112,7 +112,10 @@ async function addicon(uteam, message, i, canvas, ctx, awicon, aw2icon, sawicon)
 async function addsaw(uteam, message, i, canvas, ctx, awicon, aw2icon, sawicon) {
 	if (!(i < uteam["link"].length)) {
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
-	    message.channel.send(attachment);
+		const exampleEmbed = new Discord.RichEmbed()
+	.attachFile(attachment)
+	.setImage('attachment://unknown.png');
+	message.channel.send(exampleEmbed);
 	}
 	else {
 		let saw = uteam["saw"][i]
