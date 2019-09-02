@@ -86,25 +86,6 @@ class RanRoll extends commando.Command {
 								team.set(message.author.id, uteam)
 								message.channel.send("You added " + unit + " " + state + " to your main team");
 							}
-							else if (state == "AW2" || state == "AW2v1" || state == "AW2v2") {
-								var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_" + urlencode(state) + "_Icon.png"
-								request(link2, function(err2, resp2, html2) {
-									if (!err2) {
-										const $2 = cheerio.load(html2);
-										var img2 = $('.fullImageLink a').attr('href')
-										if (img2) {
-											mteam["link"].push(img2)
-											mteam["name"].push(unit)
-											mteam["state"].push(state)
-											mteam["saw"].push(saw)
-											uteam[mainteam] = mteam
-											team.set(message.author.id, uteam)
-											message.channel.send("You added " + unit + " " + state + " to your main team");
-										}
-										else {message.channel.send("Wrong Input")}
-									}
-								})
-							}
 							else {message.channel.send("Wrong Input")}
 						}
 					})
