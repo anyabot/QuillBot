@@ -14,11 +14,11 @@ var fs = require('fs');
 class RanRoll extends commando.Command {
     constructor(client) {
         super(client, {
-            	name: 'addteam',
+            	name: 'mainteam',
             	group: 'team',
-            	memberName: 'addteam',
-            	description: 'add a blank team (max 10)',
-		examples: ['&addteam teamname'],
+            	memberName: 'mainteam',
+            	description: 'set your main team',
+		examples: ['&mainteam teamname'],
 		hidden: true,
     args: [{
 		    key: 'text',
