@@ -43,7 +43,7 @@ class RanRoll extends commando.Command {
     else if (uteamlist.includes(teamname)) {message.channel.send("You already have a team with that name")}
     else {
       uteamlist.push(teamname)
-	uteam[teamname]	= {"link" : [], "name" : [], state : [], saw : []}			    
+	uteam[teamname]	= {"link" : [], "name" : [], "state" : [], "saw" : []}			    
       teamlist.set(message.author.id, uteamlist)
 	team.set(message.author.id, uteam)
 	    message.channel.send("You add team: " + teamname)
