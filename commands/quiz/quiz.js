@@ -51,6 +51,7 @@ function sendembed(units, message) {
 		if (!err) {
 			const $2 = cheerio.load(html);
 			var img = $2('.fullImageLink a').attr('href')
+			img = img.split("lastest").join("latest/scale-to-width-down/500")
 			const filter = response => {
 				let nam = functions.nameChange(response.content)
 				return unit == nam
