@@ -40,12 +40,13 @@ class RanRoll extends commando.Command {
     let teamname = text.toLowerCase()
     if (uteamlist.length > 9) {"You already have 10 teams"}
     else if (teamname == "main") {message.channel.send("You can't set team name to `main`")}
-    else if (uteamlist.includes(teamname)) {message.channel.send("You already have a team with that name"}
+    else if (uteamlist.includes(teamname)) {message.channel.send("You already have a team with that name")}
     else {
       uteamlist.push(teamname)
 	uteam[teamname]	= {"link" : [], "name" : [], state : [], saw : []}			    
       teamlist.set(message.author.id, uteamlist)
 	team.set(message.author.id, uteam)
+	    message.channel.send("You add team: " + teamname)
     }
 	}
 }
