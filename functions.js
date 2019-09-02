@@ -6,7 +6,7 @@ exports.nameChange = function nameChange(text) {
         var unit = text.toLowerCase().toTitleCase();
 	    var np = unit.split(' ');
 	    var npl = np.length;
-	    if (npl > = 2) {
+	    if (npl >= 2) {
 		    if (np[0] == "Chibi") {
 		    		np = np.slice(1, npl)
 				let un = np.join(' ')
