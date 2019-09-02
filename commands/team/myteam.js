@@ -62,8 +62,8 @@ class RanRoll extends commando.Command {
 
 async function addimg(uteam, message, i, canvas, ctx) {
 	if (!(i < uteam["link"].length)) {
-		ctx.scale(-1, -1);
 		ctx.translate(583, 426);
+		ctx.scale(-1, -1);
 		addicon(uteam, message, 0, canvas, ctx)
 	}
 	else {
