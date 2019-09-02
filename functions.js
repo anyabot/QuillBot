@@ -6,7 +6,7 @@ exports.nameChange = function nameChange(text) {
         var unit = text.toLowerCase().toTitleCase();
 	    var np = unit.split(' ');
 	    var npl = np.length;
-	    if (npl >= 2) {
+	    if (npl > = 2) {
 	    	if (suffix[np[npl-1]]) {
 				np[npl-1] = suffix[np[npl-1]]
 				let sur = np[npl-1]
@@ -15,7 +15,7 @@ exports.nameChange = function nameChange(text) {
 				if (name[un]) {un = name[un]}
 				unit = un + ' ' + sur
 			}
-	    	if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
+	    	else if (np[npl-1] == 'Year' && np[npl-2] == 'New') {
 				let sur = '(New Year\'s)'
 				np.pop()
 				np.pop()
@@ -23,10 +23,32 @@ exports.nameChange = function nameChange(text) {
 				if (name[un]) {un = name[un]}
 				unit = un + ' ' + sur
 			}
-		    if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
+		    else if (np[npl-1] == 'Year)' && np[npl-2] == '(New') {
 				let sur = '(New Year\'s)'
 				np.pop()
 				np.pop()
+				let un = np.join(' ')
+				if (name[un]) {un = name[un]}
+				unit = un + ' ' + sur
+			}
+		    else if (suffix[np[0]]) {
+				np[0] = suffix[np[0]]
+				let sur = np[0]
+				np = np.slice(1, npl)
+				let un = np.join(' ')
+				if (name[un]) {un = name[un]}
+				unit = un + ' ' + sur
+			}
+	    	else if (np[1] == 'Year' && np[0] == 'New') {
+				let sur = '(New Year\'s)'
+				np = np.slice(2, npl)
+				let un = np.join(' ')
+				if (name[un]) {un = name[un]}
+				unit = un + ' ' + sur
+			}
+		    else if (np[1] == 'Year)' && np[0] == '(New') {
+				let sur = '(New Year\'s)'
+				np = np.slice(2, npl)
 				let un = np.join(' ')
 				if (name[un]) {un = name[un]}
 				unit = un + ' ' + sur
