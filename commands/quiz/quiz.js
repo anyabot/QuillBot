@@ -149,7 +149,7 @@ function leader(message, score) {
 			return second[1] - first[1];
 		});
 		var mes = ""
-		for (var i = 0; i < top.length; i ++) {
+		for (var i = 0; i < items.length; i ++) {
 			let user = message.client.users.get(items[i][0]);
 			let un = user.username
 			let rank = i + 1
