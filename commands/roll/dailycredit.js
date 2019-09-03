@@ -78,11 +78,11 @@ class RanRoll extends commando.Command {
       		message.reply("You got " + ge + " SC\nYou got " + scoresc + " from your quiz score (1 for every 100 units correctly guessed)\n You got " + ranksc + " from your quiz rank (1 : 5, 2-3 : 3, 4-5 : 2, 6-10 : 1)\nYou curently have " + usc + " SC")
 	    }
 	    else if (ldsc[0] != uday[0] || ldsc[1] != uday[1] || ldsc[2] != uday[2]) {
-		usc = usc + ge
+		usc = usc + ge + scoresc + ranksc
 	    	uuser[0] = usc
 		user.set(message.author.id, uuser)
 		    dsc.set(message.author.id, uday)
-      		message.reply("You got " + ge + " SC\nYou curently have " + usc + " SC")
+      		message.reply("You got " + ge + " SC\nYou got " + scoresc + " from your quiz score (1 for every 100 units correctly guessed)\n You got " + ranksc + " from your quiz rank (1 : 5, 2-3 : 3, 4-5 : 2, 6-10 : 1)\nYou curently have " + usc + " SC")
 	    }
 	    else {
 		    var m2 = moment(year + " " +  month + " " + day, 'YYYY MMM DD').add(1, 'days')
