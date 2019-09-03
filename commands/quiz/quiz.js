@@ -148,7 +148,7 @@ function leader(message, score) {
 		items.sort(function(first, second) {
 			return second[1] - first[1];
 		});
-		var mes = ""
+		var mes = "Ranking:"
 		for (var i = 0; i < items.length; i ++) {
 			let user = message.client.users.get(items[i][0]);
 			let un = user.username
