@@ -41,7 +41,7 @@ class RanRoll extends commando.Command {
 						units.push($(this).attr('title'))
 					});
 					for (var i = 0; i < units.length; i++) {
-						var ind = random.int(1, units.length)
+						var ind = random.int(0, units.length - 1)
 						var temp = units[i]
 						units[i] = units[ind]
 						units[ind] = temp
@@ -56,75 +56,69 @@ class RanRoll extends commando.Command {
 function sendembed(units, message, score) {
 	if (units.length > 0) {
 		var unit = units.pop()
-		var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Render.png";
-		request(link2, function(err, resp, html) {
-			if (!err) {
-				const $2 = cheerio.load(html);
-				var img = $2('.fullImageLink a').attr('href')
-				img = img.split("latest").join("latest/scale-to-height-down/500")
-				console.log(img)
-				const filter = response => {
-					let nam = functions.nameChange(response.content)
-					return unit == nam
-				};
-				var options = {
-				    url: img,
-				    method: "get",
-				    encoding: null
-				};
-				request(options, function (error, response, body) {
+		var img = getimg(unit)
+		img = img.split("latest").join("latest/scale-to-height-down/500")
+		console.log(img)
+		const filter = response => {
+			let nam = functions.nameChange(response.content)
+			return unit == nam
+		};
+		var options = {
+		    url: img,
+		    method: "get",
+		    encoding: null
+		};
+		request(options, function (error, response, body) {
 
-				    if (error) {
-					console.error('error:', error);
-				    } else {
-					fs.writeFileSync('test.jpg', body);
-					var attachment = new Discord.Attachment('test.jpg', 'image.jpg');
-					    const exampleEmbed = new Discord.RichEmbed()
-					.attachFile(attachment)
-					.setImage('attachment://image.jpg');
-					message.channel.send(exampleEmbed).then(mes => {
-					message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+		    if (error) {
+			console.error('error:', error);
+		    } else {
+			fs.writeFileSync('test.jpg', body);
+			var attachment = new Discord.Attachment('test.jpg', 'image.jpg');
+			    const exampleEmbed = new Discord.RichEmbed()
+			.attachFile(attachment)
+			.setImage('attachment://image.jpg');
+			message.channel.send(exampleEmbed).then(mes => {
+			message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+				.then(collected => {
+					mes.delete()
+					checkquiz(collected.first(), unit)
+					if (score[collected.first().author.id]) {score[collected.first().author.id] =score[collected.first().author.id] + 1}
+					else {score[collected.first().author.id] = 1}
+					message.channel.send(collected.first().author.username + ' got the correct answer!\nCorrect answer: ' + unit + '\nTry again?').then(msg => {
+						msg.react('🇾')
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
 						.then(collected => {
-							mes.delete()
-							checkquiz(collected.first(), unit)
-							if (score[collected.first().author.id]) {score[collected.first().author.id] =score[collected.first().author.id] + 1}
-							else {score[collected.first().author.id] = 1}
-							message.channel.send(collected.first().author.username + ' got the correct answer!\nCorrect answer: ' + unit + '\nTry again?').then(msg => {
-								msg.react('🇾')
-								const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-								const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-								msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
-								.then(collected => {
-									sendembed(units, message, score) 
-									msg.delete()
-								})
-								.catch(collected => {
-									msg.delete()
-									leader(message, score)
-								})
-							})
+							sendembed(units, message, score) 
+							msg.delete()
 						})
 						.catch(collected => {
-							mes.delete()
-							message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit +'\nTry again?').then(msg => {
-								msg.react('🇾')
-								const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
-								const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-								msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
-								.then(collected => {
-									sendembed(units, message, score) 
-									msg.delete()
-								})
-								.catch(collected => {
-									msg.delete()
-									leader(message, score)
-								})
-							})
+							msg.delete()
+							leader(message, score)
 						})
-					});
-				    }
+					})
 				})
-			}
+				.catch(collected => {
+					mes.delete()
+					message.channel.send('Looks like nobody got the answer this time.\nCorrect answer: ' + unit +'\nTry again?').then(msg => {
+						msg.react('🇾')
+						const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
+						const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
+						msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
+						.then(collected => {
+							sendembed(units, message, score) 
+							msg.delete()
+						})
+						.catch(collected => {
+							msg.delete()
+							leader(message, score)
+						})
+					})
+				})
+			});
+		    }
 		})
 	}
 	else {message.channel.send("Out of unit")}
@@ -143,6 +137,28 @@ async function checkquiz(ms, unit) {
 		quiz.set(ms.author.id, uquiz)
 		quiz.set("score", score)
 	}
+}
+function getimg(unit) {
+	var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
+	request(link, function(err, resp, html) {
+		if (!err) {
+			const $ = cheerio.load(html);
+			var img
+			var links = []
+			img = $('.InfoboxBase.ui-image a').attr('href')
+			if (img) {links.push(img)}
+			img = $('.InfoboxAW.ui-image a').attr('href')
+			if (img) {links.push(img)}
+			img = $('.InfoboxAW2.ui-image a').attr('href')
+			if (img) {links.push(img)}
+			img = $('.InfoboxAW2v1.ui-image a').attr('href')
+			if (img) {links.push(img)}
+			img = $('.InfoboxAW2v2.ui-image a').attr('href')
+			if (img) {links.push(img)}
+			var ind = random.int(0, links.length - 1)
+			return links[ind]
+		}
+	})
 }
 function leader(message, score) {
 		var items = Object.keys(score).map(function(key) {
