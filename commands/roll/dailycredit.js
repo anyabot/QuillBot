@@ -55,7 +55,7 @@ class RanRoll extends commando.Command {
 			else if (items[i][1] > uscore) {break}
 		}
 	    var scoresc = Math.floor(uscore/100)
-	    var ranksc
+	    var ranksc = 0
 	    if (urank == 1) {ranksc = 5}
 	    else if (urank < 4) {ranksc = 3}
 	    else if (urank < 6) {ranksc = 2}
