@@ -44,7 +44,7 @@ class RanRoll extends commando.Command {
 						var ind = random.int(1, units.length)
 						var temp = units[i]
 						units[i] = units[ind]
-						units[ind] = units[i]
+						units[ind] = temp
 					}
 					sendembed(units, message)
 				}
