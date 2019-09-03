@@ -157,6 +157,6 @@ function leader(message, score) {
 		}
 		message.channel.send(mes).then(msg => {
 			msg.delete(12000)
-		}
+		})
 }
 module.exports = RanRoll;
