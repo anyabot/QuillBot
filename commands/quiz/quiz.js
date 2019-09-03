@@ -40,6 +40,12 @@ class RanRoll extends commando.Command {
 					$('.image.image-thumbnail.link-internal').each(function(i, elem) {
 						units.push($(this).attr('title'))
 					});
+					for (var i = 0; i < units.length; i++) {
+						var ind = random.int(1, units.length)
+						var temp = units[i]
+						units[i] = units[ind]
+						units[ind] = units[i]
+					}
 					sendembed(units, message)
 				}
 			})
@@ -47,8 +53,7 @@ class RanRoll extends commando.Command {
 	}
 }
 function sendembed(units, message) {
-	var ind = random.int(1, units.length)
-	var unit = units[ind-1]
+	var unit = units.pop()
 	var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Render.png";
 	request(link2, function(err, resp, html) {
 		if (!err) {
