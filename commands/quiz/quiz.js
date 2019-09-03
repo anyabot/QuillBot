@@ -155,6 +155,8 @@ function leader(message, score) {
 			let rank = i + 1
 			mes = mes + "\n" + rank + "/ " + un + " : " + items[i][1]
 		}
-		message.channel.send(mes)
+		message.channel.send(mes).then(msg => {
+			msg.delete(12000)
+		}
 }
 module.exports = RanRoll;
