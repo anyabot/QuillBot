@@ -38,7 +38,7 @@ class RanRoll extends commando.Command {
 			if (items[i][0] == message.author.id) {
 				urank = i + 1
 			} 
-			else if (items[i][1] == uscore) {urank = i + 1}
+			else if (items[i][1] == uscore) {urank = i - 1}
 			else if (items[i][1] > uscore) {break}
 		}
 	    	var mes = "Your rank: " + urank
