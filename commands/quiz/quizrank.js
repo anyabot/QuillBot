@@ -32,7 +32,7 @@ class RanRoll extends commando.Command {
 		items.sort(function(first, second) {
 			return second[1] - first[1];
 		});
-		var top = items.slice(0, 5)
+		var top = items.slice(0, 10)
 		var mes = ""
 		for (var i = 0; i < top.length; i ++) {
 			let user = message.client.users.get(top[i][0]);
