@@ -46,13 +46,14 @@ class RanRoll extends commando.Command {
 						units[i] = units[ind]
 						units[ind] = temp
 					}
-					sendembed(units, message)
+					var score = {}
+					sendembed(units, message, score)
 				}
 			})
 	    }
 	}
 }
-function sendembed(units, message) {
+function sendembed(units, message, score) {
 	var unit = units.pop()
 	var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Render.png";
 	request(link2, function(err, resp, html) {
@@ -85,17 +86,20 @@ function sendembed(units, message) {
 					.then(collected => {
 						mes.delete()
 						checkquiz(collected.first(), unit)
+						if (score[collected.first().author.id]) {score[collected.first().author.id] =score[collected.first().author.id] + 1}
+						else {score[collected.first().author.id] = 1}
 						message.channel.send(collected.first().author.username + ' got the correct answer!\nCorrect answer: ' + unit + '\nTry again?').then(msg => {
 							msg.react('🇾')
 							const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 							const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 							msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
 							.then(collected => {
-								sendembed(units, message) 
+								sendembed(units, message, score) 
 								msg.delete()
 							})
 							.catch(collected => {
 								msg.delete()
+								leader(message, score)
 							})
 						})
 					})
@@ -107,11 +111,12 @@ function sendembed(units, message) {
 							const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
 							msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
 							.then(collected => {
-								sendembed(units, message) 
+								sendembed(units, message, score) 
 								msg.delete()
 							})
 							.catch(collected => {
 								msg.delete()
+								leader(message, score)
 							})
 						})
 					})
@@ -135,5 +140,21 @@ async function checkquiz(ms, unit) {
 		quiz.set(ms.author.id, uquiz)
 		quiz.set("score", score)
 	}
+}
+function leader(message, score) {
+		var items = Object.keys(score).map(function(key) {
+			return [key, score[key]];
+		});
+		items.sort(function(first, second) {
+			return second[1] - first[1];
+		});
+		var mes = ""
+		for (var i = 0; i < top.length; i ++) {
+			let user = message.client.users.get(items[i][0]);
+			let un = user.username
+			let rank = i + 1
+			mes = mes + "\n" + rank + "/ " + un + " : " + items[i][1]
+		}
+		message.channel.send(mes)
 }
 module.exports = RanRoll;
