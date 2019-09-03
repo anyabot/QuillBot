@@ -156,6 +156,7 @@ function getimg(unit) {
 			img = $('.InfoboxAW2v2.ui-image a').attr('href')
 			if (img) {links.push(img)}
 			var ind = random.int(0, links.length - 1)
+			console.log(links)
 			return links[ind]
 		}
 	})
