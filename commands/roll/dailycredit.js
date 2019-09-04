@@ -54,12 +54,12 @@ class RanRoll extends commando.Command {
 			else if (items[i][1] == uscore) {urank = i - 1}
 			else if (items[i][1] > uscore) {break}
 		}
-	    var scoresc = Math.floor(uscore/100)
+	    var scoresc = Math.floor(uscore/25)
 	    var ranksc = 0
-	    if (urank == 1) {ranksc = 5}
-	    else if (urank < 4) {ranksc = 3}
-	    else if (urank < 6) {ranksc = 2}
-	    else if (urank < 11) {ranksc = 1}
+	    if (urank == 1) {ranksc = 20}
+	    else if (urank < 4) {ranksc = 15}
+	    else if (urank < 6) {ranksc = 10}
+	    else if (urank < 11) {ranksc = 5}
 		const dsc = new Keyv(process.env.MONGODB_URI, { namespace: 'dsc' });
 	    dsc.on('error', err => console.error('Keyv connection error:', err));
       var ldsc = await dsc.get(message.author.id)
@@ -69,20 +69,20 @@ class RanRoll extends commando.Command {
       var uuser = await user.get(message.author.id)
       if (uuser == undefined) {uuser = [150, 10, 33]}
 	    var usc = uuser[0]
-	    var ge = 10
+	    var ge = 30
 	    if (ldsc == undefined) {
 		usc = usc + ge + scoresc + ranksc
 	    	uuser[0] = usc
 		user.set(message.author.id, uuser)
 		    dsc.set(message.author.id, uday)
-      		message.reply("You got " + ge + " SC\nYou got " + scoresc + " from your quiz score (1 for every 100 units correctly guessed)\nYou got " + ranksc + " from your quiz rank (1 : 5, 2-3 : 3, 4-5 : 2, 6-10 : 1)\nYou curently have " + usc + " SC")
+      		message.reply("You got " + ge + " SC\nYou got " + scoresc + " from your quiz score (1 for every 25 units correctly guessed)\nYou got " + ranksc + " from your quiz rank (1 : 20, 2-3 : 15, 4-5 : 10, 6-10 : 5)\nYou curently have " + usc + " SC")
 	    }
 	    else if (ldsc[0] != uday[0] || ldsc[1] != uday[1] || ldsc[2] != uday[2]) {
 		usc = usc + ge + scoresc + ranksc
 	    	uuser[0] = usc
 		user.set(message.author.id, uuser)
 		    dsc.set(message.author.id, uday)
-      		message.reply("You got " + ge + " SC\nYou got " + scoresc + " from your quiz score (1 for every 100 units correctly guessed)\nYou got " + ranksc + " from your quiz rank (1 : 5, 2-3 : 3, 4-5 : 2, 6-10 : 1)\nYou curently have " + usc + " SC")
+      		message.reply("You got " + ge + " SC\nYou got " + scoresc + " from your quiz score (1 for every 25 units correctly guessed)\nYou got " + ranksc + " from your quiz rank (1 : 20, 2-3 : 15, 4-5 : 10, 6-10 : 5)\nYou curently have " + usc + " SC")
 	    }
 	    else {
 		    var m2 = moment(year + " " +  month + " " + day, 'YYYY MMM DD').add(1, 'days')
