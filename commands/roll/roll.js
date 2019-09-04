@@ -41,7 +41,7 @@ require('@keyv/mongo')
 const Canvas = require('canvas');
 var fs = require('fs');
 
-const xy = [ [ 0, 0 ], [ 100, 0 ], [ 200, 0 ], [ 300, 0 ], [ 400, 0 ], [ 0, 100 ], [ 100, 100 ], [ 200, 100 ], [ 300, 100 ], [ 400, 100 ] ]
+const xy = [ [ 0, 0 ], [ 105, 0 ], [ 210, 0 ], [ 315, 0 ], [ 420, 0 ], [ 0, 105 ], [ 105, 105 ], [ 210, 105 ], [ 315, 105 ], [ 420, 105 ] ]
 
 
 
@@ -96,7 +96,7 @@ class RanRoll extends commando.Command {
 			scu = 50
 		}
 		var embed = new Discord.RichEmbed()
-		const canvas = Canvas.createCanvas(500, 200);
+		const canvas = Canvas.createCanvas(525, 210);
 		const ctx = canvas.getContext('2d');
 		if (pool == "event" || pool == "ev") { scu = scu * 4 / 5}
 		if (usc < scu) {message.reply("You need " + scu + " SC\nYou only have " + usc + " SC")}
@@ -1646,7 +1646,7 @@ async function send10(message, lr, embed, ind, canvas, ctx) {
 					else {
 						var img = new Canvas.Image();
 						img.src = body;
-						ctx.drawImage(img, xy[ind][0], xy[ind][1], 100, 100)
+						ctx.drawImage(img, xy[ind][0], xy[ind][1])
 						send10(message, lr, embed, ind + 1, canvas, ctx)
 					}
 				})
