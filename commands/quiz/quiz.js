@@ -29,7 +29,7 @@ class RanRoll extends commando.Command {
     }
 
     async run(message, input) {
-	    if (message.channel.id != "618064541896671244") {message.channel.send("In quiz channel only")}
+	    if (message.channel.id != "618064541896671244" && message.channel.type != "dm") {message.channel.send("In quiz channel only")}
 	    else {
 		    var link = "https://aigis.fandom.com/wiki/User_blog:Altter/Testing"
 
