@@ -38,8 +38,10 @@ var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
 require('@keyv/mongo')
+const Canvas = require('canvas');
+var fs = require('fs');
 
-
+const xy = [ [ 0, 0 ], [ 100, 0 ], [ 200, 0 ], [ 300, 0 ], [ 400, 0 ], [ 464, 100 ], [ 100, 100 ], [ 200, 100 ], [ 300, 100 ], [ 400, 100 ] ]
 
 
 
@@ -94,6 +96,8 @@ class RanRoll extends commando.Command {
 			scu = 50
 		}
 		var embed = new Discord.RichEmbed()
+		const canvas = Canvas.createCanvas(500, 200);
+		const ctx = canvas.getContext('2d');
 		if (pool == "event" || pool == "ev") { scu = scu * 4 / 5}
 		if (usc < scu) {message.reply("You need " + scu + " SC\nYou only have " + usc + " SC")}
 		else if (pool == "default") {
@@ -239,7 +243,7 @@ class RanRoll extends commando.Command {
 					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-				message.channel.send(embed)
+				send10(message, lr, embed, 0, canvas, ctx)
 			}
 		}
 	    else if (pool == "event" || pool == "ev") {
@@ -385,7 +389,7 @@ class RanRoll extends commando.Command {
 					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-				message.channel.send(embed)
+				send10(message, lr, embed, 0, canvas, ctx)
 			}
 		}
 	    else if (pool == "imperial" || pool == "white empire" || pool == "we") {
@@ -399,7 +403,6 @@ class RanRoll extends commando.Command {
 					embed.setColor([95, 64, 0])
 					if (upp > 1) { upp = upp -1}
 					upb = 33
-					lr.push(unit)
 				}
 				else if (upp == 1) {
 					var rar = random.int(1, 100)
@@ -531,7 +534,7 @@ class RanRoll extends commando.Command {
 					lr.push(unit)
 				}
 				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-				message.channel.send(embed)
+				send10(message, lr, embed, 0, canvas, ctx)
 			}
 		}
 		else if (pool == "pug" || pool == "pick-up" || pool == "pickup") {
@@ -677,7 +680,7 @@ class RanRoll extends commando.Command {
 						lr.push(unit)
 					}
 					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-					message.channel.send(embed)
+					send10(message, lr, embed, 0, canvas, ctx)
 				}
 			}
 			else {message.channel.send("PUG is not available")}
@@ -909,7 +912,7 @@ class RanRoll extends commando.Command {
 						lr.push(unit)
 					}
 					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-					message.channel.send(embed)
+					send10(message, lr, embed, 0, canvas, ctx)
 				}
 			}
 			else {message.channel.send("Banner 1 is not available")}
@@ -1141,7 +1144,7 @@ class RanRoll extends commando.Command {
 						lr.push(unit)
 					}
 					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-					message.channel.send(embed)
+					send10(message, lr, embed, 0, canvas, ctx)
 				}
 			}
 			else {message.channel.send("Banner 2 is not available")}
@@ -1373,7 +1376,7 @@ class RanRoll extends commando.Command {
 						lr.push(unit)
 					}
 					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-					message.channel.send(embed)
+					send10(message, lr, embed, 0, canvas, ctx)
 				}
 			}
 			else {message.channel.send("Seasonal 1 is not available")}
@@ -1605,7 +1608,7 @@ class RanRoll extends commando.Command {
 						lr.push(unit)
 					}
 					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-					message.channel.send(embed)
+					send10(message, lr, embed, 0, canvas, ctx)
 				}
 			}
 			else {message.channel.send("Seasonal 2 is not available")}
@@ -1623,5 +1626,38 @@ function size_dict(d){
 	c=0; 
 	for (i in d) ++c;
 	return c
+}
+async send10(message, lr, embed, ind, canvas, ctx) {
+	if (ind < 10) {
+		var unit = lr[ind]
+		var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
+		request(link2, function(err, resp, html) {
+			if (!err) {
+				const $2 = cheerio.load(html);
+				var ilink = $2('.fullImageLink a').attr('href')
+				var options = {
+					uri: ilink
+					method: "get",
+					encoding: null
+				};
+				request(options, function (error, response, body) {
+					if (error) {
+					} 
+					else {
+						var img = new Canvas.Image();
+						img.src = body;
+						ctx.drawImage(img, xy[ind][0], xy[ind][1], 100, 100)
+						send10(message, lr, embed, ind, canvas, ctx)
+					}
+				})
+			}
+		})
+	}
+	else {
+		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
+		embed.attachFile(attachment)
+		embed.setImage('attachment://unknown.png');
+		message.channel.send(embed);
+	}
 }
 module.exports = RanRoll;
