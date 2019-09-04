@@ -1627,7 +1627,7 @@ function size_dict(d){
 	for (i in d) ++c;
 	return c
 }
-async send10(message, lr, embed, ind, canvas, ctx) {
+async function send10(message, lr, embed, ind, canvas, ctx) {
 	if (ind < 10) {
 		var unit = lr[ind]
 		var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
