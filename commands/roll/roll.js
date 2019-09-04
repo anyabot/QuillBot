@@ -1647,7 +1647,7 @@ async function send10(message, lr, embed, ind, canvas, ctx) {
 						var img = new Canvas.Image();
 						img.src = body;
 						ctx.drawImage(img, xy[ind][0], xy[ind][1], 100, 100)
-						send10(message, lr, embed, ind, canvas, ctx)
+						send10(message, lr, embed, ind + 1, canvas, ctx)
 					}
 				})
 			}
