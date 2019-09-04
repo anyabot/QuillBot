@@ -1636,7 +1636,7 @@ async function send10(message, lr, embed, ind, canvas, ctx) {
 				const $2 = cheerio.load(html);
 				var ilink = $2('.fullImageLink a').attr('href')
 				var options = {
-					uri: ilink
+					uri: ilink,
 					method: "get",
 					encoding: null
 				};
