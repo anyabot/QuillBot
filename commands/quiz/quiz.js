@@ -19,12 +19,7 @@ class RanRoll extends commando.Command {
             	group: 'quiz',
             	memberName: 'quiz',
             	description: 'just quiz',
-		throttling: {
-		usages: 1,
-		duration: 60
-	},
 		examples: ['&quiz'],
-		hidden: true
         });
     }
 
