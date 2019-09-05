@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "discord.js": "^11.5.1",
-    "discord.js-commando": "^0.10.0",
+    "discord.js": "^master",
+    "discord.js-commando": "^master",
     "request": "^2.88.0",
     "he": "^1.2.0",
     "printf": "^0.5.1",
