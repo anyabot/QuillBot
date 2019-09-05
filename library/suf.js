@@ -6,6 +6,7 @@ var suffix = {
     '(Gbm)' : '(GBM)',
     'Koihime' : '【Koihime】',
     'Christmas' : '(Christmas)',
+    'Xmas' : '(Christmas)',
     '🎅' : '(Christmas)',
     'Dress' : '(Dress)',
     'Yukata' : '(Yukata)',
