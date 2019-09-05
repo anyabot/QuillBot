@@ -26,5 +26,7 @@ bot.registry.registerGroup('link', 'Link')
 bot.registry.registerGroup('list', 'List')
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
-
+bot.registry.registerDefaultCommands({
+  unknownCommand: false
+});
 bot.login(process.env.BOT_TOKEN);
