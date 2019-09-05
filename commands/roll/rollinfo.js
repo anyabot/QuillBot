@@ -23,6 +23,7 @@ var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
 require('@keyv/mongo')
+var chibi = ['Chibi Konoha' , 'Chibi Towa'];
 
 
 
@@ -87,6 +88,7 @@ class RanRoll extends commando.Command {
 	      if (pugplat.length > 0) {pug = pug + "\nFeatured Plat: " + pugplat.join(', ')}
 		    mes = mes + "\n" + pug
 	    }
+	    mes = mes + "\n" + "**Fame Chibi** " + chibi.join(', ')
     message.channel.send(mes)
     }
 }
