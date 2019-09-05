@@ -89,7 +89,7 @@ class RanRoll extends commando.Command {
 							var v1img = ($('.c4 td:first-child div a img').attr('data-src'))
 							var v2img = ($('.c5 td:first-child div a img').attr('data-src'))
 							if (!unitcheck) {message.channel.send("There is no unit with such name")}
-							else if (black && (state = "AW2")) {message.channel.send("Please specify AW2v1 or AW2v2")}
+							else if (black && (state == "AW2")) {message.channel.send("Please specify AW2v1 or AW2v2")}
 							else if (state == "CC" && !($('.c2.numbers').first().text())) {message.channel.send("Unit doesn't have CC")}
 							else if (state == "AW" && !($('.c3.numbers').first().text())) {message.channel.send("Unit doesn't have AW")}
 							else if (state == "AW2v1" && !($('.c4.numbers').first().text())) {message.channel.send("Unit doesn't have AW2v1")}
