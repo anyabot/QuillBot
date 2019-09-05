@@ -24,7 +24,6 @@ bot.registry.registerGroup('team', 'Mini Game: Team')
 bot.registry.registerGroup('quiz', 'Mini Game: Quiz')
 bot.registry.registerGroup('link', 'Link')
 bot.registry.registerGroup('list', 'List')
-bot.registry.registerDefaults();
 bot.registry.registerDefaultCommands({
   unknownCommand: false
 });
