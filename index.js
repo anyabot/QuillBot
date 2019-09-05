@@ -24,6 +24,13 @@ bot.registry.registerGroup('team', 'Mini Game: Team')
 bot.registry.registerGroup('quiz', 'Mini Game: Quiz')
 bot.registry.registerGroup('link', 'Link')
 bot.registry.registerGroup('list', 'List')
-bot.registry.registerDefaults();
+bot.registry.registerDefaultCommands({
+help: true, 
+prefix: true, 
+ping: true,
+_eval: true,
+unknownCommand: false, 
+commandState: true
+})
 bot.registry.registerCommandsIn(__dirname + "/commands");
 bot.login(process.env.BOT_TOKEN);
