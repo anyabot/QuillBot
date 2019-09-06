@@ -52,7 +52,11 @@ class RanRoll extends commando.Command {
 		else if (uteamlist.includes(teamname)) {
 			const canvas = Canvas.createCanvas(583, 426);
 			const ctx = canvas.getContext('2d');
-			const background = await Canvas.loadImage(__dirname + '/../../image/unknown.png');
+			var background 
+			if (uteam[teamname]["link"].length > 0) {
+				background = await Canvas.loadImage(__dirname + '/../../image/Untitled.png')
+			}
+			else {background = await Canvas.loadImage(__dirname + '/../../image/unknown.png')}
 			const awicon = await Canvas.loadImage(__dirname + '/../../image/AW_Icon.png');
 			const aw2icon = await Canvas.loadImage(__dirname + '/../../image/AW2_Icon.png');
 			const ccicon = await Canvas.loadImage(__dirname + '/../../image/CC_Icon.png');
