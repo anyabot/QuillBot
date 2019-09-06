@@ -215,12 +215,11 @@ class FindStat extends commando.Command {
           check = true;
           var parent = na($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)').first().html())
           let lv1v1 = lv1line(output);
-          output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
+          output = $('.numbers').last().text();
           let lv99v1 = lv1line(output);
-          output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
+          output = $('.numbers td:nth-child(5)').first().html();
           let ran = "N/A"
           if (output) {ran = range(output);}
-
           img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(1)  div a img').attr('data-src'));
           if (!img) {img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(1)  div a img').attr('src'))}
           output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(1)').first().html();
@@ -272,7 +271,7 @@ class FindStat extends commando.Command {
 		}
         }
         if ($('.c2').find('td').length >= 6) {
-          output = $('.c2.numbers').first().text();
+          output = $('.c2.numbers').last().text();
           if(output) {
 		  let sn = false;
             let lv99v1 = lv1line(output);
@@ -300,7 +299,7 @@ class FindStat extends commando.Command {
             if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
           }
         }
-        output = $('.c3.numbers').first().text();
+        output = $('.c3.numbers').last().text();
         if(output) {
 		let sn = false;
           let lv99v1 = lv1line(output);
@@ -309,14 +308,14 @@ class FindStat extends commando.Command {
           output = $('.c3.numbers td:nth-child(5)').first().html();
           let ran = "N/A"
           if (output) {ran = range(output);}
-          if ($('.c3 td:nth-child(1)').hasClass('leftal')) {
+          if ($('.c3 td:nth-child(2)').hasClass('leftal')) {
             img = ($('.c3 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c3 td:first-child div a img').attr('src'));}
             output = $('.c3 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
-          if (!$('.c3 td:nth-child(1)').hasClass('leftal')) {
+          if (!$('.c3 td:nth-child(2)').hasClass('leftal')) {
             output = $('.c3 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
@@ -356,7 +355,7 @@ class FindStat extends commando.Command {
 		  nam = nam.split(" ( edit stats )")[0]
 	  }
         }
-        output = $('.c4.numbers').first().text();
+        output = $('.c4.numbers').last().text();
         if(output) {
 		let sn = false;
           let lv99v1 = lv1line(output);
@@ -365,14 +364,14 @@ class FindStat extends commando.Command {
           output = $('.c4.numbers td:nth-child(5)').first().html();
           let ran = "N/A"
           if (output) {ran = range(output);}
-          if ($('.c4 td:nth-child(1)').hasClass('leftal')) {
+          if ($('.c4 td:nth-child(2)').hasClass('leftal')) {
             img = ($('.c4 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c4 td:first-child div a img').attr('src'));}
             output = $('.c4 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
-          if (!$('.c4 td:nth-child(1)').hasClass('leftal')) {
+          if (!$('.c4 td:nth-child(2)').hasClass('leftal')) {
             output = $('.c4 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
@@ -410,7 +409,7 @@ class FindStat extends commando.Command {
 		}
           if (nam.split(" ( edit stats ").length > 1 && sn == false) {pages.pop()}
         }
-        output = $('.c5.numbers').first().text();
+        output = $('.c5.numbers').last().text();
         if(output) {
 		let sn = false;
           let lv99v1 = lv1line(output);
@@ -419,14 +418,14 @@ class FindStat extends commando.Command {
           output = $('.c5.numbers td:nth-child(5)').first().html();
           let ran = "N/A"
           if (output) {ran = range(output);}
-          if ($('.c5 td:nth-child(1)').hasClass('leftal')) {
+          if ($('.c5 td:nth-child(2)').hasClass('leftal')) {
             img = ($('.c5 td:first-child div a img').attr('data-src'));
             if (!img) {img = ($('.c5 td:first-child div a img').attr('src'));}
             output = $('.c5 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
           }
-          if (!$('.c5 td:nth-child(1)').hasClass('leftal')) {
+          if (!$('.c5 td:nth-child(2)').hasClass('leftal')) {
             output = $('.c5 td:nth-child(1)').first().html();
             if (na(output) != null) {nam = na(output)}
 		  else {sn = true}
