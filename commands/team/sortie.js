@@ -111,7 +111,7 @@ class RanRoll extends commando.Command {
 								else if (awimg) {img = awimg}
 								else if (baseimg) {img = baseimg}
 							}
-							else if (state == "AW2") {
+							else if (state == "AW") {
 								if (awimg) {img = awimg}
 								else if (baseimg) {img = baseimg}
 							}
