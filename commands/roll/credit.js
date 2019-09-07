@@ -61,7 +61,7 @@ class RanRoll extends commando.Command {
 	    	uuser[0] = usc
 		user.set(message.author.id, uuser)
       		var mes = "You got " + ge + " SC"
-		if (scoresc > 0) {mes = mes + "nYou got " + scoresc + " from your quiz score (1 for every 100 units correctly guessed)"}
+		if (scoresc > 0) {mes = mes + "\nYou got " + scoresc + " from your quiz score (1 for every 100 units correctly guessed)"}
 	    	if (ranksc > 0) {mes = mes + "\nYou got " + ranksc + " from your quiz rank (1 : 5, 2-3 : 3, 4-5 : 2, 6-10 : 1)"}
 		mes = mes + "\nYou currently have " + usc + " SC"
 		message.reply(mes)
