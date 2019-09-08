@@ -101,7 +101,7 @@ function sendembed(units, message, score) {
 								msg.react('🇾')
 								const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 								const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-								msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
+								msg.awaitReactions(backwardsFilter, { max: 1, time: 12000, errors: ['time'] })
 								.then(collected => {
 									sendembed(units, message, score) 
 									msg.delete()
@@ -118,7 +118,7 @@ function sendembed(units, message, score) {
 								msg.react('🇾')
 								const backwardsFilter = (reaction, user) => (reaction.emoji.name === '🇾' && !user.bot);
 								const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000 , max: 1});
-								msg.awaitReactions(backwardsFilter, { max: 1, time: 6000, errors: ['time'] })
+								msg.awaitReactions(backwardsFilter, { max: 1, time: 12000, errors: ['time'] })
 								.then(collected => {
 									sendembed(units, message, score) 
 									msg.delete()
@@ -166,8 +166,6 @@ function leader(message, score) {
 			let rank = i + 1
 			mes = mes + "\n" + rank + "/ " + un + " : " + items[i][1]
 		}
-		message.channel.send(mes).then(msg => {
-			msg.delete(12000)
-		})
+		message.channel.send(mes)
 }
 module.exports = RanRoll;
