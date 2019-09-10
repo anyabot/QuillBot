@@ -135,7 +135,10 @@ function sendembed(units, message, score) {
 			}
 		})
 	}
-	else {message.channel.send("Out of unit")}
+	else {
+		message.channel.send("Out of unit")
+		leader(message, score)
+	}
 }
 async function checkquiz(ms, unit) {
 	const quiz = new Keyv(process.env.MONGODB_URI, { namespace: 'quiz' });
@@ -166,6 +169,6 @@ function leader(message, score) {
 			let rank = i + 1
 			mes = mes + "\n" + rank + "/ " + un + " : " + items[i][1]
 		}
-		message.channel.send(mes)
+		if (items.length > 0) {message.channel.send(mes)}
 }
 module.exports = RanRoll;
