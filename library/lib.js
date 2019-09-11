@@ -1,4 +1,5 @@
 var name = {
+	'Rosel' : 'Rösel',
     'Snekloli' : 'Orochihime',
 	'Sieg' : 'Sieglinde',
 	'Snakeloli' : 'Orochihime',
