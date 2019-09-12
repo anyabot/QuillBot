@@ -1,3 +1,3 @@
-var list = ['Curse Users', 'Maou\'s Bodyguards', 'Nekomata', 'Playwrights (GBM)', 'Puppet Dolls 【Fuukan】', 'Orochihime', 'Prince (Dark)', 'Sybilla', 'Yurina', 'Chibi Cornelia', 'Cornelia (Christmas)', 'Cornelia', 'Dark Knight', 'Ban', 'Tamami', 'Aida', 'Hu Ximei', 'Puniru', 'Erlang Shen'];
+var list = ['Curse Users', 'Maou\'s Bodyguards', 'Nekomata', 'Playwrights (GBM)', 'Puppet Dolls 【Fuukan】', 'Orochihime', 'Prince (Dark)', 'Sybilla', 'Yurina', 'Chibi Cornelia', 'Cornelia (Christmas)', 'Cornelia', 'Dark Knight', 'Ban', 'Tamami', 'Aida', 'Hilde', 'Hu Ximei', 'Puniru', 'Erlang Shen'];
 
 exports.list = list;
