@@ -39,7 +39,9 @@ var gold = {
 	38 : 'Laurier',
 	39 : 'Fuuka',
 	40 : 'Leda',
-	41 : 'Rilke'
+	41 : 'Rilke',
+	42 : 'Soleil',
+	43 : 'Pickle'
 }
 
 exports.gold = gold;
