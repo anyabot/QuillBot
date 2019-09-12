@@ -27,7 +27,8 @@ var eventgold = {
 	26 : 'Raichi',
 	27 : 'Giovanni (School)',
 	28 : 'Maurette',
-	29 : 'Ryuryu'
+	29 : 'Ryuryu',
+	30 : 'Mao (Yukata)'
 }
 
 exports.eventgold = eventgold;
