@@ -121,7 +121,8 @@ var eventplat = {
 	120 : 'Chydis',
 	121 : 'Ryuryu (Valentine\'s)',
 	122 : 'Cypria (Christmas)',
-	123 : 'Chloe'
+	123 : 'Chloe',
+	124 : 'Ilios'
 }
 
 exports.eventplat = eventplat;
