@@ -118,7 +118,8 @@ var plat = {
 	117 : 'Mithria',
 	118 : 'Honey',
 	119 : 'Hu Ximei',
-	120 : 'Shaina'
+	120 : 'Shaina',
+	121 : 'Minette'
 }
 
 exports.plat = plat;
