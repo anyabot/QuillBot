@@ -13,7 +13,7 @@ class RanRoll extends commando.Command {
             	name: 'take',
             	group: 'roll3',
             	memberName: 'take',
-            	description: 'take a unit from your previous roll to the barrack (max capacity 100 units)',
+            	description: 'take a unit from your previous roll to the barrack (max capacity 400 units)',
               args: [{
 		    key: 'text',
 			prompt: 'Which unit do you want to take? (Input name or the index number from &lastroll)',
@@ -38,7 +38,7 @@ class RanRoll extends commando.Command {
 	    if (ulastroll == [] || ulastroll == null || ulastroll.length == 0) {
 			message.reply("You have no unit to take")
 		} 
-		else if (ubarrack.length > 99) {message.reply("Your barrack is full")}
+		else if (ubarrack.length > 399) {message.reply("Your barrack is full")}
 	    else if (!isNaN(text2)) {
 			var ind = parseInt(text2)
 			if (ind < 1 || ind > ulastroll.length) {message.reply("Wrong Index")}
