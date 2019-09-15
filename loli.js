@@ -74,6 +74,6 @@ var list = [
 ['Totono (Insert Nickname Here)', 'https://vignette.wikia.nocookie.net/aigis/images/8/82/Totono_Icon.png/revision/latest?cb=20180522223817'],
 ['Ur (Insert Nickname Here)', 'https://vignette.wikia.nocookie.net/aigis/images/8/89/Ur_Icon.png/revision/latest?cb=20180522223820'],
 ['Wonder Heart (Insert Nickname Here)', 'https://vignette.wikia.nocookie.net/aigis/images/b/b2/Wonder_Heart_Icon.png/revision/latest?cb=20180522224158'],
-['Yukihime (Ice Loli)', 'https://vignette.wikia.nocookie.net/aigis/images/5/55/Yukihime_Icon.png/revision/latest?cb=20180913061501'],
+['Yukihime (Ice Loli)', 'https://vignette.wikia.nocookie.net/aigis/images/5/55/Yukihime_Icon.png/revision/latest?cb=20180913061501']
 ]
 exports.list = list;
