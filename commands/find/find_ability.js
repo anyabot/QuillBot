@@ -77,6 +77,7 @@ request(link, function(err, resp, html) {
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           let embed = new Discord.RichEmbed()
           embed.setTitle(silna)
+		embed.setURL(link)
           embed.setThumbnail(silimg)
 		embed.setColor('WHITE')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(silna);
@@ -105,6 +106,7 @@ if (bronze || (!aw && nor)) {
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 	let embed = new Discord.RichEmbed()
           embed.setTitle(norna)
+		embed.setURL(link)
           embed.setThumbnail(norimg)
 		embed.setColor('DARK_ORANGE')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(norna);
@@ -144,6 +146,7 @@ if (bronze || (!aw && nor)) {
 		}
           let embed = new Discord.RichEmbed()
           embed.setTitle("Awakened Ability: " + awna)
+		embed.setURL(link)
           embed.setThumbnail(awimg)
 		embed.setColor('BLUE')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(awna);
@@ -172,6 +175,7 @@ if (bronze || (!aw && nor)) {
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 	let embed = new Discord.RichEmbed()
           embed.setTitle("Ability: " + norna)
+		embed.setURL(link)
           embed.setThumbnail(norimg)
 		embed.setColor('LIGHT_GREY')
           let link2 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(norna);
@@ -204,6 +208,7 @@ if (bronze || (!aw && nor)) {
 		}
           let embed2 = new Discord.RichEmbed()
           embed2.setTitle("Awakened Ability: " + awna)
+		embed.setURL(link)
           embed2.setThumbnail(awimg)
 		embed2.setColor('BLUE')
           let link3 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(awna);
