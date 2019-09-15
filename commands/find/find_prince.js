@@ -73,6 +73,7 @@ class FindPrince extends commando.Command {
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(3)').first().html();
 						let nam = na(output);
 						embed = new Discord.RichEmbed()
+						embed.setURL(link)
 						embed.setTitle(nam)
 						embed.setThumbnail(img)
 						embed.setColor('LIGHT_GREY')
