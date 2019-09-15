@@ -7,7 +7,7 @@ var he = require('he');
 var urlencode = require('urlencode');
 var pluralize = require('pluralize')
 var suffix = require('../../library/suf.js').suffix;
-var list = require('../../list.js').list
+var list = require('../../loli.js').list
 
 
 class FindImage extends commando.Command {
