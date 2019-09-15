@@ -63,7 +63,11 @@ class FindImage extends commando.Command {
 			cl = pluralize.plural(cl);
 		}
 		if (lcheck) {
+			var check = false 
+			var parts = []
 			var pages = []
+			var pn = []
+			var pm = []
 			for (var i = 0; i < list.length; i++) {
 				let nam =  list[i][0]
 				let img = list[i][1]
@@ -73,9 +77,22 @@ class FindImage extends commando.Command {
 				embed.setTitle(nam)
 				embed.setImage(img)
 				embed.setURL(lin)
-				pages.push(embed)
+				if (pages.length == 10) {
+					parts.push(pages)
+					pages = []
+					pages.push(embed)
+				}
+				else (pages.push(embed))
+				})
 			}
-			sendembed(pages, message)
+			parts.push(pages)
+			for (var i = 0; i < parts.length; i++) {
+				pn.push(1)
+				pm.push(parts[i].length)
+			}
+			for (var i = 0; i < parts.length; i++) {
+				sendembed(parts[i], message)
+			}
 		}
 		else {
 			var link = "https://aigis.fandom.com/wiki/Category%3A" + urlencode(cl)
@@ -84,7 +101,7 @@ class FindImage extends commando.Command {
 				if (!err) {
 				var check = false 
 				var parts = []
-				var pages = [];
+				var pages = []
 				var pn = []
 				var pm = []
 				const $ = cheerio.load(html);
