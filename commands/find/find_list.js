@@ -82,8 +82,7 @@ class FindImage extends commando.Command {
 					pages = []
 					pages.push(embed)
 				}
-				else (pages.push(embed))
-				})
+				else {pages.push(embed)}
 			}
 			parts.push(pages)
 			for (var i = 0; i < parts.length; i++) {
@@ -124,7 +123,7 @@ class FindImage extends commando.Command {
 					pages = []
 					pages.push(embed)
 				}
-				else (pages.push(embed))
+				else {pages.push(embed)}
 				})
 				if (check) {
 					parts.push(pages)
