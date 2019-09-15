@@ -59,6 +59,7 @@ class FindPath extends commando.Command {
 			output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 			let nam = na(output);
 			let embed = new Discord.RichEmbed()
+			embed.setURL(link)
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('LIGHT_GREY')
@@ -106,6 +107,7 @@ class FindPath extends commando.Command {
 				let nam = na(output);
 				if (nam == "Priestess Warrior Leader") {nam = "Priest Warrior Leader"}
 				let embed = new Discord.RichEmbed()
+				embed.setURL(link)
 				.setTitle(nam)
 				.setThumbnail(img)
 				.setColor('RED')
@@ -160,6 +162,7 @@ class FindPath extends commando.Command {
 
 			}
 			let embed = new Discord.RichEmbed()
+			embed.setURL(link)
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('BLUE')
@@ -211,6 +214,7 @@ class FindPath extends commando.Command {
 				nam = na(output);
 			}
 			let embed = new Discord.RichEmbed()
+			embed.setURL(link)
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
@@ -262,6 +266,7 @@ class FindPath extends commando.Command {
 				nam = na(output);
 			}
 			let embed = new Discord.RichEmbed()
+			embed.setURL(link)
 			.setTitle(nam)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
