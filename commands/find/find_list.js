@@ -67,7 +67,7 @@ class FindImage extends commando.Command {
 			for (var i = 0; i < list.length; i++) {
 				let nam =  list[i][0]
 				let img = list[i][1]
-				let lin = lin = "https://aigis.fandom.com/wiki/" + urlencode(nam.split(' ')[0])
+				let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam.split(' ')[0])
 				let embed = new Discord.RichEmbed()
 				img = img.split("/scale-to-width-down/")[0]
 				embed.setTitle(nam)
