@@ -61,7 +61,7 @@ class FindPath extends commando.Command {
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
 			.setTitle(unit)
-			.addField("Class: " + nam, "\u200b")
+			.addField("Class", nam)
 			.setThumbnail(img)
 			.setColor('LIGHT_GREY')
       let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -110,7 +110,7 @@ class FindPath extends commando.Command {
 				let embed = new Discord.RichEmbed()
 				embed.setURL(link)
 				.setTitle(unit)
-				.addField("Class: " + nam, "\u200b")
+				.addField("Class", nam)
 				.setThumbnail(img)
 				.setColor('RED')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -166,7 +166,7 @@ class FindPath extends commando.Command {
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
 			.setTitle(unit)
-			.addField("Class: " + nam, "\u200b")
+			.addField("Class", nam)
 			.setThumbnail(img)
 			.setColor('BLUE')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -219,7 +219,7 @@ class FindPath extends commando.Command {
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
 			.setTitle(unit)
-			.addField("Class: " + nam, "\u200b")
+			.addField("Class", nam)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -272,7 +272,7 @@ class FindPath extends commando.Command {
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
 			.setTitle(unit)
-			.addField("Class: " + nam, "\u200b")
+			.addField("Class", nam)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
