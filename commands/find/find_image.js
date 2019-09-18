@@ -44,6 +44,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
 	  img = ($('.\\_toggle.Normalskill div:nth-child(2) a img').attr('data-src'));
@@ -55,6 +56,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
     img = ($('.AWGallery div:nth-child(2) a img').attr('data-src'));
@@ -66,6 +68,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
 	  img = ($('.\\_toggle.AWskill div:nth-child(2) a img').attr('data-src'));
@@ -88,6 +91,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
 	  img = ($('.\\_toggle.AW2skill div:nth-child(2) a img').attr('data-src'));
@@ -99,6 +103,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
     img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));
@@ -110,6 +115,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
 	  img = ($('.\\_toggle.AW2v1skill div:nth-child(2) a img').attr('data-src'));
@@ -121,6 +127,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
     img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));
@@ -132,6 +139,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
 	  img = ($('.\\_toggle.AW2v2skill div:nth-child(2) a img').attr('data-src'));
@@ -143,6 +151,7 @@ class FindImage extends commando.Command {
       img = img.split("/scale-to-width-down/")[0]
       embed.setTitle(nam)
       embed.setImage(img)
+	    embed.setURL(link)
       pages.push(embed)
     }
     for (var i = 1; i < 5; i++) {
@@ -155,6 +164,7 @@ class FindImage extends commando.Command {
         img = img.split("/scale-to-width-down/")[0]
         embed.setTitle(nam)
         embed.setImage(img)
+	      embed.setURL(link)
         pages.push(embed)
       }
     }
@@ -168,6 +178,7 @@ class FindImage extends commando.Command {
         img = img.split("/scale-to-width-down/")[0]
         embed.setTitle(nam)
         embed.setImage(img)
+	      embed.setURL(link)
         pages.push(embed)
       }
     }
@@ -183,6 +194,7 @@ class FindImage extends commando.Command {
           img = img.split("/scale-to-width-down/")[0]
           embed.setTitle(nam)
           embed.setImage(img)
+		embed.setURL(link)
           pages.push(embed)
         }
       });
