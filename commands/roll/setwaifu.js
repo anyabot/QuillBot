@@ -4,6 +4,7 @@ const random = require('random')
 const Keyv = require('keyv');
 require('@keyv/mysql')
 require('@keyv/mongo')
+var functions = require('../../functions.js');
 
 
 
