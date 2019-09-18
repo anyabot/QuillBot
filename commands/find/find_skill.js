@@ -50,7 +50,7 @@ class FindSkill extends commando.Command {
 						img = $(elem).find('tr').eq(1).find('td').find('div').find('a').find('img').attr('data-src');
 						let out = $(elem).find('tr').eq(1).text();
 						let aa = te(out);
-						embed1.setTitle("Normal Skill")
+						embed1.setTitle(unit + "'s Normal Skill")
 						embed1.setURL(link)
 						embed1.setThumbnail(img)
 						embed1.addField(aa[2], aa[3] + "\n**CD: **" +aa[4] + "\n**Initial: **" + aa[5]);
@@ -61,7 +61,7 @@ class FindSkill extends commando.Command {
 							if (aa[0] === "Awakened") {
 								aw = true;
 								pages.push(embed1)
-								embed2.setTitle("Awakened Skill")
+								embed2.setTitle(unit + "'s Awakened Skill")
 								embed2.setURL(link)
 								embed2.setThumbnail(img)
 								embed2.setColor('GOLD')
