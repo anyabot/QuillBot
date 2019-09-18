@@ -39,7 +39,7 @@ class RanRoll extends commando.Command {
 		} 
 		else if (!isNaN(text2)) {
 			var ind = parseInt(text2)
-			else if (ind < 1 || ind > ubarrack.length) {message.reply("Wrong Index")}
+			if (ind < 1 || ind > ubarrack.length) {message.reply("Wrong Index")}
 			else if (uwaifu == undefined) {
 				var unit = ubarrack[ind-1]
 				var mes = "You set " + unit + " as your waifu."
