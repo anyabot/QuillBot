@@ -208,7 +208,7 @@ if (bronze || (!aw && nor)) {
 		}
           let embed2 = new Discord.RichEmbed()
           embed2.setTitle(unit + "'s Awakened Ability: " + awna)
-		embed.setURL(link)
+		embed2.setURL(link)
           embed2.setThumbnail(awimg)
 		embed2.setColor('BLUE')
           let link3 = "https://aigis.fandom.com/wiki/Ability/" + urlencode(awna);
