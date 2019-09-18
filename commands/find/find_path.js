@@ -60,7 +60,7 @@ class FindPath extends commando.Command {
 			let nam = na(output);
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
-			.setTitle(nam)
+			.setTitle(nam + " " + unit)
 			.setThumbnail(img)
 			.setColor('LIGHT_GREY')
       let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -108,7 +108,7 @@ class FindPath extends commando.Command {
 				if (nam == "Priestess Warrior Leader") {nam = "Priest Warrior Leader"}
 				let embed = new Discord.RichEmbed()
 				embed.setURL(link)
-				.setTitle(nam)
+				.setTitle(nam + " " + unit)
 				.setThumbnail(img)
 				.setColor('RED')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -163,7 +163,7 @@ class FindPath extends commando.Command {
 			}
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
-			.setTitle(nam)
+			.setTitle(nam + " " + unit)
 			.setThumbnail(img)
 			.setColor('BLUE')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -215,7 +215,7 @@ class FindPath extends commando.Command {
 			}
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
-			.setTitle(nam)
+			.setTitle(nam + " " + unit)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
@@ -267,7 +267,7 @@ class FindPath extends commando.Command {
 			}
 			let embed = new Discord.RichEmbed()
 			embed.setURL(link)
-			.setTitle(nam)
+			.setTitle(nam + " " + unit)
 			.setThumbnail(img)
 			.setColor('DARK_PURPLE')
 	let ind = $(".gcstyle.bgwhite.hsbullet tr:contains('"+ nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
