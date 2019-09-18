@@ -76,7 +76,7 @@ request(link, function(err, resp, html) {
           var silna = aff;
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           let embed = new Discord.RichEmbed()
-          embed.setTitle(silna)
+          embed.setTitle(unit + "'s Ability: " + silna)
 		embed.setURL(link)
           embed.setThumbnail(silimg)
 		embed.setColor('WHITE')
@@ -105,7 +105,7 @@ if (bronze || (!aw && nor)) {
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 	let embed = new Discord.RichEmbed()
-          embed.setTitle(norna)
+          embed.setTitle(unit + "'s Ability: " + norna)
 		embed.setURL(link)
           embed.setThumbnail(norimg)
 		embed.setColor('DARK_ORANGE')
@@ -145,7 +145,7 @@ if (bronze || (!aw && nor)) {
 			awimg = img
 		}
           let embed = new Discord.RichEmbed()
-          embed.setTitle("Awakened Ability: " + awna)
+          embed.setTitle(unit + "'s Awakened Ability: " + awna)
 		embed.setURL(link)
           embed.setThumbnail(awimg)
 		embed.setColor('BLUE')
@@ -174,7 +174,7 @@ if (bronze || (!aw && nor)) {
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 	let embed = new Discord.RichEmbed()
-          embed.setTitle("Ability: " + norna)
+          embed.setTitle(unit + "'s Ability: " + norna)
 		embed.setURL(link)
           embed.setThumbnail(norimg)
 		embed.setColor('LIGHT_GREY')
@@ -207,7 +207,7 @@ if (bronze || (!aw && nor)) {
 			awimg = norimg
 		}
           let embed2 = new Discord.RichEmbed()
-          embed2.setTitle("Awakened Ability: " + awna)
+          embed2.setTitle(unit + "'s Awakened Ability: " + awna)
 		embed.setURL(link)
           embed2.setThumbnail(awimg)
 		embed2.setColor('BLUE')
