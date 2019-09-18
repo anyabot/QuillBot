@@ -64,7 +64,8 @@ class FindStat extends commando.Command {
 				let nam = na(output);
 				let embed = new Discord.RichEmbed()
 				.setURL(link)
-				.setTitle(nam + " " + unit + " (" + lv1v1[4] + " → " + lv99v1[0] + ")")
+				.setTitle(unit)
+				.addField("Class: " + nam + " (" + lv1v1[4] + " → " + lv99v1[0] + ")", "\u200b")
 				.setThumbnail(img)
 				.setColor('LIGHT_GREY')
 				.addField("HP", lv1v1[5] + " → " + lv99v1[1], true)
@@ -92,7 +93,8 @@ class FindStat extends commando.Command {
 					let nam = na(output);
 					let embed = new Discord.RichEmbed()
 					.setURL(link)
-					.setTitle(nam + " " + unit + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+					.setTitle(unit)
+					.addField("Class: " + nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")", "\u200b")
 					.setThumbnail(img)
 					.setColor('RED')
 					.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
@@ -130,7 +132,8 @@ class FindStat extends commando.Command {
 				}
 				let embed = new Discord.RichEmbed()
 				.setURL(link)
-				.setTitle(nam + " " + unit + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+				.setTitle(unit)
+				.addField("Class: " + nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")", "\u200b")
 				.setThumbnail(img)
 				.setColor('BLUE')
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
@@ -163,7 +166,8 @@ class FindStat extends commando.Command {
 				}
 				let embed = new Discord.RichEmbed()
 				.setURL(link)
-				.setTitle(nam + " " + unit + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+				.setTitle(unit)
+				.addField("Class: " + nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")", "\u200b")
 				.setThumbnail(img)
 				.setColor('DARK_PURPLE')
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
@@ -196,7 +200,8 @@ class FindStat extends commando.Command {
 				}
 				let embed = new Discord.RichEmbed()
 				.setURL(link)
-				.setTitle(nam + " " + unit + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
+				.setTitle(unit)
+				.addField("Class: " + nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")", "\u200b")
 				.setThumbnail(img)
 				.setColor('DARK_PURPLE')
 				.addField("HP", lv1v1[2] + " → " + lv99v1[1], true)
