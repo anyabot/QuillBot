@@ -1,3 +1,3 @@
-var b1fb = ['Diera', 'Risley'];
+var b1fb = ['Umbre', 'Duo'];
 
 exports.b1fb = b1fb;
