@@ -38,148 +38,185 @@ class FindImage extends commando.Command {
     img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
 	  img = ($('.\\_toggle.Normalskill div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.\\_toggle.Normalskill div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
     img = ($('.AWGallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.AWGallery div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
 	  img = ($('.\\_toggle.AWskill div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.\\_toggle.AWskill div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
     img = ($('.AW2Gallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.AW2Gallery div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
 	  img = ($('.\\_toggle.AW2skill div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.\\_toggle.AW2skill div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
     img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.AW2v1Gallery div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
 	  img = ($('.\\_toggle.AW2v1skill div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.\\_toggle.AW2v1skill div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
     img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.AW2v2Gallery div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
 	  img = ($('.\\_toggle.AW2v2skill div:nth-child(2) a img').attr('data-src'));
     if (img) {
       let nam =($('.\\_toggle.AW2v2skill div:nth-child(2) a img').attr('alt'));
-      nam = nam.split(" Render")[0]
-      check = true
-      let embed = new Discord.RichEmbed()
-      img = img.split("/scale-to-width-down/")[0]
-      embed.setTitle(nam)
-      embed.setImage(img)
-	    embed.setURL(link)
-      pages.push(embed)
+      let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
     }
     for (var i = 1; i < 5; i++) {
       img = ($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('data-src'));
       if (img) {
         let nam =($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('alt'));
-        nam = nam.split(" Render")[0]
-        check = true
-        let embed = new Discord.RichEmbed()
-        img = img.split("/scale-to-width-down/")[0]
-        embed.setTitle(nam)
-        embed.setImage(img)
-	      embed.setURL(link)
-        pages.push(embed)
+        let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
       }
     }
 	  for (var i = 1; i < 5; i++) {
       img = ($('.\\_toggle.AAskill div:nth-child(' + i + ') a img').attr('data-src'));
       if (img) {
         let nam =($('.\\_toggle.AAskill div:nth-child(' + i + ') a img').attr('alt'));
-        nam = nam.split(" Render")[0]
-        check = true
-        let embed = new Discord.RichEmbed()
-        img = img.split("/scale-to-width-down/")[0]
-        embed.setTitle(nam)
-        embed.setImage(img)
-	      embed.setURL(link)
-        pages.push(embed)
+        let pa = nam.split(" Render")
+        if (pa.length > 1) {
+          nam = pa[0]
+          check = true
+          let embed = new Discord.RichEmbed()
+          img = img.split("/scale-to-width-down/")[0]
+          embed.setTitle(nam)
+          embed.setImage(img)
+		embed.setURL(link)
+          pages.push(embed)
+        }
       }
     }
 	  if (pages.length == 0) {
