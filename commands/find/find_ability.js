@@ -76,7 +76,7 @@ request(link, function(err, resp, html) {
           var silna = aff;
           var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
           let embed = new Discord.RichEmbed()
-          embed.setTitle(unit + "'s Ability: " + silna)
+          embed.setTitle(unit + "'s Ability")
 		embed.setURL(link)
           embed.setThumbnail(silimg)
 		embed.setColor('WHITE')
@@ -86,7 +86,7 @@ request(link, function(err, resp, html) {
               let $2 = cheerio.load(html)
               let des = $2('.gcstyle tr:nth-child(3) td:nth-child(2)').text().trim();
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              embed.addField("Description", des);
+              embed.addField(silna, des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
 		    message.channel.send(embed)
             }
@@ -105,7 +105,7 @@ if (bronze || (!aw && nor)) {
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 	let embed = new Discord.RichEmbed()
-          embed.setTitle(unit + "'s Ability: " + norna)
+          embed.setTitle(unit + "'s Ability")
 		embed.setURL(link)
           embed.setThumbnail(norimg)
 		embed.setColor('DARK_ORANGE')
@@ -115,7 +115,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              if (des != '' && des != null) embed.addField("Description", des);
+              if (des != '' && des != null) embed.addField(norna, des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
 		    message.channel.send(embed)
             }
@@ -145,7 +145,7 @@ if (bronze || (!aw && nor)) {
 			awimg = img
 		}
           let embed = new Discord.RichEmbed()
-          embed.setTitle(unit + "'s Awakened Ability: " + awna)
+          embed.setTitle(unit + "'s Awakened Ability")
 		embed.setURL(link)
           embed.setThumbnail(awimg)
 		embed.setColor('BLUE')
@@ -155,7 +155,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              if (des != '' && des != null) embed.addField("Description", des);
+              if (des != '' && des != null) embed.addField(awna, des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
 			message.channel.send(embed)
             }
@@ -174,7 +174,7 @@ if (bronze || (!aw && nor)) {
           var norna = aff;
           var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 	let embed = new Discord.RichEmbed()
-          embed.setTitle(unit + "'s Ability: " + norna)
+          embed.setTitle(unit + "'s Ability")
 		embed.setURL(link)
           embed.setThumbnail(norimg)
 		embed.setColor('LIGHT_GREY')
@@ -184,7 +184,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              if (des != '' && des != null) embed.addField("Description", des);
+              if (des != '' && des != null) embed.addField(norna, des);
               if (note != '' && note != null) {embed.addField("Notes", note)};
 		    pages.push(embed)
 		    output = $('.c3.numbers').first().text();
@@ -207,7 +207,7 @@ if (bronze || (!aw && nor)) {
 			awimg = norimg
 		}
           let embed2 = new Discord.RichEmbed()
-          embed2.setTitle(unit + "'s Awakened Ability: " + awna)
+          embed2.setTitle(unit + "'s Awakened Ability")
 		embed2.setURL(link)
           embed2.setThumbnail(awimg)
 		embed2.setColor('BLUE')
@@ -217,7 +217,7 @@ if (bronze || (!aw && nor)) {
               let $2 = cheerio.load(html)
               let des = te2($2('.gcstyle tr:nth-child(3) td:nth-child(2)').text());
               let note = $2('.gcstyle tr:nth-child(3) td:nth-child(4)').text().trim();
-              if (des != '' && des != null) embed2.addField("Description", des);
+              if (des != '' && des != null) embed2.addField(awna, des);
               if (note != '' && note != null) {embed2.addField("Notes", note)};
 			        pages.push(embed2)
 		    embed = pages[0];
