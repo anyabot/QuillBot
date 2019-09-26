@@ -51,7 +51,8 @@ var bannerblack = {
 	50 : 'Char',
 	51 : 'Adelaide',
 	52 : 'Umbre', 
-	53 : 'Erlang Shen'
+	53 : 'Erlang Shen',
+	54 : 'Setsuna'
 }
 
 exports.bannerblack = bannerblack;
