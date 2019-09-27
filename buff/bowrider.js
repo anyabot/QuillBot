@@ -1,3 +1,3 @@
-var list = ['Lumian', 'Katina', 'Ashera', 'Reshia', 'Rion', 'Maple', 'Emelda', 'Calope'];
+var list = ['Lumian', 'Katina', 'Ashera', 'Rion', 'Maple', 'Emelda', 'Calope'];
 
 exports.list = list;
