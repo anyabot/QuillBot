@@ -1,3 +1,3 @@
-var list = ['Mithria' , 'Sarah'];
+var list = ['Mithria' , 'Sarah', 'Chibi Sarah'];
 
 exports.list = list;
