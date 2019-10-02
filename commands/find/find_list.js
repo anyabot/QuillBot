@@ -43,7 +43,7 @@ class FindImage extends commando.Command {
 		else if (cl == "Hermits Races" || cl == "Hermit Races" || cl == "Hermit Race" || cl == "Hermits Race") {cl = "Hermits Race"}
 	    else if (cl == "Spirit of War") {cl = "Spirits of War"}
 	    else if (cl == "June Bride" || cl == "Summer" || cl == "School" || cl == "Valentine's Day" || cl == "New Year's" || cl == "Christmas" || cl == "Halloween" || cl == "Chibi") {cl = cl + " Units"}
-		else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji" || cl == "Youkai" || cl == "Youko" || cl == "Fuuhaku" || cl == "Raikou" || cl == "Nekomata" || cl == "Nurarihyon" || cl == "Oni" || cl == "Tengu" || cl == "Beastfolk" || cl == "None" || cl == "Undead" || cl == "Desert Country" || cl == "Samurai" || cl == "Heavy Artillery") {
+		else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji" || cl == "Youkai" || cl == "Youko" || cl == "Fuuhaku" || cl == "Raikou" || cl == "Nekomata" || cl == "Nurarihyon" || cl == "Oni" || cl == "Tengu" || cl == "Beastfolk" || cl == "None" || cl == "Undead" || cl == "Desert Country" || cl == "Samurai" || cl == "Heavy Artillery" || cl == "Kibanin") {
 			cl = cl;
 		}
 	    else if (cl == "Elf" || cl == "Elves") {cl = "Elves:Stats"}
