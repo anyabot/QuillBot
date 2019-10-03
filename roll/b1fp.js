@@ -1,2 +1,2 @@
-var b1fp = ['Shinato', 'Aquamarie'];
+var b1fp = ['Filo'];
 exports.b1fp = b1fp;
