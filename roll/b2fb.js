@@ -1,3 +1,3 @@
-var b2fb = ['Aix', 'Elyse'];
+var b2fb = ['Sylseth', 'Adelaide'];
 
 exports.b2fb = b2fb;
