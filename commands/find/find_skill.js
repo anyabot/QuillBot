@@ -135,6 +135,7 @@ class FindSkill extends commando.Command {
 						output = na(output)
 						var embed3 = new Discord.RichEmbed()
 						embed3.setTitle("Skill")
+						embed3.setURL("https://aigis.fandom.com/wiki/" + urlencode(unit))
 						embed3.setThumbnail(img)
 						if (!output2) {embed3.addField(nna, output + "\n**CD: **" + xyz[len-1])}
 						if (output2) {
