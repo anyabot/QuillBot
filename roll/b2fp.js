@@ -1,2 +1,2 @@
-var b2fp = ['Mithria'];
+var b2fp = ['Tyr', 'Figuneria'];
 exports.b2fp = b2fp ;
