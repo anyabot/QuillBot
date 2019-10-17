@@ -72,7 +72,8 @@ class UtilDaily extends commando.Command {
           "星に祈りし聖夜の癒し手": "Camilla (Christmas)",
           "学園騎兵科の新入生": "Mischa (School)",
           "白き獣人と闇の組織": "Fluffy",
-          "砂浜を駆ける魔術師": "Maya (Swimsuit)"
+          "砂浜を駆ける魔術師": "Maya (Swimsuit)",
+	"密林のハロウィンパーティー" : "Renarde (Halloween)"
         }
 
 request(link, function(err, resp, html) {
