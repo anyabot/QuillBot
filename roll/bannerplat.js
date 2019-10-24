@@ -81,7 +81,7 @@ var bannerplat = {
 	80 : 'Shaina',
 	81 : 'Maryfa',
 	82 : 'Filo',
-	83 : 'Ereka'
+	83 : 'Eleka'
 }
 
 exports.bannerplat = bannerplat;
