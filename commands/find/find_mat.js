@@ -320,7 +320,7 @@ request(link, function(err, resp, html) {
 						embedaw.addField("Fairy", "**AW:** Spirit of Awakening \n(Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 					}
 					if (gold) {
-						embedaw.addField("Money", "200,000G", true)
+						embedaw.addField("Money", "100,000G", true)
 						if (len == 1) {
 							embedaw.addField("Orbs", orb1 + " x 1", true)
 						}
@@ -329,7 +329,7 @@ request(link, function(err, resp, html) {
 						}
 					}
 					if (plat || sap) {
-						embedaw.addField("Money", "250,000G", true)
+						embedaw.addField("Money", "200,000G", true)
 						if (len == 1) {
 							embedaw.addField("Orbs", orb1 + " x 2", true)
 						}
@@ -482,7 +482,7 @@ request(link, function(err, resp, html) {
 								embedaw.addField("Fairy", "**AW:** Spirit of Awakening \n(Victoire)\n**SAW:** Spirit of Skill \nAwakening (Naiad)", true)
 							}
 							if (gold) {
-								embedaw.addField("Money", "200,000G", true)
+								embedaw.addField("Money", "100,000G", true)
 								if (len == 1) {
 									embedaw.addField("Orbs", orb1 + " x 1", true)
 								}
@@ -491,7 +491,7 @@ request(link, function(err, resp, html) {
 								}
 							}
 							if (plat || sap) {
-								embedaw.addField("Money", "250,000G", true)
+								embedaw.addField("Money", "200,000G", true)
 								if (len == 1) {
 									embedaw.addField("Orbs", orb1 + " x 2", true)
 								}
