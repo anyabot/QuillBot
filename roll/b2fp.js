@@ -1,2 +1,2 @@
-var b2fp = ['Tyr', 'Figuneria'];
+var b2fp = ['Orihime'];
 exports.b2fp = b2fp ;
