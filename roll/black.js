@@ -76,7 +76,7 @@ var black = {
 	75 : 'Spiria',
 	76 : 'Erlang Shen',
 	77 : 'Setsuna',
-	78 : 'Yuugen (Black)'
+	78 : 'Yuugen (Black)',
 	79 : 'Solais (Black)'
 }
 
