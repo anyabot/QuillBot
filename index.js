@@ -8,6 +8,12 @@ const bot = new commando.CommandoClient({
 bot.on('ready', () => {
     bot.user.setActivity('Prefix:& | &help to view commands');
 });
+bot.on('message', message => {
+    if(message.channel.name != undefined)  {
+        if (message.member.roles.find(role => role.name === "Silvers")) {}
+        else {message.member.addRole(message.guild.roles.find(role => role.name === "Silvers"))}
+    }
+});
 bot.registry.registerGroup('find', 'Find');
 bot.registry.registerGroup('util2', 'Util')
 bot.registry.registerGroup('time', 'Time')
