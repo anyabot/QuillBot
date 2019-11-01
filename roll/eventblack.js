@@ -24,7 +24,8 @@ var eventblack = {
 	23 : 'Dark Knight',
 	24 : 'Cynthia',
 	25 : 'Xing-Fu',
-	26 : 'Anna (Waitress)'
+	26 : 'Anna (Waitress)',
+	27 : 'Atnates (Black)'
 }
 
 exports.eventblack = eventblack;
