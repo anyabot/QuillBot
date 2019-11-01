@@ -75,7 +75,9 @@ var black = {
 	74 : 'Risley',
 	75 : 'Spiria',
 	76 : 'Erlang Shen',
-	77 : 'Setsuna'
+	77 : 'Setsuna',
+	78 : 'Yuugen (Black)'
+	79 : 'Solais (Black)'
 }
 
 exports.black = black;
