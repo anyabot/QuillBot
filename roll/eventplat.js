@@ -123,9 +123,10 @@ var eventplat = {
 	122 : 'Cypria (Christmas)',
 	123 : 'Chloe',
 	124 : 'Ilios',
-	125 : 'Yuugen (Platinum)',
-	126 : 'Solais (Platinum)',
-	127 : 'Atnates (Platinum)'
+	125 : 'Floga',
+	126 : 'Yuugen (Platinum)',
+	127 : 'Solais (Platinum)',
+	128 : 'Atnates (Platinum)'
 }
 
 exports.eventplat = eventplat;
