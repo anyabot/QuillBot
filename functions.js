@@ -7,13 +7,13 @@ exports.nameChange = function nameChange(text) {
 	    var np = unit.split(' ');
 	    var npl = np.length;
 	    if (npl >= 2) {
-		    if (np[0] == "Chibi" | np[0] == "C") {
+		    if (np[0] == "Chibi" || np[0] == "C") {
 		    		np = np.slice(1, npl)
 				let un = np.join(' ')
 				if (name[un]) {un = name[un]}
 				unit = "Chibi " + un
 		    }
-		    else if (np[npl-1] == "Chibi" | np[npl-1] == "C") {
+		    else if (np[npl-1] == "Chibi" || np[npl-1] == "C") {
 		    		np = np.slice(0, npl - 1)
 				let un = np.join(' ')
 				if (name[un]) {un = name[un]}
