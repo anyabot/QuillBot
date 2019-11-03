@@ -35,7 +35,9 @@ var suffix = {
     'Bonded' : '(Bonded)',
     'Plat' : '(Platinum)',
     'Platinum' : '(Platinum)',
-    'Black' : '(Black)'
+    'Black' : '(Black)',
+    'P' : '(Platinum)',
+    'B' : '(Black)'
 }
 
 exports.suffix = suffix;
