@@ -1,2 +1,2 @@
-var pugblack = ['Despia', 'Eldora', 'Luxe', 'Duo']
+var pugblack = ['Dine', 'Ashera', 'Kuuko', 'Socie']
 exports.pugblack = pugblack;
