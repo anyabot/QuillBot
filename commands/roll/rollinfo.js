@@ -23,7 +23,7 @@ var urlencode = require('urlencode');
 const Keyv = require('keyv');
 require('@keyv/mysql')
 require('@keyv/mongo')
-var chibi = ['Chibi Paula' , 'Chibi Kyuubi'];
+var chibi = ['Chibi Leeanne' , 'Chibi Dorothea'];
 
 
 
