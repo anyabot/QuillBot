@@ -1,3 +1,3 @@
-var b1fb = ['Solais (Black)', 'Yuugen (Black)'];
+var b1fb = ['Tenma', 'Remii'];
 
 exports.b1fb = b1fb;
