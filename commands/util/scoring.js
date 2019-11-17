@@ -18,6 +18,7 @@ class FindOrb extends commando.Command {
 	async run(message, input) {
 		  var embed = new Discord.RichEmbed()
 			embed.setTitle('Tower of Heroes Up Scoring')
+			embed.setURL('https://aigis.fandom.com/wiki/The_Tower_of_Heroes')
 			embed.setImage('https://vignette.wikia.nocookie.net/aigis/images/d/d4/Herotower_scorechart.png/revision/latest?cb=20191031182629')
       message.channel.send(embed)
 	}
