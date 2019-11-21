@@ -7,7 +7,8 @@ var iblack = {
 	6 : 'Wurm',
 	7 : 'Mephisto',
 	8 : 'Aurora',
-	9 : 'Eleonora'
+	9 : 'Eleonora',
+	10 : 'Aleida'
 }
 
 exports.iblack = iblack;
