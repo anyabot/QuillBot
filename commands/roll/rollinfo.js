@@ -18,6 +18,12 @@ var s1fg = []
 var s2fb = require('../../roll/s2fb.js').s2fb;
 var s2fp = require('../../roll/s2fp.js').s2fp;
 var s2fg = ['Verotte (Halloween)']
+var i1fb = require('../../roll/i1fb.js').i1fb;
+var i1fp = require('../../roll/i1fp.js').i1fp;
+var i1fg = require('../../roll/i1fg.js').i1fg;
+var i2fb = require('../../roll/i2fb.js').i2fb;
+var i2fp = require('../../roll/i2fp.js').i2fp;
+var i2fg = require('../../roll/i2fg.js').i2fg;
 var gachalist = require('../../roll/gachalist.js').gachalist
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
@@ -48,6 +54,8 @@ class RanRoll extends commando.Command {
 	    var mes = "**Banner List:**\nDefault"
 	    if (gachalist["s1open"] == true) {mes = mes + "\nSeasonal 1 (s1, seasonal1)"}
 	    if (gachalist["s2open"] == true) {mes = mes + "\nSeasonal 2 (s2, seasonal2)"}
+	    if (gachalist["i1open"] == true) {mes = mes + "\nImperial 1 (i1, we1)"}
+	    if (gachalist["i2open"] == true) {mes = mes + "\nImperial 2 (i2, we2)"}
 	    if (gachalist["b1open"] == true) {mes = mes + "\nBanner 1 (b1, banner1, preminum 1)"}
 	    if (gachalist["b2open"] == true) {mes = mes + "\nBanner 2 (b2, banner2, preminum 2)"}
 	    if (gachalist["pugopen"] == true) {mes = mes + "\nPUG (pick-up, pickup)"}
@@ -67,6 +75,20 @@ class RanRoll extends commando.Command {
 	      if (s2fp.length > 0) {s2 = s2 + "\nFeatured Plat: " + s2fp.join(', ')}
 	      if (s2fg.length > 0) {s2 = s2 + "\nFeatured Gold: " + s2fg.join(', ')}
 		    mes = mes + "\n" + s2
+	    }
+	    if (gachalist["i1open"] == true) {
+		    var i1 = "**Imperial 1**"
+	      if (s1fb.length > 0) {i1 = i1 + "\nFeatured Black: " + i1fb.join(', ')}
+	      if (s1fp.length > 0) {i1 = i1 + "\nFeatured Plat: " + i1fp.join(', ')}
+	      if (s1fg.length > 0) {i1 = i1 + "\nFeatured Gold: " + i1fg.join(', ')}  
+		    mes = mes + "\n" + i1
+	    }
+	    if (gachalist["i2open"] == true) {
+	    	var i2 = "**Imperial 2**"
+	      if (s2fb.length > 0) {i2 = i2 + "\nFeatured Black: " + i2fb.join(', ')}
+	      if (s2fp.length > 0) {i2 = i2 + "\nFeatured Plat: " + i2fp.join(', ')}
+	      if (s2fg.length > 0) {i2 = i2 + "\nFeatured Gold: " + i2fg.join(', ')}
+		    mes = mes + "\n" + i2
 	    }
 	    if (gachalist["b1open"] == true) {
 		    var b1 = "**Banner 1**"
