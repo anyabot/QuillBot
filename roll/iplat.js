@@ -10,7 +10,8 @@ var iplat = {
 	9 : 'Helmine',
 	10 : 'Roza',
 	11 : 'Ralph',
-	12 : 'Motley'
+	12 : 'Motley',
+	13 : 'Patricia'
 }
 
 exports.iplat = iplat;
