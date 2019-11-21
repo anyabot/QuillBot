@@ -126,7 +126,9 @@ var eventplat = {
 	125 : 'Floga',
 	126 : 'Yuugen (Platinum)',
 	127 : 'Solais (Platinum)',
-	128 : 'Atnates (Platinum)'
+	128 : 'Atnates (Platinum)',
+	129 : 'Vine',
+	130 : 'Krasil'
 }
 
 exports.eventplat = eventplat;
