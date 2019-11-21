@@ -78,16 +78,16 @@ class RanRoll extends commando.Command {
 	    }
 	    if (gachalist["i1open"] == true) {
 		    var i1 = "**Imperial 1**"
-	      if (s1fb.length > 0) {i1 = i1 + "\nFeatured Black: " + i1fb.join(', ')}
-	      if (s1fp.length > 0) {i1 = i1 + "\nFeatured Plat: " + i1fp.join(', ')}
-	      if (s1fg.length > 0) {i1 = i1 + "\nFeatured Gold: " + i1fg.join(', ')}  
+	      if (i1fb.length > 0) {i1 = i1 + "\nFeatured Black: " + i1fb.join(', ')}
+	      if (i1fp.length > 0) {i1 = i1 + "\nFeatured Plat: " + i1fp.join(', ')}
+	      if (i1fg.length > 0) {i1 = i1 + "\nFeatured Gold: " + i1fg.join(', ')}  
 		    mes = mes + "\n" + i1
 	    }
 	    if (gachalist["i2open"] == true) {
 	    	var i2 = "**Imperial 2**"
-	      if (s2fb.length > 0) {i2 = i2 + "\nFeatured Black: " + i2fb.join(', ')}
-	      if (s2fp.length > 0) {i2 = i2 + "\nFeatured Plat: " + i2fp.join(', ')}
-	      if (s2fg.length > 0) {i2 = i2 + "\nFeatured Gold: " + i2fg.join(', ')}
+	      if (i2fb.length > 0) {i2 = i2 + "\nFeatured Black: " + i2fb.join(', ')}
+	      if (i2fp.length > 0) {i2 = i2 + "\nFeatured Plat: " + i2fp.join(', ')}
+	      if (i2fg.length > 0) {i2 = i2 + "\nFeatured Gold: " + i2fg.join(', ')}
 		    mes = mes + "\n" + i2
 	    }
 	    if (gachalist["b1open"] == true) {
