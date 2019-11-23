@@ -1,5 +1,6 @@
 var name = {
     'Pika' : 'Keraunos',
+    'Pikachu' : 'Keraunos',
     'Tesla' : 'Keraunos',
     'Electromagnetic Gandhi': 'Keraunos',
     'Aw' : 'Sacred Gear',
