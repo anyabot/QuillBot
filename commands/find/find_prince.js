@@ -195,6 +195,7 @@ class FindPrince extends commando.Command {
 						let nam = na(output);
 						embed = new Discord.RichEmbed()
 						embed.setTitle(nam)
+						embed.setURL(link)
 						embed.setThumbnail(img)
 						embed.setColor('LIGHT_GREY')
 						embed.addField("HP", hp, true)
