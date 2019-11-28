@@ -22,7 +22,13 @@ var name = {
     'Bird' : 'Wind Guardian',
     'Garuda' : 'Wind Guardian',
     'Wind' : 'Wind Guardian',
-    'Heroic' : 'Einherjar'
+    'Heroic' : 'Einherjar',
+    'Successor' : 'Hero King',
+    'Hero King\'s Successor' : 'Hero King',
+    'Kero King Successor' : 'Hero King',
+    'Chair' : 'Hero King',
+    'Flower' : 'Hero King',
+    'Throne' : 'Hero King'
 }
 
 exports.name = name;
