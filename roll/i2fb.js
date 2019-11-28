@@ -1,3 +1,3 @@
-var i2fb = ['Aurora', 'Elmira'];
+var i2fb = ['Eleonora', 'Mephisto'];
 
 exports.i2fb = i2fb;
