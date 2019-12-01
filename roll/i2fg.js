@@ -1,3 +1,3 @@
-var i2fg = ['Filine', 'Frey'];
+var i2fg = ['Natalie'];
 
 exports.i2fg = i2fg;
