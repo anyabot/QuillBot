@@ -1,3 +1,3 @@
-var list = ['Carat', 'Alicia', 'Mireille', 'Sabine', 'Fleurio', 'Chibi Mireille'];
+var list = ['Sandy', 'Sandra', 'Sandra (Swimsuit)'];
 
 exports.list = list;
