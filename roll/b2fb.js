@@ -1,3 +1,3 @@
-var b2fb = ['Sylseth', 'Orochihime'];
+var b2fb = ['Ema'];
 
 exports.b2fb = b2fb;
