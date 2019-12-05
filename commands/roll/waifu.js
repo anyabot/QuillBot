@@ -41,6 +41,7 @@ class RanRoll extends commando.Command {
 			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(name) + "_Render.png";
 				request(link, function(err, resp, html) {
 				if (!err) {
+					console.log(resp)
 					const $ = cheerio.load(html);
 					var img = $('.fullImageLink a').attr('href')
 					console.log(img)
