@@ -43,6 +43,7 @@ class RanRoll extends commando.Command {
 				if (!err) {
 					const $ = cheerio.load(html);
 					var img = $('.fullImageLink a').attr('href')
+					console.log(img)
 					if (img) {
 						var embed = new Discord.RichEmbed()
 						embed.setTitle(unit)
