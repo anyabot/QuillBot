@@ -2044,6 +2044,7 @@ async function send10(message, lr, embed, ind, canvas, ctx) {
 		var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
 		request(link, function(err, resp, html) {
 			if (!err) {
+				const $ = cheerio.load(html);
 				img = ($('.BaseGallery div:nth-child(1) a img').attr('data-src'));
 				if (img) {
 					let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
@@ -2091,6 +2092,7 @@ async function send1(message, unit, embed) {
 	var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
 	request(link, function(err, resp, html) {
 		if (!err) {
+			const $ = cheerio.load(html);
 			img = ($('.BaseGallery div:nth-child(1) a img').attr('data-src'));
 			if (img) {
 				let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
