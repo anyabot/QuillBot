@@ -173,18 +173,8 @@ class RanRoll extends commando.Command {
 					}
 				}
 				lr.push(unit)
-				var img
-				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-						message.channel.send(embed)
-					}
-				})
-				
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+				send1(message, unit, embed)
 			}
 			if (r10) {
 				embed.setColor([95, 64, 0])
@@ -320,17 +310,8 @@ class RanRoll extends commando.Command {
 				}
 				lr.push(unit)
 				var img
-				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-						message.channel.send(embed)
-					}
-				})
-				
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+				send1(message, unit, embed)
 			}
 			if (r10) {
 				embed.setColor([95, 64, 0])
@@ -465,17 +446,8 @@ class RanRoll extends commando.Command {
 					}
 				}
 				lr.push(unit)
-				var img
-				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						embed.setImage(img)
-						embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-						message.channel.send(embed)
-					}
-				})
+				embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+				send1(message, unit, embed)
 			}
 			if (r10) {
 				embed.setColor([95, 64, 0])
@@ -631,17 +603,8 @@ class RanRoll extends commando.Command {
 						}
 					}
 					lr.push(unit)
-					var img
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-					request(link, function(err, resp, html) {
-						if (!err) {
-							const $ = cheerio.load(html);
-							img = $('.fullImageLink a').attr('href')
-							embed.setImage(img)
-							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-							message.channel.send(embed)
-						}
-					})
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+					send1(message, unit, embed)
 				}
 				if (r10) {
 					embed.setColor([95, 64, 0])
@@ -833,17 +796,8 @@ class RanRoll extends commando.Command {
 						}
 					}
 					lr.push(unit)
-					var img
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-					request(link, function(err, resp, html) {
-						if (!err) {
-							const $ = cheerio.load(html);
-							img = $('.fullImageLink a').attr('href')
-							embed.setImage(img)
-							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-							message.channel.send(embed)
-						}
-					})
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+					send1(message, unit, embed)
 				}
 				if (r10) {
 					embed.setColor([95, 64, 0])
@@ -1065,17 +1019,8 @@ class RanRoll extends commando.Command {
 						}
 					}
 					lr.push(unit)
-					var img
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-					request(link, function(err, resp, html) {
-						if (!err) {
-							const $ = cheerio.load(html);
-							img = $('.fullImageLink a').attr('href')
-							embed.setImage(img)
-							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-							message.channel.send(embed)
-						}
-					})
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+					send1(message, unit, embed)
 				}
 				if (r10) {
 					embed.setColor([95, 64, 0])
@@ -1297,17 +1242,8 @@ class RanRoll extends commando.Command {
 						}
 					}
 					lr.push(unit)
-					var img
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-					request(link, function(err, resp, html) {
-						if (!err) {
-							const $ = cheerio.load(html);
-							img = $('.fullImageLink a').attr('href')
-							embed.setImage(img)
-							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-							message.channel.send(embed)
-						}
-					})
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+					send1(message, unit, embed)
 				}
 				if (r10) {
 					embed.setColor([95, 64, 0])
@@ -1529,17 +1465,8 @@ class RanRoll extends commando.Command {
 						}
 					}
 					lr.push(unit)
-					var img
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-					request(link, function(err, resp, html) {
-						if (!err) {
-							const $ = cheerio.load(html);
-							img = $('.fullImageLink a').attr('href')
-							embed.setImage(img)
-							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-							message.channel.send(embed)
-						}
-					})
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+					send1(message, unit, embed)
 				}
 				if (r10) {
 					embed.setColor([95, 64, 0])
@@ -1761,17 +1688,8 @@ class RanRoll extends commando.Command {
 						}
 					}
 					lr.push(unit)
-					var img
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-					request(link, function(err, resp, html) {
-						if (!err) {
-							const $ = cheerio.load(html);
-							img = $('.fullImageLink a').attr('href')
-							embed.setImage(img)
-							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-							message.channel.send(embed)
-						}
-					})
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+					send1(message, unit, embed)
 				}
 				if (r10) {
 					embed.setColor([95, 64, 0])
@@ -1993,17 +1911,8 @@ class RanRoll extends commando.Command {
 						}
 					}
 					lr.push(unit)
-					var img
-					var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-					request(link, function(err, resp, html) {
-						if (!err) {
-							const $ = cheerio.load(html);
-							img = $('.fullImageLink a').attr('href')
-							embed.setImage(img)
-							embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
-							message.channel.send(embed)
-						}
-					})
+					embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left")
+					send1(message, unit, embed)
 				}
 				if (r10) {
 					embed.setColor([95, 64, 0])
@@ -2132,13 +2041,29 @@ function size_dict(d){
 async function send10(message, lr, embed, ind, canvas, ctx) {
 	if (ind < 10) {
 		var unit = lr[ind]
-		var link2 = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-		request(link2, function(err, resp, html) {
+		var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
+		request(link, function(err, resp, html) {
 			if (!err) {
-				const $2 = cheerio.load(html);
-				var ilink = $2('.fullImageLink a').attr('href')
+				img = ($('.BaseGallery div:nth-child(1) a img').attr('data-src'));
+				if (img) {
+					let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
+					let pa = nam.split(" Icon")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+				if (!img) {
+					img = $('.image.lightbox img').attr('data-src')
+						if (img) {
+						let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
+						let pa = nam.split(" Icon")
+						if (pa.length > 1) {
+							img = img.split("/scale-to-width-down/")[0]
+						}
+					}
+				}
 				var options = {
-					uri: ilink,
+					uri: img,
 					method: "get",
 					encoding: null
 				};
@@ -2154,12 +2079,38 @@ async function send10(message, lr, embed, ind, canvas, ctx) {
 				})
 			}
 		})
-	}
 	else {
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 		embed.attachFile(attachment)
 		embed.setImage('attachment://unknown.png');
 		message.channel.send(embed);
 	}
+}
+async function send1(message, unit, embed) {
+	var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
+	request(link, function(err, resp, html) {
+		if (!err) {
+			img = ($('.BaseGallery div:nth-child(1) a img').attr('data-src'));
+			if (img) {
+				let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
+				let pa = nam.split(" Render")
+				if (pa.length > 1) {
+					img = img.split("/scale-to-width-down/")[0]
+				}
+			}
+			if (!img) {
+				img = $('.image.lightbox img').attr('data-src')
+					if (img) {
+					let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
+					let pa = nam.split(" Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+			}
+			embed.setImage(img)
+			message.channel.send(embed)
+		}
+	})
 }
 module.exports = RanRoll;
