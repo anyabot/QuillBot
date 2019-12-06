@@ -92,16 +92,7 @@ class RanRoll extends commando.Command {
 				embed.setColor([95, 64, 0])
 			}
 			lr.push(unit)
-			var img
-			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-			request(link, function(err, resp, html) {
-				if (!err) {
-					const $ = cheerio.load(html);
-					img = $('.fullImageLink a').attr('href')
-					embed.setImage(img)
-					message.channel.send(embed)
-				}
-			})
+			send1(message, unit, embed)
 		}
 		else {
 			var fday = ufame[0]
@@ -169,5 +160,33 @@ function size_dict(d){
 	c=0; 
 	for (i in d) ++c;
 	return c
+}
+async function send1(message, unit, embed) {
+	var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
+	request(link, function(err, resp, html) {
+		if (!err) {
+			const $ = cheerio.load(html);
+			img = ($('.BaseGallery div:nth-child(1) a img').attr('data-src'));
+			if (img) {
+				let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
+				let pa = nam.split(" Render")
+				if (pa.length > 1) {
+					img = img.split("/scale-to-width-down/")[0]
+				}
+			}
+			if (!img) {
+				img = $('.image.lightbox img').attr('data-src')
+					if (img) {
+					let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
+					let pa = nam.split(" Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+			}
+			embed.setImage(img)
+			message.channel.send(embed)
+		}
+	})
 }
 module.exports = RanRoll;
