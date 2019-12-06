@@ -2079,6 +2079,7 @@ async function send10(message, lr, embed, ind, canvas, ctx) {
 				})
 			}
 		})
+	}
 	else {
 		const attachment = new Discord.Attachment(canvas.toBuffer(), 'unknown.png');
 		embed.attachFile(attachment)
