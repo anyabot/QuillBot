@@ -133,16 +133,7 @@ class RanRoll extends commando.Command {
 					embed.setColor([95, 64, 0])
 				}
 				lr.push(unit)
-				var img
-				var link = "https://aigis.fandom.com/wiki/File:" + urlencode(unit) + "_Icon.png";
-				request(link, function(err, resp, html) {
-					if (!err) {
-						const $ = cheerio.load(html);
-						img = $('.fullImageLink a').attr('href')
-						embed.setImage(img)
-						message.channel.send(embed)
-					}
-				})
+				send1(message, unit, embed)
 			}
 			else {
 				var dif1 = fm.diff(m)
