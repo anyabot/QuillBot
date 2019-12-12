@@ -168,7 +168,7 @@ async function send1(message, unit, embed) {
 			if (!img) {
 				img = $('.image.lightbox img').attr('data-src')
 					if (img) {
-					let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
+					let nam =($('.image.lightbox img').attr('alt'));
 					let pa = nam.split(" Icon")
 					if (pa.length > 1) {
 						img = img.split("/scale-to-width-down/")[0]
