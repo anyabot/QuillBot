@@ -1,3 +1,3 @@
-var s1fb = ['Cornelia (Christmas)'];
+var s1fb = ['Duo (Christmas)'];
 
 exports.s1fb = s1fb;
