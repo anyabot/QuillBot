@@ -1,3 +1,3 @@
-var s1fp = ['Bernice (Christmas)', 'Kanon (Christmas)', 'Charlotte (Christmas)'];
+var s1fp = ['Solano (Christmas)'];
 
 exports.s1fp = s1fp;
