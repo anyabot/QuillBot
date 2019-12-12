@@ -2041,6 +2041,7 @@ function size_dict(d){
 async function send10(message, lr, embed, ind, canvas, ctx) {
 	if (ind < 10) {
 		var unit = lr[ind]
+		console.log(unit)
 		var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
 		request(link, function(err, resp, html) {
 			if (!err) {
@@ -2096,7 +2097,7 @@ async function send1(message, unit, embed) {
 			img = ($('.BaseGallery div:nth-child(1) a img').attr('data-src'));
 			if (img) {
 				let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
-				let pa = nam.split(" Render")
+				let pa = nam.split(" Icon")
 				if (pa.length > 1) {
 					img = img.split("/scale-to-width-down/")[0]
 				}
@@ -2105,7 +2106,7 @@ async function send1(message, unit, embed) {
 				img = $('.image.lightbox img').attr('data-src')
 					if (img) {
 					let nam =($('.BaseGallery div:nth-child(1) a img').attr('alt'));
-					let pa = nam.split(" Render")
+					let pa = nam.split(" Icon")
 					if (pa.length > 1) {
 						img = img.split("/scale-to-width-down/")[0]
 					}
