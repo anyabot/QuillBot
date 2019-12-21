@@ -225,6 +225,8 @@ request(link, function(err, resp, html) {
 				awname = na(output);
 			}
 			else if (na(output) == "Spirit of War") {awname = "Spirits of War"}
+			else if (na(output) == "Dragon Shaman") {awname = "Dragon Shamans"}
+			else if (na(output) == "Shaman") {awname = "High Shamans"}
 			else if (na(output).slice(-1) == "\】" || na(output).slice(-1) == "\)") {
 				let words = na(output).split(' ');
 				let le = words.length;
@@ -240,6 +242,7 @@ request(link, function(err, resp, html) {
 			if (na(output) == "Samurai" || na(output) == "Heavy Artillery") {ccname = na(output)}
 			else if (na(output) == "Intermediate Dragon Soldier"){ccname = "Dragon Soldiers"}
 			else if (na(output) == "Priestess Warrior"){ccname = "Priest Warriors"}
+			else if (na(output) == "Shaman"){ccname = "Shamans"}
 			else {ccname = pluralize.plural(na(output))}
 			
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + urlencode(ccname);
