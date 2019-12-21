@@ -409,6 +409,10 @@ request(link, function(err, resp, html) {
 			else if (na(output) == "Priestess Warrior Leader") {
 				awname = "Priest Warrior Leaders";
 			}
+			else if (na(output) == "Shaman"){
+				ccname = "Shamans"
+				awname = "High Shamans"
+			}
 			else awname = pluralize.plural(na(output));
 			
 			let link2 = "https://aigis.fandom.com/wiki/Class_Change/" + urlencode(ccname);
