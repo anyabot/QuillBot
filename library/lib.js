@@ -133,7 +133,12 @@ var name = {
 	'Spirit of Rainbow' : 'Christia',
 	'Rainbow Spirit' : 'Christia',
 	'Rainbow Fairy' : 'Christia',
-	'Rf' : 'Christia'
+	'Rf' : 'Christia',
+	'Alyssa' : 'Alissa',
+	'Santalyssa' : 'Alissa (Christmas)',
+	'<:lmcurious:650851194239057920>' : 'Lei-Mei',
+	'Shu-xian' : 'Shu-Xian',
+	'<:NielShy:650852179003047946>' : 'Niel'
 }
 
 exports.name = name;
