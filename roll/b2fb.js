@@ -1,3 +1,3 @@
-var b2fb = ['Spiria'];
+var b2fb = ['Kuuko', 'Remii'];
 
 exports.b2fb = b2fb;
