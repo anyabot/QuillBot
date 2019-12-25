@@ -401,6 +401,7 @@ request(link, function(err, resp, html) {
 			if (na(output) == "Samurai" || na(output) == "Heavy Artillery") {ccname = na(output)}
 			else if (na(output) == "Intermediate Dragon Soldier"){ccname = "Dragon Soldiers"}
 			else if (na(output) == "Priestess Warrior"){ccname = "Priest Warriors"}
+			else if (na(output) == "Shaman"){ccname = "Shamans"}
 			else {ccname = pluralize.plural(na(output))}
 			output = $('.c2 td:nth-child(1)').first().html();
 			if (na(output) == "Priest") {
@@ -409,8 +410,7 @@ request(link, function(err, resp, html) {
 			else if (na(output) == "Priestess Warrior Leader") {
 				awname = "Priest Warrior Leaders";
 			}
-			else if (na(output) == "Shaman"){
-				ccname = "Shamans"
+			else if (na(output) == "High Shaman"){
 				awname = "High Shamans"
 			}
 			else awname = pluralize.plural(na(output));
