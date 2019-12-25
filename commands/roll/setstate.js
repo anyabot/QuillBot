@@ -34,32 +34,140 @@ class RanRoll extends commando.Command {
 			message.channel.send(mes)
 		}
 		else {
-			var name
 			var unit = uwaifu[0]
-			if (state == "BASE") {
-				name = unit
-			}
-			else {
-				name = unit + " " + state
-			}
-			var link = "https://aigis.fandom.com/wiki/File:" + urlencode(name) + "_Render.png";
-				request(link, function(err, resp, html) {
-				if (!err) {
-					const $ = cheerio.load(html);
-					var img = $('.fullImageLink a').attr('href')
-					if (img) {
-						var embed = new Discord.RichEmbed()
-						console.log(img)
-						embed.setTitle(unit)
-						embed.setImage(img)
-						message.channel.send(embed);
-						var uunit = [unit, state]
-						waifu.set(message.author.id, uunit)
-					}
-					else {message.channel.send("Wrong state input")}
-				}
-			})
+			send1(message, unit, state, waifu)
 		}
 	}
+}
+async function send1(message, unit, state, waifu) {
+	var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
+	request(link, function(err, resp, html) {
+		if (!err) {
+			const $ = cheerio.load(html);
+			if (state == "BASE") {
+				img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
+				if (img) {
+					let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));
+					let pa = nam.split(" Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+				if (!img) {
+					img = $('.image.lightbox img').attr('data-src')
+						if (img) {
+						let nam =($('.image.lightbox img').attr('alt'));
+						let pa = nam.split(" Render")
+						if (pa.length > 1) {
+							img = img.split("/scale-to-width-down/")[0]
+						}
+					}
+				}
+			}
+			else if (state == "AW") {
+				img = ($('.AWGallery div:nth-child(2) a img').attr('data-src'));
+				if (img) {
+					let nam =($('.AWGallery div:nth-child(2) a img').attr('alt'));
+					let pa = nam.split(" AW Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+				if (!img) {
+					($('.image.lightbox')).each(function(i, elem) {
+        					let img2 = $(this).find('img').attr('data-src')
+        					let nam = $(this).find('img').attr('alt')
+        					let pa = nam.split(" AW Render")
+        					if (pa.length > 1) {	
+							img = img2.split("/scale-to-width-down/")[0]
+						}
+				      });
+				}
+			}
+			else if (state == "AW2") {
+				if (img) {
+					img = ($('.AW2Gallery div:nth-child(2) a img').attr('data-src'));
+					let nam =($('.AW2Gallery div:nth-child(2) a img').attr('alt'));
+					let pa = nam.split(" AW2 Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+				if (!img) {
+					($('.image.lightbox')).each(function(i, elem) {
+        					let img2 = $(this).find('img').attr('data-src')
+        					let nam = $(this).find('img').attr('alt')
+        					let pa = nam.split(" AW2 Render")
+        					if (pa.length > 1) {	
+							img = img2.split("/scale-to-width-down/")[0]
+						}
+				      });
+				}
+			}
+			else if (state == "AW2v1") {
+				if (img) {
+					img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));
+					let nam =($('.AW2v1Gallery div:nth-child(2) a img').attr('alt'));
+					let pa = nam.split(" AW2v1 Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+				if (!img) {
+					($('.image.lightbox')).each(function(i, elem) {
+        					let img2 = $(this).find('img').attr('data-src')
+        					let nam = $(this).find('img').attr('alt')
+        					let pa = nam.split(" AW2v1 Render")
+        					if (pa.length > 1) {	
+							img = img2.split("/scale-to-width-down/")[0]
+						}
+				      });
+				}
+			}
+			else if (state == "AW2v2") {
+				if (img) {
+					img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));
+					let nam =($('.AW2v2Gallery div:nth-child(2) a img').attr('alt'));
+					let pa = nam.split(" AW2v2 Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
+					}
+				}
+				if (!img) {
+					($('.image.lightbox')).each(function(i, elem) {
+        					let img2 = $(this).find('img').attr('data-src')
+        					let nam = $(this).find('img').attr('alt')
+        					let pa = nam.split(" AW2v2 Render")
+        					if (pa.length > 1) {	
+							img = img2.split("/scale-to-width-down/")[0]
+						}
+				      });
+				}
+			}
+			else {
+				for (var i = 1; i < 5; i++) {
+      					let img2 = ($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('data-src'));
+      					if (img) {
+        					let nam =($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('alt'));
+        					let pa = nam.split(" " + state " Render")
+        					if (pa.length > 1) {
+          						img = img2.split("/scale-to-width-down/")[0]
+        					}
+      					}
+    				}
+			}
+			if (img) {
+				message.channel.send(embed)
+				var embed = new Discord.RichEmbed()
+				embed.setTitle(unit)
+				embed.setURL(link)
+				embed.setImage(img)
+				message.channel.send(embed);
+				var uunit = [unit, state]
+				waifu.set(message.author.id, uunit)
+			}
+			else {message.channel.send("Wrong state input")}
+		}
+	})
 }
 module.exports = RanRoll;
