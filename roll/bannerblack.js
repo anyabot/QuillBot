@@ -1,4 +1,4 @@
-var bannerblack = {
+var bannerblack = [
     	'Amanda',
     	'Alice',
     	'Nataku',
@@ -54,6 +54,6 @@ var bannerblack = {
 	'Erlang Shen',
 	'Setsuna',
 	'Heios'
-}
+]
 
 exports.bannerblack = bannerblack;
