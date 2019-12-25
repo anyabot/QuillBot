@@ -1,4 +1,4 @@
-var iblack = {
+var iblack = [
     	'Angeline',
     	'Diana',
     	'Elmira',
@@ -9,6 +9,6 @@ var iblack = {
 	'Aurora',
 	'Eleonora',
 	'Aleida'
-}
+]
 
 exports.iblack = iblack;
