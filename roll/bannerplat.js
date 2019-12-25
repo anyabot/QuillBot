@@ -1,4 +1,4 @@
-var bannerplat = {
+var bannerplat = [
     	'Seria',
     	'Saria',
     	'Zenobia',
@@ -83,6 +83,6 @@ var bannerplat = {
 	'Filo',
 	'Eleka',
 	'Luvea'
-}
+]
 
 exports.bannerplat = bannerplat;
