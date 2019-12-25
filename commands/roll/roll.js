@@ -109,27 +109,27 @@ class RanRoll extends commando.Command {
 		else if (pool == "default") {
 			usc = usc - scu;
 			embed.setTitle("Gacha Roll Result")
-			gacha(message, embed, user, lastroll, canvas, ctx, black, plat, gold, sil, [], [], [], r10)
+			gacha(message, embed, user, lastroll, canvas, ctx, black, plat, gold, sil, [], [], [], r10, upb, upp, usc)
 		}
 	    	else if (pool == "event" || pool == "ev") {
 			usc = usc - scu;
 			embed.setTitle("Event Gacha Roll Result")
-			gacha(message, embed, user, lastroll, canvas, ctx, eventblack, eventplat, eventgold, sil, [], [], [], r10)
+			gacha(message, embed, user, lastroll, canvas, ctx, eventblack, eventplat, eventgold, sil, [], [], [], r10, upb, upp, usc)
 		}
 	    	else if (pool == "imperial" || pool == "white empire" || pool == "we") {
 		    	usc = usc - scu;
 			embed.setTitle("Imperial Gacha Roll Result")
-			gacha(message, embed, user, lastroll, canvas, ctx, iblack, iplat, igold, isil, [], [], [], r10)
+			gacha(message, embed, user, lastroll, canvas, ctx, iblack, iplat, igold, isil, [], [], [], r10, upb, upp, usc)
 		}
 		else if (pool == "pug" || pool == "pick-up" || pool == "pickup") {
 			if (gachalist["pugopen"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Pick-Up Gacha Roll Result")
 				if (pugplat.length > 0) {
-					gacha(message, embed, user, lastroll, canvas, ctx, pugblack, pugplat, gold, sil, [], [], [], r10)
+					gacha(message, embed, user, lastroll, canvas, ctx, pugblack, pugplat, gold, sil, [], [], [], r10, upb, upp, usc)
 				}
 				else {
-					gacha(message, embed, user, lastroll, canvas, ctx, pugblack, plat, gold, sil, [], [], [], r10)
+					gacha(message, embed, user, lastroll, canvas, ctx, pugblack, plat, gold, sil, [], [], [], r10, upb, upp, usc)
 				}
 			}
 			else {message.channel.send("PUG is not available")}
@@ -138,7 +138,7 @@ class RanRoll extends commando.Command {
 			if (gachalist["b1open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Banner 1 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, b1fb, b1fp, b1fg, r10)
+				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, b1fb, b1fp, b1fg, r10, upb, upp, usc)
 			}
 			else {message.channel.send("Banner 1 is not available")}
 		}
@@ -146,7 +146,7 @@ class RanRoll extends commando.Command {
 			if (gachalist["b2open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Banner 2 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, b2fb, b2fp, b2fg, r10)
+				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, b2fb, b2fp, b2fg, r10, upb, upp, usc)
 			}
 			else {message.channel.send("Banner 2 is not available")}
 		}
@@ -154,7 +154,7 @@ class RanRoll extends commando.Command {
 			if (gachalist["s1open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Seasonal 1 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, s1fb, s1fp, s1fg, r10)
+				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, s1fb, s1fp, s1fg, r10, upb, upp, usc)
 			}
 			else {message.channel.send("Seasonal 1 is not available")}
 		}
@@ -162,7 +162,7 @@ class RanRoll extends commando.Command {
 			if (gachalist["s2open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Seasonal 2 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, s2fb, s2fp, s2fg, r10)
+				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack, bannerplat, bannergold, bannersil, s2fb, s2fp, s2fg, r10, upb, upp, usc)
 			}
 			else {message.channel.send("Seasonal 2 is not available")}
 		}
@@ -170,7 +170,7 @@ class RanRoll extends commando.Command {
 			if (gachalist["i1open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Seasonal 1 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, iblack, iplat, igold, isil, i1fb, i1fp, i1fg, r10)
+				gacha(message, embed, user, lastroll, canvas, ctx, iblack, iplat, igold, isil, i1fb, i1fp, i1fg, r10, upb, upp, usc)
 			}
 			else {message.channel.send("Imperial 1 is not available")}
 		}
@@ -178,7 +178,7 @@ class RanRoll extends commando.Command {
 			if (gachalist["i1open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Imperial 2 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, iblack, iplat, igold, isil, i2fb, i2fp, i2fg, r10)
+				gacha(message, embed, user, lastroll, canvas, ctx, iblack, iplat, igold, isil, i2fb, i2fp, i2fg, r10, upb, upp, usc)
 			}
 			else {message.channel.send("Imperial 2 is not available")}
 		}
@@ -266,7 +266,7 @@ async function send1(message, unit, embed) {
 		}
 	})
 }
-async function gacha(message, embed, user, lastroll, canvas, ctx, black, plat, gold, sil, fblack, fplat, fgold, r10) {
+async function gacha(message, embed, user, lastroll, canvas, ctx, black, plat, gold, sil, fblack, fplat, fgold, r10, upb, upp, usc) {
 	lr = []
 	if (!r10) {
 		if (upb == 1) {
