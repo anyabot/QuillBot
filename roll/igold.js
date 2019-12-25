@@ -1,4 +1,4 @@
-var igold = {
+var igold = [
     	'Filine',
     	'Frey',
     	'Georg',
@@ -7,6 +7,6 @@ var igold = {
 	'Mistel',
 	'Natalie',
 	'Ernesta'
-}
+]
 
 exports.igold = igold;
