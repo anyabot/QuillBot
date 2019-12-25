@@ -1,4 +1,4 @@
-var bannergold = {
+var bannergold = [
     	'Robert',
     	'Yuyu',
     	'Stella',
@@ -18,6 +18,6 @@ var bannergold = {
 	'Gordeaux',
 	'Soleil',
 	'Pickle'
-}
+]
 
 exports.bannergold = bannergold;
