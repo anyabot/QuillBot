@@ -53,7 +53,7 @@ async function send1(message, unit, embed, state) {
 				img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
 				if (img) {
 					let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));
-					let pa = nam.split(" Icon")
+					let pa = nam.split(" Render")
 					if (pa.length > 1) {
 						img = img.split("/scale-to-width-down/")[0]
 					}
@@ -69,11 +69,11 @@ async function send1(message, unit, embed, state) {
 					}
 				}
 			}
-			if (state == "AW") {
+			else if (state == "AW") {
 				img = ($('.AWGallery div:nth-child(2) a img').attr('data-src'));
 				if (img) {
 					let nam =($('.AWGallery div:nth-child(2) a img').attr('alt'));
-					let pa = nam.split(" Icon")
+					let pa = nam.split(" AW Render")
 					if (pa.length > 1) {
 						img = img.split("/scale-to-width-down/")[0]
 					}
@@ -90,11 +90,11 @@ async function send1(message, unit, embed, state) {
 				      });
 				}
 			}
-			if (state == "AW2") {
+			else if (state == "AW2") {
 				if (img) {
 					img = ($('.AW2Gallery div:nth-child(2) a img').attr('data-src'));
 					let nam =($('.AW2Gallery div:nth-child(2) a img').attr('alt'));
-					let pa = nam.split(" Icon")
+					let pa = nam.split(" AW2 Render")
 					if (pa.length > 1) {
 						img = img.split("/scale-to-width-down/")[0]
 					}
@@ -111,11 +111,11 @@ async function send1(message, unit, embed, state) {
 				      });
 				}
 			}
-			if (state == "AW2v1") {
+			else if (state == "AW2v1") {
 				if (img) {
 					img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));
 					let nam =($('.AW2v1Gallery div:nth-child(2) a img').attr('alt'));
-					let pa = nam.split(" Icon")
+					let pa = nam.split(" AW2v1 Render")
 					if (pa.length > 1) {
 						img = img.split("/scale-to-width-down/")[0]
 					}
@@ -132,11 +132,11 @@ async function send1(message, unit, embed, state) {
 				      });
 				}
 			}
-			if (state == "AW2v2") {
+			else if (state == "AW2v2") {
 				if (img) {
 					img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));
 					let nam =($('.AW2v2Gallery div:nth-child(2) a img').attr('alt'));
-					let pa = nam.split(" Icon")
+					let pa = nam.split(" AW2v2 Render")
 					if (pa.length > 1) {
 						img = img.split("/scale-to-width-down/")[0]
 					}
