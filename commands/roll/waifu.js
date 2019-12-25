@@ -154,7 +154,7 @@ async function send1(message, unit, embed, state) {
       					let img2 = ($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('data-src'));
       					if (img2) {
         					let nam =($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('alt'));
-        					let pa = nam.split(" " + state " Render")
+        					let pa = nam.split(" " + state + " Render")
         					if (pa.length > 1) {
           						img = img2.split("/scale-to-width-down/")[0]
         					}
