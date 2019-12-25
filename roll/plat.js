@@ -1,4 +1,4 @@
-var plat = {
+var plat = [
     	'Jerome',
     	'Zenobia',
     	'Gellius',
@@ -124,6 +124,6 @@ var plat = {
 	'Filo',
 	'Eleka',
 	'Luvea'
-}
+]
 
 exports.plat = plat;
