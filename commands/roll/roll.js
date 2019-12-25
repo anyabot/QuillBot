@@ -484,7 +484,7 @@ async function gacha(message, embed, user, lastroll, canvas, ctx, black, plat, g
 		embed.setFooter('Pity Plat: ' + upp + ' Pity Black: ' + upb + "\nYou have " + usc + " SC left");
 		send10(message, lr, embed, 0, canvas, ctx)
 	}
-	if lr = [] {
+	if (lr.length == 0) {
 		lr = await lastroll.get(message.author.id)
 	}
 	uuser = [usc, upp, upb]
