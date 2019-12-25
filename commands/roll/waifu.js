@@ -83,8 +83,7 @@ async function send1(message, unit, embed, state) {
         					let img2 = $(this).find('img').attr('data-src')
         					let nam = $(this).find('img').attr('alt')
         					let pa = nam.split(" AW Render")
-        					if (pa.length > 1) {
-							nam = pa[0]		
+        					if (pa.length > 1) {	
 							img = img2.split("/scale-to-width-down/")[0]
 						}
 				      });
@@ -104,8 +103,7 @@ async function send1(message, unit, embed, state) {
         					let img2 = $(this).find('img').attr('data-src')
         					let nam = $(this).find('img').attr('alt')
         					let pa = nam.split(" AW2 Render")
-        					if (pa.length > 1) {
-							nam = pa[0]		
+        					if (pa.length > 1) {		
 							img = img2.split("/scale-to-width-down/")[0]
 						}
 				      });
@@ -125,8 +123,7 @@ async function send1(message, unit, embed, state) {
         					let img2 = $(this).find('img').attr('data-src')
         					let nam = $(this).find('img').attr('alt')
         					let pa = nam.split(" AW2v1 Render")
-        					if (pa.length > 1) {
-							nam = pa[0]		
+        					if (pa.length > 1) {	
 							img = img2.split("/scale-to-width-down/")[0]
 						}
 				      });
@@ -146,12 +143,23 @@ async function send1(message, unit, embed, state) {
         					let img2 = $(this).find('img').attr('data-src')
         					let nam = $(this).find('img').attr('alt')
         					let pa = nam.split(" AW2v2 Render")
-        					if (pa.length > 1) {
-							nam = pa[0]		
+        					if (pa.length > 1) {		
 							img = img2.split("/scale-to-width-down/")[0]
 						}
 				      });
 				}
+			}
+			else {
+				for (var i = 1; i < 5; i++) {
+      					let img2 = ($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('data-src'));
+      					if (img2) {
+        					let nam =($('.AVer\\.Gallery div:nth-child(' + i + ') a img').attr('alt'));
+        					let pa = nam.split(" " + state " Render")
+        					if (pa.length > 1) {
+          						img = img2.split("/scale-to-width-down/")[0]
+        					}
+      					}
+    				}
 			}
 			embed.setImage(img)
 			embed.setURL(link)
