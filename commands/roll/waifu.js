@@ -49,8 +49,8 @@ async function send1(message, unit, embed, state) {
 	request(link, function(err, resp, html) {
 		if (!err) {
 			const $ = cheerio.load(html);
-			img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
 			if (state == "BASE") {
+				img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
 				if (img) {
 					let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));
 					let pa = nam.split(" Icon")
