@@ -92,10 +92,15 @@ class FindPrince extends commando.Command {
 						}
 						else {
 							let siz = $('.FourGodsSkill').find('tr').length;
-							for (var i = 2; i < siz; i++){
+							for (var i = 1; i < siz; i++){
 								output = $('.FourGodsSkill').find('tr').eq(i).text();
 								let aa = te(output);
-								embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+								if (i == 1) {
+									embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
+								}
+								else {
+									embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+								}
 							}
 						}
 						let aw3 = awna + "Ability"
@@ -227,10 +232,15 @@ class FindPrince extends commando.Command {
 						}
 						else {
 							let siz = $('.FourGodsSkill').find('tr').length;
-							for (var i = 2; i < siz; i++){
+							for (var i = 1; i < siz; i++){
 								output = $('.FourGodsSkill').find('tr').eq(i).text();
 								let aa = te(output);
-								embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+								if (i == 1) {
+									embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
+								}
+								else {
+									embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+								}
 							}
 						}
 						let aw3 = awna + "Ability"
