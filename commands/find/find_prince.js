@@ -84,10 +84,27 @@ class FindPrince extends commando.Command {
 						embed.addField("Block", lv1v1[9], true)
 						embed.addField("Cost", lv1v1[11], true)
 						let aw2 = awna + "Skill"
-						let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
-						let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
-						let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
-						embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
+						if (aw2 != "FourGodsSkill") {
+							let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
+							let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
+							let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
+							embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
+						}
+						else {
+								let siz = $('.FourGodsSkill').find('tr').length;
+								for (var i = 2; i < siz; i++){
+									output = $('.FourGodsSkill').find('tr').eq(i).text();
+									let aa = te(output);
+									if (i == 2) {
+										embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
+									}
+									else if (!aw) {
+										embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+									}
+								}
+								pages.push(embed2);
+
+						}
 						let aw3 = awna + "Ability"
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
 						let ana = na(output);
@@ -205,10 +222,27 @@ class FindPrince extends commando.Command {
 						embed.addField("Block", lv1v1[9], true)
 						embed.addField("Cost", lv1v1[11], true)
 						let aw2 = awna + "Skill"
-						let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
-						let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
-						let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
-						embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
+						if (aw2 != "FourGodsSkill") {
+							let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
+							let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
+							let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
+							embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
+						}
+						else {
+								let siz = $('.FourGodsSkill').find('tr').length;
+								for (var i = 2; i < siz; i++){
+									output = $('.FourGodsSkill').find('tr').eq(i).text();
+									let aa = te(output);
+									if (i == 2) {
+										embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
+									}
+									else if (!aw) {
+										embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+									}
+								}
+								pages.push(embed2);
+
+						}
 						let aw3 = awna + "Ability"
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
 						let ana = na(output);
@@ -353,5 +387,16 @@ function te2(output) {
     return el != null && el != '' && el.substring(0,12) != "This ability";
   });
   return filtered.join("\n");
+}
+function te(output) {
+    output = output.replace(/<[^>]*>/g, "\n");
+    output = output.replace(/\n+ /g, "\n");
+	output = he.decode(output);
+    output = output.trim();
+    var arr = output.split('\n');
+	var filtered = arr.filter(function (el) {
+  	return el != null && el != '';
+	});
+   return filtered;
 }
 module.exports = FindPrince;
