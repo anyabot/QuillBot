@@ -29,7 +29,8 @@ var eventgold = [
 	'Maurette',
 	'Ryuryu',
 	'Mao (Yukata)',
-	'Renarde (Halloween)'
+	'Renarde (Halloween)',
+	'Ertel (Christmas)'
 ]
 
 exports.eventgold = eventgold;
