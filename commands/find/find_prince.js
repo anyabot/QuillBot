@@ -91,19 +91,17 @@ class FindPrince extends commando.Command {
 							embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
 						}
 						else {
-								let siz = $('.FourGodsSkill').find('tr').length;
-								for (var i = 2; i < siz; i++){
-									output = $('.FourGodsSkill').find('tr').eq(i).text();
-									let aa = te(output);
-									if (i == 2) {
-										embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
-									}
-									else {
-										embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
-									}
+							let siz = $('.FourGodsSkill').find('tr').length;
+							for (var i = 2; i < siz; i++){
+								output = $('.FourGodsSkill').find('tr').eq(i).text();
+								let aa = te(output);
+								if (i == 2) {
+									embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
 								}
-								pages.push(embed2);
-
+								else {
+									embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+								}
+							}
 						}
 						let aw3 = awna + "Ability"
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
@@ -229,19 +227,17 @@ class FindPrince extends commando.Command {
 							embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
 						}
 						else {
-								let siz = $('.FourGodsSkill').find('tr').length;
-								for (var i = 2; i < siz; i++){
-									output = $('.FourGodsSkill').find('tr').eq(i).text();
-									let aa = te(output);
-									if (i == 2) {
-										embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
-									}
-									else {
-										embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
-									}
+							let siz = $('.FourGodsSkill').find('tr').length;
+							for (var i = 2; i < siz; i++){
+								output = $('.FourGodsSkill').find('tr').eq(i).text();
+								let aa = te(output);
+								if (i == 2) {
+									embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
 								}
-								pages.push(embed2);
-
+								else {
+									embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
+								}
+							}
 						}
 						let aw3 = awna + "Ability"
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
