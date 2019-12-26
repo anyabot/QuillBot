@@ -23,12 +23,20 @@ var name = {
     'Garuda' : 'Wind Guardian',
     'Wind' : 'Wind Guardian',
     'Heroic' : 'Einherjar',
+    'Spirit' : 'Einherjar',
     'Successor' : 'Hero King',
     'Hero King\'s Successor' : 'Hero King',
     'Kero King Successor' : 'Hero King',
     'Chair' : 'Hero King',
     'Flower' : 'Hero King',
-    'Throne' : 'Hero King'
+    'Throne' : 'Hero King',
+    'Hero' : 'Hero King'
+    'King' : 'Hero King',
+    'Four God' : 'Four Gods'
+    '4 Gods' : 'Four Gods',
+    '4 God' : 'Four Gods',
+    'Avatar' : 'Four Gods',
+    'Quartet' : 'Four Gods'
 }
 
 exports.name = name;
