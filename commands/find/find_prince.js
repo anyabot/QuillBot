@@ -84,16 +84,16 @@ class FindPrince extends commando.Command {
 						embed.addField("Block", lv1v1[9], true)
 						embed.addField("Cost", lv1v1[11], true)
 						let aw2 = awna + "Skill"
-						if (aw2 != "FourGodsSkill") {
+						if ($('.' + aw2 + ' table tr:nth-child(2)').first().html() != null) {
 							let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
 							let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
 							let scd = na($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html())
 							embed.addField("Skill: " + sna, sdes + "\n**Cooldown:** " + scd)
 						}
 						else {
-							let siz = $('.FourGodsSkill').find('tr').length;
+							let siz = $('.'+ aw2).find('tr').length;
 							for (var i = 1; i < siz; i++){
-								output = $('.FourGodsSkill').find('tr').eq(i).text();
+								output = $('.'+ aw2).find('tr').eq(i).text();
 								let aa = te(output);
 								if (i == 1) {
 									embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
