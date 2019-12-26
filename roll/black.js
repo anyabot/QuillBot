@@ -77,6 +77,8 @@ var black = [
 	'Erlang Shen', 
 	'Setsuna', 
 	'Heios',
+	'Reflet',
+	'Leone',
 	'Harmonia',
 	'Grimm'
 ]
