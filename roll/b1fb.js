@@ -1,3 +1,3 @@
-var b1fb = ['Reflet', 'Leone'];
+var b1fb = ['Harmonia', 'Grimm'];
 
 exports.b1fb = b1fb;
