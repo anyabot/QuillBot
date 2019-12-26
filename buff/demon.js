@@ -1,3 +1,3 @@
-var list = ['Ilios', 'Shadia', 'Prince (Dark)', 'Psyche', 'Nakia', 'Mephisto'];
+var list = ['Ilios', 'Shadia', 'Prince (Dark)', 'Psyche', 'Nakia', 'Mephisto', 'Harmonia'];
 
 exports.list = list;
