@@ -32,7 +32,7 @@ var name = {
     'Throne' : 'Hero King',
     'Hero' : 'Hero King',
     'King' : 'Hero King',
-    'Four God' : 'Four Gods'
+    'Four God' : 'Four Gods',
     '4 Gods' : 'Four Gods',
     '4 God' : 'Four Gods',
     'Avatar' : 'Four Gods',
