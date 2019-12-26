@@ -98,7 +98,7 @@ class FindPrince extends commando.Command {
 									if (i == 2) {
 										embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
 									}
-									else if (!aw) {
+									else {
 										embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
 									}
 								}
@@ -236,7 +236,7 @@ class FindPrince extends commando.Command {
 									if (i == 2) {
 										embed.addField("Skill: " + aa[1], aa[2] + "\n**Cooldown:** " + aa[3])
 									}
-									else if (!aw) {
+									else {
 										embed.addField("Skill: " + aa[0], aa[1] + "\n**Cooldown:** " + aa[2])
 									}
 								}
