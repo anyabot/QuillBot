@@ -316,8 +316,10 @@ function affe(output) {
     return na;
 }
 function na(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
+    if (output != null) {
+    		output = output.replace(/<[^>]*>/g, "\n");
+    		output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
