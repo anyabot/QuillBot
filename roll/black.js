@@ -76,6 +76,8 @@ var black = [
 	'Spiria', 
 	'Erlang Shen', 
 	'Setsuna', 
-	'Heios'
+	'Heios',
+	'Harmonia',
+	'Grimm'
 ]
 exports.black = black;
