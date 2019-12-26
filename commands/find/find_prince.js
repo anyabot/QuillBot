@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 var request = require('request');
 var cheerio = require('cheerio');
 var he = require('he');
-var he = require('he');
 var name = require('../../library/pri.js').name;
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
@@ -254,8 +253,10 @@ class FindPrince extends commando.Command {
 }
 
 function awl(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
+    if (output != null) {
+    		output = output.replace(/<[^>]*>/g, "\n");
+    		output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
@@ -272,8 +273,10 @@ function awl(output) {
     return filtered2;
 }
 function lv1line(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
+    if (output != null) {
+    		output = output.replace(/<[^>]*>/g, "\n");
+    		output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
     output = output.trim();
     var arr = output.split('\n');
@@ -281,8 +284,10 @@ function lv1line(output) {
    return arr;
 }
 function range(output) {
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
+if (output != null) {
+    		output = output.replace(/<[^>]*>/g, "\n");
+    		output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
@@ -298,9 +303,11 @@ function range(output) {
     return range;
 }
 function affe(output) {
-	output = striptags(output, '<br>')
-    output = output.replace(/<[^>]*>/g, "\n");
-    output = output.replace(/\n+ /g, "\n");
+    if (output != null) {
+	    output = striptags(output, '<br>')
+    		output = output.replace(/<[^>]*>/g, "\n");
+    		output = output.replace(/\n+ /g, "\n");
+	}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
@@ -335,8 +342,10 @@ function na(output) {
     return na;
 }
 function te2(output) {
-  output = output.replace(/<[^>]*>/g, "\n");
-  output = output.replace(/\n+ /g, "\n");
+  if (output != null) {
+    		output = output.replace(/<[^>]*>/g, "\n");
+    		output = output.replace(/\n+ /g, "\n");
+	}
   output = he.decode(output);
   output = output.trim();
   var arr = output.split('\n');
