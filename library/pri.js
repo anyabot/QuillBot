@@ -30,7 +30,7 @@ var name = {
     'Chair' : 'Hero King',
     'Flower' : 'Hero King',
     'Throne' : 'Hero King',
-    'Hero' : 'Hero King'
+    'Hero' : 'Hero King',
     'King' : 'Hero King',
     'Four God' : 'Four Gods'
     '4 Gods' : 'Four Gods',
