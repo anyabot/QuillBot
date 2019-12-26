@@ -84,7 +84,7 @@ class FindPrince extends commando.Command {
 						embed.addField("Block", lv1v1[9], true)
 						embed.addField("Cost", lv1v1[11], true)
 						let aw2 = awna + "Skill"
-						if ($('.' + aw2 + ' table tr:nth-child(2)').first().html() != null) {
+						if ($('.' + aw2 + ' table tr:nth-child(2) td a').first().html() != null) {
 							console.log($('.' + aw2 + ' table tr:nth-child(2)').first().html())
 							let sna = na($('.' + aw2 + ' table tr:nth-child(2)').first().html())
 							let sdes = na($('.' + aw2 + ' table tr:nth-child(3)').first().html())
