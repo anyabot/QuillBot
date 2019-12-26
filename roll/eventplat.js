@@ -128,7 +128,9 @@ var eventplat = [
 	'Solais (Platinum)',
 	'Atnates (Platinum)',
 	'Vine',
-	'Krasil'
+	'Krasil',
+	'Katara',
+	'Sanara (Platinum)'
 ]
 
 exports.eventplat = eventplat;
