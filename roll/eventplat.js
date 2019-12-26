@@ -130,7 +130,8 @@ var eventplat = [
 	'Vine',
 	'Krasil',
 	'Katara',
-	'Sanara (Platinum)'
+	'Sanara (Platinum)',
+	'Suzune'
 ]
 
 exports.eventplat = eventplat;
