@@ -49,7 +49,8 @@ async function send1(message, unit, embed, state) {
 	request(link, function(err, resp, html) {
 		if (!err) {
 			const $ = cheerio.load(html);
-			if (state == "BASE") {
+			var hero = $('.categories').text().includes("Hero Units");
+			if (state == "BASE" && !hero) {
 				img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
 				if (img) {
 					let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));
@@ -59,14 +60,34 @@ async function send1(message, unit, embed, state) {
 					}
 				}
 				if (!img) {
-					img = $('.image.lightbox img').attr('data-src')
-						if (img) {
-						let nam =($('.image.lightbox img').attr('alt'));
-						let pa = nam.split(" Render")
-						if (pa.length > 1) {
-							img = img.split("/scale-to-width-down/")[0]
+					($('.image.lightbox')).each(function(i, elem) {
+        					let img2 = $(this).find('img').attr('data-src')
+        					let nam = $(this).find('img').attr('alt')
+        					let pa = nam.split(" Render")
+        					if (pa.length > 1) {	
+							img = img2.split("/scale-to-width-down/")[0]
 						}
+				      });
+				}
+			}
+			else if (state == "BASE") {
+				img = ($('.BaseGallery div:nth-child(2) a img').attr('data-src'));
+				if (img) {
+					let nam =($('.BaseGallery div:nth-child(2) a img').attr('alt'));
+					let pa = nam.split(" AW Render")
+					if (pa.length > 1) {
+						img = img.split("/scale-to-width-down/")[0]
 					}
+				}
+				if (!img) {
+					($('.image.lightbox')).each(function(i, elem) {
+        					let img2 = $(this).find('img').attr('data-src')
+        					let nam = $(this).find('img').attr('alt')
+        					let pa = nam.split(" AW Render")
+        					if (pa.length > 1) {	
+							img = img2.split("/scale-to-width-down/")[0]
+						}
+				      });
 				}
 			}
 			else if (state == "AW") {
