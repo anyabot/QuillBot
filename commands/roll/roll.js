@@ -383,7 +383,7 @@ async function gacha(message, embed, user, lastroll, canvas, ctx, black, plat, g
 		embed.setDescription("<@" + message.author.id + "> You rolled ")
 		for (var i = 1; i < 11; i++) {
 			if (upb == 1) {
-				var fea = random.int(1, 10 + 7*s2fb.length)
+				var fea = random.int(1, 10 + 7*fblack.length)
 					if (fea < 11) {
 						var ind = random.int(1, black.length) - 1
 						var unit = black[ind]
