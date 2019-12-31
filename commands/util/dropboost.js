@@ -86,6 +86,13 @@ class FindDrop extends commando.Command {
 			junon.addField('Pre-AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Silver units increases by 6%.')
 			junon.addField('AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Silver units increases by 8%.')
 			pages.push(junon)
+			var junon2 = new Discord.RichEmbed()
+			junon2.setTitle('Junon (New Year\'s)')
+			junon2.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/1/13/Junon_%28New_Year%27s%29_Icon.png/revision/latest?cb=20191226211908')
+			junon2.setColor('WHITE')
+			junon2.addField('Pre-AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Iron units increases by 6%.')
+			junon2.addField('AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Iron units increases by 8%.')
+			pages.push(junon2)
 		}
 		else if (drop == "trust" || drop == "trust item" || drop == "trust items") {
 			check = true;
@@ -178,6 +185,16 @@ class FindDrop extends commando.Command {
 			junon.setColor('WHITE')
 			junon.addField('Pre-AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Silver units increases by 6%.')
 			junon.addField('AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Silver units increases by 8%.')
+			pages.push(junon)
+		}
+		else if (drop == "iron" || drop == "iron unit" || drop == "iron units") {
+			check = true;
+			var junon = new Discord.RichEmbed()
+			junon.setTitle('Junon (New Year\'s)')
+			junon.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/1/13/Junon_%28New_Year%27s%29_Icon.png/revision/latest?cb=20191226211908')
+			junon.setColor('WHITE')
+			junon.addField('Pre-AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Iron units increases by 6%.')
+			junon.addField('AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Iron units increases by 8%.')
 			pages.push(junon)
 		}
 		else {message.channel.send("No Data")}
