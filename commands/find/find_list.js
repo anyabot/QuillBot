@@ -132,7 +132,7 @@ class FindImage extends commando.Command {
 						pm.push(parts[i].length)
 					}
 					for (var i = 0; i < parts.length; i++) {
-						sendembed(parts[i], message)
+						functions.sende(message, pages)
 					}
 				}
 				if (!check) {message.channel.send("No Data")};
