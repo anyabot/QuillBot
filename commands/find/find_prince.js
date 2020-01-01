@@ -7,6 +7,7 @@ var name = require('../../library/pri.js').name;
 require('@gouch/to-title-case')
 var urlencode = require('urlencode');
 var striptags = require('striptags');
+var functions = require('../../functions.js');
 
 class FindPrince extends commando.Command {
     constructor(client) {
