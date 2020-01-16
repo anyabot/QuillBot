@@ -1,3 +1,3 @@
-var b1fb = ['Duo', 'Char'];
+var b1fb = ['Shiro'];
 
 exports.b1fb = b1fb;
