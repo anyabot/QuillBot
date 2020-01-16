@@ -53,7 +53,10 @@ var bannerblack = [
 	'Umbre', 
 	'Erlang Shen',
 	'Setsuna',
-	'Heios'
+	'Heios',
+	'Harmonia',
+	'Grimm',
+	'Shiro'
 ]
 
 exports.bannerblack = bannerblack;
