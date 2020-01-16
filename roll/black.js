@@ -80,6 +80,7 @@ var black = [
 	'Reflet',
 	'Leone',
 	'Harmonia',
-	'Grimm'
+	'Grimm',
+	'Shiro'
 ]
 exports.black = black;
