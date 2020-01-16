@@ -54,6 +54,8 @@ var bannerblack = [
 	'Erlang Shen',
 	'Setsuna',
 	'Heios',
+	'Leone',
+	'Reflet',
 	'Harmonia',
 	'Grimm',
 	'Shiro'
