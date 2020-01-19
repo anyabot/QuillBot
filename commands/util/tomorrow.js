@@ -238,7 +238,7 @@ request(link, function(err, resp, html) {
 		if (date == "Mon") {
 		let no = unum[tname];
 			no = no + 7;
-			if no > ulist.length {no = no - ulist.length}
+			if (no > ulist.length) {no = no - ulist.length}
 			tname = ulist[no -1];
 		}
 	dm = dm + tname + "\n- Day Change In: " + diff1;
