@@ -76,6 +76,115 @@ class UtilToday extends commando.Command {
 		"密林のハロウィンパーティー" : "Renarde (Halloween)",
 		"デーモンサンタのおもちゃ工場" : "Ertel (Christmas)"
         }
+var unum = {
+          "Cloris": 1,
+          "Belinda": 2,
+          "Azami": 3,
+          "Momiji": 4,
+          "Maribel": 5,
+          "Rita": 6,
+          "Fran": 7,
+          "Emilia": 8,
+          "Yurina": 9,
+          "Waltz": 10,
+          "Odette": 11,
+          "Eliza": 12,
+          "Rorone": 13,
+          "Lucille": 14,
+          "Corin": 15,
+          "Lin": 16,
+          "Miranda": 17,
+          "Shiho": 18,
+          "Kanon": 19,
+          "Charlotte": 20,
+          "Reanbell": 21,
+          "Isabelle": 22,
+          "Yuno" : 23,
+          "Ada": 24,
+          "Lieselotte": 25,
+          "Chloe": 26,
+          "Sarasa": 27,
+          "Rikka": 28,
+          "Revy": 29,
+          "Sabrina": 30,
+          "Rumaria": 31,
+          "Helena": 32,
+          "Jake / Oscar": 33,
+          "Oscar": 33,
+          "Jake": 33,
+          "Sereina":34,
+          "Aida": 35,
+          "Ignis": 36,
+          "Lucia": 37,
+          "Seven": 38,
+          "Bestla": 39,
+          "Phyllis (Yukata)": 40,
+          "Calliope (Dress)": 41,
+          "Psyche": 42,
+          "Linaria": 43,
+          "Saris": 44,
+          "Carrie (Swimsuit)": 45,
+          "Candy" : 46,
+          "Camilla (Christmas)": 47,
+          "Mischa (School)": 48,
+          "Fluffy": 49,
+          "Maya (Swimsuit)": 50,
+		"Renarde (Halloween)": 51,
+		"Ertel (Christmas)" : 52
+        }
+var ulist = [
+          "Cloris",
+          "Belinda",
+          "Azami",
+          "Momiji",
+          "Maribel",
+          "Rita",
+          "Fran",
+          "Emilia",
+          "Yurina",
+          "Waltz",
+          "Odette",
+          "Eliza",
+          "Rorone",
+          "Lucille",
+          "Corin",
+          "Lin",
+          "Miranda",
+          "Shiho",
+          "Kanon",
+          "Charlotte"0,
+          "Reanbell",
+          "Isabelle",
+          "Yuno",
+          "Ada",
+          "Lieselotte",
+          "Chloe",
+          "Sarasa",
+          "Rikka",
+          "Revy",
+          "Sabrina",
+          "Rumaria",
+          "Helena",
+          "Jake / Oscar",
+          "Oscar",
+          "Jake",
+          "Sereina",
+          "Aida",
+          "Ignis",
+          "Lucia",
+          "Seven",
+          "Bestla",
+          "Phyllis (Yukata)",
+          "Calliope (Dress)",
+          "Psyche",
+          "Linaria",
+          "Saris",
+          "Carrie (Swimsuit)",
+          "Candy",
+          "Camilla (Christmas)",
+          "Mischa (School)",
+          "Fluffy"
+        ]
 
 request(link, function(err, resp, html) {
 	if (!err) {
@@ -126,6 +235,12 @@ request(link, function(err, resp, html) {
 	  dm =  "- Daily Farm Map: Demon Crystal / SAW Spirit\n- Orbs: High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief\n- Daily Revival Unit: " 
     }
     tname = japname[tname];
+		if (date == "Mon") {
+		let no = unum[tname];
+			no = no + 7;
+			if no > ulist.length {no = no - ulist.length}
+			tname = ulist[no -1];
+		}
 	dm = dm + tname + "\n- Day Change In: " + diff1;
 	message.channel.send(dm)
   }
