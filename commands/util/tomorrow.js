@@ -152,7 +152,7 @@ var ulist = [
           "Miranda",
           "Shiho",
           "Kanon",
-          "Charlotte"0,
+          "Charlotte",
           "Reanbell",
           "Isabelle",
           "Yuno",
