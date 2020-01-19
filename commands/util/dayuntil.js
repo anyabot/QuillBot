@@ -172,10 +172,12 @@ class UtilDaily extends commando.Command {
               tname = japname[tname];
               var num1 = unum[tname];
               var num2 = unum[unit];
+		    console.log(num1);
+		    console.log(num2);
               if (num1 == num2) {message.channel.send('Today!')}
               else{
                 if (num2 < num1) {
-                  num2 = num2 + unum.length - 5
+                  num2 = num2 + unum.length - 3;
                 }
                 let diff = num2 - num1
                 message.channel.send('Approximately ' + diff + ' day(s)' )
