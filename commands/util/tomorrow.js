@@ -7,9 +7,9 @@ var moment = require('moment');
 var printf = require('printf');
 require('@gouch/to-title-case');
 const humanizeDuration = require('humanize-duration')
-var japname = require('../../roll/japname.js').japname;
-var unum = require('../../roll/unum.js').unum;
-var ulist = require('../../roll/ulist.js').ulist; 
+var japname = require('../../revival/japname.js').japname;
+var unum = require('../../revival/unum.js').unum;
+var ulist = require('../../revival/ulist.js').ulist; 
 class UtilToday extends commando.Command {
     constructor(client) {
         super(client, {
