@@ -130,7 +130,8 @@ class UtilDaily extends commando.Command {
           "Mischa (School)": 48,
           "Fluffy": 49,
           "Maya (Swimsuit)": 50,
-		"Renarde (Halloween)": 51
+		"Renarde (Halloween)": 51,
+		"Ertel (Christmas)" : 52
         }
         if (unum[unit]){
           request(link, function(err, resp, html) {
