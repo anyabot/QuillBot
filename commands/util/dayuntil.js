@@ -8,7 +8,7 @@ var printf = require('printf');
 var functions = require('../../functions.js');
 require('@gouch/to-title-case')
 var japname = require('../../roll/japname.js').japname;
-var uname = require('../../roll/uname2.js').uname;
+var unum = require('../../roll/unum2.js').unum;
 var ulist = require('../../roll/ulist.js').ulist;
 class UtilDaily extends commando.Command {
     constructor(client) {
