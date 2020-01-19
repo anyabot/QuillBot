@@ -179,7 +179,8 @@ class UtilDaily extends commando.Command {
                 if (num2 < num1) {
                   num2 = num2 + unum.length - 3;
                 }
-                let diff = num2 - num1
+		      console.log(num2)
+                let diff = num2 - num1;
                 message.channel.send('Approximately ' + diff + ' day(s)' )
               }
             }
