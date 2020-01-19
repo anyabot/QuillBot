@@ -7,9 +7,9 @@ var moment = require('moment');
 var printf = require('printf');
 var functions = require('../../functions.js');
 require('@gouch/to-title-case')
-var japname = require('../../roll/japname.js').japname;
-var unum = require('../../roll/unum2.js').unum;
-var ulist = require('../../roll/ulist.js').ulist;
+var japname = require('../../revival/japname.js').japname;
+var unum = require('../../revival/unum2.js').unum;
+var ulist = require('../../revival/ulist.js').ulist;
 class UtilDaily extends commando.Command {
     constructor(client) {
         super(client, {
