@@ -8,7 +8,7 @@ var printf = require('printf');
 require('@gouch/to-title-case');
 const humanizeDuration = require('humanize-duration')
 var japname = require('../../roll/japname.js').japname;
-var uname = require('../../roll/uname.js').uname;
+var unum = require('../../roll/unum.js').unum;
 var ulist = require('../../roll/ulist.js').ulist; 
 class UtilToday extends commando.Command {
     constructor(client) {
