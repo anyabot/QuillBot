@@ -138,7 +138,8 @@ var name = {
 	'Santalyssa' : 'Alissa (Christmas)',
 	'<:lmcurious:650851194239057920>' : 'Lei-Mei',
 	'Shu-xian' : 'Shu-Xian',
-	'<:NielShy:650852179003047946>' : 'Niel'
+	'<:NielShy:650852179003047946>' : 'Niel',
+	'Claris' : 'Claris Zeinburg'
 }
 
 exports.name = name;
