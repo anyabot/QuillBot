@@ -62,6 +62,7 @@ class UtilDaily extends commando.Command {
               else if (date == "Sun") {
                 tname = names[13]
               }
+		    console.log(tname)
               tname = japname[tname];
               var num1 = unum[tname];
               var num2 = unum[unit];
