@@ -3,12 +3,8 @@ var bannerblack = [
     	'Alice',
     	'Nataku',
     	'Rakshasa',
-    	'Ingrid',
 	'Kayou',
-	'Towa',
 	'Sarah',
-	'Rinne',
-	'Moltena',
 	'Frederica',
 	'Machina',
 	'Mireille',
@@ -58,7 +54,8 @@ var bannerblack = [
 	'Reflet',
 	'Harmonia',
 	'Grimm',
-	'Shiro'
+	'Shiro',
+	'Augusta'
 ]
 
 exports.bannerblack = bannerblack;
