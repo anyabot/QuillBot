@@ -1,3 +1,3 @@
-var s1fp = ['Katie (New Year\'s)', 'Totono (New Year\'s)'];
+var s1fp = ['Lumedia'];
 
 exports.s1fp = s1fp;
