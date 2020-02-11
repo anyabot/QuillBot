@@ -1,3 +1,3 @@
-var list = ['Marnie (Valentine\'s)'];
+var list = ['Emelda (Valentine\'s)', 'Marnie (Valentine\'s)'];
 
 exports.list = list;
