@@ -62,6 +62,12 @@ class FindDrop extends commando.Command {
 			diera.addField('Pre-AW Ability', 'On mission clear, awarded Gold increases by 18%.')
 			diera.addField('AW Ability', 'On mission clear, awarded Gold increases by 20%.')
 			pages.push(diera)
+			var cdiera = new Discord.RichEmbed()
+			cdiera.setTitle('Chibi Diera')
+			cdiera.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/5/55/Diera_Icon.png/revision/latest/')
+			cdiera.setColor('GOLD')
+			cdiera.addField('Ability', 'On mission clear, awarded Gold increases by 18%.')
+			pages.push(cdiera)
 		}
 		else if (drop == "gg" || drop == "gold get") {
 			check = true;
@@ -105,6 +111,12 @@ class FindDrop extends commando.Command {
 			diera.addField('Pre-AW Ability', 'On mission clear, awarded Gold increases by 18%.')
 			diera.addField('AW Ability', 'On mission clear, awarded Gold increases by 20%.')
 			pages.push(diera)
+			var cdiera = new Discord.RichEmbed()
+			cdiera.setTitle('Chibi Diera')
+			cdiera.setThumbnail('https://vignette.wikia.nocookie.net/aigis/images/5/55/Diera_Icon.png/revision/latest/')
+			cdiera.setColor('GOLD')
+			cdiera.addField('Ability', 'On mission clear, awarded Gold increases by 18%.')
+			pages.push(cdiera)
 		}
 		else {message.channel.send("No Data")}
 		if (check) {
