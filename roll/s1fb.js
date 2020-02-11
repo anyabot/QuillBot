@@ -1,3 +1,3 @@
-var s1fb = ['Kibahime (New Year\'s)', 'Elyse (New Year\'s)'];
+var s1fb = ['Aix (Valentine\'s)', 'Emelda (Valentine\'s)'];
 
 exports.s1fb = s1fb;
