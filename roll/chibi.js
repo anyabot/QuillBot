@@ -1,3 +1,3 @@
-var chibi = ['Chibi Sylseth', 'Chibi Pippin'];
+var chibi = ['Chibi Diera', 'Chibi Rozette'];
 
 exports.chibi = chibi;
