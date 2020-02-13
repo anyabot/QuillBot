@@ -1,3 +1,3 @@
-var s2fb = ['Eldora (New Year\'s)', 'Orochihime (New Year\'s)'];
+var s2fb = ['Alice (Valentine\'s)', 'Sophie (Valentine\'s)'];
 
 exports.s2fb = s2fb;
