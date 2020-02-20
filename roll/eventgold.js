@@ -30,7 +30,7 @@ var eventgold = [
 	'Ryuryu',
 	'Mao (Yukata)',
 	'Renarde (Halloween)',
-	'Ertel (Christmas)'.
+	'Ertel (Christmas)',
 	'Sharqi (Valentine\'s)'
 ]
 
