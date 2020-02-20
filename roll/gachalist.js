@@ -1,9 +1,9 @@
 var gachalist = {
-  "pugopen" : false,
-  "b1open" : false,
+  "pugopen" : true,
+  "b1open" : true,
   "b2open" : true,
-  "s1open" : true,
-  "s2open" : true,
+  "s1open" : false,
+  "s2open" : false,
   "i1open" : false,
   "i2open" : false
 }
