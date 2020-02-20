@@ -131,7 +131,8 @@ var eventplat = [
 	'Krasil',
 	'Katara',
 	'Sanara (Platinum)',
-	'Suzune'
+	'Suzune',
+	'Saoshu'
 ]
 
 exports.eventplat = eventplat;
