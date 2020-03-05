@@ -126,7 +126,8 @@ var plat = [
 	'Luvea',
 	'Latour',
 	'Hanada',
-	'Eithne'
+	'Eithne',
+	'Oviely'
 ]
 
 exports.plat = plat;
