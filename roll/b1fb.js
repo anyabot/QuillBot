@@ -1,3 +1,3 @@
-var b1fb = ['Isambard'];
+var b1fb = ['Tifa', 'Miyabi'];
 
 exports.b1fb = b1fb;
