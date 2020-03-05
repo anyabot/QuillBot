@@ -1,2 +1,2 @@
-var b1fp = ['Hatsune', 'Loretta'];
+var b1fp = ['Oviely'];
 exports.b1fp = b1fp;
