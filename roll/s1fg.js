@@ -1,3 +1,3 @@
-var s1fg = ['Leeanne (Hot Springs)'];
+var s1fg = [];
 
 exports.s1fg = s1fg;
