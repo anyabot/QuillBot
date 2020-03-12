@@ -37,7 +37,12 @@ var suffix = {
     'Platinum' : '(Platinum)',
     'Black' : '(Black)',
     'P' : '(Platinum)',
-    'B' : '(Black)'
+    'B' : '(Black)',
+    '(Onsen)' : '(Hot Springs)',
+    'Onsen' : '(Hot Springs)',
+    'Hot Springs' : '(Hot Springs)',
+    '(Hs)' : '(Hot Springs)',
+    'Hs' : '(Hot Springs)'
 }
 
 exports.suffix = suffix;
