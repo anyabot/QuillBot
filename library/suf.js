@@ -42,7 +42,11 @@ var suffix = {
     'Onsen' : '(Hot Springs)',
     'Hot Springs' : '(Hot Springs)',
     '(Hs)' : '(Hot Springs)',
-    'Hs' : '(Hot Springs)'
+    'Hs' : '(Hot Springs)',
+    'Hot Spring' : '(Hot Springs)',
+    '(Hot Spring)' : '(Hot Springs)',
+    'Bath' : '(Hot Springs)',
+    '(Bath)' : '(Hot Springs)'
 }
 
 exports.suffix = suffix;
