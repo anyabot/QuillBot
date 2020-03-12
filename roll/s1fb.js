@@ -1,3 +1,3 @@
-var s1fb = ['Aix (Valentine\'s)', 'Emelda (Valentine\'s)'];
+var s1fb = ['Risley (Hot Springs)'];
 
 exports.s1fb = s1fb;
