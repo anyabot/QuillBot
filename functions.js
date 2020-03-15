@@ -51,7 +51,7 @@ exports.nameChange = function nameChange(text) {
             }
             unit = un + ' ' + sur
         } else if (np[npl - 1] == 'Springs' && np[npl - 2] == 'Hot') {
-            let sur = '(New Year\'s)'
+            let sur = '(Hot Springs)'
             np.pop()
             np.pop()
             let un = np.join(' ')
@@ -60,7 +60,7 @@ exports.nameChange = function nameChange(text) {
             }
             unit = un + ' ' + sur
         } else if (np[npl - 1] == 'Springs)' && np[npl - 2] == '(Hot') {
-            let sur = '(New Year\'s)'
+            let sur = '(Hot Springs)'
             np.pop()
             np.pop()
             let un = np.join(' ')
@@ -94,7 +94,7 @@ exports.nameChange = function nameChange(text) {
             }
             unit = un + ' ' + sur
         } else if (np[1] == 'Springs' && np[0] == 'Hot') {
-            let sur = '(New Year\'s)'
+            let sur = '(Hot Springs)'
             np = np.slice(2, npl)
             let un = np.join(' ')
             if (name[un]) {
@@ -102,7 +102,7 @@ exports.nameChange = function nameChange(text) {
             }
             unit = un + ' ' + sur
         } else if (np[1] == 'Springs)' && np[0] == '(Hot') {
-            let sur = '(New Year\'s)'
+            let sur = '(Hot Springs)'
             np = np.slice(2, npl)
             let un = np.join(' ')
             if (name[un]) {
