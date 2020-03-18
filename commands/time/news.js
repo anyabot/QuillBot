@@ -65,7 +65,7 @@ class TTime extends commando.Command {
 			var dif3 = ms.diff(m)
 			var diff3 = humanizeDuration(dif3, { round: true })
 		}
-		var ms = moment(year + " " +  month + " " + day +" 12:00:00", 'YYYY MMM DD HH:mm:ss')
+		var ms = moment(year + " " +  month + " " + day +" 15:00:00", 'YYYY MMM DD HH:mm:ss')
 		if (date == "Wed") {
 			if (m.isBefore(ms)) {
 				var dif4 = ms.diff(m)
