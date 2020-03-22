@@ -1,3 +1,3 @@
-var b1fb = ['Tifa', 'Miyabi'];
+var b1fb = ['Emelda', 'Reflet'];
 
 exports.b1fb = b1fb;
