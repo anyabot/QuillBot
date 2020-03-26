@@ -1,3 +1,11 @@
-var list = ['Youkai Supreme Commander Nurarihyon (Nurarihyon)', 'Kasumi', 'Kayou', 'Wangfei Ren', 'Shino', 'Sagiri', 'Shiro'];
+var list = ['Youkai Supreme Commander Nurarihyon (Nurarihyon)', 
+            'Kasumi', 
+            'Kayou', 
+            'Wangfei Ren', 
+            'Shino', 
+            'Sagiri', 
+            'Shiro',
+            'Tsugumi'
+           ];
 
 exports.list = list;
