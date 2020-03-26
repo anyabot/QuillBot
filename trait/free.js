@@ -1,3 +1,7 @@
-var list = ['Inugami', 'Sayo', 'Koharu', 'Erlang Shen'];
+var list = ['Inugami', 
+            'Nue',
+            'Sayo', 
+            'Koharu', 
+            'Erlang Shen'];
 
 exports.list = list;
