@@ -56,7 +56,8 @@ var bannerblack = [
 	'Grimm',
 	'Shiro',
 	'Augusta',
-	'Isambard'
+	'Isambard',
+	'Tsugumi'
 ]
 
 exports.bannerblack = bannerblack;
