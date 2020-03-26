@@ -83,6 +83,7 @@ var black = [
 	'Grimm',
 	'Shiro',
 	'Augusta',
-	'Isambard'
+	'Isambard',
+	'Tsugumi'
 ]
 exports.black = black;
