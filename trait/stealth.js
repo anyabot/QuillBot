@@ -20,6 +20,8 @@ var list = ['Tengu',
             'Setsuna', 
             'Shiro',
             'Supura', 
-            'Xenia'];
+            'Tsugumi',
+            'Xenia'
+           ];
 
 exports.list = list;
