@@ -11,7 +11,7 @@ bot.on('ready', () => {
 bot.on('message', message => {
     if(message.channel.name != undefined)  {
         if (message.member != null) {
-            if (message.member.roles.find(role => role.name === "Silvers")) {console.log(message.member.user.username)}
+            if (message.member.roles.find(role => role.name === "Silvers")) {}
             else {message.member.addRole(message.guild.roles.find(role => role.name === "Silvers"))}
         }
     }
