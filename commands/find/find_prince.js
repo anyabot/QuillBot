@@ -269,6 +269,7 @@ function awl(output) {
   var artist = false;
 	var title = false;
 	var filtered = arr.filter(function (el) {
+		if (el == "Measurements:") {artist = true}
     if (el == "Artist:") {artist = true}
 		if (el == "Base") {title = true}
     if (artist) {return false}
