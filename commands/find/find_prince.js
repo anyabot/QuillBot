@@ -266,10 +266,13 @@ function awl(output) {
 	output = output.trim();
 	var arr = output.split('\n');
   var artist = false;
+	var title = false;
 	var filtered = arr.filter(function (el) {
     if (el == "Artist:") {artist = true}
+		if (el == "Base") {title = true}
     if (artist) {return false}
-  	return el != null && el != '' && el!= "·" && el!= " " && el!= "Ouji" && el!= "王子" &&  el!= "Prince" && el != "Base" && el.length >= 2 && el != "Profile 1" && el!="Character & Story Works 1";
+		if (!title) {return false}
+  	return el != null && el != '' && el!= "·" && el!= " " && el!= "Ouji" && el!= "王子" &&  el!= "Prince" && el != "Base" && el.length >= 2;
 	});
   var filtered2 = []
   for (var i = 0; i < filtered.length/2; i++) {
