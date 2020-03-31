@@ -269,7 +269,7 @@ function awl(output) {
 	var filtered = arr.filter(function (el) {
     if (el == "Artist:") {artist = true}
     if (artist) {return false}
-  	return el != null && el != '' && el!= "·" && el!= " " && el!= "Ouji" && el!= "王子" &&  el!= "Prince" && el != "Base" && el.length >= 2;
+  	return el != null && el != '' && el!= "·" && el!= " " && el!= "Ouji" && el!= "王子" &&  el!= "Prince" && el != "Base" && el.length >= 2 && el != "Profile 1";
 	});
   var filtered2 = []
   for (var i = 0; i < filtered.length/2; i++) {
