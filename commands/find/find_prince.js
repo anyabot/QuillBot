@@ -43,6 +43,7 @@ class FindPrince extends commando.Command {
 					var pages = []
 					var embed
 					awlist.forEach(function(ele) {
+						console.log{ele}
 						let awna;
 						if (ele == "Sacred Gear") {awna = "SacredEquipment"}
 						else (awna = ele.split(' ').join(''))
@@ -292,6 +293,7 @@ if (output != null) {
     		output = output.replace(/<[^>]*>/g, "\n");
     		output = output.replace(/\n+ /g, "\n");
 	}
+	else {return;}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
