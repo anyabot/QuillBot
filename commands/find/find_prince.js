@@ -260,6 +260,7 @@ function awl(output) {
     		output = output.replace(/<[^>]*>/g, "\n");
     		output = output.replace(/\n+ /g, "\n");
 	}
+	else {return;}
 	output = he.decode(output);
 	output = output.trim();
 	var arr = output.split('\n');
