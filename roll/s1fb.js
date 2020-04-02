@@ -1,3 +1,3 @@
-var s1fb = ['Risley (Hot Springs)'];
+var s1fb = ['Anri (School)'];
 
 exports.s1fb = s1fb;
