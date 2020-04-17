@@ -21,7 +21,9 @@ var list = ['Tengu',
             'Shiro',
             'Supura', 
             'Tsugumi',
-            'Xenia'
+            'Xenia',
+            'Druids\' Tokens',
+            'Katrina\'s Tokens'
            ];
 
 exports.list = list;
