@@ -8,7 +8,8 @@ var iblack = [
 	'Mephisto',
 	'Aurora',
 	'Eleonora',
-	'Aleida'
+	'Aleida',
+	'Halina'
 ]
 
 exports.iblack = iblack;
