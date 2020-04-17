@@ -139,7 +139,8 @@ var name = {
 	'<:lmcurious:650851194239057920>' : 'Lei-Mei',
 	'Shu-xian' : 'Shu-Xian',
 	'<:NielShy:650852179003047946>' : 'Niel',
-	'Claris' : 'Claris Zeinburg'
+	'Claris' : 'Claris Zeinburg',
+	'Chocochanter' : 'Honey' 
 }
 
 exports.name = name;
