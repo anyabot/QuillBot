@@ -6,7 +6,8 @@ var igold = [
    	'Sabein',
 	'Mistel',
 	'Natalie',
-	'Ernesta'
+	'Ernesta',
+	'Gertrude'
 ]
 
 exports.igold = igold;
