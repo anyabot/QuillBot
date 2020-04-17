@@ -11,7 +11,8 @@ var iplat = [
 	'Roza',
 	'Ralph',
 	'Motley',
-	'Patricia'
+	'Patricia',
+	'Katrina'
 ]
 
 exports.iplat = iplat;
