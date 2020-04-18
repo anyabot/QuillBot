@@ -29,7 +29,7 @@ class Search extends commando.Command {
                     var tex = $('.Results li:nth-child(' + i + ') article h1 a').text()
                     var li = $('.Results li:nth-child(' + i + ') article h1 a').attr('href')
                     var vid = $('.Results li:nth-child(' + i + ') h1 a').text()
-                    if (text != null && li != null) {
+                    if (tex != null && li != null) {
                         out = out + tex + ": " + li + "\n"
                     }
                     if (vid == "Videos for '" + text + "'") {
