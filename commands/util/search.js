@@ -22,7 +22,7 @@ class Search extends commando.Command {
 
         request(link, function(err, resp, html) {
             if (!err) {
-                out = ""
+                var out = ""
                 const $ = cheerio.load(html);
                 var max = 6
                 for (var i = 1; i < max; i++) {
