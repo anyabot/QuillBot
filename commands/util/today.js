@@ -96,7 +96,7 @@ request(link, function(err, resp, html) {
 		var dif1 = m2.diff(m)
 		var diff1 = humanizeDuration(dif1, { round: true })
 		const $ = cheerio.load(html);
-		var output = na($('.h-scrollable').html())
+		var output = na($('.h-scrollable').last().html())
     var tname;
 	var dm;
     var names = output.split(' ')
