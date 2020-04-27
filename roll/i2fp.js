@@ -1,3 +1,3 @@
-var i2fp = ['Leora', 'Weiss', 'Viola', 'Liza'];
+var i2fp = ['Patricia', 'Tanya', 'Roza'];
 
 exports.i2fp = i2fp;
