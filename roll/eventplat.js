@@ -135,7 +135,7 @@ var eventplat = [
 	'Saoshu',
 	'Shushu (Hot Springs)',
 	'Raichi (School)',
-	'Aira'
+	'Isla'
 ]
 
 exports.eventplat = eventplat;
