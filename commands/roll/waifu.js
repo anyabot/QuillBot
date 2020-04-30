@@ -111,8 +111,8 @@ async function send1(message, unit, embed, state) {
 				}
 			}
 			else if (state == "AW2") {
+				img = ($('.AW2Gallery div:nth-child(2) a img').attr('data-src'));
 				if (img) {
-					img = ($('.AW2Gallery div:nth-child(2) a img').attr('data-src'));
 					let nam =($('.AW2Gallery div:nth-child(2) a img').attr('alt'));
 					let pa = nam.split(" AW2 Render")
 					if (pa.length > 1) {
@@ -131,8 +131,8 @@ async function send1(message, unit, embed, state) {
 				}
 			}
 			else if (state == "AW2v1") {
+				img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));
 				if (img) {
-					img = ($('.AW2v1Gallery div:nth-child(2) a img').attr('data-src'));
 					let nam =($('.AW2v1Gallery div:nth-child(2) a img').attr('alt'));
 					let pa = nam.split(" AW2v1 Render")
 					if (pa.length > 1) {
@@ -151,8 +151,8 @@ async function send1(message, unit, embed, state) {
 				}
 			}
 			else if (state == "AW2v2") {
+				img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));
 				if (img) {
-					img = ($('.AW2v2Gallery div:nth-child(2) a img').attr('data-src'));
 					let nam =($('.AW2v2Gallery div:nth-child(2) a img').attr('alt'));
 					let pa = nam.split(" AW2v2 Render")
 					if (pa.length > 1) {
