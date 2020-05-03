@@ -132,6 +132,12 @@ var name = {
 	'Purpleloli' : 'Eithne',
 	'Orc Loli' : 'Illios',
 	'Orcloli' : 'Illios',
+	'Sleepy Loli' : 'Belphe',
+	'Sleepyloli' : 'Belphe',
+	'Crow Loli' : 'Belzetta',
+	'Crowloli' : 'Belzetta',
+	'Candy Loli' : 'Dolce',
+	'Candyloli' : 'Dolce',
 	'Sword Loli' : 'Rischelte',
 	'Water Loli' : 'Cenote',
 	'Dark Loli' : 'Clarice',
@@ -140,7 +146,9 @@ var name = {
 	'Hammer Loli' : 'Teeny',
 	'Fire Loli' : 'Loretta',
 	'Ice Loli' : 'Yukihime',
-	'Snake Loli' : 'Orochihime'
+	'Snake Loli' : 'Orochihime',
+	'Mechanical Enginnering Loli' : 'Char',
+	'Chemical Engineering Loli' : 'Machina'
 }
 
 exports.name = name;
