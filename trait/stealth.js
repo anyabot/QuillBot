@@ -1,5 +1,7 @@
-var list = ['Tengu', 
+var list = ['Ninja',
+			'Tengu', 
             '8-Gates Feng Shui Instructors (Feng Shui Users)', 
+			'Nekomata',
             'Nurarihyon', 
             'Shadow Hunters (Vampire Hunters)', 
             'Visionaries (Shamans)', 

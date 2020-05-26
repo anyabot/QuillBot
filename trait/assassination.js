@@ -1,4 +1,4 @@
-var list = ['Master Assassins (Rogues)', 
+var list = ['Rogues', 
             'Soma (New Year\'s)', 
             'Tigre', 
             'Renarde', 
@@ -47,6 +47,8 @@ var list = ['Master Assassins (Rogues)',
             'Sybilla', 
             'Viktor', 
             'Wonder Heart',
-            'Xiao'];
+            'Xiao',
+			'Bearca'
+			];
 
 exports.list = list;

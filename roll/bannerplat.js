@@ -88,7 +88,8 @@ var bannerplat = [
 	'Eithne',
 	'Oviely',
 	'Eris',
-	'Sumire'
+	'Sumire',
+	'Bearca'
 ]
 
 exports.bannerplat = bannerplat;

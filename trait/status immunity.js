@@ -1,8 +1,9 @@
 var list = ['Armor Maids (Maids)', 
             'Caravan Masters (Merchants)', 
-            'Mystic Hermits (Hermits)', 
+            'Hermits', 
             'Sly and Cunning Genius 【Koihime】', 
             'Evil Seekers (Evil Princesses)', 
+			'Principals (Dancers)',
             'Rosalie', 
             'Kagerou', 
             'Khuri', 
@@ -33,7 +34,8 @@ var list = ['Armor Maids (Maids)',
             'Shade', 
             'Lina', 
             'Augusta',
-            'Shushu (Hot Springs)'
+            'Shushu (Hot Springs)',
+			'Bearca'
            ];
 
 exports.list = list;

@@ -1,3 +1,4 @@
-var list = ['Filo'];
+var list = ['Filo',
+			'Sandra'];
 
 exports.list = list;

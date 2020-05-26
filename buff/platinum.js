@@ -1,3 +1,5 @@
-var list = ['Nanaly (Yukata)', 'Tamami'];
+var list = ['Nanaly (Yukata)', 
+			'Sherry',
+			'Tamami'];
 
 exports.list = list;
