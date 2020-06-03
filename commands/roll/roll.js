@@ -184,8 +184,7 @@ class RanRoll extends commando.Command {
 			}
 			else {message.channel.send("Imperial 2 is not available")}
 		}
-		}
-	    	else if (pool == "hero 1" || pool == "hero1" || pool == "h1") {
+	    else if (pool == "hero 1" || pool == "hero1" || pool == "h1") {
 			if (gachalist["h1open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Hero 1 Gacha Roll Result")
