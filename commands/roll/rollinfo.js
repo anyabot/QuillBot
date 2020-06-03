@@ -94,12 +94,12 @@ class RanRoll extends commando.Command {
 	      if (i2fg.length > 0) {i2 = i2 + "\nFeatured Gold: " + i2fg.join(', ')}
 		    mes = mes + "\n" + i2
 	    }
-		if (gachalist["i1open"] == true) {
+		if (gachalist["h1open"] == true) {
 		    var i1 = "**Hero 1**"
 	      if (i1fb.length > 0) {i1 = i1 + "\nFeatured Black: " + hero1.join(', ')}
 		    mes = mes + "\n" + i1
 	    }
-	    if (gachalist["i2open"] == true) {
+	    if (gachalist["h2open"] == true) {
 	    	var i2 = "**Hero 2**"
 	      if (i2fb.length > 0) {i2 = i2 + "\nFeatured Black: " + hero2.join(', ')}
 		    mes = mes + "\n" + i2
