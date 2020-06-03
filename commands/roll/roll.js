@@ -188,7 +188,8 @@ class RanRoll extends commando.Command {
 			if (gachalist["h1open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Hero 1 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack + hero1 + hero2, bannerplat, bannergold, bannersil, hero1, [], [], r10, upb, upp, usc)
+				var bl = bannerblack.concat(hero1, hero2)
+				gacha(message, embed, user, lastroll, canvas, ctx, bl, bannerplat, bannergold, bannersil, hero1, [], [], r10, upb, upp, usc)
 			}
 			else {message.channel.send("Hero 1 is not available")}
 		}
@@ -196,7 +197,8 @@ class RanRoll extends commando.Command {
 			if (gachalist["h2open"] == true) {
 				usc = usc - scu;
 				embed.setTitle("Hero 2 Gacha Roll Result")
-				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack + hero1 + hero2, bannerplat, bannergold, bannersil, hero2, [], [], r10, upb, upp, usc)
+				var bl = bannerblack.concat(hero1, hero2)
+				gacha(message, embed, user, lastroll, canvas, ctx, bl, bannerplat, bannergold, bannersil, hero2, [], [], r10, upb, upp, usc)
 			}
 			else {message.channel.send("Hero 2 is not available")}
 		}
