@@ -24,6 +24,8 @@ var i1fg = require('../../roll/i1fg.js').i1fg;
 var i2fb = require('../../roll/i2fb.js').i2fb;
 var i2fp = require('../../roll/i2fp.js').i2fp;
 var i2fg = require('../../roll/i2fg.js').i2fg;
+var hero1 = require('../../roll/hero1.js').hero1;
+var hero2 = require('../../roll/hero2.js').hero2;
 var gachalist = require('../../roll/gachalist.js').gachalist
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
@@ -56,6 +58,8 @@ class RanRoll extends commando.Command {
 	    if (gachalist["s2open"] == true) {mes = mes + "\nSeasonal 2 (s2, seasonal2)"}
 	    if (gachalist["i1open"] == true) {mes = mes + "\nImperial 1 (i1, we1)"}
 	    if (gachalist["i2open"] == true) {mes = mes + "\nImperial 2 (i2, we2)"}
+		if (gachalist["h1open"] == true) {mes = mes + "\nHero 1 (h1)"}
+	    if (gachalist["h2open"] == true) {mes = mes + "\nHero 2 (h2)"}
 	    if (gachalist["b1open"] == true) {mes = mes + "\nBanner 1 (b1, banner1, preminum 1)"}
 	    if (gachalist["b2open"] == true) {mes = mes + "\nBanner 2 (b2, banner2, preminum 2)"}
 	    if (gachalist["pugopen"] == true) {mes = mes + "\nPUG (pick-up, pickup)"}
@@ -88,6 +92,16 @@ class RanRoll extends commando.Command {
 	      if (i2fb.length > 0) {i2 = i2 + "\nFeatured Black: " + i2fb.join(', ')}
 	      if (i2fp.length > 0) {i2 = i2 + "\nFeatured Plat: " + i2fp.join(', ')}
 	      if (i2fg.length > 0) {i2 = i2 + "\nFeatured Gold: " + i2fg.join(', ')}
+		    mes = mes + "\n" + i2
+	    }
+		if (gachalist["i1open"] == true) {
+		    var i1 = "**Hero 1**"
+	      if (i1fb.length > 0) {i1 = i1 + "\nFeatured Black: " + hero1.join(', ')}
+		    mes = mes + "\n" + i1
+	    }
+	    if (gachalist["i2open"] == true) {
+	    	var i2 = "**Hero 2**"
+	      if (i2fb.length > 0) {i2 = i2 + "\nFeatured Black: " + hero2.join(', ')}
 		    mes = mes + "\n" + i2
 	    }
 	    if (gachalist["b1open"] == true) {

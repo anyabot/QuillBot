@@ -39,6 +39,8 @@ var i1fg = require('../../roll/i1fg.js').i1fg;
 var i2fb = require('../../roll/i2fb.js').i2fb;
 var i2fp = require('../../roll/i2fp.js').i2fp;
 var i2fg = require('../../roll/i2fg.js').i2fg;
+var hero1 = require('../../roll/hero1.js').hero1;
+var hero2 = require('../../roll/hero2.js').hero2;
 var gachalist = require('../../roll/gachalist.js').gachalist
 var urlencode = require('urlencode');
 const Keyv = require('keyv');
@@ -181,6 +183,23 @@ class RanRoll extends commando.Command {
 				gacha(message, embed, user, lastroll, canvas, ctx, iblack, iplat, igold, isil, i2fb, i2fp, i2fg, r10, upb, upp, usc)
 			}
 			else {message.channel.send("Imperial 2 is not available")}
+		}
+		}
+	    	else if (pool == "hero 1" || pool == "hero1" || pool == "h1") {
+			if (gachalist["h1open"] == true) {
+				usc = usc - scu;
+				embed.setTitle("Hero 1 Gacha Roll Result")
+				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack + hero1 + hero2, bannerplat, bannergold, bannersil, hero1, [], [], r10, upb, upp, usc)
+			}
+			else {message.channel.send("Hero 1 is not available")}
+		}
+		else if (pool == "hero 2" || pool == "hero2" || pool == "h2") {
+			if (gachalist["h2open"] == true) {
+				usc = usc - scu;
+				embed.setTitle("Hero 2 Gacha Roll Result")
+				gacha(message, embed, user, lastroll, canvas, ctx, bannerblack + hero1 + hero2, bannerplat, bannergold, bannersil, hero2, [], [], r10, upb, upp, usc)
+			}
+			else {message.channel.send("Hero 2 is not available")}
 		}
 		else {
 			message.channel.send("Wrong Input")
