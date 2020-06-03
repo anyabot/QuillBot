@@ -13,7 +13,8 @@ var bonus = {
 	"PEV": "Physical Attack Evasion",
 	"PAD": "Post-Attack Delay",
 	"SCD": "Skill Cooldown",
-	"SDI" :"Skill Duration"
+	"SDI" : "Skill Duration",
+	"PRC" : "Piercing Attack"
 }
 
 
