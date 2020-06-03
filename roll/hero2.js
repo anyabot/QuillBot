@@ -1,3 +1,3 @@
-var hero1 = ['Solais (Black)', 'Yuugen (Black)'];
+var hero2 = ['Solais (Black)', 'Yuugen (Black)'];
 
-exports.hero1 = hero1;
+exports.hero2 = hero2;
