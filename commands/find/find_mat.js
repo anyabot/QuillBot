@@ -172,7 +172,7 @@ class FindMat extends commando.Command {
 
     async run(message, { text }) {
         var unit = functions.nameChange(text)
-        var link = "https://aigis.fandom.com/wiki/" + urlencode(unit);
+        var link = "https://aigis.fandom.com/wiki/" + urlencode(unit) + "/stats";
 
 request(link, function(err, resp, html) {
 	if (!err) {
