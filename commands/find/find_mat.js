@@ -295,6 +295,7 @@ request(link, function(err, resp, html) {
 					embedaw.setURL(link)
 					let orbs = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3)').text()
 					let parts = orbs.split('&')
+					console.log(parts)
 					let len = parts.length
 					parts[len-1] = parts[len-1].slice(0,-1)
 					for (var i = 0; i < len; i++) {
