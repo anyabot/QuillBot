@@ -206,10 +206,12 @@ request(link, function(err, resp, html) {
 		var ccname;
 		var awname;
 		var ccimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+		if (!ccimg) {ccimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('src'));}
 		if (aw) {
 			var awimg
 			if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
 				awimg = ($('.c3 td:first-child div a img').attr('data-src'));
+				if (!awimg) {awimg = ($('.c3 td:first-child div a img').attr('src'));}
 				
 			}
 			if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
