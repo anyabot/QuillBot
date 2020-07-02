@@ -26,7 +26,8 @@ var eventblack = [
 	'Xing-Fu',
 	'Anna (Waitress)',
 	'Atnates (Black)',
-	'Nicole'
+	'Nicole',
+	'Diera (Bride)'
 ]
 
 exports.eventblack = eventblack;

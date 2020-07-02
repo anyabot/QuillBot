@@ -6,6 +6,8 @@ var list = ['Blacksmiths',
 'Chibi Sarah', 
 'Alice (Valentine\'s)', 
 'Olivier (Bride)', 
-'Alicia (Bride)'];
+'Alicia (Bride)',
+'Rikka (Bride)',
+'Suiren (Bride)'];
 
 exports.list = list;

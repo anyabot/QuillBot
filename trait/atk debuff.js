@@ -3,6 +3,7 @@ var list = ['Curse Users',
            'Nekomata', 
            'Playwrights (GBM)', 
            'Puppet Dolls 【Fuukan】', 
+		   'Detective (GBM)',
            'Orochihime', 
            'Prince (Dark)', 
            'Sybilla', 
@@ -20,7 +21,8 @@ var list = ['Curse Users',
            'Erlang Shen', 
            'Shinomiya Komachi', 
            'Isambard',
-           'Aira'
+           'Aira',
+		   'Grimoire'
            ];
 
 exports.list = list;

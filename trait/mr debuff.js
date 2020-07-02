@@ -15,7 +15,8 @@ var list = ['Tenma',
             'Honey', 
             'Erlang Shen', 
             'Luvea',
-            'Anri (School)'
+            'Anri (School)',
+			'Grimoire'
            ];
 
 exports.list = list;

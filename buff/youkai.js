@@ -5,7 +5,8 @@ var list = ['Youkai Supreme Commander Nurarihyon (Nurarihyon)',
             'Shino', 
             'Sagiri', 
             'Shiro',
-            'Tsugumi'
+            'Tsugumi',
+			'Yashima'
            ];
 
 exports.list = list;

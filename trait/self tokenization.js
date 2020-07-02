@@ -6,6 +6,7 @@ var list = ['Avengers',
 'Master Assassins (Rogues)'
 'Nosferatu (Vampire Princesses)', 
 'Demon Rune', 
+'Story Infiltrator (GBM)',
 'Barbara', 
 'Shu-Xian', 
 'Melvina', 

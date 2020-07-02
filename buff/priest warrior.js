@@ -1,3 +1,10 @@
-var list = ['Carat', 'Ariel', 'Aix', 'Miranda', 'Fermi', 'Lumedia', 'Sonia'];
+var list = ['Carat', 
+'Ariel', 
+'Aix', 
+'Miranda', 
+'Fermi', 
+'Lumedia', 
+'Sonia',
+'Finan'];
 
 exports.list = list;

@@ -1,12 +1,12 @@
 var gachalist = {
-  "pugopen" : false,
+  "pugopen" : true,
   "b1open" : false,
   "b2open" : true,
-  "s1open" : false,
+  "s1open" : true,
   "s2open" : false,
   "i1open" : false,
   "i2open" : false,
-  "h1open" : true,
-  "h2open" : true
+  "h1open" : false,
+  "h2open" : false
 }
 exports.gachalist = gachalist;

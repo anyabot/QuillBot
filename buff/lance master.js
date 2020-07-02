@@ -1,4 +1,5 @@
 var list = ['Filo',
-			'Sandra'];
+			'Sandra',
+'Leticia'];
 
 exports.list = list;

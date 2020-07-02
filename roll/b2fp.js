@@ -1,2 +1,2 @@
-var b2fp = ['Yuffe', 'Fistia'];
+var b2fp = ['Nadia'];
 exports.b2fp = b2fp ;

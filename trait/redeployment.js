@@ -1,5 +1,6 @@
 var list = ['Majin', 
-			'Demon Rune', 
+			'Demon Rune',
+'Story Infiltrator (GBM)',			
 			'Kibanin',
 			'Meliodas', 
 			'Emelda (Valentine\'s)', 
