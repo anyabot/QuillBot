@@ -1,4 +1,5 @@
 var list = ['Tenma', 
+'Eleonora (Swimsuit)',
             'Ingrid', 
             'Suiren', 
             'Adelaide', 

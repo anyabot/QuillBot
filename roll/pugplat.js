@@ -1,3 +1,3 @@
-var pugplat = ['Konoha', 'Wonder Heart', 'Marle', 'Tyr', 'Maryfa']
+var pugplat = ['Cenote', 'Mithria', 'Julia', 'Carat', 'Siena']
 
 exports.pugplat = pugplat;
