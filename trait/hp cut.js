@@ -6,6 +6,7 @@ var list = ['Evil Princesses',
 'Orochihime (New Year\'s)', 
 'Wonder Heart', 
 'Shiro',
-'Suiren (Bride)'];
+'Suiren (Bride)',
+'Tsumuji'];
 
 exports.list = list;

@@ -11,6 +11,7 @@ var list = ['Elias',
 'Aleida', 
 'Patricia',
 'Sieglinde (Swimsuit)',
-'Leona (Swimsuit)'];
+'Leona (Swimsuit)',
+'Leora (Swimsuit)'];
 
 exports.list = list;

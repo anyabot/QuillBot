@@ -22,7 +22,8 @@ var list = ['Curse Users',
            'Shinomiya Komachi', 
            'Isambard',
            'Aira',
-		   'Grimoire'
+		   'Grimoire',
+		   'Tsumuji'
            ];
 
 exports.list = list;
