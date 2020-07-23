@@ -1,3 +1,3 @@
-var s1fp = ['Leona (Swimsuit)', 'Frey (Swimsuit)', 'Liselotte (Swimsuit)'];
+var s1fp = ['Paula (Swimsuit)'];
 
 exports.s1fp = s1fp;
