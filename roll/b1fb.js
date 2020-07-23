@@ -1,3 +1,3 @@
-var b1fb = ['Sylseth', 'Adelaide'];
+var b1fb = ['Tsugumi', 'Kayou'];
 
 exports.b1fb = b1fb;
