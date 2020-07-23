@@ -138,7 +138,8 @@ var eventplat = [
 	'Isla',
 	'Leticia',
 	'Finan',
-	'Tuan (Platinum)'
+	'Tuan (Platinum)',
+	'Leora (Swimsuit)'
 ]
 
 exports.eventplat = eventplat;
