@@ -130,7 +130,8 @@ var plat = [
 	'Oviely',
 	'Eris',
 	'Sumire',
-	'Bearca'
+	'Bearca',
+	'Tsumuji'
 ]
 
 exports.plat = plat;
