@@ -31,7 +31,8 @@ var eventgold = [
 	'Mao (Yukata)',
 	'Renarde (Halloween)',
 	'Ertel (Christmas)',
-	'Sharqi (Valentine\'s)'
+	'Sharqi (Valentine\'s)',
+	'Corum'
 ]
 
 exports.eventgold = eventgold;
