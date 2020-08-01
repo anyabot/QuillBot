@@ -4,6 +4,7 @@ var list = ['Orc Bravers (Gladiators)',
 			'Prince (Dark)', 
 			'Anatolia', 
 			'Mephisto', 
-			'Harmonia'];
+			'Harmonia',
+'Mephisto (Swimsuit)'];
 
 exports.list = list;

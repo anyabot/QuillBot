@@ -22,6 +22,7 @@ var list = ['Kanon (Christmas)',
 'Grimoire',
 'Yashima',
 'Sieglinde (Swimsuit)',
+'Aurora (Swimsuit)',
 'Evil Eye (Umbre\'s token)', 
 'Corpse Marionette (Shu-Xian\'s token)'];
 
