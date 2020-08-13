@@ -7,6 +7,8 @@ var list = ['Mao (Yukata)',
 'Leona (Swimsuit)',
 'Leora (Swimsuit)',
 'Mephisto (Swimsuit)',
-'Natalie (Swimsuit)'];
+'Natalie (Swimsuit)',
+'Spiria (Yukata)',
+'Regina (Yukata)'];
 
 exports.list = list;
