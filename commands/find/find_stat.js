@@ -55,16 +55,20 @@ class FindStat extends commando.Command {
 			if(output) {
 				check = true;
 				let lv1v1 = lv1line(output);
+				console.log(lv1v1)
 				output = $('.listtable.bgwhite tbody tr:nth-child(4)').first().text();
-				console.log(output)
 				let lv99v1 = lv1line(output);
+				console.log(lv99v1)
 				output = $('.listtable.bgwhite tbody tr:nth-child(4) td:nth-child(5)').first().html();
 				let ran = range(output);
+				console.log(ran)
 				output = $('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(12)').first().html();
 				aff = affe(output);
+				console.log(aff)
 				img = ($('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 				output = $('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(3)').first().html();
 				let nam = na(output);
+				console.log(nam)
 				let embed = new Discord.RichEmbed()
 				.setURL(link)
 				.setTitle(unit)
@@ -117,6 +121,7 @@ class FindStat extends commando.Command {
 				let lv99v1 = lv1line(output);
 				output = $('.c3 ').first().text();
 				let lv1v1 = lv1line(output);
+				console.log(lv1v1)
 				output = $('.c3.numbers td:nth-child(5)').first().html();
 				let ran = range(output);
 				let nam;
