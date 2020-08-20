@@ -66,6 +66,7 @@ class FindStat extends commando.Command {
 				aff = affe(output);
 				console.log(aff)
 				img = ($('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+				if (!img) {img = ($('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('src'));}
 				output = $('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(3)').first().html();
 				let nam = na(output);
 				console.log(nam)
@@ -127,6 +128,7 @@ class FindStat extends commando.Command {
 				let nam;
 				if ($('.c3 td:nth-child(3)').hasClass('leftal')) {
 					img = ($('.c3 td:first-child div a img').attr('data-src'));
+					if (!img) {img = ($('.c3 td:first-child div a img').attr('src'));}
 					output = $('.c3 td:nth-child(2)').first().html();
 					nam = na(output);
 					output = $('.c3 td:nth-child(11)').first().html();
@@ -165,6 +167,7 @@ class FindStat extends commando.Command {
 				let nam;
 				if ($('.c4 td:nth-child(3)').hasClass('leftal')) {
 					img = ($('.c4 td:first-child div a img').attr('data-src'));
+					if (!img) {img = ($('.c4 td:first-child div a img').attr('src'));}
 					output = $('.c4 td:nth-child(2)').first().html();
 					nam = na(output);
 				}
@@ -199,6 +202,7 @@ class FindStat extends commando.Command {
 				let nam;
 				if ($('.c5 td:nth-child(3)').hasClass('leftal')) {
 					img = ($('.c5 td:first-child div a img').attr('data-src'));
+					if (!img) {img = ($('.c5 td:first-child div a img').attr('src'));}
 					output = $('.c5 td:nth-child(2)').first().html();
 					nam = na(output);
 				}
