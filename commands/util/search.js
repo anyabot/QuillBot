@@ -26,11 +26,11 @@ class Search extends commando.Command {
                 const $ = cheerio.load(html);
                 var max = 6
                 for (var i = 1; i < max; i++) {
-                    var tex = $('.Results li:nth-child(' + i + ') article h1 a').text()
-                    var li = $('.Results li:nth-child(' + i + ') article h1 a').attr('href')
-                    var vid = $('.Results li:nth-child(' + i + ') h1 a').text()
+                    var tex = $('.unified-search__results li:nth-child(' + i + ') article h1 a').text()
+                    var li = $('.unified-search__results li:nth-child(' + i + ') article h1 a').attr('href')
+                    var vid = $('.unified-search__results li:nth-child(' + i + ') h1 a').text()
                     if (tex != null && li != null) {
-                        out = out + tex + ": <" + li + ">\n"
+                        out = out + tex.trim() + ": <" + li + ">\n"
                     }
                     if (vid == "Videos for '" + input + "'") {
                         max++;
