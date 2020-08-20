@@ -51,18 +51,19 @@ class FindStat extends commando.Command {
 			var check = false;
 			var pages = []
 			var page = 1;
-			output = $('.listtable.bgwhite tr:nth-child(3)').first().text();
+			output = $('.listtable.bgwhite tbody tr:nth-child(3)').first().text();
 			if(output) {
 				check = true;
 				let lv1v1 = lv1line(output);
-				output = $('.listtable.bgwhite tr:nth-child(4)').first().text();
+				output = $('.listtable.bgwhite tbody tr:nth-child(4)').first().text();
+				console.log(output)
 				let lv99v1 = lv1line(output);
-				output = $('.listtable.bgwhite tr:nth-child(4) td:nth-child(5)').first().html();
+				output = $('.listtable.bgwhite tbody tr:nth-child(4) td:nth-child(5)').first().html();
 				let ran = range(output);
-				output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(12)').first().html();
+				output = $('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(12)').first().html();
 				aff = affe(output);
-				img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-				output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
+				img = ($('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
+				output = $('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(3)').first().html();
 				let nam = na(output);
 				let embed = new Discord.RichEmbed()
 				.setURL(link)
