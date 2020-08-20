@@ -67,6 +67,7 @@ class FindStat extends commando.Command {
 				console.log(aff)
 				img = ($('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 				if (!img) {img = ($('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('src'));}
+				console.log(img)
 				output = $('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(3)').first().html();
 				let nam = na(output);
 				console.log(nam)
