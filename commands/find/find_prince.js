@@ -86,6 +86,7 @@ class FindPrince extends commando.Command {
 						embed.addField("Block", lv1v1[9], true)
 						embed.addField("Cost", lv1v1[11], true)
 						let aw2 = awna + "Skill"
+						console.log("Skill")
 						if ($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html() != null) {
 							console.log(aw2);
 							console.log($('.' + aw2 + ' table tr:nth-child(2) td a').first().html())
@@ -108,6 +109,7 @@ class FindPrince extends commando.Command {
 								}
 							}
 						}
+						console.log("Ability")
 						let aw3 = awna + "Ability"
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
 						let ana = na(output);
@@ -119,6 +121,7 @@ class FindPrince extends commando.Command {
 						else {
 							embed.addField("Ability: " + ana, ades)
 						}
+						console.log("Trait")
 						let cna;
 						    if (ele == "Sacred Gear") {cna = "Sacred"}
 						    else {cna = "Prince (" + ele + ")"}
