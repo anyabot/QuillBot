@@ -49,8 +49,8 @@ class UtilDaily extends commando.Command {
 		else if (level_to > 99 )
 			message.channel.send("Level to get to must be lower than 100");
         else {
-			rarity2 = convert(rarity)
-			exp = get_exp(rarity2, level_from, level_to, exp_to_next_level)
+			var rarity2 = convert(rarity)
+			var exp = get_exp(rarity2, level_from, level_to, exp_to_next_level)
 			message.channel.send(exp);
 		}
 	}
