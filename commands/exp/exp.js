@@ -21,13 +21,11 @@ class UtilDaily extends commando.Command {
 					key: 'level_from',
 					prompt: 'What is the current level of the unit?',
 					type: 'integer',
-					validate: level_from => 0 < level_from < 100
 				},
 				{
 					key: 'level_to',
 					prompt: 'What is the level you want to get to?',
 					type: 'integer',
-					validate: level_to => 0 < level_to < 100
 				},
 				{
 					key: 'exp_to_next_level',
@@ -49,6 +47,8 @@ class UtilDaily extends commando.Command {
 			message.channel.send("Rarity" + arr[2] + "doesn't exist");
 		else if (level_to <= level_from )
 			message.channel.send("Level to get to must be higher than current level");
+		else if (level_from < 1 )
+			message.channel.send("Level to get to must be higher than 0");
 		else if (level_to > 99 )
 			message.channel.send("Level to get to must be lower than 100");
         else {
