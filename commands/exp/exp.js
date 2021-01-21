@@ -27,7 +27,7 @@ class UtilDaily extends commando.Command {
 					key: 'level_to',
 					prompt: 'What is the level you want to get to?',
 					type: 'integer',
-					validate: level_to => 0 < level_from < 100
+					validate: level_to => 0 < level_to < 100
 				},
 				{
 					key: 'exp_to_next_level',
