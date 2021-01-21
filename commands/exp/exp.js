@@ -14,17 +14,20 @@ class UtilDaily extends commando.Command {
 				{
 					key: 'rarity',
 					prompt: 'What is the rarity of the unit?',
-					type: 'string'
+					type: 'string',
+					oneOf: ['iron', 'bronze', 'sil', 'silver', 'gold', 'sap', 'sapphire', 'plat', 'platinum', 'black'],
 				},
 				{
 					key: 'level_from',
 					prompt: 'What is the current level of the unit?',
-					type: 'integer'
+					type: 'integer',
+					validate: level_from => level_from < 100 & 0 > level_from
 				},
 				{
 					key: 'level_to',
 					prompt: 'What is the level you want to get to?',
-					type: 'integer'
+					type: 'integer',
+					validate: level_to => level_to < 100 & 0 > level_to
 				},
 				{
 					key: 'exp_to_next_level',
