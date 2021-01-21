@@ -57,16 +57,16 @@ class FindPrince extends commando.Command {
 						output = $('.' + aw1 + ' table tbody tr:nth-child(8)').first().text();
 						if (output) {
 							let lv99v1 = lv1line(output);
-							hp = lv99v1[1]
-							atk = lv99v1[2]
-							def = lv99v1[3]
+							hp = lv99v1[2]
+							atk = lv99v1[4]
+							def = lv99v1[6]
 							output = $('.' + aw1 + ' table tbody tr:nth-child(6) td:nth-child(5)').first().html();
 							ran = range(output);
 						}
 						else {
-							hp = lv1v1[5]
-							atk = lv1v1[6]
-							def = lv1v1[7]
+							hp = lv1v1[8]
+							atk = lv1v1[10]
+							def = lv1v1[12]
 							output = $('.' + aw1 + ' table tbody tr:nth-child(4)').first().html();
 							ran = range(output);
 						}
@@ -82,10 +82,11 @@ class FindPrince extends commando.Command {
 						embed.addField("ATK", atk, true)
 						embed.addField("DEF", def, true)
 						embed.addField("Range", ran, true)
-						embed.addField("MR", lv1v1[8], true)
-						embed.addField("Block", lv1v1[9], true)
-						embed.addField("Cost", lv1v1[11], true)
+						embed.addField("MR", lv1v1[14], true)
+						embed.addField("Block", lv1v1[16], true)
+						embed.addField("Cost", lv1v1[20], true)
 						let aw2 = awna + "Skill"
+						console.log("Skill")
 						if ($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html() != null) {
 							console.log(aw2);
 							console.log($('.' + aw2 + ' table tr:nth-child(2) td a').first().html())
@@ -108,6 +109,7 @@ class FindPrince extends commando.Command {
 								}
 							}
 						}
+						console.log("Ability")
 						let aw3 = awna + "Ability"
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(14)').first().html();
 						let ana = na(output);
@@ -119,6 +121,7 @@ class FindPrince extends commando.Command {
 						else {
 							embed.addField("Ability: " + ana, ades)
 						}
+						console.log("Trait")
 						let cna;
 						    if (ele == "Sacred Gear") {cna = "Sacred"}
 						    else {cna = "Prince (" + ele + ")"}
@@ -148,6 +151,7 @@ class FindPrince extends commando.Command {
 				}
 				else {
 					let ele = unit
+					console.log(ele)
 					var awlist = awl($('.unit-infobox.hidden').first().html())
 					var embed
 					if (awlist.includes(ele)) {
@@ -164,16 +168,16 @@ class FindPrince extends commando.Command {
 						output = $('.' + aw1 + ' table tbody tr:nth-child(8)').first().text();
 						if (output) {
 							let lv99v1 = lv1line(output);
-							hp = lv99v1[1]
-							atk = lv99v1[2]
-							def = lv99v1[3]
+							hp = lv99v1[2]
+							atk = lv99v1[4]
+							def = lv99v1[6]
 							output = $('.' + aw1 + ' table tbody tr:nth-child(6) td:nth-child(5)').first().html();
 							ran = range(output);
 						}
 						else {
-							hp = lv1v1[5]
-							atk = lv1v1[6]
-							def = lv1v1[7]
+							hp = lv1v1[8]
+							atk = lv1v1[10]
+							def = lv1v1[12]
 							output = $('.' + aw1 + ' table tbody tr:nth-child(4)').first().html();
 							ran = range(output);
 						}
@@ -189,9 +193,9 @@ class FindPrince extends commando.Command {
 						embed.addField("ATK", atk, true)
 						embed.addField("DEF", def, true)
 						embed.addField("Range", ran, true)
-						embed.addField("MR", lv1v1[8], true)
-						embed.addField("Block", lv1v1[9], true)
-						embed.addField("Cost", lv1v1[11], true)
+						embed.addField("MR", lv1v1[14], true)
+						embed.addField("Block", lv1v1[16], true)
+						embed.addField("Cost", lv1v1[20], true)
 						let aw2 = awna + "Skill"
 						if ($('.' + aw2 + ' table:nth-child(3) tr:nth-child(2) td:nth-child(2)').first().html() != null) {
 							console.log($('.' + aw2 + ' table tr:nth-child(2) td a').first().html())
