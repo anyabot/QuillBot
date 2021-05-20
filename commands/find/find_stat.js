@@ -163,6 +163,7 @@ class FindStat extends commando.Command {
 				let lv99v1 = lv1line(output);
 				output = $('.c4 ').first().text();
 				let lv1v1 = lv1line(output);
+				console.log(lv1v1)
 				output = $('.c4.numbers td:nth-child(5)').first().html();
 				let ran = range(output);
 				let nam;
@@ -198,6 +199,7 @@ class FindStat extends commando.Command {
 				let lv99v1 = lv1line(output);
 				output = $('.c5 ').first().text();
 				let lv1v1 = lv1line(output);
+				console.log(lv1v1)
 				output = $('.c5.numbers td:nth-child(5)').first().html();
 				let ran = range(output);
 				let nam;
