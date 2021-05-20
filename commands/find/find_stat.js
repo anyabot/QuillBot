@@ -118,7 +118,7 @@ class FindStat extends commando.Command {
 					pages.push(embed);
 				}
 			}
-			output = $('tbody .c3.numbers').text();
+			output = $('tbody tr.c3.numbers').text();
 			if(output) {
 				let lv99v1 = lv1line(output);
 				output = $('.c3 ').first().text();
@@ -158,7 +158,7 @@ class FindStat extends commando.Command {
 				.addField("Affection Bonus", aff, true)
 				pages.push(embed)
 			}
-			output = $('tbody .c4.numbers').text();
+			output = $('tbody tr.c4.numbers').text();
 			if(output) {
 				let lv99v1 = lv1line(output);
 				output = $('.c4 ').first().text();
@@ -193,7 +193,7 @@ class FindStat extends commando.Command {
 				.addField("Affection Bonus", aff, true)
 				pages.push(embed)
 			}
-			output = $('tbody .c5.numbers').text();
+			output = $('tbody tr.c5.numbers').text();
 			if(output) {
 				let lv99v1 = lv1line(output);
 				output = $('.c5 ').first().text();
