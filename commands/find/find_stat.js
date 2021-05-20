@@ -90,7 +90,7 @@ class FindStat extends commando.Command {
 			}
 			if (($('.c2').find('td').length >= 6) && !chibi) {
 				output = $('.c2.numbers').first().text();
-				if(output && $('.c2.numbers').find('td') >=5) {
+				if(output && $('.c2.numbers').find('td').length >=5) {
 					let lv99v1 = lv1line(output);
 					output = $('.c2 ').first().text();
 					let lv1v1 = lv1line(output);
