@@ -12,7 +12,7 @@ class FindPath extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'path',
-		aliases: ['paths'],
+		aliases: ['paths', 'class', 'classes', 'c'],
             group: 'find',
             memberName: 'path',
             description: 'find all classes of an unit',
