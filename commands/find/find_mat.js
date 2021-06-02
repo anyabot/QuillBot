@@ -189,6 +189,7 @@ request(link, function(err, resp, html) {
 		var gold = $('.categories').text().includes("Rarity:Gold");
 		var silver = $('.categories').text().includes("Rarity:Silver");
 		var youkai = $('.categories').text().includes("Youkai");
+		console.log($('.categories').text())
 		var cc = false;
 		if ($('.listtable.bgwhite tr').length >= 5) {
 			output = $('.c2.numbers').first().text();
