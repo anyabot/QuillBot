@@ -288,10 +288,12 @@ request(link, function(err, resp, html) {
 			let link3 = "https://aigis.fandom.com/wiki/Awakening/" + urlencode(awname)
 			request(link3, function(err, resp, html) {
 				if (!err) {
+					console.log(awname)
 					let $3 = cheerio.load(html)
 					let mat1 = $3('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
 					let mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 					let mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
+					console.log(mat1)
 					let embedaw = new Discord.RichEmbed();
 					embedaw.setColor('BLUE')
 					embedaw.setURL(link)
