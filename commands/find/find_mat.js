@@ -220,6 +220,7 @@ request(link, function(err, resp, html) {
 		}
 		output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 		if (output) {
+			console.log(youkai)
 			if (youkai) {
 				awname = na(output);
 			}
