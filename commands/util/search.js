@@ -20,7 +20,7 @@ class Search extends commando.Command {
     async run(message, input) {
         var link = "https://aigis.fandom.com/wiki/Special:Search?query=" + urlencode(input)
 
-        request(link, function(err, resp, html) {
+        request(link, function (err, resp, html) {
             if (!err) {
                 var out = ""
                 const $ = cheerio.load(html);

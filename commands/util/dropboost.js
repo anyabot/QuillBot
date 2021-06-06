@@ -2,28 +2,28 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 
 class FindDrop extends commando.Command {
-    constructor(client) {
-        super(client, {
-            	name: 'dropboost',
-              aliases: ['db', 'dropbooster'],
-            	group: 'util2',
-            	memberName: 'dropboost',
-            	description: 'show units with drop boost ability',
-		examples: ['&dropboost dc'],
-		args: [{
-		    key: 'text',
-			prompt: 'What types of dropbooster do you want to know about?',
-		    type: 'string',
-		default: "all"
-		}]
-        });
-    }
+	constructor(client) {
+		super(client, {
+			name: 'dropboost',
+			aliases: ['db', 'dropbooster'],
+			group: 'util2',
+			memberName: 'dropboost',
+			description: 'show units with drop boost ability',
+			examples: ['&dropboost dc'],
+			args: [{
+				key: 'text',
+				prompt: 'What types of dropbooster do you want to know about?',
+				type: 'string',
+				default: "all"
+			}]
+		});
+	}
 	async run(message, { text }) {
 		var drop = text.toLowerCase()
-    var pages = [];
+		var pages = [];
 		var page = 1;
-    var check = false;
-		if (drop == "all"){
+		var check = false;
+		if (drop == "all") {
 			check = true;
 			var robert = new Discord.RichEmbed()
 			robert.setTitle('Robert')
@@ -197,47 +197,47 @@ class FindDrop extends commando.Command {
 			junon.addField('AW Ability', 'While in your possession, with the exception of Spirits, the drop rate of Iron units increases by 8%.')
 			pages.push(junon)
 		}
-		else {message.channel.send("No Data")}
+		else { message.channel.send("No Data") }
 		if (check) {
 			var embed = new Discord.RichEmbed()
-			embed = pages[page-1]
+			embed = pages[page - 1]
 			if (pages.length > 1) {
 				embed.setFooter('Page ' + page + ' of ' + pages.length);
-		message.channel.send(embed).then(msg => {
+				message.channel.send(embed).then(msg => {
 
-		msg.react('⬅').then( r => {
-        msg.react('➡')
+					msg.react('⬅').then(r => {
+						msg.react('➡')
 
-        // Filters
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
+						// Filters
+						const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
+						const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
 
-        const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-        const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+						const backwards = msg.createReactionCollector(backwardsFilter, { timer: 6000 });
+						const forwards = msg.createReactionCollector(forwardsFilter, { timer: 6000 });
 
-        backwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-        	if (page === 1) return;
-         	page--;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
+						backwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+							if (page === 1) return;
+							page--;
+							embed = pages[page - 1];
+							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							msg.edit(embed)
+						})
 
-        forwards.on('collect', r => {
-		r.remove(r.users.filter(u => !u.bot).first());
-            	if (page === pages.length) return;
-            	page++;
-            	embed = pages[page-1];
-            	embed.setFooter('Page ' + page + ' of ' + pages.length);
-            	msg.edit(embed)
-        })
-    })
-})
+						forwards.on('collect', r => {
+							r.remove(r.users.filter(u => !u.bot).first());
+							if (page === pages.length) return;
+							page++;
+							embed = pages[page - 1];
+							embed.setFooter('Page ' + page + ' of ' + pages.length);
+							msg.edit(embed)
+						})
+					})
+				})
 			}
-			else {message.channel.send(embed)}
+			else { message.channel.send(embed) }
 		}
 	}
 }
 
- module.exports = FindDrop;
+module.exports = FindDrop;

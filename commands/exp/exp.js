@@ -3,13 +3,13 @@ const Discord = require('discord.js');
 const expTable = require('../../library/exp').expTable;
 
 class UtilDaily extends commando.Command {
-    constructor(client) {
-        super(client, {
-            name: 'exp',
-            group: 'exp_cal',
-            memberName: 'exp',
-            description: 'Calculate EXP need to reach from one level to another.',
-            examples: ['&exp rarity level_from level_to exp_to_next_level y (if you have Sariette, else skip the last one)'],
+	constructor(client) {
+		super(client, {
+			name: 'exp',
+			group: 'exp_cal',
+			memberName: 'exp',
+			description: 'Calculate EXP need to reach from one level to another.',
+			examples: ['&exp rarity level_from level_to exp_to_next_level y (if you have Sariette, else skip the last one)'],
 			args: [
 				{
 					key: 'rarity',
@@ -39,19 +39,19 @@ class UtilDaily extends commando.Command {
 					default: 'no'
 				}
 			]
-        });
-    }
+		});
+	}
 
-    async run(message, {rarity, level_from, level_to, exp_to_next_level, sari}) {
+	async run(message, { rarity, level_from, level_to, exp_to_next_level, sari }) {
 		if (!['iron', 'bronze', 'sil', 'silver', 'gold', 'sap', 'sapphire', 'plat', 'platinum', 'black'].includes(rarity))
 			message.channel.send("Rarity" + arr[2] + "doesn't exist");
-		else if (level_to <= level_from )
+		else if (level_to <= level_from)
 			message.channel.send("Level to get to must be higher than current level");
-		else if (level_from < 1 )
+		else if (level_from < 1)
 			message.channel.send("Level to get to must be higher than 0");
-		else if (level_to > 99 )
+		else if (level_to > 99)
 			message.channel.send("Level to get to must be lower than 100");
-        else {
+		else {
 			var rarity2 = convert(rarity)
 			var exp = get_exp(rarity2, level_from, level_to, exp_to_next_level)
 			message.channel.send(exp);
@@ -87,7 +87,7 @@ function convert(rarity) {
 		case 'iron':
 			return 0
 			break
-  }
+	}
 }
 function get_exp(rarity, level_from, level_to, exp_to_next_level) {
 	let needed = exp_to_next_level

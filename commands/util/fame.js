@@ -17,7 +17,7 @@ class UtilDaily extends commando.Command {
     async run(message, input) {
         var link = "https://aigis.fandom.com/wiki/Fame";
 
-        request(link, function(err, resp, html) {
+        request(link, function (err, resp, html) {
             if (!err) {
                 const $ = cheerio.load(html);
                 message.channel.send($('.weekly').text())

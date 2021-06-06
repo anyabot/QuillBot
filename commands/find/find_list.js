@@ -12,65 +12,65 @@ var functions = require('../../functions.js');
 
 
 class FindImage extends commando.Command {
-    constructor(client) {
-        super(client, {
-            name: 'list',
-            group: 'find',
-            memberName: 'list',
-            description: 'find list of all units of a certain class/faction',
-		examples: ['&list soldiers'],
-        args: [{
-		    key: 'text',
-			prompt: 'What class/faction do you want to know about?',
-		    type: 'string'
-		}]
-        });
-    }
+	constructor(client) {
+		super(client, {
+			name: 'list',
+			group: 'find',
+			memberName: 'list',
+			description: 'find list of all units of a certain class/faction',
+			examples: ['&list soldiers'],
+			args: [{
+				key: 'text',
+				prompt: 'What class/faction do you want to know about?',
+				type: 'string'
+			}]
+		});
+	}
 
-    async run(message, { text }) {
+	async run(message, { text }) {
 		var lcheck = false
-        var cl = text.toLowerCase().toTitleCase();
-	    cl = cl.split(' And ').join(' and ')
-	    var words = cl.split(' ');
-	    var le = words.length;
-		if (cl == "Loli" || cl =="Lolis") {
+		var cl = text.toLowerCase().toTitleCase();
+		cl = cl.split(' And ').join(' and ')
+		var words = cl.split(' ');
+		var le = words.length;
+		if (cl == "Loli" || cl == "Lolis") {
 			lcheck = true
 		}
-	    else if (cl == "Intermediate Dragon Soldier" || cl == "Intermediate Dragon Soldiers") {cl = "Dragon Soldiers"}
-		else if (cl == "Priestess Warrior" || cl == "Priestess Warriors") {cl = "Priest Warriors"}
-		else if (cl == "We" || cl == "White Empire") {cl = "White Empire"}
-		else if (cl == "Kingdom Of Pars" || cl == "Pars" || cl == "Kingdom of Pars") {cl = "Kingdom of Pars"}
-		else if (cl == "Angels Races" || cl == "Angel Races" || cl == "Angels Race" || cl == "Angel Race") {cl = "Angels Race"}
-		else if (cl == "Hermits Races" || cl == "Hermit Races" || cl == "Hermit Race" || cl == "Hermits Race") {cl = "Hermits Race"}
-	    else if (cl == "Spirit of War") {cl = "Spirits of War"}
-	    else if (cl == "June Bride" || cl == "Summer" || cl == "School" || cl == "Valentine's Day" || cl == "New Year's" || cl == "Christmas" || cl == "Halloween" || cl == "Chibi") {cl = cl + " Units"}
+		else if (cl == "Intermediate Dragon Soldier" || cl == "Intermediate Dragon Soldiers") { cl = "Dragon Soldiers" }
+		else if (cl == "Priestess Warrior" || cl == "Priestess Warriors") { cl = "Priest Warriors" }
+		else if (cl == "We" || cl == "White Empire") { cl = "White Empire" }
+		else if (cl == "Kingdom Of Pars" || cl == "Pars" || cl == "Kingdom of Pars") { cl = "Kingdom of Pars" }
+		else if (cl == "Angels Races" || cl == "Angel Races" || cl == "Angels Race" || cl == "Angel Race") { cl = "Angels Race" }
+		else if (cl == "Hermits Races" || cl == "Hermit Races" || cl == "Hermit Race" || cl == "Hermits Race") { cl = "Hermits Race" }
+		else if (cl == "Spirit of War") { cl = "Spirits of War" }
+		else if (cl == "June Bride" || cl == "Summer" || cl == "School" || cl == "Valentine's Day" || cl == "New Year's" || cl == "Christmas" || cl == "Halloween" || cl == "Chibi") { cl = cl + " Units" }
 		else if (cl == "Majin" || cl == "Jiangshi" || cl == "Zhenren" || cl == "Onmyouji" || cl == "Youkai" || cl == "Youko" || cl == "Fuuhaku" || cl == "Raikou" || cl == "Nekomata" || cl == "Nurarihyon" || cl == "Oni" || cl == "Tengu" || cl == "Beastfolk" || cl == "None" || cl == "Undead" || cl == "Desert Country" || cl == "Samurai" || cl == "Heavy Artillery" || cl == "Kibanin") {
 			cl = cl;
 		}
-	    else if (cl == "Elf" || cl == "Elves") {cl = "Elves:Stats"}
+		else if (cl == "Elf" || cl == "Elves") { cl = "Elves:Stats" }
 		else if (cl.slice(-1) == "\】" || cl.slice(-1) == "\)") {
-			words[le-2] = pluralize.plural(words[le-2])
-			if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
+			words[le - 2] = pluralize.plural(words[le - 2])
+			if (suffix[words[le - 1]]) { words[le - 1] = suffix[words[le - 1]] }
 			cl = words.join(" ")
 		}
-	    else if (suffix[words[le-1]]) {
-	    	words[le-2] = pluralize.plural(words[le-2])
-			if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
+		else if (suffix[words[le - 1]]) {
+			words[le - 2] = pluralize.plural(words[le - 2])
+			if (suffix[words[le - 1]]) { words[le - 1] = suffix[words[le - 1]] }
 			cl = words.join(" ")
-	    }
+		}
 		else {
-			if (suffix[words[le-1]]) {words[le-1] = suffix[words[le-1]]}
+			if (suffix[words[le - 1]]) { words[le - 1] = suffix[words[le - 1]] }
 			cl = words.join(" ")
 			cl = pluralize.plural(cl);
 		}
 		if (lcheck) {
-			var check = false 
+			var check = false
 			var parts = []
 			var pages = []
 			var pn = []
 			var pm = []
 			for (var i = 0; i < list.length; i++) {
-				let nam =  list[i][0]
+				let nam = list[i][0]
 				let img = list[i][1]
 				let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam.split(' (')[0])
 				let embed = new Discord.RichEmbed()
@@ -83,7 +83,7 @@ class FindImage extends commando.Command {
 					pages = []
 					pages.push(embed)
 				}
-				else {pages.push(embed)}
+				else { pages.push(embed) }
 			}
 			parts.push(pages)
 			for (var i = 0; i < parts.length; i++) {
@@ -97,66 +97,66 @@ class FindImage extends commando.Command {
 		else {
 			var link = "https://aigis.fandom.com/wiki/Category%3A" + urlencode(cl)
 
-			request(link, function(err, resp, html) {
+			request(link, function (err, resp, html) {
 				if (!err) {
-				var check = false 
-				var parts = []
-				var pages = []
-				var pn = []
-				var pm = []
-				const $ = cheerio.load(html);
-				$('.listtable.bgwhite tr td div a img').each(function(i, elem) {
-				check = true
-				let img = $(elem).attr('data-src')
-				if (!img) {img = $(elem).attr('src')}
-				let nam =$(elem).attr('alt');
-				nam = he.decode(nam)
-				nam = nam.split(" Icon")[0]
-				let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam)
-				check = true
-				let embed = new Discord.RichEmbed()
-				img = img.split("/scale-to-width-down/")[0]
-				embed.setTitle(nam)
-				embed.setImage(img)
-				embed.setURL(lin)
-				if (pages.length == 10) {
-					parts.push(pages)
-					pages = []
-					pages.push(embed)
-				}
-				else {pages.push(embed)}
-				})
-				if (check) {
-					parts.push(pages)
-					for (var i = 0; i < parts.length; i++) {
-						pn.push(1)
-						pm.push(parts[i].length)
+					var check = false
+					var parts = []
+					var pages = []
+					var pn = []
+					var pm = []
+					const $ = cheerio.load(html);
+					$('.listtable.bgwhite tr td div a img').each(function (i, elem) {
+						check = true
+						let img = $(elem).attr('data-src')
+						if (!img) { img = $(elem).attr('src') }
+						let nam = $(elem).attr('alt');
+						nam = he.decode(nam)
+						nam = nam.split(" Icon")[0]
+						let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam)
+						check = true
+						let embed = new Discord.RichEmbed()
+						img = img.split("/scale-to-width-down/")[0]
+						embed.setTitle(nam)
+						embed.setImage(img)
+						embed.setURL(lin)
+						if (pages.length == 10) {
+							parts.push(pages)
+							pages = []
+							pages.push(embed)
+						}
+						else { pages.push(embed) }
+					})
+					if (check) {
+						parts.push(pages)
+						for (var i = 0; i < parts.length; i++) {
+							pn.push(1)
+							pm.push(parts[i].length)
+						}
+						for (var i = 0; i < parts.length; i++) {
+							functions.sende(message, parts[i])
+						}
 					}
-					for (var i = 0; i < parts.length; i++) {
-						functions.sende(message, parts[i])
-					}
-				}
-				if (!check) {message.channel.send("No Data")};
+					if (!check) { message.channel.send("No Data") };
 				}
 			})
 		}
-    }
+	}
 }
 function sendembed(pg, message) {
 	let embed = pg[0];
 	let pn = 1
-				embed.setFooter('Page ' + pn + ' of ' + pg.length);
-				message.channel.send(embed).then(msg => {
+	embed.setFooter('Page ' + pn + ' of ' + pg.length);
+	message.channel.send(embed).then(msg => {
 
-				msg.react('⬅').then( r => {
+		msg.react('⬅').then(r => {
 			msg.react('➡')
 
 			// Filters
 			const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && !user.bot;
 			const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && !user.bot;
 
-			const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-			const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+			const backwards = msg.createReactionCollector(backwardsFilter, { timer: 6000 });
+			const forwards = msg.createReactionCollector(forwardsFilter, { timer: 6000 });
 
 			backwards.on('collect', r => {
 				r.remove(r.users.filter(u => !u.bot).first());
@@ -174,8 +174,8 @@ function sendembed(pg, message) {
 				embed = pg[pn - 1];
 				embed.setFooter('Page ' + pn + ' of ' + pg.length);
 				msg.edit(embed)
+			})
 		})
-	    })
 	})
 }
 module.exports = FindImage;
