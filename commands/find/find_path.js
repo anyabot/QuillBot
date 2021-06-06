@@ -64,7 +64,7 @@ class FindPath extends commando.Command {
 						.addField("Class", nam)
 						.setThumbnail(img)
 						.setColor('LIGHT_GREY')
-					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").parent().index() + 1
 					let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
 					let des2
 					let note2
@@ -113,7 +113,7 @@ class FindPath extends commando.Command {
 							.addField("Class", nam)
 							.setThumbnail(img)
 							.setColor('RED')
-						let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+						let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").parent().index() + 1
 						let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
 						let des2
 						let note2
@@ -169,7 +169,7 @@ class FindPath extends commando.Command {
 						.addField("Class", nam)
 						.setThumbnail(img)
 						.setColor('BLUE')
-					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").parent().index() + 1
 					let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
 					let des2
 					let note2
@@ -222,7 +222,7 @@ class FindPath extends commando.Command {
 						.addField("Class", nam)
 						.setThumbnail(img)
 						.setColor('DARK_PURPLE')
-					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").parent().index() + 1
 					let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
 					let des2
 					let note2
@@ -275,7 +275,7 @@ class FindPath extends commando.Command {
 						.addField("Class", nam)
 						.setThumbnail(img)
 						.setColor('DARK_PURPLE')
-					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").index() + 1
+					let ind = $(".gcstyle.bgwhite.hsbullet tr td:nth-child(1):contains('" + nam + "'):not(:contains('Junior')):not(:contains('Lesser'))").parent().index() + 1
 					let len = $('.gcstyle.bgwhite.hsbullet tr:nth-child(' + ind + ')').find('td').length
 					let des2
 					let note2
