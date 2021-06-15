@@ -33,10 +33,7 @@ class FindImage extends commando.Command {
 		cl = cl.split(' And ').join(' and ')
 		var words = cl.split(' ');
 		var le = words.length;
-		if (cl == "Loli" || cl == "Lolis") {
-			lcheck = true
-		}
-		else if (cl == "Intermediate Dragon Soldier" || cl == "Intermediate Dragon Soldiers") { cl = "Dragon Soldiers" }
+		if (cl == "Intermediate Dragon Soldier" || cl == "Intermediate Dragon Soldiers") { cl = "Dragon Soldiers" }
 		else if (cl == "Priestess Warrior" || cl == "Priestess Warriors") { cl = "Priest Warriors" }
 		else if (cl == "We" || cl == "White Empire") { cl = "White Empire" }
 		else if (cl == "Kingdom Of Pars" || cl == "Pars" || cl == "Kingdom of Pars") { cl = "Kingdom of Pars" }
