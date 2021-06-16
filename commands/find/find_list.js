@@ -7,7 +7,6 @@ var he = require('he');
 var urlencode = require('urlencode');
 var pluralize = require('pluralize')
 var suffix = require('../../library/suf.js').suffix;
-var list = require('../../loli.js').list
 var functions = require('../../functions.js');
 
 
@@ -60,83 +59,50 @@ class FindImage extends commando.Command {
 			cl = words.join(" ")
 			cl = pluralize.plural(cl);
 		}
-		if (lcheck) {
-			var check = false
-			var parts = []
-			var pages = []
-			var pn = []
-			var pm = []
-			for (var i = 0; i < list.length; i++) {
-				let nam = list[i][0]
-				let img = list[i][1]
-				let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam.split(' (')[0])
-				let embed = new Discord.RichEmbed()
-				img = img.split("/scale-to-width-down/")[0]
-				embed.setTitle(nam)
-				embed.setImage(img)
-				embed.setURL(lin)
-				if (pages.length == 10) {
-					parts.push(pages)
-					pages = []
-					pages.push(embed)
-				}
-				else { pages.push(embed) }
-			}
-			parts.push(pages)
-			for (var i = 0; i < parts.length; i++) {
-				pn.push(1)
-				pm.push(parts[i].length)
-			}
-			for (var i = 0; i < parts.length; i++) {
-				sendembed(parts[i], message)
-			}
-		}
-		else {
-			var link = "https://aigis.fandom.com/wiki/Category%3A" + urlencode(cl)
+		var link = "https://aigis.fandom.com/wiki/Category%3A" + urlencode(cl)
 
-			request(link, function (err, resp, html) {
-				if (!err) {
-					var check = false
-					var parts = []
-					var pages = []
-					var pn = []
-					var pm = []
-					const $ = cheerio.load(html);
-					$('.listtable.bgwhite tr td div a img').each(function (i, elem) {
-						check = true
-						let img = $(elem).attr('data-src')
-						if (!img) { img = $(elem).attr('src') }
-						let nam = $(elem).attr('alt');
-						nam = he.decode(nam)
-						nam = nam.split(" Icon")[0]
-						let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam)
-						check = true
-						let embed = new Discord.RichEmbed()
-						img = img.split("/scale-to-width-down/")[0]
-						embed.setTitle(nam)
-						embed.setImage(img)
-						embed.setURL(lin)
-						if (pages.length == 10) {
-							parts.push(pages)
-							pages = []
-							pages.push(embed)
-						}
-						else { pages.push(embed) }
-					})
-					if (check) {
+		request(link, function (err, resp, html) {
+			if (!err) {
+				var check = false
+				var parts = []
+				var pages = []
+				var pn = []
+				var pm = []
+				const $ = cheerio.load(html);
+				$('.listtable.bgwhite tr td div a img').each(function (i, elem) {
+					check = true
+					let img = $(elem).attr('data-src')
+					if (!img) { img = $(elem).attr('src') }
+					let nam = $(elem).attr('alt');
+					nam = he.decode(nam)
+					nam = nam.split(" Icon")[0]
+					let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam)
+					check = true
+					let embed = new Discord.RichEmbed()
+					img = img.split("/scale-to-width-down/")[0]
+					embed.setTitle(nam)
+					embed.setImage(img)
+					embed.setURL(lin)
+					if (pages.length == 10) {
 						parts.push(pages)
-						for (var i = 0; i < parts.length; i++) {
-							pn.push(1)
-							pm.push(parts[i].length)
-						}
-						for (var i = 0; i < parts.length; i++) {
-							functions.sende(message, parts[i])
-						}
+						pages = []
+						pages.push(embed)
 					}
-					if (!check) { message.channel.send("No Data") };
+					else { pages.push(embed) }
+				})
+				if (check) {
+					parts.push(pages)
+					for (var i = 0; i < parts.length; i++) {
+						pn.push(1)
+						pm.push(parts[i].length)
+					}
+					for (var i = 0; i < parts.length; i++) {
+						functions.sende(message, parts[i])
+					}
 				}
-			})
-		}
+				if (!check) { message.channel.send("No Data") };
+			}
+		})
 	}
 }
 function sendembed(pg, message) {
