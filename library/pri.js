@@ -36,7 +36,17 @@ var name = {
     '4 Gods' : 'Four Gods',
     '4 God' : 'Four Gods',
     'Avatar' : 'Four Gods',
-    'Quartet' : 'Four Gods'
+    'Quartet' : 'Four Gods',
+    'Spear' : 'Sacred Spear',
+    'Ox' : 'Nandi',
+    'White Ox' : 'Nandi',
+    'Bull' : 'Nandi',
+    'Aquaman' : 'Bahamut',
+    'Aqua' : 'Bahamut',
+    'Sea' : 'Bahamut',
+    'Ocean' : 'Bahamut',
+    'Fishman' : 'Bahamut',
+    'Fish' : 'Bahamut'
 }
 
 exports.name = name;
