@@ -44,6 +44,7 @@ class FindStat extends commando.Command {
 				const $ = cheerio.load(html);
 				var pu = $('.categories').text().includes("Player Units");
 				var chibi = $('.categories').text().includes("Chibi Units");
+				var hero = $('.categories').text().includes("Hero Units");
 				if (pu) {
 					var output;
 					var img;
@@ -119,7 +120,7 @@ class FindStat extends commando.Command {
 						}
 					}
 					output = $('tbody tr.c3.numbers').text();
-					if (output) {
+					if (output && !hero) {
 						let lv99v1 = lv1line(output);
 						output = $('.c3 ').first().text();
 						let lv1v1 = lv1line(output);
@@ -159,7 +160,7 @@ class FindStat extends commando.Command {
 						pages.push(embed)
 					}
 					output = $('tbody tr.c4.numbers').text();
-					if (output) {
+					if (output && !hero) {
 						let lv99v1 = lv1line(output);
 						output = $('.c4 ').first().text();
 						let lv1v1 = lv1line(output);
@@ -195,7 +196,7 @@ class FindStat extends commando.Command {
 						pages.push(embed)
 					}
 					output = $('tbody tr.c5.numbers').text();
-					if (output) {
+					if (output && !hero) {
 						let lv99v1 = lv1line(output);
 						output = $('.c5 ').first().text();
 						let lv1v1 = lv1line(output);
