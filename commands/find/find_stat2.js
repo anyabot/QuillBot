@@ -36,22 +36,23 @@ class FindStat2 extends commando.Command {
         const $ = cheerio.load(html);
         var tk = $(".categories").text().includes("Train Knights");
         if (tk) {
-          console.log($(".wikitable tbody").eq(0).children().length)
-          
           for (
             var i = 1;
             i < $(".wikitable tbody").eq(0).children().length;
             i++
           ) {
+            console.log($(
+              ".wikitable tbody tr:eq(" + i + ") td:eq(0)"
+            ).html())
             let img = $(
-              ".wikitable tr:eq(" + i + ") td:eq(0) a img"
+              ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
             ).attr("src");
             if (!img) {
               img = $(
-                ".wikitable tr:eq(" + i + ") td:eq(0) a img"
+                ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
               ).attr("data-src");
             }
-            let link2 = $(".wikitable tr:eq(" + i + ") td:eq(1) a").attr(
+            let link2 = $(".wikitable tbody tr:eq(" + i + ") td:eq(1) a").attr(
               "href"
             );
             console.log(pages, link2, img)
