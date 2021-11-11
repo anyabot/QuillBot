@@ -1,6 +1,6 @@
 const commando = require("discord.js-commando");
 const Discord = require("discord.js");
-var request = require("request");
+var request = require("request-promise");
 var cheerio = require("cheerio");
 var he = require("he");
 var name = require("../../library/lib.js").name;
@@ -68,7 +68,7 @@ class FindStat2 extends commando.Command {
 }
 
 async function find_dat(link, img, name) {
-  request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
+  await request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
       var pages2 = [];
       const $ = cheerio.load(html);
