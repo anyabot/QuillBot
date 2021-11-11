@@ -53,7 +53,7 @@ class FindStat2 extends commando.Command {
               "href"
             );
             console.log(pages, link2, img)
-            pages.concat(find_dat(pages, link2, img));
+            pages.concat(find_dat(link2, img));
           }
           functions.sende(message, pages)
         }
