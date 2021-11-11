@@ -55,8 +55,7 @@ class FindStat2 extends commando.Command {
             let name = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
               "title"
             );
-            let temp = find_dat(link2, img, name)
-            pages.concat(temp);
+            pages.concat(find_dat(link2, img, name));
           }
           Promise.all(pages)
           .then(() =>
