@@ -64,6 +64,7 @@ class FindStat2 extends commando.Command {
 
 function find(link, img) {
   var pages2 = [];
+  console.log("https://mist-train-girls.fandom.com" + link)
   request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
       const $ = cheerio.load(html);
