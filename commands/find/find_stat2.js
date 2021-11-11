@@ -36,6 +36,7 @@ class FindStat2 extends commando.Command {
         const $ = cheerio.load(html);
         var tk = $(".categories").text().includes("Train Knights");
         if (tk) {
+          var tobedone = []
           for (
             var i = 1;
             i < $(".wikitable tbody").eq(0).children().length;
@@ -55,19 +56,25 @@ class FindStat2 extends commando.Command {
             let name = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
               "title"
             );
-            pages.concat(find_dat(link2, img, name));
+            tobedone.push([link2, img, name])
           }
-          Promise.all(pages)
-          .then(() =>
-          functions.sende(message, pages)
-          )
+          find_dat(pages, tobedone)
+          
         }
       }
     });
   }
 }
 
-async function find_dat(link, img, name) {
+async function find_dat(pages, tobedone) {
+  if (tobedone.length == 0) {
+    functions.sende(message, pages)
+  }
+  else {
+  var turn = tobedone[0]
+  var link = turn[0]
+  var img = turn[1]
+  var name = turn[2]
   await request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
       var pages2 = [];
@@ -122,10 +129,11 @@ async function find_dat(link, img, name) {
 
         pages2.push(embed);
       }
-      return pages2;
+      find_dat(pages, tobedone.shift())
     }
     else {console.log(err)}
   });
+}
 }
 
 function lv1line(output) {
