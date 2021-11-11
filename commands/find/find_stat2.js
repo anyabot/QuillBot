@@ -77,7 +77,7 @@ async function find_dat(message, pages, tobedone) {
   var name = turn[2]
   await request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
-      var pages2 = [];
+      var pages2 = pages;
       const $ = cheerio.load(html);
       var output;
       var check = false;
@@ -129,7 +129,7 @@ async function find_dat(message, pages, tobedone) {
 
         pages2.push(embed);
       }
-      find_dat(message, pages, tobedone)
+      find_dat(message, pages2, tobedone)
     }
     else {console.log(err)}
   });
