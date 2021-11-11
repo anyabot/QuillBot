@@ -52,7 +52,10 @@ class FindStat2 extends commando.Command {
             let link2 = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
               "href"
             );
-            let temp = find_dat(link2, img)
+            let name = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
+              "title"
+            );
+            let temp = find_dat(link2, img, name)
             pages.concat(temp);
           }
           Promise.all(pages)
@@ -65,8 +68,8 @@ class FindStat2 extends commando.Command {
   }
 }
 
-async function find_dat(link, img) {
-  await request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
+async function find_dat(link, img, name) {
+  request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
       var pages2 = [];
       const $ = cheerio.load(html);
@@ -85,7 +88,7 @@ async function find_dat(link, img) {
         );
         let embed = new Discord.RichEmbed()
           .setURL(link)
-          .setTitle(unit + "'s Stats")
+          .setTitle(name + "'s Stats")
           .setThumbnail(img)
           .setColor("LIGHT_GREY")
           .addField("ATK", line1[1] + " → " + line2[1], true)
@@ -107,7 +110,7 @@ async function find_dat(link, img) {
         );
         let embed = new Discord.RichEmbed()
           .setURL(link)
-          .setTitle(unit + "'s Resists")
+          .setTitle(name + "'s Resists")
           .setThumbnail(img)
           .setColor("LIGHT_GREY")
           .addField("Cut", line1[0], true)
