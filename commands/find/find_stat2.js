@@ -41,18 +41,15 @@ class FindStat2 extends commando.Command {
             i < $(".wikitable tbody").eq(0).children().length;
             i++
           ) {
-            console.log($(
-              ".wikitable tbody tr td"
-            ).html())
             let img = $(
-              ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
+              ".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(1) a img"
             ).attr("src");
             if (!img) {
               img = $(
-                ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
+                ".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(1) a img"
               ).attr("data-src");
             }
-            let link2 = $(".wikitable tbody tr:eq(" + i + ") td:eq(1) a").attr(
+            let link2 = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
               "href"
             );
             console.log(pages, link2, img)
