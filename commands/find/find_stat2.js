@@ -44,11 +44,11 @@ class FindStat2 extends commando.Command {
           ) {
             let img = $(
               ".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(1) a img"
-            ).attr("src");
+            ).attr("data-src");
             if (!img) {
               img = $(
                 ".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(1) a img"
-              ).attr("data-src");
+              ).attr("src");
             }
             let link2 = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
               "href"
