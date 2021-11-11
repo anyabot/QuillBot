@@ -52,7 +52,7 @@ class FindStat2 extends commando.Command {
             let link2 = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
               "href"
             );
-            let temp = await find_dat(link2, img)
+            let temp = find_dat(link2, img)
             pages.concat(temp);
           }
           const responses = await Promise.all(pages);
