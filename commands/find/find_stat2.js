@@ -60,7 +60,7 @@ class FindStat2 extends commando.Command {
           }
           Promise.all(pages)
           .then(() =>
-          functions.sende(message, responses)
+          functions.sende(message, pages)
           )
         }
       }
@@ -100,7 +100,6 @@ async function find_dat(link, img, name) {
           .addField("RCV", line1[7] + " → " + line2[7], true)
           .addField("LUK", line1[8] + " → " + line2[8], true);
         pages2.push(embed);
-        console.log(pages2)
       }
       output = $(".wikitable.hidden.resist tr:nth-child(2)").html();
       if (output) {
@@ -123,7 +122,6 @@ async function find_dat(link, img, name) {
           .addField("Dark", line1[7], true);
 
         pages2.push(embed);
-        console.log(pages2)
       }
       return pages2;
     }
