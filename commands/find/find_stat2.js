@@ -53,7 +53,7 @@ class FindStat2 extends commando.Command {
               "href"
             );
             console.log(pages, link2, img)
-            pages = find(pages, link2, img);
+            pages.concat(find(pages, link2, img));
           }
           functions.sende(message, pages)
         }
@@ -62,13 +62,12 @@ class FindStat2 extends commando.Command {
   }
 }
 
-function find(pages, link, img) {
-  var pages2 = pages;
+function find(link, img) {
+  var pages2 = [];
   request(link, function (err, resp, html) {
     if (!err) {
       const $ = cheerio.load(html);
       var output;
-      var aff;
       var check = false;
 
       output = $(".wikitable.hidden.stats tr:nth-child(4)").html();
