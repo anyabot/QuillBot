@@ -36,7 +36,7 @@ class FindStat2 extends commando.Command {
         const $ = cheerio.load(html);
         var tk = $(".categories").text().includes("Train Knights");
         if (tk) {
-          await (() => {for (
+          await (async () => {for (
             var i = 1;
             i < $(".wikitable tbody").eq(0).children().length;
             i++
