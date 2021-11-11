@@ -36,7 +36,7 @@ class FindStat2 extends commando.Command {
         const $ = cheerio.load(html);
         var tk = $(".categories").text().includes("Train Knights");
         if (tk) {
-          for (
+          async (() => {for (
             var i = 1;
             i < $(".wikitable tbody").eq(0).children().length;
             i++
@@ -54,16 +54,15 @@ class FindStat2 extends commando.Command {
             );
             console.log(pages, link2, img)
             pages.concat(find_dat(link2, img));
-          }
-          functions.sende(message, pages)
+          }}).then(() => functions.sende(message, pages))
         }
       }
     });
   }
 }
 
-function find_dat(link, img) {
-  request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
+async function find_dat(link, img) {
+  await request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
       var pages2 = [];
       const $ = cheerio.load(html);
