@@ -12,12 +12,11 @@ var functions = require("../../functions.js");
 class FindStat2 extends commando.Command {
   constructor(client) {
     super(client, {
-      name: "stat",
-      aliases: ["stats", "aff", "affection"],
+      name: "stat2",
       group: "find",
-      memberName: "stat",
+      memberName: "stat2",
       description: "find stats of an unit",
-      examples: ["&stat quill"],
+      examples: ["&stat2 quill"],
       args: [
         {
           key: "text",
