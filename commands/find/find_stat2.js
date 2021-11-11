@@ -93,7 +93,7 @@ async function find_dat(message, pages, tobedone) {
           $(".wikitable.hidden.stats tr:nth-child(4)").html()
         );
         let embed = new Discord.RichEmbed()
-          .setURL(link)
+          .setURL("https://mist-train-girls.fandom.com" + link)
           .setTitle(name + "'s Stats")
           .setThumbnail(img)
           .setColor("LIGHT_GREY")
@@ -114,7 +114,7 @@ async function find_dat(message, pages, tobedone) {
           $(".wikitable.hidden.resist tr:nth-child(2)").html()
         );
         let embed = new Discord.RichEmbed()
-          .setURL(link)
+          .setURL("https://mist-train-girls.fandom.com" + link)
           .setTitle(name + "'s Resists")
           .setThumbnail(img)
           .setColor("LIGHT_GREY")
