@@ -55,8 +55,10 @@ class FindStat2 extends commando.Command {
             let temp = find_dat(link2, img)
             pages.concat(temp);
           }
-          const responses = await Promise.all(pages);
+          Promise.all(pages)
+          .then(() =>
           functions.sende(message, responses)
+          )
         }
       }
     });
