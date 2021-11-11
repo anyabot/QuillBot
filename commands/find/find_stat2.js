@@ -52,6 +52,7 @@ class FindStat2 extends commando.Command {
             let link2 = $(".wikitable tbody tr:eq(" + i + ") td:eq(1) a").attr(
               "href"
             );
+            console.log(pages, link2, img)
             pages = find(pages, link2, img);
           }
           functions.sende(message, pages)
