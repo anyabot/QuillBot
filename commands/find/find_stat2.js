@@ -44,6 +44,11 @@ class FindStat2 extends commando.Command {
             let img = $(
               ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
             ).attr("src");
+            if (!img) {
+              img = $(
+                ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
+              ).attr("data-src");
+            }
             let link2 = $(".wikitable tbody tr:eq(" + i + ") td:eq(1) a").attr(
               "href"
             );
