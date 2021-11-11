@@ -36,7 +36,7 @@ class FindStat2 extends commando.Command {
         const $ = cheerio.load(html);
         var tk = $(".categories").text().includes("Train Knights");
         if (tk) {
-          async (() => {for (
+          await (() => {for (
             var i = 1;
             i < $(".wikitable tbody").eq(0).children().length;
             i++
@@ -52,8 +52,8 @@ class FindStat2 extends commando.Command {
             let link2 = $(".wikitable tbody tr:nth-child(" + (i+1).toString() + ") td:nth-child(2) a").attr(
               "href"
             );
-            console.log(pages, link2, img)
-            pages.concat(find_dat(link2, img));
+            let temp = await find_dat(link2, img)
+            pages.concat(temp);
           }}).then(() => functions.sende(message, pages))
         }
       }
