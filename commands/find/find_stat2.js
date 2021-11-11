@@ -43,10 +43,10 @@ class FindStat2 extends commando.Command {
           output = $(".wikitable.hidden.stats tr:nth-child(4)").html();
           if (output) {
             check = true;
-            line1 = lv1line(
+            let line1 = lv1line(
               $(".wikitable.hidden.stats tr:nth-child(4)").html()
             );
-            line2 = lv1line(
+            let line2 = lv1line(
               $(".wikitable.hidden.stats tr:nth-child(4)").html()
             );
             let embed = new Discord.RichEmbed()
@@ -67,10 +67,10 @@ class FindStat2 extends commando.Command {
 					output = $(".wikitable.hidden.resist tr:nth-child(2)").html();
           if (output) {
             check = true;
-            line1 = lv1line(
+            let line1 = lv1line(
               $(".wikitable.hidden.resist tr:nth-child(2)").html()
             );
-            line2 = lv1line(
+            let line2 = lv1line(
               $(".wikitable.hidden.resist tr:nth-child(2)").html()
             );
             let embed = new Discord.RichEmbed()
