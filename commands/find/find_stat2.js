@@ -76,6 +76,7 @@ function find(link, img) {
         let line1 = lv1line(
           $(".wikitable.hidden.stats tr:nth-child(3)").html()
         );
+        console.log(line1)
         let line2 = lv1line(
           $(".wikitable.hidden.stats tr:nth-child(4)").html()
         );
