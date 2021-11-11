@@ -64,7 +64,6 @@ class FindStat2 extends commando.Command {
 
 function find_dat(link, img) {
   var pages2 = [];
-  console.log(link, img)
   console.log("https://mist-train-girls.fandom.com" + link)
   request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
@@ -119,9 +118,9 @@ function find_dat(link, img) {
 
         pages2.push(embed);
       }
+      return pages2;
     }
   });
-  return pages2;
 }
 
 function lv1line(output) {
