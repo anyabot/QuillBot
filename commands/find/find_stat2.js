@@ -120,6 +120,7 @@ function find_dat(link, img) {
       }
       return pages2;
     }
+    else {console.log(err)}
   });
 }
 
