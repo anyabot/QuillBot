@@ -42,7 +42,7 @@ class FindStat2 extends commando.Command {
             i++
           ) {
             console.log($(
-              ".wikitable tbody tr:eq(" + i + ") td:eq(0)"
+              ".wikitable tbody"
             ).html())
             let img = $(
               ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
