@@ -59,7 +59,6 @@ class FindStat2 extends commando.Command {
             tobedone.push([link2, img, name])
           }
           find_dat(pages, tobedone)
-          
         }
       }
     });
@@ -71,7 +70,8 @@ async function find_dat(pages, tobedone) {
     functions.sende(message, pages)
   }
   else {
-  var turn = tobedone[0]
+    console.log(tobedone)
+  var turn = tobedone.shift()
   var link = turn[0]
   var img = turn[1]
   var name = turn[2]
@@ -129,7 +129,7 @@ async function find_dat(pages, tobedone) {
 
         pages2.push(embed);
       }
-      find_dat(pages, tobedone.shift())
+      find_dat(pages, tobedone)
     }
     else {console.log(err)}
   });
