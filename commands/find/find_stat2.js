@@ -53,7 +53,7 @@ class FindStat2 extends commando.Command {
               "href"
             );
             console.log(pages, link2, img)
-            pages.concat(find(pages, link2, img));
+            pages.concat(find_dat(pages, link2, img));
           }
           functions.sende(message, pages)
         }
@@ -62,8 +62,9 @@ class FindStat2 extends commando.Command {
   }
 }
 
-function find(link, img) {
+function find_dat(link, img) {
   var pages2 = [];
+  console.log(link, img)
   console.log("https://mist-train-girls.fandom.com" + link)
   request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
