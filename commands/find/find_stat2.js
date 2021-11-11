@@ -63,10 +63,9 @@ class FindStat2 extends commando.Command {
 }
 
 function find_dat(link, img) {
-  var pages2 = [];
-  console.log("https://mist-train-girls.fandom.com" + link)
   request("https://mist-train-girls.fandom.com" + link, function (err, resp, html) {
     if (!err) {
+      var pages2 = [];
       const $ = cheerio.load(html);
       var output;
       var check = false;
@@ -95,6 +94,7 @@ function find_dat(link, img) {
           .addField("RCV", line1[7] + " → " + line2[7], true)
           .addField("LUK", line1[8] + " → " + line2[8], true);
         pages2.push(embed);
+        console.log(pages2)
       }
       output = $(".wikitable.hidden.resist tr:nth-child(2)").html();
       if (output) {
@@ -117,6 +117,7 @@ function find_dat(link, img) {
           .addField("Dark", line1[7], true);
 
         pages2.push(embed);
+        console.log(pages2)
       }
       return pages2;
     }
