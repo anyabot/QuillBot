@@ -30,19 +30,29 @@ class FindStat2 extends commando.Command {
   async run(message, { text }) {
     var unit = text;
     var pages = [];
+    var link = "https://mist-train-girls.fandom.com/wiki/" + urlencode(unit);
     request(link, function (err, resp, html) {
       if (!err) {
         const $ = cheerio.load(html);
-        var tk = $('.categories').text().includes("Train Knights");
-				if (tk) {
-          for (var i = 1; i < $(".wikitable tbody").eq(0).children().length; i++) {
-            let img = $(".wikitable tbody tr:eq("+i+") td:eq(0) a img").attr('src')
-            let link = $(".wikitable tbody tr:eq("+i+") td:eq(1) a").attr('href')
-            pages = find(pages, link, img)
-            }
+        var tk = $(".categories").text().includes("Train Knights");
+        if (tk) {
+          for (
+            var i = 1;
+            i < $(".wikitable tbody").eq(0).children().length;
+            i++
+          ) {
+            let img = $(
+              ".wikitable tbody tr:eq(" + i + ") td:eq(0) a img"
+            ).attr("src");
+            let link2 = $(".wikitable tbody tr:eq(" + i + ") td:eq(1) a").attr(
+              "href"
+            );
+            pages = find(pages, link2, img);
+          }
+          functions.sende(message, pages)
         }
       }
-    })
+    });
   }
 }
 
@@ -103,7 +113,7 @@ function find(pages, link, img) {
       }
     }
   });
-  return pages2
+  return pages2;
 }
 
 function lv1line(output) {
