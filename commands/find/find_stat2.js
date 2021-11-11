@@ -44,7 +44,7 @@ class FindStat2 extends commando.Command {
           if (output) {
             check = true;
             let line1 = lv1line(
-              $(".wikitable.hidden.stats tr:nth-child(4)").html()
+              $(".wikitable.hidden.stats tr:nth-child(3)").html()
             );
             let line2 = lv1line(
               $(".wikitable.hidden.stats tr:nth-child(4)").html()
@@ -70,22 +70,19 @@ class FindStat2 extends commando.Command {
             let line1 = lv1line(
               $(".wikitable.hidden.resist tr:nth-child(2)").html()
             );
-            let line2 = lv1line(
-              $(".wikitable.hidden.resist tr:nth-child(2)").html()
-            );
             let embed = new Discord.RichEmbed()
               .setURL(link)
               .setTitle(unit + "'s Resists")
               .setThumbnail(img)
               .setColor("LIGHT_GREY")
-							.addField("Cut", line1[0] + " → " + line2[0], true)
-              .addField("Blow", line1[1] + " → " + line2[1], true)
-              .addField("Pierce", line1[2] + " → " + line2[2], true)
-              .addField("Fire", line1[3] + " → " + line2[3], true)
-              .addField("Water", line1[4] + " → " + line2[4], true)
-              .addField("Wind", line1[5] + " → " + line2[5], true)
-              .addField("Light", line1[6] + " → " + line2[6], true)
-              .addField("Dark", line1[7] + " → " + line2[7], true)
+							.addField("Cut", line1[0], true)
+              .addField("Blow", line1[1], true)
+              .addField("Pierce", line1[2], true)
+              .addField("Fire", line1[3], true)
+              .addField("Water", line1[4], true)
+              .addField("Wind", line1[5], true)
+              .addField("Light", line1[6], true)
+              .addField("Dark", line1[7], true)
               
             pages.push(embed);
           }
