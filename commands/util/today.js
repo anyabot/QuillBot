@@ -122,11 +122,11 @@ class UtilToday extends commando.Command {
         }
         else if (date == "Sat") {
           tname = names[11]
-          dm = "- Daily Farm Map: Spirit / SAW Spirit\n- Orbs: Battle Mage, High Ranger, Top Dancer, Dragon Knight, Priest Warrior Leader\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: "
+          dm = "- Daily Farm Map: Demon Crystal / SAW Spirit\n- Orbs: Battle Mage, High Ranger, Top Dancer, Dragon Knight, Priest Warrior Leader\n- x1.5 Time Crystal Drop\n- Daily Revival Unit: "
         }
         else if (date == "Sun") {
           tname = names[13]
-          dm = "- Daily Farm Map: Demon Crystal / SAW Spirit\n- Orbs: High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief\n- Daily Revival Unit: "
+          dm = "- Daily Farm Map: All / SAW Spirit\n- Orbs: High Alchemist, Witch Doctor, Machinist, Master Thief, Bowrider Chief\n- Daily Revival Unit: "
         }
         tname = japname[tname];
         dm = dm + tname + "\n- Day Change In: " + diff1;
