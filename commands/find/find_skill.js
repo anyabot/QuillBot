@@ -35,8 +35,8 @@ class FindSkill extends commando.Command {
 				var img;
 				var output;
 				var aw = false
-				var embed1 = new Discord.RichEmbed()
-				var embed2 = new Discord.RichEmbed()
+				var embed1 = new Discord.MessageEmbed()
+				var embed2 = new Discord.MessageEmbed()
 				embed1.setFooter('React N for Normal Skill or A for Awakened Skill');
 				embed2.setFooter('React N for Normal Skill or A for Awakened Skill');
 				$('.wikitable').each(function (i, elem) {
@@ -133,7 +133,7 @@ class FindSkill extends commando.Command {
 								output = output.replace(/<b>Y<\/b>/g, xyz[2]);
 								output = output.replace(/<b>Z<\/b>/g, xyz[3]);
 								output = na(output)
-								var embed3 = new Discord.RichEmbed()
+								var embed3 = new Discord.MessageEmbed()
 								embed3.setTitle("Skill")
 								embed3.setURL("https://aigis.fandom.com/wiki/" + urlencode(unit))
 								embed3.setThumbnail(img)

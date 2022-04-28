@@ -257,7 +257,7 @@ class FindMat extends commando.Command {
 							let mat1 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3) table tbody tr td div a').attr('href')
 							let mat2 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(3) table tbody tr td div a').attr('href')
 							let mat3 = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(2) table tbody tr td div a').attr('href')
-							let embedcc = new Discord.RichEmbed();
+							let embedcc = new Discord.MessageEmbed();
 							embedcc.setTitle("CC Materials")
 							embedcc.setURL(link)
 							embedcc.setThumbnail(ccimg)
@@ -297,7 +297,7 @@ class FindMat extends commando.Command {
 							let mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 							let mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
 							console.log(mat1)
-							let embedaw = new Discord.RichEmbed();
+							let embedaw = new Discord.MessageEmbed();
 							embedaw.setColor('BLUE')
 							embedaw.setURL(link)
 							let orbs = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3)').text()
@@ -358,7 +358,7 @@ class FindMat extends commando.Command {
 								}
 							}
 							pages.push(embedaw)
-							let embedawd = new Discord.RichEmbed();
+							let embedawd = new Discord.MessageEmbed();
 							embedawd.setColor('BLUE')
 							embedawd.setURL(link)
 							embedawd.setTitle("Detailed Materials for CC Silvers")
@@ -397,7 +397,7 @@ class FindMat extends commando.Command {
 							let mat1 = $2('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3) table tbody tr td div a').attr('href')
 							let mat2 = $2('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(3) table tbody tr td div a').attr('href')
 							let mat3 = $2('.gcstyle.bgwhite tr:nth-child(5) td:nth-child(2) table tbody tr td div a').attr('href')
-							let embedcc = new Discord.RichEmbed();
+							let embedcc = new Discord.MessageEmbed();
 							embedcc.setTitle("CC Materials")
 							embedcc.setURL(link)
 							embedcc.setThumbnail(ccimg)
@@ -431,7 +431,7 @@ class FindMat extends commando.Command {
 									mat1 = $3('.gcstyle.bgwhite tr:nth-child(2) td:nth-child(2) table tbody tr td div a').attr('href')
 									mat2 = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(2) table tbody tr td div a').attr('href')
 									mat3 = $3('.gcstyle.bgwhite tr:nth-child(4) td:nth-child(2) table tbody tr td div a').attr('href')
-									let embedaw = new Discord.RichEmbed();
+									let embedaw = new Discord.MessageEmbed();
 									embedaw.setColor('BLUE')
 									embedaw.setURL(link)
 									let orbs = $3('.gcstyle.bgwhite tr:nth-child(3) td:nth-child(3)').text()
@@ -491,7 +491,7 @@ class FindMat extends commando.Command {
 										}
 									}
 									pages.push(embedaw)
-									let embedawd = new Discord.RichEmbed();
+									let embedawd = new Discord.MessageEmbed();
 									embedawd.setColor('BLUE')
 									embedawd.setURL(link)
 									embedawd.setTitle("Detailed Materials for CC Silvers")

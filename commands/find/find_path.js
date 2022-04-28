@@ -58,7 +58,7 @@ class FindPath extends commando.Command {
 					img = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 					output = $('.listtable.bgwhite tr:nth-child(3) td:nth-child(3)').first().html();
 					let nam = na(output);
-					let embed = new Discord.RichEmbed()
+					let embed = new Discord.MessageEmbed()
 					embed.setURL(link)
 						.setTitle(unit)
 						.addField("Class", nam)
@@ -107,7 +107,7 @@ class FindPath extends commando.Command {
 						output = $('.c2 td:nth-child(1)').first().html();
 						let nam = na(output);
 						if (nam == "Priestess Warrior Leader") { nam = "Priest Warrior Leader" }
-						let embed = new Discord.RichEmbed()
+						let embed = new Discord.MessageEmbed()
 						embed.setURL(link)
 							.setTitle(unit)
 							.addField("Class", nam)
@@ -163,7 +163,7 @@ class FindPath extends commando.Command {
 						nam = na(output);
 
 					}
-					let embed = new Discord.RichEmbed()
+					let embed = new Discord.MessageEmbed()
 					embed.setURL(link)
 						.setTitle(unit)
 						.addField("Class", nam)
@@ -216,7 +216,7 @@ class FindPath extends commando.Command {
 						output = $('.c4 td:nth-child(1)').first().html();
 						nam = na(output);
 					}
-					let embed = new Discord.RichEmbed()
+					let embed = new Discord.MessageEmbed()
 					embed.setURL(link)
 						.setTitle(unit)
 						.addField("Class", nam)
@@ -269,7 +269,7 @@ class FindPath extends commando.Command {
 						output = $('.c5 td:nth-child(1)').first().html();
 						nam = na(output);
 					}
-					let embed = new Discord.RichEmbed()
+					let embed = new Discord.MessageEmbed()
 					embed.setURL(link)
 						.setTitle(unit)
 						.addField("Class", nam)

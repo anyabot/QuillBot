@@ -78,7 +78,7 @@ class FindImage extends commando.Command {
 					nam = nam.split(" Icon")[0]
 					let lin = "https://aigis.fandom.com/wiki/" + urlencode(nam)
 					check = true
-					let embed = new Discord.RichEmbed()
+					let embed = new Discord.MessageEmbed()
 					img = img.split("/scale-to-width-down/")[0]
 					embed.setTitle(nam)
 					embed.setImage(img)

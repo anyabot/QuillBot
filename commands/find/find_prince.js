@@ -73,7 +73,7 @@ class FindPrince extends commando.Command {
 						img = ($('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(3)').first().html();
 						let nam = na(output);
-						embed = new Discord.RichEmbed()
+						embed = new Discord.MessageEmbed()
 						embed.setURL(link)
 						embed.setTitle(nam)
 						embed.setThumbnail(img)
@@ -184,7 +184,7 @@ class FindPrince extends commando.Command {
 						img = ($('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
 						output = $('.' + aw1 + ' table tbody tr:nth-child(3) td:nth-child(3)').first().html();
 						let nam = na(output);
-						embed = new Discord.RichEmbed()
+						embed = new Discord.MessageEmbed()
 						embed.setTitle(nam)
 						embed.setURL(link)
 						embed.setThumbnail(img)

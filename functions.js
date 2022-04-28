@@ -136,27 +136,27 @@ exports.sende = function sende(message, pages) {
                     timer: 6000
                 });
 
-                backwards.on('collect', r => {
-                    r.remove(r.users.filter(u => !u.bot).first());
-                    if (page === 1) {
-                        page = pages.length + 1;
-                    }
-                    page--;
-                    embed = pages[page - 1];
-                    embed.setFooter('Page ' + page + ' of ' + pages.length);
-                    msg.edit(embed)
-                })
+                backwards.on('collect', (r, u) => {
+					r.users.remove(u).catch(e => console.log(e))
+					if (page === 1) {
+						page = pages.length + 1;
+					}
+					page--;
+					embed = pages[page - 1];
+					embed.setFooter('Page ' + page + ' of ' + pages.length);
+					msg.edit(embed)
+				})
 
-                forwards.on('collect', r => {
-                    r.remove(r.users.filter(u => !u.bot).first());
-                    if (page === pages.length) {
-                        page = 0;
-                    }
-                    page++;
-                    embed = pages[page - 1];
-                    embed.setFooter('Page ' + page + ' of ' + pages.length);
-                    msg.edit(embed)
-                })
+				forwards.on('collect', (r, u) => {
+					r.users.remove(u).catch(e => console.log(e))
+					if (page === pages.length) {
+						page = 0;
+					}
+					page++;
+					embed = pages[page - 1];
+					embed.setFooter('Page ' + page + ' of ' + pages.length);
+					msg.edit(embed)
+				})
             })
         })
     } else {

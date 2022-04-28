@@ -75,7 +75,7 @@ class FindAbility extends commando.Command {
               check = true;
               var silna = aff;
               var silimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-              let embed = new Discord.RichEmbed()
+              let embed = new Discord.MessageEmbed()
               embed.setTitle(unit + "'s Ability")
               embed.setURL(link)
               embed.setThumbnail(silimg)
@@ -104,7 +104,7 @@ class FindAbility extends commando.Command {
               check = true;
               var norna = aff;
               var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-              let embed = new Discord.RichEmbed()
+              let embed = new Discord.MessageEmbed()
               embed.setTitle(unit + "'s Ability")
               embed.setURL(link)
               embed.setThumbnail(norimg)
@@ -144,7 +144,7 @@ class FindAbility extends commando.Command {
               if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
                 awimg = img
               }
-              let embed = new Discord.RichEmbed()
+              let embed = new Discord.MessageEmbed()
               embed.setTitle(unit + "'s Awakened Ability")
               embed.setURL(link)
               embed.setThumbnail(awimg)
@@ -173,7 +173,7 @@ class FindAbility extends commando.Command {
               check = true;
               var norna = aff;
               var norimg = ($('.listtable.bgwhite tr:nth-child(3) td:nth-child(2)  div a img').attr('data-src'));
-              let embed = new Discord.RichEmbed()
+              let embed = new Discord.MessageEmbed()
               embed.setTitle(unit + "'s Ability")
               embed.setURL(link)
               embed.setThumbnail(norimg)
@@ -206,7 +206,7 @@ class FindAbility extends commando.Command {
                       if (!$('.c3 td:nth-child(3)').hasClass('leftal')) {
                         awimg = norimg
                       }
-                      let embed2 = new Discord.RichEmbed()
+                      let embed2 = new Discord.MessageEmbed()
                       embed2.setTitle(unit + "'s Awakened Ability")
                       embed2.setURL(link)
                       embed2.setThumbnail(awimg)
