@@ -107,7 +107,7 @@ class TTime extends commando.Command {
 			var diff5 = humanizeDuration(dif5, { units: ['d', 'h', 'm'], round: true })
 
 		}
-		var embed = new Discord.RichEmbed()
+		var embed = new Discord.MessageEmbed()
 		embed.setColor('RANDOM')
 		embed.addField("Daily Missions/Revivals", diff1)
 		embed.addField("Daily Fame/Stamp Card", diff2)

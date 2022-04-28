@@ -82,7 +82,7 @@ class TTime extends commando.Command {
 			var dif4 = ms.diff(m)
 			var diff4 = humanizeDuration(dif4, { round: true })
 		}
-		var embed = new Discord.RichEmbed()
+		var embed = new Discord.MessageEmbed()
 		embed.setColor('RANDOM')
 		embed.addField("Next Tuesday Announcement", diff3)
 		embed.addField("Next Wednesday Announcement", diff4)

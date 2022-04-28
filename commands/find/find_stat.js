@@ -72,7 +72,7 @@ class FindStat extends commando.Command {
 						output = $('.listtable.bgwhite tbody tr:nth-child(3) td:nth-child(3)').first().html();
 						let nam = na(output);
 						console.log(nam)
-						let embed = new Discord.RichEmbed()
+						let embed = new Discord.MessageEmbed()
 							.setURL(link)
 							.setTitle(unit)
 							.addField("Class", nam + " (" + lv1v1[3] + " → " + lv99v1[0] + ")")
@@ -101,7 +101,7 @@ class FindStat extends commando.Command {
 							aff = affe(output);
 							output = $('.c2 td:nth-child(1)').first().html();
 							let nam = na(output);
-							let embed = new Discord.RichEmbed()
+							let embed = new Discord.MessageEmbed()
 								.setURL(link)
 								.setTitle(unit)
 								.addField("Class", nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -142,7 +142,7 @@ class FindStat extends commando.Command {
 							output = $('.c3 td:nth-child(10)').first().html();
 							aff = affe(output);
 						}
-						let embed = new Discord.RichEmbed()
+						let embed = new Discord.MessageEmbed()
 							.setURL(link)
 							.setTitle(unit)
 							.addField("Class", nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -178,7 +178,7 @@ class FindStat extends commando.Command {
 							output = $('.c4 td:nth-child(1)').first().html();
 							nam = na(output);
 						}
-						let embed = new Discord.RichEmbed()
+						let embed = new Discord.MessageEmbed()
 							.setURL(link)
 							.setTitle(unit)
 							.addField("Class", nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
@@ -214,7 +214,7 @@ class FindStat extends commando.Command {
 							output = $('.c5 td:nth-child(1)').first().html();
 							nam = na(output);
 						}
-						let embed = new Discord.RichEmbed()
+						let embed = new Discord.MessageEmbed()
 							.setURL(link)
 							.setTitle(unit)
 							.addField("Class", nam + " (" + lv1v1[1] + " → " + lv99v1[0] + ")")
