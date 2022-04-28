@@ -46,7 +46,9 @@ var name = {
     'Sea' : 'Bahamut',
     'Ocean' : 'Bahamut',
     'Fishman' : 'Bahamut',
-    'Fish' : 'Bahamut'
+    'Fish' : 'Bahamut',
+    'Tiger' : 'Dawon',
+    'Dragon' : 'Nidhogg'
 }
 
 exports.name = name;

@@ -46,7 +46,9 @@ var suffix = {
     'Hot Spring' : '(Hot Springs)',
     '(Hot Spring)' : '(Hot Springs)',
     'Bath' : '(Hot Springs)',
-    '(Bath)' : '(Hot Springs)'
+    '(Bath)' : '(Hot Springs)',
+    '(Easter)' : '(Easter)',
+    'Easter' : '(Easter)',
 }
 
 exports.suffix = suffix;
