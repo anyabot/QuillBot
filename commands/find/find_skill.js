@@ -93,14 +93,14 @@ class FindSkill extends commando.Command {
 							const backwards = msg.createReactionCollector(backwardsFilter, { timer: 6000 });
 							const forwards = msg.createReactionCollector(forwardsFilter, { timer: 6000 });
 
-							backwards.on('collect', r => {
-								r.remove(r.users.filter(u => !u.bot).first());
+							backwards.on('collect', (r, u) => {
+								r.users.remove(u).catch(e => console.log(e))
 								embed = pages[0];
 								msg.edit(embed)
 							})
 
-							forwards.on('collect', r => {
-								r.remove(r.users.filter(u => !u.bot).first());
+							forwards.on('collect', (r, u) => {
+								r.users.remove(u).catch(e => console.log(e))
 								embed = pages[1];
 								msg.edit(embed)
 							})
